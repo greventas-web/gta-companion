@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { Vehicle } from "@/types/vehicle";
 
 type VehicleCardProps = {
@@ -5,33 +8,44 @@ type VehicleCardProps = {
 };
 
 export default function VehicleCard({ vehicle }: VehicleCardProps) {
+  const slug = vehicle.name.toLowerCase().replace(/\s+/g, "-");
+
   return (
-    <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:-translate-y-2 hover:border-pink-500">
+    <Link href={`/vehicles/${slug}`}>
+      <div className="cursor-pointer rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/10">
 
-      <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
-        Vehicle Image
+        <div className="relative mb-6 h-52 overflow-hidden rounded-2xl bg-zinc-950">
+
+          <Image
+            src={vehicle.image}
+            alt={vehicle.name}
+            fill
+            className="object-cover transition duration-500 hover:scale-105"
+          />
+
+        </div>
+
+        <h3 className="text-2xl font-bold">
+          {vehicle.name}
+        </h3>
+
+        <p className="mt-2 text-zinc-400">
+          {vehicle.manufacturer}
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+
+          <span className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
+            {vehicle.category}
+          </span>
+
+          <span className="rounded-full bg-pink-500/20 px-3 py-1 text-sm text-pink-400">
+            {vehicle.status}
+          </span>
+
+        </div>
+
       </div>
-
-      <h3 className="text-2xl font-bold">
-        {vehicle.name}
-      </h3>
-
-      <p className="mt-3 text-zinc-400">
-        {vehicle.manufacturer}
-      </p>
-
-      <div className="mt-6 flex flex-wrap gap-2">
-
-        <span className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
-          {vehicle.category}
-        </span>
-
-        <span className="rounded-full bg-pink-500/20 px-3 py-1 text-sm text-pink-400">
-          {vehicle.status}
-        </span>
-
-      </div>
-
-    </div>
+    </Link>
   );
 }

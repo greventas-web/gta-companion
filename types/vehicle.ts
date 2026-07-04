@@ -5,4 +5,5 @@ export interface Vehicle {
   manufacturer: string;
   topSpeed: string;
   status: "Confirmed" | "Rumored";
+  image: string;
 }
