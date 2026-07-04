@@ -1,6 +1,27 @@
+"use client";
+
+import { useMemo, useState } from "react";
+
 import SearchBar from "@/components/SearchBar";
 
+const newsArticles = [
+  "Rockstar Newswire",
+  "GTA 6 Updates",
+  "Community Highlights",
+  "Patch Notes",
+  "Upcoming Features",
+  "Weekly Roundup",
+];
+
 export default function NewsPage() {
+  const [search, setSearch] = useState("");
+
+  const filteredNews = useMemo(() => {
+    return newsArticles.filter((article) =>
+      article.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search]);
+
   return (
     <main className="min-h-screen bg-background text-white">
       <section className="mx-auto max-w-7xl px-6 py-24">
@@ -19,44 +40,59 @@ export default function NewsPage() {
           trailers, community discoveries and official news.
         </p>
 
-        <SearchBar placeholder="Search news..." />
+        <SearchBar
+          placeholder="Search news..."
+          value={search}
+          onChange={setSearch}
+        />
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-          {[
-            "Rockstar Newswire",
-            "GTA 6 Updates",
-            "Community Highlights",
-            "Patch Notes",
-            "Upcoming Features",
-            "Weekly Roundup",
-          ].map((article) => (
+          {filteredNews.length === 0 ? (
 
-            <article
-              key={article}
-              className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:-translate-y-2 hover:border-pink-500"
-            >
+            <div className="col-span-full rounded-3xl border border-zinc-800 bg-zinc-900/40 p-16 text-center">
 
-              <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
-                News Image
-              </div>
-
-              <h2 className="text-2xl font-bold">
-                {article}
+              <h2 className="text-3xl font-bold">
+                No articles found
               </h2>
 
               <p className="mt-4 text-zinc-400">
-                Read the latest GTA Companion coverage with beautiful layouts,
-                screenshots and easy-to-read summaries.
+                Try searching for another article.
               </p>
 
-              <button className="mt-6 rounded-xl bg-pink-500 px-5 py-3 font-semibold transition hover:bg-pink-400">
-                Read Article
-              </button>
+            </div>
 
-            </article>
+          ) : (
 
-          ))}
+            filteredNews.map((article) => (
+
+              <article
+                key={article}
+                className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:-translate-y-2 hover:border-pink-500"
+              >
+
+                <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
+                  News Image
+                </div>
+
+                <h2 className="text-2xl font-bold">
+                  {article}
+                </h2>
+
+                <p className="mt-4 text-zinc-400">
+                  Read the latest GTA Companion coverage with beautiful layouts,
+                  screenshots and easy-to-read summaries.
+                </p>
+
+                <button className="mt-6 rounded-xl bg-pink-500 px-5 py-3 font-semibold transition hover:bg-pink-400">
+                  Read Article
+                </button>
+
+              </article>
+
+            ))
+
+          )}
 
         </div>
 
