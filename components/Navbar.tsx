@@ -1,63 +1,62 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-zinc-800/60 bg-black/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-[9999] border-b border-zinc-800 bg-black">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-8">
 
-        {/* Logo */}
-        <div className="flex cursor-pointer items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
 
           <Image
             src="/logo/logo.svg"
-            alt="GTA Companion Logo"
+            alt="GTA Companion"
             width={42}
             height={42}
             priority
           />
 
           <div>
-            <h1 className="text-2xl font-extrabold tracking-wide text-white">
+            <h1 className="text-2xl font-extrabold text-white">
               GTA Companion
             </h1>
 
-            <p className="-mt-1 text-xs uppercase tracking-[0.3em] text-pink-400">
+            <p className="text-xs uppercase tracking-[0.3em] text-pink-400">
               PREMIUM EDITION
             </p>
           </div>
 
-        </div>
+        </Link>
 
-        {/* Navigation */}
         <div className="flex items-center gap-8">
 
-          <a
-            href="#"
-            className="relative text-sm font-medium text-zinc-300 transition-all duration-300 hover:text-pink-400 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-pink-400 after:transition-all after:duration-300 hover:after:w-full"
+          <Link
+            href="/map"
+            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
           >
             Map
-          </a>
+          </Link>
 
-          <a
-            href="#"
-            className="relative text-sm font-medium text-zinc-300 transition-all duration-300 hover:text-pink-400 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-pink-400 after:transition-all after:duration-300 hover:after:w-full"
+          <Link
+            href="/vehicles"
+            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
           >
             Vehicles
-          </a>
+          </Link>
 
-          <a
-            href="#"
-            className="relative text-sm font-medium text-zinc-300 transition-all duration-300 hover:text-pink-400 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full"
+          <Link
+            href="/guides"
+            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
           >
             Guides
-          </a>
+          </Link>
 
-          <a
-            href="#"
-            className="relative text-sm font-medium text-zinc-300 transition-all duration-300 hover:text-pink-400 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-pink-400 after:transition-all after:duration-300 hover:after:w-full"
+          <Link
+            href="/news"
+            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
           >
             News
-          </a>
+          </Link>
 
         </div>
 
