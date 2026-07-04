@@ -8,7 +8,7 @@ export const vehicles: Vehicle[] = [
     manufacturer: "Bravado",
     topSpeed: "Unknown",
     status: "Confirmed",
-    image: "/vehicles/banshee.webp",
+    image: "/logo/logo.svg",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const vehicles: Vehicle[] = [
     manufacturer: "Vapid",
     topSpeed: "Unknown",
     status: "Confirmed",
-    image: "/vehicles/dominator.webp",
+    image: "/logo/logo.svg",
   },
   {
     id: 3,
@@ -26,6 +26,6 @@ export const vehicles: Vehicle[] = [
     manufacturer: "Pegassi",
     topSpeed: "Unknown",
     status: "Rumored",
-    image: "/vehicles/ignus.webp",
+    image: "/logo/logo.svg",
   },
 ];

@@ -1,3 +1,5 @@
+"use client";
+
 type SearchBarProps = {
   placeholder: string;
   value?: string;
