@@ -1,13 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import LaunchFeatures from "@/components/LaunchFeatures";
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <LaunchFeatures />
+      <Features />
+      <Footer />
     </>
   );
 }
