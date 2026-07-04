@@ -1,3 +1,5 @@
+import SearchBar from "@/components/SearchBar";
+
 export default function GuidesPage() {
   return (
     <main className="min-h-screen bg-background text-white">
@@ -20,17 +22,7 @@ export default function GuidesPage() {
           GTA Companion will become the ultimate GTA 6 knowledge base.
         </p>
 
-        {/* Search */}
-
-        <div className="mt-12">
-          <input
-            type="text"
-            placeholder="Search guides..."
-            className="w-full rounded-2xl border border-zinc-800 bg-zinc-900 px-6 py-4 text-lg outline-none transition focus:border-pink-500"
-          />
-        </div>
-
-        {/* Categories */}
+        <SearchBar placeholder="Search guides..." />
 
         <div className="mt-8 flex flex-wrap gap-4">
 
@@ -52,8 +44,6 @@ export default function GuidesPage() {
           ))}
 
         </div>
-
-        {/* Guide Cards */}
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
 

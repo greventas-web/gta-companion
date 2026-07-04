@@ -1,7 +1,8 @@
+import SearchBar from "@/components/SearchBar";
+
 export default function NewsPage() {
   return (
     <main className="min-h-screen bg-background text-white">
-
       <section className="mx-auto max-w-7xl px-6 py-24">
 
         <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-pink-400">
@@ -18,7 +19,9 @@ export default function NewsPage() {
           trailers, community discoveries and official news.
         </p>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <SearchBar placeholder="Search news..." />
+
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
 
           {[
             "Rockstar Newswire",
@@ -58,7 +61,6 @@ export default function NewsPage() {
         </div>
 
       </section>
-
     </main>
   );
 }
