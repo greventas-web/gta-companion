@@ -1,6 +1,4 @@
-import VehicleCard from "@/components/VehicleCard";
-import SearchBar from "@/components/SearchBar";
-import { vehicles } from "@/data/vehicles";
+import VehicleDatabase from "@/components/VehicleDatabase";
 
 import {
   Badge,
@@ -26,18 +24,7 @@ export default function VehiclesPage() {
             description="Browse every confirmed GTA 6 vehicle with statistics, manufacturers, locations and performance ratings."
           />
 
-          <SearchBar placeholder="Search vehicles..." />
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {vehicles.map((vehicle) => (
-              <VehicleCard
-                key={vehicle.id}
-                vehicle={vehicle}
-              />
-            ))}
-
-          </div>
+          <VehicleDatabase />
 
         </Container>
 
