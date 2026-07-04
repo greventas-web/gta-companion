@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Vehicle } from "@/types/vehicle";
+import { Card } from "@/components/ui";
 
 type VehicleCardProps = {
   vehicle: Vehicle;
@@ -12,7 +13,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
 
   return (
     <Link href={`/vehicles/${slug}`}>
-      <div className="cursor-pointer rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/10">
+      <Card className="cursor-pointer p-6 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/10">
 
         <div className="relative mb-6 h-52 overflow-hidden rounded-2xl bg-zinc-950">
 
@@ -45,7 +46,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
 
         </div>
 
-      </div>
+      </Card>
     </Link>
   );
 }

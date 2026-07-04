@@ -1,5 +1,7 @@
 "use client";
 
+import { Input } from "@/components/ui";
+
 type SearchBarProps = {
   placeholder: string;
   value?: string;
@@ -13,12 +15,10 @@ export default function SearchBar({
 }: SearchBarProps) {
   return (
     <div className="mt-12">
-      <input
-        type="text"
+      <Input
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange?.(e.target.value)}
-        className="w-full rounded-2xl border border-zinc-800 bg-zinc-900 px-6 py-4 text-lg text-white outline-none transition-all duration-300 placeholder:text-zinc-500 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20"
+        onChange={onChange}
       />
     </div>
   );

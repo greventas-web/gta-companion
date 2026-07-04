@@ -1,95 +1,65 @@
-"use client";
-
-import { useMemo, useState } from "react";
-
 import SearchBar from "@/components/SearchBar";
 
-const guides = [
-  "Best Ways to Make Money",
-  "Beginner's Guide",
-  "100% Completion Guide",
-  "Business Guide",
-  "Collectibles Guide",
-  "Weapon Guide",
-];
+import {
+  Badge,
+  Container,
+  PageHeader,
+  Section,
+  Card,
+} from "@/components/ui";
 
 export default function GuidesPage() {
-  const [search, setSearch] = useState("");
-
-  const filteredGuides = useMemo(() => {
-    return guides.filter((guide) =>
-      guide.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search]);
-
   return (
     <main className="min-h-screen bg-background text-white">
-      <section className="mx-auto max-w-7xl px-6 py-24">
 
-        <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-pink-400">
-          GTA 6 Guides
-        </span>
+      <Section>
 
-        <h1 className="mt-8 text-6xl font-extrabold md:text-7xl">
-          Learn.
-          <span className="text-pink-400"> Master.</span>
-          <br />
-          Dominate.
-        </h1>
+        <Container>
 
-        <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-400">
-          From beginner walkthroughs to advanced money-making strategies,
-          GTA Companion will become the ultimate GTA 6 knowledge base.
-        </p>
+          <Badge>GTA 6 Guides</Badge>
 
-        <SearchBar
-          placeholder="Search guides..."
-          value={search}
-          onChange={setSearch}
-        />
+          <PageHeader
+            title="Learn. Master. Dominate."
+            description="From beginner walkthroughs to advanced money-making strategies, GTA Companion will become the ultimate GTA 6 knowledge base."
+          />
 
-        <div className="mt-8 flex flex-wrap gap-4">
-          {[
-            "All",
-            "Money",
-            "Missions",
-            "Collectibles",
-            "Businesses",
-            "Vehicles",
-            "Weapons",
-          ].map((category) => (
-            <button
-              key={category}
-              className="rounded-full border border-zinc-700 px-5 py-2 transition hover:border-pink-500 hover:text-pink-400"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+          <SearchBar placeholder="Search guides..." />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-8 flex flex-wrap gap-4">
 
-          {filteredGuides.length === 0 ? (
+            {[
+              "All",
+              "Money",
+              "Missions",
+              "Collectibles",
+              "Businesses",
+              "Vehicles",
+              "Weapons",
+            ].map((category) => (
+              <button
+                key={category}
+                className="rounded-full border border-zinc-700 px-5 py-2 transition hover:border-pink-500 hover:text-pink-400"
+              >
+                {category}
+              </button>
+            ))}
 
-            <div className="col-span-full rounded-3xl border border-zinc-800 bg-zinc-900/40 p-16 text-center">
+          </div>
 
-              <h2 className="text-3xl font-bold">
-                No guides found
-              </h2>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-              <p className="mt-4 text-zinc-400">
-                Try searching for another guide.
-              </p>
+            {[
+              "Best Ways to Make Money",
+              "Beginner's Guide",
+              "100% Completion Guide",
+              "Business Guide",
+              "Collectibles Guide",
+              "Weapon Guide",
+            ].map((guide) => (
 
-            </div>
-
-          ) : (
-
-            filteredGuides.map((guide) => (
-
-              <div
+              <Card
                 key={guide}
-                className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:-translate-y-2 hover:border-pink-500"
+                className="p-8 transition hover:-translate-y-2 hover:border-pink-500"
               >
 
                 <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
@@ -101,19 +71,19 @@ export default function GuidesPage() {
                 </h3>
 
                 <p className="mt-3 text-zinc-400">
-                  Complete step-by-step guide with screenshots,
-                  tips and interactive tools.
+                  Complete step-by-step guide with screenshots, tips and interactive tools.
                 </p>
 
-              </div>
+              </Card>
 
-            ))
+            ))}
 
-          )}
+          </div>
 
-        </div>
+        </Container>
 
-      </section>
+      </Section>
+
     </main>
   );
 }
