@@ -23,55 +23,92 @@ export default function VehicleDatabase() {
   } = useVehicleSearch();
 
   return (
-    <>
-      <SearchBar
-        placeholder="Search vehicles..."
-        value={query}
-        onChange={setQuery}
-      />
+    <div className="mt-12">
 
-      <div className="mt-6 flex flex-wrap items-center gap-4">
+      <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
 
-        <VehicleFilters
-          categories={categories}
-          selectedCategory={category}
-          onCategoryChange={setCategory}
+        <SearchBar
+          placeholder="Search GTA VI vehicles..."
+          value={query}
+          onChange={setQuery}
         />
 
-        <VehicleSort
-          value={sort}
-          onChange={setSort}
-        />
+        <div className="mt-8">
 
-        <ResetFilters
-          onReset={resetFilters}
-        />
+          <VehicleFilters
+            categories={categories}
+            selectedCategory={category}
+            onCategoryChange={setCategory}
+          />
+
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+
+          <VehicleSort
+            value={sort}
+            onChange={setSort}
+          />
+
+          <ResetFilters
+            onReset={resetFilters}
+          />
+
+        </div>
 
       </div>
 
-      <p className="mt-6 text-zinc-400">
-        Showing <span className="font-semibold text-white">{filteredVehicles.length}</span> of{" "}
-        <span className="font-semibold text-white">{totalVehicles}</span> vehicles
-      </p>
+      <div className="mt-10 flex items-center justify-between">
+
+        <h2 className="text-2xl font-bold">
+          Vehicle Database
+        </h2>
+
+        <p className="text-zinc-400">
+          Showing{" "}
+          <span className="font-semibold text-white">
+            {filteredVehicles.length}
+          </span>{" "}
+          of{" "}
+          <span className="font-semibold text-white">
+            {totalVehicles}
+          </span>{" "}
+          vehicles
+        </p>
+
+      </div>
 
       {filteredVehicles.length === 0 ? (
-        <div className="mt-20 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-12 text-center">
-          <h2 className="text-3xl font-bold">No vehicles found</h2>
+
+        <div className="mt-12 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-16 text-center">
+
+          <h3 className="text-3xl font-bold">
+            No vehicles found
+          </h3>
 
           <p className="mt-4 text-zinc-400">
-            Try another search or category.
+            Try changing your search or selecting another category.
           </p>
+
         </div>
+
       ) : (
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
           {filteredVehicles.map((vehicle) => (
+
             <VehicleCard
               key={vehicle.id}
               vehicle={vehicle}
             />
+
           ))}
+
         </div>
+
       )}
-    </>
+
+    </div>
   );
 }

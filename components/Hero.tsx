@@ -1,97 +1,88 @@
-import { Badge, Button, Container } from "@/components/ui";
+import Link from "next/link";
+
+import {
+  Badge,
+  Button,
+  Container,
+  Heading,
+  Section,
+  Text,
+} from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-background text-white">
-
-      <div className="absolute inset-0 overflow-hidden">
-
-        <div className="absolute left-[-10%] top-[-10%] h-[520px] w-[520px] rounded-full bg-pink-500/10 blur-3xl" />
-
-        <div className="absolute bottom-[-15%] right-[-10%] h-[520px] w-[520px] rounded-full bg-violet-500/10 blur-3xl" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_65%)]" />
-
-      </div>
+    <Section>
 
       <Container>
 
-        <div className="relative z-10 max-w-4xl">
+        <Badge>
+          Official GTA VI Companion
+        </Badge>
 
-          <Badge>
-            GTA VI Companion Platform
-          </Badge>
+        <Heading>
+          The Ultimate GTA VI Database
+        </Heading>
 
-          <h1 className="mt-8 text-6xl font-black leading-[0.95] tracking-tight md:text-8xl">
+        <Text
+          variant="muted"
+          className="mt-8 max-w-3xl"
+        >
+          Browse confirmed GTA VI vehicles, manufacturers, guides,
+          locations, businesses, characters and more. Built using
+          official Rockstar information and continuously updated as
+          new content is revealed.
+        </Text>
 
-            Every Mission.
+        <div className="mt-12 flex flex-wrap gap-5">
 
-            <br />
+          <Button href="/vehicles">
+            Browse Vehicles
+          </Button>
 
-            Every Vehicle.
+          <Button
+            href="/manufacturers"
+            variant="secondary"
+          >
+            Manufacturers
+          </Button>
 
-            <br />
+        </div>
 
-            <span className="text-pink-400">
-              One Companion.
-            </span>
+        <div className="mt-20 grid gap-6 md:grid-cols-3">
 
-          </h1>
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
 
-          <p className="mt-10 max-w-2xl text-xl leading-9 text-zinc-400">
+            <h3 className="text-4xl font-black">
+              50+
+            </h3>
 
-            GTA Companion brings together vehicles, interactive maps,
-            businesses, collectibles, guides, news and powerful tools
-            in one premium platform built for GTA VI players.
-
-          </p>
-
-          <div className="mt-14 flex flex-wrap gap-4">
-
-            <Button href="/vehicles">
-              Browse Vehicles
-            </Button>
-
-            <Button
-              href="/guides"
-              variant="secondary"
-            >
-              Explore Guides
-            </Button>
+            <p className="mt-2 text-zinc-400">
+              Confirmed Vehicles
+            </p>
 
           </div>
 
-          <div className="mt-20 grid gap-8 sm:grid-cols-3">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
 
-            <div>
-              <h2 className="text-4xl font-black text-pink-400">
-                25+
-              </h2>
+            <h3 className="text-4xl font-black">
+              10
+            </h3>
 
-              <p className="mt-2 text-zinc-500">
-                Vehicles
-              </p>
-            </div>
+            <p className="mt-2 text-zinc-400">
+              Manufacturers
+            </p>
 
-            <div>
-              <h2 className="text-4xl font-black text-pink-400">
-                3
-              </h2>
+          </div>
 
-              <p className="mt-2 text-zinc-500">
-                Manufacturers
-              </p>
-            </div>
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
 
-            <div>
-              <h2 className="text-4xl font-black text-pink-400">
-                ∞
-              </h2>
+            <h3 className="text-4xl font-black">
+              100%
+            </h3>
 
-              <p className="mt-2 text-zinc-500">
-                Future Updates
-              </p>
-            </div>
+            <p className="mt-2 text-zinc-400">
+              Official Rockstar Sources
+            </p>
 
           </div>
 
@@ -99,6 +90,6 @@ export default function Hero() {
 
       </Container>
 
-    </section>
+    </Section>
   );
 }

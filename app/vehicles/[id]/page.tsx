@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import Breadcrumb from "@/components/Breadcrumb";
+
 import { vehicles } from "@/data/vehicles";
 
 type Props = {
@@ -10,33 +12,51 @@ type Props = {
   }>;
 };
 
-export default async function VehicleDetailsPage({ params }: Props) {
+export default async function VehicleDetailsPage({
+  params,
+}: Props) {
   const { id } = await params;
 
-  const vehicle = vehicles.find(
-    (v) => v.slug === id
-  );
+  const vehicle = vehicles.find((v) => v.slug === id);
 
   if (!vehicle) {
     notFound();
   }
 
+  const relatedVehicles = vehicles
+    .filter(
+      (v) =>
+        v.category === vehicle.category &&
+        v.slug !== vehicle.slug
+    )
+    .slice(0, 3);
+
   return (
     <main className="min-h-screen bg-background text-white">
+
       <section className="mx-auto max-w-7xl px-6 py-20">
 
-        <Link
-          href="/vehicles"
-          className="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm transition hover:border-pink-500 hover:text-pink-400"
-        >
-          ← Back to Vehicle Database
-        </Link>
+        <Breadcrumb
+          items={[
+            {
+              label: "Home",
+              href: "/",
+            },
+            {
+              label: "Vehicles",
+              href: "/vehicles",
+            },
+            {
+              label: vehicle.name,
+            },
+          ]}
+        />
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-2">
+        <div className="mt-10 grid gap-14 lg:grid-cols-2">
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+          <div>
 
-            <div className="relative h-[420px] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
 
               <Image
                 src={vehicle.image}
@@ -52,64 +72,43 @@ export default async function VehicleDetailsPage({ params }: Props) {
           <div>
 
             <span className="rounded-full bg-pink-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-400">
-              GTA VI Vehicle
+              {vehicle.category}
             </span>
 
             <h1 className="mt-6 text-6xl font-extrabold">
               {vehicle.name}
             </h1>
 
-            <p className="mt-6 text-lg leading-8 text-zinc-400">
+            <p className="mt-8 text-lg leading-8 text-zinc-400">
               {vehicle.description}
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-5">
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">Manufacturer</p>
+              <Info
+                label="Manufacturer"
+                value={vehicle.manufacturer}
+              />
 
-                <Link
-                  href={`/manufacturers/${vehicle.manufacturer.toLowerCase()}`}
-                  className="mt-2 block text-2xl font-bold text-pink-400 hover:underline"
-                >
-                  {vehicle.manufacturer}
-                </Link>
-              </div>
+              <Info
+                label="Seats"
+                value={vehicle.seats.toString()}
+              />
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">Category</p>
-                <h2 className="mt-2 text-2xl font-bold">
-                  {vehicle.category}
-                </h2>
-              </div>
+              <Info
+                label="Drivetrain"
+                value={vehicle.drivetrain}
+              />
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">Top Speed</p>
-                <h2 className="mt-2 text-2xl font-bold">
-                  {vehicle.topSpeed}
-                </h2>
-              </div>
+              <Info
+                label="Top Speed"
+                value={vehicle.topSpeed}
+              />
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">Drivetrain</p>
-                <h2 className="mt-2 text-2xl font-bold">
-                  {vehicle.drivetrain}
-                </h2>
-              </div>
-
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">Seats</p>
-                <h2 className="mt-2 text-2xl font-bold">
-                  {vehicle.seats}
-                </h2>
-              </div>
-
-              <div className="rounded-2xl border border-pink-500/30 bg-pink-500/10 p-6">
-                <p className="text-sm text-pink-300">Price</p>
-                <h2 className="mt-2 text-2xl font-bold text-pink-400">
-                  {vehicle.price}
-                </h2>
-              </div>
+              <Info
+                label="Price"
+                value={vehicle.price}
+              />
 
             </div>
 
@@ -117,7 +116,61 @@ export default async function VehicleDetailsPage({ params }: Props) {
 
         </div>
 
+        <div className="mt-24">
+
+          <h2 className="text-4xl font-bold">
+            Related Vehicles
+          </h2>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            {relatedVehicles.map((related) => (
+
+              <Link
+                key={related.id}
+                href={`/vehicles/${related.slug}`}
+                className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-pink-500"
+              >
+                <h3 className="text-2xl font-bold">
+                  {related.name}
+                </h3>
+
+                <p className="mt-2 text-zinc-400">
+                  {related.manufacturer}
+                </p>
+
+              </Link>
+
+            ))}
+
+          </div>
+
+        </div>
+
       </section>
+
     </main>
+  );
+}
+
+function Info({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+
+      <p className="text-sm text-zinc-500">
+        {label}
+      </p>
+
+      <h3 className="mt-2 text-2xl font-bold">
+        {value}
+      </h3>
+
+    </div>
   );
 }

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import VehicleCard from "@/components/VehicleCard";
+
 import { manufacturers } from "@/data/manufacturers";
 import { vehicles } from "@/data/vehicles";
 
@@ -11,7 +13,9 @@ type Props = {
   }>;
 };
 
-export default async function ManufacturerPage({ params }: Props) {
+export default async function ManufacturerPage({
+  params,
+}: Props) {
   const { slug } = await params;
 
   const manufacturer = manufacturers.find(
@@ -28,6 +32,7 @@ export default async function ManufacturerPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-background text-white">
+
       <section className="mx-auto max-w-7xl px-6 py-20">
 
         <Link
@@ -37,15 +42,18 @@ export default async function ManufacturerPage({ params }: Props) {
           ← Back to Manufacturers
         </Link>
 
-        <div className="mt-10 flex items-center gap-6">
+        <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-center">
 
-          <Image
-            src={manufacturer.logo}
-            alt={manufacturer.name}
-            width={90}
-            height={90}
-            className="rounded-2xl border border-zinc-800 bg-zinc-900 p-3"
-          />
+          <div className="relative h-32 w-32 rounded-3xl border border-zinc-800 bg-zinc-900">
+
+            <Image
+              src={manufacturer.logo}
+              alt={manufacturer.name}
+              fill
+              className="object-contain p-5"
+            />
+
+          </div>
 
           <div>
 
@@ -53,7 +61,11 @@ export default async function ManufacturerPage({ params }: Props) {
               {manufacturer.name}
             </h1>
 
-            <p className="mt-3 max-w-3xl text-xl text-zinc-400">
+            <p className="mt-4 text-zinc-400">
+              {manufacturer.country}
+            </p>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
               {manufacturer.description}
             </p>
 
@@ -61,47 +73,31 @@ export default async function ManufacturerPage({ params }: Props) {
 
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-20">
 
-          <span className="rounded-full bg-zinc-800 px-4 py-2">
-            {manufacturer.country}
-          </span>
+          <h2 className="text-4xl font-bold">
+            Vehicles
+          </h2>
 
-          <span className="rounded-full bg-zinc-800 px-4 py-2">
-            {manufacturer.vehicleCount} Vehicle
-            {manufacturer.vehicleCount !== 1 ? "s" : ""}
-          </span>
+          <p className="mt-3 text-zinc-500">
+            {manufacturerVehicles.length} vehicles
+          </p>
 
-        </div>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-        <h2 className="mt-16 text-3xl font-bold">
-          Vehicles
-        </h2>
+            {manufacturerVehicles.map((vehicle) => (
+              <VehicleCard
+                key={vehicle.id}
+                vehicle={vehicle}
+              />
+            ))}
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-
-          {manufacturerVehicles.map((vehicle) => (
-            <Link
-              key={vehicle.id}
-              href={`/vehicles/${vehicle.slug}`}
-            >
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:-translate-y-1 hover:border-pink-500">
-
-                <h3 className="text-2xl font-bold">
-                  {vehicle.name}
-                </h3>
-
-                <p className="mt-2 text-zinc-400">
-                  {vehicle.category}
-                </p>
-
-              </div>
-            </Link>
-          ))}
+          </div>
 
         </div>
 
       </section>
+
     </main>
   );
 }
