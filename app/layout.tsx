@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +17,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GTA Companion",
-  description: "The Ultimate GTA 6 Companion",
+  title: {
+    default: "GTA Companion",
+    template: "%s | GTA Companion",
+  },
+  description:
+    "The ultimate companion platform for GTA VI. Explore vehicles, manufacturers, guides, maps, news and much more.",
+  keywords: [
+    "GTA VI",
+    "GTA 6",
+    "GTA Companion",
+    "GTA Vehicles",
+    "Vice City",
+    "Rockstar Games",
+  ],
 };
 
 export default function RootLayout({
@@ -28,14 +42,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
-      <body>
-
-    
+      <body className="bg-background text-white antialiased">
 
         <Navbar />
 
         {children}
+
+        <Footer />
 
       </body>
     </html>

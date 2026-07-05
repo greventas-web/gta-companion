@@ -1,44 +1,17 @@
-import {
-  Badge,
-  Container,
-  Section,
-} from "@/components/ui";
+import Hero from "@/components/Hero";
+import FeaturedVehicles from "@/components/FeaturedVehicles";
+import FeaturedGuides from "@/components/FeaturedGuides";
+import FeaturedNews from "@/components/FeaturedNews";
+import Features from "@/components/Features";
 
-import PageTitle from "@/components/PageTitle";
-import ManufacturerCard from "@/components/ManufacturerCard";
-
-import { manufacturers } from "@/data/manufacturers";
-
-export default function ManufacturersPage() {
+export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-white">
-
-      <Section>
-
-        <Container>
-
-          <Badge>GTA 6 Manufacturers</Badge>
-
-          <PageTitle
-            title="Vehicle Manufacturers"
-            description="Browse every GTA VI vehicle manufacturer, their history, country of origin and vehicle lineup."
-          />
-
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {manufacturers.map((manufacturer) => (
-              <ManufacturerCard
-                key={manufacturer.id}
-                manufacturer={manufacturer}
-              />
-            ))}
-
-          </div>
-
-        </Container>
-
-      </Section>
-
-    </main>
+    <>
+      <Hero />
+      <FeaturedVehicles />
+      <FeaturedGuides />
+      <FeaturedNews />
+      <Features />
+    </>
   );
 }
