@@ -1,325 +1,520 @@
-# GTA Companion - Project Context
+# GTA Companion - Master Project Context
 
 ## Project Name
 
 GTA Companion
 
----
-
-# Vision
-
-Build the world's most useful companion platform for GTA players.
-
-The goal is to create a premium website and mobile app that helps players navigate, complete and enjoy GTA through beautiful design, accurate information and powerful tools.
-
-Long-term, the platform should support future GTA titles without rebuilding from scratch.
-
----
-
-# Founders
-
-Product Owner
+Founder:
 Gabrielius Reventas
 
-Lead Engineer & Technical Partner
+Lead Technical Partner:
 ChatGPT
 
 ---
 
-# Company Philosophy
+# Vision
 
-We build for players first.
+Build the world's best companion platform for GTA players.
 
-Quality over speed.
+Not another GTA wiki.
 
-No shortcuts.
+A premium application that helps players:
 
-Every feature must answer:
+- Explore
+- Discover
+- Complete
+- Master GTA
 
-- Does it help the player?
-- Would we use it ourselves?
-- Are we proud to publish it?
+Long-term support:
+
+- GTA VI
+- Future GTA titles
+- Website
+- Mobile Apps (iOS + Android)
+
+---
+
+# Philosophy
+
+Every feature must be:
+
+• Beautiful
+• Fast
+• Useful
+
+No feature is added unless it improves the player experience.
+
+Quality over quantity.
 
 ---
 
 # Brand Identity
 
-Style
-
-- Premium
-- Modern
-- Fast
-- Clean
-- Reliable
-- Player First
-
-Design Goal
-
-Simple but premium.
-
-Dark mode by default.
-
-Lots of breathing room.
-
-Smooth animations.
-
-Never overcrowded.
-
-Performance always comes before visual effects.
+Premium
+Modern
+Minimal
+Dark
+Fast
+Reliable
+Player First
 
 ---
 
-# Official Colors
+# Design
 
-Background
+Dark mode default
+
+Primary Background
 #09090B
 
 Surface
 #18181B
 
 Primary Accent
-#FF4FD8
+Pink
 
 Secondary Accent
-#8B5CF6
+Purple
 
-Primary Text
-White
+Rounded cards
 
-Secondary Text
-Zinc 400
+Large spacing
 
----
+Minimal animations
 
-# Current Folder Structure
-
-app/
-components/
-DESIGN/
-DOCS/
-public/
-
-Components
-
-Navbar.tsx
-Hero.tsx
-Footer.tsx
-LaunchFeatures.tsx
-
-Documentation
-
-PROJECT_BIBLE.md
-ROADMAP.md
-IDEAS.md
-DEVLOG.md
-PROJECT_CONTEXT.md
-
-Design
-
-brand.md
-design-system.md
+Premium feel
 
 ---
 
-# Current Homepage
+# Tech Stack
 
-Contains
+Next.js
 
-- Premium Navbar
-- Hero Section
-- Animated pink/purple glow
-- Explore button
-- Ready For Launch section
+TypeScript
 
----
+Tailwind CSS
 
-# Design Decisions
+App Router
 
-Logo
+Git
 
-Icon + Text
-
-Mascot
-
-Yes
-
-Create a unique GTA Companion symbol that becomes recognizable over time.
-
-Background
-
-Deep black
-
-Very slow drifting pink and purple glow.
-
-No heavy videos.
-
-No distracting animations.
-
-Feels alive without affecting performance.
+GitHub
 
 ---
 
-# Long-Term Features
+# Development Philosophy
 
-Interactive GTA 6 Map
+Never rush.
 
-Vehicle Database
+Every sprint:
 
-Weapon Database
+Create
 
-Businesses
-
-Collectible Tracker
-
-Money Making Guides
-
-Achievement Tracker
-
-Mission Walkthroughs
-
-News
-
-Community
-
-Accounts
-
-Cloud Sync
-
-Mobile Apps
-
-Android
-
-iPhone
-
-QR Code integration
-
----
-
-# Revenue Strategy
-
-Free Website
-
-Advertising
-
-Premium Membership
-
-No Ads
-
-Progress Sync
-
-Advanced Features
-
-Future Partnerships
-
-Affiliate Links
-
-Never lock core features behind payment.
-
----
-
-# Development Workflow
-
-Plan
-
-Design
-
-Build
+Paste
 
 Test
 
 Commit
 
-Push
+Continue
 
-Never skip steps.
+No skipping testing.
 
----
+No large rewrites.
 
-# Git Workflow
-
-Every feature ends with a Git commit.
-
-Meaningful commit messages only.
+Everything modular.
 
 ---
 
-# Version Roadmap
+# Current Architecture
 
-Alpha 0.1
-Foundation ✅
+Folders
 
-Alpha 0.2
-Brand & Design 🔄
+app/
 
-Alpha 0.3
+components/
+
+components/ui/
+
+data/
+
+docs/
+
+hooks/
+
+public/
+
+types/
+
+---
+
+# Data Files
+
+vehicles.ts
+
+manufacturers.ts
+
+guides.ts
+
+news.ts
+
+home.ts
+
+---
+
+# Types
+
+vehicle.ts
+
+manufacturer.ts
+
+guide.ts
+
+news.ts
+
+---
+
+# Hooks
+
+useVehicleSearch.ts
+
+Contains:
+
+Search
+
+Category Filter
+
+Sorting
+
+Reset Filters
+
+---
+
+# Current Features
+
+Homepage
+
+Hero
+
+Featured Vehicles
+
+Featured Guides
+
+Featured News
+
+Features
+
+Footer
+
+---
+
+Vehicle Database
+
+Vehicle Cards
+
+Live Search
+
+Category Filters
+
+Sorting
+
+Reset Filters
+
+Vehicle Counter
+
+No Results State
+
+Manufacturer Links
+
+---
+
+Manufacturers
+
+Manufacturer List
+
+Manufacturer Details
+
+Manufacturer Logos
+
+Vehicle Listing
+
+---
+
+Guides
+
+Guides Page
+
+Dynamic Guide Pages
+
+Featured Guides
+
+---
+
+News
+
+News Page
+
+Dynamic News Pages
+
+Featured News
+
+---
+
+Navigation
+
+Navbar
+
+Active Link Highlighting
+
+PageTitle Component
+
+Reusable UI Components
+
+---
+
+UI Components
+
+Button
+
+Badge
+
+Card
+
+Container
+
+Heading
+
+Section
+
+Text
+
+PageTitle
+
+HomeSection
+
+HomeSectionButton
+
+SectionGrid
+
+SearchBar
+
+VehicleCard
+
+ManufacturerCard
+
+VehicleFilters
+
+VehicleSort
+
+ResetFilters
+
+NavLink
+
+---
+
+Completed Milestones
+
+✓ Homepage
+
+✓ Vehicle Database
+
+✓ Manufacturer Database
+
+✓ Guides
+
+✓ News
+
+✓ Dynamic Routing
+
+✓ Search
+
+✓ Filters
+
+✓ Sorting
+
+✓ Reset Filters
+
+✓ Design System
+
+✓ Typed Models
+
+✓ Reusable Components
+
+---
+
+Future Roadmap
+
+Phase 1
+
+Expand database
+
+100+ vehicles
+
+50+ manufacturers
+
+100+ guides
+
+100+ news articles
+
+Real screenshots
+
+Real logos
+
+Vehicle stats
+
+Locations
+
+Performance
+
+Customization
+
+Variants
+
+---
+
+Phase 2
+
 Interactive Map
 
-Alpha 0.4
-Mobile Experience
+Collectibles
 
-Beta 1.0
-Public Launch
+Businesses
 
----
+Weapons
 
-# Current Status
+Properties
 
-Completed
+Random Events
 
-✅ Project Setup
+Mission Locations
 
-✅ GitHub Repository
+Filters
 
-✅ Git
-
-✅ Node.js
-
-✅ VS Code
-
-✅ Homepage
-
-✅ Components
-
-✅ Brand Guide
-
-✅ Design System
-
-✅ Official Color Palette
-
-✅ Animated Hero
-
-✅ Launch Features Section
-
-Currently Working On
-
-Alpha 0.2
-
-Homepage polish
-
-Animated background
-
-Logo
-
-Brand identity
-
-Upcoming
-
-Interactive Map Prototype
+Search
 
 ---
 
-# Rules Between Founders
+Phase 3
 
-We build something players genuinely love.
+Accounts
 
-We never chase shortcuts.
+Favorites
 
-Every improvement should make the product feel more premium.
+Bookmarks
 
-Think long-term.
+Recently Viewed
 
-Build ahead of demand.
+Cloud Sync
 
-We don't build the biggest GTA website.
+Profiles
 
-We build the most useful GTA Companion.
+---
+
+Phase 4
+
+Premium
+
+Membership
+
+Exclusive Guides
+
+Interactive Tools
+
+Save Builds
+
+Personal Lists
+
+No Ads
+
+---
+
+Phase 5
+
+Mobile Apps
+
+iOS
+
+Android
+
+Shared Backend
+
+Notifications
+
+Offline Mode
+
+---
+
+Business Plan
+
+Free Website
+
+Premium Membership
+
+Future Mobile App
+
+Advertising
+
+Affiliate Links
+
+Giveaways
+
+---
+
+Important Decisions
+
+Quality over speed.
+
+Reusable components first.
+
+Scalable architecture.
+
+Premium design.
+
+Player-first experience.
+
+No shortcuts.
+
+Everything typed.
+
+Everything modular.
+
+---
+
+Development Workflow
+
+ChatGPT always sends COMPLETE files.
+
+Never partial edits.
+
+User pastes complete files.
+
+Test after every sprint.
+
+Commit after stable milestones.
+
+---
+
+Current Status
+
+Foundation complete.
+
+Architecture stable.
+
+Dynamic routing complete.
+
+Ready to begin filling the platform with real GTA content.
+
+Next priorities:
+
+1. Real images
+2. Larger databases
+3. Manufacturer logos
+4. Favorites
+5. User accounts
+6. Interactive Map
+
+---
+
+Mission
+
+Build the best GTA companion platform available anywhere.

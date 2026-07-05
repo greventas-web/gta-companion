@@ -12,7 +12,7 @@ export default function Text({
   const styles = {
     body: "text-lg leading-8 text-white",
     muted: "text-lg leading-8 text-zinc-400",
-    small: "text-sm text-zinc-500",
+    small: "text-sm leading-6 text-zinc-500",
   };
 
   return (

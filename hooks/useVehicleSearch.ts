@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+
 import { vehicles } from "@/data/vehicles";
 
 export default function useVehicleSearch() {
@@ -8,10 +9,13 @@ export default function useVehicleSearch() {
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("default");
 
-  const categories = [
-    "All",
-    ...new Set(vehicles.map((vehicle) => vehicle.category)),
-  ];
+  const categories = useMemo(
+    () => [
+      "All",
+      ...new Set(vehicles.map((vehicle) => vehicle.category)),
+    ],
+    []
+  );
 
   const resetFilters = () => {
     setQuery("");
@@ -34,16 +38,17 @@ export default function useVehicleSearch() {
       return matchesSearch && matchesCategory;
     });
 
-    if (sort === "az") {
-      results = [...results].sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-    }
+    switch (sort) {
+      case "az":
+        results.sort((a, b) => a.name.localeCompare(b.name));
+        break;
 
-    if (sort === "za") {
-      results = [...results].sort((a, b) =>
-        b.name.localeCompare(a.name)
-      );
+      case "za":
+        results.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+
+      default:
+        break;
     }
 
     return results;

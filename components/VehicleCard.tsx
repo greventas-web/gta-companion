@@ -9,11 +9,9 @@ type VehicleCardProps = {
 };
 
 export default function VehicleCard({ vehicle }: VehicleCardProps) {
-  const slug = vehicle.name.toLowerCase().replace(/\s+/g, "-");
-
   return (
-    <Link href={`/vehicles/${slug}`}>
-      <Card className="cursor-pointer p-6 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/10">
+    <Link href={`/vehicles/${vehicle.slug}`}>
+      <Card className="cursor-pointer overflow-hidden p-6 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/10">
 
         <div className="relative mb-6 h-52 overflow-hidden rounded-2xl bg-zinc-950">
 
@@ -40,9 +38,27 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             {vehicle.category}
           </span>
 
-          <span className="rounded-full bg-pink-500/20 px-3 py-1 text-sm text-pink-400">
-            {vehicle.status}
+          <span className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
+            {vehicle.drivetrain}
           </span>
+
+          <span className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
+            {vehicle.seats} Seats
+          </span>
+
+        </div>
+
+        <div className="mt-6 space-y-2 border-t border-zinc-800 pt-6 text-sm">
+
+          <div className="flex justify-between">
+            <span className="text-zinc-400">Top Speed</span>
+            <span>{vehicle.topSpeed}</span>
+          </div>
+
+          <div className="flex justify-between">
+            <span className="text-zinc-400">Price</span>
+            <span>{vehicle.price}</span>
+          </div>
 
         </div>
 

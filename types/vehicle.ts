@@ -1,9 +1,22 @@
 export interface Vehicle {
   id: number;
+  slug: string;
+
   name: string;
-  category: string;
   manufacturer: string;
-  topSpeed: string;
-  status: "Confirmed" | "Rumored";
+  category: string;
+
   image: string;
+  gallery?: string[];
+
+  price: string;
+  topSpeed: string;
+  drivetrain: string;
+  seats: number;
+
+  description: string;
+
+  locations?: string[];
+  variants?: string[];
+  relatedGuides?: string[];
 }

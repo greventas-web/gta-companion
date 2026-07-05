@@ -1,66 +1,55 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import NavLink from "@/components/NavLink";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-[9999] border-b border-zinc-800 bg-black">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-8">
+    <header className="sticky top-0 z-50 border-b border-zinc-800/60 bg-background/80 backdrop-blur-xl">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
-        <Link href="/" className="flex items-center gap-3">
-
-          <Image
-            src="/logo/logo.svg"
-            alt="GTA Companion"
-            width={42}
-            height={42}
-            priority
-          />
-
-          <div>
-            <h1 className="text-2xl font-extrabold text-white">
-              GTA Companion
-            </h1>
-
-            <p className="text-xs uppercase tracking-[0.3em] text-pink-400">
-              PREMIUM EDITION
-            </p>
-          </div>
-
+        <Link
+          href="/"
+          className="text-2xl font-black tracking-tight"
+        >
+          GTA <span className="text-pink-400">Companion</span>
         </Link>
 
-        <div className="flex items-center gap-8">
+        <div className="hidden items-center gap-8 text-sm font-medium md:flex">
 
-          <Link
-            href="/map"
-            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
-          >
-            Map
-          </Link>
+          <NavLink href="/">
+            Home
+          </NavLink>
 
-          <Link
-            href="/vehicles"
-            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
-          >
+          <NavLink href="/vehicles">
             Vehicles
-          </Link>
+          </NavLink>
 
-          <Link
-            href="/guides"
-            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
-          >
+          <NavLink href="/manufacturers">
+            Manufacturers
+          </NavLink>
+
+          <NavLink href="/guides">
             Guides
-          </Link>
+          </NavLink>
 
-          <Link
-            href="/news"
-            className="text-sm font-medium text-zinc-300 transition hover:text-pink-400"
-          >
+          <NavLink href="/news">
             News
-          </Link>
+          </NavLink>
+
+          <NavLink href="/map">
+            Map
+          </NavLink>
 
         </div>
 
-      </div>
-    </nav>
+        <Link
+          href="/profile"
+          className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-sm font-semibold text-pink-400 transition hover:border-pink-500 hover:bg-pink-500 hover:text-white"
+        >
+          Profile
+        </Link>
+
+      </nav>
+    </header>
   );
 }

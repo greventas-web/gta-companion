@@ -1,9 +1,9 @@
 import VehicleDatabase from "@/components/VehicleDatabase";
+import PageTitle from "@/components/PageTitle";
 
 import {
   Badge,
   Container,
-  PageHeader,
   Section,
 } from "@/components/ui";
 
@@ -15,13 +15,11 @@ export default function VehiclesPage() {
 
         <Container>
 
-          <Badge>
-            GTA 6 Vehicle Database
-          </Badge>
+          <Badge>GTA 6 Vehicle Database</Badge>
 
-          <PageHeader
+          <PageTitle
             title="Every Vehicle. One Place."
-            description="Browse every confirmed GTA 6 vehicle with statistics, manufacturers, locations and performance ratings."
+            description="Browse every confirmed GTA VI vehicle with statistics, manufacturers, locations and performance ratings."
           />
 
           <VehicleDatabase />

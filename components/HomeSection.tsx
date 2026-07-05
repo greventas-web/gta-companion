@@ -15,16 +15,20 @@ export default function HomeSection({
     <Section>
       <Container>
 
-        <Heading>{title}</Heading>
+        <div className="mx-auto max-w-3xl text-center">
 
-        <Text
-          variant="muted"
-          className="mt-6 max-w-3xl"
-        >
-          {description}
-        </Text>
+          <Heading>{title}</Heading>
 
-        <div className="mt-12">
+          <Text
+            variant="muted"
+            className="mt-6 text-lg leading-8"
+          >
+            {description}
+          </Text>
+
+        </div>
+
+        <div className="mt-16">
           {children}
         </div>
 

@@ -6,8 +6,8 @@ export default function Heading({
   children,
 }: HeadingProps) {
   return (
-    <h1 className="mt-8 text-6xl font-extrabold md:text-7xl">
+    <h2 className="text-5xl font-black tracking-tight md:text-6xl">
       {children}
-    </h1>
+    </h2>
   );
 }

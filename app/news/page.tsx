@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import SearchBar from "@/components/SearchBar";
 
 import {
@@ -6,8 +8,9 @@ import {
   Container,
   PageHeader,
   Section,
-  Button,
 } from "@/components/ui";
+
+import { news } from "@/data/news";
 
 export default function NewsPage() {
   return (
@@ -21,47 +24,35 @@ export default function NewsPage() {
 
           <PageHeader
             title="Stay Updated."
-            description="The latest Rockstar announcements, GTA 6 updates, patch notes, trailers, community discoveries and official news."
+            description="The latest Rockstar announcements, GTA VI updates, patch notes, trailers, community discoveries and official news."
           />
 
           <SearchBar placeholder="Search news..." />
 
           <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-            {[
-              "Rockstar Newswire",
-              "GTA 6 Updates",
-              "Community Highlights",
-              "Patch Notes",
-              "Upcoming Features",
-              "Weekly Roundup",
-            ].map((article) => (
+            {news.map((article) => (
 
-              <Card
-                key={article}
-                className="p-8 transition hover:-translate-y-2 hover:border-pink-500"
+              <Link
+                key={article.id}
+                href={`/news/${article.slug}`}
               >
+                <Card className="h-full p-8 transition hover:-translate-y-2 hover:border-pink-500">
 
-                <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
-                  News Image
-                </div>
+                  <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
+                    News Image
+                  </div>
 
-                <h2 className="text-2xl font-bold">
-                  {article}
-                </h2>
+                  <h2 className="text-2xl font-bold">
+                    {article.title}
+                  </h2>
 
-                <p className="mt-4 text-zinc-400">
-                  Read the latest GTA Companion coverage with beautiful layouts,
-                  screenshots and easy-to-read summaries.
-                </p>
+                  <p className="mt-4 text-zinc-400">
+                    {article.description}
+                  </p>
 
-                <div className="mt-6">
-                  <Button>
-                    Read Article
-                  </Button>
-                </div>
-
-              </Card>
+                </Card>
+              </Link>
 
             ))}
 
