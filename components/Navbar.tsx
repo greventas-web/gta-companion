@@ -20,33 +20,21 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-8 lg:flex">
 
-          <NavLink href="/">
-            Home
-          </NavLink>
+          <NavLink href="/">Home</NavLink>
 
-          <NavLink href="/vehicles">
-            Vehicles
-          </NavLink>
+          <NavLink href="/vehicles">Vehicles</NavLink>
 
-          <NavLink href="/manufacturers">
-            Manufacturers
-          </NavLink>
+          <NavLink href="/manufacturers">Manufacturers</NavLink>
 
-          <NavLink href="/characters">
-            Characters
-          </NavLink>
+          <NavLink href="/characters">Characters</NavLink>
 
-          <NavLink href="/locations">
-            Locations
-          </NavLink>
+          <NavLink href="/locations">Locations</NavLink>
 
-          <NavLink href="/guides">
-            Guides
-          </NavLink>
+          <NavLink href="/businesses">Businesses</NavLink>
 
-          <NavLink href="/news">
-            News
-          </NavLink>
+          <NavLink href="/guides">Guides</NavLink>
+
+          <NavLink href="/news">News</NavLink>
 
         </nav>
 
