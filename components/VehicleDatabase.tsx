@@ -2,6 +2,9 @@
 
 import SearchBar from "@/components/SearchBar";
 import VehicleCard from "@/components/VehicleCard";
+import VehicleFilters from "@/components/VehicleFilters";
+import VehicleSort from "@/components/VehicleSort";
+import ResetFilters from "@/components/ResetFilters";
 
 import useVehicleSearch from "@/hooks/useVehicleSearch";
 
@@ -12,8 +15,11 @@ export default function VehicleDatabase() {
     category,
     setCategory,
     categories,
+    sort,
+    setSort,
     filteredVehicles,
     totalVehicles,
+    resetFilters,
   } = useVehicleSearch();
 
   return (
@@ -24,21 +30,22 @@ export default function VehicleDatabase() {
         onChange={setQuery}
       />
 
-      <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-6 flex flex-wrap items-center gap-4">
 
-        {categories.map((item) => (
-          <button
-            key={item}
-            onClick={() => setCategory(item)}
-            className={`rounded-full px-4 py-2 transition ${
-              category === item
-                ? "bg-pink-500 text-white"
-                : "border border-zinc-700 hover:border-pink-500"
-            }`}
-          >
-            {item}
-          </button>
-        ))}
+        <VehicleFilters
+          categories={categories}
+          selectedCategory={category}
+          onCategoryChange={setCategory}
+        />
+
+        <VehicleSort
+          value={sort}
+          onChange={setSort}
+        />
+
+        <ResetFilters
+          onReset={resetFilters}
+        />
 
       </div>
 

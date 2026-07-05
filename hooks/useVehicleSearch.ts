@@ -6,16 +6,23 @@ import { vehicles } from "@/data/vehicles";
 export default function useVehicleSearch() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
+  const [sort, setSort] = useState("default");
 
   const categories = [
     "All",
     ...new Set(vehicles.map((vehicle) => vehicle.category)),
   ];
 
+  const resetFilters = () => {
+    setQuery("");
+    setCategory("All");
+    setSort("default");
+  };
+
   const filteredVehicles = useMemo(() => {
     const search = query.toLowerCase().trim();
 
-    return vehicles.filter((vehicle) => {
+    let results = vehicles.filter((vehicle) => {
       const matchesSearch =
         vehicle.name.toLowerCase().includes(search) ||
         vehicle.manufacturer.toLowerCase().includes(search) ||
@@ -26,7 +33,21 @@ export default function useVehicleSearch() {
 
       return matchesSearch && matchesCategory;
     });
-  }, [query, category]);
+
+    if (sort === "az") {
+      results = [...results].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+    }
+
+    if (sort === "za") {
+      results = [...results].sort((a, b) =>
+        b.name.localeCompare(a.name)
+      );
+    }
+
+    return results;
+  }, [query, category, sort]);
 
   return {
     query,
@@ -34,7 +55,10 @@ export default function useVehicleSearch() {
     category,
     setCategory,
     categories,
+    sort,
+    setSort,
     filteredVehicles,
     totalVehicles: vehicles.length,
+    resetFilters,
   };
 }
