@@ -1,33 +1,51 @@
-import HomeSection from "@/components/HomeSection";
-import HomeSectionButton from "@/components/HomeSectionButton";
-import SectionGrid from "@/components/SectionGrid";
-import VehicleCard from "@/components/VehicleCard";
+import Link from "next/link";
+
+import HomeContainer from "@/components/home/HomeContainer";
+import Section from "@/components/home/Section";
+import SectionHeader from "@/components/home/SectionHeader";
 
 import { vehicles } from "@/data/vehicles";
 
+import VehicleCard from "@/components/VehicleCard";
+
 export default function FeaturedVehicles() {
-  const featuredVehicles = vehicles.slice(0, 3);
+  const featured = vehicles.slice(0, 3);
 
   return (
-    <HomeSection
-      title="Featured Vehicles"
-      description="Explore some of the latest confirmed GTA VI vehicles."
-    >
-      <SectionGrid>
+    <Section className="py-36">
 
-        {featuredVehicles.map((vehicle) => (
-          <VehicleCard
-            key={vehicle.id}
-            vehicle={vehicle}
+      <HomeContainer>
+
+        <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+
+          <SectionHeader
+            badge="Vehicle Database"
+            title="Featured Vehicles"
+            description="Explore detailed information, specifications, manufacturers and locations for every confirmed GTA VI vehicle."
           />
-        ))}
 
-      </SectionGrid>
+          <Link
+            href="/vehicles"
+            className="w-fit rounded-2xl border border-pink-500 px-6 py-4 font-bold text-pink-400 transition hover:bg-pink-500 hover:text-white"
+          >
+            View Complete Database
+          </Link>
 
-      <HomeSectionButton href="/vehicles">
-        View Full Vehicle Database
-      </HomeSectionButton>
+        </div>
 
-    </HomeSection>
+        <div className="grid gap-8 lg:grid-cols-3">
+
+          {featured.map((vehicle) => (
+            <VehicleCard
+              key={vehicle.slug}
+              vehicle={vehicle}
+            />
+          ))}
+
+        </div>
+
+      </HomeContainer>
+
+    </Section>
   );
 }

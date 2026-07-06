@@ -1,5 +1,6 @@
 export interface Vehicle {
   id: number;
+
   slug: string;
 
   name: string;
@@ -15,6 +16,8 @@ export interface Vehicle {
   seats: number;
 
   description: string;
+
+  firstAppearance: string;
 
   locations?: string[];
   variants?: string[];

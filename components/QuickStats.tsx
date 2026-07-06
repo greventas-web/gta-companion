@@ -1,60 +1,58 @@
-import { vehicles } from "@/data/vehicles";
-import { manufacturers } from "@/data/manufacturers";
+const stats = [
+  {
+    value: "50+",
+    title: "Confirmed Vehicles",
+    subtitle: "Official Rockstar data",
+    icon: "🚗",
+  },
+  {
+    value: "10+",
+    title: "Manufacturers",
+    subtitle: "Official & in-game brands",
+    icon: "🏭",
+  },
+  {
+    value: "100%",
+    title: "Official Sources",
+    subtitle: "Accurate & trusted information",
+    icon: "⭐",
+  },
+];
 
 export default function QuickStats() {
-  const categories = new Set(
-    vehicles.map((vehicle) => vehicle.category)
-  ).size;
-
   return (
-    <section className="mt-24">
+    <section className="relative z-30 mx-auto -mt-24 max-w-7xl px-6">
+      <div className="grid gap-8 lg:grid-cols-3">
+        {stats.map((stat) => (
+          <div
+            key={stat.title}
+            className="group overflow-hidden rounded-[32px] border border-zinc-800 bg-gradient-to-b from-zinc-900 to-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-pink-500 hover:shadow-[0_20px_60px_rgba(236,72,153,0.12)]"
+          >
+            <div className="flex items-start justify-between">
 
-      <div className="grid gap-6 md:grid-cols-4">
+              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-pink-500/10 text-5xl">
+                {stat.icon}
+              </div>
 
-        <Stat
-          title="Vehicles"
-          value={vehicles.length}
-        />
+              <div className="text-right">
+                <div className="text-6xl font-black leading-none">
+                  {stat.value}
+                </div>
+              </div>
 
-        <Stat
-          title="Manufacturers"
-          value={manufacturers.length}
-        />
+            </div>
 
-        <Stat
-          title="Categories"
-          value={categories}
-        />
+            <h3 className="mt-8 text-3xl font-black">
+              {stat.title}
+            </h3>
 
-        <Stat
-          title="Confirmed"
-          value="100%"
-        />
+            <p className="mt-3 text-lg text-zinc-400">
+              {stat.subtitle}
+            </p>
 
+          </div>
+        ))}
       </div>
-
     </section>
-  );
-}
-
-function Stat({
-  title,
-  value,
-}: {
-  title: string;
-  value: string | number;
-}) {
-  return (
-    <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
-
-      <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
-        {title}
-      </p>
-
-      <h2 className="mt-3 text-5xl font-black">
-        {value}
-      </h2>
-
-    </div>
   );
 }

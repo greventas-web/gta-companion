@@ -1,95 +1,90 @@
+import Image from "next/image";
 import Link from "next/link";
-
-import {
-  Badge,
-  Button,
-  Container,
-  Heading,
-  Section,
-  Text,
-} from "@/components/ui";
 
 export default function Hero() {
   return (
-    <Section>
+    <section className="relative overflow-hidden border-b border-zinc-900 bg-black">
 
-      <Container>
+      {/* Background */}
 
-        <Badge>
-          Official GTA VI Companion
-        </Badge>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,0.18),transparent_40%)]" />
 
-        <Heading>
-          The Ultimate GTA VI Database
-        </Heading>
+      {/* Hero Layout */}
 
-        <Text
-          variant="muted"
-          className="mt-8 max-w-3xl"
-        >
-          Browse confirmed GTA VI vehicles, manufacturers, guides,
-          locations, businesses, characters and more. Built using
-          official Rockstar information and continuously updated as
-          new content is revealed.
-        </Text>
+      <div className="relative mx-auto flex min-h-[900px] max-w-[1700px] items-center px-8">
 
-        <div className="mt-12 flex flex-wrap gap-5">
+        {/* Left Content */}
 
-          <Button href="/vehicles">
-            Browse Vehicles
-          </Button>
+        <div className="relative z-20 w-full max-w-[650px]">
 
-          <Button
-            href="/manufacturers"
-            variant="secondary"
-          >
-            Manufacturers
-          </Button>
-
-        </div>
-
-        <div className="mt-20 grid gap-6 md:grid-cols-3">
-
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
-
-            <h3 className="text-4xl font-black">
-              50+
-            </h3>
-
-            <p className="mt-2 text-zinc-400">
-              Confirmed Vehicles
-            </p>
-
+          <div className="inline-flex rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.35em] text-pink-400">
+            OFFICIAL GTA VI COMPANION
           </div>
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+          <h1 className="mt-8 text-7xl font-black leading-[0.88] tracking-tight xl:text-[110px]">
 
-            <h3 className="text-4xl font-black">
-              10
-            </h3>
+            The Ultimate
 
-            <p className="mt-2 text-zinc-400">
-              Manufacturers
-            </p>
+            <br />
 
-          </div>
+            <span className="text-pink-400">
+              GTA VI
+            </span>
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+            <br />
 
-            <h3 className="text-4xl font-black">
-              100%
-            </h3>
+            Companion
 
-            <p className="mt-2 text-zinc-400">
-              Official Rockstar Sources
-            </p>
+          </h1>
+
+          <p className="mt-10 max-w-xl text-xl leading-9 text-zinc-400">
+            Browse every officially confirmed vehicle,
+            character, location, business, guide,
+            weapon and more in one premium platform.
+          </p>
+
+          <div className="mt-12 flex gap-5">
+
+            <Link
+              href="/vehicles"
+              className="rounded-2xl bg-pink-500 px-8 py-4 font-bold transition hover:scale-105 hover:bg-pink-400"
+            >
+              Browse Database
+            </Link>
+
+            <Link
+              href="/guides"
+              className="rounded-2xl border border-zinc-700 bg-zinc-900/40 px-8 py-4 font-bold transition hover:border-pink-500"
+            >
+              Explore Guides
+            </Link>
 
           </div>
 
         </div>
 
-      </Container>
+        {/* Right Image */}
 
-    </Section>
+        <div className="absolute right-0 top-0 h-full w-[60%]">
+
+          <Image
+            src="/images/home/hero.jpg"
+            alt="Jason and Lucia"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+
+          {/* Better gradients */}
+
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+
+        </div>
+
+      </div>
+
+    </section>
   );
 }
