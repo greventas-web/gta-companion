@@ -1,6 +1,5 @@
 "use client";
 
-import SearchBar from "@/components/SearchBar";
 import VehicleCard from "@/components/VehicleCard";
 import VehicleFilters from "@/components/VehicleFilters";
 import VehicleSort from "@/components/VehicleSort";
@@ -27,10 +26,12 @@ export default function VehicleDatabase() {
 
       <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
 
-        <SearchBar
+        <input
+          type="text"
           placeholder="Search GTA VI vehicles..."
           value={query}
-          onChange={setQuery}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-full rounded-2xl border border-zinc-800 bg-zinc-900 px-5 py-4 text-white placeholder:text-zinc-500 outline-none transition focus:border-pink-500"
         />
 
         <div className="mt-8">
