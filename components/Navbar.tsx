@@ -34,6 +34,12 @@ export default function Navbar() {
 
           <NavLink href="/weapons">Weapons</NavLink>
 
+          <NavLink href="/animals">Animals</NavLink>
+
+          <NavLink href="/activities">Activities</NavLink>
+
+          <NavLink href="/brands">Brands</NavLink>
+
           <NavLink href="/guides">Guides</NavLink>
 
           <NavLink href="/news">News</NavLink>

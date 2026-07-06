@@ -9,7 +9,7 @@ export const locations: Location[] = [
     type: "City",
     image: "/images/locations/vice-city.webp",
     description:
-      "Vice City is the primary metropolitan area of Grand Theft Auto VI, inspired by Miami and officially revealed by Rockstar Games.",
+      "Vice City is the vibrant heart of Leonida, known for its beaches, nightlife and diverse neighborhoods. It serves as the primary metropolitan area in Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
     gallery: [],
   },
@@ -21,8 +21,8 @@ export const locations: Location[] = [
     type: "Island Chain",
     image: "/images/locations/leonida-keys.webp",
     description:
-      "The Leonida Keys are a tropical island chain featured in official GTA VI promotional material.",
-    firstAppearance: "Trailer 2",
+      "A tropical chain of islands featuring crystal-clear waters, marinas and luxury coastal living.",
+    firstAppearance: "Rockstar Website",
     gallery: [],
   },
   {
@@ -33,8 +33,8 @@ export const locations: Location[] = [
     type: "Wetlands",
     image: "/images/locations/grassrivers.webp",
     description:
-      "A vast swamp region filled with dangerous wildlife and remote locations.",
-    firstAppearance: "Trailer 2",
+      "A vast subtropical wetland home to dangerous wildlife, dense vegetation and remote waterways.",
+    firstAppearance: "Rockstar Website",
     gallery: [],
   },
   {
@@ -45,8 +45,8 @@ export const locations: Location[] = [
     type: "Town",
     image: "/images/locations/port-gellhorn.webp",
     description:
-      "A run-down coastal town officially introduced by Rockstar as part of Leonida.",
-    firstAppearance: "Trailer 2",
+      "A once-popular coastal destination now known for aging motels, shopping plazas and a struggling local economy.",
+    firstAppearance: "Rockstar Website",
     gallery: [],
   },
   {
@@ -57,8 +57,20 @@ export const locations: Location[] = [
     type: "Town",
     image: "/images/locations/ambrosia.webp",
     description:
-      "An industrial community in Leonida centered around local industry and commerce.",
-    firstAppearance: "Trailer 2",
+      "An industrial town where local industry plays a major role in everyday life throughout Leonida.",
+    firstAppearance: "Rockstar Website",
+    gallery: [],
+  },
+  {
+    id: 6,
+    slug: "mount-kalaga",
+    name: "Mount Kalaga",
+    region: "Northern Leonida",
+    type: "Mountain",
+    image: "/images/locations/mount-kalaga.webp",
+    description:
+      "A mountainous wilderness offering forests, hiking trails and rugged terrain far from the busy streets of Vice City.",
+    firstAppearance: "Rockstar Website",
     gallery: [],
   },
 ];

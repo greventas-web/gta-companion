@@ -3,26 +3,26 @@ import { Weapon } from "@/types/weapon";
 export const weapons: Weapon[] = [
   {
     id: 1,
-    slug: "pistol",
-    name: "Pistol",
+    slug: "glock-style-pistol",
+    name: "Standard Pistol",
     category: "Handgun",
-    image: "/images/weapons/pistol.webp",
+    image: "/images/weapons/standard-pistol.webp",
     description:
-      "A standard semi-automatic handgun featured in official Grand Theft Auto VI promotional material.",
+      "A modern semi-automatic handgun seen in official Grand Theft Auto VI trailers and promotional screenshots.",
     firstAppearance: "Trailer 1",
-    ammunition: "9mm",
+    ammunition: "9×19mm",
     gallery: [],
   },
   {
     id: 2,
-    slug: "combat-pistol",
-    name: "Combat Pistol",
+    slug: "compact-pistol",
+    name: "Compact Pistol",
     category: "Handgun",
-    image: "/images/weapons/combat-pistol.webp",
+    image: "/images/weapons/compact-pistol.webp",
     description:
-      "Compact service pistol observed in official Rockstar screenshots.",
-    firstAppearance: "Screenshots",
-    ammunition: "9mm",
+      "A concealable handgun carried by several characters in official GTA VI media.",
+    firstAppearance: "Rockstar Screenshots",
+    ammunition: "9×19mm",
     gallery: [],
   },
   {
@@ -32,7 +32,7 @@ export const weapons: Weapon[] = [
     category: "Assault Rifle",
     image: "/images/weapons/assault-rifle.webp",
     description:
-      "Automatic rifle shown in official GTA VI promotional media.",
+      "A military-style rifle visible during multiple action sequences in official GTA VI material.",
     firstAppearance: "Trailer 2",
     ammunition: "5.56×45mm",
     gallery: [],
@@ -44,7 +44,7 @@ export const weapons: Weapon[] = [
     category: "Shotgun",
     image: "/images/weapons/pump-shotgun.webp",
     description:
-      "Pump-action shotgun featured in official GTA VI footage.",
+      "A pump-action shotgun featured during close-quarters combat scenes.",
     firstAppearance: "Trailer 2",
     ammunition: "12 Gauge",
     gallery: [],
@@ -56,9 +56,21 @@ export const weapons: Weapon[] = [
     category: "Sniper Rifle",
     image: "/images/weapons/sniper-rifle.webp",
     description:
-      "Long-range precision rifle appearing in official Rockstar promotional material.",
-    firstAppearance: "Screenshots",
+      "A long-range precision rifle observed in official Rockstar promotional media.",
+    firstAppearance: "Rockstar Screenshots",
     ammunition: "7.62mm",
+    gallery: [],
+  },
+  {
+    id: 6,
+    slug: "rocket-launcher",
+    name: "Rocket Launcher",
+    category: "Heavy Weapon",
+    image: "/images/weapons/rocket-launcher.webp",
+    description:
+      "A heavy explosive launcher briefly visible in official GTA VI promotional material.",
+    firstAppearance: "Trailer 2",
+    ammunition: "Rocket",
     gallery: [],
   },
 ];
