@@ -15,11 +15,8 @@ import { guides } from "@/data/guides";
 export default function GuidesPage() {
   return (
     <main className="min-h-screen bg-background text-white">
-
       <Section>
-
         <Container>
-
           <Badge>GTA 6 Guides</Badge>
 
           <PageTitle
@@ -27,7 +24,7 @@ export default function GuidesPage() {
             description="From beginner walkthroughs to advanced money-making strategies, GTA Companion will become the ultimate GTA VI knowledge base."
           />
 
-          <SearchBar placeholder="Search guides..." />
+          <SearchBar />
 
           <div className="mt-8 flex flex-wrap gap-4">
             {["All", "Money", "Beginner", "Completion"].map((category) => (
@@ -41,15 +38,12 @@ export default function GuidesPage() {
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-3">
-
             {guides.map((guide) => (
-
               <Link
                 key={guide.id}
                 href={`/guides/${guide.slug}`}
               >
                 <Card className="h-full p-8 transition hover:-translate-y-2 hover:border-pink-500">
-
                   <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
                     Guide Cover
                   </div>
@@ -61,19 +55,12 @@ export default function GuidesPage() {
                   <p className="mt-3 text-zinc-400">
                     {guide.description}
                   </p>
-
                 </Card>
-
               </Link>
-
             ))}
-
           </div>
-
         </Container>
-
       </Section>
-
     </main>
   );
 }
