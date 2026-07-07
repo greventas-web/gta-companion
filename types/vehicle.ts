@@ -17,7 +17,7 @@ export interface Vehicle {
 
   description: string;
 
-  firstAppearance: string;
+  firstAppearance?: string;
 
   locations?: string[];
   variants?: string[];
