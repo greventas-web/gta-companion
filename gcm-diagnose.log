@@ -1,0 +1,196 @@
+﻿Diagnose log at 2026-07-11T12:13:33Z
+
+AppPath: C:\Users\gabe\AppData\Local\Programs\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Users\gabe\AppData\Local\Programs\Git\mingw64\bin\
+Version: 2.8.0+d5e8a3442d48cc5efe7014e093e44242c0bd395f
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26200)
+Reading environment variables... OK
+ Variables:
+SESSIONNAME=Console
+ProgramFiles(x86)=C:\Program Files (x86)
+MSYSTEM=MINGW64
+ProgramW6432=C:\Program Files
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+TMP=C:\Users\gabe\AppData\Local\Temp
+EFC_33728_2283032206=1
+VSCODE_GIT_ASKPASS_MAIN=c:\Users\gabe\AppData\Roaming\Code\User\globalStorage\vscode.git\askpass\70789581cae28aa7\askpass-main.js
+Path=C:/Users/gabe/AppData/Local/Programs/Git/mingw64/libexec/git-core;C:\Users\gabe\AppData\Local\Programs\Git\mingw64\bin;C:\Users\gabe\AppData\Local\Programs\Git\usr\bin;C:\Users\gabe\bin;c:\Users\gabe\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\gabe\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\gabe\AppData\Local\Microsoft\WindowsApps;C:\Users\gabe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gabe\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\gabe\AppData\Local\Programs\Git\cmd
+USERPROFILE=C:\Users\gabe
+VSCODE_GIT_IPC_HANDLE=\\.\pipe\vscode-git-7c773171fc-sock
+PROCESSOR_REVISION=b701
+TEMP=C:\Users\gabe\AppData\Local\Temp
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+LOGONSERVER=\\DC02
+TERM=xterm-256color
+USERNAME=gabe
+SystemRoot=C:\WINDOWS
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_612_QWPNHCIPWZLDVPGK
+GIT_EXEC_PATH=C:/Users/gabe/AppData/Local/Programs/Git/mingw64/libexec/git-core
+PLINK_PROTOCOL=ssh
+LEVEL_ZERO_V1_SDK_PATH=C:\Program Files\LevelZeroSDK\1.21.9\
+OneDrive=C:\Users\gabe\OneDrive
+PROCESSOR_ARCHITECTURE=AMD64
+CommonProgramFiles=C:\Program Files\Common Files
+ZES_ENABLE_SYSMAN=1
+VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+ProgramData=C:\ProgramData
+LANG=en_US.UTF-8
+GIT_ASKPASS=c:\Users\gabe\AppData\Roaming\Code\User\globalStorage\vscode.git\askpass\70789581cae28aa7\askpass.sh
+HOMEPATH=\Users\gabe
+IGCCSVC_DB=AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAW1S9zGF3GU+88Qca4wUmmwQAAAACAAAAAAAQZgAAAAEAACAAAAAMUSf1h2VRQeTEk4bVc6hQS9HKW/+wCnW/0GqPgG2KbgAAAAAOgAAAAAIAACAAAACaRjgjlsHp9zdIHZRwnvA29v0X1vEk7STSxlBBdZR5YmAAAAAxhwr8rjJZ/x6JFB2FlTBDJ/0TykbkMsvCeledmLqh9Ovhv9C1704Jkmxyly+jv3J5ZrTc9G0hqmtPW3wUk51hAl957LBjDDAEhpszXgmymyjJWisQsmhe1js3+D6j8X1AAAAA1tKqs737AGwdWJREyikeoBLwEzZUSBtdV9U630ADFbNDszrx5HlORmyAQJIq2YxnQIohjofRc6/3Vs3OUwy9Pw==
+COMPUTERNAME=GTS-AFTEHOUR01
+VSCODE_INJECTION=1
+ALLUSERSPROFILE=C:\ProgramData
+CommonProgramW6432=C:\Program Files\Common Files
+COPILOT_DEBUG_NONCE=4622041969d4a68a3383710985a44784
+EFC_33728_3789132940=1
+USERDNSDOMAIN=AD.GTSCARRIER.COM
+DriverData=C:\Windows\System32\Drivers\DriverData
+HOMEDRIVE=C:
+windir=C:\WINDOWS
+GIT_TRACE2_PARENT_SID=ee2952a7-8444-4a08-8b1c-e3f62d64e113
+SystemDrive=C:
+NUMBER_OF_PROCESSORS=20
+OS=Windows_NT
+EFC_33728_4126798990=1
+ProgramFiles=C:\Program Files
+ComSpec=C:\WINDOWS\system32\cmd.exe
+USERDOMAIN_ROAMINGPROFILE=GTS
+EFC_33728_2775293581=1
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+HOME=C:\Users\gabe
+PSModulePath=C:\Users\gabe\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+TMPDIR=C:\Users\gabe\AppData\Local\Temp
+APPDATA=C:\Users\gabe\AppData\Roaming
+USERDOMAIN=GTS
+PROCESSOR_LEVEL=6
+LOCALAPPDATA=C:\Users\gabe\AppData\Local
+EFC_33728_1592913036=1
+VSCODE_GIT_ASKPASS_NODE=C:\Users\gabe\AppData\Local\Programs\Microsoft VS Code\Code.exe
+TERM_PROGRAM_VERSION=1.128.0
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+COLORTERM=truecolor
+PUBLIC=C:\Users\Public
+TERM_PROGRAM=vscode
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\gabe\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\gabe\AppData\Local\Temp\fc5c435b89f56142dc3eb0c6'... OK
+Reading from temporary file 'C:\Users\gabe\AppData\Local\Temp\fc5c435b89f56142dc3eb0c6'... OK
+Deleting temporary file 'C:\Users\gabe\AppData\Local\Temp\fc5c435b89f56142dc3eb0c6'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\gabe
+UserDataDirectoryPath: C:\Users\gabe\.gcm
+GetCurrentDirectory(): C:\Users\gabe\Documents\gta-companion
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:50459/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.55.0.windows.2'
+Locating current repository...Git repository at 'C:/Users/gabe/Documents/gta-companion/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	http.sslbackend=schannel
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	core.fscache=true
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	core.symlinks=false
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	pull.rebase=false
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	credential.helper=manager
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Users/gabe/AppData/Local/Programs/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/gabe/.gitconfig	user.name=Gabrielius Reventas
+file:C:/Users/gabe/.gitconfig	user.email=greventas@gmail.com
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/greventas-web/gta-companion.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.development.vscode-merge-base=origin/main
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\gabe\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\gabe\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

@@ -8,7 +8,7 @@ export default function ResetFilters({
   return (
     <button
       onClick={onReset}
-      className="rounded-xl border border-zinc-700 px-4 py-3 transition hover:border-pink-500 hover:text-pink-400"
+      className="rounded-2xl border border-pink-500/30 bg-pink-500/10 px-6 py-3 font-semibold text-pink-400 transition-all duration-300 hover:border-pink-500 hover:bg-pink-500 hover:text-white hover:shadow-[0_0_30px_rgba(236,72,153,.25)]"
     >
       Reset Filters
     </button>

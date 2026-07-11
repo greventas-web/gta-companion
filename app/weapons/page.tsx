@@ -1,5 +1,6 @@
 import WeaponCard from "@/components/WeaponCard";
 import PageTitle from "@/components/PageTitle";
+import StatsCard from "@/components/StatsCard";
 
 import {
   Badge,
@@ -17,20 +18,45 @@ export default function WeaponsPage() {
 
         <Container>
 
-          <Badge>Official GTA VI Weapons</Badge>
+          <Badge>Official GTA VI Database</Badge>
 
           <PageTitle
-            title="Weapons"
-            description="Browse weapons officially shown by Rockstar Games for Grand Theft Auto VI."
+            title="Weapon Database"
+            description="Browse every officially confirmed GTA VI weapon including pistols, rifles, shotguns, melee weapons and future additions."
           />
+
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+            <StatsCard
+              label="Weapons"
+              value={weapons.length}
+            />
+
+            <StatsCard
+              label="Categories"
+              value={
+                new Set(
+                  weapons.map((weapon) => weapon.category)
+                ).size
+              }
+            />
+
+            <StatsCard
+              label="Confirmed"
+              value="100%"
+            />
+
+          </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             {weapons.map((weapon) => (
+
               <WeaponCard
                 key={weapon.id}
                 weapon={weapon}
               />
+
             ))}
 
           </div>

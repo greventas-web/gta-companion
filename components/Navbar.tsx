@@ -1,89 +1,107 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
 import MegaMenu from "./MegaMenu";
+import SearchDialog from "./search/SearchDialog";
 
 export default function Navbar() {
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setSearchOpen(true);
+      }
+    }
+
+    function handleScroll() {
+      setScrolled(window.scrollY > 20);
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-[100] border-b border-white/10 bg-black/70 backdrop-blur-3xl">
-
-      <div className="mx-auto flex h-20 max-w-[1700px] items-center justify-between px-8">
-
-        {/* Logo */}
-
-        <Link
-          href="/"
-          className="group flex items-center"
+    <>
+      <header className="fixed inset-x-0 top-0 z-[100] px-6 pt-5">
+        <div
+          className={`mx-auto flex h-20 max-w-[1700px] items-center justify-between rounded-3xl border transition-all duration-500 ${
+            scrolled
+              ? "border-pink-500/20 bg-black/80 shadow-[0_20px_70px_rgba(0,0,0,.55)] backdrop-blur-3xl"
+              : "border-white/10 bg-black/55 backdrop-blur-2xl"
+          }`}
         >
+          <div className="flex items-center px-8">
+            <Link href="/" className="group flex items-center">
+              <span className="text-[34px] font-black tracking-[-0.05em] text-white">
+                GTA
+              </span>
 
-          <span className="text-[42px] font-black tracking-[-0.05em] text-white transition duration-300">
+              <span className="ml-2 bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-[34px] font-black tracking-[-0.05em] text-transparent">
+                Companion
+              </span>
 
-            GTA
-
-          </span>
-
-          <span className="ml-2 text-[42px] font-black tracking-[-0.05em] text-pink-500 transition duration-300 group-hover:text-pink-400">
-
-            Companion
-
-          </span>
-
-          <span className="ml-2 -rotate-6 text-[44px] font-black italic text-pink-400 drop-shadow-[0_0_14px_rgba(236,72,153,.9)]">
-
-            VI
-
-          </span>
-
-        </Link>
-
-        {/* Navigation */}
-
-        <nav className="hidden items-center gap-10 xl:flex">
-
-          <NavLink href="/">
-            Home
-          </NavLink>
-
-          <MegaMenu />
-
-          <NavLink href="/map">
-            Map
-          </NavLink>
-
-          <NavLink href="/guides">
-            Guides
-          </NavLink>
-
-          <NavLink href="/news">
-            News
-          </NavLink>
-
-        </nav>
-
-        {/* Right */}
-
-        <div className="flex items-center gap-5">
-
-          <div className="hidden lg:block w-[320px]">
-
-            <SearchBar />
-
+              <span className="ml-2 text-[36px] font-black italic text-pink-400">
+                VI
+              </span>
+            </Link>
           </div>
 
-          <Link
-            href="/profile"
-            className="rounded-2xl border border-pink-500/50 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-pink-400 hover:bg-pink-500/10 hover:shadow-[0_0_30px_rgba(236,72,153,.25)]"
-          >
-            Profile
-          </Link>
+          <nav className="hidden items-center gap-2 xl:flex">
+            <NavLink href="/">Home</NavLink>
 
+            <MegaMenu />
+
+            <NavLink href="/map">Map</NavLink>
+
+            <NavLink href="/guides">Guides</NavLink>
+
+            <NavLink href="/news">News</NavLink>
+          </nav>
+
+          <div className="flex items-center gap-4 px-8">
+            <div
+              className="hidden lg:block"
+              onClick={() => setSearchOpen(true)}
+            >
+              <SearchBar />
+            </div>
+
+            <Link
+              href="/login"
+              className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 font-semibold text-white transition hover:border-pink-500/40"
+            >
+              Sign In
+            </Link>
+
+            <Link
+              href="/register"
+              className="rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(236,72,153,.30)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_55px_rgba(236,72,153,.45)]"
+            >
+              Join Free
+            </Link>
+          </div>
         </div>
+      </header>
 
-      </div>
-
-    </header>
+      <SearchDialog
+        open={searchOpen}
+        onClose={() => setSearchOpen(false)}
+      />
+    </>
   );
 }

@@ -8,15 +8,23 @@ export default function MegaMenu() {
     <div className="group relative">
 
       <button className="flex items-center gap-2 font-semibold text-white transition hover:text-pink-400">
+
         Explore
 
         <ChevronDown
           size={16}
-          className="transition group-hover:rotate-180"
+          className="transition duration-300 group-hover:rotate-180"
         />
+
       </button>
 
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-5 w-[340px] -translate-x-1/2 rounded-3xl border border-zinc-800 bg-zinc-950/95 p-6 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
+      {/* Hover Bridge */}
+
+      <div className="absolute left-0 top-full h-5 w-full" />
+
+      {/* Menu */}
+
+      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-0 w-[340px] -translate-x-1/2 rounded-3xl border border-zinc-800 bg-zinc-950/95 p-6 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
 
         <div className="grid gap-3">
 

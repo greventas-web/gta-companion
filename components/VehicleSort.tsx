@@ -8,16 +8,28 @@ export default function VehicleSort({
   onChange,
 }: VehicleSortProps) {
   return (
-    <div className="mt-6">
+    <div>
+
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white"
+        className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-white outline-none transition-all duration-300 hover:border-pink-500/50 focus:border-pink-500"
       >
-        <option value="default">Default</option>
-        <option value="az">Name (A–Z)</option>
-        <option value="za">Name (Z–A)</option>
+
+        <option value="default">
+          Default
+        </option>
+
+        <option value="az">
+          Name (A–Z)
+        </option>
+
+        <option value="za">
+          Name (Z–A)
+        </option>
+
       </select>
+
     </div>
   );
 }

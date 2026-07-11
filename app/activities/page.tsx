@@ -1,5 +1,6 @@
 import ActivityCard from "@/components/ActivityCard";
 import PageTitle from "@/components/PageTitle";
+import StatsCard from "@/components/StatsCard";
 
 import {
   Badge,
@@ -17,20 +18,47 @@ export default function ActivitiesPage() {
 
         <Container>
 
-          <Badge>Official GTA VI Activities</Badge>
+          <Badge>Official GTA VI Database</Badge>
 
           <PageTitle
-            title="Activities"
-            description="Explore activities and entertainment officially revealed throughout Leonida."
+            title="Activity Database"
+            description="Browse every officially confirmed activity, hobby, sport and recreational event available throughout Leonida."
           />
+
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+            <StatsCard
+              label="Activities"
+              value={activities.length}
+            />
+
+            <StatsCard
+              label="Categories"
+              value={
+                new Set(
+                  activities.map(
+                    (activity) => activity.category
+                  )
+                ).size
+              }
+            />
+
+            <StatsCard
+              label="Confirmed"
+              value="100%"
+            />
+
+          </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             {activities.map((activity) => (
+
               <ActivityCard
                 key={activity.id}
                 activity={activity}
               />
+
             ))}
 
           </div>

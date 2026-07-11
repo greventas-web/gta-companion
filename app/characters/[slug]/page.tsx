@@ -25,9 +25,9 @@ export default async function CharacterPage({
   }
 
   return (
-    <main className="min-h-screen bg-background text-white">
+    <main className="min-h-screen bg-black text-white">
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-[1700px] px-8 py-20">
 
         <Breadcrumb
           items={[
@@ -45,56 +45,61 @@ export default async function CharacterPage({
           ]}
         />
 
-        <div className="mt-10 grid gap-14 lg:grid-cols-2">
+        <div className="mt-12 grid gap-14 xl:grid-cols-[42%_58%]">
 
-          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
+          {/* Character Image */}
 
-            <Image
-              src={character.image}
-              alt={character.name}
-              fill
-              className="object-cover"
-            />
+          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
+
+            <div className="relative aspect-[3/4]">
+
+              <Image
+                src={character.image}
+                alt={character.name}
+                fill
+                priority
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+
+            </div>
 
           </div>
 
+          {/* Information */}
+
           <div>
 
-            <span className="rounded-full bg-pink-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-pink-400">
+            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.25em] text-pink-400">
+
               {character.role}
+
             </span>
 
-            <h1 className="mt-6 text-6xl font-extrabold">
+            <h1 className="mt-8 text-6xl font-black tracking-tight">
+
               {character.name}
+
             </h1>
 
-            <p className="mt-8 text-lg leading-8 text-zinc-400">
+            <p className="mt-8 text-xl leading-9 text-zinc-400">
+
               {character.description}
+
             </p>
 
-            <div className="mt-12 grid gap-5">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2">
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">
-                  Status
-                </p>
+              <Info
+                label="Status"
+                value={character.status}
+              />
 
-                <h2 className="mt-2 text-2xl font-bold">
-                  {character.status}
-                </h2>
-
-              </div>
-
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
-                <p className="text-sm text-zinc-500">
-                  First Appearance
-                </p>
-
-                <h2 className="mt-2 text-2xl font-bold">
-                  {character.firstAppearance}
-                </h2>
-
-              </div>
+              <Info
+                label="First Appearance"
+                value={character.firstAppearance}
+              />
 
             </div>
 
@@ -105,5 +110,31 @@ export default async function CharacterPage({
       </section>
 
     </main>
+  );
+}
+
+function Info({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
+
+      <p className="text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
+
+        {label}
+
+      </p>
+
+      <h3 className="mt-3 text-2xl font-black">
+
+        {value}
+
+      </h3>
+
+    </div>
   );
 }

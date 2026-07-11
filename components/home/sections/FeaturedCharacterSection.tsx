@@ -1,5 +1,5 @@
-import CharacterSpotlight from "./CharacterSpotlight";
+import FeaturedCharacters from "@/components/FeaturedCharacters";
 
 export default function FeaturedCharacterSection() {
-  return <CharacterSpotlight />;
+  return <FeaturedCharacters />;
 }

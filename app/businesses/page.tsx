@@ -1,5 +1,6 @@
 import BusinessCard from "@/components/BusinessCard";
 import PageTitle from "@/components/PageTitle";
+import StatsCard from "@/components/StatsCard";
 
 import {
   Badge,
@@ -17,20 +18,47 @@ export default function BusinessesPage() {
 
         <Container>
 
-          <Badge>Official GTA VI Businesses</Badge>
+          <Badge>Official GTA VI Database</Badge>
 
           <PageTitle
-            title="Businesses"
-            description="Browse businesses, shops, hotels, clubs and other establishments officially revealed in Grand Theft Auto VI."
+            title="Business Database"
+            description="Browse every officially confirmed business, hotel, shop, restaurant, nightclub and company across Leonida."
           />
+
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+            <StatsCard
+              label="Businesses"
+              value={businesses.length}
+            />
+
+            <StatsCard
+              label="Categories"
+              value={
+                new Set(
+                  businesses.map(
+                    (business) => business.category
+                  )
+                ).size
+              }
+            />
+
+            <StatsCard
+              label="Confirmed"
+              value="100%"
+            />
+
+          </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             {businesses.map((business) => (
+
               <BusinessCard
                 key={business.id}
                 business={business}
               />
+
             ))}
 
           </div>

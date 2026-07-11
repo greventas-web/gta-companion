@@ -1,71 +1,87 @@
+import PageTitle from "@/components/PageTitle";
+import StatsCard from "@/components/StatsCard";
+
+import {
+  Badge,
+  Button,
+  Card,
+  Container,
+  Section,
+} from "@/components/ui";
+
 export default function MapPage() {
   return (
     <main className="min-h-screen bg-background text-white">
 
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <Section>
 
-        <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-pink-400">
-          Interactive GTA 6 Map
-        </span>
+        <Container>
 
-        <h1 className="mt-8 text-6xl font-extrabold leading-tight md:text-7xl">
-          Explore
-          <span className="text-pink-400"> Vice City.</span>
-        </h1>
+          <Badge>Interactive GTA VI Map</Badge>
 
-        <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-400">
-          Discover every collectible, mission, business, vehicle, weapon,
-          property and hidden secret through the world's most advanced GTA 6
-          interactive map.
-        </p>
+          <PageTitle
+            title="Explore Leonida"
+            description="Discover every collectible, mission, business, property, weapon, easter egg and hidden secret through the world's most complete GTA VI interactive map."
+          />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-4">
+          <div className="mt-16 grid gap-6 md:grid-cols-4">
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h3 className="text-lg font-bold">500+</h3>
-            <p className="mt-2 text-zinc-400">Collectibles</p>
+            <StatsCard
+              label="Collectibles"
+              value="500+"
+            />
+
+            <StatsCard
+              label="Businesses"
+              value="150+"
+            />
+
+            <StatsCard
+              label="Progress"
+              value="100%"
+            />
+
+            <StatsCard
+              label="Updates"
+              value="Live"
+            />
+
           </div>
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h3 className="text-lg font-bold">150+</h3>
-            <p className="mt-2 text-zinc-400">Businesses</p>
-          </div>
+          <Card className="mt-16 overflow-hidden rounded-[40px] border-zinc-800 bg-zinc-900 p-0">
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h3 className="text-lg font-bold">100%</h3>
-            <p className="mt-2 text-zinc-400">Mission Tracking</p>
-          </div>
+            <div className="flex min-h-[600px] flex-col items-center justify-center bg-gradient-to-br from-zinc-900 via-black to-zinc-950 p-16 text-center">
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h3 className="text-lg font-bold">Live</h3>
-            <p className="mt-2 text-zinc-400">Community Updates</p>
-          </div>
+              <div className="mb-8 text-8xl">
+                🗺️
+              </div>
 
-        </div>
-
-        <div className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-20 text-center">
-
-          <div className="mx-auto flex h-96 items-center justify-center rounded-2xl border-2 border-dashed border-pink-500/30 bg-gradient-to-br from-zinc-900 to-zinc-950">
-
-            <div>
-
-              <h2 className="text-4xl font-bold">
+              <h2 className="text-5xl font-black">
                 Interactive Map Coming Soon
               </h2>
 
-              <p className="mt-4 max-w-xl text-zinc-400">
-                Our interactive GTA 6 map is currently under development.
-                Expect filters, progress tracking, collectibles, businesses,
-                easter eggs and much more.
+              <p className="mt-8 max-w-3xl text-xl leading-9 text-zinc-400">
+                We're building what we believe will become the most complete
+                GTA VI interactive map available. Track collectibles,
+                businesses, missions, random events, weapons, vehicles,
+                properties, easter eggs and your personal completion progress.
               </p>
+
+              <div className="mt-12">
+
+                <Button>
+                  Notify Me When It Launches
+                </Button>
+
+              </div>
 
             </div>
 
-          </div>
+          </Card>
 
-        </div>
+        </Container>
 
-      </section>
+      </Section>
 
     </main>
   );

@@ -14,24 +14,30 @@ export default function NavLink({
 }: Props) {
   const pathname = usePathname();
 
-  const active = pathname === href;
+  const active =
+    pathname === href ||
+    (href !== "/" && pathname.startsWith(href));
 
   return (
     <Link
       href={href}
-      className={`relative font-semibold transition duration-300 ${
+      className={`group relative flex h-11 items-center text-sm font-medium tracking-wide transition-all duration-300 ${
         active
           ? "text-pink-400"
-          : "text-white hover:text-pink-400"
+          : "text-zinc-300 hover:text-white"
       }`}
     >
-      {children}
+      <span>{children}</span>
 
       <span
-        className={`absolute -bottom-2 left-0 h-0.5 rounded-full bg-pink-400 transition-all duration-300 ${
+        className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-gradient-to-r from-pink-400 to-fuchsia-500 transition-all duration-300 ${
           active ? "w-full" : "w-0 group-hover:w-full"
         }`}
       />
+
+      {active && (
+        <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-pink-400 blur-sm opacity-70" />
+      )}
     </Link>
   );
 }

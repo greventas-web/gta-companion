@@ -12,23 +12,27 @@ export default function VehicleFilters({
   onCategoryChange,
 }: Props) {
   return (
-    <div className="mb-10 flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-3">
 
-      {categories.map((category) => (
+      {categories.map((category) => {
 
-        <button
-          key={category}
-          onClick={() => onCategoryChange(category)}
-          className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
-            selectedCategory === category
-              ? "bg-pink-500 text-white"
-              : "border border-zinc-800 bg-zinc-900 hover:border-pink-500 hover:text-pink-400"
-          }`}
-        >
-          {category}
-        </button>
+        const active = selectedCategory === category;
 
-      ))}
+        return (
+          <button
+            key={category}
+            onClick={() => onCategoryChange(category)}
+            className={`rounded-full border px-5 py-3 text-sm font-semibold transition-all duration-300 ${
+              active
+                ? "border-pink-500 bg-pink-500 text-white shadow-[0_0_30px_rgba(236,72,153,.25)]"
+                : "border-white/10 bg-white/5 text-zinc-400 hover:border-pink-500/50 hover:bg-pink-500/10 hover:text-pink-400"
+            }`}
+          >
+            {category}
+          </button>
+        );
+
+      })}
 
     </div>
   );

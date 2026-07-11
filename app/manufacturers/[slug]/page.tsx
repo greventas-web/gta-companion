@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import Breadcrumb from "@/components/Breadcrumb";
 import VehicleCard from "@/components/VehicleCard";
 
 import { manufacturers } from "@/data/manufacturers";
@@ -27,7 +27,8 @@ export default async function ManufacturerPage({
   }
 
   const manufacturerVehicles = vehicles.filter(
-    (v) => v.manufacturer === manufacturer.name
+    (vehicle) =>
+      vehicle.manufacturer === manufacturer.name
   );
 
   return (
@@ -35,35 +36,44 @@ export default async function ManufacturerPage({
 
       <section className="mx-auto max-w-7xl px-6 py-20">
 
-        <Link
-          href="/manufacturers"
-          className="text-pink-400 hover:underline"
-        >
-          ← Back to Manufacturers
-        </Link>
+        <Breadcrumb
+          items={[
+            {
+              label: "Home",
+              href: "/",
+            },
+            {
+              label: "Manufacturers",
+              href: "/manufacturers",
+            },
+            {
+              label: manufacturer.name,
+            },
+          ]}
+        />
 
-        <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-center">
+        <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center">
 
-          <div className="relative h-32 w-32 rounded-3xl border border-zinc-800 bg-zinc-900">
+          <div className="relative h-36 w-36 overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
 
             <Image
               src={manufacturer.logo}
               alt={manufacturer.name}
               fill
-              className="object-contain p-5"
+              className="object-contain p-6"
             />
 
           </div>
 
           <div>
 
-            <h1 className="text-6xl font-extrabold">
-              {manufacturer.name}
-            </h1>
-
-            <p className="mt-4 text-zinc-400">
+            <p className="text-sm uppercase tracking-[0.35em] text-pink-400">
               {manufacturer.country}
             </p>
+
+            <h1 className="mt-4 text-6xl font-extrabold">
+              {manufacturer.name}
+            </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
               {manufacturer.description}
@@ -80,16 +90,18 @@ export default async function ManufacturerPage({
           </h2>
 
           <p className="mt-3 text-zinc-500">
-            {manufacturerVehicles.length} vehicles
+            {manufacturerVehicles.length} confirmed vehicles
           </p>
 
           <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             {manufacturerVehicles.map((vehicle) => (
+
               <VehicleCard
                 key={vehicle.id}
                 vehicle={vehicle}
               />
+
             ))}
 
           </div>
