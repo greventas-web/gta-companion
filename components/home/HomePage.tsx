@@ -1,9 +1,9 @@
 import HeroSection from "./HeroSection";
 import BackgroundGlow from "./BackgroundGlow";
 
+import ExploreSection from "./sections/ExploreSection";
 import QuickStatsSection from "./sections/QuickStatsSection";
 import FeaturedDatabasesSection from "./sections/FeaturedDatabasesSection";
-import ExploreSection from "./sections/ExploreSection";
 
 import FeaturedVehicleSection from "./sections/FeaturedVehicleSection";
 import FeaturedCharacterSection from "./sections/FeaturedCharacterSection";
@@ -13,20 +13,19 @@ import FooterSection from "./sections/FooterSection";
 export default function HomePage() {
   return (
     <main className="relative overflow-hidden bg-black text-white">
-
       <BackgroundGlow />
 
       {/* Hero */}
       <HeroSection />
+
+      {/* Browse Categories */}
+      <ExploreSection />
 
       {/* Quick Stats */}
       <QuickStatsSection />
 
       {/* Featured Databases */}
       <FeaturedDatabasesSection />
-
-      {/* Explore Categories */}
-      <ExploreSection />
 
       {/* Featured Vehicle */}
       <FeaturedVehicleSection />
@@ -39,7 +38,6 @@ export default function HomePage() {
 
       {/* Footer */}
       <FooterSection />
-
     </main>
   );
 }

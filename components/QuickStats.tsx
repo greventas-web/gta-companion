@@ -27,7 +27,7 @@ const stats = [
 
 export default function QuickStats() {
   return (
-    <section className="relative z-30 mx-auto -mt-16 max-w-[1600px] px-8">
+    <section className="relative z-30 mx-auto -mt-8 max-w-[1600px] px-8">
       <div className="grid gap-6 lg:grid-cols-3">
         {stats.map((stat) => {
           const Icon = stat.icon;

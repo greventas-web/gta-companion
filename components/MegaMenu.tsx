@@ -3,62 +3,105 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
+const explore = [
+  {
+    title: "Official News",
+    description: "Latest Rockstar announcements",
+    href: "/news",
+  },
+  {
+    title: "Media Library",
+    description: "Trailers, screenshots & artwork",
+    href: "/media",
+  },
+  {
+    title: "Timeline",
+    description: "Every GTA VI event",
+    href: "/timeline",
+  },
+  {
+    title: "About",
+    description: "About GTA Companion",
+    href: "/about",
+  },
+];
+
+const database = [
+  { title: "Characters", href: "/characters" },
+  { title: "Vehicles", href: "/vehicles" },
+  { title: "Locations", href: "/locations" },
+  { title: "Weapons", href: "/weapons" },
+  { title: "Businesses", href: "/businesses" },
+  { title: "Brands", href: "/brands" },
+];
+
 export default function MegaMenu() {
   return (
-    <div className="group relative">
-
-      <button className="flex items-center gap-2 font-semibold text-white transition hover:text-pink-400">
-
+    <div className="group relative flex h-20 items-center">
+      <button className="flex items-center gap-2 text-[15px] font-semibold text-zinc-300 transition-all duration-300 hover:text-white">
         Explore
 
         <ChevronDown
-          size={16}
+          size={17}
           className="transition duration-300 group-hover:rotate-180"
         />
-
       </button>
 
-      {/* Hover Bridge */}
+      <div className="absolute left-0 top-full h-8 w-full" />
 
-      <div className="absolute left-0 top-full h-5 w-full" />
+      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-2 w-[860px] -translate-x-1/2 rounded-[34px] border border-white/10 bg-[#09090B]/95 p-9 opacity-0 shadow-[0_40px_120px_rgba(0,0,0,.75)] backdrop-blur-3xl transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-2 group-hover:opacity-100">
 
-      {/* Menu */}
+        <div className="grid grid-cols-[1.3fr_1fr] gap-10">
 
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-0 w-[340px] -translate-x-1/2 rounded-3xl border border-zinc-800 bg-zinc-950/95 p-6 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
+          <div>
 
-        <div className="grid gap-3">
+            <div className="mb-6 text-[11px] font-black uppercase tracking-[0.35em] text-pink-400">
+              EXPLORE
+            </div>
 
-          <Link href="/vehicles" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            🚗 Vehicles
-          </Link>
+            <div className="space-y-3">
 
-          <Link href="/manufacturers" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            🏭 Manufacturers
-          </Link>
+              {explore.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="block rounded-3xl border border-transparent p-5 transition-all duration-300 hover:border-pink-500/20 hover:bg-white/[0.04]"
+                >
+                  <div className="text-lg font-bold text-white">
+                    {item.title}
+                  </div>
 
-          <Link href="/characters" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            👤 Characters
-          </Link>
+                  <div className="mt-1 text-sm leading-6 text-zinc-400">
+                    {item.description}
+                  </div>
+                </Link>
+              ))}
 
-          <Link href="/locations" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            📍 Locations
-          </Link>
+            </div>
 
-          <Link href="/businesses" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            💼 Businesses
-          </Link>
+          </div>
 
-          <Link href="/weapons" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            🔫 Weapons
-          </Link>
+          <div>
 
-          <Link href="/animals" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            🐊 Animals
-          </Link>
+            <div className="mb-6 text-[11px] font-black uppercase tracking-[0.35em] text-pink-400">
+              DATABASES
+            </div>
 
-          <Link href="/activities" className="rounded-xl px-4 py-3 transition hover:bg-zinc-900 hover:text-pink-400">
-            🏄 Activities
-          </Link>
+            <div className="grid grid-cols-2 gap-3">
+
+              {database.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="flex h-16 items-center justify-center rounded-2xl border border-white/5 bg-white/[0.03] font-semibold text-white transition-all duration-300 hover:border-pink-500/30 hover:bg-white/[0.05]"
+                >
+                  {item.title}
+                </Link>
+              ))}
+
+            </div>
+
+          </div>
 
         </div>
 

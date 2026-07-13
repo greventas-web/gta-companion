@@ -2,40 +2,29 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background px-6 text-white">
+    <main className="flex min-h-screen items-center justify-center bg-[#040404] px-8 text-white">
 
-      <div className="max-w-3xl text-center">
+      <div className="max-w-2xl text-center">
 
-        <p className="text-sm font-bold uppercase tracking-[0.45em] text-pink-400">
-          Error 404
-        </p>
+        <div className="text-[140px] font-black leading-none text-pink-500">
+          404
+        </div>
 
-        <h1 className="mt-6 text-7xl font-black tracking-tight">
+        <h1 className="mt-6 text-5xl font-black">
           Page Not Found
         </h1>
 
-        <p className="mx-auto mt-8 max-w-2xl text-xl leading-9 text-zinc-400">
-          The page you're looking for doesn't exist or may have been moved.
-          Continue exploring GTA Companion using one of the links below.
+        <p className="mt-6 text-xl leading-9 text-zinc-400">
+          This page doesn't exist yet or Rockstar Games hasn't officially
+          revealed enough information.
         </p>
 
-        <div className="mt-14 flex flex-wrap justify-center gap-5">
-
-          <Link
-            href="/"
-            className="rounded-2xl bg-pink-500 px-8 py-4 font-bold transition hover:scale-105 hover:bg-pink-400"
-          >
-            Back Home
-          </Link>
-
-          <Link
-            href="/vehicles"
-            className="rounded-2xl border border-zinc-700 bg-zinc-900 px-8 py-4 font-bold transition hover:border-pink-500 hover:text-pink-400"
-          >
-            Vehicle Database
-          </Link>
-
-        </div>
+        <Link
+          href="/"
+          className="mt-10 inline-flex rounded-2xl bg-gradient-to-r from-pink-500 to-fuchsia-500 px-8 py-4 font-bold text-white"
+        >
+          Return Home
+        </Link>
 
       </div>
 

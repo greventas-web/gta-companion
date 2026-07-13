@@ -21,23 +21,25 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className={`group relative flex h-11 items-center text-sm font-medium tracking-wide transition-all duration-300 ${
-        active
-          ? "text-pink-400"
-          : "text-zinc-300 hover:text-white"
-      }`}
+      className="group relative flex h-20 items-center px-2"
     >
-      <span>{children}</span>
+      <span
+        className={`relative text-[15px] font-semibold tracking-[-0.01em] transition-all duration-300 ${
+          active
+            ? "text-white"
+            : "text-zinc-400 group-hover:text-white"
+        }`}
+      >
+        {children}
+      </span>
 
       <span
-        className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-gradient-to-r from-pink-400 to-fuchsia-500 transition-all duration-300 ${
-          active ? "w-full" : "w-0 group-hover:w-full"
+        className={`absolute bottom-0 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 transition-all duration-300 ${
+          active
+            ? "w-10 opacity-100"
+            : "w-0 opacity-0 group-hover:w-10 group-hover:opacity-100"
         }`}
       />
-
-      {active && (
-        <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-pink-400 blur-sm opacity-70" />
-      )}
     </Link>
   );
 }

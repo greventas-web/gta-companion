@@ -45,6 +45,8 @@ export default function Navbar() {
               : "border-white/10 bg-black/55 backdrop-blur-2xl"
           }`}
         >
+          {/* Logo */}
+
           <div className="flex items-center px-8">
             <Link href="/" className="group flex items-center">
               <span className="text-[34px] font-black tracking-[-0.05em] text-white">
@@ -61,17 +63,25 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <nav className="hidden items-center gap-2 xl:flex">
+          {/* Navigation */}
+
+          <nav className="hidden items-center gap-8 xl:flex">
+
             <NavLink href="/">Home</NavLink>
 
             <MegaMenu />
 
-            <NavLink href="/map">Map</NavLink>
-
-            <NavLink href="/guides">Guides</NavLink>
-
             <NavLink href="/news">News</NavLink>
+
+            <NavLink href="/media">Media</NavLink>
+
+            <NavLink href="/timeline">Timeline</NavLink>
+
+            <NavLink href="/about">About</NavLink>
+
           </nav>
+
+          {/* Right Side */}
 
           <div className="flex items-center gap-4 px-8">
             <div
