@@ -8,10 +8,9 @@ export const characters: Character[] = [
     image: "/images/characters/jason.jpg",
     role: "Protagonist",
     status: "Confirmed",
-    firstAppearance: "Trailer 1",
     description:
-      "Jason Duval is one of the two playable protagonists in Grand Theft Auto VI. Rockstar describes him as someone searching for an easier life, but trouble continues to find him.",
-    gallery: [],
+      "Jason Duval is one of the two playable protagonists in Grand Theft Auto VI.",
+    firstAppearance: "Trailer 1",
   },
   {
     id: 2,
@@ -20,22 +19,20 @@ export const characters: Character[] = [
     image: "/images/characters/lucia.jpg",
     role: "Protagonist",
     status: "Confirmed",
-    firstAppearance: "Trailer 1",
     description:
-      "Lucia Caminos is one of the two playable protagonists in Grand Theft Auto VI. Recently released from prison, she is determined to build a better future through calculated decisions.",
-    gallery: [],
+      "Lucia Caminos is one of the two playable protagonists in Grand Theft Auto VI.",
+    firstAppearance: "Trailer 1",
   },
   {
     id: 3,
     slug: "cal-hampton",
     name: "Cal Hampton",
     image: "/images/characters/cal.jpg",
-    role: "Supporting Character",
+    role: "Friend",
     status: "Confirmed",
-    firstAppearance: "Rockstar Website",
     description:
-      "Cal Hampton is Jason's friend. He spends much of his time monitoring communications and following conspiracy theories while living a quiet life.",
-    gallery: [],
+      "Cal Hampton is Jason's friend and spends much of his time following conspiracy theories.",
+    firstAppearance: "Trailer 2",
   },
   {
     id: 4,
@@ -44,10 +41,9 @@ export const characters: Character[] = [
     image: "/images/characters/boobie.jpg",
     role: "Business Owner",
     status: "Confirmed",
-    firstAppearance: "Rockstar Website",
     description:
-      "Boobie Ike is a Vice City entrepreneur with businesses spanning real estate, entertainment and music.",
-    gallery: [],
+      "Boobie Ike is a successful Vice City entrepreneur with several businesses.",
+    firstAppearance: "Trailer 2",
   },
   {
     id: 5,
@@ -56,10 +52,9 @@ export const characters: Character[] = [
     image: "/images/characters/drequan.jpg",
     role: "Music Producer",
     status: "Confirmed",
-    firstAppearance: "Rockstar Website",
     description:
-      "Dre'Quan Priest is building his music career and works closely with Only Raw Records in Vice City.",
-    gallery: [],
+      "Dre'Quan Priest dreams of becoming a major music producer in Vice City.",
+    firstAppearance: "Trailer 2",
   },
   {
     id: 6,
@@ -68,10 +63,9 @@ export const characters: Character[] = [
     image: "/images/characters/realdimez.jpg",
     role: "Music Duo",
     status: "Confirmed",
-    firstAppearance: "Rockstar Website",
     description:
       "Real Dimez are an up-and-coming music duo featured in GTA VI.",
-    gallery: [],
+    firstAppearance: "Trailer 2",
   },
   {
     id: 7,
@@ -80,21 +74,19 @@ export const characters: Character[] = [
     image: "/images/characters/raul.jpg",
     role: "Bank Robber",
     status: "Confirmed",
-    firstAppearance: "Rockstar Website",
     description:
-      "Raul Bautista is an experienced bank robber always searching for talented people willing to take dangerous risks.",
-    gallery: [],
+      "Raul Bautista is an experienced bank robber always searching for the next big score.",
+    firstAppearance: "Trailer 2",
   },
   {
     id: 8,
     slug: "brian-heder",
     name: "Brian Heder",
     image: "/images/characters/brian.jpg",
-    role: "Drug Smuggler",
+    role: "Smuggler",
     status: "Confirmed",
-    firstAppearance: "Rockstar Website",
     description:
-      "Brian Heder is a longtime drug smuggler operating in the Leonida Keys while letting others handle much of the dangerous work.",
-    gallery: [],
+      "Brian Heder is a veteran drug smuggler operating throughout Leonida.",
+    firstAppearance: "Trailer 2",
   },
 ];

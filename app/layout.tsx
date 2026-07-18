@@ -17,20 +17,70 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gtacompanion.com"),
+
   title: {
     default: "GTA Companion",
     template: "%s | GTA Companion",
   },
+
   description:
-    "The ultimate companion platform for GTA VI. Explore vehicles, manufacturers, guides, maps, news and much more.",
+    "The premium companion platform for Grand Theft Auto VI. Browse official Rockstar Games news, vehicles, characters, locations, media and more.",
+
   keywords: [
     "GTA VI",
     "GTA 6",
+    "Grand Theft Auto VI",
     "GTA Companion",
-    "GTA Vehicles",
-    "Vice City",
     "Rockstar Games",
+    "Vice City",
+    "Leonida",
+    "GTA VI Vehicles",
+    "GTA VI Characters",
+    "GTA VI Map",
+    "GTA VI News",
   ],
+
+  authors: [
+    {
+      name: "Gabrielius Reventas",
+    },
+  ],
+
+  creator: "Gabrielius Reventas",
+
+  publisher: "GTA Companion",
+
+  applicationName: "GTA Companion",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "GTA Companion",
+
+    description:
+      "The premium companion platform for Grand Theft Auto VI.",
+
+    url: "https://gtacompanion.com",
+
+    siteName: "GTA Companion",
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "GTA Companion",
+
+    description:
+      "The premium companion platform for Grand Theft Auto VI.",
+  },
 };
 
 export default function RootLayout({
@@ -44,7 +94,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-white antialiased">
+      <body className="bg-[#040404] text-white antialiased">
 
         <Navbar />
 

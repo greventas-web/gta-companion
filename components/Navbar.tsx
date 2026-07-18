@@ -38,18 +38,23 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-[100] px-6 pt-5">
+
         <div
-          className={`mx-auto flex h-20 max-w-[1700px] items-center justify-between rounded-3xl border transition-all duration-500 ${
+          className={`mx-auto flex h-20 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
             scrolled
-              ? "border-pink-500/20 bg-black/80 shadow-[0_20px_70px_rgba(0,0,0,.55)] backdrop-blur-3xl"
-              : "border-white/10 bg-black/55 backdrop-blur-2xl"
+              ? "border-pink-500/20 bg-black/80 shadow-[0_25px_80px_rgba(0,0,0,.60)] backdrop-blur-3xl"
+              : "border-white/10 bg-black/55 shadow-[0_10px_40px_rgba(0,0,0,.35)] backdrop-blur-2xl"
           }`}
         >
-          {/* Logo */}
 
           <div className="flex items-center px-8">
-            <Link href="/" className="group flex items-center">
-              <span className="text-[34px] font-black tracking-[-0.05em] text-white">
+
+            <Link
+              href="/"
+              className="group flex items-center"
+            >
+
+              <span className="text-[34px] font-black tracking-[-0.05em] text-white transition duration-300 group-hover:text-zinc-100">
                 GTA
               </span>
 
@@ -57,13 +62,13 @@ export default function Navbar() {
                 Companion
               </span>
 
-              <span className="ml-2 text-[36px] font-black italic text-pink-400">
+              <span className="ml-2 text-[36px] font-black italic text-pink-400 transition duration-300 group-hover:scale-110">
                 VI
               </span>
-            </Link>
-          </div>
 
-          {/* Navigation */}
+            </Link>
+
+          </div>
 
           <nav className="hidden items-center gap-8 xl:flex">
 
@@ -81,9 +86,8 @@ export default function Navbar() {
 
           </nav>
 
-          {/* Right Side */}
-
           <div className="flex items-center gap-4 px-8">
+
             <div
               className="hidden lg:block"
               onClick={() => setSearchOpen(true)}
@@ -93,19 +97,22 @@ export default function Navbar() {
 
             <Link
               href="/login"
-              className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 font-semibold text-white transition hover:border-pink-500/40"
+              className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08]"
             >
               Sign In
             </Link>
 
             <Link
               href="/register"
-              className="rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(236,72,153,.30)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_55px_rgba(236,72,153,.45)]"
+              className="rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(236,72,153,.30)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(236,72,153,.45)]"
             >
               Join Free
             </Link>
+
           </div>
+
         </div>
+
       </header>
 
       <SearchDialog

@@ -7,7 +7,7 @@ export const locations: Location[] = [
     name: "Vice City",
     region: "Leonida",
     type: "City",
-    image: "/images/locations/vice-city.webp",
+    image: "/images/locations/vice-city.jpg",
     description:
       "Vice City is the vibrant heart of Leonida, known for its beaches, nightlife and diverse neighborhoods. It serves as the primary metropolitan area in Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
@@ -19,7 +19,7 @@ export const locations: Location[] = [
     name: "Leonida Keys",
     region: "Leonida",
     type: "Island Chain",
-    image: "/images/locations/leonida-keys.webp",
+    image: "/images/locations/leonida-keys.jpg",
     description:
       "A tropical chain of islands featuring crystal-clear waters, marinas and luxury coastal living.",
     firstAppearance: "Rockstar Website",
@@ -31,7 +31,7 @@ export const locations: Location[] = [
     name: "Grassrivers",
     region: "Leonida",
     type: "Wetlands",
-    image: "/images/locations/grassrivers.webp",
+    image: "/images/locations/grassrivers.jpg",
     description:
       "A vast subtropical wetland home to dangerous wildlife, dense vegetation and remote waterways.",
     firstAppearance: "Rockstar Website",
@@ -43,7 +43,7 @@ export const locations: Location[] = [
     name: "Port Gellhorn",
     region: "Leonida",
     type: "Town",
-    image: "/images/locations/port-gellhorn.webp",
+    image: "/images/locations/port-gellhorn.jpg",
     description:
       "A once-popular coastal destination now known for aging motels, shopping plazas and a struggling local economy.",
     firstAppearance: "Rockstar Website",
@@ -55,7 +55,7 @@ export const locations: Location[] = [
     name: "Ambrosia",
     region: "Leonida",
     type: "Town",
-    image: "/images/locations/ambrosia.webp",
+    image: "/images/locations/ambrosia.jpg",
     description:
       "An industrial town where local industry plays a major role in everyday life throughout Leonida.",
     firstAppearance: "Rockstar Website",
@@ -67,7 +67,7 @@ export const locations: Location[] = [
     name: "Mount Kalaga",
     region: "Northern Leonida",
     type: "Mountain",
-    image: "/images/locations/mount-kalaga.webp",
+    image: "/images/locations/mount-kalaga.jpg",
     description:
       "A mountainous wilderness offering forests, hiking trails and rugged terrain far from the busy streets of Vice City.",
     firstAppearance: "Rockstar Website",

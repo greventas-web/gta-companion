@@ -22,21 +22,33 @@ export default function VehicleDatabase() {
   } = useVehicleSearch();
 
   return (
-    <div className="py-20">
+    <section className="mt-20">
 
-      {/* Controls */}
+      {/* Search Panel */}
 
-      <div className="rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-8">
+      <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black p-10 shadow-[0_30px_90px_rgba(0,0,0,.35)]">
+
+        <div className="mb-8">
+
+          <div className="text-xs font-black uppercase tracking-[0.45em] text-pink-400">
+            Search Database
+          </div>
+
+          <h2 className="mt-4 text-4xl font-black text-white">
+            Find Your Vehicle
+          </h2>
+
+        </div>
 
         <input
           type="text"
           placeholder="Search vehicles..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-lg text-white placeholder:text-zinc-500 outline-none transition focus:border-pink-500"
+          className="w-full rounded-3xl border border-white/10 bg-white/5 px-7 py-5 text-lg text-white placeholder:text-zinc-500 outline-none transition-all duration-300 focus:border-pink-500"
         />
 
-        <div className="mt-8">
+        <div className="mt-10">
 
           <VehicleFilters
             categories={categories}
@@ -46,7 +58,7 @@ export default function VehicleDatabase() {
 
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
 
           <VehicleSort
             value={sort}
@@ -61,57 +73,46 @@ export default function VehicleDatabase() {
 
       </div>
 
-      {/* Header */}
+      {/* Results */}
 
-      <div className="mt-14 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mt-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 
         <div>
 
-          <h2 className="text-4xl font-black tracking-tight">
+          <div className="text-xs font-black uppercase tracking-[0.4em] text-pink-400">
+            Database Results
+          </div>
 
-            All Vehicles
-
+          <h2 className="mt-4 text-5xl font-black">
+            {filteredVehicles.length} Vehicles
           </h2>
 
-          <p className="mt-2 text-zinc-400">
-
-            Browse the complete GTA VI vehicle database.
-
+          <p className="mt-4 text-lg text-zinc-400">
+            Showing {filteredVehicles.length} of {totalVehicles} officially
+            revealed GTA VI vehicles.
           </p>
-
-        </div>
-
-        <div className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-3 text-sm font-semibold text-pink-400">
-
-          {filteredVehicles.length} of {totalVehicles} Vehicles
 
         </div>
 
       </div>
 
-      {/* Empty State */}
-
       {filteredVehicles.length === 0 ? (
 
-        <div className="mt-14 rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-20 text-center">
+        <div className="mt-16 rounded-[36px] border border-white/10 bg-gradient-to-br from-[#121216] to-black p-24 text-center">
 
-          <h3 className="text-4xl font-black">
-
+          <h3 className="text-5xl font-black">
             No Vehicles Found
-
           </h3>
 
-          <p className="mt-5 text-lg text-zinc-400">
-
+          <p className="mt-6 text-xl text-zinc-400">
             Try changing your search or filters.
-
           </p>
 
         </div>
 
       ) : (
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
           {filteredVehicles.map((vehicle) => (
 
@@ -126,6 +127,6 @@ export default function VehicleDatabase() {
 
       )}
 
-    </div>
+    </section>
   );
 }

@@ -80,22 +80,29 @@ const cards = [
 
 export default function CategoryGridSection() {
   return (
-    <section className="bg-[#040404] py-28">
-      <div className="mx-auto max-w-[1700px] px-8">
+    <section className="relative overflow-hidden bg-[#040404] py-36">
+      <div className="absolute inset-0 pointer-events-none">
 
-        <div className="mb-14 text-center">
+  <div className="absolute left-[-250px] top-[-180px] h-[650px] w-[650px] rounded-full bg-pink-500/15 blur-[180px]" />
+
+  <div className="absolute right-[-250px] bottom-[-180px] h-[650px] w-[650px] rounded-full bg-violet-500/15 blur-[180px]" />
+
+</div>
+      <div className="relative mx-auto max-w-[1700px] px-8">
+
+        <div className="mb-20 text-center">
 
           <div className="text-xs font-black uppercase tracking-[0.45em] text-pink-400">
             Browse By Category
           </div>
 
-          <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white">
+          <h2 className="mx-auto mt-5 max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.05em] text-white lg:text-7xl">
             Explore Everything We Know
           </h2>
 
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
 
           {cards.map((card) => (
             <CategoryCard
