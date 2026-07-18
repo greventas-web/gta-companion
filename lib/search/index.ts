@@ -99,6 +99,6 @@ export const searchIndex: SearchItem[] = [
     href: `/news/${article.slug}`,
     category: "News" as const,
     image: article.image,
-    description: article.description,
+    description: article.summary,
   })),
 ].sort((a, b) => a.title.localeCompare(b.title));
