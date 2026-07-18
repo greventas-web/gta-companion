@@ -1,41 +1,24 @@
 import HeroV2 from "./HeroV2";
-
-import CategoryGridSection from "./sections/CategoryGridSection";
-import CharactersSection from "./sections/CharactersSection";
-import LocationsSection from "./sections/LocationsSection";
-import NewsSection from "./sections/NewsSection";
-import MediaSection from "./sections/MediaSection";
-
-import Footer from "../../shared/Footer";
+import HomeStatsV2 from "./HomeStatsV2";
+import FeaturedNewsV2 from "./FeaturedNewsV2";
+import FeaturedDatabaseV2 from "./FeaturedDatabaseV2";
+import MapPreviewV2 from "./MapPreviewV2";
+import WhyCompanionV2 from "./WhyCompanionV2";
 
 export default function HomePageV2() {
   return (
     <main className="overflow-x-hidden bg-[#040404] text-white">
-
       <HeroV2 />
 
-      <div className="relative">
-        <CategoryGridSection />
-      </div>
+      <HomeStatsV2 />
 
-      <div className="relative">
-        <CharactersSection />
-      </div>
+      <FeaturedNewsV2 />
 
-      <div className="relative">
-        <LocationsSection />
-      </div>
+      <FeaturedDatabaseV2 />
 
-      <div className="relative">
-        <NewsSection />
-      </div>
+      <MapPreviewV2 />
 
-      <div className="relative">
-        <MediaSection />
-      </div>
-
-      <Footer />
-
+      <WhyCompanionV2 />
     </main>
   );
 }

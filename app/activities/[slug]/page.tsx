@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ActivityCard from "@/components/ActivityCard";
 
 import { activities } from "@/data/activities";
 
@@ -34,9 +34,9 @@ export default async function ActivityPage({
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-background text-white">
+    <main className="min-h-screen bg-black text-white">
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-[1700px] px-8 py-20">
 
         <Breadcrumb
           items={[
@@ -54,18 +54,21 @@ export default async function ActivityPage({
           ]}
         />
 
-        <div className="mt-10 grid gap-14 lg:grid-cols-2">
+        <div className="mt-12 grid gap-14 xl:grid-cols-[42%_58%]">
 
-          <div>
+          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
 
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
+            <div className="relative aspect-[3/4]">
 
               <Image
                 src={activity.image}
                 alt={activity.name}
                 fill
+                priority
                 className="object-cover"
               />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
             </div>
 
@@ -73,19 +76,19 @@ export default async function ActivityPage({
 
           <div>
 
-            <span className="rounded-full bg-pink-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-400">
+            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.25em] text-pink-400">
               {activity.category}
             </span>
 
-            <h1 className="mt-6 text-6xl font-extrabold">
+            <h1 className="mt-8 text-6xl font-black tracking-tight">
               {activity.name}
             </h1>
 
-            <p className="mt-8 text-lg leading-8 text-zinc-400">
+            <p className="mt-8 text-xl leading-9 text-zinc-400">
               {activity.description}
             </p>
 
-            <div className="mt-10 grid grid-cols-2 gap-5">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2">
 
               <Info
                 label="Category"
@@ -113,41 +116,30 @@ export default async function ActivityPage({
 
         </div>
 
-        <div className="mt-24">
+        <section className="mt-28">
 
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-5xl font-black">
             Related Activities
           </h2>
 
-          <p className="mt-2 text-zinc-400">
+          <p className="mt-3 text-zinc-400">
             More activities from the same category.
           </p>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-            {relatedActivities.map((related) => (
+            {relatedActivities.map((activity) => (
 
-              <Link
-                key={related.id}
-                href={`/activities/${related.slug}`}
-                className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-pink-500"
-              >
-
-                <h3 className="text-2xl font-bold">
-                  {related.name}
-                </h3>
-
-                <p className="mt-2 text-zinc-400">
-                  {related.location}
-                </p>
-
-              </Link>
+              <ActivityCard
+                key={activity.id}
+                activity={activity}
+              />
 
             ))}
 
           </div>
 
-        </div>
+        </section>
 
       </section>
 
@@ -163,13 +155,13 @@ function Info({
   value: string;
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
 
-      <p className="text-sm text-zinc-500">
+      <p className="text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
         {label}
       </p>
 
-      <h3 className="mt-2 text-2xl font-bold">
+      <h3 className="mt-3 text-2xl font-black">
         {value}
       </h3>
 

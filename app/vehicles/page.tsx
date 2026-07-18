@@ -1,36 +1,44 @@
 import VehicleDatabase from "@/components/VehicleDatabase";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
+import PageStats from "@/components/PageStats";
+
+import { vehicles } from "@/data/vehicles";
 
 export default function VehiclesPage() {
   return (
-    <main className="min-h-screen bg-[#040404] text-white">
+    <PageShell>
+      <PageHero
+        badge="Official GTA VI Vehicles"
+        title="Vehicle Database"
+        description="Browse every officially revealed GTA VI vehicle, including manufacturers, vehicle categories, performance information and detailed specifications sourced from Rockstar Games."
+      />
 
-      <section className="relative overflow-hidden">
+      <PageStats
+        stats={[
+          {
+            value: vehicles.length,
+            label: "Confirmed Vehicles",
+          },
+          {
+            value: "Official",
+            label: "Rockstar Data",
+          },
+          {
+            value: "100%",
+            label: "Verified Information",
+            accent: true,
+          },
+        ]}
+      />
 
-        <div className="absolute left-[-220px] top-[-140px] h-[620px] w-[620px] rounded-full bg-pink-500/10 blur-[180px]" />
+      <VehicleDatabase />
 
-        <div className="absolute right-[-220px] bottom-[-140px] h-[620px] w-[620px] rounded-full bg-violet-500/10 blur-[180px]" />
-
-        <div className="relative mx-auto max-w-[1700px] px-8 pt-32 pb-10">
-
-          <div className="inline-flex rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
-            Official GTA VI Database
-          </div>
-
-          <h1 className="mt-8 text-7xl font-black tracking-[-0.05em] text-white">
-            Vehicles
-          </h1>
-
-          <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Browse every officially revealed GTA VI vehicle, including
-            manufacturers, performance information and detailed pages.
-          </p>
-
-          <VehicleDatabase />
-
-        </div>
-
-      </section>
-
-    </main>
+      <PageCTA
+        title="More Vehicles Coming Soon"
+        description="As Rockstar Games officially reveals additional cars, motorcycles, boats, aircraft and special vehicles, GTA Companion will continue expanding the database with specifications, screenshots and detailed information."
+      />
+    </PageShell>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { Character } from "@/types/character";
 
@@ -14,57 +15,62 @@ export default function CharacterCard({
       href={`/characters/${character.slug}`}
       className="group block"
     >
-      <article className="overflow-hidden rounded-[36px] border border-white/10 bg-[#09090B] transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:shadow-[0_45px_120px_rgba(236,72,153,.18)]">
+      <article className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900/95 via-zinc-950 to-black transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:shadow-[0_45px_130px_rgba(236,72,153,.20)]">
+
+        {/* Ambient Glow */}
+
+        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-pink-500/10 opacity-0 blur-[140px] transition duration-500 group-hover:opacity-100" />
+
+        <div className="absolute -left-20 bottom-0 h-60 w-60 rounded-full bg-violet-500/10 opacity-0 blur-[140px] transition duration-500 group-hover:opacity-100" />
 
         {/* Image */}
 
-        <div className="relative h-[560px] overflow-hidden bg-red-500">
-
-          <img
+        <div className="relative h-[560px] overflow-hidden">
+          <Image
             src={character.image}
             alt={character.name}
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            fill
+            className="object-cover transition duration-700 group-hover:scale-105"
           />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
 
           <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/60 px-5 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-400 backdrop-blur-xl">
             {character.role}
           </div>
-
         </div>
 
         {/* Content */}
 
-        <div className="p-8">
-
+        <div className="relative p-8">
           <div className="text-xs font-black uppercase tracking-[0.35em] text-zinc-500">
             {character.status}
           </div>
 
-          <h2 className="mt-4 text-[38px] font-black leading-none tracking-[-0.04em] text-white">
+          <h2 className="mt-4 text-[38px] font-black leading-none tracking-[-0.04em] text-white transition duration-300 group-hover:text-pink-300">
             {character.name}
           </h2>
 
-          <p className="mt-5 line-clamp-3 text-[17px] leading-8 text-zinc-400">
+          <p className="mt-5 min-h-[96px] line-clamp-3 text-[17px] leading-8 text-zinc-400">
             {character.description}
           </p>
 
           <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
-
-            <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-300">
+            <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-300 backdrop-blur-xl">
               Official
             </span>
 
-            <span className="font-bold text-pink-400 transition duration-300 group-hover:translate-x-1.5">
+            <span className="font-semibold text-pink-400 transition duration-300 group-hover:translate-x-2">
               View Profile →
             </span>
-
           </div>
 
           <div className="mt-6 text-sm text-zinc-500">
             First Appearance: {character.firstAppearance}
           </div>
-
         </div>
+
+        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-pink-500/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
 
       </article>
     </Link>

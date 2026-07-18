@@ -1,18 +1,15 @@
 export interface NewsArticle {
   id: number;
 
-  title: string;
   slug: string;
+
+  title: string;
 
   category: string;
 
   image: string;
 
-  description: string;
+  summary: string;
 
-  publishedAt: string;
-
-  author: string;
-
-  readingTime: string;
+  date: string;
 }

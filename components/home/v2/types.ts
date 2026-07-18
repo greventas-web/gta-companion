@@ -6,7 +6,7 @@ export interface Trailer {
   thumbnail: string;
 }
 
-export interface Character {
+export interface HomeCharacter {
   name: string;
   role: string;
   description: string;
@@ -14,7 +14,7 @@ export interface Character {
   href: string;
 }
 
-export interface Location {
+export interface HomeLocation {
   name: string;
   description: string;
   image: string;

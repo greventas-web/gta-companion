@@ -38,8 +38,6 @@ export default function VehicleCard({
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
-          <div className="absolute inset-0 bg-pink-500/0 transition duration-500 group-hover:bg-pink-500/5" />
-
           <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
             {vehicle.category}
           </div>
@@ -65,7 +63,7 @@ export default function VehicleCard({
           <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
 
             <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-300 backdrop-blur-xl">
-              {vehicle.seats} Seats
+              {vehicle.status}
             </span>
 
             <span className="font-semibold text-pink-400 transition duration-300 group-hover:translate-x-2">

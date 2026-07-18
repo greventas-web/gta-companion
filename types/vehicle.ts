@@ -4,22 +4,18 @@ export interface Vehicle {
   slug: string;
 
   name: string;
+
   manufacturer: string;
+
   category: string;
 
   image: string;
-  gallery?: string[];
-
-  price: string;
-  topSpeed: string;
-  drivetrain: string;
-  seats: number;
 
   description: string;
 
-  firstAppearance?: string;
+  firstAppearance: string;
 
-  locations?: string[];
-  variants?: string[];
-  relatedGuides?: string[];
+  status: string;
+
+  gallery: string[];
 }

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -35,7 +34,7 @@ export default async function VehicleDetailsPage({
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#040404] text-white">
 
       <section className="mx-auto max-w-[1700px] px-8 py-20">
 
@@ -77,7 +76,7 @@ export default async function VehicleDetailsPage({
 
           </div>
 
-          {/* Info */}
+          {/* Information */}
 
           <div>
 
@@ -107,23 +106,18 @@ export default async function VehicleDetailsPage({
               />
 
               <Info
-                label="Seats"
-                value={vehicle.seats.toString()}
+                label="Category"
+                value={vehicle.category}
               />
 
               <Info
-                label="Drivetrain"
-                value={vehicle.drivetrain}
+                label="Status"
+                value={vehicle.status}
               />
 
               <Info
-                label="Top Speed"
-                value={vehicle.topSpeed}
-              />
-
-              <Info
-                label="Price"
-                value={vehicle.price}
+                label="First Appearance"
+                value={vehicle.firstAppearance}
               />
 
             </div>
@@ -132,20 +126,16 @@ export default async function VehicleDetailsPage({
 
         </div>
 
-        {/* Related */}
+        {/* Related Vehicles */}
 
         <section className="mt-28">
 
           <h2 className="text-5xl font-black">
-
             Related Vehicles
-
           </h2>
 
           <p className="mt-3 text-zinc-400">
-
-            More vehicles from the same category.
-
+            More officially confirmed GTA VI vehicles.
           </p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">

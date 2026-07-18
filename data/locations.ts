@@ -9,7 +9,7 @@ export const locations: Location[] = [
     type: "City",
     image: "/images/locations/vice-city.jpg",
     description:
-      "Vice City is the vibrant heart of Leonida, known for its beaches, nightlife and diverse neighborhoods. It serves as the primary metropolitan area in Grand Theft Auto VI.",
+      "The vibrant heart of Leonida, inspired by Miami and serving as the main setting of Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
     gallery: [],
   },
@@ -21,8 +21,8 @@ export const locations: Location[] = [
     type: "Island Chain",
     image: "/images/locations/leonida-keys.jpg",
     description:
-      "A tropical chain of islands featuring crystal-clear waters, marinas and luxury coastal living.",
-    firstAppearance: "Rockstar Website",
+      "A tropical island chain featuring beaches, marinas and crystal-clear waters.",
+    firstAppearance: "Trailer 2",
     gallery: [],
   },
   {
@@ -33,44 +33,32 @@ export const locations: Location[] = [
     type: "Wetlands",
     image: "/images/locations/grassrivers.jpg",
     description:
-      "A vast subtropical wetland home to dangerous wildlife, dense vegetation and remote waterways.",
+      "A dangerous swamp ecosystem home to alligators and other wildlife.",
     firstAppearance: "Rockstar Website",
     gallery: [],
   },
   {
     id: 4,
-    slug: "port-gellhorn",
-    name: "Port Gellhorn",
-    region: "Leonida",
-    type: "Town",
-    image: "/images/locations/port-gellhorn.jpg",
-    description:
-      "A once-popular coastal destination now known for aging motels, shopping plazas and a struggling local economy.",
-    firstAppearance: "Rockstar Website",
-    gallery: [],
-  },
-  {
-    id: 5,
-    slug: "ambrosia",
-    name: "Ambrosia",
-    region: "Leonida",
-    type: "Town",
-    image: "/images/locations/ambrosia.jpg",
-    description:
-      "An industrial town where local industry plays a major role in everyday life throughout Leonida.",
-    firstAppearance: "Rockstar Website",
-    gallery: [],
-  },
-  {
-    id: 6,
     slug: "mount-kalaga",
     name: "Mount Kalaga",
     region: "Northern Leonida",
     type: "Mountain",
     image: "/images/locations/mount-kalaga.jpg",
     description:
-      "A mountainous wilderness offering forests, hiking trails and rugged terrain far from the busy streets of Vice City.",
+      "A mountainous wilderness offering forests, trails and rugged terrain.",
     firstAppearance: "Rockstar Website",
+    gallery: [],
+  },
+  {
+    id: 5,
+    slug: "port-gellhorn",
+    name: "Port Gellhorn",
+    region: "Leonida",
+    type: "Town",
+    image: "/images/locations/port-gellhorn.jpg",
+    description:
+      "A once-bustling coastal town with motels, industrial areas and waterfront businesses.",
+    firstAppearance: "Trailer 2",
     gallery: [],
   },
 ];

@@ -15,5 +15,13 @@ export interface Character {
 
   firstAppearance: string;
 
-  gallery?: string[];
+  gallery: string[];
+
+  relatedVehicles?: string[];
+
+  relatedLocations?: string[];
+
+  relatedBusinesses?: string[];
+
+  relatedBrands?: string[];
 }
