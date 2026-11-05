@@ -128,6 +128,16 @@ export default function RootLayout({
           </SearchProvider>
         </AuthProvider>
         <Script
+          id="vercel-analytics"
+          strategy="afterInteractive"
+        >
+          {`window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};`}
+        </Script>
+        <Script
+          src="/_vercel/insights/script.js"
+          strategy="afterInteractive"
+        />
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"
           crossOrigin="anonymous"
