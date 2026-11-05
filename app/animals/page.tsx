@@ -1,44 +1,44 @@
-import AnimalCard from "@/components/AnimalCard";
-import PageTitle from "@/components/PageTitle";
-
-import {
-  Badge,
-  Container,
-  Section,
-} from "@/components/ui";
+import AnimalDatabase from "@/components/AnimalDatabase";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
+import PageStats from "@/components/PageStats";
 
 import { animals } from "@/data/animals";
 
 export default function AnimalsPage() {
   return (
-    <main className="min-h-screen bg-background text-white">
+    <PageShell>
+      <PageHero
+        badge="Unofficial fan database"
+        title="Animal Database"
+        description="Browse every officially confirmed animal and wildlife species discovered across Leonida, including predators, marine life, birds and other native wildlife revealed by Rockstar Games."
+      />
 
-      <Section>
+      <PageStats
+        stats={[
+          {
+            value: animals.length,
+            label: "Confirmed Species",
+          },
+          {
+            value: "Leonida",
+            label: "Wildlife Region",
+          },
+          {
+            value: "100%",
+            label: "Verified Information",
+            accent: true,
+          },
+        ]}
+      />
 
-        <Container>
+      <AnimalDatabase />
 
-          <Badge>Official GTA VI Wildlife</Badge>
-
-          <PageTitle
-            title="Animals"
-            description="Discover the wildlife officially revealed throughout Leonida in Grand Theft Auto VI."
-          />
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {animals.map((animal) => (
-              <AnimalCard
-                key={animal.id}
-                animal={animal}
-              />
-            ))}
-
-          </div>
-
-        </Container>
-
-      </Section>
-
-    </main>
+      <PageCTA
+        title="More Wildlife Coming Soon"
+        description="As Rockstar Games officially reveals additional wildlife across Leonida, GTA Companion will continue expanding the animal database with detailed information, habitats and official screenshots."
+      />
+    </PageShell>
   );
 }

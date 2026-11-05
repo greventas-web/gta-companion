@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 
 type Props = {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function NavLink({
@@ -14,22 +15,38 @@ export default function NavLink({
 }: Props) {
   const pathname = usePathname();
 
-  const active = pathname === href;
+  const active =
+    pathname === href ||
+    (href !== "/" && pathname.startsWith(href));
 
   return (
     <Link
       href={href}
-      className={`relative font-semibold transition duration-300 ${
-        active
-          ? "text-pink-400"
-          : "text-white hover:text-pink-400"
-      }`}
+      className="group relative flex h-20 items-center px-4"
     >
-      {children}
+      <span
+        className={`relative z-10 text-[15px] font-semibold tracking-[-0.02em] transition-all duration-300 ${
+          active
+            ? "text-white"
+            : "text-zinc-400 group-hover:text-white"
+        }`}
+      >
+        {children}
+      </span>
 
       <span
-        className={`absolute -bottom-2 left-0 h-0.5 rounded-full bg-pink-400 transition-all duration-300 ${
-          active ? "w-full" : "w-0 group-hover:w-full"
+        className={`absolute bottom-0 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 transition-all duration-300 ${
+          active
+            ? "w-12 opacity-100"
+            : "w-0 opacity-0 group-hover:w-12 group-hover:opacity-100"
+        }`}
+      />
+
+      <span
+        className={`absolute left-1/2 top-1/2 h-12 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-500/10 blur-2xl transition-all duration-300 ${
+          active
+            ? "opacity-100"
+            : "opacity-0 group-hover:opacity-100"
         }`}
       />
     </Link>

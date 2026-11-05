@@ -1,63 +1,23 @@
 import VehicleDatabase from "@/components/VehicleDatabase";
-import PageTitle from "@/components/PageTitle";
-import StatsCard from "@/components/StatsCard";
-
-import {
-  Badge,
-  Container,
-  Section,
-} from "@/components/ui";
-
-import { vehicles } from "@/data/vehicles";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
 
 export default function VehiclesPage() {
   return (
-    <main className="min-h-screen bg-background text-white">
+    <PageShell>
+      <PageHero
+        badge="Unofficial fan database"
+        title="Vehicle Database"
+        description="Browse supercars, muscle cars, aircraft, and boats in this fan database. The pictures are original illustrations made for GTA Companion."
+      />
 
-      <Section>
+      <VehicleDatabase />
 
-        <Container>
-
-          <Badge>Official GTA VI Database</Badge>
-
-          <PageTitle
-            title="Vehicle Database"
-            description="Browse every confirmed Grand Theft Auto VI vehicle, manufacturer and category."
-          />
-
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-
-            <StatsCard
-              label="Vehicles"
-              value={vehicles.length}
-            />
-
-            <StatsCard
-              label="Manufacturers"
-              value={
-                new Set(
-                  vehicles.map((v) => v.manufacturer)
-                ).size
-              }
-            />
-
-            <StatsCard
-              label="Categories"
-              value={
-                new Set(
-                  vehicles.map((v) => v.category)
-                ).size
-              }
-            />
-
-          </div>
-
-          <VehicleDatabase />
-
-        </Container>
-
-      </Section>
-
-    </main>
+      <PageCTA
+        title="The Database Continues to Grow"
+        description="New fan notes and original illustrations are added when there is solid public information to write about."
+      />
+    </PageShell>
   );
 }

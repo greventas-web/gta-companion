@@ -1,66 +1,50 @@
-import Link from "next/link";
-
-import SearchBar from "@/components/SearchBar";
-import PageTitle from "@/components/PageTitle";
-
-import {
-  Badge,
-  Card,
-  Container,
-  Section,
-} from "@/components/ui";
+import GuideDatabase from "@/components/GuideDatabase";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
+import PageStats from "@/components/PageStats";
 
 import { guides } from "@/data/guides";
 
 export default function GuidesPage() {
+  const categories = new Set(
+    guides.map((guide) => guide.category)
+  ).size;
+
   return (
-    <main className="min-h-screen bg-background text-white">
-      <Section>
-        <Container>
-          <Badge>GTA 6 Guides</Badge>
+    <PageShell>
 
-          <PageTitle
-            title="Learn. Master. Dominate."
-            description="From beginner walkthroughs to advanced money-making strategies, GTA Companion will become the ultimate GTA VI knowledge base."
-          />
+      <PageHero
+        badge="Unofficial fan database"
+        title="Guides"
+        description="Browse official GTA VI guides, walkthroughs, tips, strategies and gameplay information to help you explore every part of Leonida."
+      />
 
-          <SearchBar />
+      <PageStats
+        stats={[
+          {
+            value: guides.length,
+            label: "Published Guides",
+          },
+          {
+            value: categories,
+            label: "Guide Categories",
+          },
+          {
+            value: "Official",
+            label: "Verified Content",
+            accent: true,
+          },
+        ]}
+      />
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            {["All", "Money", "Beginner", "Completion"].map((category) => (
-              <button
-                key={category}
-                className="rounded-full border border-zinc-700 px-5 py-2 transition hover:border-pink-500 hover:text-pink-400"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+      <GuideDatabase />
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {guides.map((guide) => (
-              <Link
-                key={guide.id}
-                href={`/guides/${guide.slug}`}
-              >
-                <Card className="h-full p-8 transition hover:-translate-y-2 hover:border-pink-500">
-                  <div className="mb-8 flex h-40 items-center justify-center rounded-2xl border border-dashed border-zinc-700">
-                    Guide Cover
-                  </div>
+      <PageCTA
+        title="More Guides Are On The Way"
+        description="Every official GTA VI reveal will be transformed into detailed walkthroughs, strategy guides, collectible locations and gameplay tips as Rockstar releases more information."
+      />
 
-                  <h3 className="text-2xl font-bold">
-                    {guide.title}
-                  </h3>
-
-                  <p className="mt-3 text-zinc-400">
-                    {guide.description}
-                  </p>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </Section>
-    </main>
+    </PageShell>
   );
 }

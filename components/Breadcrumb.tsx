@@ -11,7 +11,10 @@ export default function Breadcrumb({
   items,
 }: BreadcrumbProps) {
   return (
-    <nav className="flex flex-wrap items-center gap-2 text-sm text-zinc-500">
+    <nav
+  aria-label="Breadcrumb"
+  className="flex flex-wrap items-center gap-2 text-sm text-zinc-500"
+>
       {items.map((item, index) => (
         <div
           key={item.label}

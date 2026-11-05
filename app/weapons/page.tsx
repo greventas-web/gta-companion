@@ -1,44 +1,25 @@
-import WeaponCard from "@/components/WeaponCard";
-import PageTitle from "@/components/PageTitle";
-
-import {
-  Badge,
-  Container,
-  Section,
-} from "@/components/ui";
-
-import { weapons } from "@/data/weapons";
+import WeaponDatabase from "@/components/WeaponDatabase";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
 
 export default function WeaponsPage() {
   return (
-    <main className="min-h-screen bg-background text-white">
+    <PageShell>
 
-      <Section>
+      <PageHero
+        badge="Grand Theft Auto Weapons"
+        title="Weapon Database"
+        description="Browse handguns, rifles, shotguns, heavy weapons, melee weapons and explosives from across the Grand Theft Auto universe. GTA Companion clearly identifies officially confirmed GTA VI weapons while preserving the history of the series."
+      />
 
-        <Container>
+      <WeaponDatabase />
 
-          <Badge>Official GTA VI Weapons</Badge>
+      <PageCTA
+        title="The Arsenal Continues to Grow"
+        description="As Rockstar Games officially reveals additional weapons for Grand Theft Auto VI, GTA Companion will continue expanding the database with verified information, official screenshots and detailed weapon pages."
+      />
 
-          <PageTitle
-            title="Weapons"
-            description="Browse weapons officially shown by Rockstar Games for Grand Theft Auto VI."
-          />
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {weapons.map((weapon) => (
-              <WeaponCard
-                key={weapon.id}
-                weapon={weapon}
-              />
-            ))}
-
-          </div>
-
-        </Container>
-
-      </Section>
-
-    </main>
+    </PageShell>
   );
 }

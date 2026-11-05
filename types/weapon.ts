@@ -5,6 +5,8 @@ export interface Weapon {
 
   name: string;
 
+  manufacturer: string;
+
   category: string;
 
   image: string;
@@ -15,5 +17,7 @@ export interface Weapon {
 
   ammunition: string;
 
-  gallery?: string[];
+  status: string;
+
+  gallery: string[];
 }

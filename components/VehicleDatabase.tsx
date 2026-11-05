@@ -22,94 +22,85 @@ export default function VehicleDatabase() {
   } = useVehicleSearch();
 
   return (
-    <div className="mt-12">
+    <section className="mt-20">
+      {/* Search Panel */}
 
-      <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+      <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black p-10 shadow-[0_30px_90px_rgba(0,0,0,.35)] backdrop-blur-xl">
+        <div className="mb-8">
+          <div className="text-xs font-black uppercase tracking-[0.45em] text-pink-400">
+            Search Database
+          </div>
+
+          <h2 className="mt-4 text-4xl font-black tracking-[-0.03em] text-white">
+            Find Your Vehicle
+          </h2>
+        </div>
 
         <input
           type="text"
-          placeholder="Search GTA VI vehicles..."
+          placeholder="Search vehicles..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-2xl border border-zinc-800 bg-zinc-900 px-5 py-4 text-white placeholder:text-zinc-500 outline-none transition focus:border-pink-500"
+          className="w-full rounded-3xl border border-white/10 bg-white/5 px-7 py-5 text-lg text-white placeholder:text-zinc-500 outline-none transition-all duration-300 focus:border-pink-500 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(236,72,153,.08)]"
         />
 
-        <div className="mt-8">
-
+        <div className="mt-10">
           <VehicleFilters
             categories={categories}
             selectedCategory={category}
             onCategoryChange={setCategory}
           />
-
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-
+        <div className="mt-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <VehicleSort
             value={sort}
             onChange={setSort}
           />
 
-          <ResetFilters
-            onReset={resetFilters}
-          />
-
+          <ResetFilters onReset={resetFilters} />
         </div>
-
       </div>
 
-      <div className="mt-10 flex items-center justify-between">
+      {/* Results */}
 
-        <h2 className="text-2xl font-bold">
-          Vehicle Database
-        </h2>
+      <div className="mt-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <div className="text-xs font-black uppercase tracking-[0.4em] text-pink-400">
+            Database Results
+          </div>
 
-        <p className="text-zinc-400">
-          Showing{" "}
-          <span className="font-semibold text-white">
-            {filteredVehicles.length}
-          </span>{" "}
-          of{" "}
-          <span className="font-semibold text-white">
-            {totalVehicles}
-          </span>{" "}
-          vehicles
-        </p>
+          <h2 className="mt-4 text-5xl font-black tracking-[-0.04em] text-white">
+            {filteredVehicles.length} Vehicles
+          </h2>
 
+          <p className="mt-4 text-lg text-zinc-400">
+            Showing {filteredVehicles.length} of {totalVehicles} officially
+            revealed GTA VI vehicles.
+          </p>
+        </div>
       </div>
 
       {filteredVehicles.length === 0 ? (
-
-        <div className="mt-12 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-16 text-center">
-
-          <h3 className="text-3xl font-bold">
-            No vehicles found
+        <div className="mt-16 rounded-[36px] border border-white/10 bg-gradient-to-br from-[#121216] to-black p-24 text-center">
+          <h3 className="text-5xl font-black text-white">
+            No Vehicles Found
           </h3>
 
-          <p className="mt-4 text-zinc-400">
-            Try changing your search or selecting another category.
+          <p className="mt-6 text-xl text-zinc-400">
+            Try changing your search or filters.
           </p>
-
         </div>
-
       ) : (
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {filteredVehicles.map((vehicle) => (
-
             <VehicleCard
-              key={vehicle.id}
+              key={vehicle.slug}
               vehicle={vehicle}
             />
-
           ))}
-
         </div>
-
       )}
-
-    </div>
+    </section>
   );
 }

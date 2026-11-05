@@ -2,43 +2,72 @@ import { Vehicle } from "@/types/vehicle";
 
 export const sedanVehicles: Vehicle[] = [
   {
-    id: 19,
-    slug: "obey-tailgater-s",
-    name: "Obey Tailgater S",
+    id: 1,
+    slug: "albany-washington",
+    name: "Albany Washington",
+    manufacturer: "Albany",
+    category: "Sedan",
+    image: "/images/original/vehicles/sedan.jpg",
+    description:
+      "Classic American luxury sedan combining comfort, reliability and timeless styling.",
+    firstAppearance: "Legacy GTA Series",
+    status: "Community Favorite",
+    gallery: [],
+  },
+
+  {
+    id: 2,
+    slug: "benefactor-schafter",
+    name: "Benefactor Schafter",
+    manufacturer: "Benefactor",
+    category: "Sedan",
+    image: "/images/original/vehicles/sedan.jpg",
+    description:
+      "Executive German luxury sedan delivering premium comfort and performance.",
+    firstAppearance: "Legacy GTA Series",
+    status: "Community Favorite",
+    gallery: [],
+  },
+
+  {
+    id: 3,
+    slug: "obey-tailgater",
+    name: "Obey Tailgater",
     manufacturer: "Obey",
     category: "Sedan",
-    image: "/images/vehicles/obey-tailgater-s.webp",
-    gallery: [
-      "/images/vehicles/obey-tailgater-s.webp",
-    ],
-    price: "Unknown",
-    topSpeed: "Unknown",
-    drivetrain: "AWD",
-    seats: 4,
+    image: "/images/original/vehicles/sedan.jpg",
     description:
-      "Luxury sports sedan observed in official Grand Theft Auto VI promotional material.",
-    locations: [],
-    variants: [],
-    relatedGuides: [],
+      "Modern executive sedan balancing everyday practicality with sporty driving dynamics.",
+    firstAppearance: "GTA V",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
   },
+
   {
-    id: 23,
-    slug: "declasse-premier",
-    name: "Declasse Premier",
-    manufacturer: "Declasse",
+    id: 4,
+    slug: "karin-intruder",
+    name: "Karin Intruder",
+    manufacturer: "Karin",
     category: "Sedan",
-    image: "/images/vehicles/declasse-premier.webp",
-    gallery: [
-      "/images/vehicles/declasse-premier.webp",
-    ],
-    price: "Unknown",
-    topSpeed: "Unknown",
-    drivetrain: "FWD",
-    seats: 4,
+    image: "/images/original/vehicles/sedan.jpg",
     description:
-      "Four-door sedan returning to the GTA universe with an updated appearance in GTA VI.",
-    locations: [],
-    variants: [],
-    relatedGuides: [],
+      "Reliable Japanese sedan known throughout the GTA series for dependable daily driving.",
+    firstAppearance: "GTA IV",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
+  },
+
+  {
+    id: 5,
+    slug: "cheval-fugitive",
+    name: "Cheval Fugitive",
+    manufacturer: "Cheval",
+    category: "Sedan",
+    image: "/images/original/vehicles/sedan.jpg",
+    description:
+      "Modern four-door sedan offering comfort, style and balanced performance.",
+    firstAppearance: "GTA V",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
   },
 ];

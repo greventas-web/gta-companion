@@ -1,65 +1,78 @@
 import HomeContainer from "./HomeContainer";
-import Section from "./Section";
-import SectionHeader from "./SectionHeader";
 import CategoryCard from "./cards/CategoryCard";
 
 const categories = [
   {
     title: "Vehicles",
-    description: "Every officially confirmed GTA VI vehicle.",
     count: "50+",
     href: "/vehicles",
+    image: "/images/home/categories/vehicles.jpg",
+  },
+  {
+    title: "Manufacturers",
+    count: "10+",
+    href: "/manufacturers",
+    image: "/images/home/categories/manufacturers.jpg",
   },
   {
     title: "Characters",
-    description: "Meet Jason, Lucia and every known character.",
-    count: "7+",
+    count: "15+",
     href: "/characters",
+    image: "/images/home/categories/characters.jpg",
   },
   {
     title: "Locations",
-    description: "Cities, towns and iconic landmarks.",
     count: "20+",
     href: "/locations",
+    image: "/images/home/categories/locations.jpg",
   },
   {
     title: "Businesses",
-    description: "Shops, clubs and major companies.",
     count: "30+",
     href: "/businesses",
+    image: "/images/home/categories/businesses.jpg",
   },
   {
     title: "Weapons",
-    description: "Official GTA VI arsenal.",
     count: "25+",
     href: "/weapons",
+    image: "/images/home/categories/weapons.jpg",
   },
   {
     title: "Animals",
-    description: "Wildlife across Leonida.",
-    count: "15+",
+    count: "10+",
     href: "/animals",
+    image: "/images/home/categories/animals.jpg",
+  },
+  {
+    title: "Activities",
+    count: "15+",
+    href: "/activities",
+    image: "/images/home/categories/activities.jpg",
+  },
+  {
+    title: "Brands",
+    count: "20+",
+    href: "/brands",
+    image: "/images/home/categories/brands.jpg",
   },
 ];
 
 export default function ExploreGrid() {
   return (
-    <Section className="py-36">
+    <section className="relative py-8">
 
       <HomeContainer>
 
-        <SectionHeader
-          badge="Browse by Category"
-          title="Explore Everything We Know"
-          description="Browse every major part of GTA VI from one premium companion."
-        />
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9">
 
           {categories.map((category) => (
             <CategoryCard
               key={category.title}
-              {...category}
+              title={category.title}
+              count={category.count}
+              href={category.href}
+              image={category.image}
             />
           ))}
 
@@ -67,6 +80,6 @@ export default function ExploreGrid() {
 
       </HomeContainer>
 
-    </Section>
+    </section>
   );
 }

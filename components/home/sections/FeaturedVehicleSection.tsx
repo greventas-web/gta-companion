@@ -1,5 +1,5 @@
-import FeaturedVehicles from "@/components/FeaturedVehicles";
+import FeaturedVehicle from "../featured/FeaturedVehicle";
 
 export default function FeaturedVehicleSection() {
-  return <FeaturedVehicles />;
+  return <FeaturedVehicle />;
 }

@@ -10,7 +10,9 @@ export default function Section({
   className = "",
 }: Props) {
   return (
-    <section className={`relative py-24 ${className}`}>
+    <section
+      className={`relative overflow-hidden py-28 md:py-32 xl:py-36 ${className}`}
+    >
       {children}
     </section>
   );

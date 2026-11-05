@@ -1,44 +1,25 @@
-import PageTitle from "@/components/PageTitle";
-import ManufacturerCard from "@/components/ManufacturerCard";
-
-import {
-  Badge,
-  Container,
-  Section,
-} from "@/components/ui";
-
-import { manufacturers } from "@/data/manufacturers";
+import ManufacturerDatabase from "@/components/ManufacturerDatabase";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
 
 export default function ManufacturersPage() {
   return (
-    <main className="min-h-screen bg-background text-white">
+    <PageShell>
 
-      <Section>
+      <PageHero
+        badge="Grand Theft Auto Manufacturers"
+        title="Manufacturer Database"
+        description="Browse automotive manufacturers from across the Grand Theft Auto universe. Discover their history, country of origin, vehicle lineups and officially confirmed GTA VI models."
+      />
 
-        <Container>
+      <ManufacturerDatabase />
 
-          <Badge>Official GTA VI Manufacturers</Badge>
+      <PageCTA
+        title="The Manufacturer Database Continues to Grow"
+        description="As Rockstar Games introduces new automotive brands and officially confirms additional vehicles, GTA Companion will continue expanding this database with manufacturer history, logos, specifications and complete vehicle lineups."
+      />
 
-          <PageTitle
-            title="Vehicle Manufacturers"
-            description="Browse every confirmed Grand Theft Auto VI vehicle manufacturer. Explore their vehicles, origins, and official appearances."
-          />
-
-          <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {manufacturers.map((manufacturer) => (
-              <ManufacturerCard
-                key={manufacturer.id}
-                manufacturer={manufacturer}
-              />
-            ))}
-
-          </div>
-
-        </Container>
-
-      </Section>
-
-    </main>
+    </PageShell>
   );
 }

@@ -15,41 +15,43 @@ export default function BrandCard({
       href={`/brands/${brand.slug}`}
       className="group block"
     >
-      <article className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500">
+      <article className="overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:-translate-y-3 hover:border-pink-500 hover:shadow-[0_35px_90px_rgba(236,72,153,0.18)]">
 
-        <div className="relative aspect-[16/10] bg-black">
+        <div className="relative aspect-[16/10] overflow-hidden">
 
           <Image
             src={brand.image}
             alt={brand.name}
             fill
-            className="object-cover transition duration-500 group-hover:scale-105"
+            className="object-cover transition duration-700 group-hover:scale-110"
           />
 
-          <div className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-pink-400 backdrop-blur">
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+
+          <div className="absolute left-6 top-6 rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white">
             {brand.category}
           </div>
 
         </div>
 
-        <div className="p-6">
+        <div className="p-8">
 
-          <h2 className="text-3xl font-bold">
+          <h3 className="text-4xl font-black text-white transition group-hover:text-pink-400">
             {brand.name}
-          </h2>
+          </h3>
 
-          <p className="mt-5 leading-7 text-zinc-400">
+          <p className="mt-5 line-clamp-3 text-lg leading-8 text-zinc-400">
             {brand.description}
           </p>
 
-          <div className="mt-8 flex items-center justify-between border-t border-zinc-800 pt-5">
+          <div className="mt-8 flex items-center justify-between border-t border-zinc-800 pt-6">
 
-            <span className="text-sm text-zinc-500">
+            <span className="text-sm uppercase tracking-[0.25em] text-zinc-500">
               {brand.firstAppearance}
             </span>
 
-            <span className="font-semibold text-pink-400 transition group-hover:translate-x-1">
-              View →
+            <span className="font-bold text-pink-400 transition duration-300 group-hover:translate-x-2">
+              View Details →
             </span>
 
           </div>

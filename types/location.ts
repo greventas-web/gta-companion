@@ -16,4 +16,8 @@ export interface Location {
   firstAppearance: string;
 
   gallery?: string[];
+
+  x?: number;
+
+  y?: number;
 }
