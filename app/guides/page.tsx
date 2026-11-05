@@ -7,8 +7,9 @@ import PageStats from "@/components/PageStats";
 import { guides } from "@/data/guides";
 
 export default function GuidesPage() {
+  const visibleGuides = guides.filter((guide) => guide.listed !== false);
   const categories = new Set(
-    guides.map((guide) => guide.category)
+    visibleGuides.map((guide) => guide.category)
   ).size;
 
   return (
@@ -17,13 +18,13 @@ export default function GuidesPage() {
       <PageHero
         badge="Unofficial fan database"
         title="Guides"
-        description="Browse official GTA VI guides, walkthroughs, tips, strategies and gameplay information to help you explore every part of Leonida."
+        description="Pre-launch notes about what Rockstar has shown. Full walkthroughs will be written after the game is out."
       />
 
       <PageStats
         stats={[
           {
-            value: guides.length,
+            value: visibleGuides.length,
             label: "Published Guides",
           },
           {
@@ -31,8 +32,8 @@ export default function GuidesPage() {
             label: "Guide Categories",
           },
           {
-            value: "Official",
-            label: "Verified Content",
+            value: "After launch",
+            label: "Full walkthroughs",
             accent: true,
           },
         ]}

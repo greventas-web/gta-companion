@@ -32,7 +32,8 @@ export const guides: Guide[] = [
     category: "Money",
     image: "/images/guides/making-money.webp",
     description:
-      "Discover legitimate ways to build your wealth throughout Leonida.",
+      "Money tips will be written after the game launches. Nothing here is a working method yet.",
+    listed: false,
     readingTime: "10 min",
     difficulty: "Intermediate",
     relatedVehicles: [],
@@ -56,7 +57,8 @@ export const guides: Guide[] = [
     category: "Combat",
     image: "/images/guides/combat-tips.webp",
     description:
-      "Improve your survival with essential combat strategies and weapon tips.",
+      "Combat notes will be written after the game launches.",
+    listed: false,
     readingTime: "9 min",
     difficulty: "Intermediate",
     relatedVehicles: [],

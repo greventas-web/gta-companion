@@ -15,4 +15,6 @@ export interface Guide {
   difficulty: "Beginner" | "Intermediate" | "Advanced";
 
   relatedVehicles?: string[];
+
+  listed?: boolean;
 }

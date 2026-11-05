@@ -153,14 +153,14 @@ export default function Navbar() {
               <>
                 <Link
                   href="/login"
-                  className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] xl:inline-flex"
+                  className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] lg:inline-flex"
                 >
                   Sign In
                 </Link>
 
                 <Link
                   href="/register"
-                  className="hidden rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(236,72,153,.30)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(236,72,153,.45)] xl:inline-flex"
+                  className="hidden rounded-2xl border border-white/10 px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:border-pink-500/40 hover:text-white lg:inline-flex"
                 >
                   Join Free
                 </Link>

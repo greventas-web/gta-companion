@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import BrandMark from "@/components/BrandMark";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -60,12 +61,7 @@ export default async function BrandPage({
 
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
 
-              <Image
-                src={brand.image}
-                alt={brand.name}
-                fill
-                className="object-cover"
-              />
+              <BrandMark slug={brand.slug} name={brand.name} />
 
             </div>
 

@@ -34,6 +34,7 @@ export default async function GuidePage({
   const relatedGuides = guides
     .filter(
       (g) =>
+        g.listed !== false &&
         g.category === guide.category &&
         g.slug !== guide.slug
     )
@@ -117,7 +118,7 @@ export default async function GuidePage({
               <Info
                 icon={<BadgeCheck size={18} />}
                 label="Status"
-                value="Official Guide"
+                value={guide.listed === false ? "After launch" : "Fan note"}
               />
 
             </div>

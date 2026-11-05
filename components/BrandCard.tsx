@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import BrandMark from "@/components/BrandMark";
 import { Brand } from "@/types/brand";
 
 type Props = {
@@ -19,14 +19,9 @@ export default function BrandCard({
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
-          <Image
-            src={brand.image}
-            alt={brand.name}
-            fill
-            className="object-cover transition duration-700 group-hover:scale-110"
-          />
+          <BrandMark slug={brand.slug} name={brand.name} />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
           <div className="absolute left-6 top-6 rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white">
             {brand.category}

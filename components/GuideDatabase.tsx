@@ -13,6 +13,7 @@ export default function GuideDatabase() {
     const search = query.trim().toLowerCase();
 
     return guides.filter((guide) => {
+      if (guide.listed === false) return false;
       return (
         guide.title.toLowerCase().includes(search) ||
         guide.category.toLowerCase().includes(search) ||
@@ -37,7 +38,7 @@ export default function GuideDatabase() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-lg text-zinc-400">
-            Search official GTA VI walkthroughs, tutorials and strategy guides.
+            Pre-launch notes only. Walkthroughs wait until the game is out.
           </p>
 
         </div>
@@ -74,7 +75,7 @@ export default function GuideDatabase() {
           </h2>
 
           <p className="mt-4 text-lg text-zinc-400">
-            Showing {filteredGuides.length} of {guides.length} official GTA VI guides.
+            Showing {filteredGuides.length} pre-launch notes.
           </p>
 
         </div>
