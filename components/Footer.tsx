@@ -23,8 +23,8 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 max-w-[360px] text-lg leading-8 text-zinc-400">
-              The ultimate GTA VI companion and database built around
-              officially revealed Rockstar Games information.
+              An unofficial fan-made database. Grand Theft Auto, Rockstar
+              Games, and Take-Two are trademarks of their owners.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
             </h3>
 
             <p className="mb-6 text-zinc-400">
-              Get the latest official GTA VI news and updates.
+              Get fan-site updates. This is not a Rockstar mailing list.
             </p>
 
             <SubscribeForm />
@@ -103,7 +103,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 lg:flex-row">
           <div>
-            © 2026 GTA Companion. Not affiliated with Rockstar Games.
+            © 2026 GTA Companion. Unofficial fan project. Not affiliated with, endorsed, or connected to Rockstar Games or Take-Two Interactive.
           </div>
 
           <div className="flex gap-8">

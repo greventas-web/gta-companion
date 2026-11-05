@@ -56,7 +56,7 @@ export default function WeaponDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Official GTA VI weapons confirmed by Rockstar Games.
+          Fan-written weapon notes. No Rockstar images are hosted here.
         </p>
 
       </div>

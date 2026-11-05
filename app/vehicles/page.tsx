@@ -7,16 +7,16 @@ export default function VehiclesPage() {
   return (
     <PageShell>
       <PageHero
-        badge="Official GTA VI Vehicles"
+        badge="Unofficial fan database"
         title="Vehicle Database"
-        description="Browse every officially confirmed GTA VI vehicle, from supercars and muscle cars to aircraft, boats and commercial vehicles. Every entry is sourced from official Rockstar Games media."
+        description="Browse supercars, muscle cars, aircraft, and boats in this fan database. The pictures are original illustrations made for GTA Companion."
       />
 
       <VehicleDatabase />
 
       <PageCTA
         title="The Database Continues to Grow"
-        description="Every official Rockstar reveal is added to GTA Companion with verified information, screenshots, classifications and detailed vehicle pages. New vehicles will appear here as soon as they are officially announced."
+        description="New fan notes and original illustrations are added when there is solid public information to write about."
       />
     </PageShell>
   );

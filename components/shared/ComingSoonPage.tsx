@@ -24,7 +24,7 @@ export default function ComingSoonPage({
       <PageContainer>
 
         <PageHero
-          badge="Official GTA VI Database"
+          badge="Unofficial fan database"
           title={title}
           description={description}
         />
@@ -41,7 +41,7 @@ export default function ComingSoonPage({
 
               <ShieldCheck size={15} />
 
-              Official Rockstar Information
+              Fan-written notes
 
             </div>
 

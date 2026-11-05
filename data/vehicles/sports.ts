@@ -7,7 +7,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Bravado Banshee",
     manufacturer: "Bravado",
     category: "Sports",
-    image: "/images/vehicles/sports/bravado-banshee.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "High-performance sports car officially seen in Grand Theft Auto VI promotional material. The Bravado Banshee returns with an updated design while retaining its iconic styling.",
     firstAppearance: "Trailer 1",
@@ -21,7 +21,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Bravado Buffalo",
     manufacturer: "Bravado",
     category: "Sports",
-    image: "/images/vehicles/sports/bravado-buffalo.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "Modern Bravado performance sedan appearing throughout official GTA VI screenshots and trailers.",
     firstAppearance: "Trailer 1",
@@ -35,7 +35,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Annis Euros",
     manufacturer: "Annis",
     category: "Sports",
-    image: "/images/vehicles/sports/annis-euros.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "Japanese-inspired sports coupe featured in official Rockstar promotional media for Grand Theft Auto VI.",
     firstAppearance: "Trailer 2",
@@ -49,7 +49,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Grotti Cheetah",
     manufacturer: "Grotti",
     category: "Sports",
-    image: "/images/vehicles/sports/grotti-cheetah.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "Legendary Italian supercar returning with an updated design inspired by classic Grotti styling.",
     firstAppearance: "Legacy GTA Series",
@@ -63,7 +63,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Grotti Itali GTO",
     manufacturer: "Grotti",
     category: "Sports",
-    image: "/images/vehicles/sports/grotti-itali-gto.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "Modern Italian grand tourer combining luxury, speed and unmistakable Grotti performance.",
     firstAppearance: "GTA Online",
@@ -77,7 +77,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Obey 9F",
     manufacturer: "Obey",
     category: "Sports",
-    image: "/images/vehicles/sports/obey-9f.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "German-inspired performance coupe offering exceptional handling and everyday usability.",
     firstAppearance: "GTA V",
@@ -91,7 +91,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Karin Sultan RS",
     manufacturer: "Karin",
     category: "Sports",
-    image: "/images/vehicles/sports/karin-sultan-rs.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "A rally-inspired tuner icon loved throughout the GTA series for its versatility and speed.",
     firstAppearance: "GTA IV",
@@ -105,7 +105,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Dewbauchee Massacro",
     manufacturer: "Dewbauchee",
     category: "Sports",
-    image: "/images/vehicles/sports/dewbauchee-massacro.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "A British luxury sports coupe balancing elegance with impressive performance.",
     firstAppearance: "GTA V",
@@ -119,7 +119,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Benefactor Schafter V12",
     manufacturer: "Benefactor",
     category: "Sports",
-    image: "/images/vehicles/sports/benefactor-schafter-v12.jpg",
+    image: "/images/original/vehicles/sports.jpg",
     description:
       "Executive sports sedan delivering refined luxury with powerful twin-turbo performance.",
     firstAppearance: "GTA Online",

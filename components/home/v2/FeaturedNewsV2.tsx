@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SafeImage";
 import Link from "next/link";
 
 import { news } from "@/data/news";
@@ -20,12 +20,11 @@ export default function FeaturedNewsV2() {
           </div>
 
           <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white">
-            Latest Official Updates
+            Latest fan notes
           </h2>
 
           <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Every trailer, screenshot, announcement and Rockstar Games update
-            collected in one place.
+            Short notes about public announcements. Trailer video plays from YouTube.
           </p>
 
         </div>
@@ -84,7 +83,7 @@ export default function FeaturedNewsV2() {
               <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6">
 
                 <span className="text-xs font-black uppercase tracking-[0.35em] text-zinc-500 transition group-hover:text-pink-400">
-                  Official Rockstar
+                  Fan notes
                 </span>
 
                 <span className="font-bold text-pink-400 transition duration-300 group-hover:translate-x-2">

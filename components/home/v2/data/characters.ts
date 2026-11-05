@@ -1,7 +1,7 @@
 export const characters = [
   {
     name: "Jason Duval",
-    image: "/images/characters/jason.jpg",
+    image: "/images/original/characters/jason.jpg",
     role: "Protagonist",
     description:
       "Looking for an easy life, Jason soon realizes that nothing comes easy in Leonida.",
@@ -9,7 +9,7 @@ export const characters = [
   },
   {
     name: "Lucia Caminos",
-    image: "/images/characters/lucia.jpg",
+    image: "/images/original/characters/lucia.jpg",
     role: "Protagonist",
     description:
       "Fresh out of prison and determined to build a better future on her own terms.",
@@ -17,7 +17,7 @@ export const characters = [
   },
   {
     name: "Cal Hampton",
-    image: "/images/characters/cal.jpg",
+    image: "/images/original/characters/cal.jpg",
     role: "Friend",
     description:
       "Jason's friend who spends more time online than in the real world.",
@@ -25,7 +25,7 @@ export const characters = [
   },
   {
     name: "Boobie Ike",
-    image: "/images/characters/boobie.jpg",
+    image: "/images/original/characters/boobie.jpg",
     role: "Businessman",
     description:
       "Vice City's entrepreneur with businesses across music and real estate.",
@@ -33,7 +33,7 @@ export const characters = [
   },
   {
     name: "Dre'Quan Priest",
-    image: "/images/characters/drequan.jpg",
+    image: "/images/original/characters/drequan.jpg",
     role: "Music Producer",
     description:
       "A producer chasing success in Leonida's music scene.",
@@ -41,7 +41,7 @@ export const characters = [
   },
   {
     name: "Real Dimez",
-    image: "/images/characters/realdimez.jpg",
+    image: "/images/original/characters/realdimez.jpg",
     role: "Music Duo",
     description:
       "Bae-Luxe and Roxy, influencers and rappers building their reputation.",
@@ -49,7 +49,7 @@ export const characters = [
   },
   {
     name: "Raul Bautista",
-    image: "/images/characters/raul.jpg",
+    image: "/images/original/characters/raul.jpg",
     role: "Bank Robber",
     description:
       "An experienced robber always looking for the next big score.",
@@ -57,7 +57,7 @@ export const characters = [
   },
   {
     name: "Brian Heder",
-    image: "/images/characters/brian.jpg",
+    image: "/images/original/characters/brian.jpg",
     role: "Smuggler",
     description:
       "A veteran drug runner who lets Jason stay on one of his properties.",

@@ -53,7 +53,7 @@ export default function CharactersSection() {
             <div className="relative h-[760px]">
 
               <Image
-                src="/images/characters/jason.jpg"
+                src="/images/original/characters/jason.jpg"
                 alt="Jason"
                 fill
                 className="object-cover transition duration-700 group-hover:scale-110"
@@ -85,7 +85,7 @@ export default function CharactersSection() {
             <div className="relative h-[760px]">
 
               <Image
-                src="/images/characters/lucia.jpg"
+                src="/images/original/characters/lucia.jpg"
                 alt="Lucia"
                 fill
                 className="object-cover transition duration-700 group-hover:scale-110"

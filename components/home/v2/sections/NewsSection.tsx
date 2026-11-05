@@ -62,7 +62,7 @@ export default function NewsSection() {
             <div className="relative h-[680px]">
 
               <Image
-                src="/images/news/trailer2.jpg"
+                src="/images/original/news/trailer.jpg"
                 alt="Trailer 2"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"

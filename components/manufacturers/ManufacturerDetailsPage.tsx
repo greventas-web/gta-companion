@@ -186,7 +186,7 @@ export default function ManufacturerDetailsPage({
 
         <p className="mt-3 text-zinc-400">
 
-          Official GTA vehicles manufactured by {manufacturer.name}.
+          Vehicles linked to {manufacturer.name} in this fan database.
 
         </p>
 

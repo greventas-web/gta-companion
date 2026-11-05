@@ -8,7 +8,7 @@ export default function TimelinePage() {
     <main className="min-h-screen bg-[#040404] text-white">
       <PageContainer>
         <PageHero
-          badge="Official GTA VI Timeline"
+          badge="Unofficial fan timeline"
           title="Every Official Reveal"
           description="Follow every official Grand Theft Auto VI announcement from the first reveal through launch."
         />

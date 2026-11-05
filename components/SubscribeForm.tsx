@@ -75,7 +75,7 @@ export default function SubscribeForm() {
       </div>
 
       <p className="text-sm text-zinc-500">
-        Official updates only. Read the{" "}
+        Fan-site updates only. Read the{" "}
         <a href="/privacy" className="text-zinc-300 hover:text-white">
           privacy policy
         </a>

@@ -57,7 +57,7 @@ export default function ActivityDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Official GTA VI activities confirmed by Rockstar Games.
+          Fan-written activity notes. No Rockstar images are hosted here.
         </p>
 
       </div>

@@ -9,6 +9,26 @@ import {
 
 const faqs = [
   {
+    question: "When does GTA VI come out?",
+    answer:
+      "Rockstar Games and Take-Two set Grand Theft Auto VI for November 19, 2026 on PlayStation 5 and Xbox Series X|S. Digital pre-orders can begin pre-loading on November 12, 2026. A PC release date has not been announced.",
+  },
+  {
+    question: "How much does GTA VI cost?",
+    answer:
+      "Take-Two announced the standard edition at $79.99 in the United States. The Ultimate Edition is $99.99 and adds vehicles, weapons, apparel, and story content for Jason and Lucia. Purchases before November 20, 2026 include the Vintage Vice City Pack, and digital pre-orders include one month of GTA+.",
+  },
+  {
+    question: "Where can I buy or pre-order it?",
+    answer:
+      "Take-Two says the game is available from the PlayStation Store, the Microsoft Store, the Rockstar Games Store, and other retailers. The physical box contains a download code.",
+  },
+  {
+    question: "Who are the main characters?",
+    answer:
+      "The two playable protagonists are Jason Duval and Lucia Caminos. Their story is set in Vice City and the state of Leonida.",
+  },
+  {
     question: "What is GTA Companion?",
     answer:
       "GTA Companion is an independent companion platform that organizes officially released Rockstar Games information into one fast, beautiful and easy-to-use experience. Our goal is to help players explore Grand Theft Auto VI through databases, guides, news and more.",

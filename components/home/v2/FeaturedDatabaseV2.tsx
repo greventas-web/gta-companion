@@ -10,7 +10,7 @@ const items = [
   {
     title: "Characters",
     description:
-      "Meet every officially confirmed GTA VI protagonist, supporting character and key figure revealed by Rockstar Games.",
+      "Eight fan profiles with original portraits, including Jason Duval and Lucia Caminos.",
     href: "/characters",
     stat: "8 Profiles",
     icon: Users,
@@ -19,7 +19,7 @@ const items = [
   {
     title: "Vehicles",
     description:
-      "Discover cars, motorcycles, aircraft and boats with detailed specifications and official media.",
+      "Forty vehicles with original illustrations for sports cars, boats, aircraft, and more.",
     href: "/vehicles",
     stat: "40 Vehicles",
     icon: Car,
@@ -28,7 +28,7 @@ const items = [
   {
     title: "Locations",
     description:
-      "Explore Vice City and every confirmed region across Leonida with maps, screenshots and details.",
+      "Vice City and five other regions, each with an original landscape.",
     href: "/locations",
     stat: "6 Regions",
     icon: MapPin,
@@ -53,8 +53,7 @@ export default function FeaturedDatabaseV2() {
         </h2>
 
         <p className="mx-auto mt-8 max-w-4xl text-xl leading-10 text-zinc-400">
-          Every database is carefully curated using official Rockstar Games
-          information and presented in a clean, searchable experience.
+          Fan-written pages for characters, vehicles, and locations. No Rockstar pictures are hosted here.
         </p>
 
       </div>

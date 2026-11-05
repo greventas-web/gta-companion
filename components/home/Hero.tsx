@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="relative z-20 flex flex-col justify-center px-8 py-20 lg:px-20">
 
           <div className="inline-flex w-fit rounded-full border border-pink-500/25 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.42em] text-pink-400">
-            OFFICIAL GTA VI COMPANION
+            UNOFFICIAL FAN PROJECT
           </div>
 
           <h1 className="mt-10 text-[72px] font-black leading-[0.88] tracking-[-0.06em] text-white xl:text-[108px]">

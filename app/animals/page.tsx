@@ -10,7 +10,7 @@ export default function AnimalsPage() {
   return (
     <PageShell>
       <PageHero
-        badge="Official GTA VI Wildlife"
+        badge="Unofficial fan database"
         title="Animal Database"
         description="Browse every officially confirmed animal and wildlife species discovered across Leonida, including predators, marine life, birds and other native wildlife revealed by Rockstar Games."
       />

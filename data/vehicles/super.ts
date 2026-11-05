@@ -7,7 +7,7 @@ export const superVehicles: Vehicle[] = [
     name: "Pegassi Ignus",
     manufacturer: "Pegassi",
     category: "Super",
-    image: "/images/vehicles/super/pegassi-ignus.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "An aggressive Italian-inspired supercar delivering exceptional performance and cutting-edge styling.",
     firstAppearance: "GTA Online",
@@ -21,7 +21,7 @@ export const superVehicles: Vehicle[] = [
     name: "Pegassi Zentorno",
     manufacturer: "Pegassi",
     category: "Super",
-    image: "/images/vehicles/super/pegassi-zentorno.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "One of the most iconic supercars in the GTA series, known for its futuristic design and incredible speed.",
     firstAppearance: "GTA V",
@@ -35,7 +35,7 @@ export const superVehicles: Vehicle[] = [
     name: "Pegassi Tempesta",
     manufacturer: "Pegassi",
     category: "Super",
-    image: "/images/vehicles/super/pegassi-tempesta.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "A lightweight Italian exotic built for speed, precision and aggressive cornering.",
     firstAppearance: "GTA Online",
@@ -49,7 +49,7 @@ export const superVehicles: Vehicle[] = [
     name: "Overflod Entity XF",
     manufacturer: "Overflod",
     category: "Super",
-    image: "/images/vehicles/super/overflod-entity-xf.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "A legendary Scandinavian-inspired hypercar offering exceptional acceleration and top speed.",
     firstAppearance: "GTA V",
@@ -63,7 +63,7 @@ export const superVehicles: Vehicle[] = [
     name: "Overflod Autarch",
     manufacturer: "Overflod",
     category: "Super",
-    image: "/images/vehicles/super/overflod-autarch.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "A modern racing-inspired hypercar engineered for ultimate performance on road and track.",
     firstAppearance: "GTA Online",
@@ -77,7 +77,7 @@ export const superVehicles: Vehicle[] = [
     name: "Truffade Adder",
     manufacturer: "Truffade",
     category: "Super",
-    image: "/images/vehicles/super/truffade-adder.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "An iconic luxury hypercar combining extreme speed with premium styling.",
     firstAppearance: "GTA V",
@@ -91,7 +91,7 @@ export const superVehicles: Vehicle[] = [
     name: "Grotti Turismo R",
     manufacturer: "Grotti",
     category: "Super",
-    image: "/images/vehicles/super/grotti-turismo-r.jpg",
+    image: "/images/original/vehicles/super.jpg",
     description:
       "A hybrid Italian supercar balancing performance, efficiency and unmistakable Grotti styling.",
     firstAppearance: "GTA V",

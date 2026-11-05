@@ -1,10 +1,11 @@
-import Image from "next/image";
+import Image from "@/components/SafeImage";
+import LaunchCountdown from "@/components/home/v2/LaunchCountdown";
 import Link from "next/link";
 import {
   ArrowRight,
   Bell,
+  Calendar,
   Newspaper,
-  Smartphone,
   Sparkles,
 } from "lucide-react";
 
@@ -28,7 +29,7 @@ export default function HeroV2() {
               <div className="min-w-0">
                 <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-pink-400 sm:px-6 sm:tracking-[0.45em]">
                   <Sparkles size={15} />
-                  OFFICIAL GTA VI COMPANION
+                  UNOFFICIAL FAN PROJECT
                 </div>
 
                 <h1 className="mt-8 text-5xl font-black leading-[0.88] tracking-[-0.06em] text-white sm:text-6xl lg:text-[72px]">
@@ -40,10 +41,9 @@ export default function HeroV2() {
                 </h1>
 
                 <p className="mt-8 max-w-[520px] text-[19px] leading-9 text-zinc-400">
-                  Built around official Rockstar Games information.
-                  GTA VI launches November 19, 2026 on PlayStation 5
-                  and Xbox Series X|S. Browse the confirmed trailers,
-                  vehicles, characters, and locations here.
+                  An unofficial fan database. Not made or endorsed by
+                  Rockstar Games or Take-Two. GTA VI launches November 19,
+                  2026 on PlayStation 5 and Xbox Series X|S.
                 </p>
 
                 <div className="mt-12 flex flex-wrap gap-5">
@@ -67,12 +67,12 @@ export default function HeroV2() {
 
                 <div className="mt-12 flex flex-wrap gap-4">
                   <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                    <Smartphone
+                    <Calendar
                       size={18}
                       className="text-pink-400"
                     />
                     <span className="font-semibold">
-                      Mobile App
+                      November 19, 2026
                     </span>
                   </div>
 
@@ -93,8 +93,8 @@ export default function HeroV2() {
 
             <div className="relative min-h-[320px] lg:min-h-[720px]">
               <Image
-                src="/images/home/hero-v2.jpg"
-                alt="Jason and Lucia"
+                src="/images/original/vehicles/sports.jpg"
+                alt="Original sports car illustration"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -113,17 +113,15 @@ export default function HeroV2() {
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-[32px] border border-white/10 bg-[#0B0B0D]/95 p-8 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.45)]">
             <div className="text-[58px] font-black leading-none text-white">
-              5
+              40
             </div>
 
             <h3 className="mt-3 text-2xl font-black text-white">
-              Official Vehicles
+              Vehicles
             </h3>
 
             <p className="mt-3 leading-8 text-zinc-400">
-              Browse every officially documented GTA VI vehicle currently
-              revealed by Rockstar Games. New vehicles are added as soon as
-              they are officially announced.
+              Browse the vehicle notes in this fan database. Pictures from the game are not hosted here.
             </p>
           </div>
 
@@ -133,28 +131,23 @@ export default function HeroV2() {
             </div>
 
             <h3 className="mt-3 text-2xl font-black text-white">
-              Official Sources
+              Unofficial site
             </h3>
 
             <p className="mt-3 leading-8 text-zinc-400">
-              No fake content. Everything is based on official Rockstar
-              Games trailers, screenshots and announcements.
+              Not made, endorsed, or connected to Rockstar Games or Take-Two.
             </p>
           </div>
 
           <div className="rounded-[32px] border border-white/10 bg-[#0B0B0D]/95 p-8 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.45)]">
-            <div className="text-[58px] font-black leading-none text-white">
-              Free
-            </div>
+            <LaunchCountdown />
 
             <h3 className="mt-3 text-2xl font-black text-white">
-              Join Before Launch
+              Launch countdown
             </h3>
 
             <p className="mt-3 leading-8 text-zinc-400">
-              Create your free account today to receive launch updates,
-              official content notifications, database expansions and
-              companion app news.
+              PlayStation 5 and Xbox Series X|S. A PC date has not been announced.
             </p>
           </div>
         </div>

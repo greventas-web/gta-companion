@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SafeImage";
 import { notFound } from "next/navigation";
 import {
   BadgeCheck,

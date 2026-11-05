@@ -7,7 +7,7 @@ export default function BusinessesPage() {
   return (
     <PageShell>
       <PageHero
-        badge="Official GTA VI Businesses"
+        badge="Unofficial fan database"
         title="Business Database"
         description="Explore companies, record labels, clubs, organizations and businesses featured throughout Vice City and the state of Leonida. Every entry is based on official Rockstar Games material."
       />

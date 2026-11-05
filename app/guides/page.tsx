@@ -15,7 +15,7 @@ export default function GuidesPage() {
     <PageShell>
 
       <PageHero
-        badge="Official GTA VI Guides"
+        badge="Unofficial fan database"
         title="Guides"
         description="Browse official GTA VI guides, walkthroughs, tips, strategies and gameplay information to help you explore every part of Leonida."
       />

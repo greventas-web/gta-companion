@@ -41,8 +41,9 @@ export default function CookiesPage() {
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
                   GTA Companion may use cookies to remember preferences,
                   analyze website traffic and improve overall performance.
-                  Additional cookies may be introduced as new features become
-                  available.
+                  Google AdSense may also set cookies to show and measure
+                  ads. You can control ad personalization in your Google
+                  Ads Settings.
                 </p>
               </div>
 

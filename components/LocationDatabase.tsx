@@ -57,7 +57,7 @@ export default function LocationDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Official GTA VI locations confirmed by Rockstar Games.
+          Fan-written location notes. No Rockstar images are hosted here.
         </p>
 
       </div>

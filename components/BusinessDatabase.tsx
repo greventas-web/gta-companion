@@ -53,7 +53,7 @@ export default function BusinessDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Official GTA VI businesses currently confirmed by Rockstar Games.
+          Fan-written business notes. No Rockstar images are hosted here.
         </p>
       </div>
 

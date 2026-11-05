@@ -7,9 +7,9 @@ import {
 const features = [
   {
     icon: ShieldCheck,
-    title: "Official Rockstar Data",
+    title: "Fan-written notes",
     description:
-      "Every database is built only from officially confirmed Rockstar Games information.",
+      "The notes on this site are written by fans. Rockstar pictures are not hosted here.",
   },
   {
     icon: Sparkles,
@@ -38,8 +38,7 @@ export default function WhyCompanionV2() {
         </h2>
 
         <p className="mx-auto mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-  GTA Companion brings together official Rockstar Games information in a
-  fast, modern and easy-to-use experience designed for every GTA VI player.
+  GTA Companion is an unofficial fan site with its own notes, built to be fast and easy to use.
 </p>
       </div>
 

@@ -40,7 +40,7 @@ export default function FeaturedMedia() {
         >
 
           <img
-            src="/images/media/trailer-2.jpg"
+            src="/images/original/news/trailer.jpg"
             alt="Trailer 2"
             className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
           />
@@ -65,7 +65,7 @@ export default function FeaturedMedia() {
         >
 
           <img
-            src="/images/media/trailer-1.jpg"
+            src="/images/original/news/gallery.jpg"
             alt="Trailer 1"
             className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
           />

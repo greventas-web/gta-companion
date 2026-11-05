@@ -15,7 +15,7 @@ export default function NewsPage() {
     <PageShell>
 
       <PageHero
-        badge="Official Rockstar News"
+        badge="Unofficial fan notes"
         title="News"
         description="Stay up to date with official GTA VI announcements, Rockstar Games Newswire posts, trailers, screenshots and every verified update as soon as it is released."
       />

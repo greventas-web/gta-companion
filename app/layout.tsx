@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "The premium companion platform for Grand Theft Auto VI. Browse official Rockstar Games news, vehicles, characters, locations, media and more.",
+    "Unofficial fan-made database for Grand Theft Auto VI. Not affiliated with Rockstar Games or Take-Two Interactive.",
 
   keywords: [
     "GTA VI",
@@ -55,6 +56,10 @@ export const metadata: Metadata = {
 
   applicationName: "GTA Companion",
 
+  other: {
+    "google-adsense-account": "ca-pub-1639723880207640",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -64,7 +69,7 @@ export const metadata: Metadata = {
     title: "GTA Companion",
 
     description:
-      "The premium companion platform for Grand Theft Auto VI.",
+      "Unofficial fan-made database for Grand Theft Auto VI.",
 
     url: "https://gta-companion.com",
 
@@ -90,7 +95,7 @@ export const metadata: Metadata = {
     title: "GTA Companion",
 
     description:
-      "The premium companion platform for Grand Theft Auto VI.",
+      "Unofficial fan-made database for Grand Theft Auto VI.",
 
     images: ["/logo/og-logo.png"],
   },
@@ -122,6 +127,12 @@ export default function RootLayout({
             <Footer />
           </SearchProvider>
         </AuthProvider>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

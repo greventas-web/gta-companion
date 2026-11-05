@@ -10,7 +10,7 @@ const stats = [
   {
     value: "8",
     label: "Characters",
-    subtitle: "Official Profiles",
+    subtitle: "Fan profiles",
     icon: Users,
     href: "/characters",
   },
@@ -24,14 +24,14 @@ const stats = [
   {
     value: "40",
     label: "Vehicles",
-    subtitle: "Official Database",
+    subtitle: "Fan database",
     icon: Car,
     href: "/vehicles",
   },
   {
     value: "100%",
-    label: "Rockstar",
-    subtitle: "Verified Information",
+    label: "Unofficial",
+    subtitle: "Fan-written notes",
     icon: ShieldCheck,
     href: "/about",
   },
@@ -54,9 +54,8 @@ export default function HomeStatsV2() {
         </h2>
 
         <p className="mt-8 text-xl leading-10 text-zinc-400">
-          Every page is built around officially confirmed Rockstar Games
-          information, helping players explore GTA VI with trusted and organized
-          content.
+          A fan-made database for players. It is not a Rockstar Games
+          product, and it does not host Rockstar's pictures.
         </p>
 
       </div>

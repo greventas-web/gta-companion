@@ -58,6 +58,21 @@ export default function PrivacyPage() {
               <div>
 
                 <h2 className="text-3xl font-black">
+                  Advertising
+                </h2>
+
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
+                  We use Google AdSense to show ads. Google and its partners
+                  may use cookies to serve and measure those ads, including
+                  ads based on your visits to this and other sites. You can
+                  control ad personalization in your Google Ads Settings.
+                </p>
+
+              </div>
+
+              <div>
+
+                <h2 className="text-3xl font-black">
                   Security
                 </h2>
 

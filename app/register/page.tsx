@@ -18,10 +18,10 @@ export default function RegisterPage() {
   const router = useRouter();
 
   const benefits = [
-    "Official Rockstar News",
+    "Fan-written news notes",
     "Database Updates",
     "Interactive GTA VI Map",
-    "Official GTA VI Locations",,
+    "Location notes",
     "Track Your Progress",
     "Exclusive Giveaways",
   ];

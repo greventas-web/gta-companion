@@ -26,7 +26,7 @@ export default function MediaPage() {
 
           <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
             <Film size={14} />
-            Official Rockstar Media
+            Unofficial fan page
           </div>
 
           <h1 className="mt-8 text-7xl font-black tracking-[-0.05em]">
@@ -34,8 +34,7 @@ export default function MediaPage() {
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Every official trailer, screenshot, artwork and logo released by
-            Rockstar Games collected in one premium media library.
+            Trailer links play from YouTube. This page does not host Rockstar's video or pictures.
           </p>
 
         </div>
@@ -91,7 +90,7 @@ export default function MediaPage() {
               </h3>
 
               <p className="mt-3 text-zinc-400">
-                Official Rockstar artwork gallery.
+                No Rockstar artwork is hosted here.
               </p>
 
             </div>

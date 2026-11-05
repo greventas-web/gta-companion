@@ -7,7 +7,7 @@ export const bikeVehicles: Vehicle[] = [
     name: "Pegassi Bati 801",
     manufacturer: "Pegassi",
     category: "Bike",
-    image: "/images/vehicles/bike/pegassi-bati-801.jpg",
+    image: "/images/original/vehicles/bike.jpg",
     description:
       "High-performance superbike renowned for blistering speed and razor-sharp handling.",
     firstAppearance: "Legacy GTA Series",
@@ -21,7 +21,7 @@ export const bikeVehicles: Vehicle[] = [
     name: "Shitzu Hakuchou",
     manufacturer: "Shitzu",
     category: "Bike",
-    image: "/images/vehicles/bike/shitzu-hakuchou.jpg",
+    image: "/images/original/vehicles/bike.jpg",
     description:
       "Powerful Japanese sport motorcycle built for exceptional acceleration and top speed.",
     firstAppearance: "Legacy GTA Series",
@@ -35,7 +35,7 @@ export const bikeVehicles: Vehicle[] = [
     name: "Dinka Akuma",
     manufacturer: "Dinka",
     category: "Bike",
-    image: "/images/vehicles/bike/dinka-akuma.jpg",
+    image: "/images/original/vehicles/bike.jpg",
     description:
       "Agile naked sport bike offering a perfect balance of speed and control.",
     firstAppearance: "Legacy GTA Series",
@@ -49,7 +49,7 @@ export const bikeVehicles: Vehicle[] = [
     name: "Western Reever",
     manufacturer: "Western",
     category: "Bike",
-    image: "/images/vehicles/bike/western-reever.jpg",
+    image: "/images/original/vehicles/bike.jpg",
     description:
       "Modern high-performance cruiser combining aggressive styling with outstanding power.",
     firstAppearance: "GTA Online",
@@ -63,7 +63,7 @@ export const bikeVehicles: Vehicle[] = [
     name: "Nagasaki Carbon RS",
     manufacturer: "Nagasaki",
     category: "Bike",
-    image: "/images/vehicles/bike/nagasaki-carbon-rs.jpg",
+    image: "/images/original/vehicles/bike.jpg",
     description:
       "Lightweight sport motorcycle designed for fast city riding and precise cornering.",
     firstAppearance: "GTA Online",

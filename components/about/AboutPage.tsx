@@ -18,14 +18,14 @@ export default function AboutPage() {
         <PageHero
           badge="About GTA Companion"
           title="Built For GTA Players"
-          description="GTA Companion is an independent platform dedicated to organizing official Rockstar Games information into one beautiful, fast and trusted experience."
+          description="GTA Companion is an unofficial fan database. The notes and pictures are made for this site. It is not a Rockstar Games product."
         />
 
         <section className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
             icon={<ShieldCheck size={36} />}
-            title="Official First"
-            description="Every trailer, screenshot, artwork and announcement comes directly from Rockstar Games. No leaks, rumours or speculation."
+            title="Original art"
+            description="Vehicle, character, and location pictures on this site are original illustrations. Rockstar's own images are not hosted here."
           />
 
           <FeatureCard
@@ -77,12 +77,10 @@ export default function AboutPage() {
             </div>
 
             <ul className="mt-8 space-y-5 text-lg leading-8 text-zinc-300">
-              <li>• Interactive GTA VI Map</li>
-              <li>• Collectible Tracker</li>
-              <li>• Mission Walkthroughs</li>
-              <li>• Expanded Vehicle Database</li>
-              <li>• Character Profiles</li>
-              <li>• Mobile Companion App</li>
+              <li>• More original illustrations</li>
+              <li>• Fan notes after launch</li>
+              <li>• Guides written for this site</li>
+              <li>• A phone-friendly version of this website</li>
             </ul>
           </div>
 

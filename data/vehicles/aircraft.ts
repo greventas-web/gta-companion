@@ -7,7 +7,7 @@ export const aircraftVehicles: Vehicle[] = [
     name: "Buckingham Maverick",
     manufacturer: "Buckingham",
     category: "Aircraft",
-    image: "/images/vehicles/aircraft/buckingham-maverick.jpg",
+    image: "/images/original/vehicles/aircraft.jpg",
     description:
       "Classic civilian helicopter widely used throughout the GTA series for transport and sightseeing.",
     firstAppearance: "Legacy GTA Series",
@@ -21,7 +21,7 @@ export const aircraftVehicles: Vehicle[] = [
     name: "Buckingham Swift",
     manufacturer: "Buckingham",
     category: "Aircraft",
-    image: "/images/vehicles/aircraft/buckingham-swift.jpg",
+    image: "/images/original/vehicles/aircraft.jpg",
     description:
       "Luxury executive helicopter offering speed, comfort and premium styling.",
     firstAppearance: "GTA V",

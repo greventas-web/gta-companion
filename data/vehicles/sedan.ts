@@ -7,7 +7,7 @@ export const sedanVehicles: Vehicle[] = [
     name: "Albany Washington",
     manufacturer: "Albany",
     category: "Sedan",
-    image: "/images/vehicles/sedan/albany-washington.jpg",
+    image: "/images/original/vehicles/sedan.jpg",
     description:
       "Classic American luxury sedan combining comfort, reliability and timeless styling.",
     firstAppearance: "Legacy GTA Series",
@@ -21,7 +21,7 @@ export const sedanVehicles: Vehicle[] = [
     name: "Benefactor Schafter",
     manufacturer: "Benefactor",
     category: "Sedan",
-    image: "/images/vehicles/sedan/benefactor-schafter.jpg",
+    image: "/images/original/vehicles/sedan.jpg",
     description:
       "Executive German luxury sedan delivering premium comfort and performance.",
     firstAppearance: "Legacy GTA Series",
@@ -35,7 +35,7 @@ export const sedanVehicles: Vehicle[] = [
     name: "Obey Tailgater",
     manufacturer: "Obey",
     category: "Sedan",
-    image: "/images/vehicles/sedan/obey-tailgater.jpg",
+    image: "/images/original/vehicles/sedan.jpg",
     description:
       "Modern executive sedan balancing everyday practicality with sporty driving dynamics.",
     firstAppearance: "GTA V",
@@ -49,7 +49,7 @@ export const sedanVehicles: Vehicle[] = [
     name: "Karin Intruder",
     manufacturer: "Karin",
     category: "Sedan",
-    image: "/images/vehicles/sedan/karin-intruder.jpg",
+    image: "/images/original/vehicles/sedan.jpg",
     description:
       "Reliable Japanese sedan known throughout the GTA series for dependable daily driving.",
     firstAppearance: "GTA IV",
@@ -63,7 +63,7 @@ export const sedanVehicles: Vehicle[] = [
     name: "Cheval Fugitive",
     manufacturer: "Cheval",
     category: "Sedan",
-    image: "/images/vehicles/sedan/cheval-fugitive.jpg",
+    image: "/images/original/vehicles/sedan.jpg",
     description:
       "Modern four-door sedan offering comfort, style and balanced performance.",
     firstAppearance: "GTA V",

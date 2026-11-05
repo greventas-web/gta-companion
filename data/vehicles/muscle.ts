@@ -7,7 +7,7 @@ export const muscleVehicles: Vehicle[] = [
     name: "Vapid Dominator",
     manufacturer: "Vapid",
     category: "Muscle",
-    image: "/images/vehicles/muscle/vapid-dominator.jpg",
+    image: "/images/original/vehicles/muscle.jpg",
     description:
       "An iconic American muscle car delivering raw power, aggressive styling and exceptional straight-line performance.",
     firstAppearance: "GTA V",
@@ -21,7 +21,7 @@ export const muscleVehicles: Vehicle[] = [
     name: "Declasse Sabre Turbo",
     manufacturer: "Declasse",
     category: "Muscle",
-    image: "/images/vehicles/muscle/declasse-sabre-turbo.jpg",
+    image: "/images/original/vehicles/muscle.jpg",
     description:
       "Classic American muscle with timeless styling and impressive performance both on the street and drag strip.",
     firstAppearance: "GTA III",
@@ -35,7 +35,7 @@ export const muscleVehicles: Vehicle[] = [
     name: "Imponte Phoenix",
     manufacturer: "Imponte",
     category: "Muscle",
-    image: "/images/vehicles/muscle/imponte-phoenix.jpg",
+    image: "/images/original/vehicles/muscle.jpg",
     description:
       "A legendary rear-wheel-drive muscle car combining classic looks with powerful V8 performance.",
     firstAppearance: "GTA San Andreas",
@@ -49,7 +49,7 @@ export const muscleVehicles: Vehicle[] = [
     name: "Bravado Gauntlet Hellfire",
     manufacturer: "Bravado",
     category: "Muscle",
-    image: "/images/vehicles/muscle/bravado-gauntlet-hellfire.jpg",
+    image: "/images/original/vehicles/muscle.jpg",
     description:
       "A modern high-performance American muscle car built for extreme horsepower and aggressive styling.",
     firstAppearance: "GTA Online",

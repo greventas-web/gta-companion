@@ -4,7 +4,7 @@ export default function HeroContent() {
   return (
     <div className="w-full max-w-[620px] pl-6 lg:pl-10">
       <div className="inline-flex items-center rounded-full border border-pink-500/30 bg-pink-500/10 px-7 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
-        OFFICIAL GTA VI COMPANION
+        UNOFFICIAL FAN PROJECT
       </div>
 
       <h1 className="mt-10 text-[78px] font-black leading-[0.86] tracking-[-0.07em] text-white xl:text-[112px]">
