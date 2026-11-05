@@ -7,6 +7,7 @@ import { businesses } from "@/data/businesses";
 import { characters } from "@/data/characters";
 import { guides } from "@/data/guides";
 import { locations } from "@/data/locations";
+import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
@@ -46,6 +47,15 @@ export const searchIndex: SearchItem[] = [
     category: "Business" as const,
     image: business.image,
     description: business.description,
+  })),
+
+  ...manufacturers.map((manufacturer) => ({
+    id: manufacturer.id,
+    title: manufacturer.name,
+    href: `/manufacturers/${manufacturer.slug}`,
+    category: "Manufacturer" as const,
+    image: manufacturer.logo,
+    description: manufacturer.description,
   })),
 
   ...brands.map((brand) => ({

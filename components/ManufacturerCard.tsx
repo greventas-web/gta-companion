@@ -43,6 +43,7 @@ export default function ManufacturerCard({
                 src={manufacturer.logo}
                 alt={manufacturer.name}
                 fill
+                sizes="160px"
                 className="object-contain p-4 transition duration-700 group-hover:scale-110"
               />
 

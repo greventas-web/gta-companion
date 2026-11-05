@@ -40,7 +40,7 @@ export default async function NewsArticlePage({
 
   return (
     <main className="min-h-screen bg-[#040404] text-white">
-      <section className="mx-auto max-w-[1700px] px-8 py-20">
+      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-36">
         <Breadcrumb
           items={[
             {

@@ -29,7 +29,7 @@ export default function VehicleFilters({
           All
         </button>
 
-        {categories.map((category) => {
+        {categories.filter((category) => category !== "All").map((category) => {
 
           const active = selectedCategory === category;
 

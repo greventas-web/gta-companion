@@ -6,7 +6,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import Footer from "./Footer";
 import PageContainer from "./PageContainer";
 import PageHero from "./PageHero";
 
@@ -96,8 +95,6 @@ export default function ComingSoonPage({
         </section>
 
       </PageContainer>
-
-      <Footer />
 
     </main>
   );

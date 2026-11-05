@@ -36,7 +36,7 @@ export default async function BrandPage({
   return (
     <main className="min-h-screen bg-background text-white">
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 pb-20 pt-36">
 
         <Breadcrumb
           items={[

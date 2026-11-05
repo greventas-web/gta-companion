@@ -33,6 +33,7 @@ export default function GuideCard({
             src={guide.image}
             alt={guide.title}
             fill
+            sizes="(max-width: 768px) 100vw, 420px"
             className="object-cover transition duration-700 group-hover:scale-110"
           />
 

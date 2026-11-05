@@ -66,6 +66,7 @@ export default function SearchDialog({
 
         <div className="relative max-h-[70vh] overflow-y-auto p-8">
           <SearchResults
+            query={query}
             results={results}
           />
         </div>

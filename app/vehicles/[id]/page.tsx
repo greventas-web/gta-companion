@@ -36,7 +36,7 @@ export default async function VehicleDetailsPage({
   return (
     <main className="min-h-screen bg-[#040404] text-white">
 
-      <section className="mx-auto max-w-[1700px] px-8 py-20">
+      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-36">
 
         <Breadcrumb
           items={[
@@ -67,6 +67,7 @@ export default async function VehicleDetailsPage({
                 alt={vehicle.name}
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
 

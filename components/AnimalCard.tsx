@@ -30,6 +30,7 @@ export default function AnimalCard({
             src={animal.image}
             alt={animal.name}
             fill
+            sizes="(max-width: 768px) 100vw, 420px"
             className="object-cover transition duration-700 group-hover:scale-110"
           />
 

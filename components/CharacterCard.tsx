@@ -31,11 +31,12 @@ export default function CharacterCard({
         <div className="relative h-[320px] overflow-hidden">
 
           <Image
-    src={character.image}
-    alt={character.name}
-    fill
-    className={`object-cover object-${character.imagePosition ?? "center"} transition duration-700 group-hover:scale-105`}
-/>
+            src={character.image}
+            alt={character.name}
+            fill
+            sizes="(max-width: 768px) 100vw, 420px"
+            className="object-cover object-center transition duration-700 group-hover:scale-105"
+          />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 

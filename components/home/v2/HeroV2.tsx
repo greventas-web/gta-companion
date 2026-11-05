@@ -21,17 +21,17 @@ export default function HeroV2() {
 
       <div className="relative mx-auto max-w-[1700px] px-6 pb-8 pt-24 sm:px-8">
         <div className="overflow-hidden rounded-[42px] border border-white/10 bg-[#09090B] shadow-[0_45px_120px_rgba(0,0,0,.65)]">
-          <div className="grid min-h-[720px] lg:grid-cols-[620px_1fr]">
+          <div className="grid lg:min-h-[720px] lg:grid-cols-[620px_1fr]">
             {/* LEFT */}
 
-            <div className="relative z-20 flex items-center px-14 py-20">
-              <div>
-                <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
+            <div className="relative z-20 flex items-center px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+              <div className="min-w-0">
+                <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-pink-400 sm:px-6 sm:tracking-[0.45em]">
                   <Sparkles size={15} />
                   OFFICIAL GTA VI COMPANION
                 </div>
 
-                <h1 className="mt-8 text-[72px] font-black leading-[0.88] tracking-[-0.06em] text-white">
+                <h1 className="mt-8 text-5xl font-black leading-[0.88] tracking-[-0.06em] text-white sm:text-6xl lg:text-[72px]">
                   GTA VI
                   <br />
                   <span className="bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-500 bg-clip-text text-transparent">
@@ -91,12 +91,13 @@ export default function HeroV2() {
 
             {/* RIGHT */}
 
-            <div className="relative min-h-[720px]">
+            <div className="relative min-h-[320px] lg:min-h-[720px]">
               <Image
                 src="/images/home/hero-v2.jpg"
                 alt="Jason and Lucia"
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
                 className="object-cover object-[70%_center]"
               />
 

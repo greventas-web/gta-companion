@@ -6,15 +6,18 @@ import Link from "next/link";
 import {
   ChevronDown,
   LogOut,
+  Menu,
+  Search,
   Settings,
   User,
   Heart,
   LayoutDashboard,
+  X,
 } from "lucide-react";
 
 import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
-import MegaMenu from "./MegaMenu";
+import MegaMenu, { exploreLinks } from "./MegaMenu";
 
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useSearch } from "@/components/search/SearchProvider";
@@ -25,6 +28,7 @@ export default function Navbar() {
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +75,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-[100] px-6 pt-5">
+      <header className="fixed inset-x-0 top-0 z-[100] overflow-visible px-4 pt-4 sm:px-6 sm:pt-5">
 
         <div
           className={`mx-auto flex h-20 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
@@ -81,21 +85,21 @@ export default function Navbar() {
           }`}
         >
 
-          <div className="flex items-center px-8">
+          <div className="flex min-w-0 items-center px-4 sm:px-8">
 
             <Link
               href="/"
               className="group flex items-center"
             >
-              <span className="text-[34px] font-black tracking-[-0.05em] text-white transition duration-300 group-hover:text-zinc-100">
+              <span className="text-2xl font-black tracking-[-0.05em] text-white transition duration-300 group-hover:text-zinc-100 sm:text-[34px]">
                 GTA
               </span>
 
-              <span className="ml-2 bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-[34px] font-black tracking-[-0.05em] text-transparent">
+              <span className="ml-2 hidden bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-[34px] font-black tracking-[-0.05em] text-transparent sm:inline">
                 Companion
               </span>
 
-              <span className="ml-2 text-[36px] font-black italic text-pink-400 transition duration-300 group-hover:scale-110">
+              <span className="ml-2 text-2xl font-black italic text-pink-400 transition duration-300 group-hover:scale-110 sm:text-[36px]">
                 VI
               </span>
             </Link>
@@ -118,7 +122,7 @@ export default function Navbar() {
 
           </nav>
 
-          <div className="flex items-center gap-4 px-8">
+          <div className="flex items-center gap-2 px-3 sm:gap-4 sm:px-8">
 
             <div
               className="hidden lg:block"
@@ -126,18 +130,37 @@ export default function Navbar() {
             >
               <SearchBar />
             </div>
+
+            <button
+              type="button"
+              aria-label="Open search"
+              onClick={open}
+              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white lg:hidden"
+            >
+              <Search size={18} />
+            </button>
+
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((value) => !value)}
+              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white xl:hidden"
+            >
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
                         {!user ? (
               <>
                 <Link
                   href="/login"
-                  className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08]"
+                  className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] xl:inline-flex"
                 >
                   Sign In
                 </Link>
 
                 <Link
                   href="/register"
-                  className="rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(236,72,153,.30)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(236,72,153,.45)]"
+                  className="hidden rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(236,72,153,.30)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(236,72,153,.45)] xl:inline-flex"
                 >
                   Join Free
                 </Link>
@@ -249,6 +272,39 @@ export default function Navbar() {
           </div>
 
         </div>
+
+        {mobileOpen && (
+          <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl xl:hidden">
+            <div className="grid gap-1 sm:grid-cols-2">
+              {[
+                { title: "Home", href: "/" },
+                { title: "About", href: "/about" },
+                ...exploreLinks,
+                ...(!user
+                  ? [
+                      { title: "Sign In", href: "/login" },
+                      { title: "Join Free", href: "/register" },
+                    ]
+                  : []),
+              ]
+                .filter(
+                  (item, index, list) =>
+                    list.findIndex((entry) => entry.href === item.href) ===
+                    index
+                )
+                .map((item) => (
+                <Link
+                  key={item.href + item.title}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-2xl px-4 py-3 text-[15px] font-semibold text-white transition hover:bg-white/[0.06]"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        )}
 
       </header>
 

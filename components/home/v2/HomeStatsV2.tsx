@@ -8,7 +8,7 @@ import {
 
 const stats = [
   {
-    value: "7",
+    value: "8",
     label: "Characters",
     subtitle: "Official Profiles",
     icon: Users,
@@ -22,7 +22,7 @@ const stats = [
     href: "/locations",
   },
   {
-    value: "7",
+    value: "40",
     label: "Vehicles",
     subtitle: "Official Database",
     icon: Car,

@@ -21,7 +21,7 @@ const items = [
     description:
       "Discover cars, motorcycles, aircraft and boats with detailed specifications and official media.",
     href: "/vehicles",
-    stat: "7 Vehicles",
+    stat: "40 Vehicles",
     icon: Car,
     gradient: "from-violet-500/20 to-indigo-500/5",
   },

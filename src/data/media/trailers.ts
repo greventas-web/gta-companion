@@ -13,7 +13,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI Launch Trailer",
     youtubeId: "rz1B4B2yBZY",
     releaseDate: "October 15, 2026",
-    thumbnail: "/images/media/trailers/trailer-2.jpg",
+    thumbnail: "/images/media/trailers/launch-trailer.jpg",
     duration: "1:31",
   },
   {
@@ -21,7 +21,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI: An Extended Look",
     youtubeId: "tJbzMqJGH4k",
     releaseDate: "August 27, 2026",
-    thumbnail: "/images/media/trailers/trailer-2.jpg",
+    thumbnail: "/images/media/trailers/extended-look.jpg",
     duration: "26:48",
   },
   {

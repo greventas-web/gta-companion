@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
 
 import SubscribeForm from "@/components/SubscribeForm";
 
@@ -99,40 +98,6 @@ export default function Footer() {
             </p>
 
             <SubscribeForm />
-
-            <div className="mt-8 flex gap-6">
-              <a
-                href="#"
-                aria-label="Discord"
-                className="text-zinc-400 transition hover:text-white"
-              >
-                <MessageCircle size={26} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="X (Twitter)"
-                className="text-zinc-400 transition hover:text-white"
-              >
-                𝕏
-              </a>
-
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="text-zinc-400 transition hover:text-white"
-              >
-                <span className="text-xl font-bold">▶</span>
-              </a>
-
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="text-zinc-400 transition hover:text-white"
-              >
-                <span className="text-xl font-bold">◎</span>
-              </a>
-            </div>
           </div>
         </div>
 

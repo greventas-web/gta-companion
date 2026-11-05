@@ -34,6 +34,7 @@ export default function VehicleCard({
             src={vehicle.image}
             alt={vehicle.name}
             fill
+            sizes="(max-width: 768px) 100vw, 480px"
             className="object-cover transition duration-700 group-hover:scale-110"
           />
 
