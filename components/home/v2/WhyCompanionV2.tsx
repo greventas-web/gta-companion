@@ -38,10 +38,9 @@ export default function WhyCompanionV2() {
         </h2>
 
         <p className="mx-auto mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-          GTA Companion is designed to become the world's most useful GTA VI
-          companion platform with official information, premium design and
-          powerful tools.
-        </p>
+  GTA Companion brings together official Rockstar Games information in a
+  fast, modern and easy-to-use experience designed for every GTA VI player.
+</p>
       </div>
 
       <div className="mt-20 grid gap-8 lg:grid-cols-3">

@@ -17,7 +17,7 @@ export const news: NewsArticle[] = [
     title: "New Official Screenshots Released",
     image: "/images/news/screenshots.webp",
     summary:
-      "Rockstar published dozens of new GTA VI screenshots highlighting locations, vehicles and characters.",
+      "Rockstar Games published a large collection of official GTA VI screenshots showcasing characters, vehicles, locations and life across Leonida.",
     date: "2025-05-06",
     category: "Screenshots",
   },
@@ -27,8 +27,11 @@ export const news: NewsArticle[] = [
     title: "Rockstar Updates GTA VI Website",
     image: "/images/news/website.webp",
     summary:
-      "The official GTA VI website now includes detailed pages for characters, locations and businesses.",
+      "The official GTA VI website has been expanded with dedicated pages covering characters, locations, businesses and additional official information.",
     date: "2025-05-06",
     category: "Official Website",
   },
-];
+].sort(
+  (a, b) =>
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+);

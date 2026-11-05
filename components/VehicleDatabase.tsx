@@ -95,7 +95,7 @@ export default function VehicleDatabase() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {filteredVehicles.map((vehicle) => (
             <VehicleCard
-              key={vehicle.id}
+              key={vehicle.slug}
               vehicle={vehicle}
             />
           ))}

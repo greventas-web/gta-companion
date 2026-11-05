@@ -16,4 +16,20 @@ export interface Business {
   firstAppearance: string;
 
   gallery?: string[];
+
+  // Optional fields
+
+  status?: string;
+
+  owner?: string;
+
+  district?: string;
+
+  founded?: string;
+
+  type?: string;
+
+  website?: string;
+
+  relatedBusinesses?: string[];
 }

@@ -2,43 +2,24 @@ import WeaponDatabase from "@/components/WeaponDatabase";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
-import PageStats from "@/components/PageStats";
-
-import { weapons } from "@/data/weapons";
 
 export default function WeaponsPage() {
   return (
     <PageShell>
-      <PageHero
-        badge="Official GTA VI Weapons"
-        title="Weapon Database"
-        description="Browse every officially confirmed weapon revealed by Rockstar Games for Grand Theft Auto VI, including pistols, rifles, shotguns, melee weapons and future additions."
-      />
 
-      <PageStats
-        stats={[
-          {
-            value: weapons.length,
-            label: "Confirmed Weapons",
-          },
-          {
-            value: "Official",
-            label: "Rockstar Data",
-          },
-          {
-            value: "100%",
-            label: "Verified Information",
-            accent: true,
-          },
-        ]}
+      <PageHero
+        badge="Grand Theft Auto Weapons"
+        title="Weapon Database"
+        description="Browse handguns, rifles, shotguns, heavy weapons, melee weapons and explosives from across the Grand Theft Auto universe. GTA Companion clearly identifies officially confirmed GTA VI weapons while preserving the history of the series."
       />
 
       <WeaponDatabase />
 
       <PageCTA
-        title="More Weapons Coming Soon"
-        description="As Rockstar Games officially reveals additional weapons, GTA Companion will continue expanding the database with specifications, screenshots and detailed information."
+        title="The Arsenal Continues to Grow"
+        description="As Rockstar Games officially reveals additional weapons for Grand Theft Auto VI, GTA Companion will continue expanding the database with verified information, official screenshots and detailed weapon pages."
       />
+
     </PageShell>
   );
 }

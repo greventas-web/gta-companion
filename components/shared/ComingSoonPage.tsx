@@ -1,14 +1,14 @@
 import Link from "next/link";
 import {
-  Bell,
   ArrowRight,
-  ShieldCheck,
+  Bell,
   Database,
+  ShieldCheck,
 } from "lucide-react";
 
+import Footer from "./Footer";
 import PageContainer from "./PageContainer";
 import PageHero from "./PageHero";
-import Footer from "./Footer";
 
 type Props = {
   title: string;
@@ -30,99 +30,60 @@ export default function ComingSoonPage({
           description={description}
         />
 
-        <section className="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#111114] via-[#09090B] to-black p-16 lg:p-24">
+        <section className="relative overflow-hidden rounded-[42px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black p-16 shadow-[0_35px_120px_rgba(0,0,0,.35)] lg:p-24">
 
-          <div className="absolute right-[-140px] top-[-140px] h-[360px] w-[360px] rounded-full bg-pink-500/20 blur-[160px]" />
+          <div className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-violet-500/10 blur-[180px]" />
 
-          <div className="absolute left-[-140px] bottom-[-140px] h-[360px] w-[360px] rounded-full bg-violet-500/20 blur-[160px]" />
+          <div className="absolute -right-32 -top-20 h-96 w-96 rounded-full bg-pink-500/10 blur-[180px]" />
 
           <div className="relative mx-auto max-w-5xl text-center">
 
-            <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
+            <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400 backdrop-blur-xl">
 
               <ShieldCheck size={15} />
 
-              OFFICIAL ROCKSTAR INFORMATION
+              Official Rockstar Information
 
             </div>
 
             <h2 className="mt-8 text-5xl font-black tracking-[-0.05em] lg:text-7xl">
-
               This Database Is
-
               <br />
-
               Growing
-
             </h2>
 
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-
               GTA Companion only publishes information officially confirmed by
-              Rockstar Games. Rather than filling the database with rumours or
-              speculative content, we expand it only when new trailers,
-              screenshots, artwork or announcements are released.
-
+              Rockstar Games. We intentionally avoid leaks and speculation,
+              expanding the database only when Rockstar releases new trailers,
+              screenshots, artwork or announcements.
             </p>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
+            <div className="mt-16 grid gap-6 md:grid-cols-3">
 
-              <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-8">
+              <FeatureCard
+                icon={<Database size={34} />}
+                title="Official Only"
+                text="Every page is built using verified Rockstar information."
+              />
 
-                <Database
-                  size={34}
-                  className="mx-auto text-pink-400"
-                />
+              <FeatureCard
+                icon={<Bell size={34} />}
+                title="Always Updated"
+                text="New content is added whenever Rockstar reveals something new."
+              />
 
-                <h3 className="mt-6 text-2xl font-black">
-                  Official Only
-                </h3>
-
-                <p className="mt-4 text-zinc-400">
-                  No leaks. No speculation. Only confirmed Rockstar content.
-                </p>
-
-              </div>
-
-              <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-8">
-
-                <Bell
-                  size={34}
-                  className="mx-auto text-pink-400"
-                />
-
-                <h3 className="mt-6 text-2xl font-black">
-                  Stay Updated
-                </h3>
-
-                <p className="mt-4 text-zinc-400">
-                  We'll expand this page whenever Rockstar reveals something new.
-                </p>
-
-              </div>
-
-              <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-8">
-
-                <ShieldCheck
-                  size={34}
-                  className="mx-auto text-pink-400"
-                />
-
-                <h3 className="mt-6 text-2xl font-black">
-                  Trusted Source
-                </h3>
-
-                <p className="mt-4 text-zinc-400">
-                  Every entry is backed by official Rockstar Games material.
-                </p>
-
-              </div>
+              <FeatureCard
+                icon={<ShieldCheck size={34} />}
+                title="Trusted Source"
+                text="Designed to become the most complete official GTA companion."
+              />
 
             </div>
 
             <Link
               href="/register"
-              className="mt-14 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-10 py-5 text-lg font-bold transition hover:scale-[1.03]"
+              className="mt-16 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-10 py-5 text-lg font-bold transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_60px_rgba(236,72,153,.35)]"
             >
               Join Free
 
@@ -139,5 +100,33 @@ export default function ComingSoonPage({
       <Footer />
 
     </main>
+  );
+}
+
+function FeatureCard({
+  icon,
+  title,
+  text,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500/30 hover:bg-white/[0.06]">
+
+      <div className="flex justify-center text-pink-400">
+        {icon}
+      </div>
+
+      <h3 className="mt-6 text-2xl font-black">
+        {title}
+      </h3>
+
+      <p className="mt-4 leading-8 text-zinc-400">
+        {text}
+      </p>
+
+    </div>
   );
 }

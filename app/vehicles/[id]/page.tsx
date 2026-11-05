@@ -143,7 +143,7 @@ export default async function VehicleDetailsPage({
             {relatedVehicles.map((vehicle) => (
 
               <VehicleCard
-                key={vehicle.id}
+                key={vehicle.slug}
                 vehicle={vehicle}
               />
 

@@ -41,9 +41,9 @@ export default function MediaPage() {
         </div>
 
         <FeaturedTrailer
-          title={trailers[1].title}
-          youtubeId={trailers[1].youtubeId}
-          releaseDate={trailers[1].releaseDate}
+          title={trailers[0].title}
+          youtubeId={trailers[0].youtubeId}
+          releaseDate={trailers[0].releaseDate}
         />
 
         {/* Quick Navigation */}
@@ -168,7 +168,7 @@ export default function MediaPage() {
           </p>
 
           <Link
-            href="/register"
+            href="/contact"
             className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-9 py-5 font-bold transition hover:scale-[1.02]"
           >
             Join Free

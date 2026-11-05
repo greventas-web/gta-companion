@@ -50,12 +50,13 @@ export default function HomeStatsV2() {
         </div>
 
         <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white">
-          Everything Official.
+          creating the most complete GTA VI companion platform.
         </h2>
 
         <p className="mt-8 text-xl leading-10 text-zinc-400">
           Every page is built around officially confirmed Rockstar Games
-          information, creating the most complete GTA VI companion platform.
+          information, helping players explore GTA VI with trusted and organized
+          content.
         </p>
 
       </div>

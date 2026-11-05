@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import {
+  BadgeCheck,
+  Calendar,
+  User,
+} from "lucide-react";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import CharacterCard from "@/components/CharacterCard";
 
 import { characters } from "@/data/characters";
 
@@ -24,8 +30,16 @@ export default async function CharacterPage({
     notFound();
   }
 
+  const relatedCharacters = characters
+    .filter(
+      (c) =>
+        c.role === character.role &&
+        c.slug !== character.slug
+    )
+    .slice(0, 3);
+
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#040404] text-white">
 
       <section className="mx-auto max-w-[1700px] px-8 py-20">
 
@@ -47,58 +61,61 @@ export default async function CharacterPage({
 
         <div className="mt-12 grid gap-14 xl:grid-cols-[42%_58%]">
 
-          {/* Character Image */}
-
-          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
+          <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
 
             <div className="relative aspect-[3/4]">
 
               <Image
-                src={character.image}
-                alt={character.name}
-                fill
-                priority
-                className="object-cover"
-              />
-
+  src={character.image}
+  alt={character.name}
+  fill
+  priority
+  className="object-cover object-right transition duration-700"
+/>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
             </div>
 
           </div>
 
-          {/* Information */}
-
           <div>
 
-            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.25em] text-pink-400">
-
+            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.3em] text-pink-400">
               {character.role}
-
             </span>
 
-            <h1 className="mt-8 text-6xl font-black tracking-tight">
-
+            <h1 className="mt-8 text-6xl font-black tracking-[-0.04em]">
               {character.name}
-
             </h1>
 
-            <p className="mt-8 text-xl leading-9 text-zinc-400">
-
+            <p className="mt-8 max-w-4xl text-xl leading-9 text-zinc-400">
               {character.description}
-
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
 
               <Info
+                icon={<BadgeCheck size={18} />}
                 label="Status"
                 value={character.status}
               />
 
               <Info
+                icon={<Calendar size={18} />}
                 label="First Appearance"
                 value={character.firstAppearance}
+              />
+
+              <Info
+                icon={<User size={18} />}
+                label="Role"
+                value={character.role}
+              />
+
+              <Info
+                icon={<BadgeCheck size={18} />}
+                label="Source"
+                value="Rockstar Games"
               />
 
             </div>
@@ -107,6 +124,57 @@ export default async function CharacterPage({
 
         </div>
 
+        <section className="mt-28">
+
+          <div className="mb-12">
+
+            <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
+              Related Characters
+            </div>
+
+            <h2 className="mt-4 text-5xl font-black">
+              Similar Characters
+            </h2>
+
+            <p className="mt-4 text-lg text-zinc-400">
+              More officially revealed GTA VI characters.
+            </p>
+
+          </div>
+
+          {relatedCharacters.length === 0 ? (
+
+            <div className="rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-20 text-center">
+
+              <h3 className="text-4xl font-black">
+                No Related Characters
+              </h3>
+
+              <p className="mt-5 text-zinc-400">
+                Additional characters will appear here as Rockstar reveals more information.
+              </p>
+
+            </div>
+
+          ) : (
+
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+              {relatedCharacters.map((character) => (
+
+                <CharacterCard
+                  key={character.id}
+                  character={character}
+                />
+
+              ))}
+
+            </div>
+
+          )}
+
+        </section>
+
       </section>
 
     </main>
@@ -114,25 +182,29 @@ export default async function CharacterPage({
 }
 
 function Info({
+  icon,
   label,
   value,
 }: {
+  icon: React.ReactNode;
   label: string;
   value: string;
 }) {
   return (
     <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
 
-      <p className="text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
+      <div className="flex items-center gap-3 text-pink-400">
 
-        {label}
+        {icon}
 
-      </p>
+        <span className="text-xs font-bold uppercase tracking-[0.25em]">
+          {label}
+        </span>
 
-      <h3 className="mt-3 text-2xl font-black">
+      </div>
 
+      <h3 className="mt-4 text-2xl font-black text-white">
         {value}
-
       </h3>
 
     </div>

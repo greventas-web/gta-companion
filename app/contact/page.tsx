@@ -1,6 +1,5 @@
 import {
   Badge,
-  Button,
   Card,
   Container,
   Section,
@@ -11,119 +10,75 @@ import PageTitle from "@/components/PageTitle";
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background text-white">
-
       <Section>
-
         <Container>
-
           <Badge>Contact</Badge>
 
           <PageTitle
             title="Get In Touch"
-            description="Questions, feedback, partnership opportunities or bug reports? We'd love to hear from you."
+            description="Questions, partnership opportunities, bug reports or general feedback? We'd love to hear from you."
           />
 
-          <div className="mt-16 grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+          <div className="mt-16 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+            <Card className="rounded-[40px] border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black p-10 shadow-[0_30px_90px_rgba(0,0,0,.35)]">
+              <h2 className="text-3xl font-black">
+                Contact Us
+              </h2>
 
-            <Card className="rounded-[40px] border-zinc-800 bg-zinc-900 p-10">
+              <p className="mt-6 text-lg leading-8 text-zinc-400">
+                If you have questions, business enquiries, partnership
+                opportunities, bug reports or feedback, please email us at:
+              </p>
 
-              <div className="space-y-8">
+              <a
+                href="mailto:contact@gtacompanion.com"
+                className="mt-8 inline-block text-2xl font-bold text-pink-400 hover:text-pink-300"
+              >
+                contact@gtacompanion.com
+              </a>
 
-                <div>
-
-                  <label className="mb-3 block font-semibold">
-                    Name
-                  </label>
-
-                  <input
-                    className="w-full rounded-2xl border border-zinc-800 bg-black px-5 py-4 outline-none transition focus:border-pink-500"
-                    placeholder="Your name"
-                  />
-
-                </div>
-
-                <div>
-
-                  <label className="mb-3 block font-semibold">
-                    Email
-                  </label>
-
-                  <input
-                    type="email"
-                    className="w-full rounded-2xl border border-zinc-800 bg-black px-5 py-4 outline-none transition focus:border-pink-500"
-                    placeholder="Your email"
-                  />
-
-                </div>
-
-                <div>
-
-                  <label className="mb-3 block font-semibold">
-                    Message
-                  </label>
-
-                  <textarea
-                    rows={7}
-                    className="w-full rounded-2xl border border-zinc-800 bg-black px-5 py-4 outline-none transition focus:border-pink-500"
-                    placeholder="Write your message..."
-                  />
-
-                </div>
-
-                <Button>
-                  Send Message
-                </Button>
-
-              </div>
-
+              <p className="mt-8 text-zinc-500">
+                We aim to respond as quickly as possible.
+              </p>
             </Card>
 
             <div className="space-y-8">
-
-              <Card className="rounded-[40px] border-zinc-800 bg-zinc-900 p-8">
-
+              <Card className="rounded-[36px] border-white/10 bg-gradient-to-br from-[#121216] to-black p-8 transition hover:border-pink-500/30">
                 <h2 className="text-2xl font-black">
                   Partnerships
                 </h2>
 
-                <p className="mt-4 text-zinc-400">
-                  Interested in working with GTA Companion?
+                <p className="mt-4 leading-8 text-zinc-400">
+                  Interested in collaborating with GTA Companion or becoming a
+                  launch partner? We'd love to hear from you.
                 </p>
-
               </Card>
 
-              <Card className="rounded-[40px] border-zinc-800 bg-zinc-900 p-8">
-
+              <Card className="rounded-[36px] border-white/10 bg-gradient-to-br from-[#121216] to-black p-8 transition hover:border-pink-500/30">
                 <h2 className="text-2xl font-black">
-                  Report Bugs
+                  Bug Reports
                 </h2>
 
-                <p className="mt-4 text-zinc-400">
-                  Help us improve the platform by reporting issues.
+                <p className="mt-4 leading-8 text-zinc-400">
+                  Found an issue? Let us know so we can continue improving the
+                  experience for everyone.
                 </p>
-
               </Card>
 
-              <Card className="rounded-[40px] border-zinc-800 bg-zinc-900 p-8">
-
+              <Card className="rounded-[36px] border-white/10 bg-gradient-to-br from-[#121216] to-black p-8 transition hover:border-pink-500/30">
                 <h2 className="text-2xl font-black">
                   Community
                 </h2>
 
-                <p className="mt-4 text-zinc-400">
-                  More community features are coming soon.
+                <p className="mt-4 leading-8 text-zinc-400">
+                  GTA Companion will continue to grow with new official content,
+                  guides and tools as Rockstar reveals more about GTA VI.
                 </p>
-
               </Card>
-
             </div>
-
           </div>
-
         </Container>
-
       </Section>
-
     </main>
   );
 }

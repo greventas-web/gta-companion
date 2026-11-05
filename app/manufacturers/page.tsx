@@ -1,36 +1,25 @@
 import ManufacturerDatabase from "@/components/ManufacturerDatabase";
+import PageCTA from "@/components/PageCTA";
+import PageHero from "@/components/PageHero";
+import PageShell from "@/components/PageShell";
 
 export default function ManufacturersPage() {
   return (
-    <main className="min-h-screen bg-[#040404] text-white">
+    <PageShell>
 
-      <section className="relative overflow-hidden">
+      <PageHero
+        badge="Grand Theft Auto Manufacturers"
+        title="Manufacturer Database"
+        description="Browse automotive manufacturers from across the Grand Theft Auto universe. Discover their history, country of origin, vehicle lineups and officially confirmed GTA VI models."
+      />
 
-        <div className="absolute left-[-220px] top-[-140px] h-[620px] w-[620px] rounded-full bg-pink-500/10 blur-[180px]" />
+      <ManufacturerDatabase />
 
-        <div className="absolute right-[-220px] bottom-[-140px] h-[620px] w-[620px] rounded-full bg-violet-500/10 blur-[180px]" />
+      <PageCTA
+        title="The Manufacturer Database Continues to Grow"
+        description="As Rockstar Games introduces new automotive brands and officially confirms additional vehicles, GTA Companion will continue expanding this database with manufacturer history, logos, specifications and complete vehicle lineups."
+      />
 
-        <div className="relative mx-auto max-w-[1700px] px-8 pt-32 pb-10">
-
-          <div className="inline-flex rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
-            Official GTA VI Database
-          </div>
-
-          <h1 className="mt-8 text-7xl font-black tracking-[-0.05em] text-white">
-            Manufacturers
-          </h1>
-
-          <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Browse every officially revealed GTA VI manufacturer together with
-            their vehicles, history and information.
-          </p>
-
-          <ManufacturerDatabase />
-
-        </div>
-
-      </section>
-
-    </main>
+    </PageShell>
   );
 }

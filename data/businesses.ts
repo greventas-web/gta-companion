@@ -9,8 +9,13 @@ export const businesses: Business[] = [
     location: "Vice City",
     image: "/images/businesses/only-raw-records.webp",
     description:
-      "Independent record label working with Dre'Quan Priest and the music duo Real Dimez.",
+      "Independent Vice City record label working with Dre'Quan Priest and the rap duo Real Dimez. The label has become one of the city's fastest-growing names in the music industry.",
     firstAppearance: "Rockstar Games Website",
+    status: "Officially Confirmed",
+    owner: "Dre'Quan Priest",
+    district: "Vice City",
+    type: "Music Label",
+    relatedBusinesses: ["high-rollerz-lifestyle"],
     gallery: [],
   },
 
@@ -22,8 +27,16 @@ export const businesses: Business[] = [
     location: "Vice City",
     image: "/images/businesses/high-rollerz-lifestyle.webp",
     description:
-      "Entertainment and lifestyle brand owned by Boobie Ike, spanning music, clubs and real estate investments.",
+      "Boobie Ike's business empire spanning music, nightlife, real estate and luxury investments throughout Vice City.",
     firstAppearance: "Rockstar Games Website",
+    status: "Officially Confirmed",
+    owner: "Boobie Ike",
+    district: "Vice City",
+    type: "Entertainment Company",
+    relatedBusinesses: [
+      "only-raw-records",
+      "nine1nine",
+    ],
     gallery: [],
   },
 
@@ -35,8 +48,12 @@ export const businesses: Business[] = [
     location: "Vice City",
     image: "/images/businesses/jack-of-hearts.webp",
     description:
-      "One of Vice City's entertainment venues shown in official Rockstar promotional material.",
+      "A famous Vice City strip club featured in Rockstar promotional material and one of the city's best-known nightlife destinations.",
     firstAppearance: "Trailer 1",
+    status: "Officially Confirmed",
+    district: "Vice City",
+    type: "Nightlife",
+    relatedBusinesses: ["nine1nine"],
     gallery: [],
   },
 
@@ -48,8 +65,13 @@ export const businesses: Business[] = [
     location: "Leonida Keys",
     image: "/images/businesses/brians-boat-works.webp",
     description:
-      "Boat yard operated by Brian Heder in the Leonida Keys and used as the center of his smuggling operation.",
+      "Boat yard owned by Brian Heder that serves as both a marine repair business and the center of his smuggling operation in the Leonida Keys.",
     firstAppearance: "Rockstar Games Website",
+    status: "Officially Confirmed",
+    owner: "Brian Heder",
+    district: "Leonida Keys",
+    type: "Boat Yard",
+    relatedBusinesses: [],
     gallery: [],
   },
 
@@ -61,8 +83,15 @@ export const businesses: Business[] = [
     location: "Vice City",
     image: "/images/businesses/nine1nine.webp",
     description:
-      "Popular Vice City nightclub featured in Rockstar's official GTA VI media.",
+      "Luxury Vice City nightclub known for exclusive parties, live music and a vibrant nightlife atmosphere.",
     firstAppearance: "Rockstar Games Website",
+    status: "Officially Confirmed",
+    district: "Vice City",
+    type: "Nightclub",
+    relatedBusinesses: [
+      "jack-of-hearts",
+      "high-rollerz-lifestyle",
+    ],
     gallery: [],
   },
 ];

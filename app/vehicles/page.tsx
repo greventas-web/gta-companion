@@ -2,9 +2,6 @@ import VehicleDatabase from "@/components/VehicleDatabase";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
-import PageStats from "@/components/PageStats";
-
-import { vehicles } from "@/data/vehicles";
 
 export default function VehiclesPage() {
   return (
@@ -12,32 +9,14 @@ export default function VehiclesPage() {
       <PageHero
         badge="Official GTA VI Vehicles"
         title="Vehicle Database"
-        description="Browse every officially revealed GTA VI vehicle, including manufacturers, vehicle categories, performance information and detailed specifications sourced from Rockstar Games."
-      />
-
-      <PageStats
-        stats={[
-          {
-            value: vehicles.length,
-            label: "Confirmed Vehicles",
-          },
-          {
-            value: "Official",
-            label: "Rockstar Data",
-          },
-          {
-            value: "100%",
-            label: "Verified Information",
-            accent: true,
-          },
-        ]}
+        description="Browse every officially confirmed GTA VI vehicle, from supercars and muscle cars to aircraft, boats and commercial vehicles. Every entry is sourced from official Rockstar Games media."
       />
 
       <VehicleDatabase />
 
       <PageCTA
-        title="More Vehicles Coming Soon"
-        description="As Rockstar Games officially reveals additional cars, motorcycles, boats, aircraft and special vehicles, GTA Companion will continue expanding the database with specifications, screenshots and detailed information."
+        title="The Database Continues to Grow"
+        description="Every official Rockstar reveal is added to GTA Companion with verified information, screenshots, classifications and detailed vehicle pages. New vehicles will appear here as soon as they are officially announced."
       />
     </PageShell>
   );

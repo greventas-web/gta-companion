@@ -33,9 +33,10 @@ export default function PrivacyPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  When accounts become available we may collect information
-                  necessary to provide features such as saved progress,
-                  favorites, collections and synchronization across devices.
+                  If you create an account, we store the name, email, and
+                  saved items needed for favorites and settings. If you join
+                  the newsletter, we store that email so we can send official
+                  GTA Companion updates. We do not sell personal information.
                 </p>
 
               </div>

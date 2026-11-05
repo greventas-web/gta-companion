@@ -12,6 +12,8 @@ export const locations: Location[] = [
       "The vibrant heart of Leonida, inspired by Miami and serving as the main setting of Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
     gallery: [],
+    x: 84,
+    y: 64,
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ export const locations: Location[] = [
       "A tropical island chain featuring beaches, marinas and crystal-clear waters.",
     firstAppearance: "Trailer 2",
     gallery: [],
+    x: 46,
+    y: 88,
   },
   {
     id: 3,
@@ -36,6 +40,8 @@ export const locations: Location[] = [
       "A dangerous swamp ecosystem home to alligators and other wildlife.",
     firstAppearance: "Rockstar Website",
     gallery: [],
+    x: 63,
+    y: 58,
   },
   {
     id: 4,
@@ -48,6 +54,8 @@ export const locations: Location[] = [
       "A mountainous wilderness offering forests, trails and rugged terrain.",
     firstAppearance: "Rockstar Website",
     gallery: [],
+    x: 31,
+    y: 20,
   },
   {
     id: 5,
@@ -60,5 +68,21 @@ export const locations: Location[] = [
       "A once-bustling coastal town with motels, industrial areas and waterfront businesses.",
     firstAppearance: "Trailer 2",
     gallery: [],
+    x: 69,
+    y: 67,
+  },
+  {
+    id: 6,
+    slug: "ambrosia",
+    name: "Ambrosia",
+    region: "Leonida",
+    type: "City",
+    image: "/images/locations/ambrosia.jpg",
+    description:
+      "An inland Leonida community surrounded by industrial activity and rural landscapes, forming part of the state's northern interior.",
+    firstAppearance: "Trailer 2",
+    gallery: [],
+    x: 53,
+    y: 66,
   },
 ];

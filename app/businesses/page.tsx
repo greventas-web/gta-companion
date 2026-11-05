@@ -2,9 +2,6 @@ import BusinessDatabase from "@/components/BusinessDatabase";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
-import PageStats from "@/components/PageStats";
-
-import { businesses } from "@/data/businesses";
 
 export default function BusinessesPage() {
   return (
@@ -12,32 +9,14 @@ export default function BusinessesPage() {
       <PageHero
         badge="Official GTA VI Businesses"
         title="Business Database"
-        description="Browse every officially confirmed business, company, nightclub, record label and organization featured by Rockstar Games in Grand Theft Auto VI."
-      />
-
-      <PageStats
-        stats={[
-          {
-            value: businesses.length,
-            label: "Confirmed Businesses",
-          },
-          {
-            value: "Official",
-            label: "Rockstar Data",
-          },
-          {
-            value: "100%",
-            label: "Verified Information",
-            accent: true,
-          },
-        ]}
+        description="Explore companies, record labels, clubs, organizations and businesses featured throughout Vice City and the state of Leonida. Every entry is based on official Rockstar Games material."
       />
 
       <BusinessDatabase />
 
       <PageCTA
-        title="More Businesses Coming Soon"
-        description="As Rockstar Games officially reveals more companies, stores, organizations and businesses across Leonida, GTA Companion will continue expanding this database with new information."
+        title="The Database Continues to Grow"
+        description="Every officially revealed business, company and organization will be added to GTA Companion as Rockstar Games continues unveiling Grand Theft Auto VI."
       />
     </PageShell>
   );

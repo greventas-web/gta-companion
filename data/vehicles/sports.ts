@@ -42,4 +42,88 @@ export const sportsVehicles: Vehicle[] = [
     status: "Officially Confirmed",
     gallery: [],
   },
+
+  {
+    id: 4,
+    slug: "grotti-cheetah",
+    name: "Grotti Cheetah",
+    manufacturer: "Grotti",
+    category: "Sports",
+    image: "/images/vehicles/sports/grotti-cheetah.jpg",
+    description:
+      "Legendary Italian supercar returning with an updated design inspired by classic Grotti styling.",
+    firstAppearance: "Legacy GTA Series",
+    status: "Community Favorite",
+    gallery: [],
+  },
+
+  {
+    id: 5,
+    slug: "grotti-itali-gto",
+    name: "Grotti Itali GTO",
+    manufacturer: "Grotti",
+    category: "Sports",
+    image: "/images/vehicles/sports/grotti-itali-gto.jpg",
+    description:
+      "Modern Italian grand tourer combining luxury, speed and unmistakable Grotti performance.",
+    firstAppearance: "GTA Online",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
+  },
+
+  {
+    id: 6,
+    slug: "obey-9f",
+    name: "Obey 9F",
+    manufacturer: "Obey",
+    category: "Sports",
+    image: "/images/vehicles/sports/obey-9f.jpg",
+    description:
+      "German-inspired performance coupe offering exceptional handling and everyday usability.",
+    firstAppearance: "GTA V",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
+  },
+
+  {
+    id: 7,
+    slug: "karin-sultan-rs",
+    name: "Karin Sultan RS",
+    manufacturer: "Karin",
+    category: "Sports",
+    image: "/images/vehicles/sports/karin-sultan-rs.jpg",
+    description:
+      "A rally-inspired tuner icon loved throughout the GTA series for its versatility and speed.",
+    firstAppearance: "GTA IV",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
+  },
+
+  {
+    id: 8,
+    slug: "dewbauchee-massacro",
+    name: "Dewbauchee Massacro",
+    manufacturer: "Dewbauchee",
+    category: "Sports",
+    image: "/images/vehicles/sports/dewbauchee-massacro.jpg",
+    description:
+      "A British luxury sports coupe balancing elegance with impressive performance.",
+    firstAppearance: "GTA V",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
+  },
+
+  {
+    id: 9,
+    slug: "benefactor-schafter-v12",
+    name: "Benefactor Schafter V12",
+    manufacturer: "Benefactor",
+    category: "Sports",
+    image: "/images/vehicles/sports/benefactor-schafter-v12.jpg",
+    description:
+      "Executive sports sedan delivering refined luxury with powerful twin-turbo performance.",
+    firstAppearance: "GTA Online",
+    status: "Legacy GTA Vehicle",
+    gallery: [],
+  },
 ];

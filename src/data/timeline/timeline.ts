@@ -1,4 +1,10 @@
-export const timeline = [
+export type TimelineEvent = {
+  date: string;
+  title: string;
+  description: string;
+};
+
+export const timeline: TimelineEvent[] = [
   {
     date: "December 5, 2023",
     title: "Trailer 1",

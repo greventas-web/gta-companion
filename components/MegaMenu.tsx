@@ -33,7 +33,6 @@ const database = [
   { title: "Locations", href: "/locations" },
   { title: "Weapons", href: "/weapons" },
   { title: "Businesses", href: "/businesses" },
-  { title: "Brands", href: "/brands" },
 ];
 
 export default function MegaMenu() {

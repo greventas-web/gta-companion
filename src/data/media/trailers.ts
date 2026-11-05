@@ -1,4 +1,13 @@
-export const trailers = [
+export type Trailer = {
+  id: number;
+  title: string;
+  youtubeId: string;
+  releaseDate: string;
+  thumbnail: string;
+  duration: string;
+};
+
+export const trailers: Trailer[] = [
   {
     id: 1,
     title: "Grand Theft Auto VI Trailer 1",

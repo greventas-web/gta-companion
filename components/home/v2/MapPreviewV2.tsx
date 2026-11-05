@@ -126,16 +126,14 @@ export default function MapPreviewV2() {
               ))}
 
               <div className="absolute bottom-8 left-8 rounded-2xl border border-pink-500/20 bg-black/60 px-6 py-4 backdrop-blur-xl">
+  <div className="text-sm uppercase tracking-[0.3em] text-pink-400">
+    Official Locations
+  </div>
 
-                <div className="text-sm uppercase tracking-[0.3em] text-pink-400">
-                  Coming Soon
-                </div>
-
-                <div className="mt-2 text-white font-bold">
-                  Full Interactive Leonida Map
-                </div>
-
-              </div>
+  <div className="mt-2 font-bold text-white">
+    More map features arriving with future Rockstar reveals
+  </div>
+</div>
 
             </div>
 

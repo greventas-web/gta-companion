@@ -16,6 +16,7 @@ export const characters: Character[] = [
     relatedLocations: ["vice-city", "leonida-keys"],
     relatedBusinesses: ["brian-boat-works"],
     relatedBrands: [],
+    imagePosition: "left",
   },
 
   {
@@ -33,6 +34,7 @@ export const characters: Character[] = [
     relatedLocations: ["vice-city"],
     relatedBusinesses: [],
     relatedBrands: [],
+    imagePosition: "center",
   },
 
   {
@@ -50,6 +52,7 @@ export const characters: Character[] = [
     relatedLocations: ["grassrivers"],
     relatedBusinesses: [],
     relatedBrands: [],
+    imagePosition: "right",
   },
 
   {
@@ -73,6 +76,7 @@ export const characters: Character[] = [
       "high-rollerz-lifestyle",
       "only-raw-records",
     ],
+    imagePosition: "center",
   },
 
   {
@@ -94,6 +98,7 @@ export const characters: Character[] = [
     relatedBrands: [
       "only-raw-records",
     ],
+    imagePosition: "right",
   },
 
   {
@@ -115,6 +120,7 @@ export const characters: Character[] = [
     relatedBrands: [
       "only-raw-records",
     ],
+    imagePosition: "center",
   },
 
   {
@@ -132,6 +138,7 @@ export const characters: Character[] = [
     relatedLocations: ["vice-city"],
     relatedBusinesses: [],
     relatedBrands: [],
+    imagePosition: "center",
   },
 
   {
@@ -151,5 +158,7 @@ export const characters: Character[] = [
       "brian-boat-works",
     ],
     relatedBrands: [],
+    imagePosition: "right",
   },
+  
 ];

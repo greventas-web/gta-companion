@@ -1,8 +1,9 @@
 export interface Manufacturer {
   id: number;
 
-  name: string;
   slug: string;
+
+  name: string;
 
   logo: string;
 
@@ -12,7 +13,17 @@ export interface Manufacturer {
 
   founded?: string;
 
+  headquarters?: string;
+
+  parentCompany?: string;
+
+  industry?: string;
+
   website?: string;
 
-  vehicleCount?: number;
+  vehicleCount: number;
+
+  status: string;
+
+  gallery: string[];
 }
