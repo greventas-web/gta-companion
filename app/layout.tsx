@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -127,16 +128,7 @@ export default function RootLayout({
             <Footer />
           </SearchProvider>
         </AuthProvider>
-        <Script
-          id="vercel-analytics"
-          strategy="afterInteractive"
-        >
-          {`window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};`}
-        </Script>
-        <Script
-          src="/_vercel/insights/script.js"
-          strategy="afterInteractive"
-        />
+        <Analytics />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"
