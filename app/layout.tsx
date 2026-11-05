@@ -57,6 +57,10 @@ export const metadata: Metadata = {
 
   applicationName: "GTA Companion",
 
+  verification: {
+    google: "291I1lQDN4nGxm0FmODtq439eooj37COvVvwcsPv-qU",
+  },
+
   other: {
     "google-adsense-account": "ca-pub-1639723880207640",
   },
