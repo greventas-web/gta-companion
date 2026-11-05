@@ -23,7 +23,7 @@ export default function CharactersSection() {
               Official Characters
             </div>
 
-            <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white lg:text-7xl">
+            <h2 className="mt-5 text-6xl font-black tracking-[-0.03em] text-white lg:text-7xl">
               Jason & Lucia
             </h2>
 
@@ -67,7 +67,7 @@ export default function CharactersSection() {
                   PROTAGONIST
                 </div>
 
-                <h3 className="mt-4 text-7xl font-black tracking-[-0.04em] text-white">
+                <h3 className="mt-4 text-7xl font-black tracking-[-0.03em] text-white">
                   Jason
                 </h3>
 
@@ -99,7 +99,7 @@ export default function CharactersSection() {
                   PROTAGONIST
                 </div>
 
-                <h3 className="mt-4 text-7xl font-black tracking-[-0.04em] text-white">
+                <h3 className="mt-4 text-7xl font-black tracking-[-0.03em] text-white">
                   Lucia
                 </h3>
 

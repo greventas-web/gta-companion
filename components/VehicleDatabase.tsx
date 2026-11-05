@@ -70,7 +70,7 @@ export default function VehicleDatabase() {
             Database Results
           </div>
 
-          <h2 className="mt-4 text-5xl font-black tracking-[-0.04em] text-white">
+          <h2 className="mt-4 text-5xl font-black tracking-[-0.03em] text-white">
             {filteredVehicles.length} Vehicles
           </h2>
 
@@ -92,7 +92,7 @@ export default function VehicleDatabase() {
           </p>
         </div>
       ) : (
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {filteredVehicles.map((vehicle) => (
             <VehicleCard
               key={vehicle.slug}

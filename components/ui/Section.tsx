@@ -6,7 +6,7 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className="pt-36 pb-24 md:pb-32">
+    <section className="pt-44 pb-28 md:pb-36">
       {children}
     </section>
   );

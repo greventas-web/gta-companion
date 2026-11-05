@@ -50,7 +50,7 @@ export default function AnimalCard({
             {animal.habitat}
           </p>
 
-          <h3 className="mt-3 text-[34px] font-black tracking-[-0.04em] text-white transition duration-300 group-hover:text-pink-300">
+          <h3 className="mt-3 text-[34px] font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
             {animal.name}
           </h3>
 

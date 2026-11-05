@@ -51,7 +51,7 @@ export default function AboutPage() {
               Our Vision
             </div>
 
-            <h2 className="mt-6 text-6xl font-black tracking-[-0.05em]">
+            <h2 className="mt-6 text-6xl font-black tracking-[-0.03em]">
               The Ultimate GTA Companion
             </h2>
 

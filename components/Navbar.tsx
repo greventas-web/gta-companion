@@ -91,11 +91,11 @@ export default function Navbar() {
               href="/"
               className="group flex items-center"
             >
-              <span className="text-2xl font-black tracking-[-0.05em] text-white transition duration-300 group-hover:text-zinc-100 sm:text-[34px]">
+              <span className="text-2xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-zinc-100 sm:text-[34px]">
                 GTA
               </span>
 
-              <span className="ml-2 hidden bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-[34px] font-black tracking-[-0.05em] text-transparent sm:inline">
+              <span className="ml-2 hidden bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-[34px] font-black tracking-[-0.03em] text-transparent sm:inline">
                 Companion
               </span>
 

@@ -11,7 +11,7 @@ export default function PageContainer({
 }: Props) {
   return (
     <section
-      className={`relative mx-auto w-full max-w-[1700px] px-8 pt-36 pb-32 lg:px-10 xl:px-12 ${className}`}
+      className={`relative mx-auto w-full max-w-[1600px] px-6 pt-44 pb-32 sm:px-10 lg:px-14 ${className}`}
     >
       {children}
     </section>

@@ -54,7 +54,7 @@ export default function CharacterCard({
             {character.status}
           </div>
 
-          <h2 className="mt-3 text-[32px] font-black leading-none tracking-[-0.04em] text-white transition duration-300 group-hover:text-pink-300">
+          <h2 className="mt-3 text-[32px] font-black leading-none tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
             {character.name}
           </h2>
 

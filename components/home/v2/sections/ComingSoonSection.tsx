@@ -13,7 +13,7 @@ export default function ComingSoonSection() {
             Coming Soon
           </div>
 
-          <h2 className="mt-8 text-6xl font-black tracking-[-0.05em] text-white">
+          <h2 className="mt-8 text-6xl font-black tracking-[-0.03em] text-white">
             More Official Databases
           </h2>
 

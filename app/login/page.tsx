@@ -68,7 +68,7 @@ export default function LoginPage() {
       <div className="absolute left-[-220px] top-[-120px] h-[620px] w-[620px] rounded-full bg-pink-500/15 blur-[180px]" />
       <div className="absolute right-[-220px] bottom-[-120px] h-[620px] w-[620px] rounded-full bg-violet-500/15 blur-[180px]" />
 
-      <section className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-36">
+      <section className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-44">
         <div className="grid gap-16 xl:grid-cols-[1fr_560px]">
 
           {/* LEFT */}
@@ -79,7 +79,7 @@ export default function LoginPage() {
               WELCOME BACK
             </div>
 
-            <h1 className="mt-8 text-7xl font-black leading-[0.92] tracking-[-0.05em]">
+            <h1 className="mt-8 text-7xl font-black leading-[0.92] tracking-[-0.03em]">
               Sign In To
               <br />
               GTA Companion

@@ -6,7 +6,7 @@ type Props = {
 
 export default function PageContainer({ children }: Props) {
   return (
-    <div className="relative mx-auto w-full max-w-[1800px] px-6 pt-36 pb-24 sm:px-8 lg:px-14 xl:px-20">
+    <div className="relative mx-auto w-full max-w-[1600px] px-6 pt-44 pb-28 sm:px-10 lg:px-14">
       {children}
     </div>
   );

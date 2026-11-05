@@ -20,7 +20,7 @@ export default function MediaPage() {
 
       <div className="absolute right-[-240px] bottom-[-150px] h-[700px] w-[700px] rounded-full bg-violet-500/15 blur-[220px]" />
 
-      <div className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-36">
+      <div className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-44">
 
         <div className="mb-20">
 
@@ -29,7 +29,7 @@ export default function MediaPage() {
             Unofficial fan page
           </div>
 
-          <h1 className="mt-8 text-7xl font-black tracking-[-0.05em]">
+          <h1 className="mt-8 text-7xl font-black tracking-[-0.03em]">
             GTA VI Media Library
           </h1>
 

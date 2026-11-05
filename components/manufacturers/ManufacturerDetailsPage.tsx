@@ -96,7 +96,7 @@ export default function ManufacturerDetailsPage({
 
           </span>
 
-          <h1 className="mt-8 text-6xl font-black tracking-[-0.04em]">
+          <h1 className="mt-8 text-6xl font-black tracking-[-0.03em]">
 
             {manufacturer.name}
 

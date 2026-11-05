@@ -60,7 +60,7 @@ export default function FeaturedDatabasesSection() {
           description="Every page below is built using official GTA VI information released by Rockstar Games."
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {content.map((item) => (
             <FeaturedDatabaseCard
               key={item.title}

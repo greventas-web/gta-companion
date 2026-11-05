@@ -33,7 +33,7 @@ export default function PageCTA({
 
         </div>
 
-        <h2 className="mt-8 text-5xl font-black tracking-[-0.04em] text-white lg:text-6xl">
+        <h2 className="mt-8 text-5xl font-black tracking-[-0.03em] text-white lg:text-6xl">
           {title}
         </h2>
 

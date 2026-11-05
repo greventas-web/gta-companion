@@ -3,6 +3,7 @@ import HomeStatsV2 from "./HomeStatsV2";
 import FeaturedNewsV2 from "./FeaturedNewsV2";
 import FeaturedDatabaseV2 from "./FeaturedDatabaseV2";
 import WhyCompanionV2 from "./WhyCompanionV2";
+import CategoryGridSection from "./sections/CategoryGridSection";
 
 export default function HomePageV2() {
   return (
@@ -14,6 +15,8 @@ export default function HomePageV2() {
       <FeaturedNewsV2 />
 
       <FeaturedDatabaseV2 />
+
+      <CategoryGridSection />
 
       <WhyCompanionV2 />
     </main>

@@ -26,7 +26,7 @@ export default function FeaturedTrailer({
           Featured Trailer
         </div>
 
-        <h2 className="mt-6 text-5xl font-black tracking-[-0.04em] text-white">
+        <h2 className="mt-6 text-5xl font-black tracking-[-0.03em] text-white">
           {title}
         </h2>
 

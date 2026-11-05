@@ -39,7 +39,7 @@ const stats = [
 
 export default function HomeStatsV2() {
   return (
-    <section className="relative mx-auto max-w-[1700px] px-8 py-32">
+    <section className="relative mx-auto max-w-[1600px] px-6 py-28 sm:px-10 lg:px-14 lg:py-36">
 
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(236,72,153,.08),transparent_72%)]" />
 
@@ -49,7 +49,7 @@ export default function HomeStatsV2() {
           GTA COMPANION
         </div>
 
-        <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+        <h2 className="mt-6 text-4xl font-black leading-tight tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
           creating the most complete GTA VI companion platform.
         </h2>
 

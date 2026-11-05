@@ -76,7 +76,7 @@ export default function NewsDatabase() {
             News Library
           </div>
 
-          <h2 className="mt-4 text-5xl font-black tracking-[-0.04em] text-white">
+          <h2 className="mt-4 text-5xl font-black tracking-[-0.03em] text-white">
             {filteredNews.length} Articles
           </h2>
 
@@ -104,7 +104,7 @@ export default function NewsDatabase() {
 
       ) : (
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
 
           {remainingArticles.map((article) => (
 

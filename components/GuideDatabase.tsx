@@ -69,7 +69,7 @@ export default function GuideDatabase() {
             Guide Library
           </div>
 
-          <h2 className="mt-4 text-5xl font-black tracking-[-0.04em] text-white">
+          <h2 className="mt-4 text-5xl font-black tracking-[-0.03em] text-white">
             {filteredGuides.length} Guides
           </h2>
 
@@ -97,7 +97,7 @@ export default function GuideDatabase() {
 
       ) : (
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
 
           {filteredGuides.map((guide) => (
 

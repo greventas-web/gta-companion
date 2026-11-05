@@ -68,7 +68,7 @@ export default function ManufacturerDatabase() {
             Database Results
           </div>
 
-          <h2 className="mt-4 text-5xl font-black tracking-[-0.04em] text-white">
+          <h2 className="mt-4 text-5xl font-black tracking-[-0.03em] text-white">
             {filteredManufacturers.length} Manufacturers
           </h2>
 
@@ -96,7 +96,7 @@ export default function ManufacturerDatabase() {
 
       ) : (
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
 
           {filteredManufacturers.map((manufacturer) => (
 

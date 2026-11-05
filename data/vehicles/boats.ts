@@ -7,7 +7,7 @@ export const boatVehicles: Vehicle[] = [
     name: "DockTease Marquis",
     manufacturer: "DockTease",
     category: "Boat",
-    image: "/images/original/vehicles/boat.jpg",
+    image: "/images/original/vehicles/docktease-marquis.jpg",
     description:
       "Luxury sailing yacht offering elegant design and relaxing open-water cruising.",
     firstAppearance: "Legacy GTA Series",
@@ -21,7 +21,7 @@ export const boatVehicles: Vehicle[] = [
     name: "Speedophile Speeder",
     manufacturer: "Speedophile",
     category: "Boat",
-    image: "/images/original/vehicles/boat.jpg",
+    image: "/images/original/vehicles/speedophile-speeder.jpg",
     description:
       "Fast recreational speedboat built for coastal exploration and high-speed travel.",
     firstAppearance: "Legacy GTA Series",
@@ -35,7 +35,7 @@ export const boatVehicles: Vehicle[] = [
     name: "Shitzu Tropic",
     manufacturer: "Shitzu",
     category: "Boat",
-    image: "/images/original/vehicles/boat.jpg",
+    image: "/images/original/vehicles/shitzu-tropic.jpg",
     description:
       "Premium leisure boat combining comfort, performance and luxury for ocean adventures.",
     firstAppearance: "Legacy GTA Series",

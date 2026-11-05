@@ -27,7 +27,7 @@ export default function Footer() {
 
           <div>
 
-            <h2 className="text-5xl font-black tracking-[-0.05em] text-white">
+            <h2 className="text-5xl font-black tracking-[-0.03em] text-white">
               GTA <span className="text-pink-400">Companion</span>{" "}
               <span className="text-violet-400 italic">VI</span>
             </h2>

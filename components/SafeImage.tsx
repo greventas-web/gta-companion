@@ -25,7 +25,7 @@ export default function SafeImage({ src, alt, className, fill, sizes, priority }
             : "flex h-full min-h-40 w-full items-end bg-gradient-to-br from-zinc-800 via-zinc-950 to-black p-6"
         }
       >
-        <span className="text-xl font-black tracking-[-0.04em] text-white">
+        <span className="text-xl font-black tracking-[-0.03em] text-white">
           {alt}
         </span>
       </div>

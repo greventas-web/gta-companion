@@ -11,7 +11,7 @@ export default function NewsPage() {
 
       <div className="absolute right-[-240px] bottom-[-180px] h-[700px] w-[700px] rounded-full bg-violet-500/15 blur-[220px]" />
 
-      <section className="relative mx-auto max-w-[1700px] px-8 pt-36">
+      <section className="relative mx-auto max-w-[1700px] px-8 pt-44">
 
         <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
 
@@ -21,7 +21,7 @@ export default function NewsPage() {
 
         </div>
 
-        <h1 className="mt-8 text-7xl font-black tracking-[-0.05em]">
+        <h1 className="mt-8 text-7xl font-black tracking-[-0.03em]">
           GTA VI News
         </h1>
 

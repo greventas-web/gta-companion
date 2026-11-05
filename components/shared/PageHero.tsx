@@ -24,7 +24,7 @@ export default function PageHero({
           {badge}
         </div>
 
-        <h1 className="mt-8 max-w-5xl text-6xl font-black leading-[0.9] tracking-[-0.05em] text-white lg:text-8xl">
+        <h1 className="mt-8 max-w-5xl text-6xl font-black leading-[0.9] tracking-[-0.03em] text-white lg:text-8xl">
           {title}
         </h1>
 

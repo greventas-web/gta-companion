@@ -68,7 +68,7 @@ export default function FeaturedNews({
 
             </div>
 
-            <h2 className="mt-8 max-w-4xl text-4xl font-black leading-tight tracking-[-0.04em] text-white md:text-6xl">
+            <h2 className="mt-8 max-w-4xl text-4xl font-black leading-tight tracking-[-0.03em] text-white md:text-6xl">
               {article.title}
             </h2>
 

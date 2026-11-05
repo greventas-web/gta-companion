@@ -56,7 +56,7 @@ export default function FeaturedDatabaseCard({
           {/* Content */}
 
           <div className="absolute bottom-0 left-0 right-0 p-10">
-            <h3 className="text-5xl font-black tracking-[-0.04em] text-white transition duration-300 group-hover:text-pink-300">
+            <h3 className="text-5xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
               {title}
             </h3>
 

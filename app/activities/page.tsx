@@ -10,13 +10,13 @@ export default function ActivitiesPage() {
 
         <div className="absolute right-[-220px] bottom-[-140px] h-[620px] w-[620px] rounded-full bg-violet-500/10 blur-[180px]" />
 
-        <div className="relative mx-auto max-w-[1700px] px-8 pt-36 pb-10">
+        <div className="relative mx-auto max-w-[1700px] px-8 pt-44 pb-10">
 
           <div className="inline-flex rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
             Unofficial fan database
           </div>
 
-          <h1 className="mt-8 text-7xl font-black tracking-[-0.05em]">
+          <h1 className="mt-8 text-7xl font-black tracking-[-0.03em]">
             Activities
           </h1>
 

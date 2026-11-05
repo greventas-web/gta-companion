@@ -41,7 +41,7 @@ export default function MapSidebar({ region }: Props) {
         </div>
       </div>
 
-      <h3 className="mt-7 text-4xl font-black tracking-[-0.04em] text-white">
+      <h3 className="mt-7 text-4xl font-black tracking-[-0.03em] text-white">
         {region.name}
       </h3>
 

@@ -21,7 +21,7 @@ export default function SectionTitle({
         {eyebrow}
       </div>
 
-      <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white">
+      <h2 className="mt-5 text-6xl font-black tracking-[-0.03em] text-white">
         {title}
       </h2>
 

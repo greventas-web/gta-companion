@@ -17,21 +17,21 @@ const cards = [
     title: "Vehicles",
     href: "/vehicles",
     image: "/images/categories/vehicles.jpg",
-    count: "7",
+    count: "40",
     icon: Car,
   },
   {
     title: "Manufacturers",
     href: "/manufacturers",
     image: "/images/categories/manufacturers.jpg",
-    count: "6",
+    count: "10",
     icon: Shield,
   },
   {
     title: "Characters",
     href: "/characters",
     image: "/images/categories/characters.jpg",
-    count: "7",
+    count: "8",
     icon: User,
   },
   {
@@ -45,48 +45,48 @@ const cards = [
     title: "Businesses",
     href: "/businesses",
     image: "/images/categories/businesses.jpg",
-    count: "0",
+    count: "5",
     icon: Briefcase,
   },
   {
     title: "Weapons",
     href: "/weapons",
     image: "/images/categories/weapons.jpg",
-    count: "0",
+    count: "6",
     icon: Crosshair,
   },
   {
     title: "Animals",
     href: "/animals",
     image: "/images/categories/animals.jpg",
-    count: "0",
+    count: "5",
     icon: PawPrint,
   },
   {
     title: "Activities",
     href: "/activities",
     image: "/images/categories/activities.jpg",
-    count: "0",
+    count: "5",
     icon: Bike,
   },
   {
     title: "Brands",
     href: "/brands",
     image: "/images/categories/brands.jpg",
-    count: "0",
+    count: "8",
     icon: Building2,
   },
 ];
 
 export default function CategoryGridSection() {
   return (
-    <section className="relative overflow-hidden bg-[#040404] py-36">
+    <section className="relative overflow-hidden bg-[#040404] py-28 lg:py-36">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-[-250px] top-[-180px] h-[650px] w-[650px] rounded-full bg-pink-500/15 blur-[180px]" />
         <div className="absolute right-[-250px] bottom-[-180px] h-[650px] w-[650px] rounded-full bg-violet-500/15 blur-[180px]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1700px] px-8">
+      <div className="relative mx-auto max-w-[1600px] px-6 sm:px-10 lg:px-14">
 
         <div className="mb-20 text-center">
 
@@ -94,13 +94,13 @@ export default function CategoryGridSection() {
             Browse By Category
           </div>
 
-          <h2 className="mx-auto mt-5 max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.05em] text-white lg:text-7xl">
+          <h2 className="mx-auto mt-6 max-w-4xl text-5xl font-black leading-tight tracking-[-0.03em] text-white lg:text-6xl">
             Explore Everything We Know
           </h2>
 
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
           {cards.map((card) => (
             <CategoryCard

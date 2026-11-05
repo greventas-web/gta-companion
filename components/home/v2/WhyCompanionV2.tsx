@@ -27,13 +27,13 @@ const features = [
 
 export default function WhyCompanionV2() {
   return (
-    <section className="mx-auto max-w-[1700px] px-8 py-32">
+    <section className="mx-auto max-w-[1600px] px-6 py-28 sm:px-10 lg:px-14 lg:py-36">
       <div className="mx-auto max-w-4xl text-center">
         <div className="text-xs font-black uppercase tracking-[0.5em] text-pink-400">
           WHY GTA COMPANION
         </div>
 
-        <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white">
+        <h2 className="mt-6 text-5xl font-black leading-tight tracking-[-0.03em] text-white lg:text-6xl">
           Built For GTA Players
         </h2>
 

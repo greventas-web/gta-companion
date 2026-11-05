@@ -13,7 +13,7 @@ export default function FeaturedVehicle() {
             Featured Vehicle
           </p>
 
-          <h2 className="mt-3 text-5xl font-black tracking-[-0.04em] text-white">
+          <h2 className="mt-3 text-5xl font-black tracking-[-0.03em] text-white">
             Vehicle Spotlight
           </h2>
 

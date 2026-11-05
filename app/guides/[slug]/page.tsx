@@ -42,7 +42,7 @@ export default async function GuidePage({
   return (
     <main className="min-h-screen bg-[#040404] text-white">
 
-      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-36">
+      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-44">
 
         <Breadcrumb
           items={[
@@ -86,7 +86,7 @@ export default async function GuidePage({
               {guide.category}
             </span>
 
-            <h1 className="mt-8 text-6xl font-black tracking-[-0.04em]">
+            <h1 className="mt-8 text-6xl font-black tracking-[-0.03em]">
               {guide.title}
             </h1>
 

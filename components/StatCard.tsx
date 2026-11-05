@@ -38,7 +38,7 @@ export default function StatCard({
         </div>
 
         <div
-          className={`text-5xl font-black tracking-[-0.04em] transition duration-300 ${
+          className={`text-5xl font-black tracking-[-0.03em] transition duration-300 ${
             accent
               ? "text-pink-400"
               : "text-white group-hover:text-pink-300"

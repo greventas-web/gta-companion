@@ -45,7 +45,7 @@ export default function ComingSoonPage({
 
             </div>
 
-            <h2 className="mt-8 text-5xl font-black tracking-[-0.05em] lg:text-7xl">
+            <h2 className="mt-8 text-5xl font-black tracking-[-0.03em] lg:text-7xl">
               This Database Is
               <br />
               Growing

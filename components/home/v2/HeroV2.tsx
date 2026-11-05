@@ -20,19 +20,19 @@ export default function HeroV2() {
         <div className="absolute right-[-260px] top-[-120px] h-[720px] w-[720px] rounded-full bg-violet-500/20 blur-[230px]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1700px] px-6 pb-8 pt-24 sm:px-8">
+      <div className="relative mx-auto max-w-[1600px] px-6 pb-16 pt-44 sm:px-10 sm:pt-40 lg:px-14">
         <div className="overflow-hidden rounded-[42px] border border-white/10 bg-[#09090B] shadow-[0_45px_120px_rgba(0,0,0,.65)]">
-          <div className="grid lg:min-h-[720px] lg:grid-cols-[620px_1fr]">
+          <div className="grid lg:min-h-[760px] lg:grid-cols-[minmax(0,680px)_1fr]">
             {/* LEFT */}
 
-            <div className="relative z-20 flex items-center px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+            <div className="relative z-20 flex items-center px-8 py-14 sm:px-12 sm:py-16 lg:px-16 lg:py-24">
               <div className="min-w-0">
                 <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-pink-400 sm:px-6 sm:tracking-[0.45em]">
                   <Sparkles size={15} />
                   UNOFFICIAL FAN PROJECT
                 </div>
 
-                <h1 className="mt-8 text-5xl font-black leading-[0.88] tracking-[-0.06em] text-white sm:text-6xl lg:text-[72px]">
+                <h1 className="mt-8 text-5xl font-black leading-[1.02] tracking-[-0.03em] text-white sm:text-6xl lg:text-[68px]">
                   GTA VI
                   <br />
                   <span className="bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-500 bg-clip-text text-transparent">
@@ -93,7 +93,7 @@ export default function HeroV2() {
 
             <div className="relative min-h-[320px] lg:min-h-[720px]">
               <Image
-                src="/images/original/vehicles/sports.jpg"
+                src="/images/original/vehicles/bravado-banshee.jpg"
                 alt="Original sports car illustration"
                 fill
                 priority
@@ -110,7 +110,7 @@ export default function HeroV2() {
 
         {/* STATS */}
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-[32px] border border-white/10 bg-[#0B0B0D]/95 p-8 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.45)]">
             <div className="text-[58px] font-black leading-none text-white">
               40

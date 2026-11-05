@@ -12,7 +12,7 @@ export default function JoinCommunity() {
             Join GTA Companion
           </div>
 
-          <h2 className="mt-8 text-6xl font-black tracking-[-0.04em]">
+          <h2 className="mt-8 text-6xl font-black tracking-[-0.03em]">
             Be Ready For
             <br />
             Grand Theft Auto VI

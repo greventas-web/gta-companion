@@ -24,7 +24,7 @@ export default function MediaSection() {
               OFFICIAL MEDIA
             </div>
 
-            <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white lg:text-7xl">
+            <h2 className="mt-5 text-6xl font-black tracking-[-0.03em] text-white lg:text-7xl">
               Trailers & Screenshots
             </h2>
 

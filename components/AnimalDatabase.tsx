@@ -77,7 +77,7 @@ export default function AnimalDatabase() {
 
       ) : (
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
 
           {filteredAnimals.map((animal) => (
 

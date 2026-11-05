@@ -65,7 +65,7 @@ export default function WeaponDetailsPage({
 
           </span>
 
-          <h1 className="mt-8 text-6xl font-black tracking-[-0.05em]">
+          <h1 className="mt-8 text-6xl font-black tracking-[-0.03em]">
 
             {weapon.name}
 

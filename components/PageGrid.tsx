@@ -11,7 +11,7 @@ export default function PageGrid({
 }: Props) {
   return (
     <div
-      className={`mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 ${className}`}
+      className={`mt-16 grid gap-10 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 ${className}`}
     >
       {children}
     </div>
