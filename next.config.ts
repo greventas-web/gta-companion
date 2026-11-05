@@ -7,6 +7,22 @@ const nextConfig: NextConfig = {
 
   compress: true,
 
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "gta-companion.vercel.app",
+          },
+        ],
+        destination: "https://www.gta-companion.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   images: {
     contentDispositionType: "inline",
     deviceSizes: [640, 828, 1080, 1200, 1920],
