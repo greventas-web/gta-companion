@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://gtacompanion.com";
+const baseUrl = "https://gta-companion.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

@@ -31,10 +31,10 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="mailto:contact@gtacompanion.com"
+                href="mailto:contact@gta-companion.com"
                 className="mt-8 inline-block text-2xl font-bold text-pink-400 hover:text-pink-300"
               >
-                contact@gtacompanion.com
+                contact@gta-companion.com
               </a>
 
               <p className="mt-8 text-zinc-500">

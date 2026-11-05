@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gtacompanion.com"),
+  metadataBase: new URL("https://gta-companion.com"),
 
   title: {
     default: "GTA Companion",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     description:
       "The premium companion platform for Grand Theft Auto VI.",
 
-    url: "https://gtacompanion.com",
+    url: "https://gta-companion.com",
 
     siteName: "GTA Companion",
 

@@ -16,8 +16,8 @@ export default function robots(): MetadataRoute.Robots {
       ],
     },
 
-    sitemap: "https://gtacompanion.com/sitemap.xml",
+    sitemap: "https://gta-companion.com/sitemap.xml",
 
-    host: "https://gtacompanion.com",
+    host: "https://gta-companion.com",
   };
 }
