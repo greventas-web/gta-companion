@@ -75,8 +75,8 @@ export default function VehicleDatabase() {
           </h2>
 
           <p className="mt-4 text-lg text-zinc-400">
-            Showing {filteredVehicles.length} of {totalVehicles} officially
-            revealed GTA VI vehicles.
+            Showing {filteredVehicles.length} of {totalVehicles} vehicles.
+            Use the search box to narrow the list.
           </p>
         </div>
       </div>

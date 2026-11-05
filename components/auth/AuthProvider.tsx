@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  onAuthStateChanged,
-  User,
-} from "firebase/auth";
-
-import {
-  doc,
-  getDoc,
-  serverTimestamp,
-  setDoc,
-} from "firebase/firestore";
+import type { User } from "firebase/auth";
 
 import {
   createContext,
@@ -18,8 +8,6 @@ import {
   useEffect,
   useState,
 } from "react";
-
-import { auth, db } from "@/lib/firebase";
 
 type AuthContextType = {
   user: User | null;
@@ -43,73 +31,67 @@ export function AuthProvider({
     useState(true);
 
   useEffect(() => {
-    if (!auth || !db) {
-      setUser(null);
-      setLoading(false);
-      return;
-    }
+    let unsubscribe = () => {};
+    let cancelled = false;
 
-    const firebaseAuth = auth;
-    const firestore = db;
+    async function start() {
+      const { auth, db } = await import("@/lib/firebase");
 
-    const unsubscribe =
-      onAuthStateChanged(
-        firebaseAuth,
-        async (currentUser) => {
-          setUser(currentUser);
+      if (cancelled) return;
 
-          if (currentUser) {
-            const ref = doc(
-              firestore,
-              "users",
-              currentUser.uid
-            );
+      if (!auth || !db) {
+        setUser(null);
+        setLoading(false);
+        return;
+      }
 
-            const snapshot =
-              await getDoc(ref);
-
-            if (!snapshot.exists()) {
-              await setDoc(ref, {
-                uid: currentUser.uid,
-
-                displayName:
-                  currentUser.displayName ??
-                  "",
-
-                email:
-                  currentUser.email ??
-                  "",
-
-                role: "member",
-
-                createdAt:
-                  serverTimestamp(),
-
-                favorites: [],
-
-                savedGuides: [],
-
-                recentViews: [],
-
-                settings: {
-                  notifications: true,
-                  darkMode: true,
-                },
-
-                progress: {
-                  completed: 0,
-                  collectibles: 0,
-                  missions: 0,
-                },
-              });
-            }
-          }
-
-          setLoading(false);
-        }
+      const { onAuthStateChanged } = await import("firebase/auth");
+      const { doc, getDoc, serverTimestamp, setDoc } = await import(
+        "firebase/firestore"
       );
 
-    return unsubscribe;
+      if (cancelled) return;
+
+      unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+        setUser(currentUser);
+
+        if (currentUser) {
+          const ref = doc(db, "users", currentUser.uid);
+          const snapshot = await getDoc(ref);
+
+          if (!snapshot.exists()) {
+            await setDoc(ref, {
+              uid: currentUser.uid,
+              displayName: currentUser.displayName ?? "",
+              email: currentUser.email ?? "",
+              role: "member",
+              createdAt: serverTimestamp(),
+              favorites: [],
+              savedGuides: [],
+              recentViews: [],
+              settings: {
+                notifications: true,
+                darkMode: true,
+              },
+              progress: {
+                completed: 0,
+                collectibles: 0,
+                missions: 0,
+              },
+            });
+          }
+        }
+
+        setLoading(false);
+      });
+    }
+
+    start();
+
+    return () => {
+      cancelled = true;
+      unsubscribe();
+    };
   }, []);
 
   return (

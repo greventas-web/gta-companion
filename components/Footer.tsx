@@ -50,6 +50,10 @@ export default function Footer() {
                 Timeline
               </Link>
 
+              <Link href="/launch" className="block text-zinc-400 transition hover:text-pink-400">
+                Editions
+              </Link>
+
               <Link href="/about" className="block text-zinc-400 transition hover:text-pink-400">
                 About
               </Link>

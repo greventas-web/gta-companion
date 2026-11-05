@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/timeline",
     "/media",
     "/guides",
+    "/launch",
     "/faq",
     "/contact",
     "/privacy",

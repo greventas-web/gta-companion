@@ -27,6 +27,7 @@ const groups = [
   {
     title: "More",
     links: [
+      { title: "Editions", href: "/launch" },
       { title: "Guides", href: "/guides" },
       { title: "News", href: "/news" },
       { title: "Media", href: "/media" },

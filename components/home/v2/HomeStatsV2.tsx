@@ -22,7 +22,7 @@ const stats = [
     href: "/locations",
   },
   {
-    value: "40",
+    value: "47",
     label: "Vehicles",
     subtitle: "Fan database",
     icon: Car,

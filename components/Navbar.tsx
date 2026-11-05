@@ -21,7 +21,6 @@ import MegaMenu, { exploreLinks } from "./MegaMenu";
 
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useSearch } from "@/components/search/SearchProvider";
-import { logoutUser } from "@/lib/auth";
 export default function Navbar() {
   const { user } = useAuth();
   const { open } = useSearch();
@@ -40,7 +39,8 @@ export default function Navbar() {
     }
 
     function handleScroll() {
-      setScrolled(window.scrollY > 20);
+      const next = window.scrollY > 20;
+      setScrolled((current) => (current === next ? current : next));
     }
 
     function handleClickOutside(event: MouseEvent) {
@@ -53,7 +53,7 @@ export default function Navbar() {
     }
 
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("mousedown", handleClickOutside);
 
     handleScroll();
@@ -69,6 +69,7 @@ export default function Navbar() {
   }, []);
 
   async function handleLogout() {
+    const { logoutUser } = await import("@/lib/auth");
     await logoutUser();
     setMenuOpen(false);
   }
@@ -80,8 +81,8 @@ export default function Navbar() {
         <div
           className={`mx-auto flex h-20 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
             scrolled
-              ? "border-pink-500/20 bg-black/80 shadow-[0_25px_80px_rgba(0,0,0,.60)] backdrop-blur-3xl"
-              : "border-white/10 bg-black/55 shadow-[0_10px_40px_rgba(0,0,0,.35)] backdrop-blur-2xl"
+              ? "border-pink-500/20 bg-black/95 shadow-[0_25px_80px_rgba(0,0,0,.60)] sm:bg-black/80 sm:backdrop-blur-xl"
+              : "border-white/10 bg-black/95 shadow-[0_10px_40px_rgba(0,0,0,.35)] sm:bg-black/70 sm:backdrop-blur-xl"
           }`}
         >
 
@@ -168,7 +169,7 @@ export default function Navbar() {
             ) : (
               <div
                 ref={menuRef}
-                className="relative"
+                className="relative hidden lg:block"
               >
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
@@ -280,12 +281,6 @@ export default function Navbar() {
                 { title: "Home", href: "/" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
-                ...(!user
-                  ? [
-                      { title: "Sign In", href: "/login" },
-                      { title: "Join Free", href: "/register" },
-                    ]
-                  : []),
               ]
                 .filter(
                   (item, index, list) =>

@@ -5,6 +5,7 @@ const quickLinks = [
   { title: "News", href: "/news" },
   { title: "Media", href: "/media" },
   { title: "Timeline", href: "/timeline" },
+  { title: "Editions", href: "/launch" },
   { title: "About", href: "/about" },
 ];
 

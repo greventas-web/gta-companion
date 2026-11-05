@@ -70,4 +70,18 @@ export const bikeVehicles: Vehicle[] = [
     status: "Legacy GTA Vehicle",
     gallery: [],
   },
+
+  {
+    id: 304,
+    slug: "dinka-enduro",
+    name: "Dinka Enduro",
+    manufacturer: "Dinka",
+    category: "Bike",
+    image: "/images/original/vehicles/dinka-enduro.jpg",
+    description:
+      "An Ultimate Edition motorcycle kept at Jason's safehouse. Rockstar describes the included version with an army-fatigue look. No performance figures have been published.",
+    firstAppearance: "Ultimate Edition",
+    status: "Named by Rockstar",
+    gallery: [],
+  },
 ];

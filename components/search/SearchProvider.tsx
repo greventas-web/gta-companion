@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
   createContext,
@@ -10,7 +11,10 @@ import {
   useState,
 } from "react";
 
-import SearchDialog from "@/components/search/SearchDialog";
+const SearchDialog = dynamic(
+  () => import("@/components/search/SearchDialog"),
+  { ssr: false }
+);
 
 type SearchContextValue = {
   open: () => void;
@@ -68,10 +72,12 @@ export function SearchProvider({
     <SearchContext.Provider value={value}>
       {children}
 
-      <SearchDialog
-        open={isOpen}
-        onClose={close}
-      />
+      {isOpen ? (
+        <SearchDialog
+          open={isOpen}
+          onClose={close}
+        />
+      ) : null}
     </SearchContext.Provider>
   );
 }

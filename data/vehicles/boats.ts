@@ -42,4 +42,32 @@ export const boatVehicles: Vehicle[] = [
     status: "Community Favorite",
     gallery: [],
   },
+
+  {
+    id: 305,
+    slug: "crest-kayak",
+    name: "Crest Kayak",
+    manufacturer: "Crest",
+    category: "Boat",
+    image: "/images/original/vehicles/crest-kayak.jpg",
+    description:
+      "A kayak included with Jason's safehouse vehicles in the Ultimate Edition. Rockstar has not published a separate price or any performance figures.",
+    firstAppearance: "Ultimate Edition",
+    status: "Named by Rockstar",
+    gallery: [],
+  },
+
+  {
+    id: 306,
+    slug: "shitzu-squalo",
+    name: "Shitzu Squalo",
+    manufacturer: "Shitzu",
+    category: "Boat",
+    image: "/images/original/vehicles/shitzu-squalo.jpg",
+    description:
+      "Rockstar describes this Ultimate Edition boat as a pink-and-blue Squalo docked at Washington Beach, set up for fishing in Gambit Bay and carrying a weapons crate.",
+    firstAppearance: "Ultimate Edition",
+    status: "Named by Rockstar",
+    gallery: [],
+  },
 ];

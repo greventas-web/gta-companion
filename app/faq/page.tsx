@@ -19,6 +19,11 @@ const faqs = [
       "Take-Two announced the standard edition at $79.99 in the United States. The Ultimate Edition is $99.99 and adds vehicles, weapons, apparel, and story content for Jason and Lucia. Purchases before November 20, 2026 include the Vintage Vice City Pack, and digital pre-orders include one month of GTA+.",
   },
   {
+    question: "What is in each edition?",
+    answer:
+      "Both editions include the game. Purchases before November 20, 2026 add the Vintage Vice City Pack: the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. Digital pre-orders also include one month of GTA+. The Ultimate Edition, at $99.99 in the United States, adds named vehicles, the Hawk & Little Morgan revolvers, Jason's Girardi ES9, Lucia's Klose K17, and extra shops. The full list is on the Editions page.",
+  },
+  {
     question: "Where can I buy or pre-order it?",
     answer:
       "Take-Two says the game is available from the PlayStation Store, the Microsoft Store, the Rockstar Games Store, and other retailers. The physical box contains a download code.",

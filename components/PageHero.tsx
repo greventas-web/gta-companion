@@ -15,11 +15,7 @@ export default function PageHero({
   children,
 }: Props) {
   return (
-    <section className="relative mb-24 overflow-hidden rounded-[44px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black px-10 py-20 shadow-[0_40px_120px_rgba(0,0,0,.45)]">
-
-      <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-pink-500/10 blur-[170px]" />
-
-      <div className="absolute -right-40 bottom-[-160px] h-[520px] w-[520px] rounded-full bg-violet-500/10 blur-[170px]" />
+    <section className="relative mb-10 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black px-6 py-8 shadow-[0_40px_120px_rgba(0,0,0,.45)] sm:px-10 sm:py-10">
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,.08),transparent_55%)]" />
 
@@ -33,11 +29,11 @@ export default function PageHero({
 
         </div>
 
-        <h1 className="mt-8 max-w-5xl text-6xl font-black leading-[0.9] tracking-[-0.03em] text-white lg:text-7xl">
+        <h1 className="mt-5 max-w-5xl text-4xl font-black leading-tight tracking-[-0.03em] text-white lg:text-5xl">
           {title}
         </h1>
 
-        <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
           {description}
         </p>
 

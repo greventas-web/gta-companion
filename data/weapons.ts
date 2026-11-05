@@ -90,4 +90,49 @@ export const weapons: Weapon[] = [
     status: "Officially Confirmed",
     gallery: [],
   },
+
+  {
+    id: 7,
+    slug: "hawk-little-morgan",
+    name: "Hawk & Little Morgan Revolvers",
+    manufacturer: "Hawk & Little",
+    category: "Handgun",
+    image: "/images/weapons/hawk-little-morgan.jpg",
+    description:
+      "A matching pair of revolvers in the Ultimate Edition. Rockstar describes them as his-and-hers Vice City revolvers from the Vercetti Estate, with engraved metal, palm-etched grips, and a scope. Caliber has not been published.",
+    firstAppearance: "Ultimate Edition",
+    ammunition: "Not published",
+    status: "Named by Rockstar",
+    gallery: [],
+  },
+
+  {
+    id: 8,
+    slug: "girardi-es9",
+    name: "Girardi ES9",
+    manufacturer: "Girardi",
+    category: "Handgun",
+    image: "/images/weapons/girardi-es9.jpg",
+    description:
+      "Jason's personalized pistol in the Ultimate Edition. Rockstar says this sidearm has detailed engraving. Caliber has not been published.",
+    firstAppearance: "Ultimate Edition",
+    ammunition: "Not published",
+    status: "Named by Rockstar",
+    gallery: [],
+  },
+
+  {
+    id: 9,
+    slug: "klose-k17",
+    name: "Klose K17",
+    manufacturer: "Klose",
+    category: "Handgun",
+    image: "/images/weapons/klose-k17.jpg",
+    description:
+      "Lucia's personalized pistol in the Ultimate Edition. Rockstar says this sidearm has detailed engraving. Caliber has not been published.",
+    firstAppearance: "Ultimate Edition",
+    ammunition: "Not published",
+    status: "Named by Rockstar",
+    gallery: [],
+  },
 ];

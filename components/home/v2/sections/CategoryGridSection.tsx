@@ -17,7 +17,7 @@ const cards = [
     title: "Vehicles",
     href: "/vehicles",
     image: "/images/categories/vehicles.jpg",
-    count: "40",
+    count: "47",
     icon: Car,
   },
   {
@@ -52,7 +52,7 @@ const cards = [
     title: "Weapons",
     href: "/weapons",
     image: "/images/categories/weapons.jpg",
-    count: "6",
+    count: "9",
     icon: Crosshair,
   },
   {
@@ -80,27 +80,21 @@ const cards = [
 
 export default function CategoryGridSection() {
   return (
-    <section className="relative overflow-hidden bg-[#040404] py-28 lg:py-36">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-[-250px] top-[-180px] h-[650px] w-[650px] rounded-full bg-pink-500/15 blur-[180px]" />
-        <div className="absolute right-[-250px] bottom-[-180px] h-[650px] w-[650px] rounded-full bg-violet-500/15 blur-[180px]" />
-      </div>
-
+    <section className="relative overflow-hidden bg-[#040404] py-14 lg:py-16">
       <div className="relative mx-auto max-w-[1600px] px-6 sm:px-10 lg:px-14">
 
-        <div className="mb-20 text-center">
-
-          <div className="text-xs font-black uppercase tracking-[0.45em] text-pink-400">
-            Browse By Category
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
+              Databases
+            </h2>
+            <p className="mt-2 max-w-xl text-zinc-400">
+              Open one list. Each subject has its own page.
+            </p>
           </div>
-
-          <h2 className="mx-auto mt-6 max-w-4xl text-5xl font-black leading-tight tracking-[-0.03em] text-white lg:text-6xl">
-            Explore Everything We Know
-          </h2>
-
         </div>
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
           {cards.map((card) => (
             <CategoryCard

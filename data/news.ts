@@ -2,6 +2,16 @@ import { NewsArticle } from "@/types/news";
 
 export const news: NewsArticle[] = [
   {
+    id: 8,
+    slug: "gta-vi-edition-vehicles",
+    title: "Rockstar Names the Edition Vehicles",
+    image: "/images/original/news/announcement.jpg",
+    summary:
+      "The Ultimate Edition names the '95 Grotti Cheetah, Vapid Ganado, Dinka Enduro, Crest Kayak, Shitzu Squalo, and '67 Vapid Dominator Buggy. The Vintage Vice City Pack adds the '55 Vapid Stanier.",
+    date: "2026-06-25",
+    category: "Official News",
+  },
+  {
     id: 7,
     slug: "gta-vi-pre-orders",
     title: "Rockstar Opens GTA VI Pre-Orders",

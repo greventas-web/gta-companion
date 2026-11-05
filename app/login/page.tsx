@@ -64,26 +64,21 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#040404] text-white">
-      <div className="absolute left-[-220px] top-[-120px] h-[620px] w-[620px] rounded-full bg-pink-500/15 blur-[180px]" />
-      <div className="absolute right-[-220px] bottom-[-120px] h-[620px] w-[620px] rounded-full bg-violet-500/15 blur-[180px]" />
+    <main className="min-h-screen bg-[#040404] text-white">
+      <section className="relative mx-auto max-w-[1700px] px-4 pb-16 pt-32 sm:px-8">
+        <div className="grid gap-10 xl:grid-cols-[1fr_560px] xl:gap-16">
 
-      <section className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-44">
-        <div className="grid gap-16 xl:grid-cols-[1fr_560px]">
-
-          {/* LEFT */}
-
-          <div>
+          <div className="order-2 hidden xl:block">
             <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
               <Sparkles size={14} />
               WELCOME BACK
             </div>
 
-            <h1 className="mt-8 text-7xl font-black leading-[0.92] tracking-[-0.03em]">
+            <p className="mt-8 text-6xl font-black leading-[0.92] tracking-[-0.03em]">
               Sign In To
               <br />
               GTA Companion
-            </h1>
+            </p>
 
             <p className="mt-8 max-w-2xl text-xl leading-10 text-zinc-400">
               Access your GTA Companion account to stay updated with official
@@ -116,16 +111,16 @@ export default function LoginPage() {
 
           {/* RIGHT */}
 
-          <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black p-10 shadow-[0_40px_120px_rgba(0,0,0,.45)]">
+          <div className="order-1 rounded-[32px] border border-white/10 bg-[#0B0B0D] p-6 sm:p-10 xl:order-2">
 
             <div className="mb-8">
               <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
                 ACCOUNT LOGIN
               </div>
 
-              <h2 className="mt-4 text-5xl font-black">
+              <h1 className="mt-4 text-4xl font-black sm:text-5xl">
                 Welcome Back
-              </h2>
+              </h1>
             </div>
 
             <form

@@ -1,9 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-
-import { db, isFirebaseConfigured } from "@/lib/firebase";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -24,17 +21,21 @@ export default function SubscribeForm() {
       return;
     }
 
-    if (!isFirebaseConfigured || !db) {
-      setIsError(true);
-      setMessage("Signups are not available yet.");
-      return;
-    }
-
     setPending(true);
     setMessage("");
     setIsError(false);
 
     try {
+      const { db, isFirebaseConfigured } = await import("@/lib/firebase");
+
+      if (!isFirebaseConfigured || !db) {
+        setIsError(true);
+        setMessage("Signups are not available yet.");
+        return;
+      }
+
+      const { doc, serverTimestamp, setDoc } = await import("firebase/firestore");
+
       await setDoc(doc(db, "subscribers", normalized), {
         email: normalized,
         createdAt: serverTimestamp(),

@@ -79,12 +79,8 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#040404] text-white">
-      <div className="absolute left-[-220px] top-[-120px] h-[620px] w-[620px] rounded-full bg-pink-500/15 blur-[180px]" />
-
-      <div className="absolute right-[-220px] bottom-[-120px] h-[620px] w-[620px] rounded-full bg-violet-500/15 blur-[180px]" />
-
-      <section className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-44">
+    <main className="min-h-screen bg-[#040404] text-white">
+      <section className="relative mx-auto max-w-[1700px] px-4 pb-16 pt-32 sm:px-8">
         <div className="grid gap-16 xl:grid-cols-[1fr_560px]">
           {/* LEFT */}
 

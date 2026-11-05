@@ -7,26 +7,19 @@ export default function FeaturedNewsV2() {
   const latest = news.slice(0, 3);
 
   return (
-    <section className="relative mx-auto max-w-[1600px] px-6 py-28 sm:px-10 lg:px-14 lg:py-36">
+    <section className="relative mx-auto max-w-[1600px] px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
 
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(139,92,246,.08),transparent_70%)]" />
 
-      <div className="mb-20 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 
         <div>
-
-          <div className="text-xs font-black uppercase tracking-[0.5em] text-pink-400">
-            ROCKSTAR NEWS
-          </div>
-
-          <h2 className="mt-6 text-5xl font-black leading-tight tracking-[-0.03em] text-white lg:text-6xl">
-            Latest fan notes
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
+            Latest notes
           </h2>
-
-          <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Short notes about public announcements. Trailer video plays from YouTube.
+          <p className="mt-2 max-w-xl text-zinc-400">
+            Short notes on public announcements.
           </p>
-
         </div>
 
         <Link
@@ -72,7 +65,7 @@ export default function FeaturedNewsV2() {
                 {article.date}
               </div>
 
-              <h3 className="mt-5 text-4xl font-black leading-tight text-white transition group-hover:text-pink-400">
+              <h3 className="mt-3 text-2xl font-black leading-tight text-white transition group-hover:text-pink-400">
                 {article.title}
               </h3>
 
