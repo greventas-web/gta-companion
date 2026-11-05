@@ -108,8 +108,6 @@ export default function Navbar() {
 
             <MegaMenu />
 
-<NavLink href="/map">Map</NavLink>
-
             <NavLink href="/news">News</NavLink>
 
             <NavLink href="/media">Media</NavLink>

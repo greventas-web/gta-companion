@@ -140,7 +140,7 @@ export default function MediaPage() {
 
           <div className="grid gap-8 lg:grid-cols-2">
 
-            {trailers.map((trailer) => (
+            {trailers.slice(1).map((trailer) => (
               <TrailerCard
                 key={trailer.id}
                 title={trailer.title}

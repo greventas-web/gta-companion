@@ -49,7 +49,7 @@ export default function HomeStatsV2() {
           GTA COMPANION
         </div>
 
-        <h2 className="mt-5 text-6xl font-black tracking-[-0.05em] text-white">
+        <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
           creating the most complete GTA VI companion platform.
         </h2>
 
@@ -61,7 +61,7 @@ export default function HomeStatsV2() {
 
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-4">
+      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
 
         {stats.map((stat) => {
           const Icon = stat.icon;

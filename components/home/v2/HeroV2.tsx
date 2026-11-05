@@ -19,7 +19,7 @@ export default function HeroV2() {
         <div className="absolute right-[-260px] top-[-120px] h-[720px] w-[720px] rounded-full bg-violet-500/20 blur-[230px]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1700px] px-8 pt-24">
+      <div className="relative mx-auto max-w-[1700px] px-6 pb-8 pt-24 sm:px-8">
         <div className="overflow-hidden rounded-[42px] border border-white/10 bg-[#09090B] shadow-[0_45px_120px_rgba(0,0,0,.65)]">
           <div className="grid min-h-[720px] lg:grid-cols-[620px_1fr]">
             {/* LEFT */}
@@ -41,9 +41,9 @@ export default function HeroV2() {
 
                 <p className="mt-8 max-w-[520px] text-[19px] leading-9 text-zinc-400">
                   Built around official Rockstar Games information.
-                  Browse confirmed vehicles, characters, locations,
-                  media, news and prepare for launch with the most
-                  trusted GTA VI companion platform.
+                  GTA VI launches November 19, 2026 on PlayStation 5
+                  and Xbox Series X|S. Browse the confirmed trailers,
+                  vehicles, characters, and locations here.
                 </p>
 
                 <div className="mt-12 flex flex-wrap gap-5">
@@ -109,7 +109,7 @@ export default function HeroV2() {
 
         {/* STATS */}
 
-        <div className="-mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-[32px] border border-white/10 bg-[#0B0B0D]/95 p-8 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,.45)]">
             <div className="text-[58px] font-black leading-none text-white">
               5
