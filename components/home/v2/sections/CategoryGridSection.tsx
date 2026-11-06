@@ -10,6 +10,16 @@ import {
   User,
 } from "lucide-react";
 
+import { activities } from "@/data/activities";
+import { animals } from "@/data/animals";
+import { brands } from "@/data/brands";
+import { businesses } from "@/data/businesses";
+import { characters } from "@/data/characters";
+import { locations } from "@/data/locations";
+import { manufacturers } from "@/data/manufacturers";
+import { vehicles } from "@/data/vehicles";
+import { weapons } from "@/data/weapons";
+
 import CategoryCard from "../cards/CategoryCard";
 
 const cards = [
@@ -17,63 +27,63 @@ const cards = [
     title: "Vehicles",
     href: "/vehicles",
     image: "/images/categories/vehicles.jpg",
-    count: "47",
+    count: String(vehicles.length),
     icon: Car,
   },
   {
     title: "Manufacturers",
     href: "/manufacturers",
     image: "/images/categories/manufacturers.jpg",
-    count: "10",
+    count: String(manufacturers.length),
     icon: Shield,
   },
   {
     title: "Characters",
     href: "/characters",
     image: "/images/categories/characters.jpg",
-    count: "8",
+    count: String(characters.length),
     icon: User,
   },
   {
     title: "Locations",
     href: "/locations",
     image: "/images/categories/locations.jpg",
-    count: "6",
+    count: String(locations.length),
     icon: MapPin,
   },
   {
     title: "Businesses",
     href: "/businesses",
     image: "/images/categories/businesses.jpg",
-    count: "5",
+    count: String(businesses.length),
     icon: Briefcase,
   },
   {
     title: "Weapons",
     href: "/weapons",
     image: "/images/categories/weapons.jpg",
-    count: "9",
+    count: String(weapons.length),
     icon: Crosshair,
   },
   {
     title: "Animals",
     href: "/animals",
     image: "/images/categories/animals.jpg",
-    count: "5",
+    count: String(animals.length),
     icon: PawPrint,
   },
   {
     title: "Activities",
     href: "/activities",
     image: "/images/categories/activities.jpg",
-    count: "5",
+    count: String(activities.length),
     icon: Bike,
   },
   {
     title: "Brands",
     href: "/brands",
     image: "/images/categories/brands.jpg",
-    count: "8",
+    count: String(brands.length),
     icon: Building2,
   },
 ];
