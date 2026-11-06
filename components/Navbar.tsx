@@ -15,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 
+import SiteLogo from "./SiteLogo";
 import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
 import MegaMenu, { exploreLinks } from "./MegaMenu";
@@ -90,19 +91,10 @@ export default function Navbar() {
 
             <Link
               href="/"
-              className="group flex items-center"
+              aria-label="GTA Companion"
+              className="group flex min-w-0 items-center"
             >
-              <span className="text-2xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-zinc-100 sm:text-[34px]">
-                GTA
-              </span>
-
-              <span className="ml-2 hidden bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-[34px] font-black tracking-[-0.03em] text-transparent sm:inline">
-                Companion
-              </span>
-
-              <span className="ml-2 text-2xl font-black italic text-pink-400 transition duration-300 group-hover:scale-110 sm:text-[36px]">
-                VI
-              </span>
+              <SiteLogo />
             </Link>
 
           </div>

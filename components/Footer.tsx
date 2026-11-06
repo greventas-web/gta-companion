@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import SiteLogo from "@/components/SiteLogo";
 import SubscribeForm from "@/components/SubscribeForm";
 
 export default function Footer() {
@@ -8,18 +9,8 @@ export default function Footer() {
       <div className="mx-auto max-w-[1700px] px-8 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
           <div>
-            <Link href="/" className="inline-flex items-center">
-              <span className="text-4xl font-black text-white">
-                GTA
-              </span>
-
-              <span className="ml-2 bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-500 bg-clip-text text-4xl font-black text-transparent">
-                Companion
-              </span>
-
-              <span className="ml-2 text-[42px] font-black italic text-pink-400">
-                VI
-              </span>
+            <Link href="/" aria-label="GTA Companion" className="inline-flex items-center">
+              <SiteLogo large />
             </Link>
 
             <p className="mt-6 max-w-[360px] text-lg leading-8 text-zinc-400">

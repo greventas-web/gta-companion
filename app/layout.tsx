@@ -70,6 +70,11 @@ export const metadata: Metadata = {
     follow: true,
   },
 
+  icons: {
+    icon: "/logo/mark.svg",
+    apple: "/logo/mark.svg",
+  },
+
   openGraph: {
     title: "GTA Companion",
 
