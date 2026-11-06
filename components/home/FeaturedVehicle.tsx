@@ -26,9 +26,10 @@ export default function FeaturedVehicle() {
             <div className="relative h-[620px]">
 
               <Image
-                src="/images/home/featured-vehicle.jpg"
-                alt="Featured Vehicle"
+                src="/images/original/vehicles/bravado-buffalo.jpg"
+                alt="Bravado Buffalo"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
 

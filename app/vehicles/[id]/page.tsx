@@ -1,10 +1,14 @@
-import Image from "@/components/SafeImage";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import VehicleCard from "@/components/VehicleCard";
+import VehicleGallery from "@/components/VehicleGallery";
+import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
 
+import { manufacturerByName } from "@/data/manufacturers";
 import { vehicles } from "@/data/vehicles";
+import { vehicleImages } from "@/lib/media/catalog";
 
 type Props = {
   params: Promise<{
@@ -24,6 +28,9 @@ export default async function VehicleDetailsPage({
   if (!vehicle) {
     notFound();
   }
+
+  const maker = manufacturerByName(vehicle.manufacturer);
+  const photos = vehicleImages(vehicle);
 
   const relatedVehicles = vehicles
     .filter(
@@ -58,24 +65,10 @@ export default async function VehicleDetailsPage({
 
           {/* Image */}
 
-          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
-
-            <div className="relative aspect-[16/10]">
-
-              <Image
-                src={vehicle.image}
-                alt={vehicle.name}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-
-            </div>
-
-          </div>
+          <VehicleGallery
+            images={photos}
+            alt={vehicle.name}
+          />
 
           {/* Information */}
 
@@ -92,6 +85,18 @@ export default async function VehicleDetailsPage({
               {vehicle.name}
 
             </h1>
+
+            {maker ? (
+              <Link
+                href={`/manufacturers/${maker.slug}`}
+                className="mt-8 inline-flex"
+              >
+                <ManufacturerMark
+                  name={maker.name}
+                  slug={maker.slug}
+                />
+              </Link>
+            ) : null}
 
             <p className="mt-8 text-xl leading-9 text-zinc-400">
 

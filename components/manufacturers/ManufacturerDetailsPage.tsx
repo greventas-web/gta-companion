@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   BadgeCheck,
   Building2,
@@ -9,6 +8,9 @@ import {
 
 import Breadcrumb from "@/components/Breadcrumb";
 import VehicleCard from "@/components/VehicleCard";
+import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
+
+import { manufacturerPortrait } from "@/lib/media/catalog";
 
 import { Manufacturer } from "@/types/manufacturer";
 import { Vehicle } from "@/types/vehicle";
@@ -22,6 +24,8 @@ export default function ManufacturerDetailsPage({
   manufacturer,
   vehicles,
 }: Props) {
+  const portrait = manufacturerPortrait(manufacturer);
+
   return (
     <section className="mx-auto max-w-[1700px]">
 
@@ -45,21 +49,42 @@ export default function ManufacturerDetailsPage({
 
         {/* Logo */}
 
-        <div className="rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-10">
+        <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
 
-          <div className="relative mx-auto flex h-56 w-56 items-center justify-center overflow-hidden rounded-[32px] border border-white/10 bg-black/60">
+          <div className="relative aspect-[4/5] min-h-80">
 
-            <Image
-              src={manufacturer.logo}
-              alt={manufacturer.name}
-              fill
-              priority
-              className="object-contain p-10"
-            />
+            {portrait ? (
+              <Image
+                src={portrait}
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 360px"
+                className="object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-950 to-black" />
+            )}
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/25" />
+
+            <div className="absolute inset-x-0 bottom-0 p-8">
+
+              <ManufacturerMark
+                name={manufacturer.name}
+                slug={manufacturer.slug}
+                variant="lockup"
+              />
+
+              <p className="mt-4 text-center text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-400">
+                Companion wordmark
+              </p>
+
+            </div>
 
           </div>
 
-          <div className="mt-10 space-y-5">
+          <div className="space-y-5 p-8">
 
             <Info
               icon={<Globe size={18} />}
