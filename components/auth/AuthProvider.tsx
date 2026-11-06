@@ -35,11 +35,14 @@ export function AuthProvider({
     let cancelled = false;
 
     async function start() {
-      const { auth, db } = await import("@/lib/firebase");
+      const firebase = await import("@/lib/firebase");
+      const ready = await firebase.ensureFirebase();
+      const firebaseAuth = firebase.auth;
+      const database = firebase.db;
 
       if (cancelled) return;
 
-      if (!auth || !db) {
+      if (!ready || !firebaseAuth || !database) {
         setUser(null);
         setLoading(false);
         return;
@@ -52,11 +55,11 @@ export function AuthProvider({
 
       if (cancelled) return;
 
-      unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      unsubscribe = onAuthStateChanged(firebaseAuth, async (currentUser) => {
         setUser(currentUser);
 
         if (currentUser) {
-          const ref = doc(db, "users", currentUser.uid);
+          const ref = doc(database, "users", currentUser.uid);
           const snapshot = await getDoc(ref);
 
           if (!snapshot.exists()) {

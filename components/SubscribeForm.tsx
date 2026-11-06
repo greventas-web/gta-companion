@@ -26,9 +26,11 @@ export default function SubscribeForm() {
     setIsError(false);
 
     try {
-      const { db, isFirebaseConfigured } = await import("@/lib/firebase");
+      const firebase = await import("@/lib/firebase");
+      const ready = await firebase.ensureFirebase();
+      const database = firebase.db;
 
-      if (!isFirebaseConfigured || !db) {
+      if (!ready || !database) {
         setIsError(true);
         setMessage("Signups are not available yet.");
         return;
@@ -36,7 +38,7 @@ export default function SubscribeForm() {
 
       const { doc, serverTimestamp, setDoc } = await import("firebase/firestore");
 
-      await setDoc(doc(db, "subscribers", normalized), {
+      await setDoc(doc(database, "subscribers", normalized), {
         email: normalized,
         createdAt: serverTimestamp(),
       });

@@ -7,10 +7,12 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-import { db } from "./firebase";
+import { db, ensureFirebase } from "./firebase";
 import type { UserProfile } from "@/types/user";
 
-function requireDb() {
+async function requireDb() {
+  await ensureFirebase();
+
   if (!db) {
     throw new Error("Accounts are not configured.");
   }
@@ -19,7 +21,7 @@ function requireDb() {
 }
 
 export async function getUserProfile(uid: string) {
-  const snapshot = await getDoc(doc(requireDb(), "users", uid));
+  const snapshot = await getDoc(doc(await requireDb(), "users", uid));
 
   if (!snapshot.exists()) {
     return null;
@@ -32,36 +34,51 @@ export function subscribeToUser(
   uid: string,
   callback: (user: UserProfile | null) => void
 ) {
-  return onSnapshot(doc(requireDb(), "users", uid), (snapshot) => {
-    if (!snapshot.exists()) {
+  let unsubscribe = () => {};
+  let cancelled = false;
+
+  ensureFirebase().then((ready) => {
+    if (cancelled || !ready || !db) {
       callback(null);
       return;
     }
 
-    callback(snapshot.data() as UserProfile);
+    unsubscribe = onSnapshot(doc(db, "users", uid), (snapshot) => {
+      if (!snapshot.exists()) {
+        callback(null);
+        return;
+      }
+
+      callback(snapshot.data() as UserProfile);
+    });
   });
+
+  return () => {
+    cancelled = true;
+    unsubscribe();
+  };
 }
 
 export async function addFavorite(uid: string, id: string) {
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     favorites: arrayUnion(id),
   });
 }
 
 export async function removeFavorite(uid: string, id: string) {
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     favorites: arrayRemove(id),
   });
 }
 
 export async function saveGuide(uid: string, guideId: string) {
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     savedGuides: arrayUnion(guideId),
   });
 }
 
 export async function unsaveGuide(uid: string, guideId: string) {
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     savedGuides: arrayRemove(guideId),
   });
 }
@@ -75,7 +92,7 @@ export async function addRecentView(uid: string, slug: string) {
 
   recent.unshift(slug);
 
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     recentViews: recent.slice(0, 20),
   });
 }
@@ -84,7 +101,7 @@ export async function updateProgress(
   uid: string,
   progress: UserProfile["progress"]
 ) {
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     progress,
   });
 }
@@ -93,7 +110,7 @@ export async function updateDisplayName(
   uid: string,
   displayName: string
 ) {
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     displayName,
   });
 }
@@ -104,7 +121,7 @@ export async function updateUserSettings(
 ) {
   const profile = await getUserProfile(uid);
 
-  await updateDoc(doc(requireDb(), "users", uid), {
+  await updateDoc(doc(await requireDb(), "users", uid), {
     settings: {
       notifications: profile?.settings?.notifications ?? true,
       darkMode: profile?.settings?.darkMode ?? true,

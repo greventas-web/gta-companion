@@ -14,11 +14,13 @@ import {
   setDoc,
 } from "firebase/firestore";
 
-import { auth, db } from "./firebase";
+import { auth, db, ensureFirebase } from "./firebase";
 
 const googleProvider = new GoogleAuthProvider();
 
-function requireFirebase() {
+async function requireFirebase() {
+  await ensureFirebase();
+
   if (!auth || !db) {
     throw new Error("Accounts are not configured.");
   }
@@ -31,7 +33,7 @@ export async function registerUser(
   email: string,
   password: string
 ) {
-  const { auth: firebaseAuth, db: firestore } = requireFirebase();
+  const { auth: firebaseAuth, db: firestore } = await requireFirebase();
 
   const credential = await createUserWithEmailAndPassword(
     firebaseAuth,
@@ -72,7 +74,7 @@ export async function loginUser(
   email: string,
   password: string
 ) {
-  const { auth: firebaseAuth } = requireFirebase();
+  const { auth: firebaseAuth } = await requireFirebase();
 
   const credential = await signInWithEmailAndPassword(
     firebaseAuth,
@@ -84,7 +86,7 @@ export async function loginUser(
 }
 
 export async function loginWithGoogle() {
-  const { auth: firebaseAuth, db: firestore } = requireFirebase();
+  const { auth: firebaseAuth, db: firestore } = await requireFirebase();
 
   const credential = await signInWithPopup(
     firebaseAuth,
@@ -120,6 +122,6 @@ export async function loginWithGoogle() {
 }
 
 export async function logoutUser() {
-  const { auth: firebaseAuth } = requireFirebase();
+  const { auth: firebaseAuth } = await requireFirebase();
   await signOut(firebaseAuth);
 }

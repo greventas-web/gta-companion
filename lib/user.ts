@@ -4,9 +4,11 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-import { db } from "./firebase";
+import { db, ensureFirebase } from "./firebase";
 
-function requireDb() {
+async function requireDb() {
+  await ensureFirebase();
+
   if (!db) {
     throw new Error("Accounts are not configured.");
   }
@@ -32,7 +34,7 @@ export async function getUserProfile(
   uid: string
 ): Promise<UserProfile | null> {
   const snapshot = await getDoc(
-    doc(requireDb(), "users", uid)
+    doc(await requireDb(), "users", uid)
   );
 
   if (!snapshot.exists()) {
@@ -47,7 +49,7 @@ export async function updateUserProfile(
   data: Partial<UserProfile>
 ) {
   await updateDoc(
-    doc(requireDb(), "users", uid),
+    doc(await requireDb(), "users", uid),
     data
   );
 }

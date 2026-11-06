@@ -10,7 +10,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-import { db } from "@/lib/firebase";
+import { db, ensureFirebase } from "@/lib/firebase";
 import { useAuth } from "@/components/auth/AuthProvider";
 
 export function useFavorites() {
@@ -20,33 +20,51 @@ export function useFavorites() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user || !db) {
+    if (!user) {
       setFavorites([]);
       setLoading(false);
       return;
     }
 
-    const ref = doc(db, "users", user.uid);
+    let unsubscribe = () => {};
+    let cancelled = false;
 
-    const unsubscribe = onSnapshot(ref, (snapshot) => {
-      if (!snapshot.exists()) {
+    ensureFirebase().then((ready) => {
+      if (cancelled || !ready || !db) {
         setFavorites([]);
         setLoading(false);
         return;
       }
 
-      const data = snapshot.data();
+      const ref = doc(db, "users", user.uid);
 
-      setFavorites(data.favorites ?? []);
+      unsubscribe = onSnapshot(ref, (snapshot) => {
+        if (!snapshot.exists()) {
+          setFavorites([]);
+          setLoading(false);
+          return;
+        }
 
-      setLoading(false);
+        const data = snapshot.data();
+
+        setFavorites(data.favorites ?? []);
+
+        setLoading(false);
+      });
     });
 
-    return unsubscribe;
+    return () => {
+      cancelled = true;
+      unsubscribe();
+    };
   }, [user]);
 
   async function toggleFavorite(id: string) {
-    if (!user || !db) return;
+    if (!user) return;
+
+    const ready = await ensureFirebase();
+
+    if (!ready || !db) return;
 
     const ref = doc(db, "users", user.uid);
 
