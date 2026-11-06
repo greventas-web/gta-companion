@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-// Read each setting by its full name so the production build can include it.
+// Read each setting by its full name so this production build can include it.
 
 export function GET() {
   const config = {
