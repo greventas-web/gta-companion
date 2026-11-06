@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import BrandMark from "@/components/BrandMark";
 import { Brand } from "@/types/brand";
 
 type Props = {
@@ -19,7 +19,13 @@ export default function BrandCard({
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
-          <BrandMark slug={brand.slug} name={brand.name} />
+          <Image
+            src={brand.image}
+            alt={`${brand.name} storefront`}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
+          />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
