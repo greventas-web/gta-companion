@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
+
 function readSetting(name: string) {
   const read = new Function(
     "name",
