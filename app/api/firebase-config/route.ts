@@ -14,10 +14,22 @@ export function GET() {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID ?? "",
   };
 
+  const lengths = {
+    NEXT_PUBLIC_FIREBASE_API_KEY: config.apiKey.length,
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: config.authDomain.length,
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID: config.projectId.length,
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: config.storageBucket.length,
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: config.messagingSenderId.length,
+    NEXT_PUBLIC_FIREBASE_APP_ID: config.appId.length,
+  };
   const ready = Object.values(config).every((value) => value.length > 0);
 
   if (!ready) {
-    return NextResponse.json({ configured: false }, { status: 503 });
+    const missing = Object.entries(lengths)
+      .filter(([, length]) => length === 0)
+      .map(([name]) => name);
+
+    return NextResponse.json({ configured: false, missing, lengths }, { status: 503 });
   }
 
   return NextResponse.json(config, {
