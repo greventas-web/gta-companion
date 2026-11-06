@@ -3,9 +3,12 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 function readSetting(name: string) {
-  const runtime = globalThis.process;
-  const value = runtime?.env?.[name];
-  return typeof value === "string" ? value : "";
+  const read = new Function(
+    "name",
+    "var value = typeof process === 'undefined' ? '' : process.env[name]; return typeof value === 'string' ? value : '';"
+  ) as (name: string) => string;
+
+  return read(name);
 }
 
 export function GET() {
