@@ -2,23 +2,18 @@ function MarkSymbol({ large = false }: { large?: boolean }) {
   return (
     <span
       aria-hidden="true"
-      className={`grid shrink-0 place-items-center rounded-xl bg-gradient-to-br from-pink-500 via-fuchsia-500 to-violet-500 shadow-[0_8px_24px_rgba(217,70,239,0.35)] ${
-        large ? "h-12 w-12" : "h-10 w-10"
+      className={`relative grid shrink-0 place-items-center rounded-lg border border-white/15 bg-[#0B0B0D] ${
+        large ? "h-12 w-12" : "h-9 w-9"
       }`}
     >
-      <svg
-        viewBox="0 0 64 64"
-        className={large ? "h-8 w-8" : "h-7 w-7"}
-        fill="none"
+      <span className="absolute bottom-1.5 left-0 top-1.5 w-0.5 rounded-full bg-gradient-to-b from-pink-400 to-violet-400" />
+      <span
+        className={`font-semibold tracking-[-0.06em] text-white ${
+          large ? "text-sm" : "text-[11px]"
+        }`}
       >
-        <path
-          d="M43 20.2a14.5 14.5 0 1 0 .2 23.6"
-          stroke="white"
-          strokeWidth="6.5"
-          strokeLinecap="round"
-        />
-        <circle cx="48" cy="32" r="3.7" fill="white" />
-      </svg>
+        GC
+      </span>
     </span>
   );
 }
@@ -29,18 +24,24 @@ export default function SiteLogo({
   large?: boolean;
 }) {
   return (
-    <span className="flex min-w-0 items-center gap-2.5">
+    <span className="flex min-w-0 items-center gap-3">
       <MarkSymbol large={large} />
       <span className="min-w-0 leading-none">
         <span
-          className={`block truncate font-black tracking-[-0.04em] ${
-            large ? "text-3xl sm:text-4xl" : "text-xl sm:text-[28px]"
+          className={`block font-semibold uppercase text-zinc-400 ${
+            large
+              ? "text-xs tracking-[0.34em]"
+              : "text-[9px] tracking-[0.28em] sm:text-[10px]"
           }`}
         >
-          <span className="hidden text-white sm:inline">GTA </span>
-          <span className="bg-gradient-to-r from-pink-300 via-fuchsia-300 to-violet-300 bg-clip-text text-transparent">
-            Companion
-          </span>
+          GTA
+        </span>
+        <span
+          className={`mt-1 block truncate font-semibold tracking-[-0.03em] text-white ${
+            large ? "text-2xl" : "text-[15px] sm:text-base"
+          }`}
+        >
+          Companion
         </span>
       </span>
     </span>
