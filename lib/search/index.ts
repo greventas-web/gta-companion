@@ -11,6 +11,7 @@ import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
+import { manufacturerPortrait, vehicleImages } from "@/lib/media/catalog";
 
 export const searchIndex: SearchItem[] = [
   ...vehicles.map((vehicle) => ({
@@ -18,7 +19,7 @@ export const searchIndex: SearchItem[] = [
     title: vehicle.name,
     href: `/vehicles/${vehicle.slug}`,
     category: "Vehicle" as const,
-    image: vehicle.image,
+    image: vehicleImages(vehicle)[0],
     description: vehicle.description,
   })),
 
@@ -54,7 +55,7 @@ export const searchIndex: SearchItem[] = [
     title: manufacturer.name,
     href: `/manufacturers/${manufacturer.slug}`,
     category: "Manufacturer" as const,
-    image: manufacturer.logo,
+    image: manufacturerPortrait(manufacturer),
     description: manufacturer.description,
   })),
 

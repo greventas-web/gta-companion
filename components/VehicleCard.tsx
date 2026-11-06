@@ -5,6 +5,10 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 
 import FavoriteButton from "@/components/FavoriteButton";
+import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
+
+import { manufacturerByName } from "@/data/manufacturers";
+import { vehicleImages } from "@/lib/media/catalog";
 
 import { Vehicle } from "@/types/vehicle";
 
@@ -15,6 +19,9 @@ type Props = {
 export default function VehicleCard({
   vehicle,
 }: Props) {
+  const photo = vehicleImages(vehicle)[0] ?? vehicle.image;
+  const maker = manufacturerByName(vehicle.manufacturer);
+
   return (
     <Link
       href={`/vehicles/${vehicle.slug}`}
@@ -31,7 +38,7 @@ export default function VehicleCard({
         <div className="relative aspect-[16/10] overflow-hidden">
 
           <Image
-            src={vehicle.image}
+            src={photo}
             alt={vehicle.name}
             fill
             sizes="(max-width: 768px) 100vw, 480px"
@@ -44,6 +51,13 @@ export default function VehicleCard({
 
           <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
             {vehicle.category}
+          </div>
+
+          <div className="absolute bottom-5 left-6 max-w-[calc(100%-3rem)]">
+            <ManufacturerMark
+              name={vehicle.manufacturer}
+              slug={maker?.slug ?? vehicle.manufacturer.toLowerCase()}
+            />
           </div>
 
         </div>

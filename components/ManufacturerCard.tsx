@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 
 import FavoriteButton from "@/components/FavoriteButton";
+import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
+
+import { manufacturerPortrait } from "@/lib/media/catalog";
 
 import { Manufacturer } from "@/types/manufacturer";
 
@@ -20,6 +23,8 @@ type Props = {
 export default function ManufacturerCard({
   manufacturer,
 }: Props) {
+  const portrait = manufacturerPortrait(manufacturer);
+
   return (
     <Link
       href={`/manufacturers/${manufacturer.slug}`}
@@ -33,41 +38,48 @@ export default function ManufacturerCard({
 
         <div className="absolute -left-20 bottom-0 h-60 w-60 rounded-full bg-violet-500/10 opacity-0 blur-[140px] transition duration-500 group-hover:opacity-100" />
 
-        <div className="relative p-8">
+        <div className="relative aspect-[16/10] overflow-hidden">
 
-          <div className="flex items-center gap-6">
+          {portrait ? (
+            <Image
+              src={portrait}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 480px"
+              className="object-cover transition duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-950 to-black" />
+          )}
 
-            <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-black/60">
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/20" />
 
-              <Image
-                src={manufacturer.logo}
-                alt={manufacturer.name}
-                fill
-                sizes="160px"
-                className="object-contain p-4 transition duration-700 group-hover:scale-110"
-              />
+          <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-zinc-200 backdrop-blur-xl">
 
-            </div>
+            <Globe size={12} />
 
-            <div className="flex-1">
-
-              <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.35em] text-zinc-500">
-
-                <Globe size={12} />
-
-                {manufacturer.country}
-
-              </div>
-
-              <h2 className="mt-3 text-4xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
-
-                {manufacturer.name}
-
-              </h2>
-
-            </div>
+            {manufacturer.country}
 
           </div>
+
+          <div className="absolute bottom-5 left-6 max-w-[calc(100%-3rem)]">
+
+            <ManufacturerMark
+              name={manufacturer.name}
+              slug={manufacturer.slug}
+            />
+
+          </div>
+
+        </div>
+
+        <div className="relative p-8">
+
+          <h2 className="text-4xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
+
+            {manufacturer.name}
+
+          </h2>
 
           <p className="mt-8 line-clamp-4 text-lg leading-8 text-zinc-400">
 

@@ -12,12 +12,21 @@ export default function VehicleGallery({
   images,
   alt,
 }: Props) {
-  const gallery =
-    images.length > 0
-      ? images
-      : ["/images/placeholder.webp"];
+  const gallery = images.filter(
+    (image) => image && !image.includes("placeholder")
+  );
 
-  const [selected, setSelected] = useState(gallery[0]);
+  const [selected, setSelected] = useState(gallery[0] ?? "");
+
+  if (!selected) {
+    return (
+      <div className="flex aspect-[16/10] items-end rounded-3xl border border-zinc-800 bg-gradient-to-br from-zinc-800 via-zinc-950 to-black p-8">
+        <span className="text-3xl font-black tracking-[-0.03em] text-white">
+          {alt}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -28,6 +37,7 @@ export default function VehicleGallery({
           src={selected}
           alt={alt}
           fill
+          sizes="(max-width: 1024px) 100vw, 60vw"
           className="object-cover"
           priority
         />
@@ -54,6 +64,7 @@ export default function VehicleGallery({
                 src={image}
                 alt={alt}
                 fill
+                sizes="160px"
                 className="object-cover"
               />
 
