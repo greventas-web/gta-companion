@@ -71,7 +71,7 @@ export default function LaunchPage() {
           <h2 className="mt-4 text-3xl font-black">November 19, 2026</h2>
           <p className="mt-4 leading-8 text-zinc-400">
             PlayStation 5 and Xbox Series X|S. A PC date has not been announced.
-            Digital pre-orders can start pre-loading on November 12, 2026.
+            Digital pre-orders can start pre-loading on November 10, 2026.
             The physical box contains a download code.
           </p>
         </article>

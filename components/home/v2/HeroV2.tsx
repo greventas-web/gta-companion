@@ -78,7 +78,7 @@ export default function HeroV2() {
               </p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-[#0B0B0D] p-5">
-              <h2 className="text-lg font-black text-white">Pre-load November 12</h2>
+              <h2 className="text-lg font-black text-white">Pre-load November 10</h2>
               <p className="mt-2 text-sm leading-6 text-zinc-400">
                 Digital copies can download early. The physical box is a download code.
               </p>
