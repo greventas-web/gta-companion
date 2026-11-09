@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "When does GTA VI come out?",
     answer:
-      "Rockstar Games and Take-Two set Grand Theft Auto VI for November 19, 2026 on PlayStation 5 and Xbox Series X|S. Digital pre-orders can begin pre-loading on November 12, 2026. A PC release date has not been announced.",
+      "Rockstar Games and Take-Two set Grand Theft Auto VI for November 19, 2026 on PlayStation 5 and Xbox Series X|S. Digital pre-orders can begin pre-loading on November 10, 2026. A PC release date has not been announced.",
   },
   {
     question: "How much does GTA VI cost?",

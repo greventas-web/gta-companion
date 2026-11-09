@@ -17,7 +17,7 @@ export const news: NewsArticle[] = [
     title: "Rockstar Opens GTA VI Pre-Orders",
     image: "/images/original/news/announcement.jpg",
     summary:
-      "Take-Two announced pre-orders on June 25, 2026. The standard edition is $79.99 and the Ultimate Edition is $99.99, with pre-loading from November 12.",
+      "Take-Two announced pre-orders on June 25, 2026. The standard edition is $79.99 and the Ultimate Edition is $99.99, with pre-loading from November 10.",
     date: "2026-06-24",
     category: "Official News",
   },
