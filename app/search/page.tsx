@@ -65,7 +65,7 @@ export default function SearchPage() {
             </h2>
 
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-zinc-400">
-              Soon you'll be able to search across the entire GTA Companion
+              Soon you will be able to search across the entire GTA Companion
               database with instant results, smart filters, categories,
               suggestions and live search as you type.
             </p>

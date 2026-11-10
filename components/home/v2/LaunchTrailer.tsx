@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type Props = {
   videoId: string;
@@ -16,10 +17,12 @@ export default function LaunchTrailer({ videoId }: Props) {
         onClick={() => setPlaying(true)}
         className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black text-left"
       >
-        <img
+        <Image
           src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
           alt=""
-          className="h-full w-full object-cover"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
         />
         <span className="absolute inset-0 bg-black/35" />
         <span className="absolute inset-0 flex items-center justify-center">

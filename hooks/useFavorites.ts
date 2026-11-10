@@ -15,16 +15,20 @@ import { useAuth } from "@/components/auth/AuthProvider";
 
 export function useFavorites() {
   const { user } = useAuth();
+  const uid = user?.uid ?? null;
 
+  const [trackedUid, setTrackedUid] = useState<string | null>(uid);
   const [favorites, setFavorites] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(uid !== null);
+
+  if (uid !== trackedUid) {
+    setTrackedUid(uid);
+    setFavorites([]);
+    setLoading(uid !== null);
+  }
 
   useEffect(() => {
-    if (!user) {
-      setFavorites([]);
-      setLoading(false);
-      return;
-    }
+    if (!user) return;
 
     let unsubscribe = () => {};
     let cancelled = false;

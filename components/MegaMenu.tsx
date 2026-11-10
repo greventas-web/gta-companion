@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
+import { launchSections } from "@/src/data/launch";
+
 const groups = [
   {
     title: "Database",
@@ -25,10 +27,16 @@ const groups = [
     ],
   },
   {
+    title: "Launch",
+    links: launchSections.map((section) => ({
+      title: section.navLabel,
+      href: section.path,
+    })),
+  },
+  {
     title: "More",
     links: [
       { title: "Editions", href: "/launch" },
-      { title: "Guides", href: "/guides" },
       { title: "News", href: "/news" },
       { title: "Media", href: "/media" },
       { title: "Timeline", href: "/timeline" },
@@ -101,7 +109,7 @@ export default function MegaMenu() {
       </button>
 
       <div
-        className={`absolute left-1/2 top-full z-[200] w-[min(760px,calc(100vw-48px))] -translate-x-1/2 pt-3 ${
+        className={`absolute left-1/2 top-full z-[200] w-[min(980px,calc(100vw-48px))] -translate-x-1/2 pt-3 ${
           open ? "" : "pointer-events-none"
         }`}
       >
@@ -112,7 +120,7 @@ export default function MegaMenu() {
               : "invisible -translate-y-1 opacity-0"
           }`}
         >
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 gap-6 xl:grid-cols-4">
             {groups.map((group) => (
               <div key={group.title}>
                 <div className="mb-3 text-[11px] font-black uppercase tracking-[0.35em] text-pink-400">

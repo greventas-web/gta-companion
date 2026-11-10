@@ -20,6 +20,17 @@ const nextConfig: NextConfig = {
         destination: "https://www.gta-companion.com/:path*",
         permanent: true,
       },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "gta-companion\\.com",
+          },
+        ],
+        destination: "https://www.gta-companion.com/:path*",
+        permanent: true,
+      },
     ];
   },
 

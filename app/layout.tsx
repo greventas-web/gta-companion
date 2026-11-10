@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
@@ -9,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SearchProvider } from "@/components/search/SearchProvider";
+import { SITE, SITE_URL, SOCIAL_LINKS } from "@/src/data/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,16 +22,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const description = `${SITE.slogan}. Unofficial fan-made database for Grand Theft Auto VI. Not affiliated with Rockstar Games or Take-Two Interactive.`;
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  description,
+  email: SITE.contactEmail,
+  logo: `${SITE.url}/logo/mark.svg`,
+  sameAs: SOCIAL_LINKS.map((link) => link.href),
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gta-companion.com"),
+  metadataBase: new URL(SITE_URL),
+
+  // A URL object is resolved against each page pathname, so every route
+  // emits a self-referencing canonical on the www host.
+  alternates: {
+    canonical: new URL(SITE_URL),
+  },
 
   title: {
     default: "GTA Companion",
     template: "%s | GTA Companion",
   },
 
-  description:
-    "Unofficial fan-made database for Grand Theft Auto VI. Not affiliated with Rockstar Games or Take-Two Interactive.",
+  description,
 
   keywords: [
     "GTA VI",
@@ -78,10 +98,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "GTA Companion",
 
-    description:
-      "Unofficial fan-made database for Grand Theft Auto VI.",
+    description,
 
-    url: "https://gta-companion.com",
+    url: "./",
 
     siteName: "GTA Companion",
 
@@ -104,8 +123,7 @@ export const metadata: Metadata = {
 
     title: "GTA Companion",
 
-    description:
-      "Unofficial fan-made database for Grand Theft Auto VI.",
+    description,
 
     images: ["/logo/og-logo.png"],
   },
@@ -136,7 +154,14 @@ export default function RootLayout({
             <Footer />
           </SearchProvider>
         </AuthProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Analytics />
+        <SpeedInsights />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"

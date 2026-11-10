@@ -20,7 +20,7 @@ export default function ComingSoonFeatures() {
         </div>
 
         <h2 className="mt-4 text-5xl font-black">
-          What's Next
+          What is next
         </h2>
 
       </div>

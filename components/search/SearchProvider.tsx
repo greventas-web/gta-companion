@@ -29,15 +29,23 @@ export function SearchProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [openOnPath, setOpenOnPath] = useState(pathname);
 
-  const open = useCallback(() => setIsOpen(true), []);
-  const close = useCallback(() => setIsOpen(false), []);
-  const toggle = useCallback(() => setIsOpen((v) => !v), []);
-
-  useEffect(() => {
+  if (isOpen && openOnPath !== pathname) {
+    setOpenOnPath(pathname);
     setIsOpen(false);
+  }
+
+  const open = useCallback(() => {
+    setOpenOnPath(pathname);
+    setIsOpen(true);
+  }, [pathname]);
+  const close = useCallback(() => setIsOpen(false), []);
+  const toggle = useCallback(() => {
+    setOpenOnPath(pathname);
+    setIsOpen((value) => !value);
   }, [pathname]);
 
   useEffect(() => {

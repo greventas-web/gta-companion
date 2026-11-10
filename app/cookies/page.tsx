@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import PageTitle from "@/components/PageTitle";
 
 import {
@@ -39,11 +41,17 @@ export default function CookiesPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  GTA Companion may use cookies to remember preferences,
-                  analyze website traffic and improve overall performance.
-                  Google AdSense may also set cookies to show and measure
-                  ads. You can control ad personalization in your Google
-                  Ads Settings.
+                  GTA Companion may use cookies to remember preferences.
+                  Google AdSense, a third-party advertising service, may set
+                  cookies to show ads and measure them, including ads based
+                  on visits to this and other sites. You can control ad
+                  personalization in your Google Ads Settings. Vercel Web
+                  Analytics and Vercel Speed Insights measure page views and
+                  loading speed. How those tools are used is described in the{" "}
+                  <Link href="/privacy" className="text-pink-400 hover:text-pink-300">
+                    Privacy Policy
+                  </Link>
+                  .
                 </p>
               </div>
 

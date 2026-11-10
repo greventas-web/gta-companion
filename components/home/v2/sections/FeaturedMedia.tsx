@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function FeaturedMedia() {
@@ -39,11 +40,15 @@ export default function FeaturedMedia() {
           className="group overflow-hidden rounded-[36px] border border-white/10 bg-[#09090B] transition hover:border-pink-500"
         >
 
-          <img
-            src="/images/original/news/trailer.jpg"
-            alt="Trailer 2"
-            className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
-          />
+          <div className="relative h-[260px] w-full">
+            <Image
+              src="/images/original/news/trailer.jpg"
+              alt="Trailer 2"
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
 
           <div className="p-8">
 
@@ -64,11 +69,15 @@ export default function FeaturedMedia() {
           className="group overflow-hidden rounded-[36px] border border-white/10 bg-[#09090B] transition hover:border-pink-500"
         >
 
-          <img
-            src="/images/original/news/gallery.jpg"
-            alt="Trailer 1"
-            className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
-          />
+          <div className="relative h-[260px] w-full">
+            <Image
+              src="/images/original/news/gallery.jpg"
+              alt="Trailer 1"
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
 
           <div className="p-8">
 

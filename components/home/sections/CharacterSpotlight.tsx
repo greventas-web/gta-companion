@@ -50,7 +50,7 @@ export default function CharacterSpotlight() {
             <p className="mt-8 text-xl leading-9 text-zinc-400">
               Discover biographies, relationships, screenshots,
               vehicles, businesses, missions and every officially
-              confirmed detail about GTA VI's main protagonists.
+              confirmed detail about the main protagonists of GTA VI.
             </p>
 
             <Link
