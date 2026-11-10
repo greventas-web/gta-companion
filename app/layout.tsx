@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
@@ -9,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SearchProvider } from "@/components/search/SearchProvider";
+import { SITE, SOCIAL_PROFILES } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,16 +22,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  slogan: SITE.slogan,
+  email: SITE.email,
+  description: SITE.description,
+  logo: `${SITE.url}/icons/icon-night-512.png`,
+  sameAs: SOCIAL_PROFILES.map((profile) => profile.href),
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gta-companion.com"),
+  metadataBase: new URL(SITE.url),
 
   title: {
-    default: "GTA Companion",
+    default: `${SITE.name} — ${SITE.slogan}`,
     template: "%s | GTA Companion",
   },
 
-  description:
-    "Unofficial fan-made database for Grand Theft Auto VI. Not affiliated with Rockstar Games or Take-Two Interactive.",
+  description: SITE.description,
+
+  alternates: {
+    canonical: "./",
+  },
 
   keywords: [
     "GTA VI",
@@ -71,19 +88,28 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/logo/mark.svg",
-    apple: "/logo/mark.svg",
+    icon: [
+      { url: "/icons/favicon-night.ico", sizes: "48x48" },
+      { url: "/icons/icon-night-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-night-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      {
+        url: "/icons/apple-touch-icon-night.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 
   openGraph: {
-    title: "GTA Companion",
+    title: `${SITE.name} — ${SITE.slogan}`,
 
-    description:
-      "Unofficial fan-made database for Grand Theft Auto VI.",
+    description: SITE.description,
 
-    url: "https://gta-companion.com",
+    url: "./",
 
-    siteName: "GTA Companion",
+    siteName: SITE.name,
 
     locale: "en_US",
 
@@ -91,10 +117,10 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/logo/og-logo.png",
+        url: "/logo/og-night.jpg",
         width: 1200,
         height: 630,
-        alt: "GTA Companion",
+        alt: "GTA Companion — Everything you need for GTA 6",
       },
     ],
   },
@@ -102,12 +128,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "GTA Companion",
+    title: `${SITE.name} — ${SITE.slogan}`,
 
-    description:
-      "Unofficial fan-made database for Grand Theft Auto VI.",
+    description: SITE.description,
 
-    images: ["/logo/og-logo.png"],
+    images: ["/logo/og-night.jpg"],
   },
 };
 
@@ -127,6 +152,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-[#040404] text-white antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <AuthProvider>
           <SearchProvider>
             <Navbar />
@@ -137,6 +168,7 @@ export default function RootLayout({
           </SearchProvider>
         </AuthProvider>
         <Analytics />
+        <SpeedInsights />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"

@@ -18,7 +18,7 @@ export default function AboutPage() {
         <PageHero
           badge="About GTA Companion"
           title="Built For GTA Players"
-          description="GTA Companion is an unofficial fan database. The notes and pictures are made for this site. It is not a Rockstar Games product."
+          description="Everything you need for GTA 6. GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two. The notes and pictures are made for this site."
         />
 
         <section className="grid gap-8 lg:grid-cols-3">
@@ -95,7 +95,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-6 text-lg leading-9 text-zinc-400">
-              Create your free account today and receive updates as GTA
+              Create an account today and receive updates as GTA
               Companion continues to expand alongside Grand Theft Auto VI.
             </p>
 
@@ -103,7 +103,7 @@ export default function AboutPage() {
               href="/register"
               className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-9 py-5 font-bold transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_60px_rgba(236,72,153,.35)]"
             >
-              Join Free
+              Join
 
               <ArrowRight size={18} />
             </Link>

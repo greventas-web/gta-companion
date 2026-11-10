@@ -22,7 +22,7 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className="group relative flex h-20 items-center px-4"
+      className="group relative flex h-20 items-center px-2 min-[1440px]:px-3"
     >
       <span
         className={`relative z-10 text-[15px] font-semibold tracking-[-0.02em] transition-all duration-300 ${

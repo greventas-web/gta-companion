@@ -6,6 +6,13 @@ import {
 } from "@/components/ui";
 
 import PageTitle from "@/components/PageTitle";
+import { pageMetadata } from "@/lib/launch";
+import { SITE } from "@/lib/site";
+
+export const metadata = pageMetadata(
+  "Contact",
+  `Contact GTA Companion at ${SITE.email}. ${SITE.slogan}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
+);
 
 export default function ContactPage() {
   return (
@@ -26,8 +33,9 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-zinc-400">
-                If you have questions, business enquiries, partnership
-                opportunities, bug reports or feedback, please email us at:
+                GTA Companion is an unofficial fan site, not affiliated with
+                Rockstar Games or Take-Two. For questions, corrections, or
+                feedback, email:
               </p>
 
               <a

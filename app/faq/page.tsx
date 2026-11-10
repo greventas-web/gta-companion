@@ -39,9 +39,9 @@ const faqs = [
       "GTA Companion is an independent companion platform that organizes officially released Rockstar Games information into one fast, beautiful and easy-to-use experience. Our goal is to help players explore Grand Theft Auto VI through databases, guides, news and more.",
   },
   {
-    question: "Is GTA Companion free?",
+    question: "Does GTA Companion cost anything to use?",
     answer:
-      "Yes. The core platform will always be free. Optional premium features may be introduced in the future.",
+      "You can use the site without paying. Optional paid features may be introduced later.",
   },
   {
     question: "Is this affiliated with Rockstar Games?",

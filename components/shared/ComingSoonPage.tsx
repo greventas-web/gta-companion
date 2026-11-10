@@ -84,7 +84,7 @@ export default function ComingSoonPage({
               href="/register"
               className="mt-16 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-10 py-5 text-lg font-bold transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_60px_rgba(236,72,153,.35)]"
             >
-              Join Free
+              Create account
 
               <ArrowRight size={18} />
 

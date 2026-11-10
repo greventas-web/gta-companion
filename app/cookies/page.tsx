@@ -39,11 +39,13 @@ export default function CookiesPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  GTA Companion may use cookies to remember preferences,
-                  analyze website traffic and improve overall performance.
-                  Google AdSense may also set cookies to show and measure
-                  ads. You can control ad personalization in your Google
-                  Ads Settings.
+                  GTA Companion may store cookies or similar data so sign-in
+                  and preferences can persist. Google AdSense may set cookies
+                  to show and measure third-party ads. Vercel Web Analytics
+                  and Speed Insights do not use cookies; they record page
+                  views and performance measurements such as the page, browser,
+                  and country. You can control ad personalization in your
+                  Google Ads Settings.
                 </p>
               </div>
 
