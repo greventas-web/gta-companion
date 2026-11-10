@@ -7,7 +7,7 @@ export const offRoadVehicles: Vehicle[] = [
     name: "'67 Vapid Dominator Buggy",
     manufacturer: "Vapid",
     category: "Off-Road",
-    image: "/images/original/vehicles/vapid-dominator-buggy.jpg",
+    image: "/images/official/vehicles/vapid-dominator-buggy.webp",
     description:
       "Rockstar calls this Ultimate Edition vehicle a Mud Club monster for the backwoods of Mount Kalaga. It can be stored at the Paradise Garage in Watson Bay, which also has a weapon locker and a place to leave stolen goods.",
     firstAppearance: "Ultimate Edition",
@@ -21,7 +21,7 @@ export const offRoadVehicles: Vehicle[] = [
     name: "Vapid Ganado",
     manufacturer: "Vapid",
     category: "Off-Road",
-    image: "/images/original/vehicles/vapid-ganado.jpg",
+    image: "/images/official/vehicles/vapid-ganado.webp",
     description:
       "Rockstar describes Jason's Vapid Ganado as a well-worn low-riding pickup. The Ultimate Edition adds the Ganado Retro Build, a set of exclusive mods for that truck. Performance figures have not been published.",
     firstAppearance: "Ultimate Edition",

@@ -367,7 +367,7 @@ const manufacturerRecords: Manufacturer[] = [
     id: 21,
     slug: "crest",
     name: "Crest",
-    logo: "/images/original/vehicles/crest-kayak.jpg",
+    logo: "/images/official/vehicles/crest-kayak.webp",
     country: "United States",
     description:
       "Crest makes small personal watercraft, including kayaks, for quiet shoreline travel.",

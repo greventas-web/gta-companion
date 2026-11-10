@@ -20,15 +20,15 @@ type Props = {
 };
 
 const images: Record<string, string> = {
-  Vehicles: "/images/home/categories/vehicles.jpg",
-  Manufacturers: "/images/home/categories/manufacturers.jpg",
-  Characters: "/images/home/categories/characters.jpg",
-  Locations: "/images/home/categories/locations.jpg",
-  Businesses: "/images/home/categories/businesses.jpg",
-  Weapons: "/images/home/categories/weapons.jpg",
-  Animals: "/images/home/categories/animals.jpg",
-  Activities: "/images/home/categories/activities.jpg",
-  Brands: "/images/home/categories/brands.jpg",
+  Vehicles: "/images/official/categories/vehicles.webp",
+  Manufacturers: "/images/official/categories/manufacturers.webp",
+  Characters: "/images/official/categories/characters.webp",
+  Locations: "/images/official/categories/locations.webp",
+  Businesses: "/images/official/categories/businesses.webp",
+  Weapons: "/images/official/categories/weapons.webp",
+  Animals: "/images/official/categories/animals.webp",
+  Activities: "/images/official/categories/activities.webp",
+  Brands: "/images/official/categories/brands.webp",
 };
 
 const icons = {
@@ -58,7 +58,7 @@ export default function CategoryCard({
     >
       <div className="relative h-[185px]">
         <Image
-          src={image ?? images[title] ?? "/images/home/categories/vehicles.jpg"}
+          src={image ?? images[title] ?? "/images/official/categories/vehicles.webp"}
           alt={title}
           fill
           className="object-cover transition duration-700 group-hover:scale-105"

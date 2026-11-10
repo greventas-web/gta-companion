@@ -10,21 +10,21 @@ const articles = [
     title: "Trailer 2 Breakdown",
     description:
       "Discover every hidden detail, vehicle, location and easter egg revealed throughout the second GTA VI trailer.",
-    image: "/images/home/categories/characters.jpg",
+    image: "/images/official/categories/characters.webp",
   },
   {
     category: "Leonida",
     title: "Exploring Vice City",
     description:
       "Take a closer look at Vice City, the surrounding regions and every officially confirmed location.",
-    image: "/images/home/categories/locations.jpg",
+    image: "/images/official/categories/locations.webp",
   },
   {
     category: "Vehicles",
     title: "Every Confirmed Vehicle",
     description:
       "Browse the growing collection of officially confirmed GTA VI vehicles with detailed specifications.",
-    image: "/images/home/categories/vehicles.jpg",
+    image: "/images/official/categories/vehicles.webp",
   },
 ];
 

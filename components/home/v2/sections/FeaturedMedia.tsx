@@ -40,7 +40,7 @@ export default function FeaturedMedia() {
         >
 
           <img
-            src="/images/original/news/trailer.jpg"
+            src="/images/official/news/trailer.webp"
             alt="Trailer 2"
             className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
           />
@@ -65,7 +65,7 @@ export default function FeaturedMedia() {
         >
 
           <img
-            src="/images/original/news/gallery.jpg"
+            src="/images/official/news/gallery.webp"
             alt="Trailer 1"
             className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
           />
