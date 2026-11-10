@@ -92,6 +92,11 @@ const editionPlaces = [
     note: "Rockstar says the Dominator Buggy can be stored at the Paradise Garage in Watson Bay. This image is the buggy, not a separate garage exterior.",
   },
   {
+    name: "Vice City Style",
+    image: "/images/official/editions/ultimate_edition_vice_city_style_01.webp",
+    note: "Clothes for Jason and Lucia included with the Ultimate Edition.",
+  },
+  {
     name: "Jason's safehouse",
     image: "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp",
     note: "The safehouse vehicles Rockstar has shown, including the Dinka Enduro and Crest Kayak.",
