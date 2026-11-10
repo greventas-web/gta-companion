@@ -96,6 +96,14 @@ export default async function CharacterPage({
             <p className="mt-8 max-w-4xl text-xl leading-9 text-zinc-400">
               {character.description}
             </p>
+            <a
+              href="https://www.rockstargames.com/VI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-sm text-pink-300 hover:text-pink-200"
+            >
+              Source: Rockstar Games — Grand Theft Auto VI
+            </a>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
 

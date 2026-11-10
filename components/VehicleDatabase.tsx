@@ -6,6 +6,7 @@ import VehicleSort from "@/components/VehicleSort";
 import ResetFilters from "@/components/ResetFilters";
 
 import useVehicleSearch from "@/hooks/useVehicleSearch";
+import { Vehicle } from "@/types/vehicle";
 
 export default function VehicleDatabase() {
   const {
@@ -92,15 +93,45 @@ export default function VehicleDatabase() {
           </p>
         </div>
       ) : (
-        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-          {filteredVehicles.map((vehicle) => (
-            <VehicleCard
-              key={vehicle.slug}
-              vehicle={vehicle}
-            />
-          ))}
+        <div className="mt-16 space-y-16">
+          <VehicleGroup
+            title="Named by Rockstar"
+            note="These are the vehicles Rockstar has named for Grand Theft Auto VI. Speeds and prices have not been published."
+            vehicles={filteredVehicles.filter((vehicle) => vehicle.status === "Confirmed")}
+          />
+          <VehicleGroup
+            title="Expected / unconfirmed"
+            note="These names come from earlier Grand Theft Auto games. Rockstar has not confirmed them for Grand Theft Auto VI."
+            vehicles={filteredVehicles.filter((vehicle) => vehicle.status !== "Confirmed")}
+          />
         </div>
       )}
     </section>
+  );
+}
+
+function VehicleGroup({
+  title,
+  note,
+  vehicles,
+}: {
+  title: string;
+  note: string;
+  vehicles: Vehicle[];
+}) {
+  if (vehicles.length === 0) return null;
+
+  return (
+    <div>
+      <h3 className="text-3xl font-black tracking-[-0.03em] text-white">
+        {title}
+      </h3>
+      <p className="mt-3 max-w-3xl text-zinc-400">{note}</p>
+      <div className="mt-8 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        {vehicles.map((vehicle) => (
+          <VehicleCard key={vehicle.slug} vehicle={vehicle} />
+        ))}
+      </div>
+    </div>
   );
 }

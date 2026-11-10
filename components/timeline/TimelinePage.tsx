@@ -10,7 +10,7 @@ export default function TimelinePage() {
         <PageHero
           badge="Unofficial fan timeline"
           title="Every Official Reveal"
-          description="Follow every official Grand Theft Auto VI announcement from the first reveal through launch."
+          description="Follow official Grand Theft Auto VI announcements from the first trailer through pre-load. Last updated November 10, 2026."
         />
 
         <section className="relative mt-20 ml-4 border-l border-pink-500/20">
@@ -33,6 +33,14 @@ export default function TimelinePage() {
                 <p className="mt-6 max-w-4xl text-lg leading-9 text-zinc-400">
                   {event.description}
                 </p>
+                <a
+                  href={event.sourceHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-block text-sm text-pink-300 hover:text-pink-200"
+                >
+                  {event.sourceLabel}
+                </a>
               </div>
             </div>
           ))}

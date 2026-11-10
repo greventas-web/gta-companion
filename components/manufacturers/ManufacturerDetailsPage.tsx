@@ -209,10 +209,9 @@ export default function ManufacturerDetailsPage({
 
         </h2>
 
-        <p className="mt-3 text-zinc-400">
-
-          Vehicles linked to {manufacturer.name} in this fan database.
-
+        <p className="mt-3 max-w-3xl text-zinc-400">
+          Confirmed vehicles are ones Rockstar has named for Grand Theft Auto VI.
+          The rest are earlier Grand Theft Auto names that have not been confirmed.
         </p>
 
         {vehicles.length === 0 ? (
@@ -236,17 +235,34 @@ export default function ManufacturerDetailsPage({
 
         ) : (
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {vehicles.map((vehicle) => (
-
-              <VehicleCard
-                key={vehicle.slug}
-                vehicle={vehicle}
-              />
-
-            ))}
-
+          <div className="mt-12 space-y-14">
+            <div>
+              <h3 className="text-2xl font-black text-pink-300">Confirmed</h3>
+              <div className="mt-6 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+                {vehicles
+                  .filter((vehicle) => vehicle.status === "Confirmed")
+                  .map((vehicle) => (
+                    <VehicleCard key={vehicle.slug} vehicle={vehicle} />
+                  ))}
+              </div>
+              {vehicles.every((vehicle) => vehicle.status !== "Confirmed") && (
+                <p className="mt-4 text-zinc-500">
+                  Rockstar has not named a {manufacturer.name} vehicle for Grand Theft Auto VI.
+                </p>
+              )}
+            </div>
+            {vehicles.some((vehicle) => vehicle.status !== "Confirmed") && (
+            <div>
+              <h3 className="text-2xl font-black text-teal-300">Expected / unconfirmed</h3>
+              <div className="mt-6 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+                {vehicles
+                  .filter((vehicle) => vehicle.status !== "Confirmed")
+                  .map((vehicle) => (
+                    <VehicleCard key={vehicle.slug} vehicle={vehicle} />
+                  ))}
+              </div>
+            </div>
+            )}
           </div>
 
         )}

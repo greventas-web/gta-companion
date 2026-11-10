@@ -104,6 +104,20 @@ export default async function VehicleDetailsPage({
 
             </p>
 
+            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-teal-300">
+              {vehicle.status}
+            </p>
+            {vehicle.source ? (
+              <a
+                href={vehicle.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block text-sm text-pink-300 hover:text-pink-200"
+              >
+                Source: Rockstar Games
+              </a>
+            ) : null}
+
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
 
               <Info

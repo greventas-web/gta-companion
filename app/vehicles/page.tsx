@@ -2,6 +2,12 @@ import VehicleDatabase from "@/components/VehicleDatabase";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { pageMetadata } from "@/lib/launch";
+
+export const metadata = pageMetadata(
+  "GTA 6 vehicles",
+  "Vehicles Rockstar has named for Grand Theft Auto VI, plus earlier Grand Theft Auto names kept in a separate unconfirmed section. Unofficial fan site."
+);
 
 export default function VehiclesPage() {
   return (
@@ -9,14 +15,14 @@ export default function VehiclesPage() {
       <PageHero
         badge="Unofficial fan database"
         title="Vehicle Database"
-        description="Browse supercars, muscle cars, aircraft, and boats in this fan database. The pictures are original illustrations made for GTA Companion."
+        description="Seven vehicles Rockstar has named, shown first. Earlier Grand Theft Auto names sit below as expected and unconfirmed. Last updated November 10, 2026."
       />
 
       <VehicleDatabase />
 
       <PageCTA
-        title="The Database Continues to Grow"
-        description="New fan notes and original illustrations are added when there is solid public information to write about."
+        title="Only named vehicles are marked confirmed"
+        description="Speeds, prices, and engines are left blank until Rockstar publishes them."
       />
     </PageShell>
   );

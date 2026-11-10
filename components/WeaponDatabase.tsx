@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import WeaponCard from "@/components/WeaponCard";
 import { weapons } from "@/data/weapons";
+import { Weapon } from "@/types/weapon";
 
 export default function WeaponDatabase() {
   const [query, setQuery] = useState("");
@@ -56,7 +57,7 @@ export default function WeaponDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Fan-written weapon notes. No Rockstar images are hosted here.
+          Confirmed names come from Rockstar&apos;s Ultimate Edition. Other entries are unlabeled footage, with no invented caliber.
         </p>
 
       </div>
@@ -77,21 +78,40 @@ export default function WeaponDatabase() {
 
       ) : (
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-
-          {filteredWeapons.map((weapon) => (
-
-            <WeaponCard
-              key={weapon.id}
-              weapon={weapon}
-            />
-
-          ))}
-
+        <div className="mt-16 space-y-16">
+          <WeaponGroup
+            title="Named by Rockstar"
+            weapons={filteredWeapons.filter((weapon) => weapon.status === "Confirmed")}
+          />
+          <WeaponGroup
+            title="Expected / unconfirmed"
+            weapons={filteredWeapons.filter((weapon) => weapon.status !== "Confirmed")}
+          />
         </div>
 
       )}
 
     </section>
+  );
+}
+
+function WeaponGroup({
+  title,
+  weapons: items,
+}: {
+  title: string;
+  weapons: Weapon[];
+}) {
+  if (items.length === 0) return null;
+
+  return (
+    <div>
+      <h3 className="text-3xl font-black">{title}</h3>
+      <div className="mt-8 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        {items.map((weapon) => (
+          <WeaponCard key={weapon.id} weapon={weapon} />
+        ))}
+      </div>
+    </div>
   );
 }

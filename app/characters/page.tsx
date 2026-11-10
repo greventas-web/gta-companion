@@ -6,6 +6,12 @@ import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 
 import { characters } from "@/data/characters";
+import { pageMetadata } from "@/lib/launch";
+
+export const metadata = pageMetadata(
+  "GTA 6 characters",
+  "Official Grand Theft Auto VI character profiles for Jason Duval, Lucia Caminos, and the supporting cast Rockstar has named. Unofficial fan site."
+);
 
 export default function CharactersPage() {
   return (
@@ -13,7 +19,7 @@ export default function CharactersPage() {
       <PageHero
         badge="Grand Theft Auto Characters"
         title="Character Database"
-        description="Explore protagonists, allies, criminals, business owners and other notable characters from across the Grand Theft Auto universe. GTA Companion clearly identifies officially confirmed GTA VI characters while preserving the legacy of the series."
+        description="The eight profiles Rockstar has published: Jason, Lucia, and six supporting characters, including Real Dimez. Last updated November 10, 2026."
       />
 
       <DatabaseSection

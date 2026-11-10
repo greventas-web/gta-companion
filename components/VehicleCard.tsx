@@ -49,8 +49,19 @@ export default function VehicleCard({
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
-          <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
-            {vehicle.category}
+          <div className="absolute left-6 top-6 flex flex-wrap gap-2">
+            <span className="rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
+              {vehicle.category}
+            </span>
+            <span
+              className={`rounded-full border px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] backdrop-blur-xl ${
+                vehicle.status === "Confirmed"
+                  ? "border-pink-400/40 bg-pink-500/20 text-pink-100"
+                  : "border-teal-400/40 bg-teal-400/10 text-teal-100"
+              }`}
+            >
+              {vehicle.status === "Confirmed" ? "Confirmed" : "Unconfirmed"}
+            </span>
           </div>
 
           <div className="absolute bottom-5 left-6 max-w-[calc(100%-3rem)]">
