@@ -63,6 +63,10 @@ export default function Footer() {
                 Home
               </Link>
 
+              <Link href="/gta-6-launch" className="block text-zinc-400 transition hover:text-pink-400">
+                Launch hub
+              </Link>
+
               <Link href="/news" className="block text-zinc-400 transition hover:text-pink-400">
                 News
               </Link>
