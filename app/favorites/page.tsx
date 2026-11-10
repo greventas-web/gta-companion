@@ -47,7 +47,7 @@ export default function FavoritesPage() {
           {!user ? (
             <AccountPrompt
               title="Sign in to view your favorites"
-              description="Accounts are live. Create a free account to save vehicles, weapons, and manufacturers, then come back to this page to open them."
+              description="Accounts are live. Create an account to save vehicles, weapons, and manufacturers, then come back to this page to open them."
             />
           ) : saved.length === 0 ? (
             <Card className="rounded-[36px] border-zinc-800 bg-zinc-900 p-10">

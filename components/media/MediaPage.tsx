@@ -170,7 +170,7 @@ export default function MediaPage() {
             href="/contact"
             className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-9 py-5 font-bold transition hover:scale-[1.02]"
           >
-            Join Free
+            Get in touch
             <ArrowRight size={18} />
           </Link>
 

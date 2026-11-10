@@ -80,14 +80,14 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-[100] overflow-visible px-4 pt-4 sm:px-6 sm:pt-5">
 
         <div
-          className={`mx-auto flex h-20 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
+          className={`mx-auto flex h-20 w-full min-w-0 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
             scrolled
               ? "border-pink-500/20 bg-black/95 shadow-[0_25px_80px_rgba(0,0,0,.60)] sm:bg-black/80 sm:backdrop-blur-xl"
               : "border-white/10 bg-black/95 shadow-[0_10px_40px_rgba(0,0,0,.35)] sm:bg-black/70 sm:backdrop-blur-xl"
           }`}
         >
 
-          <div className="flex shrink-0 items-center px-4 sm:px-8">
+          <div className="flex shrink-0 items-center px-3 sm:px-4">
 
             <Link
               href="/"
@@ -99,7 +99,7 @@ export default function Navbar() {
 
           </div>
 
-          <nav className="hidden items-center gap-8 xl:flex">
+          <nav className="hidden min-w-0 items-center gap-1 xl:flex min-[1440px]:gap-2">
 
             <NavLink href="/">Home</NavLink>
 
@@ -115,10 +115,10 @@ export default function Navbar() {
 
           </nav>
 
-          <div className="flex items-center gap-2 px-3 sm:gap-4 sm:px-8">
+          <div className="flex shrink-0 items-center gap-2 px-3 sm:px-4">
 
             <div
-              className="hidden lg:block"
+              className="hidden min-[1440px]:block"
               onClick={open}
             >
               <SearchBar />
@@ -128,7 +128,7 @@ export default function Navbar() {
               type="button"
               aria-label="Open search"
               onClick={open}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white min-[1440px]:hidden"
             >
               <Search size={18} />
             </button>
@@ -155,7 +155,7 @@ export default function Navbar() {
                   href="/register"
                   className="hidden rounded-2xl border border-white/10 px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:border-pink-500/40 hover:text-white lg:inline-flex"
                 >
-                  Join Free
+                  Join
                 </Link>
               </>
             ) : (

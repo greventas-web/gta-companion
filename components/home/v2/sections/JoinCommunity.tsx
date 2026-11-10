@@ -19,7 +19,7 @@ export default function JoinCommunity() {
           </h2>
 
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Create your free GTA Companion account to save favorites,
+            Create a GTA Companion account to save favorites,
             receive Rockstar updates, track official content and be
             notified as new GTA VI information is released.
           </p>
@@ -30,7 +30,7 @@ export default function JoinCommunity() {
               href="/register"
               className="rounded-full bg-gradient-to-r from-pink-500 to-fuchsia-500 px-10 py-5 font-bold text-white transition hover:scale-105"
             >
-              Create Free Account
+              Create account
             </Link>
 
             <Link

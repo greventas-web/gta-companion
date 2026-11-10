@@ -97,7 +97,7 @@ export default function RegisterPage() {
             </h1>
 
             <p className="mt-8 max-w-2xl text-xl leading-10 text-zinc-400">
-              Create your free account to receive official Rockstar Games updates
+              Create an account to receive official Rockstar Games updates,
               save your favorite content, and explore GTA VI through an expanding
               collection of databases and guides.
             </p>
@@ -152,7 +152,7 @@ export default function RegisterPage() {
               </div>
 
               <h2 className="mt-4 text-5xl font-black">
-                Join Free
+                Create an account
               </h2>
             </div>
 
@@ -213,7 +213,7 @@ export default function RegisterPage() {
               >
                 {loading
                   ? "Creating Account..."
-                  : "Create Free Account"}
+                  : "Create account"}
               </button>
             </form>
 

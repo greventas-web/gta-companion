@@ -85,7 +85,7 @@ export default function NewsPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-zinc-400">
-            Create your free GTA Companion account and receive notifications
+            Create a GTA Companion account and receive notifications
             whenever Rockstar Games releases new GTA VI news, trailers,
             screenshots or artwork.
           </p>
@@ -94,7 +94,7 @@ export default function NewsPage() {
             href="/register"
             className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-9 py-5 font-bold transition hover:scale-[1.02]"
           >
-            Join Free
+            Create account
             <ArrowRight size={18} />
           </Link>
 

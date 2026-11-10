@@ -15,7 +15,7 @@ const features = [
     icon: Sparkles,
     title: "Premium Experience",
     description:
-      "Fast, modern, distraction-free design built specifically for GTA players.",
+      "Fast, modern, and focused on GTA players.",
   },
   {
     icon: Rocket,
