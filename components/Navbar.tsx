@@ -87,12 +87,12 @@ export default function Navbar() {
           }`}
         >
 
-          <div className="flex min-w-0 items-center px-4 sm:px-8">
+          <div className="flex shrink-0 items-center px-4 sm:px-8">
 
             <Link
               href="/"
               aria-label="GTA Companion"
-              className="group flex min-w-0 items-center"
+              className="group flex items-center"
             >
               <SiteLogo />
             </Link>

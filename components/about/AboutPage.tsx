@@ -18,7 +18,7 @@ export default function AboutPage() {
         <PageHero
           badge="About GTA Companion"
           title="Built For GTA Players"
-          description="GTA Companion is an unofficial fan database. The notes and pictures are made for this site. It is not a Rockstar Games product."
+          description="Everything you need for GTA 6. GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two. The notes and pictures are made for this site."
         />
 
         <section className="grid gap-8 lg:grid-cols-3">

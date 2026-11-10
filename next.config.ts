@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import { SITE } from "./lib/site";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
@@ -17,7 +19,18 @@ const nextConfig: NextConfig = {
             value: "gta-companion.vercel.app",
           },
         ],
-        destination: "https://www.gta-companion.com/:path*",
+        destination: `${SITE.url}/:path*`,
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "^gta-companion\\.com$",
+          },
+        ],
+        destination: `${SITE.url}/:path*`,
         permanent: true,
       },
     ];

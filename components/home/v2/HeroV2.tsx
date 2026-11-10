@@ -32,11 +32,11 @@ export default function HeroV2() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-zinc-300">
-              Welcome to GTA Companion. This is a fan site for the public
-              facts about Grand Theft Auto VI. The goal is one clear place
-              for the launch date, the editions, the characters, the
-              vehicles, and Vice City. The notes and pictures are ours.
-              Rockstar and Take-Two did not make this site.
+              Everything you need for GTA 6. GTA Companion is an unofficial
+              fan site for the public facts about Grand Theft Auto VI: the
+              launch date, the editions, the characters, the vehicles, and
+              Vice City. The notes and pictures are ours. Not affiliated
+              with Rockstar Games or Take-Two.
             </p>
 
             <div className="mt-6">

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { SITE } from "@/lib/site";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -16,8 +18,8 @@ export default function robots(): MetadataRoute.Robots {
       ],
     },
 
-    sitemap: "https://gta-companion.com/sitemap.xml",
+    sitemap: `${SITE.url}/sitemap.xml`,
 
-    host: "https://gta-companion.com",
+    host: SITE.url,
   };
 }

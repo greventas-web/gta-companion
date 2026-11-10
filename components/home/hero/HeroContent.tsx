@@ -24,9 +24,9 @@ export default function HeroContent() {
       </h1>
 
       <p className="mt-10 max-w-[560px] text-[22px] leading-10 text-zinc-300">
-        Explore every confirmed vehicle, character,
-        location, business, weapon and guide inside one
-        premium companion platform.
+        Everything you need for GTA 6. Confirmed vehicles, characters,
+        locations, businesses, weapons, and guides. Unofficial fan site,
+        not affiliated with Rockstar Games or Take-Two.
       </p>
 
       <div className="mt-12">

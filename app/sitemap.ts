@@ -1,6 +1,19 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://gta-companion.com";
+import { SITE } from "@/lib/site";
+import { cheats } from "@/src/data/launch/cheats";
+import { fastestCars } from "@/src/data/launch/fastest-cars";
+import { mapLocations } from "@/src/data/launch/map-locations";
+import { moneyMethods } from "@/src/data/launch/money-methods";
+
+const baseUrl = SITE.url;
+
+const launchPaths = [
+  ...moneyMethods.map((entry) => `/money-methods/${entry.slug}`),
+  ...fastestCars.map((entry) => `/fastest-cars/${entry.slug}`),
+  ...mapLocations.map((entry) => `/map-locations/${entry.slug}`),
+  ...cheats.map((entry) => `/cheats/${entry.slug}`),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -13,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/timeline",
     "/media",
     "/guides",
+    "/money-methods",
+    "/fastest-cars",
+    "/map-locations",
+    "/cheats",
     "/launch",
     "/faq",
     "/contact",
@@ -31,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/search",
     "/changelog",
     "/roadmap",
+    ...launchPaths,
   ];
 
   const now = new Date();
