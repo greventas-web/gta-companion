@@ -2,6 +2,12 @@ import WeaponDatabase from "@/components/WeaponDatabase";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { pageMetadata } from "@/lib/launch";
+
+export const metadata = pageMetadata(
+  "GTA 6 weapons",
+  "Weapons Rockstar has named for the Grand Theft Auto VI Ultimate Edition, with unnamed footage kept separate and no invented calibers. Unofficial fan site."
+);
 
 export default function WeaponsPage() {
   return (
@@ -10,14 +16,14 @@ export default function WeaponsPage() {
       <PageHero
         badge="Grand Theft Auto Weapons"
         title="Weapon Database"
-        description="Browse handguns, rifles, shotguns, heavy weapons, melee weapons and explosives from across the Grand Theft Auto universe. GTA Companion clearly identifies officially confirmed GTA VI weapons while preserving the history of the series."
+        description="Hawk & Little Morgan revolvers, the Girardi ES9, and the Klose K17 are the names Rockstar has published. Other shapes stay unlabeled. Last updated November 10, 2026."
       />
 
       <WeaponDatabase />
 
       <PageCTA
-        title="The Arsenal Continues to Grow"
-        description="As Rockstar Games officially reveals additional weapons for Grand Theft Auto VI, GTA Companion will continue expanding the database with verified information, official screenshots and detailed weapon pages."
+        title="No invented calibers"
+        description="If Rockstar has not published a name or a caliber, this page says so."
       />
 
     </PageShell>

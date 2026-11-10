@@ -20,4 +20,6 @@ export interface Weapon {
   status: string;
 
   gallery: string[];
+
+  source?: string;
 }

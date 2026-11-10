@@ -1,138 +1,144 @@
 import { Weapon } from "@/types/weapon";
 
+const rockstar =
+  "https://www.rockstargames.com/VI";
+
 export const weapons: Weapon[] = [
   {
     id: 1,
-    slug: "standard-pistol",
-    name: "Standard Pistol",
-    manufacturer: "Unknown",
-    category: "Handgun",
-    image: "/images/weapons/standard-pistol.webp",
-    description:
-      "A modern semi-automatic handgun featured in official Grand Theft Auto VI trailers and Rockstar Games promotional artwork.",
-    firstAppearance: "Trailer 1",
-    ammunition: "9×19mm",
-    status: "Officially Confirmed",
-    gallery: [],
-  },
-
-  {
-    id: 2,
-    slug: "compact-pistol",
-    name: "Compact Pistol",
-    manufacturer: "Unknown",
-    category: "Handgun",
-    image: "/images/weapons/compact-pistol.webp",
-    description:
-      "A compact semi-automatic pistol carried by multiple characters throughout official GTA VI media.",
-    firstAppearance: "Rockstar Games Website",
-    ammunition: "9×19mm",
-    status: "Officially Confirmed",
-    gallery: [],
-  },
-
-  {
-    id: 3,
-    slug: "assault-rifle",
-    name: "Assault Rifle",
-    manufacturer: "Unknown",
-    category: "Assault Rifle",
-    image: "/images/weapons/assault-rifle.webp",
-    description:
-      "A military-style assault rifle appearing in several official GTA VI action sequences.",
-    firstAppearance: "Trailer 2",
-    ammunition: "5.56×45mm",
-    status: "Officially Confirmed",
-    gallery: [],
-  },
-
-  {
-    id: 4,
-    slug: "pump-shotgun",
-    name: "Pump Shotgun",
-    manufacturer: "Unknown",
-    category: "Shotgun",
-    image: "/images/weapons/pump-shotgun.webp",
-    description:
-      "A pump-action shotgun designed for devastating close-range combat, seen in official Rockstar promotional footage.",
-    firstAppearance: "Trailer 2",
-    ammunition: "12 Gauge",
-    status: "Officially Confirmed",
-    gallery: [],
-  },
-
-  {
-    id: 5,
-    slug: "sniper-rifle",
-    name: "Sniper Rifle",
-    manufacturer: "Unknown",
-    category: "Sniper Rifle",
-    image: "/images/weapons/sniper-rifle.webp",
-    description:
-      "A precision long-range rifle featured in official Rockstar Games screenshots for Grand Theft Auto VI.",
-    firstAppearance: "Rockstar Games Website",
-    ammunition: "7.62mm",
-    status: "Officially Confirmed",
-    gallery: [],
-  },
-
-  {
-    id: 6,
-    slug: "rocket-launcher",
-    name: "Rocket Launcher",
-    manufacturer: "Unknown",
-    category: "Heavy Weapon",
-    image: "/images/weapons/rocket-launcher.webp",
-    description:
-      "A powerful explosive launcher briefly shown in official GTA VI promotional material.",
-    firstAppearance: "Trailer 2",
-    ammunition: "Rocket",
-    status: "Officially Confirmed",
-    gallery: [],
-  },
-
-  {
-    id: 7,
     slug: "hawk-little-morgan",
-    name: "Hawk & Little Morgan Revolvers",
+    name: "Hawk & Little Morgan revolvers",
     manufacturer: "Hawk & Little",
     category: "Handgun",
     image: "/images/official/weapons/hawk-little-morgan.webp",
     description:
-      "A matching pair of revolvers in the Ultimate Edition. Rockstar describes them as his-and-hers Vice City revolvers from the Vercetti Estate, with engraved metal, palm-etched grips, and a scope. Caliber has not been published.",
+      "Rockstar includes a matching pair of Hawk & Little Morgan revolvers with the Ultimate Edition. The published images show engraved metal. Rockstar has not published a caliber.",
     firstAppearance: "Ultimate Edition",
     ammunition: "Not published",
-    status: "Named by Rockstar",
+    status: "Confirmed",
     gallery: [],
+    source: rockstar,
   },
-
   {
-    id: 8,
+    id: 2,
     slug: "girardi-es9",
     name: "Girardi ES9",
     manufacturer: "Girardi",
     category: "Handgun",
     image: "/images/official/weapons/girardi-es9.webp",
     description:
-      "Jason's personalized pistol in the Ultimate Edition. Rockstar says this sidearm has detailed engraving. Caliber has not been published.",
+      "Rockstar names the Girardi ES9 as Jason's engraved pistol in the Ultimate Edition. A caliber has not been published.",
     firstAppearance: "Ultimate Edition",
     ammunition: "Not published",
-    status: "Named by Rockstar",
+    status: "Confirmed",
     gallery: [],
+    source: rockstar,
   },
-
   {
-    id: 9,
+    id: 3,
     slug: "klose-k17",
     name: "Klose K17",
     manufacturer: "Klose",
     category: "Handgun",
     image: "/images/official/weapons/klose-k17.webp",
     description:
-      "Lucia's personalized pistol in the Ultimate Edition. Rockstar says this sidearm has detailed engraving. Caliber has not been published.",
+      "Rockstar names the Klose K17 as Lucia's engraved pistol in the Ultimate Edition. A caliber has not been published.",
     firstAppearance: "Ultimate Edition",
     ammunition: "Not published",
-    status: "Named by Rockstar",
+    status: "Confirmed",
+    gallery: [],
+    source: rockstar,
+  },
+  {
+    id: 4,
+    slug: "standard-pistol",
+    name: "Standard Pistol",
+    manufacturer: "Not named",
+    category: "Handgun",
+    image: "/images/weapons/standard-pistol.webp",
+    description:
+      "Handguns appear in official trailers. Rockstar has not published this name or a caliber.",
+    firstAppearance: "Trailer footage",
+    ammunition: "Not published",
+    status: "Expected / unconfirmed",
+    gallery: [],
+  },
+  {
+    id: 5,
+    slug: "compact-pistol",
+    name: "Compact Pistol",
+    manufacturer: "Not named",
+    category: "Handgun",
+    image: "/images/weapons/compact-pistol.webp",
+    description:
+      "A smaller handgun shape appears in official footage. Rockstar has not published this name or a caliber.",
+    firstAppearance: "Trailer footage",
+    ammunition: "Not published",
+    status: "Expected / unconfirmed",
+    gallery: [],
+  },
+  {
+    id: 6,
+    slug: "assault-rifle",
+    name: "Assault Rifle",
+    manufacturer: "Not named",
+    category: "Rifle",
+    image: "/images/weapons/assault-rifle.webp",
+    description:
+      "Rifles appear in official screenshots. Rockstar has not published this name or a caliber.",
+    firstAppearance: "Official screenshots",
+    ammunition: "Not published",
+    status: "Expected / unconfirmed",
+    gallery: [],
+  },
+  {
+    id: 7,
+    slug: "pump-shotgun",
+    name: "Pump Shotgun",
+    manufacturer: "Not named",
+    category: "Shotgun",
+    image: "/images/weapons/pump-shotgun.webp",
+    description:
+      "Rockstar has not published this shotgun name or a gauge.",
+    firstAppearance: "Not published",
+    ammunition: "Not published",
+    status: "Expected / unconfirmed",
+    gallery: [],
+  },
+  {
+    id: 8,
+    slug: "sniper-rifle",
+    name: "Sniper Rifle",
+    manufacturer: "Not named",
+    category: "Rifle",
+    image: "/images/weapons/sniper-rifle.webp",
+    description:
+      "Rockstar has not published this rifle name or a caliber.",
+    firstAppearance: "Not published",
+    ammunition: "Not published",
+    status: "Expected / unconfirmed",
+    gallery: [],
+  },
+  {
+    id: 9,
+    slug: "rocket-launcher",
+    name: "Rocket Launcher",
+    manufacturer: "Not named",
+    category: "Heavy",
+    image: "/images/weapons/rocket-launcher.webp",
+    description:
+      "Rockstar has not published this weapon name.",
+    firstAppearance: "Not published",
+    ammunition: "Not published",
+    status: "Expected / unconfirmed",
     gallery: [],
   },
 ];
+
+export const confirmedWeapons = weapons.filter(
+  (weapon) => weapon.status === "Confirmed"
+);
+
+export const unconfirmedWeapons = weapons.filter(
+  (weapon) => weapon.status !== "Confirmed"
+);

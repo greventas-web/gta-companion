@@ -10,7 +10,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Trailer 1",
     description:
-      "Jason Duval is one of the two playable protagonists in Grand Theft Auto VI. Rockstar describes him as someone searching for an easier life, but trouble continues to find him.",
+      "Jason Duval is one of the two playable protagonists. Rockstar says he grew up around grifters and small-time crooks, served a stint in the Army, and then worked for drug runners in the Leonida Keys. He wants an easier life, and he has to rely on Lucia after an easy score goes wrong. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city", "leonida-keys"],
@@ -28,7 +28,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Trailer 1",
     description:
-      "Lucia Caminos is one of the two playable protagonists in Grand Theft Auto VI. Recently released from prison, she is determined to build a better future through calculated decisions.",
+      "Lucia Caminos is one of the two playable protagonists. Rockstar says she learned to fight young, that fighting for her family put her in Leonida Penitentiary, and that she is out and wants the life her mother has talked about since their days in Liberty City. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -46,7 +46,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Cal Hampton is Jason's friend. He spends much of his time monitoring communications and following conspiracy theories while living a quiet life.",
+      "Cal Hampton is Jason's friend and works with Brian Heder. Rockstar describes him as someone who would rather stay home, listen to Coast Guard radio, and keep a wary eye on the government. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["grassrivers"],
@@ -64,7 +64,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Boobie Ike is a Vice City entrepreneur with businesses spanning entertainment, music and real estate.",
+      "Boobie Ike is a Vice City figure Rockstar calls a local legend. The official profile says he turned a street reputation into businesses that include real estate, a strip club, and a recording studio, and that he co-runs Only Raw Records with Dre'Quan Priest. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -88,7 +88,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Dre'Quan Priest is building his music career through Only Raw Records.",
+      "Dre'Quan Priest moved from street sales into music. Rockstar says he signed Real Dimez to Only Raw Records, books acts at Boobie Ike's club, and is trying to break into the Vice City music scene. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -110,7 +110,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Real Dimez are an up-and-coming rap duo signed to Only Raw Records.",
+      "Real Dimez are Bae-Luxe and Roxy. Rockstar says they have been friends since high school and turned time spent shaking down local dealers into rap tracks and a constant social media presence. They are signed to Only Raw Records. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -132,7 +132,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Raul Bautista is an experienced bank robber always searching for talented people willing to take dangerous risks.",
+      "Raul Bautista is a bank robber. Rockstar describes him as someone with experience who is looking for people willing to take the risk. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -150,7 +150,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Brian Heder is a longtime drug smuggler operating from the Leonida Keys.",
+      "Brian Heder is a longtime smuggler in the Leonida Keys and Jason's landlord. Cal Hampton works with him. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["leonida-keys"],

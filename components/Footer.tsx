@@ -127,6 +127,10 @@ export default function Footer() {
                 Cheats
               </Link>
 
+              <Link href="/radio" className="block text-zinc-400 transition hover:text-pink-400">
+                Radio
+              </Link>
+
               <Link href="/faq" className="block text-zinc-400 transition hover:text-pink-400">
                 FAQ
               </Link>

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Editions and pre-load",
@@ -40,6 +42,64 @@ const ultimateVehicles = [
     name: "'67 Vapid Dominator Buggy",
     href: "/vehicles/vapid-dominator-buggy",
     note: "Mud Club buggy for Mount Kalaga. Stored at the Paradise Garage in Watson Bay.",
+  },
+];
+
+const editionPlaces = [
+  {
+    name: "Rideout Customs",
+    image: "/images/official/editions/ultimate_edition_rideout_customs_01.webp",
+    note: "A mod shop included with the Ultimate Edition.",
+  },
+  {
+    name: "One-Eyed Willie's",
+    image: "/images/official/editions/ultimate_edition_one_eyed_willie_01.webp",
+    note: "An off-road mod shop at Lake Leonida.",
+  },
+  {
+    name: "Sara's Unisex Salon",
+    image: "/images/official/editions/ultimate_edition_saras_salon_01.webp",
+    note: "A salon included with the Ultimate Edition.",
+  },
+  {
+    name: "Stock 305",
+    image: "/images/official/editions/ultimate_edition_stock_305_01.webp",
+    note: "A clothing store included with the Ultimate Edition.",
+  },
+  {
+    name: "Electric Fang Tattoo",
+    image: "/images/official/editions/ultimate_edition_electric_fang_01.webp",
+    note: "A tattoo shop included with the Ultimate Edition.",
+  },
+  {
+    name: "Goodtime Gear",
+    image: "/images/official/editions/ultimate_edition_goodtime_gear_01.webp",
+    note: "An apparel shop included with the Ultimate Edition.",
+  },
+  {
+    name: "PTT Youngin$",
+    image: "/images/official/editions/ultimate_edition_ptt_store_01.webp",
+    note: "An illegal-goods store included with the Ultimate Edition.",
+  },
+  {
+    name: "Wyman's Classic Car Collection",
+    image: "/images/official/editions/ultimate_edition_wyman_car_collection_01.webp",
+    note: "A car collection commissioned through the fixer Wyman.",
+  },
+  {
+    name: "Paradise Garage",
+    image: "/images/official/editions/ultimate_edition_vapid_buggy_01.webp",
+    note: "Rockstar says the Dominator Buggy can be stored at the Paradise Garage in Watson Bay. This image is the buggy, not a separate garage exterior.",
+  },
+  {
+    name: "Vice City Style",
+    image: "/images/official/editions/ultimate_edition_vice_city_style_01.webp",
+    note: "Clothes for Jason and Lucia included with the Ultimate Edition.",
+  },
+  {
+    name: "Jason's safehouse",
+    image: "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp",
+    note: "The safehouse vehicles Rockstar has shown, including the Dinka Enduro and Crest Kayak.",
   },
 ];
 
@@ -139,6 +199,49 @@ export default function LaunchPage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-4xl font-black tracking-[-0.03em]">
+          Ultimate Edition places
+        </h2>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
+          Rockstar has published these named places and extras with the Ultimate Edition.
+          Last updated November 10, 2026. {IMAGE_CREDIT}.
+        </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {editionPlaces.map((place) => (
+            <article
+              key={place.name}
+              className="overflow-hidden rounded-[32px] border border-white/10 bg-[#0B0B0D]"
+            >
+              <div className="relative aspect-video">
+                <Image
+                  src={place.image}
+                  alt={place.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-teal-300">
+                  Confirmed
+                </p>
+                <h3 className="mt-3 text-2xl font-black">{place.name}</h3>
+                <p className="mt-4 leading-8 text-zinc-400">{place.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <a
+          href="https://www.rockstargames.com/VI"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-block text-pink-300 hover:text-pink-200"
+        >
+          Source: Rockstar Games — Grand Theft Auto VI
+        </a>
       </section>
 
       <section className="mt-16 grid gap-8 lg:grid-cols-2">
