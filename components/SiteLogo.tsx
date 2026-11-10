@@ -8,7 +8,7 @@ export default function SiteLogo({
   return (
     <span className="flex items-center gap-2.5">
       <Image
-        src="/logo/wordmark.jpg"
+        src="/logo/logo-night.jpg"
         alt=""
         width={large ? 64 : 44}
         height={large ? 64 : 44}

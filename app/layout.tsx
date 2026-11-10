@@ -30,7 +30,7 @@ const organizationJsonLd = {
   slogan: SITE.slogan,
   email: SITE.email,
   description: SITE.description,
-  logo: `${SITE.url}/icons/icon-512.png`,
+  logo: `${SITE.url}/icons/icon-night-512.png`,
   sameAs: SOCIAL_PROFILES.map((profile) => profile.href),
 };
 
@@ -87,6 +87,21 @@ export const metadata: Metadata = {
     follow: true,
   },
 
+  icons: {
+    icon: [
+      { url: "/icons/favicon-night.ico", sizes: "48x48" },
+      { url: "/icons/icon-night-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-night-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      {
+        url: "/icons/apple-touch-icon-night.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+
   openGraph: {
     title: `${SITE.name} — ${SITE.slogan}`,
 
@@ -102,7 +117,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/logo/og-logo.jpg",
+        url: "/logo/og-night.jpg",
         width: 1200,
         height: 630,
         alt: "GTA Companion — Everything you need for GTA 6",
@@ -117,7 +132,7 @@ export const metadata: Metadata = {
 
     description: SITE.description,
 
-    images: ["/logo/og-logo.jpg"],
+    images: ["/logo/og-night.jpg"],
   },
 };
 

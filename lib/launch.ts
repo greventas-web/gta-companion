@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 import type { LaunchEntry } from "@/src/data/launch/types";
 
 const socialImage = {
-  url: "/logo/og-logo.jpg",
+  url: "/logo/og-night.jpg",
   width: 1200,
   height: 630,
   alt: SITE.name,
