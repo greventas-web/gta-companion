@@ -1,7 +1,7 @@
 export const characters = [
   {
     name: "Jason Duval",
-    image: "/images/original/characters/jason.jpg",
+    image: "/images/official/characters/jason-duval.webp",
     role: "Protagonist",
     description:
       "Looking for an easy life, Jason soon realizes that nothing comes easy in Leonida.",
@@ -9,7 +9,7 @@ export const characters = [
   },
   {
     name: "Lucia Caminos",
-    image: "/images/original/characters/lucia.jpg",
+    image: "/images/official/characters/lucia-caminos.webp",
     role: "Protagonist",
     description:
       "Fresh out of prison and determined to build a better future on her own terms.",
@@ -17,7 +17,7 @@ export const characters = [
   },
   {
     name: "Cal Hampton",
-    image: "/images/original/characters/cal.jpg",
+    image: "/images/official/characters/cal-hampton.webp",
     role: "Friend",
     description:
       "Jason's friend who spends more time online than in the real world.",
@@ -25,7 +25,7 @@ export const characters = [
   },
   {
     name: "Boobie Ike",
-    image: "/images/original/characters/boobie.jpg",
+    image: "/images/official/characters/boobie-ike.webp",
     role: "Businessman",
     description:
       "Vice City's entrepreneur with businesses across music and real estate.",
@@ -33,7 +33,7 @@ export const characters = [
   },
   {
     name: "Dre'Quan Priest",
-    image: "/images/original/characters/drequan.jpg",
+    image: "/images/official/characters/drequan-priest.webp",
     role: "Music Producer",
     description:
       "A producer chasing success in Leonida's music scene.",
@@ -41,7 +41,7 @@ export const characters = [
   },
   {
     name: "Real Dimez",
-    image: "/images/original/characters/realdimez.jpg",
+    image: "/images/official/characters/real-dimez.webp",
     role: "Music Duo",
     description:
       "Bae-Luxe and Roxy, influencers and rappers building their reputation.",
@@ -49,7 +49,7 @@ export const characters = [
   },
   {
     name: "Raul Bautista",
-    image: "/images/original/characters/raul.jpg",
+    image: "/images/official/characters/raul-bautista.webp",
     role: "Bank Robber",
     description:
       "An experienced robber always looking for the next big score.",
@@ -57,7 +57,7 @@ export const characters = [
   },
   {
     name: "Brian Heder",
-    image: "/images/original/characters/brian.jpg",
+    image: "/images/official/characters/brian-heder.webp",
     role: "Smuggler",
     description:
       "A veteran drug runner who lets Jason stay on one of his properties.",

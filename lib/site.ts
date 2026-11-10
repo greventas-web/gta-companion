@@ -36,3 +36,5 @@ export const SOCIAL_PROFILES = [
 
 export const UNOFFICIAL_DISCLAIMER =
   "Unofficial fan site, not affiliated with Rockstar Games or Take-Two.";
+
+export const IMAGE_CREDIT = "Images: Rockstar Games";

@@ -25,15 +25,26 @@ export function isManufacturerNameCard(slug: string, src: string) {
   );
 }
 
-/** Photograph safe to render for a manufacturer. Name-card placeholders are dropped. */
+/** Official product art only. Studio photos of real cars are not shown. */
 export function manufacturerPortrait(
   manufacturer: Pick<Manufacturer, "slug" | "logo">
 ) {
-  if (isManufacturerNameCard(manufacturer.slug, manufacturer.logo)) {
+  const src = manufacturer.logo;
+
+  if (src.startsWith("/images/official/")) {
+    return src;
+  }
+
+  if (
+    photographicManufacturerSlugs.has(manufacturer.slug) ||
+    src.startsWith("/images/original/") ||
+    src.startsWith("/images/manufacturers/") ||
+    isManufacturerNameCard(manufacturer.slug, src)
+  ) {
     return "";
   }
 
-  return manufacturer.logo;
+  return src;
 }
 
 /** Real vehicle illustrations, never the site placeholder card. */

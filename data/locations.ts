@@ -7,7 +7,7 @@ export const locations: Location[] = [
     name: "Vice City",
     region: "Leonida",
     type: "City",
-    image: "/images/original/locations/vice-city.jpg",
+    image: "/images/official/locations/vice-city.webp",
     description:
       "The vibrant heart of Leonida, inspired by Miami and serving as the main setting of Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
@@ -21,7 +21,7 @@ export const locations: Location[] = [
     name: "Leonida Keys",
     region: "Leonida",
     type: "Island Chain",
-    image: "/images/original/locations/leonida-keys.jpg",
+    image: "/images/official/locations/leonida-keys.webp",
     description:
       "A tropical island chain featuring beaches, marinas and crystal-clear waters.",
     firstAppearance: "Trailer 2",
@@ -35,7 +35,7 @@ export const locations: Location[] = [
     name: "Grassrivers",
     region: "Leonida",
     type: "Wetlands",
-    image: "/images/original/locations/grassrivers.jpg",
+    image: "/images/official/locations/grassrivers.webp",
     description:
       "A dangerous swamp ecosystem home to alligators and other wildlife.",
     firstAppearance: "Rockstar Website",
@@ -49,7 +49,7 @@ export const locations: Location[] = [
     name: "Mount Kalaga",
     region: "Northern Leonida",
     type: "Mountain",
-    image: "/images/original/locations/mount-kalaga.jpg",
+    image: "/images/official/locations/mount-kalaga.webp",
     description:
       "A mountainous wilderness offering forests, trails and rugged terrain.",
     firstAppearance: "Rockstar Website",
@@ -63,7 +63,7 @@ export const locations: Location[] = [
     name: "Port Gellhorn",
     region: "Leonida",
     type: "Town",
-    image: "/images/original/locations/port-gellhorn.jpg",
+    image: "/images/official/locations/port-gellhorn.webp",
     description:
       "A once-bustling coastal town with motels, industrial areas and waterfront businesses.",
     firstAppearance: "Trailer 2",
@@ -77,7 +77,7 @@ export const locations: Location[] = [
     name: "Ambrosia",
     region: "Leonida",
     type: "City",
-    image: "/images/original/locations/ambrosia.jpg",
+    image: "/images/official/locations/ambrosia.webp",
     description:
       "An inland Leonida community surrounded by industrial activity and rural landscapes, forming part of the state's northern interior.",
     firstAppearance: "Trailer 2",

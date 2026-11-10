@@ -10,6 +10,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CharacterCard from "@/components/CharacterCard";
 
 import { characters } from "@/data/characters";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 type Props = {
   params: Promise<{
@@ -63,16 +64,20 @@ export default async function CharacterPage({
 
           <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
 
-            <div className="relative aspect-[3/4]">
+            <div className="relative aspect-video">
 
               <Image
-  src={character.image}
-  alt={character.name}
-  fill
-  priority
-  className="object-cover object-right transition duration-700"
-/>
+                src={character.image}
+                alt={character.name}
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 42vw"
+                className="object-cover object-center"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-200">
+                {IMAGE_CREDIT}
+              </p>
 
             </div>
 

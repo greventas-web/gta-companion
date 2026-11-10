@@ -59,7 +59,7 @@ export default function HeroV2() {
 
           <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] border border-white/10">
             <Image
-              src="/images/original/locations/vice-city.jpg"
+              src="/images/official/locations/vice-city.webp"
               alt="Original illustration of a neon coastal city"
               fill
               priority

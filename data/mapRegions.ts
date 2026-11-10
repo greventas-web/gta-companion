@@ -8,7 +8,7 @@ export const mapRegions: MapRegion[] = [
     subtitle: "The Heart of Leonida",
     description:
       "The vibrant coastal metropolis of Leonida, famous for its beaches, nightlife, skyscrapers and criminal underworld.",
-    image: "/images/original/locations/vice-city.jpg",
+    image: "/images/official/locations/vice-city.webp",
     x: 56,
     y: 58,
     color: "#ec4899",
@@ -25,7 +25,7 @@ export const mapRegions: MapRegion[] = [
     subtitle: "Island Paradise",
     description:
       "A chain of tropical islands featuring marinas, beaches, fishing communities and luxury waterfront living.",
-    image: "/images/original/locations/leonida-keys.jpg",
+    image: "/images/official/locations/leonida-keys.webp",
     x: 49,
     y: 90,
     color: "#38bdf8",
@@ -42,7 +42,7 @@ export const mapRegions: MapRegion[] = [
     subtitle: "Forgotten Coast",
     description:
       "A declining coastal town filled with abandoned motels, industrial docks and forgotten neighborhoods.",
-    image: "/images/original/locations/port-gellhorn.jpg",
+    image: "/images/official/locations/port-gellhorn.webp",
     x: 67,
     y: 63,
     color: "#f97316",
@@ -59,7 +59,7 @@ export const mapRegions: MapRegion[] = [
     subtitle: "Industrial Heartland",
     description:
       "A hardworking industrial town surrounded by factories, farms and heavy industry.",
-    image: "/images/original/locations/ambrosia.jpg",
+    image: "/images/official/locations/ambrosia.webp",
     x: 73,
     y: 42,
     color: "#22c55e",
@@ -76,7 +76,7 @@ export const mapRegions: MapRegion[] = [
     subtitle: "Wetlands",
     description:
       "A dangerous swamp region filled with wildlife, rivers and hidden paths through the marshes.",
-    image: "/images/original/locations/grassrivers.jpg",
+    image: "/images/official/locations/grassrivers.webp",
     x: 58,
     y: 38,
     color: "#84cc16",
@@ -93,7 +93,7 @@ export const mapRegions: MapRegion[] = [
     subtitle: "Northern Wilderness",
     description:
       "Leonida's mountainous northern region featuring forests, hiking trails and remote wilderness.",
-    image: "/images/original/locations/mount-kalaga.jpg",
+    image: "/images/official/locations/mount-kalaga.webp",
     x: 40,
     y: 18,
     color: "#8b5cf6",

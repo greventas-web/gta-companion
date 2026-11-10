@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import LocationCard from "@/components/LocationCard";
 
 import { locations } from "@/data/locations";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 type Props = {
   params: Promise<{
@@ -58,17 +59,21 @@ export default async function LocationPage({
 
           <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
 
-            <div className="relative aspect-[3/4]">
+            <div className="relative aspect-video">
 
               <Image
                 src={location.image}
                 alt={location.name}
                 fill
                 priority
+                sizes="(max-width: 1280px) 100vw, 42vw"
                 className="object-cover"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-200">
+                {IMAGE_CREDIT}
+              </p>
 
             </div>
 

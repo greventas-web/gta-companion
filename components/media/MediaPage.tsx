@@ -8,8 +8,10 @@ import {
 } from "lucide-react";
 
 import FeaturedTrailer from "./FeaturedTrailer";
+import OfficialGallery from "./OfficialGallery";
 import TrailerCard from "./TrailerCard";
 
+import { IMAGE_CREDIT } from "@/lib/site";
 import { trailers } from "../../src/data/media/trailers";
 
 export default function MediaPage() {
@@ -34,7 +36,7 @@ export default function MediaPage() {
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Trailer links play from YouTube. This page does not host Rockstar's video or pictures.
+            Trailer links play from YouTube. Screenshots and artwork on this page are official Rockstar images. {IMAGE_CREDIT}. This is an unofficial fan site, not affiliated with Rockstar Games or Take-Two.
           </p>
 
         </div>
@@ -67,8 +69,10 @@ export default function MediaPage() {
 
             </Link>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8">
-
+            <a
+              href="#screenshots"
+              className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 transition hover:border-pink-500/40 hover:-translate-y-1"
+            >
               <ImageIcon className="text-pink-400" size={34} />
 
               <h3 className="mt-6 text-2xl font-black">
@@ -76,13 +80,14 @@ export default function MediaPage() {
               </h3>
 
               <p className="mt-3 text-zinc-400">
-                Official screenshots coming soon.
+                Official character and location screenshots.
               </p>
+            </a>
 
-            </div>
-
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8">
-
+            <a
+              href="#artwork"
+              className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 transition hover:border-pink-500/40 hover:-translate-y-1"
+            >
               <Palette className="text-pink-400" size={34} />
 
               <h3 className="mt-6 text-2xl font-black">
@@ -90,10 +95,9 @@ export default function MediaPage() {
               </h3>
 
               <p className="mt-3 text-zinc-400">
-                No Rockstar artwork is hosted here.
+                Cover art, postcards, and character artwork.
               </p>
-
-            </div>
+            </a>
 
             <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8">
 
@@ -152,6 +156,8 @@ export default function MediaPage() {
 
         </section>
 
+        <OfficialGallery />
+
         {/* Bottom CTA */}
 
         <section className="mt-32 rounded-[40px] border border-white/10 bg-gradient-to-r from-pink-500/10 via-transparent to-violet-500/10 p-14 text-center">
@@ -161,9 +167,7 @@ export default function MediaPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-zinc-400">
-            As Rockstar Games releases new screenshots, artwork and promotional
-            assets, GTA Companion will automatically expand its official media
-            library.
+            {IMAGE_CREDIT}. New official screenshots and artwork will be added here when Rockstar publishes them.
           </p>
 
           <Link

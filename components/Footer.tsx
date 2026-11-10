@@ -3,7 +3,7 @@ import { X, type LucideProps } from "lucide-react";
 
 import SiteLogo from "@/components/SiteLogo";
 import SubscribeForm from "@/components/SubscribeForm";
-import { SITE, SOCIAL_PROFILES } from "@/lib/site";
+import { IMAGE_CREDIT, SITE, SOCIAL_PROFILES } from "@/lib/site";
 
 const socialIcons = {
   YouTube: YouTubeIcon,
@@ -148,7 +148,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 lg:flex-row">
           <div>
-            © 2026 GTA Companion. Unofficial fan project. Not affiliated with, endorsed, or connected to Rockstar Games or Take-Two Interactive.
+            © 2026 GTA Companion. Unofficial fan project. Not affiliated with, endorsed, or connected to Rockstar Games or Take-Two Interactive. {IMAGE_CREDIT}.
           </div>
 
           <div className="flex gap-8">

@@ -4,14 +4,14 @@ export const trailers = [
     title: "Grand Theft Auto VI Trailer 1",
     youtubeId: "",
     releaseDate: "December 5, 2023",
-    thumbnail: "/images/original/news/announcement.jpg",
+    thumbnail: "/images/official/news/announcement.webp",
   },
   {
     id: 2,
     title: "Grand Theft Auto VI Trailer 2",
     youtubeId: "",
     releaseDate: "May 6, 2025",
-    thumbnail: "/images/original/news/trailer.jpg",
+    thumbnail: "/images/official/news/trailer.webp",
   },
 ];
 
