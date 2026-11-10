@@ -46,7 +46,10 @@ export default function useGlobalSearch() {
           item.score > 0
       )
       .sort((a, b) => b.score - a.score)
-      .map(({ score, ...item }) => item);
+      .map(({ score, ...item }) => {
+        void score;
+        return item;
+      });
   }, [query]);
 
   const groupedResults = useMemo(() => {

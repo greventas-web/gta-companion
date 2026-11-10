@@ -3,36 +3,27 @@ import { Globe, X, type LucideProps } from "lucide-react";
 
 import SiteLogo from "@/components/SiteLogo";
 import SubscribeForm from "@/components/SubscribeForm";
+import { SITE, SOCIAL_LINKS } from "@/src/data/config";
+import { launchSections } from "@/src/data/launch";
 
-const socialLinks: {
-  label: string;
-  href: string;
-  title?: string;
-  icon: (props: LucideProps) => React.ReactNode;
-}[] = [
+const socialIcons = {
+  YouTube: YouTubeIcon,
+  Instagram: InstagramIcon,
+  X,
+  Reddit: RedditIcon,
+} as const;
+
+const socialLinks = [
   {
     label: "GTA Companion",
-    href: "https://www.gta-companion.com/",
+    href: `${SITE.url}/`,
+    title: SITE.slogan,
     icon: Globe,
   },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/gta_companion/",
-    title: "@gta_companion",
-    icon: InstagramIcon,
-  },
-  {
-    label: "YouTube",
-    href: "https://www.youtube.com/@GTACompanion-c5e",
-    title: "@GTACompanion-c5e",
-    icon: YouTubeIcon,
-  },
-  {
-    label: "X",
-    href: "https://x.com/GTACompanion",
-    title: "@GTACompanion",
-    icon: X,
-  },
+  ...SOCIAL_LINKS.map((link) => ({
+    ...link,
+    icon: socialIcons[link.label],
+  })),
 ];
 
 export default function Footer() {
@@ -46,7 +37,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 max-w-[360px] text-lg leading-8 text-zinc-400">
-              An unofficial fan-made database. Grand Theft Auto, Rockstar
+              {SITE.slogan}. {SITE.disclaimer} Grand Theft Auto, Rockstar
               Games, and Take-Two are trademarks of their owners.
             </p>
 
@@ -121,9 +112,15 @@ export default function Footer() {
                 Locations
               </Link>
 
-              <Link href="/guides" className="block text-zinc-400 transition hover:text-pink-400">
-                Guides
-              </Link>
+              {launchSections.map((section) => (
+                <Link
+                  key={section.path}
+                  href={section.path}
+                  className="block text-zinc-400 transition hover:text-pink-400"
+                >
+                  {section.navLabel}
+                </Link>
+              ))}
 
               <Link href="/faq" className="block text-zinc-400 transition hover:text-pink-400">
                 FAQ
@@ -169,6 +166,30 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function RedditIcon({ size = 16, ...props }: LucideProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <circle cx="12" cy="14" r="6" />
+      <circle cx="9.2" cy="13.4" r="0.7" fill="currentColor" stroke="none" />
+      <circle cx="14.8" cy="13.4" r="0.7" fill="currentColor" stroke="none" />
+      <path d="M9.2 16.2c.8.7 1.7 1 2.8 1s2-.3 2.8-1" />
+      <path d="M16.4 11.4 17.2 8.2l2.4.7" />
+      <circle cx="19.8" cy="8" r="1" />
+    </svg>
   );
 }
 

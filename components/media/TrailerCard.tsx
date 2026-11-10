@@ -31,7 +31,7 @@ export default function TrailerCard({
         </h3>
 
         <p className="mt-4 text-zinc-400">
-          Watch the official trailer directly from Rockstar Games' YouTube channel.
+          Watch the official trailer on the Rockstar Games YouTube channel.
         </p>
 
       </div>

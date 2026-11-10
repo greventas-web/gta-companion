@@ -55,7 +55,7 @@ export default function HomeStatsV2() {
 
         <p className="mt-8 text-xl leading-10 text-zinc-400">
           A fan-made database for players. It is not a Rockstar Games
-          product, and it does not host Rockstar's pictures.
+          product, and it does not host pictures from Rockstar.
         </p>
 
       </div>

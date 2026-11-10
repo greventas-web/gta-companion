@@ -8,19 +8,19 @@ export const guides: Guide[] = [
     category: "Beginner",
     image: "/images/guides/getting-started.webp",
     description:
-      "Everything new players need to know before beginning their adventure in Leonida.",
+      "A beginner guide is coming at launch. This note does not include steps yet.",
     readingTime: "8 min",
     difficulty: "Beginner",
     relatedVehicles: [],
   },
   {
     id: 2,
-    title: "Best Starter Vehicles",
+    title: "Starter Vehicles",
     slug: "best-starter-vehicles",
     category: "Vehicles",
     image: "/images/guides/best-starter-vehicles.webp",
     description:
-      "Learn which vehicles are the best early-game choices based on Rockstar's official information.",
+      "Starter vehicle picks are coming at launch. No early-game ranking is confirmed.",
     readingTime: "6 min",
     difficulty: "Beginner",
     relatedVehicles: ["bravado-banshee"],
@@ -45,7 +45,7 @@ export const guides: Guide[] = [
     category: "Exploration",
     image: "/images/guides/exploring-leonida.webp",
     description:
-      "A guide to the major regions, cities and hidden areas revealed by Rockstar Games.",
+      "Region notes will be expanded after launch. Unconfirmed hidden areas are not listed here.",
     readingTime: "12 min",
     difficulty: "Beginner",
     relatedVehicles: [],

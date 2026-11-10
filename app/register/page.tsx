@@ -71,8 +71,10 @@ export default function RegisterPage() {
       );
 
       router.push("/dashboard");
-    } catch (err: any) {
-      setError(err.message.replace("Firebase: ", ""));
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Unable to create an account.";
+      setError(message.replace("Firebase: ", ""));
     } finally {
       setLoading(false);
     }

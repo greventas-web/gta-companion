@@ -34,7 +34,7 @@ export default function MediaPage() {
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
-            Trailer links play from YouTube. This page does not host Rockstar's video or pictures.
+            Trailer links play from YouTube. This page does not host video or pictures from Rockstar.
           </p>
 
         </div>

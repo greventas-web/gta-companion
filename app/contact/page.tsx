@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import {
   Badge,
   Card,
@@ -6,6 +8,13 @@ import {
 } from "@/components/ui";
 
 import PageTitle from "@/components/PageTitle";
+import { SITE } from "@/src/data/config";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact the GTA Companion fan site at contact@gta-companion.com. This is not Rockstar Games support.",
+};
 
 export default function ContactPage() {
   return (
@@ -16,7 +25,7 @@ export default function ContactPage() {
 
           <PageTitle
             title="Get In Touch"
-            description="Questions, partnership opportunities, bug reports or general feedback? We'd love to hear from you."
+            description="Questions, partnership opportunities, bug reports or general feedback? Email the fan site. This inbox is not Rockstar Games support."
           />
 
           <div className="mt-16 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
@@ -31,14 +40,14 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="mailto:contact@gta-companion.com"
+                href={`mailto:${SITE.contactEmail}`}
                 className="mt-8 inline-block text-2xl font-bold text-pink-400 hover:text-pink-300"
               >
-                contact@gta-companion.com
+                {SITE.contactEmail}
               </a>
 
               <p className="mt-8 text-zinc-500">
-                We aim to respond as quickly as possible.
+                We aim to respond as quickly as possible. {SITE.disclaimer}
               </p>
             </Card>
 
@@ -50,7 +59,7 @@ export default function ContactPage() {
 
                 <p className="mt-4 leading-8 text-zinc-400">
                   Interested in collaborating with GTA Companion or becoming a
-                  launch partner? We'd love to hear from you.
+                  launch partner? We would love to hear from you.
                 </p>
               </Card>
 
