@@ -36,6 +36,7 @@ const groups = [
   {
     title: "Launch",
     links: [
+      { title: "Unlock times", href: "/gta-6-launch" },
       { title: "Guides", href: "/guides" },
       { title: "Money", href: "/money-methods" },
       { title: "Fastest Cars", href: "/fastest-cars" },

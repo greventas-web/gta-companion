@@ -7,11 +7,13 @@ import { ReactNode } from "react";
 type Props = {
   href: string;
   children: ReactNode;
+  accent?: boolean;
 };
 
 export default function NavLink({
   href,
   children,
+  accent = false,
 }: Props) {
   const pathname = usePathname();
 
@@ -28,14 +30,20 @@ export default function NavLink({
         className={`relative z-10 text-[15px] font-semibold tracking-[-0.02em] transition-all duration-300 ${
           active
             ? "text-white"
-            : "text-zinc-400 group-hover:text-white"
+            : accent
+              ? "text-teal-300 group-hover:text-white"
+              : "text-zinc-400 group-hover:text-white"
         }`}
       >
         {children}
       </span>
 
       <span
-        className={`absolute bottom-0 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 transition-all duration-300 ${
+        className={`absolute bottom-0 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-gradient-to-r transition-all duration-300 ${
+          accent
+            ? "from-teal-300 via-pink-400 to-violet-500"
+            : "from-pink-500 via-fuchsia-500 to-violet-500"
+        } ${
           active
             ? "w-12 opacity-100"
             : "w-0 opacity-0 group-hover:w-12 group-hover:opacity-100"
