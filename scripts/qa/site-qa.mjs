@@ -84,6 +84,14 @@ async function routes() {
   return [...found].sort();
 }
 
+const sizeToken =
+  /(?:^|-)(?:ultrawide|landscape|portrait|square|tablet|phone|mobile|desktop)(?:-[ab])?(?=-|$)/g;
+
+function artworkStem(src) {
+  const file = src.split("/").pop()?.replace(/\.[a-z0-9]+$/i, "") ?? src;
+  return file.replace(sizeToken, "").replace(/-+/g, "-").replace(/^-|-$/g, "");
+}
+
 function imagePath(url) {
   try {
     const parsed = new URL(url, base);
@@ -99,6 +107,17 @@ function imagePath(url) {
 async function main() {
   await mkdir(outDir, { recursive: true });
   const list = await routes();
+  const galleryText = await readFile(path.join(root, "src/data/media/gallery.ts"), "utf8").catch(() => "");
+  const artworkSources = [...galleryText.matchAll(/src: "([^"]*artwork-[^"]+)"/g)].map((match) => match[1]);
+  const catalogGroups = new Map();
+  for (const src of artworkSources) {
+    const stem = artworkStem(src);
+    const list = catalogGroups.get(stem) || [];
+    list.push(src);
+    catalogGroups.set(stem, list);
+  }
+  const catalogDupes = [...catalogGroups.entries()].filter(([, sources]) => sources.length > 1);
+
   const browser = await chromium.launch();
   const report = {
     base,
@@ -112,6 +131,11 @@ async function main() {
     consoleErrors: [],
     badLinks: [],
     sharedAcrossItems: [],
+    artworkVariantDuplicates: catalogDupes.map(([stem, sources]) => ({
+      route: "src/data/media/gallery.ts",
+      stem,
+      sources,
+    })),
   };
   const imageOwners = new Map();
 
@@ -190,10 +214,15 @@ async function main() {
       });
 
       const counts = new Map();
+      const stems = new Map();
       for (const image of facts.images) {
         const src = imagePath(image.src);
         if (!src || src.includes("/logo/") || src.includes("/icons/")) continue;
         counts.set(src, (counts.get(src) || 0) + 1);
+        const stem = artworkStem(src);
+        const group = stems.get(stem) || new Set();
+        group.add(src);
+        stems.set(stem, group);
         if (image.width === 0 && !src.startsWith("http") && !src.includes("/_vercel/")) {
           report.brokenImages.push({ route, width, src, alt: image.alt });
         }
@@ -208,6 +237,16 @@ async function main() {
       }
       for (const [src, count] of counts) {
         if (count > 1) report.duplicateImagesOnPage.push({ route, width, src, count });
+      }
+      for (const [stem, sources] of stems) {
+        if (sources.size > 1) {
+          report.artworkVariantDuplicates.push({
+            route,
+            width,
+            stem,
+            sources: [...sources],
+          });
+        }
       }
       if (facts.overflow) {
         report.overflow.push({
@@ -244,6 +283,7 @@ async function main() {
     consoleErrors: report.consoleErrors.length,
     badLinks: report.badLinks.length,
     sharedAcrossItems: report.sharedAcrossItems.length,
+    artworkVariantDuplicates: report.artworkVariantDuplicates.length,
   };
   await writeFile(path.join(outDir, "report.json"), JSON.stringify({ summary, ...report }, null, 2));
   console.log(JSON.stringify(summary, null, 2));
