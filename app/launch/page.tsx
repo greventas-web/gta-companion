@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import PageHero from "@/components/PageHero";
@@ -88,7 +88,7 @@ const editionPlaces = [
   },
   {
     name: "Paradise Garage",
-    image: "/images/official/editions/ultimate_edition_vapid_buggy_01.webp",
+    image: "",
     note: "Rockstar says the Dominator Buggy can be stored at the Paradise Garage in Watson Bay. This image is the buggy, not a separate garage exterior.",
   },
   {
@@ -216,9 +216,10 @@ export default function LaunchPage() {
               className="overflow-hidden rounded-[32px] border border-white/10 bg-[#0B0B0D]"
             >
               <div className="relative aspect-video">
-                <Image
+                <ItemImage
                   src={place.image}
                   alt={place.name}
+                  name={place.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"

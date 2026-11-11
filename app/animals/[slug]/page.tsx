@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -60,9 +60,10 @@ export default async function AnimalPage({
 
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
 
-              <Image
+              <ItemImage
                 src={animal.image}
                 alt={animal.name}
+                name={animal.name}
                 fill
                 className="object-cover"
               />

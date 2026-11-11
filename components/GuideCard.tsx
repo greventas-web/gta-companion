@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -29,12 +29,13 @@ export default function GuideCard({
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
-          <Image
+          <ItemImage
             src={guide.image}
             alt={guide.title}
+            name={guide.title}
             fill
             sizes="(max-width: 768px) 100vw, 420px"
-            className="object-cover transition duration-700 group-hover:scale-110"
+            className="object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />

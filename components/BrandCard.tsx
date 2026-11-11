@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import { Brand } from "@/types/brand";
@@ -19,9 +19,10 @@ export default function BrandCard({
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
-          <Image
+          <ItemImage
             src={brand.image}
-            alt={`${brand.name} storefront`}
+            alt={brand.name}
+            name={brand.name}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover"

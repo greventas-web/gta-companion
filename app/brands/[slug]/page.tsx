@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import { notFound } from "next/navigation";
@@ -61,9 +61,10 @@ export default async function BrandPage({
 
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
 
-              <Image
+              <ItemImage
                 src={brand.image}
-                alt={`${brand.name} storefront`}
+                alt={brand.name}
+                name={brand.name}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"

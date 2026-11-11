@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import HomeSection from "@/components/HomeSection";
@@ -28,9 +28,10 @@ export default function FeaturedGuides() {
 
               <div className="relative h-52">
 
-                <Image
+                <ItemImage
                   src={guide.image}
                   alt={guide.title}
+                  name={guide.title}
                   fill
                   className="object-cover"
                 />

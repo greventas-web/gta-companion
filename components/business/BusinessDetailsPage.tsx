@@ -33,7 +33,7 @@ export default function BusinessDetailsPage({
         ]}
       />
 
-      <div className="mt-12 grid gap-14 xl:grid-cols-[58%_42%]">
+      <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
 
         {/* Hero Image */}
 

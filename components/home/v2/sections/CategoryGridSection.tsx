@@ -33,7 +33,7 @@ const cards = [
   {
     title: "Manufacturers",
     href: "/manufacturers",
-    image: "/images/official/categories/manufacturers.webp",
+    image: "",
     count: String(manufacturers.length),
     icon: Shield,
   },
@@ -82,7 +82,7 @@ const cards = [
   {
     title: "Brands",
     href: "/brands",
-    image: "/images/official/categories/brands.webp",
+    image: "",
     count: String(brands.length),
     icon: Building2,
   },

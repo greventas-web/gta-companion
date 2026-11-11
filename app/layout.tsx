@@ -167,8 +167,12 @@ export default function RootLayout({
             <Footer />
           </SearchProvider>
         </AuthProvider>
-        <Analytics />
-        <SpeedInsights />
+        {process.env.VERCEL === "1" ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -54,15 +54,16 @@ export default async function ActivityPage({
           ]}
         />
 
-        <div className="mt-12 grid gap-14 xl:grid-cols-[42%_58%]">
+        <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
 
           <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
 
             <div className="relative aspect-[3/4]">
 
-              <Image
+              <ItemImage
                 src={activity.image}
                 alt={activity.name}
+                name={activity.name}
                 fill
                 priority
                 className="object-cover"

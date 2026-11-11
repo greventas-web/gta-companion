@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { LucideIcon } from "lucide-react";
 
+import { isNameCard } from "@/components/ItemImage";
+
 type CategoryCardProps = {
   title: string;
   href: string;
@@ -22,6 +24,9 @@ export default function CategoryCard({
       href={href}
       className="group relative h-[148px] overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition hover:-translate-y-1 hover:border-pink-500/40"
     >
+      {isNameCard(image) ? (
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-800 via-fuchsia-600 to-teal-500" />
+      ) : (
       <Image
         src={image}
         alt={title}
@@ -29,6 +34,7 @@ export default function CategoryCard({
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover"
       />
+      )}
 
       <div className="absolute inset-0 bg-black/55 transition-all duration-500 group-hover:bg-black/35" />
 

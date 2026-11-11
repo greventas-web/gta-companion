@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import { Animal } from "@/types/animal";
@@ -26,12 +26,13 @@ export default function AnimalCard({
         {/* Image */}
 
         <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
+          <ItemImage
             src={animal.image}
             alt={animal.name}
+            name={animal.name}
             fill
             sizes="(max-width: 768px) 100vw, 420px"
-            className="object-cover transition duration-700 group-hover:scale-110"
+            className="object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
