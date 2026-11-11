@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -33,7 +33,7 @@ export default function WeaponDetailsPage({
         ]}
       />
 
-      <div className="mt-12 grid gap-14 xl:grid-cols-[58%_42%]">
+      <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
 
         {/* Hero Image */}
 
@@ -41,11 +41,13 @@ export default function WeaponDetailsPage({
 
           <div className="relative aspect-[16/10]">
 
-            <Image
+            <ItemImage
               src={weapon.image}
               alt={weapon.name}
+              name={weapon.name}
               fill
               priority
+              sizes="(max-width: 1280px) 100vw, 58vw"
               className="object-cover"
             />
 
@@ -159,11 +161,12 @@ export default function WeaponDetailsPage({
 
               <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
 
-                <Image
+                <ItemImage
                   src={related.image}
                   alt={related.name}
+                  name={related.name}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
+                  className="object-cover"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

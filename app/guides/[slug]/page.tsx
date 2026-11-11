@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import { notFound } from "next/navigation";
 import {
   BookOpen,
@@ -61,15 +61,16 @@ export default async function GuidePage({
           ]}
         />
 
-        <div className="mt-12 grid gap-14 xl:grid-cols-[42%_58%]">
+        <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
 
           <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
 
             <div className="relative aspect-[16/10]">
 
-              <Image
+              <ItemImage
                 src={guide.image}
                 alt={guide.title}
+                name={guide.title}
                 fill
                 priority
                 className="object-cover"

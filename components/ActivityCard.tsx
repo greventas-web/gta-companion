@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ItemImage from "@/components/ItemImage";
 import Link from "next/link";
 
 import { Activity } from "@/types/activity";
@@ -19,11 +19,12 @@ export default function ActivityCard({
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
-          <Image
+          <ItemImage
             src={activity.image}
             alt={activity.name}
+            name={activity.name}
             fill
-            className="object-cover transition duration-700 group-hover:scale-110"
+            className="object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />

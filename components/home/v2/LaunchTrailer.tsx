@@ -18,7 +18,7 @@ export default function LaunchTrailer({ videoId }: Props) {
       >
         <img
           src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
-          alt=""
+          alt="Grand Theft Auto VI launch trailer"
           className="h-full w-full object-cover"
         />
         <span className="absolute inset-0 bg-black/35" />

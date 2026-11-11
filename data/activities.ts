@@ -7,7 +7,7 @@ export const activities: Activity[] = [
     name: "Nightlife",
     category: "Entertainment",
     location: "Vice City",
-    image: "/images/activities/nightlife.webp",
+    image: "",
     description:
       "Vice City's clubs, bars and live music venues form one of Leonida's biggest attractions.",
     firstAppearance: "Trailer 2",
@@ -19,7 +19,7 @@ export const activities: Activity[] = [
     name: "Boating",
     category: "Water Activity",
     location: "Leonida Keys",
-    image: "/images/activities/boating.webp",
+    image: "",
     description:
       "Explore Leonida's coastline using a variety of boats and personal watercraft.",
     firstAppearance: "Trailer 2",
@@ -31,7 +31,7 @@ export const activities: Activity[] = [
     name: "Off-Roading",
     category: "Driving",
     location: "Mount Kalaga",
-    image: "/images/activities/off-roading.webp",
+    image: "",
     description:
       "Remote trails and rugged terrain provide opportunities for off-road driving.",
     firstAppearance: "Rockstar Website",
@@ -43,7 +43,7 @@ export const activities: Activity[] = [
     name: "Fishing",
     category: "Outdoor",
     location: "Leonida",
-    image: "/images/activities/fishing.webp",
+    image: "",
     description:
       "Fishing activities have been shown throughout Leonida's waterways.",
     firstAppearance: "Rockstar Website",
@@ -55,7 +55,7 @@ export const activities: Activity[] = [
     name: "Basketball",
     category: "Sport",
     location: "Vice City",
-    image: "/images/activities/basketball.webp",
+    image: "",
     description:
       "Public basketball courts appear throughout Vice City.",
     firstAppearance: "Trailer 2",

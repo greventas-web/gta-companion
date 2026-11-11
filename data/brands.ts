@@ -6,7 +6,7 @@ export const brands: Brand[] = [
     slug: "piswasser",
     name: "Pißwasser",
     category: "Beverage",
-    image: "/images/original/brands/piswasser.jpg",
+    image: "",
     description:
       "One of Rockstar's iconic fictional beer brands returning in Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
@@ -18,7 +18,7 @@ export const brands: Brand[] = [
     slug: "sprunk",
     name: "Sprunk",
     category: "Soft Drink",
-    image: "/images/original/brands/sprunk.jpg",
+    image: "",
     description:
       "The famous green soft drink returns throughout Vice City in GTA VI.",
     firstAppearance: "Trailer 1",
@@ -30,7 +30,7 @@ export const brands: Brand[] = [
     slug: "ecola",
     name: "eCola",
     category: "Soft Drink",
-    image: "/images/original/brands/ecola.jpg",
+    image: "",
     description:
       "eCola continues to compete with Sprunk across Leonida.",
     firstAppearance: "Trailer 1",
@@ -42,7 +42,7 @@ export const brands: Brand[] = [
     slug: "burger-shot",
     name: "Burger Shot",
     category: "Restaurant",
-    image: "/images/original/brands/burger-shot.jpg",
+    image: "",
     description:
       "The iconic fast-food chain returns in Grand Theft Auto VI.",
     firstAppearance: "Trailer 1",
@@ -54,7 +54,7 @@ export const brands: Brand[] = [
     slug: "up-n-atom",
     name: "Up-n-Atom",
     category: "Restaurant",
-    image: "/images/original/brands/up-n-atom.jpg",
+    image: "",
     description:
       "Popular fast-food brand seen in official Rockstar promotional material.",
     firstAppearance: "Trailer 1",
@@ -66,7 +66,7 @@ export const brands: Brand[] = [
     slug: "only-raw-records",
     name: "Only Raw Records",
     category: "Record Label",
-    image: "/images/original/brands/only-raw-records.jpg",
+    image: "",
     description:
       "Vice City record label associated with Dre'Quan Priest and Real Dimez.",
     firstAppearance: "Rockstar Games Website",
@@ -78,7 +78,7 @@ export const brands: Brand[] = [
     slug: "high-rollerz-lifestyle",
     name: "High Rollerz Lifestyle",
     category: "Entertainment",
-    image: "/images/original/brands/high-rollerz.jpg",
+    image: "",
     description:
       "Boobie Ike's entertainment and lifestyle brand operating across Vice City.",
     firstAppearance: "Rockstar Games Website",
@@ -90,7 +90,7 @@ export const brands: Brand[] = [
     slug: "nine1nine",
     name: "Nine1Nine",
     category: "Nightlife",
-    image: "/images/original/brands/nine1nine.jpg",
+    image: "",
     description:
       "Vice City nightclub brand featured in official Rockstar material.",
     firstAppearance: "Rockstar Games Website",

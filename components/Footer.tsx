@@ -154,12 +154,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 lg:flex-row">
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 lg:flex-row lg:items-center">
           <div>
             © 2026 GTA Companion. Unofficial fan project. Not affiliated with, endorsed, or connected to Rockstar Games or Take-Two Interactive. {IMAGE_CREDIT}.
           </div>
 
-          <div className="flex gap-8">
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
             <Link href="/privacy" className="transition hover:text-white">
               Privacy Policy
             </Link>

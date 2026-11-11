@@ -7,7 +7,7 @@ export const businesses: Business[] = [
     name: "Only Raw Records",
     category: "Record Label",
     location: "Vice City",
-    image: "/images/original/businesses/only-raw-records.jpg",
+    image: "",
     description:
       "Independent Vice City record label working with Dre'Quan Priest and the rap duo Real Dimez. The label has become one of the city's fastest-growing names in the music industry.",
     firstAppearance: "Rockstar Games Website",
@@ -25,7 +25,7 @@ export const businesses: Business[] = [
     name: "High Rollerz Lifestyle",
     category: "Entertainment",
     location: "Vice City",
-    image: "/images/original/businesses/high-rollerz-lifestyle.jpg",
+    image: "",
     description:
       "Boobie Ike's business empire spanning music, nightlife, real estate and luxury investments throughout Vice City.",
     firstAppearance: "Rockstar Games Website",
@@ -46,7 +46,7 @@ export const businesses: Business[] = [
     name: "Jack of Hearts",
     category: "Strip Club",
     location: "Vice City",
-    image: "/images/original/businesses/jack-of-hearts.jpg",
+    image: "",
     description:
       "A famous Vice City strip club featured in Rockstar promotional material and one of the city's best-known nightlife destinations.",
     firstAppearance: "Trailer 1",
@@ -63,7 +63,7 @@ export const businesses: Business[] = [
     name: "Brian's Boat Works",
     category: "Boat Yard",
     location: "Leonida Keys",
-    image: "/images/original/businesses/brians-boat-works.jpg",
+    image: "",
     description:
       "Boat yard owned by Brian Heder that serves as both a marine repair business and the center of his smuggling operation in the Leonida Keys.",
     firstAppearance: "Rockstar Games Website",
@@ -81,7 +81,7 @@ export const businesses: Business[] = [
     name: "Nine1Nine",
     category: "Nightclub",
     location: "Vice City",
-    image: "/images/original/businesses/nine1nine.jpg",
+    image: "",
     description:
       "Luxury Vice City nightclub known for exclusive parties, live music and a vibrant nightlife atmosphere.",
     firstAppearance: "Rockstar Games Website",

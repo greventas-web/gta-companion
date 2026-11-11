@@ -55,7 +55,7 @@ export const weapons: Weapon[] = [
     name: "Standard Pistol",
     manufacturer: "Not named",
     category: "Handgun",
-    image: "/images/weapons/standard-pistol.webp",
+    image: "",
     description:
       "Handguns appear in official trailers. Rockstar has not published this name or a caliber.",
     firstAppearance: "Trailer footage",
@@ -69,7 +69,7 @@ export const weapons: Weapon[] = [
     name: "Compact Pistol",
     manufacturer: "Not named",
     category: "Handgun",
-    image: "/images/weapons/compact-pistol.webp",
+    image: "",
     description:
       "A smaller handgun shape appears in official footage. Rockstar has not published this name or a caliber.",
     firstAppearance: "Trailer footage",
@@ -83,7 +83,7 @@ export const weapons: Weapon[] = [
     name: "Assault Rifle",
     manufacturer: "Not named",
     category: "Rifle",
-    image: "/images/weapons/assault-rifle.webp",
+    image: "",
     description:
       "Rifles appear in official screenshots. Rockstar has not published this name or a caliber.",
     firstAppearance: "Official screenshots",
@@ -97,7 +97,7 @@ export const weapons: Weapon[] = [
     name: "Pump Shotgun",
     manufacturer: "Not named",
     category: "Shotgun",
-    image: "/images/weapons/pump-shotgun.webp",
+    image: "",
     description:
       "Rockstar has not published this shotgun name or a gauge.",
     firstAppearance: "Not published",
@@ -111,7 +111,7 @@ export const weapons: Weapon[] = [
     name: "Sniper Rifle",
     manufacturer: "Not named",
     category: "Rifle",
-    image: "/images/weapons/sniper-rifle.webp",
+    image: "",
     description:
       "Rockstar has not published this rifle name or a caliber.",
     firstAppearance: "Not published",
@@ -125,7 +125,7 @@ export const weapons: Weapon[] = [
     name: "Rocket Launcher",
     manufacturer: "Not named",
     category: "Heavy",
-    image: "/images/weapons/rocket-launcher.webp",
+    image: "",
     description:
       "Rockstar has not published this weapon name.",
     firstAppearance: "Not published",

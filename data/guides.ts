@@ -6,7 +6,7 @@ export const guides: Guide[] = [
     title: "Getting Started in GTA VI",
     slug: "getting-started",
     category: "Beginner",
-    image: "/images/guides/getting-started.webp",
+    image: "",
     description:
       "Everything new players need to know before beginning their adventure in Leonida.",
     readingTime: "8 min",
@@ -18,7 +18,7 @@ export const guides: Guide[] = [
     title: "Best Starter Vehicles",
     slug: "best-starter-vehicles",
     category: "Vehicles",
-    image: "/images/guides/best-starter-vehicles.webp",
+    image: "",
     description:
       "Learn which vehicles are the best early-game choices based on Rockstar's official information.",
     readingTime: "6 min",
@@ -30,7 +30,7 @@ export const guides: Guide[] = [
     title: "Making Money",
     slug: "making-money",
     category: "Money",
-    image: "/images/guides/making-money.webp",
+    image: "",
     description:
       "Money tips will be written after the game launches. Nothing here is a working method yet.",
     listed: false,
@@ -43,7 +43,7 @@ export const guides: Guide[] = [
     title: "Exploring Leonida",
     slug: "exploring-leonida",
     category: "Exploration",
-    image: "/images/guides/exploring-leonida.webp",
+    image: "",
     description:
       "A guide to the major regions, cities and hidden areas revealed by Rockstar Games.",
     readingTime: "12 min",
@@ -55,7 +55,7 @@ export const guides: Guide[] = [
     title: "Combat Tips",
     slug: "combat-tips",
     category: "Combat",
-    image: "/images/guides/combat-tips.webp",
+    image: "",
     description:
       "Combat notes will be written after the game launches.",
     listed: false,

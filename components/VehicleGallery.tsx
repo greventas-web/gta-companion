@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "@/components/SafeImage";
+import BrandedNameCard from "@/components/BrandedNameCard";
 
 type Props = {
   images: string[];
@@ -20,10 +21,8 @@ export default function VehicleGallery({
 
   if (!selected) {
     return (
-      <div className="flex aspect-[16/10] items-end rounded-3xl border border-zinc-800 bg-gradient-to-br from-zinc-800 via-zinc-950 to-black p-8">
-        <span className="text-3xl font-black tracking-[-0.03em] text-white">
-          {alt}
-        </span>
+      <div className="aspect-[16/10] overflow-hidden rounded-3xl border border-white/10">
+        <BrandedNameCard name={alt} />
       </div>
     );
   }

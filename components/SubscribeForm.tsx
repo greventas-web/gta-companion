@@ -55,7 +55,7 @@ export default function SubscribeForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row">
         <input
           type="email"
           name="email"
@@ -65,7 +65,7 @@ export default function SubscribeForm() {
           placeholder="Enter your email..."
           aria-label="Email address"
           autoComplete="email"
-          className="flex-1 rounded-xl border border-white/10 bg-[#0B0B0D] px-4 py-3 text-white outline-none placeholder:text-zinc-500 focus:border-pink-500"
+          className="min-w-0 w-full flex-1 rounded-xl border border-white/10 bg-[#0B0B0D] px-4 py-3 text-white outline-none placeholder:text-zinc-500 focus:border-pink-500"
         />
 
         <button

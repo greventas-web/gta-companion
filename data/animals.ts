@@ -7,7 +7,7 @@ export const animals: Animal[] = [
     name: "American Alligator",
     category: "Reptile",
     habitat: "Grassrivers",
-    image: "/images/official/animals/american-alligator.webp",
+    image: "",
     description:
       "Large reptiles inhabiting the wetlands of Leonida.",
     firstAppearance: "Trailer 1",
@@ -19,7 +19,7 @@ export const animals: Animal[] = [
     name: "Greater Flamingo",
     category: "Bird",
     habitat: "Leonida Keys",
-    image: "/images/animals/greater-flamingo.webp",
+    image: "",
     description:
       "Flamingos gather throughout the coastal wetlands of Leonida.",
     firstAppearance: "Rockstar Website",
@@ -31,7 +31,7 @@ export const animals: Animal[] = [
     name: "White-tailed Deer",
     category: "Mammal",
     habitat: "Mount Kalaga",
-    image: "/images/animals/white-tailed-deer.webp",
+    image: "",
     description:
       "Wild deer living throughout northern Leonida.",
     firstAppearance: "Rockstar Website",
@@ -43,7 +43,7 @@ export const animals: Animal[] = [
     name: "Bottlenose Dolphin",
     category: "Marine Mammal",
     habitat: "Leonida Coast",
-    image: "/images/animals/bottlenose-dolphin.webp",
+    image: "",
     description:
       "Dolphins swim along Leonida's coastline.",
     firstAppearance: "Rockstar Website",
@@ -55,7 +55,7 @@ export const animals: Animal[] = [
     name: "Brown Pelican",
     category: "Bird",
     habitat: "Vice City Coast",
-    image: "/images/animals/brown-pelican.webp",
+    image: "",
     description:
       "Pelicans are commonly seen along beaches and marinas.",
     firstAppearance: "Rockstar Website",
