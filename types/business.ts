@@ -1,3 +1,9 @@
+export type BusinessPhoto = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export interface Business {
   id: number;
 
@@ -11,11 +17,15 @@ export interface Business {
 
   image: string;
 
+  imageAlt?: string;
+
+  imageCaption?: string;
+
   description: string;
 
   firstAppearance: string;
 
-  gallery?: string[];
+  gallery?: BusinessPhoto[];
 
   // Optional fields
 

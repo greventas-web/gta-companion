@@ -7,7 +7,12 @@ export const businesses: Business[] = [
     name: "Only Raw Records",
     category: "Record Label",
     location: "Vice City",
-    image: "",
+    image:
+      "/images/official/media/screenshots-people-drequan-priest-drequan-priest-04.webp",
+    imageAlt:
+      "Studio mixing desk in an official Dre'Quan Priest screenshot, not a labeled Only Raw Records storefront",
+    imageCaption:
+      "Studio still of a mixing desk, not a labeled Only Raw Records storefront.",
     description:
       "Independent Vice City record label working with Dre'Quan Priest and the rap duo Real Dimez. The label has become one of the city's fastest-growing names in the music industry.",
     firstAppearance: "Rockstar Games Website",
@@ -27,10 +32,9 @@ export const businesses: Business[] = [
     location: "Vice City",
     image: "",
     description:
-      "Boobie Ike's business empire spanning music, nightlife, real estate and luxury investments throughout Vice City.",
+      "A shop photo and a written description of High Rollerz Lifestyle have not been published. This card stays typographic.",
     firstAppearance: "Rockstar Games Website",
     status: "Officially Confirmed",
-    owner: "Boobie Ike",
     district: "Vice City",
     type: "Entertainment Company",
     relatedBusinesses: [
@@ -46,15 +50,25 @@ export const businesses: Business[] = [
     name: "Jack of Hearts",
     category: "Strip Club",
     location: "Vice City",
-    image: "",
+    image:
+      "/images/official/media/screenshots-people-boobie-ike-boobie-ike-02.webp",
+    imageAlt: "Night storefront with a neon Jack of Hearts sign",
+    imageCaption: "Night storefront. The neon sign reads Jack of Hearts.",
     description:
       "A famous Vice City strip club featured in Rockstar promotional material and one of the city's best-known nightlife destinations.",
+    gallery: [
+      {
+        src: "/images/official/media/screenshots-people-boobie-ike-boobie-ike-04.webp",
+        alt: "Interior with a Jack of Hearts banner",
+        caption:
+          "Interior still from the same Boobie Ike screenshot set, with a Jack of Hearts banner.",
+      },
+    ],
     firstAppearance: "Trailer 1",
     status: "Officially Confirmed",
     district: "Vice City",
     type: "Nightlife",
     relatedBusinesses: ["nine1nine"],
-    gallery: [],
   },
 
   {

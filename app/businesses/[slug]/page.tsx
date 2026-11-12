@@ -17,7 +17,9 @@ export default async function BusinessPage({
   const { slug } = await params;
 
   const business = businesses.find(
-    (b) => b.slug === slug
+    (b) =>
+      b.slug === slug ||
+      (slug === "brians-boat-works" && b.slug === "brian-boat-works")
   );
 
   if (!business) {
