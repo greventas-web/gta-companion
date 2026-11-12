@@ -9,49 +9,8 @@ export default function OfficialGallery() {
   const screenshots = officialMedia.filter((item) => item.group === "Screenshots");
   const artwork = officialMedia.filter((item) => item.group === "Artwork");
 
-  const featured = [
-    officialMedia.find((item) => item.src.includes("official-cover-art-landscape")),
-    ...officialMedia.filter(
-      (item) =>
-        item.section === "Postcards" && item.src.endsWith("postcard-landscape.webp")
-    ),
-  ].filter((item): item is (typeof officialMedia)[number] => Boolean(item));
-
   return (
     <div className="mt-28 space-y-24">
-      <section aria-labelledby="visit-leonida">
-        <p className="text-xs font-black uppercase tracking-[0.4em] text-pink-400">
-          Official art
-        </p>
-        <h2 id="visit-leonida" className="mt-4 text-5xl font-black">
-          Cover art and Visit Leonida
-        </h2>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-          Rockstar&apos;s cover and the Visit Leonida postcards. {IMAGE_CREDIT}.
-        </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((item) => (
-            <a
-              key={item.src}
-              href={item.src}
-              className="overflow-hidden rounded-[24px] border border-white/10 bg-[#0B0B0D]"
-            >
-              <div className="relative aspect-video">
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <p className="px-4 py-3 text-sm font-semibold text-zinc-300">
-                {item.title}
-              </p>
-            </a>
-          ))}
-        </div>
-      </section>
       <GalleryBlock
         id="screenshots"
         eyebrow="Official screenshots"

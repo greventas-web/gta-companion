@@ -7,7 +7,7 @@ export const animals: Animal[] = [
     name: "American Alligator",
     category: "Reptile",
     habitat: "Grassrivers",
-    image: "",
+    image: "/images/official/animals/american-alligator.webp",
     description:
       "Large reptiles inhabiting the wetlands of Leonida.",
     firstAppearance: "Trailer 1",

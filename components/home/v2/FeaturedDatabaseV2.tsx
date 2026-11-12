@@ -10,7 +10,7 @@ const items = [
   {
     title: "Characters",
     description:
-      "Eight fan profiles with original portraits, including Jason Duval and Lucia Caminos.",
+      "Eight character pages, including Jason Duval and Lucia Caminos.",
     href: "/characters",
     stat: "8 Profiles",
     icon: Users,
@@ -19,7 +19,7 @@ const items = [
   {
     title: "Vehicles",
     description:
-      "Forty vehicles with original illustrations for sports cars, boats, aircraft, and more.",
+      "Vehicle pages for sports cars, boats, aircraft, and more.",
     href: "/vehicles",
     stat: "40 Vehicles",
     icon: Car,
@@ -28,7 +28,7 @@ const items = [
   {
     title: "Locations",
     description:
-      "Vice City and five other regions, each with an original landscape.",
+      "Vice City and five other regions, with official Rockstar stills.",
     href: "/locations",
     stat: "6 Regions",
     icon: MapPin,
@@ -53,7 +53,7 @@ export default function FeaturedDatabaseV2() {
         </h2>
 
         <p className="mx-auto mt-8 max-w-4xl text-xl leading-10 text-zinc-400">
-          Fan-written pages for characters, vehicles, and locations. No Rockstar pictures are hosted here.
+          Fan-written pages for characters, vehicles, and locations. Images: Rockstar Games.
         </p>
 
       </div>

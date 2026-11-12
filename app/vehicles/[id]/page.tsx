@@ -80,7 +80,7 @@ export default async function VehicleDetailsPage({
 
             </span>
 
-            <h1 className="mt-8 text-6xl font-black tracking-tight">
+            <h1 className="mt-8 break-words text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
 
               {vehicle.name}
 
@@ -148,6 +148,7 @@ export default async function VehicleDetailsPage({
 
         {/* Related Vehicles */}
 
+        {relatedVehicles.length > 0 ? (
         <section className="mt-28">
 
           <h2 className="text-5xl font-black">
@@ -155,7 +156,7 @@ export default async function VehicleDetailsPage({
           </h2>
 
           <p className="mt-3 text-zinc-400">
-            More officially confirmed GTA VI vehicles.
+            More vehicles in this category.
           </p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -172,6 +173,7 @@ export default async function VehicleDetailsPage({
           </div>
 
         </section>
+        ) : null}
 
       </section>
 

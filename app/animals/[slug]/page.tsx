@@ -114,9 +114,10 @@ export default async function AnimalPage({
 
         </div>
 
+        {relatedAnimals.length > 0 ? (
         <div className="mt-24">
 
-          <h2 className="text-4xl font-bold">
+          <h2 className="break-words text-4xl font-bold">
             Related Animals
           </h2>
 
@@ -149,6 +150,7 @@ export default async function AnimalPage({
           </div>
 
         </div>
+        ) : null}
 
       </section>
 

@@ -56,7 +56,8 @@ export default function AnimalDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Official wildlife and animals confirmed by Rockstar Games.
+          Fan-written notes on animals Rockstar has shown. The alligator
+          card uses an official still. Images: Rockstar Games.
         </p>
 
       </div>

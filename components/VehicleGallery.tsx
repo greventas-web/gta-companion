@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "@/components/SafeImage";
 import BrandedNameCard from "@/components/BrandedNameCard";
+import { isPlaceholderSrc } from "@/lib/media/catalog";
 
 type Props = {
   images: string[];
@@ -13,9 +14,7 @@ export default function VehicleGallery({
   images,
   alt,
 }: Props) {
-  const gallery = images.filter(
-    (image) => image && !image.includes("placeholder")
-  );
+  const gallery = images.filter((image) => image && !isPlaceholderSrc(image));
 
   const [selected, setSelected] = useState(gallery[0] ?? "");
 

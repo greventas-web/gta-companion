@@ -22,16 +22,16 @@ export default function MediaPage() {
 
       <div className="absolute right-[-240px] bottom-[-150px] h-[700px] w-[700px] rounded-full bg-violet-500/15 blur-[220px]" />
 
-      <div className="relative mx-auto max-w-[1700px] px-8 pb-32 pt-44">
+      <div className="relative mx-auto max-w-[1700px] px-4 pb-32 pt-36 sm:px-8 sm:pt-44">
 
         <div className="mb-20">
 
-          <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
+          <div className="inline-flex max-w-full flex-wrap items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-pink-400 sm:px-6 sm:py-3 sm:text-[11px] sm:tracking-[0.28em]">
             <Film size={14} />
             Unofficial fan page
           </div>
 
-          <h1 className="mt-8 text-7xl font-black tracking-[-0.03em]">
+          <h1 className="mt-8 break-words text-4xl font-black tracking-[-0.03em] sm:text-6xl lg:text-7xl">
             GTA VI Media Library
           </h1>
 

@@ -47,7 +47,7 @@ const cards = [
   {
     title: "Locations",
     href: "/locations",
-    image: "/images/official/categories/locations.webp",
+    image: "/images/official/locations/port-gellhorn.webp",
     count: String(locations.length),
     icon: MapPin,
   },

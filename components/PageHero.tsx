@@ -21,15 +21,17 @@ export default function PageHero({
 
       <div className="relative">
 
-        <div className="inline-flex items-center gap-3 rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400 backdrop-blur-xl">
+        <div className="flex w-fit max-w-full items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-pink-400 backdrop-blur-xl">
 
-          <Sparkles size={14} />
+          <Sparkles className="shrink-0" size={14} />
 
-          {badge}
+          <span className="min-w-0 break-words text-[10px] font-black uppercase leading-5 tracking-[0.12em] sm:text-[11px] sm:tracking-[0.2em]">
+            {badge}
+          </span>
 
         </div>
 
-        <h1 className="mt-5 max-w-5xl text-4xl font-black leading-tight tracking-[-0.03em] text-white lg:text-5xl">
+        <h1 className="mt-5 max-w-5xl break-words text-4xl font-black leading-tight tracking-[-0.03em] text-white lg:text-5xl">
           {title}
         </h1>
 

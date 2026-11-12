@@ -9,10 +9,11 @@ import {
   Globe,
 } from "lucide-react";
 
+import BrandedNameCard from "@/components/BrandedNameCard";
 import FavoriteButton from "@/components/FavoriteButton";
 import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
 
-import { manufacturerPortrait } from "@/lib/media/catalog";
+import { manufacturerListImage } from "@/lib/media/catalog";
 
 import { Manufacturer } from "@/types/manufacturer";
 
@@ -23,7 +24,7 @@ type Props = {
 export default function ManufacturerCard({
   manufacturer,
 }: Props) {
-  const portrait = manufacturerPortrait(manufacturer);
+  const portrait = manufacturerListImage(manufacturer);
 
   return (
     <Link
@@ -42,19 +43,21 @@ export default function ManufacturerCard({
 
           {portrait ? (
             <Image
-              src={portrait}
-              alt=""
+              src={portrait.src}
+              alt={portrait.alt}
               fill
               sizes="(max-width: 768px) 100vw, 480px"
               className="object-cover transition duration-700 group-hover:scale-105"
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-950 to-black" />
+            <BrandedNameCard name={manufacturer.name} />
           )}
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/20" />
+          {portrait ? (
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/20" />
+          ) : null}
 
-          <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-zinc-200 backdrop-blur-xl">
+          <div className="absolute left-4 top-4 z-20 flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-zinc-200 backdrop-blur-xl sm:left-6 sm:top-6 sm:px-4 sm:text-[11px] sm:tracking-[0.22em]">
 
             <Globe size={12} />
 
@@ -62,20 +65,22 @@ export default function ManufacturerCard({
 
           </div>
 
-          <div className="absolute bottom-5 left-6 max-w-[calc(100%-3rem)]">
+          {portrait ? (
+            <div className="absolute bottom-5 left-6 z-20 max-w-[calc(100%-3rem)]">
 
-            <ManufacturerMark
-              name={manufacturer.name}
-              slug={manufacturer.slug}
-            />
+              <ManufacturerMark
+                name={manufacturer.name}
+                slug={manufacturer.slug}
+              />
 
-          </div>
+            </div>
+          ) : null}
 
         </div>
 
         <div className="relative p-8">
 
-          <h2 className="text-4xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
+          <h2 className="break-words text-3xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300 sm:text-4xl">
 
             {manufacturer.name}
 

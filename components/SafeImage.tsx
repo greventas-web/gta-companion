@@ -21,7 +21,7 @@ export default function SafeImage({ src, alt, className, fill, sizes, priority }
 
   if (isNameCard(path)) {
     return (
-      <div className={fill ? "absolute inset-0 z-10" : "relative z-10 h-full min-h-40 w-full"}>
+      <div className={fill ? "absolute inset-0 z-[1]" : "relative z-[1] h-full min-h-40 w-full"}>
         <BrandedNameCard name={alt || "GTA Companion"} />
       </div>
     );

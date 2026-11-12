@@ -31,9 +31,8 @@ export default function FeaturedTrailer({
         </h2>
 
         <p className="mt-6 max-w-3xl text-lg leading-9 text-zinc-400">
-          Experience the latest official Grand Theft Auto VI trailer directly
-          from Rockstar Games. Every future trailer will automatically appear
-          here as the game gets closer to release.
+          This player shows the launch trailer Rockstar published on October 15, 2026.
+          The other official videos are listed below.
         </p>
 
         <div className="mt-8 text-sm font-bold uppercase tracking-[0.35em] text-zinc-500">

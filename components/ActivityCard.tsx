@@ -1,4 +1,4 @@
-import ItemImage from "@/components/ItemImage";
+import ItemImage, { isNameCard } from "@/components/ItemImage";
 import Link from "next/link";
 
 import { Activity } from "@/types/activity";
@@ -27,9 +27,11 @@ export default function ActivityCard({
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+          {isNameCard(activity.image) ? null : (
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+          )}
 
-          <div className="absolute left-6 top-6 rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white">
+          <div className="absolute left-6 top-6 z-20 max-w-[calc(100%-3rem)] rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white sm:tracking-[0.22em]">
             {activity.category}
           </div>
 
@@ -41,7 +43,7 @@ export default function ActivityCard({
             {activity.location}
           </p>
 
-          <h3 className="mt-3 text-4xl font-black text-white transition group-hover:text-pink-400">
+          <h3 className="mt-3 break-words text-3xl font-black text-white transition group-hover:text-pink-400 sm:text-4xl">
             {activity.name}
           </h3>
 
@@ -49,9 +51,9 @@ export default function ActivityCard({
             {activity.description}
           </p>
 
-          <div className="mt-8 flex items-center justify-between border-t border-zinc-800 pt-6">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-zinc-800 pt-6">
 
-            <span className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+            <span className="text-xs uppercase tracking-[0.12em] text-zinc-500 sm:text-sm">
               {activity.firstAppearance}
             </span>
 
