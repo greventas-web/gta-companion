@@ -205,6 +205,29 @@ export default function Gta6LaunchPage() {
         </article>
       </section>
 
+      <section className="mt-10" aria-labelledby="performance">
+        <h2 id="performance" className="text-3xl font-black tracking-[-0.03em]">
+          {gta6Launch.performance.title}
+        </h2>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {gta6Launch.performance.items.map((item) => (
+            <article
+              key={item.id}
+              className="rounded-[32px] border border-white/10 bg-[#0B0B0D] p-6 sm:p-8"
+            >
+              <p className="text-[11px] font-black uppercase tracking-[0.22em] text-pink-300">
+                {item.platform}
+              </p>
+              <h3 className="mt-4 text-2xl font-black tracking-[-0.03em]">
+                {item.headline}
+              </h3>
+              <p className="mt-4 text-base leading-7 text-zinc-400">{item.body}</p>
+              <Sources ids={item.sourceIds} />
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10" aria-labelledby="launch-faq">
         <h2 id="launch-faq" className="text-3xl font-black tracking-[-0.03em]">
           FAQ
