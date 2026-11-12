@@ -1,4 +1,5 @@
 import Image from "@/components/SafeImage";
+import { isNameCard } from "@/components/ItemImage";
 import Link from "next/link";
 
 import { Business } from "@/types/business";
@@ -33,11 +34,15 @@ export default function BusinessCard({
             className="object-cover transition duration-700 group-hover:scale-110"
           />
 
+          {isNameCard(business.image) ? null : (
+            <>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+            </>
+          )}
 
-          <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
+          <div className="absolute left-4 top-4 z-20 max-w-[calc(100%-2rem)] rounded-full border border-pink-500/30 bg-black/40 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-pink-300 backdrop-blur-xl sm:left-6 sm:top-6 sm:px-4 sm:text-[11px] sm:tracking-[0.22em]">
             {business.category}
           </div>
         </div>
@@ -49,7 +54,7 @@ export default function BusinessCard({
             {business.location}
           </p>
 
-          <h3 className="mt-3 text-[34px] font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
+          <h3 className="mt-3 break-words text-3xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
             {business.name}
           </h3>
 

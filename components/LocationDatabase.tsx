@@ -57,7 +57,7 @@ export default function LocationDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Fan-written location notes. No Rockstar images are hosted here.
+          Fan-written location notes. Images: Rockstar Games.
         </p>
 
       </div>

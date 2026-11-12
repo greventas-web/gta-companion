@@ -51,8 +51,8 @@ export default function HeroV2() {
               Everything you need for GTA 6. GTA Companion is an unofficial
               fan site for the public facts about Grand Theft Auto VI: the
               launch date, the editions, the characters, the vehicles, and
-              Vice City. The notes and pictures are ours. Not affiliated
-              with Rockstar Games or Take-Two.
+              Vice City. Images: Rockstar Games. Not affiliated with
+              Rockstar Games or Take-Two.
             </p>
 
             <div className="mt-6">

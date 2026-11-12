@@ -142,6 +142,7 @@ export default async function NewsArticlePage({
           </div>
         </section>
 
+        {relatedNews.length > 0 ? (
         <section className="mt-28">
           <div className="mb-12">
             <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
@@ -157,27 +158,16 @@ export default async function NewsArticlePage({
             </p>
           </div>
 
-          {relatedNews.length === 0 ? (
-            <div className="rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-20 text-center">
-              <h3 className="text-4xl font-black">
-                No Related Articles
-              </h3>
-
-              <p className="mt-5 text-zinc-400">
-                More Rockstar news will appear here as it becomes available.
-              </p>
-            </div>
-          ) : (
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-              {relatedNews.map((article) => (
-                <NewsCard
-                  key={article.id}
-                  article={article}
-                />
-              ))}
-            </div>
-          )}
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {relatedNews.map((article) => (
+              <NewsCard
+                key={article.id}
+                article={article}
+              />
+            ))}
+          </div>
         </section>
+        ) : null}
       </section>
     </main>
   );

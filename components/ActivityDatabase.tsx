@@ -57,7 +57,8 @@ export default function ActivityDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Fan-written activity notes. No Rockstar images are hosted here.
+          Fan-written activity notes. Nightlife, boating, and off-roading
+          use official Rockstar stills. Images: Rockstar Games.
         </p>
 
       </div>

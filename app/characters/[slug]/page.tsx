@@ -89,7 +89,7 @@ export default async function CharacterPage({
               {character.role}
             </span>
 
-            <h1 className="mt-8 text-6xl font-black tracking-[-0.03em]">
+            <h1 className="mt-8 break-words text-4xl font-black tracking-[-0.03em] sm:text-5xl lg:text-6xl">
               {character.name}
             </h1>
 
@@ -137,15 +137,16 @@ export default async function CharacterPage({
 
         </div>
 
+        {relatedCharacters.length > 0 ? (
         <section className="mt-28">
 
           <div className="mb-12">
 
-            <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
+            <div className="text-xs font-black uppercase tracking-[0.18em] text-pink-400 sm:tracking-[0.35em]">
               Related Characters
             </div>
 
-            <h2 className="mt-4 text-5xl font-black">
+            <h2 className="mt-4 break-words text-4xl font-black sm:text-5xl">
               Similar Characters
             </h2>
 
@@ -155,38 +156,21 @@ export default async function CharacterPage({
 
           </div>
 
-          {relatedCharacters.length === 0 ? (
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-            <div className="rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-20 text-center">
+            {relatedCharacters.map((character) => (
 
-              <h3 className="text-4xl font-black">
-                No Related Characters
-              </h3>
+              <CharacterCard
+                key={character.id}
+                character={character}
+              />
 
-              <p className="mt-5 text-zinc-400">
-                Additional characters will appear here as Rockstar reveals more information.
-              </p>
+            ))}
 
-            </div>
-
-          ) : (
-
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-              {relatedCharacters.map((character) => (
-
-                <CharacterCard
-                  key={character.id}
-                  character={character}
-                />
-
-              ))}
-
-            </div>
-
-          )}
+          </div>
 
         </section>
+        ) : null}
 
       </section>
 

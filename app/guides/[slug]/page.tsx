@@ -128,11 +128,12 @@ export default async function GuidePage({
 
         </div>
 
+        {relatedGuides.length > 0 ? (
         <section className="mt-28">
 
           <div className="mb-12">
 
-            <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
+            <div className="text-xs font-black uppercase tracking-[0.18em] text-pink-400 sm:tracking-[0.35em]">
               Related Content
             </div>
 
@@ -146,38 +147,21 @@ export default async function GuidePage({
 
           </div>
 
-          {relatedGuides.length === 0 ? (
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-            <div className="rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-20 text-center">
+            {relatedGuides.map((guide) => (
 
-              <h3 className="text-4xl font-black">
-                No Related Guides
-              </h3>
+              <GuideCard
+                key={guide.id}
+                guide={guide}
+              />
 
-              <p className="mt-5 text-zinc-400">
-                More guides will appear here as the database grows.
-              </p>
+            ))}
 
-            </div>
-
-          ) : (
-
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-              {relatedGuides.map((guide) => (
-
-                <GuideCard
-                  key={guide.id}
-                  guide={guide}
-                />
-
-              ))}
-
-            </div>
-
-          )}
+          </div>
 
         </section>
+        ) : null}
 
       </section>
 

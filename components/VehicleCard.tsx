@@ -19,7 +19,7 @@ type Props = {
 export default function VehicleCard({
   vehicle,
 }: Props) {
-  const photo = vehicleImages(vehicle)[0] ?? vehicle.image;
+  const photo = vehicleImages(vehicle)[0] ?? "";
   const maker = manufacturerByName(vehicle.manufacturer);
 
   return (
@@ -49,7 +49,7 @@ export default function VehicleCard({
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
-          <div className="absolute left-6 top-6 flex flex-wrap gap-2">
+          <div className="absolute left-6 top-6 z-20 flex max-w-[calc(100%-3rem)] flex-wrap gap-2">
             <span className="rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
               {vehicle.category}
             </span>
@@ -64,12 +64,14 @@ export default function VehicleCard({
             </span>
           </div>
 
-          <div className="absolute bottom-5 left-6 max-w-[calc(100%-3rem)]">
-            <ManufacturerMark
-              name={vehicle.manufacturer}
-              slug={maker?.slug ?? vehicle.manufacturer.toLowerCase()}
-            />
-          </div>
+          {photo ? (
+            <div className="absolute bottom-5 left-6 z-20 max-w-[calc(100%-3rem)]">
+              <ManufacturerMark
+                name={vehicle.manufacturer}
+                slug={maker?.slug ?? vehicle.manufacturer.toLowerCase()}
+              />
+            </div>
+          ) : null}
 
         </div>
 

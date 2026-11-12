@@ -17,7 +17,7 @@ export default function LaunchTrailer({ videoId }: Props) {
         className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black text-left"
       >
         <img
-          src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+          src="/images/official/news/trailer.webp"
           alt="Grand Theft Auto VI launch trailer"
           className="h-full w-full object-cover"
         />

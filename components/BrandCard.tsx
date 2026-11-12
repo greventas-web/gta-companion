@@ -28,9 +28,11 @@ export default function BrandCard({
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          {!brand.image ? null : (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          )}
 
-          <div className="absolute left-6 top-6 rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white">
+          <div className="absolute left-6 top-6 z-20 max-w-[calc(100%-3rem)] rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white sm:tracking-[0.22em]">
             {brand.category}
           </div>
 
@@ -38,7 +40,7 @@ export default function BrandCard({
 
         <div className="p-8">
 
-          <h3 className="text-4xl font-black text-white transition group-hover:text-pink-400">
+          <h3 className="break-words text-3xl font-black text-white transition group-hover:text-pink-400 sm:text-4xl">
             {brand.name}
           </h3>
 
@@ -46,11 +48,15 @@ export default function BrandCard({
             {brand.description}
           </p>
 
-          <div className="mt-8 flex items-center justify-between border-t border-zinc-800 pt-6">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-zinc-800 pt-6">
 
-            <span className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-              {brand.firstAppearance}
-            </span>
+            {brand.firstAppearance ? (
+              <span className="text-xs uppercase tracking-[0.12em] text-zinc-500 sm:text-sm">
+                {brand.firstAppearance}
+              </span>
+            ) : (
+              <span />
+            )}
 
             <span className="font-bold text-pink-400 transition duration-300 group-hover:translate-x-2">
               View Details →

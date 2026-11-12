@@ -53,7 +53,8 @@ export default function BusinessDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Fan-written business notes. No Rockstar images are hosted here.
+          Fan-written business notes. Each business uses its own wordmark
+          until a Rockstar still shows that storefront.
         </p>
       </div>
 

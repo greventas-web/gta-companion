@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   BadgeCheck,
   Building2,
@@ -6,11 +5,9 @@ import {
   Globe,
 } from "lucide-react";
 
+import BrandedNameCard from "@/components/BrandedNameCard";
 import Breadcrumb from "@/components/Breadcrumb";
 import VehicleCard from "@/components/VehicleCard";
-import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
-
-import { manufacturerPortrait } from "@/lib/media/catalog";
 
 import { Manufacturer } from "@/types/manufacturer";
 import { Vehicle } from "@/types/vehicle";
@@ -24,8 +21,6 @@ export default function ManufacturerDetailsPage({
   manufacturer,
   vehicles,
 }: Props) {
-  const portrait = manufacturerPortrait(manufacturer);
-
   return (
     <section className="mx-auto max-w-[1700px]">
 
@@ -53,34 +48,7 @@ export default function ManufacturerDetailsPage({
 
           <div className="relative aspect-[4/5] min-h-80">
 
-            {portrait ? (
-              <Image
-                src={portrait}
-                alt=""
-                fill
-                priority
-                sizes="(max-width: 1280px) 100vw, 360px"
-                className="object-cover"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-950 to-black" />
-            )}
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/25" />
-
-            <div className="absolute inset-x-0 bottom-0 p-8">
-
-              <ManufacturerMark
-                name={manufacturer.name}
-                slug={manufacturer.slug}
-                variant="lockup"
-              />
-
-              <p className="mt-4 text-center text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-400">
-                Companion wordmark
-              </p>
-
-            </div>
+            <BrandedNameCard name={manufacturer.name} />
 
           </div>
 
@@ -117,11 +85,11 @@ export default function ManufacturerDetailsPage({
 
           <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.3em] text-pink-400">
 
-            Official Manufacturer
+            Manufacturer
 
           </span>
 
-          <h1 className="mt-8 text-6xl font-black tracking-[-0.03em]">
+          <h1 className="mt-8 break-words text-4xl font-black tracking-[-0.03em] sm:text-5xl lg:text-6xl">
 
             {manufacturer.name}
 
@@ -143,10 +111,9 @@ export default function ManufacturerDetailsPage({
 
             <p className="mt-5 leading-8 text-zinc-400">
 
-              Manufacturer information is based on official Rockstar
-              Games material and long-established Grand Theft Auto lore.
-              Vehicle lineups will automatically expand as new GTA VI
-              vehicles are confirmed.
+              Names and counts come from the vehicles listed on this site.
+              A photo on the manufacturer list is an official Rockstar
+              picture of one vehicle from that maker. Images: Rockstar Games.
 
             </p>
 

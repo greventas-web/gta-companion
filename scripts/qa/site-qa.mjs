@@ -8,6 +8,7 @@
  * Set BASE_URL to point at another server. Set QA_WIDTHS=390 to run one width.
  */
 import { chromium } from "playwright";
+import { createHash } from "node:crypto";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -104,6 +105,33 @@ function imagePath(url) {
   }
 }
 
+function ignoredImage(src) {
+  return !src || src.includes("/logo/") || src.includes("/icons/") || src.includes("/favicon");
+}
+
+async function fileHashes() {
+  const hashes = new Map();
+  async function walkFiles(dir) {
+    let entries = [];
+    try {
+      entries = await readdir(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const entry of entries) {
+      const next = path.join(dir, entry.name);
+      if (entry.isDirectory()) await walkFiles(next);
+      else if (/\.(webp|png|jpe?g|gif|svg|avif)$/i.test(entry.name)) {
+        const bytes = await readFile(next);
+        const rel = `/${path.relative(path.join(root, "public"), next).split(path.sep).join("/")}`;
+        hashes.set(rel, createHash("md5").update(bytes).digest("hex"));
+      }
+    }
+  }
+  await walkFiles(path.join(root, "public"));
+  return hashes;
+}
+
 async function main() {
   await mkdir(outDir, { recursive: true });
   const list = await routes();
@@ -117,6 +145,7 @@ async function main() {
     catalogGroups.set(stem, list);
   }
   const catalogDupes = [...catalogGroups.entries()].filter(([, sources]) => sources.length > 1);
+  const hashes = await fileHashes();
 
   const browser = await chromium.launch();
   const report = {
@@ -128,6 +157,7 @@ async function main() {
     brokenImages: [],
     overflow: [],
     clippedText: [],
+    emptySections: [],
     consoleErrors: [],
     badLinks: [],
     sharedAcrossItems: [],
@@ -138,6 +168,8 @@ async function main() {
     })),
   };
   const imageOwners = new Map();
+  const idsByRoute = new Map();
+  const linksByRoute = new Map();
 
   for (const width of widths) {
     const context = await browser.newContext({
@@ -145,21 +177,32 @@ async function main() {
     });
     const page = await context.newPage();
     const errors = [];
+    const failedImages = [];
     page.on("pageerror", (error) => errors.push(String(error)));
     page.on("console", (message) => {
       if (message.type() !== "error") return;
       const text = message.text();
       if (text.includes("/_vercel/")) return;
+      if (text.includes("favicon")) return;
       errors.push(text);
+    });
+    page.on("response", (response) => {
+      const request = response.request();
+      if (request.resourceType() !== "image") return;
+      if (response.status() >= 400) failedImages.push(response.url());
     });
 
     for (const route of list) {
+      if (list.indexOf(route) % 40 === 0) {
+        console.log(`width ${width} ${list.indexOf(route)}/${list.length} ${route}`);
+      }
       errors.length = 0;
+      failedImages.length = 0;
       const response = await page.goto(`${base}${route}`, {
-        waitUntil: "networkidle",
-        timeout: 45000,
+        waitUntil: "domcontentloaded",
+        timeout: 30000,
       }).catch((error) => {
-        report.brokenImages.push({ route, width, error: String(error) });
+        report.badLinks.push({ route, width, error: String(error) });
         return null;
       });
       if (!response) continue;
@@ -169,19 +212,34 @@ async function main() {
 
       await page.evaluate(async () => {
         const height = document.body.scrollHeight;
-        for (let y = 0; y < height; y += 700) {
+        for (let y = 0; y < height; y += 900) {
           window.scrollTo(0, y);
-          await new Promise((resolve) => setTimeout(resolve, 40));
+          await new Promise((resolve) => setTimeout(resolve, 5));
         }
         window.scrollTo(0, 0);
+        const pending = [...document.images].filter((img) => !img.complete);
+        await Promise.race([
+          Promise.all(
+            pending.map(
+              (img) =>
+                new Promise((resolve) => {
+                  img.addEventListener("load", resolve, { once: true });
+                  img.addEventListener("error", resolve, { once: true });
+                })
+            )
+          ),
+          new Promise((resolve) => setTimeout(resolve, 600)),
+        ]);
       });
 
       const facts = await page.evaluate(() => {
         const images = [...document.images].map((img) => ({
-          src: img.currentSrc || img.src,
+          src: img.currentSrc || img.src || "",
+          attr: img.getAttribute("src") || "",
           alt: img.alt,
           width: img.naturalWidth,
           height: img.naturalHeight,
+          complete: img.complete,
         }));
         const doc = document.documentElement;
         const overflow = doc.scrollWidth > doc.clientWidth + 1;
@@ -194,7 +252,43 @@ async function main() {
             clipped.push(text.slice(0, 80));
           }
         }
-        const links = [...document.querySelectorAll("a[href^='/']")].map(
+        for (const title of document.querySelectorAll("[data-wordmark-title]")) {
+          const frame = title.closest("[data-wordmark]");
+          const text = (title.textContent || "").trim();
+          if (!frame || !text) {
+            clipped.push(text || "blank wordmark");
+            continue;
+          }
+          const box = title.getBoundingClientRect();
+          const bounds = frame.getBoundingClientRect();
+          if (
+            box.width < 8 ||
+            box.height < 8 ||
+            box.top < bounds.top - 1 ||
+            box.bottom > bounds.bottom + 1 ||
+            box.left < bounds.left - 1 ||
+            box.right > bounds.right + 1
+          ) {
+            clipped.push(text.slice(0, 80));
+          }
+        }
+        const emptySections = [];
+        for (const heading of document.querySelectorAll("h2")) {
+          const level = Number(heading.tagName[1]);
+          let node = heading.nextElementSibling;
+          let text = "";
+          let media = 0;
+          while (node) {
+            if (/^H[1-6]$/.test(node.tagName) && Number(node.tagName[1]) <= level) break;
+            text += ` ${node.innerText || ""}`;
+            media += node.querySelectorAll("img, [data-wordmark], a, input, iframe, video, button").length;
+            node = node.nextElementSibling;
+          }
+          if (text.replace(/\s+/g, " ").trim().length < 8 && media === 0) {
+            emptySections.push((heading.textContent || "").trim().slice(0, 80));
+          }
+        }
+        const links = [...document.querySelectorAll("a[href]")].map(
           (anchor) => anchor.getAttribute("href")
         );
         return {
@@ -203,28 +297,53 @@ async function main() {
           scrollWidth: doc.scrollWidth,
           clientWidth: doc.clientWidth,
           clipped: [...new Set(clipped)].slice(0, 12),
+          emptySections: [...new Set(emptySections)].slice(0, 12),
           links,
+          ids: [...document.querySelectorAll("[id]")].map((el) => el.id),
         };
       });
 
-      const file = `${route === "/" ? "home" : route.slice(1).replaceAll("/", "__")}__${width}.png`;
-      await page.screenshot({
-        path: path.join(outDir, file),
-        fullPage: false,
-      });
+      if (process.env.QA_SHOTS === "1") {
+        const file = `${route === "/" ? "home" : route.slice(1).replaceAll("/", "__")}__${width}.png`;
+        await page.screenshot({
+          path: path.join(outDir, file),
+          fullPage: false,
+        });
+      }
 
+      for (const src of failedImages) {
+        const pathName = imagePath(src);
+        if (ignoredImage(pathName)) continue;
+        report.brokenImages.push({ route, width, src: pathName, issue: "http error" });
+      }
       const counts = new Map();
       const stems = new Map();
+      const hashGroups = new Map();
       for (const image of facts.images) {
-        const src = imagePath(image.src);
-        if (!src || src.includes("/logo/") || src.includes("/icons/")) continue;
+        const src = imagePath(image.src || image.attr);
+        if (ignoredImage(src)) continue;
+        if (!image.attr) {
+          report.brokenImages.push({ route, width, src, issue: "empty src" });
+          continue;
+        }
         counts.set(src, (counts.get(src) || 0) + 1);
         const stem = artworkStem(src);
         const group = stems.get(stem) || new Set();
         group.add(src);
         stems.set(stem, group);
-        if (image.width === 0 && !src.startsWith("http") && !src.includes("/_vercel/")) {
-          report.brokenImages.push({ route, width, src, alt: image.alt });
+        const hash = hashes.get(src);
+        if (hash) {
+          const owners = hashGroups.get(hash) || new Set();
+          owners.add(src);
+          hashGroups.set(hash, owners);
+        }
+        if (
+          image.complete &&
+          (image.width === 0 || image.height === 0) &&
+          !src.startsWith("http") &&
+          !src.includes("/_vercel/")
+        ) {
+          report.brokenImages.push({ route, width, src, alt: image.alt, issue: "zero size" });
         }
         if (!image.alt) {
           report.brokenImages.push({ route, width, src, alt: "", issue: "missing alt" });
@@ -237,6 +356,17 @@ async function main() {
       }
       for (const [src, count] of counts) {
         if (count > 1) report.duplicateImagesOnPage.push({ route, width, src, count });
+      }
+      for (const sources of hashGroups.values()) {
+        if (sources.size > 1) {
+          report.duplicateImagesOnPage.push({
+            route,
+            width,
+            src: [...sources].join(" = "),
+            count: sources.size,
+            issue: "same file bytes",
+          });
+        }
       }
       for (const [stem, sources] of stems) {
         if (sources.size > 1) {
@@ -259,11 +389,16 @@ async function main() {
       if (facts.clipped.length) {
         report.clippedText.push({ route, width, samples: facts.clipped });
       }
+      if (facts.emptySections.length) {
+        report.emptySections.push({ route, width, headings: facts.emptySections });
+      }
       if (errors.length) {
         report.consoleErrors.push({ route, width, errors: [...new Set(errors)].slice(0, 8) });
       }
       if (width === widths[0]) {
         report.pages.push({ route, status: response.status(), links: facts.links.length });
+        idsByRoute.set(route, new Set(facts.ids));
+        linksByRoute.set(route, facts.links);
       }
     }
     await context.close();
@@ -274,21 +409,65 @@ async function main() {
     if (unique.length > 1) report.sharedAcrossItems.push({ src, routes: unique });
   }
 
+  const checked = new Map(report.pages.map((page) => [page.route, page.status]));
+  const context = await browser.newContext();
+  const probe = await context.newPage();
+  for (const [route, links] of linksByRoute) {
+    for (const href of links) {
+      if (!href || href.startsWith("mailto:") || href.startsWith("javascript:")) continue;
+      let url;
+      try {
+        url = new URL(href, `${base}${route}`);
+      } catch {
+        report.badLinks.push({ route, href, issue: "unparseable" });
+        continue;
+      }
+      if (url.origin !== new URL(base).origin) continue;
+      const target = url.pathname || "/";
+      if (url.hash) {
+        const id = decodeURIComponent(url.hash.slice(1));
+        const known = idsByRoute.get(target);
+        if (known && id && !known.has(id)) {
+          report.badLinks.push({ route, href, issue: "missing hash" });
+        }
+      }
+      if (checked.has(target)) {
+        const status = checked.get(target);
+        if (status >= 400) report.badLinks.push({ route, href: target, status });
+        continue;
+      }
+      const result = await probe.goto(`${base}${target}`, {
+        waitUntil: "domcontentloaded",
+        timeout: 20000,
+      }).catch((error) => {
+        checked.set(target, 599);
+        report.badLinks.push({ route, href: target, error: String(error) });
+        return null;
+      });
+      if (!result) continue;
+      checked.set(target, result.status());
+      if (result.status() >= 400) {
+        report.badLinks.push({ route, href: target, status: result.status() });
+      }
+    }
+  }
+  await context.close();
+
   const summary = {
     routes: report.routes,
     duplicateImagesOnPage: report.duplicateImagesOnPage.length,
+    artworkVariantDuplicates: report.artworkVariantDuplicates.length,
     brokenImages: report.brokenImages.length,
     overflow: report.overflow.length,
     clippedText: report.clippedText.length,
-    consoleErrors: report.consoleErrors.length,
+    emptySections: report.emptySections.length,
     badLinks: report.badLinks.length,
-    sharedAcrossItems: report.sharedAcrossItems.length,
-    artworkVariantDuplicates: report.artworkVariantDuplicates.length,
+    consoleErrors: report.consoleErrors.length,
   };
   await writeFile(path.join(outDir, "report.json"), JSON.stringify({ summary, ...report }, null, 2));
   console.log(JSON.stringify(summary, null, 2));
   await browser.close();
-  if (Object.entries(summary).some(([key, value]) => key !== "routes" && value > 0)) {
+  if (Object.values(summary).some((value, index) => index > 0 && value > 0)) {
     process.exitCode = 1;
   }
 }

@@ -81,7 +81,7 @@ export default async function BrandPage({
               {brand.category}
             </span>
 
-            <h1 className="mt-6 text-6xl font-extrabold">
+            <h1 className="mt-6 break-words text-4xl font-extrabold sm:text-5xl lg:text-6xl">
               {brand.name}
             </h1>
 
@@ -96,10 +96,12 @@ export default async function BrandPage({
                 value={brand.category}
               />
 
-              <Info
-                label="First Appearance"
-                value={brand.firstAppearance}
-              />
+              {brand.firstAppearance ? (
+                <Info
+                  label="First Appearance"
+                  value={brand.firstAppearance}
+                />
+              ) : null}
 
               <Info
                 label="Status"
@@ -108,7 +110,7 @@ export default async function BrandPage({
 
               <Info
                 label="Database"
-                value="Official"
+                value="Fan notes"
               />
 
             </div>
@@ -117,6 +119,7 @@ export default async function BrandPage({
 
         </div>
 
+        {relatedBrands.length > 0 ? (
         <div className="mt-24">
 
           <h2 className="text-4xl font-bold">
@@ -152,6 +155,7 @@ export default async function BrandPage({
           </div>
 
         </div>
+        ) : null}
 
       </section>
 

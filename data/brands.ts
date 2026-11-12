@@ -9,7 +9,7 @@ export const brands: Brand[] = [
     image: "",
     description:
       "One of Rockstar's iconic fictional beer brands returning in Grand Theft Auto VI.",
-    firstAppearance: "Trailer 1",
+    firstAppearance: "",
     gallery: [],
   },
 
@@ -21,7 +21,7 @@ export const brands: Brand[] = [
     image: "",
     description:
       "The famous green soft drink returns throughout Vice City in GTA VI.",
-    firstAppearance: "Trailer 1",
+    firstAppearance: "",
     gallery: [],
   },
 
@@ -33,7 +33,7 @@ export const brands: Brand[] = [
     image: "",
     description:
       "eCola continues to compete with Sprunk across Leonida.",
-    firstAppearance: "Trailer 1",
+    firstAppearance: "",
     gallery: [],
   },
 
@@ -45,7 +45,7 @@ export const brands: Brand[] = [
     image: "",
     description:
       "The iconic fast-food chain returns in Grand Theft Auto VI.",
-    firstAppearance: "Trailer 1",
+    firstAppearance: "",
     gallery: [],
   },
 
@@ -57,7 +57,7 @@ export const brands: Brand[] = [
     image: "",
     description:
       "Popular fast-food brand seen in official Rockstar promotional material.",
-    firstAppearance: "Trailer 1",
+    firstAppearance: "",
     gallery: [],
   },
 

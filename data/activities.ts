@@ -7,7 +7,8 @@ export const activities: Activity[] = [
     name: "Nightlife",
     category: "Entertainment",
     location: "Vice City",
-    image: "",
+    image:
+      "/images/official/media/screenshots-places-vice-city-vice-city-06.webp",
     description:
       "Vice City's clubs, bars and live music venues form one of Leonida's biggest attractions.",
     firstAppearance: "Trailer 2",
@@ -19,7 +20,8 @@ export const activities: Activity[] = [
     name: "Boating",
     category: "Water Activity",
     location: "Leonida Keys",
-    image: "",
+    image:
+      "/images/official/media/screenshots-places-leonida-keys-leonida-keys-05.webp",
     description:
       "Explore Leonida's coastline using a variety of boats and personal watercraft.",
     firstAppearance: "Trailer 2",
@@ -31,7 +33,7 @@ export const activities: Activity[] = [
     name: "Off-Roading",
     category: "Driving",
     location: "Mount Kalaga",
-    image: "",
+    image: "/images/official/locations/mount-kalaga.webp",
     description:
       "Remote trails and rugged terrain provide opportunities for off-road driving.",
     firstAppearance: "Rockstar Website",

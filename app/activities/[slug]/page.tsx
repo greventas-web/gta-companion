@@ -1,4 +1,4 @@
-import ItemImage from "@/components/ItemImage";
+import ItemImage, { isNameCard } from "@/components/ItemImage";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -69,7 +69,9 @@ export default async function ActivityPage({
                 className="object-cover"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              {isNameCard(activity.image) ? null : (
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              )}
 
             </div>
 
@@ -81,7 +83,7 @@ export default async function ActivityPage({
               {activity.category}
             </span>
 
-            <h1 className="mt-8 text-6xl font-black tracking-tight">
+            <h1 className="mt-8 break-words text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
               {activity.name}
             </h1>
 
@@ -117,6 +119,7 @@ export default async function ActivityPage({
 
         </div>
 
+        {relatedActivities.length > 0 ? (
         <section className="mt-28">
 
           <h2 className="text-5xl font-black">
@@ -141,6 +144,7 @@ export default async function ActivityPage({
           </div>
 
         </section>
+        ) : null}
 
       </section>
 

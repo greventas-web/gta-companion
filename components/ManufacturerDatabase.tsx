@@ -36,7 +36,7 @@ export default function ManufacturerDatabase() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-lg text-zinc-400">
-            Search official GTA VI manufacturers by name or country.
+            Search manufacturers by name or country.
           </p>
 
         </div>
@@ -73,7 +73,9 @@ export default function ManufacturerDatabase() {
           </h2>
 
           <p className="mt-4 text-lg text-zinc-400">
-            Showing {filteredManufacturers.length} of {manufacturers.length} officially confirmed manufacturers.
+            Showing {filteredManufacturers.length} of {manufacturers.length} manufacturers.
+            A photo is an official Rockstar picture of a vehicle from that maker.
+            Images: Rockstar Games.
           </p>
 
         </div>

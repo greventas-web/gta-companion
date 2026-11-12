@@ -121,9 +121,10 @@ export default async function LocationPage({
 
         </div>
 
+        {relatedLocations.length > 0 ? (
         <section className="mt-28">
 
-          <h2 className="text-5xl font-black">
+          <h2 className="break-words text-4xl font-black sm:text-5xl">
             Related Locations
           </h2>
 
@@ -145,6 +146,7 @@ export default async function LocationPage({
           </div>
 
         </section>
+        ) : null}
 
       </section>
 
