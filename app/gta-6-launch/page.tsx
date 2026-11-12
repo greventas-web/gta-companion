@@ -224,29 +224,9 @@ export default function Gta6LaunchPage() {
         </div>
       </section>
 
-      <section className="mt-10" aria-labelledby="launch-sources">
-        <h2 id="launch-sources" className="text-3xl font-black tracking-[-0.03em]">
-          Sources
-        </h2>
-        <ul className="mt-6 space-y-3">
-          {gta6Launch.sources.map((source) => (
-            <li key={source.id} className="text-sm leading-7 text-zinc-400">
-              <a
-                href={source.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-300 hover:text-pink-200"
-              >
-                {source.label}
-              </a>
-              <span className="text-zinc-500"> — {source.published}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-8 text-sm leading-7 text-zinc-500">
-          Last updated {gta6Launch.lastUpdated}. {UNOFFICIAL_DISCLAIMER}
-        </p>
-      </section>
+      <p className="mt-10 text-sm leading-7 text-zinc-500">
+        Last updated {gta6Launch.lastUpdated}. {UNOFFICIAL_DISCLAIMER}
+      </p>
     </PageShell>
   );
 }
