@@ -10,6 +10,7 @@
     "qa": "node scripts/qa/site-qa.mjs"
   },
   "dependencies": {
+    "@next/third-parties": "16.2.10",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.1.0",
     "firebase": "^12.16.0",

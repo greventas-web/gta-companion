@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -140,6 +141,13 @@ export const viewport: Viewport = {
   themeColor: "#040404",
 };
 
+// GA4 measurement IDs look like G-XXXXXXXXXX. The tag is omitted until
+// NEXT_PUBLIC_GA_MEASUREMENT_ID is set to one, so a missing value adds no script.
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
+const googleAnalyticsId = /^G-[A-Z0-9]+$/.test(gaMeasurementId)
+  ? gaMeasurementId
+  : undefined;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -167,11 +175,10 @@ export default function RootLayout({
             <Footer />
           </SearchProvider>
         </AuthProvider>
-        {process.env.VERCEL === "1" ? (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
+        <Analytics />
+        <SpeedInsights />
+        {googleAnalyticsId ? (
+          <GoogleAnalytics gaId={googleAnalyticsId} />
         ) : null}
         <Script
           async
