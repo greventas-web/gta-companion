@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import BusinessCard from "@/components/BusinessCard";
 import { businesses } from "@/data/businesses";
+import { IMAGE_CREDIT, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 
 export default function BusinessDatabase() {
   const [query, setQuery] = useState("");
@@ -52,9 +53,10 @@ export default function BusinessDatabase() {
           {filteredBusinesses.length} Businesses
         </h2>
 
-        <p className="mt-4 text-lg text-zinc-400">
-          Fan-written business notes. Each business uses its own wordmark
-          until a Rockstar still shows that storefront.
+        <p className="mt-4 max-w-3xl text-lg text-zinc-400">
+          Official stills are used where Rockstar has published a photo.
+          Typographic cards remain where no official shop photo has been
+          published. {IMAGE_CREDIT}. {UNOFFICIAL_DISCLAIMER}
         </p>
       </div>
 

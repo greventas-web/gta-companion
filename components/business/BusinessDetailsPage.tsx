@@ -2,6 +2,8 @@ import Image from "@/components/SafeImage";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import { isNameCard } from "@/components/ItemImage";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 import { Business } from "@/types/business";
 
@@ -35,24 +37,57 @@ export default function BusinessDetailsPage({
 
       <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
 
-        {/* Hero Image */}
+        <div>
+          <figure className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
+            <div className="relative aspect-video">
+              <Image
+                src={business.image}
+                alt={
+                  isNameCard(business.image)
+                    ? business.name
+                    : business.imageAlt || business.name
+                }
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 60vw"
+                className="object-cover"
+              />
+              {isNameCard(business.image) ? null : (
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
+              )}
+            </div>
+            {business.imageCaption || !isNameCard(business.image) ? (
+              <figcaption className="space-y-1 px-6 py-5 text-sm leading-6 text-zinc-400">
+                {business.imageCaption ? <p>{business.imageCaption}</p> : null}
+                {isNameCard(business.image) ? null : <p>{IMAGE_CREDIT}</p>}
+              </figcaption>
+            ) : null}
+          </figure>
 
-        <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
-
-          <div className="relative aspect-[16/10]">
-
-            <Image
-              src={business.image}
-              alt={business.name}
-              fill
-              priority
-              className="object-cover"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-
-          </div>
-
+          {business.gallery && business.gallery.length > 0 ? (
+            <div className="mt-6 grid gap-4">
+              {business.gallery.map((shot) => (
+                <figure
+                  key={shot.src}
+                  className="overflow-hidden rounded-[28px] border border-white/10 bg-black"
+                >
+                  <div className="relative aspect-video">
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      fill
+                      sizes="(max-width: 1280px) 100vw, 60vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="space-y-1 px-5 py-4 text-sm leading-6 text-zinc-400">
+                    <p>{shot.caption}</p>
+                    <p>{IMAGE_CREDIT}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         {/* Right Side */}
@@ -165,9 +200,13 @@ export default function BusinessDetailsPage({
 
                 <Image
                   src={related.image}
-                  alt={related.name}
+                  alt={
+                    isNameCard(related.image)
+                      ? related.name
+                      : related.imageAlt || related.name
+                  }
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
+                  className="object-cover"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

@@ -3,6 +3,7 @@ import { isNameCard } from "@/components/ItemImage";
 import Link from "next/link";
 
 import { Business } from "@/types/business";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 type Props = {
   business: Business;
@@ -28,10 +29,14 @@ export default function BusinessCard({
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={business.image}
-            alt={business.name}
+            alt={
+              isNameCard(business.image)
+                ? business.name
+                : business.imageAlt || business.name
+            }
             fill
             sizes="(max-width: 768px) 100vw, 420px"
-            className="object-cover transition duration-700 group-hover:scale-110"
+            className="object-cover"
           />
 
           {isNameCard(business.image) ? null : (
@@ -57,6 +62,13 @@ export default function BusinessCard({
           <h3 className="mt-3 break-words text-3xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
             {business.name}
           </h3>
+
+          {business.imageCaption ? (
+            <p className="mt-4 text-sm leading-6 text-zinc-300">
+              {business.imageCaption}
+              {isNameCard(business.image) ? "" : ` ${IMAGE_CREDIT}.`}
+            </p>
+          ) : null}
 
           <p className="mt-4 min-h-[84px] line-clamp-3 text-[17px] leading-7 text-zinc-400">
             {business.description}
