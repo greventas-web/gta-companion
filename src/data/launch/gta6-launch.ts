@@ -15,7 +15,7 @@ export type LaunchStatus = "confirmed" | "live" | "pending";
 
 export const gta6Launch = {
   path: "/gta-6-launch",
-  lastUpdated: "November 10, 2026",
+  lastUpdated: "November 12, 2026",
   title: "GTA 6 Unlock Time, Release Time, and Countdown",
   description:
     "GTA 6 unlock time, release time, file size, and pre-load for November 19, 2026, plus a live countdown. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
@@ -113,6 +113,39 @@ export const gta6Launch = {
       },
     ],
     sourceIds: ["ps-m2", "ps-usb", "ps-825", "ps5-usable", "xbox-storage"],
+  },
+  performance: {
+    title: "Platforms and performance",
+    items: [
+      {
+        id: "frame-rate",
+        platform: "PlayStation 5 and Xbox Series X|S",
+        headline: "Targets 30 frames per second",
+        body: "Rockstar says Grand Theft Auto VI has been fully developed from the ground up for the current generation of consoles. It targets 30 frames per second on PlayStation 5 and Xbox Series X|S while pushing both platforms to their absolute limits, and it keeps the density and visual fidelity of Leonida's environments and inhabitants.",
+        sourceIds: ["rockstar-preload-now"],
+      },
+      {
+        id: "ps5-features",
+        platform: "PlayStation 5",
+        headline: "DualSense, Tempest 3D Audio, and the SSD",
+        body: "PlayStation says Grand Theft Auto VI on PS5 fully uses the DualSense wireless controller's integrated speakers, haptics, and adaptive triggers across the game. Those features can be adjusted in accessibility settings. All in-game sounds take full advantage of Tempest 3D Audio for highly accurate audio positioning. Load times are improved with the PS5's ultra high-speed SSD, which PlayStation says makes Grand Theft Auto VI play best on PlayStation 5 consoles.",
+        sourceIds: ["ps-blog-nov-10"],
+      },
+      {
+        id: "ps5-pro",
+        platform: "PlayStation 5 Pro",
+        headline: "PSSR and ray-traced shadows",
+        body: "PlayStation says PlayStation 5 Pro offers breathtaking visuals, improved clarity through PlayStation Spectral Super Resolution (PSSR), and ray-traced shadows. Rockstar says ray-traced shadows are only available on PlayStation 5 Pro.",
+        sourceIds: ["ps-blog-nov-10", "rockstar-preload-now"],
+      },
+      {
+        id: "remote-play",
+        platform: "Remote Play",
+        headline: "PlayStation and Xbox",
+        body: "Rockstar says Grand Theft Auto VI will fully support Remote Play on PlayStation and Xbox.",
+        sourceIds: ["rockstar-preload-now"],
+      },
+    ],
   },
   boxed: {
     title: "Boxed copies",
