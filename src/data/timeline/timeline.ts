@@ -1,9 +1,15 @@
+export type TimelineSource = {
+  label: string;
+  href: string;
+};
+
 export type TimelineEvent = {
   date: string;
   title: string;
   description: string;
   sourceLabel: string;
   sourceHref: string;
+  moreSources?: TimelineSource[];
 };
 
 export const timeline: TimelineEvent[] = [
@@ -89,6 +95,21 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire — Pre-load now",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
+  },
+  {
+    date: "November 13, 2026",
+    title: "Macca & Friends teaser",
+    description:
+      "Rockstar Games released a teaser trailer for Macca & Friends, an animated series inside Grand Theft Auto VI. It follows the adventures of Macca the Gator and his wetland friends across the state of Leonida. The series airs on the in-game Weazel TV network and is watchable from launch on November 19, 2026. The teaser was a Rockstar-provided exclusive via DiscussingFilm.",
+    sourceLabel: "Gematsu — Macca & Friends teaser trailer",
+    sourceHref:
+      "https://www.gematsu.com/2026/11/grand-theft-auto-vi-in-game-animated-series-macca-friends-teaser-trailer",
+    moreSources: [
+      {
+        label: "GamingBible — Macca & Friends",
+        href: "https://www.gamingbible.com/news/gta-6-macca-and-friends-explained-rockstar-reveal-933637-20261113",
+      },
+    ],
   },
   {
     date: "November 19, 2026",
