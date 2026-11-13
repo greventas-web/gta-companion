@@ -10,7 +10,6 @@ const socialIcons = {
   YouTube: YouTubeIcon,
   Instagram: InstagramIcon,
   X,
-  Reddit: RedditIcon,
 } as const;
 
 const socialLinks = SOCIAL_PROFILES.map((profile) => ({
@@ -182,32 +181,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function RedditIcon({ size = 16, ...props }: LucideProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <circle cx="12" cy="14" r="7" />
-      <circle cx="9" cy="13.5" r="0.8" fill="currentColor" stroke="none" />
-      <circle cx="15" cy="13.5" r="0.8" fill="currentColor" stroke="none" />
-      <path d="M9.5 16.2c.8.7 1.6 1 2.5 1s1.7-.3 2.5-1" />
-      <path d="M15.5 9.2 16.8 5.8" />
-      <circle cx="18.2" cy="5.2" r="1.2" />
-      <path d="M7.2 9.4a2.2 2.2 0 1 1 2.4-3.2" />
-      <path d="M16.8 9.4a2.2 2.2 0 1 0-2.4-3.2" />
-    </svg>
   );
 }
 

@@ -27,11 +27,6 @@ export const SOCIAL_PROFILES = [
     href: "https://x.com/GTACompanion",
     title: "@GTACompanion",
   },
-  {
-    label: "Reddit",
-    href: "https://www.reddit.com/user/gtacompanion_app",
-    title: "u/gtacompanion_app",
-  },
 ] as const;
 
 export const UNOFFICIAL_DISCLAIMER =
