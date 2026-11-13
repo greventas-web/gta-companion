@@ -18,6 +18,7 @@ import {
 import SiteLogo from "./SiteLogo";
 import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
+import SupportLink from "./SupportLink";
 import MegaMenu, { exploreLinks } from "./MegaMenu";
 
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -120,6 +121,8 @@ export default function Navbar() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 px-3 sm:px-4">
+
+            <SupportLink className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap px-1 text-sm font-semibold text-zinc-300 transition hover:text-pink-300 xl:inline-flex" />
 
             <div
               className="hidden min-[1440px]:block"
@@ -272,6 +275,10 @@ export default function Navbar() {
 
         {mobileOpen && (
           <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl xl:hidden">
+            <SupportLink
+              onClick={() => setMobileOpen(false)}
+              className="mb-2 flex items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-[15px] font-semibold text-pink-300 transition hover:bg-white/[0.06] hover:text-pink-200"
+            />
             <div className="grid gap-1 sm:grid-cols-2">
               {[
                 { title: "Home", href: "/" },
