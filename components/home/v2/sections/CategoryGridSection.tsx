@@ -33,7 +33,7 @@ const cards = [
   {
     title: "Manufacturers",
     href: "/manufacturers",
-    image: "",
+    image: "/images/official/vehicles/vapid-stanier-1955.webp",
     count: String(manufacturers.length),
     icon: Shield,
   },
@@ -82,7 +82,7 @@ const cards = [
   {
     title: "Brands",
     href: "/brands",
-    image: "",
+    image: "/images/official/editions/ultimate_edition_electric_fang_01.webp",
     count: String(brands.length),
     icon: Building2,
   },

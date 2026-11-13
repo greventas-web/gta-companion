@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
 
 type Props = {
@@ -6,6 +7,8 @@ type Props = {
   title: string;
   description: string;
   children?: ReactNode;
+  image?: string;
+  imageAlt?: string;
 };
 
 export default function PageHero({
@@ -13,13 +16,31 @@ export default function PageHero({
   title,
   description,
   children,
+  image,
+  imageAlt = "",
 }: Props) {
   return (
-    <section className="relative mb-10 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black px-6 py-8 shadow-[0_40px_120px_rgba(0,0,0,.45)] sm:px-10 sm:py-10">
+    <section className={`relative mb-10 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black px-6 py-8 shadow-[0_40px_120px_rgba(0,0,0,.45)] sm:px-10 sm:py-10 ${image ? "min-h-[240px] sm:min-h-[320px]" : ""}`}>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,.08),transparent_55%)]" />
+      {image ? (
+        <>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority
+            sizes="(max-width: 1600px) 100vw, 1600px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40" />
+        </>
+      ) : (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,.08),transparent_55%)]" />
+      )}
 
-      <div className="relative">
+      <div className={`relative ${image ? "flex min-h-[200px] flex-col justify-end sm:min-h-[260px]" : ""}`}>
 
         <div className="flex w-fit max-w-full items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-pink-400 backdrop-blur-xl">
 

@@ -11,6 +11,8 @@ export default function ManufacturersPage() {
         badge="Grand Theft Auto Manufacturers"
         title="Manufacturer Database"
         description="Browse automotive manufacturers from across the Grand Theft Auto universe. Discover their history, country of origin, vehicle lineups and officially confirmed GTA VI models."
+        image="/images/official/vehicles/vapid-stanier-1955.webp"
+        imageAlt="1955 Vapid Stanier"
       />
 
       <ManufacturerDatabase />
