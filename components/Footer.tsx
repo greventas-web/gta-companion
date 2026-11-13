@@ -3,6 +3,7 @@ import { X, type LucideProps } from "lucide-react";
 
 import SiteLogo from "@/components/SiteLogo";
 import SubscribeForm from "@/components/SubscribeForm";
+import SupportLink from "@/components/SupportLink";
 import { IMAGE_CREDIT, SITE, SOCIAL_PROFILES } from "@/lib/site";
 
 const socialIcons = {
@@ -31,6 +32,12 @@ export default function Footer() {
               {SITE.slogan}. An unofficial fan site, not affiliated with
               Rockstar Games or Take-Two.
             </p>
+
+            <p className="mt-3 max-w-[360px] text-sm leading-6 text-zinc-500">
+              Tips help keep it running.
+            </p>
+
+            <SupportLink className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-pink-300 transition hover:text-pink-200" />
 
             <nav aria-label="Social links" className="mt-8 space-y-4">
               {socialLinks.map((item) => {
