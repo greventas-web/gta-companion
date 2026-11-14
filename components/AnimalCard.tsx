@@ -28,7 +28,7 @@ export default function AnimalCard({
         <div className="relative aspect-[16/10] overflow-hidden">
           <ItemImage
             src={animal.image}
-            alt={animal.name}
+            alt={animal.imageAlt || animal.name}
             name={animal.name}
             fill
             sizes="(max-width: 768px) 100vw, 420px"

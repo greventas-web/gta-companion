@@ -62,7 +62,7 @@ export default async function ActivityPage({
 
               <ItemImage
                 src={activity.image}
-                alt={activity.name}
+                alt={activity.imageAlt || activity.name}
                 name={activity.name}
                 fill
                 priority

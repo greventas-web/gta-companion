@@ -11,6 +11,8 @@ export interface Activity {
 
   image: string;
 
+  imageAlt?: string;
+
   description: string;
 
   firstAppearance: string;

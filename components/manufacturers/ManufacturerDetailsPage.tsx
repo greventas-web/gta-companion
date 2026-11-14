@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   BadgeCheck,
   Building2,
@@ -9,6 +10,8 @@ import BrandedNameCard from "@/components/BrandedNameCard";
 import Breadcrumb from "@/components/Breadcrumb";
 import VehicleCard from "@/components/VehicleCard";
 
+import { IMAGE_CREDIT } from "@/lib/site";
+import { manufacturerListImage } from "@/lib/media/catalog";
 import { Manufacturer } from "@/types/manufacturer";
 import { Vehicle } from "@/types/vehicle";
 
@@ -21,6 +24,8 @@ export default function ManufacturerDetailsPage({
   manufacturer,
   vehicles,
 }: Props) {
+  const portrait = manufacturerListImage(manufacturer);
+
   return (
     <section className="mx-auto max-w-[1700px]">
 
@@ -48,7 +53,22 @@ export default function ManufacturerDetailsPage({
 
           <div className="relative aspect-[4/5] min-h-80">
 
-            <BrandedNameCard name={manufacturer.name} />
+            {portrait ? (
+              <>
+                <Image
+                  src={portrait.src}
+                  alt={portrait.alt}
+                  fill
+                  sizes="360px"
+                  className="object-cover"
+                />
+                <p className="absolute bottom-3 left-3 z-10 text-[11px] font-bold uppercase tracking-[0.16em] text-white">
+                  {IMAGE_CREDIT}
+                </p>
+              </>
+            ) : (
+              <BrandedNameCard name={manufacturer.name} />
+            )}
 
           </div>
 

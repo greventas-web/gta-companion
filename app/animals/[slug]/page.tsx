@@ -62,7 +62,7 @@ export default async function AnimalPage({
 
               <ItemImage
                 src={animal.image}
-                alt={animal.name}
+                alt={animal.imageAlt || animal.name}
                 name={animal.name}
                 fill
                 className="object-cover"

@@ -23,7 +23,7 @@ export const locations: Location[] = [
     type: "Island Chain",
     image: "/images/official/locations/leonida-keys.webp",
     description:
-      "A tropical island chain featuring beaches, marinas and crystal-clear waters.",
+      "A tropical island chain featuring beaches, marinas and crystal-clear waters. Official screenshot Leonida Keys 06 shows a green iguana. Leonida Keys 02 shows a billboard for Chip's Body Shop.",
     firstAppearance: "Trailer 2",
     gallery: [],
     x: 46,

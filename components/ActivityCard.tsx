@@ -21,7 +21,7 @@ export default function ActivityCard({
 
           <ItemImage
             src={activity.image}
-            alt={activity.name}
+            alt={activity.imageAlt || activity.name}
             name={activity.name}
             fill
             className="object-cover"
