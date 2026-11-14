@@ -31,7 +31,7 @@ export type MapCanvasHandle = {
   zoomIn: () => void;
   zoomOut: () => void;
   reset: () => void;
-  flyTo: (x: number, y: number, zoom?: number) => void;
+  flyTo: (x: number, y: number, zoom?: number, focus?: { card?: boolean }) => void;
   setView: (x: number, y: number, zoom: number) => void;
   getZoom: () => number;
 };
@@ -89,24 +89,23 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
           [MAP_FRAME.south, MAP_FRAME.west],
           [MAP_FRAME.north, MAP_FRAME.east],
         ],
-        { ...framePadding(), animate: true, duration: 0.6 }
+        { ...framePadding(false), animate: true, duration: 0.6 }
       );
     },
-    flyTo(x, y, zoom) {
+    flyTo(x, y, zoom, focus) {
       const map = mapRef.current;
       if (!map) return;
-      const nextZoom = zoom ?? Math.min(map.getMaxZoom(), Math.max(map.getZoom(), 0.85));
+      const nextZoom =
+        zoom ??
+        (focus?.card
+          ? Math.min(map.getMaxZoom(), map.getZoom() + (window.innerWidth < 1024 ? 0.35 : 0.6))
+          : map.getZoom());
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const finish = () => {
-        const narrow = window.innerWidth < 1024;
-        map.panBy(narrow ? [0, -30] : [-70, 0], { animate: !reduce, duration: 0.25 });
-      };
+      const center = viewCenterFor(map, x, y, nextZoom, Boolean(focus?.card));
       if (reduce) {
-        map.setView([y, x], nextZoom, { animate: false });
-        finish();
+        map.setView(center, nextZoom, { animate: false });
       } else {
-        map.flyTo([y, x], nextZoom, { duration: 0.85 });
-        map.once("moveend", finish);
+        map.flyTo(center, nextZoom, { duration: 0.85 });
       }
     },
     setView(x, y, zoom) {
@@ -168,8 +167,27 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
         [MAP_FRAME.south, MAP_FRAME.west],
         [MAP_FRAME.north, MAP_FRAME.east]
       );
-      map.setMaxBounds(bounds.pad(0.05));
-      map.fitBounds(frame, { ...framePadding(), animate: false });
+      map.setMaxBounds(bounds.pad(2));
+      const fit = () => {
+        if (!map) return;
+        map.invalidateSize();
+        if (window.innerWidth < 1024) {
+          const size = map.getSize();
+          const pad = framePadding(false);
+          const availW = Math.max(120, size.x - pad.paddingTopLeft[0] - pad.paddingBottomRight[0]);
+          const span = MAP_FRAME.east - MAP_FRAME.west;
+          const zoom = Math.log2(availW / span);
+          const midX = (MAP_FRAME.west + MAP_FRAME.east) / 2;
+          const midY = (MAP_FRAME.south + MAP_FRAME.north) / 2;
+          map.setView(viewCenterFor(map, midX, midY, zoom, false), zoom, { animate: false });
+          const northEdge = map.latLngToContainerPoint([MAP_FRAME.north, midX]);
+          if (northEdge.y > 18) map.panBy([0, northEdge.y - 12], { animate: false });
+        } else {
+          map.fitBounds(frame, { ...framePadding(false), animate: false });
+        }
+      };
+      fit();
+      requestAnimationFrame(fit);
 
       group = L.layerGroup().addTo(map);
 
@@ -180,17 +198,30 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
           (marker) => marker.confirmed && isVisibleCategory(marker.category)
         );
 
-        for (const marker of current) {
+        const narrow = window.innerWidth < 1024;
+        const placed = narrow ? spreadBlips(map, current) : current.map((marker) => ({
+          marker,
+          lat: marker.y,
+          lng: marker.x,
+        }));
+
+        for (const item of placed) {
+          const marker = item.marker;
           if (!isVisibleCategory(marker.category)) continue;
           const category = marker.category;
           const selected = marker.id === selectedRef.current;
           const color = CATEGORY_META[category].color;
           const side = marker.labelSide;
-          const labeled = marker.showLabel;
+          const labeled = marker.showLabel && !narrow;
+          const box = narrow
+            ? { size: [44, 44] as [number, number], anchor: [22, 22] as [number, number] }
+            : labeled
+              ? labelBox(side)
+              : { size: [40, 40] as [number, number], anchor: [20, 20] as [number, number] };
           const icon = L.divIcon({
             className: "map-pin-wrap",
-            iconSize: labeled ? labelBox(side).size : [40, 40],
-            iconAnchor: labeled ? labelBox(side).anchor : [20, 20],
+            iconSize: box.size,
+            iconAnchor: box.anchor,
             html: blipMarkup(
               category,
               color,
@@ -199,7 +230,7 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
               side
             ),
           });
-          L.marker([marker.y, marker.x], {
+          L.marker([item.lat, item.lng], {
             icon,
             title: marker.title,
             keyboard: true,
@@ -273,18 +304,78 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
 
 export default MapCanvas;
 
-function framePadding() {
+const PANEL_LEFT = 16;
+const PANEL_WIDTH = 340;
+const PANEL_MARGIN = 96;
+const CARD_WIDTH = 360;
+const CARD_MARGIN = 28;
+
+function framePadding(cardOpen: boolean) {
   const narrow = window.innerWidth < 1024;
   if (narrow) {
+    const sheet = cardOpen ? Math.round(window.innerHeight * 0.58) : 168;
     return {
-      paddingTopLeft: [16, 16] as [number, number],
-      paddingBottomRight: [16, 188] as [number, number],
+      paddingTopLeft: [14, 10] as [number, number],
+      paddingBottomRight: [14, sheet] as [number, number],
     };
   }
+  const left = PANEL_LEFT + PANEL_WIDTH + PANEL_MARGIN;
+  const right = cardOpen ? 16 + CARD_WIDTH + CARD_MARGIN : 36;
   return {
-    paddingTopLeft: [380, 18] as [number, number],
-    paddingBottomRight: [24, 18] as [number, number],
+    paddingTopLeft: [left, 28] as [number, number],
+    paddingBottomRight: [right, 28] as [number, number],
   };
+}
+
+function viewCenterFor(
+  map: LeafletMap,
+  x: number,
+  y: number,
+  zoom: number,
+  cardOpen: boolean
+) {
+  const size = map.getSize();
+  const pad = framePadding(cardOpen);
+  const point = map.project([y, x], zoom);
+  const visX =
+    pad.paddingTopLeft[0] +
+    (size.x - pad.paddingTopLeft[0] - pad.paddingBottomRight[0]) / 2;
+  const visY =
+    pad.paddingTopLeft[1] +
+    (size.y - pad.paddingTopLeft[1] - pad.paddingBottomRight[1]) / 2;
+  const centerPoint = point.subtract([visX - size.x / 2, visY - size.y / 2]);
+  return map.unproject(centerPoint, zoom);
+}
+
+function spreadBlips(map: LeafletMap, markers: MapMarker[]) {
+  const placed = markers.map((marker) => ({
+    marker,
+    point: map.latLngToContainerPoint([marker.y, marker.x]),
+  }));
+  const min = 36;
+  for (let pass = 0; pass < 10; pass += 1) {
+    for (let i = 0; i < placed.length; i += 1) {
+      for (let j = i + 1; j < placed.length; j += 1) {
+        const a = placed[i].point;
+        const b = placed[j].point;
+        let dx = b.x - a.x;
+        let dy = b.y - a.y;
+        const dist = Math.hypot(dx, dy) || 0.01;
+        if (dist >= min) continue;
+        const push = (min - dist) / 2;
+        dx /= dist;
+        dy /= dist;
+        a.x -= dx * push;
+        a.y -= dy * push;
+        b.x += dx * push;
+        b.y += dy * push;
+      }
+    }
+  }
+  return placed.map((item) => {
+    const latlng = map.containerPointToLatLng(item.point);
+    return { marker: item.marker, lat: latlng.lat, lng: latlng.lng };
+  });
 }
 
 function labelBox(side: "left" | "right" | "top" | "bottom") {

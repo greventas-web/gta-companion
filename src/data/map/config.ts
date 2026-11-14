@@ -93,10 +93,10 @@ export const ACTIVE_MAP_LAYER: MapLayer = MAP_LAYERS[ACTIVE_LAYER_ID];
  * south/north are map-space y; west/east are map-space x.
  */
 export const MAP_FRAME = {
-  west: 180,
-  east: 1860,
-  south: 60,
-  north: 1120,
+  west: 200,
+  east: 1820,
+  south: 70,
+  north: 1110,
 };
 
 export const MAP_ATTRIBUTION_NOTE =

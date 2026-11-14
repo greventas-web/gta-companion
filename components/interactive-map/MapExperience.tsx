@@ -127,8 +127,7 @@ export default function MapExperience() {
     setQuery("");
     setSearchOpen(false);
     setSheet("detail");
-    const zoom = Math.max(mapRef.current?.getZoom() ?? 0, 1.15);
-    mapRef.current?.flyTo(marker.x, marker.y, zoom);
+    mapRef.current?.flyTo(marker.x, marker.y, undefined, { card: true });
   }, []);
 
   useEffect(() => {
@@ -140,7 +139,7 @@ export default function MapExperience() {
       if (!marker) return;
       setSelectedId(marker.id);
       setSheet("detail");
-      mapRef.current?.flyTo(marker.x, marker.y, initial.z ?? 1.25);
+      mapRef.current?.flyTo(marker.x, marker.y, initial.z ?? undefined, { card: true });
       return;
     }
     if (initial.x != null && initial.y != null && initial.z != null) {
@@ -302,9 +301,9 @@ export default function MapExperience() {
       ) : null}
 
       <Controls
-        className={`absolute z-20 hidden flex-col gap-2 lg:flex ${
-          selected ? "right-[392px]" : "right-4"
-        } bottom-6`}
+        className={`absolute bottom-6 z-40 hidden flex-col gap-2 lg:flex ${
+          selected ? "right-[420px]" : "right-4"
+        }`}
         onZoomIn={() => mapRef.current?.zoomIn()}
         onZoomOut={() => mapRef.current?.zoomOut()}
         onReset={() => {
@@ -323,25 +322,17 @@ export default function MapExperience() {
         <Compass />
       </div>
 
-      <div
-        className={`absolute bottom-24 z-20 hidden lg:block ${
-          selected ? "right-[392px]" : "right-4"
-        }`}
-      >
-        <Minimap view={view} />
-      </div>
+      {selected ? null : (
+        <div className="absolute bottom-24 right-4 z-20 hidden lg:block">
+          <Minimap view={view} />
+        </div>
+      )}
 
-      <div className="pointer-events-none absolute right-3 top-3 z-20 lg:hidden">
+      <div className="absolute bottom-[158px] right-2 z-20 flex flex-col items-end gap-2 lg:hidden">
         <Compass />
-      </div>
-
-      <p className="pointer-events-none absolute left-1/2 top-4 z-10 hidden max-w-md -translate-x-1/2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-center text-[11px] font-medium tracking-wide text-zinc-300 backdrop-blur-md lg:left-[calc(50%+8px)] lg:block">
-        {MAP_ATTRIBUTION_NOTE}
-      </p>
-
-      <div className="absolute inset-x-0 bottom-0 z-30 lg:hidden">
         <Controls
-          className="absolute bottom-[calc(100%+12px)] right-3 flex flex-col gap-2"
+          compact
+          className="flex flex-col gap-1"
           onZoomIn={() => mapRef.current?.zoomIn()}
           onZoomOut={() => mapRef.current?.zoomOut()}
           onReset={() => {
@@ -352,6 +343,13 @@ export default function MapExperience() {
           fullscreen={fullscreen}
           onFullscreen={() => void toggleFullscreen()}
         />
+      </div>
+
+      <p className="pointer-events-none absolute left-1/2 top-4 z-10 hidden max-w-md -translate-x-1/2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-center text-[11px] font-medium tracking-wide text-zinc-300 backdrop-blur-md lg:left-[calc(50%+8px)] lg:block">
+        {MAP_ATTRIBUTION_NOTE}
+      </p>
+
+      <div className="absolute inset-x-0 bottom-0 z-30 lg:hidden">
         <div className="max-h-[78vh] overflow-hidden rounded-t-3xl border border-violet-200/20 bg-[#140c22] shadow-[0_-20px_80px_rgba(0,0,0,0.55)]">
           <button
             type="button"
@@ -670,8 +668,8 @@ function Detail({
     marker.category === "unconfirmed" ? null : CATEGORY_META[marker.category];
 
   return (
-    <article className="flex max-h-[70vh] min-h-0 w-full flex-col overflow-y-auto lg:max-h-none">
-      <div className="relative">
+    <article className="flex max-h-[72vh] min-h-0 w-full flex-col overflow-y-auto lg:max-h-none">
+      <div className="relative shrink-0">
         {marker.image ? (
           // Official stills are already optimized webp files. A plain img avoids
           // a second image optimizer hop inside the map pane.
@@ -679,7 +677,7 @@ function Detail({
           <img
             src={marker.image}
             alt={marker.imageAlt}
-            className="h-48 w-full object-cover"
+            className="h-52 w-full object-cover sm:h-48"
           />
         ) : (
           <div className="flex h-40 items-end bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.45),transparent_55%),#140c22] p-4">
@@ -784,6 +782,7 @@ function Minimap({ view }: { view: MapView | null }) {
 }
 
 function Controls({
+  compact = false,
   className,
   onZoomIn,
   onZoomOut,
@@ -791,6 +790,7 @@ function Controls({
   fullscreen,
   onFullscreen,
 }: {
+  compact?: boolean;
   className: string;
   onZoomIn: () => void;
   onZoomOut: () => void;
@@ -798,18 +798,20 @@ function Controls({
   fullscreen: boolean;
   onFullscreen: () => void;
 }) {
-  const button =
-    "grid h-11 w-11 place-items-center rounded-2xl border border-violet-200/20 bg-[#120b1c]/80 text-white shadow-lg backdrop-blur-xl transition hover:border-violet-300/50";
+  const icon = compact ? 15 : 18;
+  const button = compact
+    ? "grid h-9 w-9 place-items-center rounded-xl border border-violet-200/20 bg-[#120b1c]/90 text-white shadow-lg backdrop-blur-xl transition hover:border-violet-300/50"
+    : "grid h-11 w-11 place-items-center rounded-2xl border border-violet-200/20 bg-[#120b1c]/80 text-white shadow-lg backdrop-blur-xl transition hover:border-violet-300/50";
   return (
     <div className={className}>
       <button type="button" className={button} onClick={onZoomIn} aria-label="Zoom in">
-        <Plus size={18} />
+        <Plus size={icon} />
       </button>
       <button type="button" className={button} onClick={onZoomOut} aria-label="Zoom out">
-        <Minus size={18} />
+        <Minus size={icon} />
       </button>
       <button type="button" className={button} onClick={onReset} aria-label="Reset the map">
-        <LocateFixed size={18} />
+        <LocateFixed size={icon} />
       </button>
       <button
         type="button"
@@ -817,7 +819,7 @@ function Controls({
         onClick={onFullscreen}
         aria-label={fullscreen ? "Exit fullscreen" : "Enter fullscreen"}
       >
-        {fullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+        {fullscreen ? <Minimize2 size={icon} /> : <Maximize2 size={icon} />}
       </button>
     </div>
   );
