@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -91,6 +92,11 @@ export default function MapExperience() {
   const [sheet, setSheet] = useState<"peek" | "filters" | "detail">("peek");
 
   const onReady = useCallback(() => setReady(true), []);
+  const flyRequest = useRef<{ x: number; y: number; z?: number | null } | null>(null);
+
+  const queueFly = useCallback((x: number, y: number, z?: number | null) => {
+    flyRequest.current = { x, y, z };
+  }, []);
 
   useEffect(() => {
     const previous = document.body.style.overflow;
@@ -116,6 +122,13 @@ export default function MapExperience() {
     return () => document.removeEventListener("fullscreenchange", onFullscreen);
   }, []);
 
+  useLayoutEffect(() => {
+    const request = flyRequest.current;
+    if (!request || !ready || sheet !== "detail") return;
+    flyRequest.current = null;
+    mapRef.current?.flyTo(request.x, request.y, request.z ?? undefined, { card: true });
+  }, [ready, selectedId, sheet]);
+
   const selectMarker = useCallback((id: string) => {
     const marker = markerById(id);
     if (!marker || marker.category === "unconfirmed") return;
@@ -127,8 +140,8 @@ export default function MapExperience() {
     setQuery("");
     setSearchOpen(false);
     setSheet("detail");
-    mapRef.current?.flyTo(marker.x, marker.y, undefined, { card: true });
-  }, []);
+    queueFly(marker.x, marker.y);
+  }, [queueFly]);
 
   useEffect(() => {
     if (!ready) return;
@@ -139,13 +152,13 @@ export default function MapExperience() {
       if (!marker) return;
       setSelectedId(marker.id);
       setSheet("detail");
-      mapRef.current?.flyTo(marker.x, marker.y, initial.z ?? undefined, { card: true });
+      queueFly(marker.x, marker.y, initial.z);
       return;
     }
     if (initial.x != null && initial.y != null && initial.z != null) {
       mapRef.current?.setView(initial.x, initial.y, initial.z);
     }
-  }, [ready]);
+  }, [ready, queueFly]);
 
   useEffect(() => {
     if (!ready || !view) return;
@@ -254,15 +267,17 @@ export default function MapExperience() {
   ).length;
 
   return (
-    <div ref={rootRef} className="relative h-full w-full bg-transparent text-white">
-      <MapCanvas
-        ref={mapRef}
-        markers={shown}
-        selectedId={selectedId}
-        onSelect={selectMarker}
-        onViewChange={setView}
-        onReady={onReady}
-      />
+    <div ref={rootRef} className="relative flex h-full w-full flex-col bg-transparent text-white lg:block">
+      <div className="relative h-[calc((100vw-28px)*1040/1620+36px)] w-full shrink-0 lg:absolute lg:inset-0 lg:h-full">
+        <MapCanvas
+          ref={mapRef}
+          markers={shown}
+          selectedId={selectedId}
+          onSelect={selectMarker}
+          onViewChange={setView}
+          onReady={onReady}
+        />
+      </div>
 
       <aside className="absolute bottom-4 left-4 top-4 z-20 hidden w-[340px] flex-col overflow-hidden rounded-3xl border border-violet-200/15 bg-[#120b1c]/95 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:flex">
         <PanelBody
@@ -328,75 +343,102 @@ export default function MapExperience() {
         </div>
       )}
 
-      <div className="absolute bottom-[158px] right-2 z-20 flex flex-col items-end gap-2 lg:hidden">
-        <Compass />
-        <Controls
-          compact
-          className="flex flex-col gap-1"
-          onZoomIn={() => mapRef.current?.zoomIn()}
-          onZoomOut={() => mapRef.current?.zoomOut()}
-          onReset={() => {
-            setSelectedId(null);
-            setSheet("peek");
-            mapRef.current?.reset();
-          }}
-          fullscreen={fullscreen}
-          onFullscreen={() => void toggleFullscreen()}
-        />
-      </div>
-
       <p className="pointer-events-none absolute left-1/2 top-4 z-10 hidden max-w-md -translate-x-1/2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-center text-[11px] font-medium tracking-wide text-zinc-300 backdrop-blur-md lg:left-[calc(50%+8px)] lg:block">
         {MAP_ATTRIBUTION_NOTE}
       </p>
 
-      <div className="absolute inset-x-0 bottom-0 z-30 lg:hidden">
-        <div className="max-h-[78vh] overflow-hidden rounded-t-3xl border border-violet-200/20 bg-[#140c22] shadow-[0_-20px_80px_rgba(0,0,0,0.55)]">
-          <button
-            type="button"
-            className="flex w-full justify-center py-2"
-            onClick={() =>
-              setSheet((current) => (current === "peek" ? "filters" : "peek"))
-            }
-            aria-expanded={sheet !== "peek"}
-          >
-            <span className="h-1.5 w-12 rounded-full bg-white/20" />
-            <span className="sr-only">
-              {sheet === "peek" ? "Expand map tools" : "Collapse map tools"}
-            </span>
-          </button>
-          {sheet === "detail" && selected ? (
-            <Detail
-              marker={selected}
-              found={found.includes(selected.id)}
-              onFound={() => toggleFound(selected.id)}
-              onClose={() => {
-                setSelectedId(null);
-                setSheet("peek");
-              }}
-            />
-          ) : (
-            <div className={sheet === "peek" ? "max-h-[132px] overflow-hidden" : "max-h-[64vh] overflow-y-auto"}>
-              <PanelBody
-                query={query}
-                setQuery={setQuery}
-                searchRef={mobileSearchRef}
-                suggestions={suggestions}
-                searchOpen={searchOpen}
-                setSearchOpen={setSearchOpen}
-                activeIndex={activeIndex}
-                setActiveIndex={setActiveIndex}
-                onPick={selectMarker}
-                activeCategories={activeCategories}
-                onToggleCategory={toggleCategory}
-                found={found}
-                hideFound={hideFound}
-                setHideFound={setHideFound}
-                shown={shown}
-                onSelect={selectMarker}
-                selectedId={selectedId}
-                onSearchFocus={() => setSheet("filters")}
-                compact={sheet === "peek"}
+      <div
+        data-map-sheet
+        className={
+          sheet === "detail" && selected
+            ? "absolute inset-x-0 bottom-0 z-30 flex max-h-[calc(100%-108px)] flex-col lg:hidden"
+            : "relative z-30 flex min-h-0 flex-1 flex-col lg:hidden"
+        }
+      >
+        <div className="flex max-h-full flex-col overflow-hidden rounded-t-3xl border border-violet-200/20 bg-[#140c22] shadow-[0_-20px_80px_rgba(0,0,0,0.55)]">
+          <div className="flex items-center justify-between gap-2 px-2 py-1">
+            <button
+              type="button"
+              className="flex h-8 flex-1 justify-center"
+              onClick={() =>
+                setSheet((current) => (current === "peek" ? "filters" : "peek"))
+              }
+              aria-expanded={sheet !== "peek"}
+            >
+              <span className="h-1.5 w-12 rounded-full bg-white/20" />
+              <span className="sr-only">
+                {sheet === "peek" ? "Expand map tools" : "Collapse map tools"}
+              </span>
+            </button>
+            {sheet === "detail" ? (
+              <Controls
+                compact
+                className="flex shrink-0 gap-1"
+                onZoomIn={() => mapRef.current?.zoomIn()}
+                onZoomOut={() => mapRef.current?.zoomOut()}
+                onReset={() => {
+                  setSelectedId(null);
+                  setSheet("peek");
+                  mapRef.current?.reset();
+                }}
+                fullscreen={fullscreen}
+                onFullscreen={() => void toggleFullscreen()}
               />
+            ) : null}
+          </div>
+          {sheet === "detail" && selected ? (
+            <div className="flex min-h-0 flex-col overflow-y-auto">
+              <Detail
+                marker={selected}
+                found={found.includes(selected.id)}
+                onFound={() => toggleFound(selected.id)}
+                onClose={() => {
+                  setSelectedId(null);
+                  setSheet("peek");
+                }}
+              />
+            </div>
+          ) : (
+            <div className="relative min-h-0 flex-1 overflow-y-auto">
+              <div className="absolute right-2 top-2 z-10 flex flex-col items-end gap-1">
+                <Compass compact />
+                <Controls
+                  compact
+                  className="flex flex-col gap-1"
+                  onZoomIn={() => mapRef.current?.zoomIn()}
+                  onZoomOut={() => mapRef.current?.zoomOut()}
+                  onReset={() => {
+                    setSelectedId(null);
+                    setSheet("peek");
+                    mapRef.current?.reset();
+                  }}
+                  fullscreen={fullscreen}
+                  onFullscreen={() => void toggleFullscreen()}
+                />
+              </div>
+              <div className="pr-12">
+                <PanelBody
+                  query={query}
+                  setQuery={setQuery}
+                  searchRef={mobileSearchRef}
+                  suggestions={suggestions}
+                  searchOpen={searchOpen}
+                  setSearchOpen={setSearchOpen}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                  onPick={selectMarker}
+                  activeCategories={activeCategories}
+                  onToggleCategory={toggleCategory}
+                  found={found}
+                  hideFound={hideFound}
+                  setHideFound={setHideFound}
+                  shown={shown}
+                  onSelect={selectMarker}
+                  selectedId={selectedId}
+                  onSearchFocus={() => setSheet("filters")}
+                  compact={false}
+                />
+              </div>
             </div>
           )}
         </div>
@@ -668,7 +710,7 @@ function Detail({
     marker.category === "unconfirmed" ? null : CATEGORY_META[marker.category];
 
   return (
-    <article className="flex max-h-[72vh] min-h-0 w-full flex-col overflow-y-auto lg:max-h-none">
+    <article className="flex min-h-0 w-full flex-1 flex-col overflow-y-auto lg:max-h-none">
       <div className="relative shrink-0">
         {marker.image ? (
           // Official stills are already optimized webp files. A plain img avoids
@@ -677,7 +719,7 @@ function Detail({
           <img
             src={marker.image}
             alt={marker.imageAlt}
-            className="h-52 w-full object-cover sm:h-48"
+            className="h-44 w-full object-cover lg:h-52"
           />
         ) : (
           <div className="flex h-40 items-end bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.45),transparent_55%),#140c22] p-4">
@@ -693,7 +735,7 @@ function Detail({
           <X size={16} />
         </button>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-4">
+      <div className="flex flex-col gap-2 px-4 py-3 lg:gap-3 lg:py-4">
         {category ? (
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: category.color }}>
             <CategoryIcon id={category.id} className="h-4 w-4" />
@@ -742,14 +784,18 @@ function Detail({
   );
 }
 
-function Compass() {
+function Compass({ compact = false }: { compact?: boolean }) {
   return (
     <div
-      className="flex items-center gap-1 rounded-full border border-violet-200/20 bg-[#120b1c]/85 px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-violet-100 shadow-lg backdrop-blur"
+      className={
+        compact
+          ? "grid h-8 w-8 place-items-center rounded-lg border border-violet-200/20 bg-[#120b1c]/90 text-[10px] font-bold text-violet-100 shadow-lg"
+          : "flex items-center gap-1 rounded-full border border-violet-200/20 bg-[#120b1c]/85 px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-violet-100 shadow-lg backdrop-blur"
+      }
       aria-label="North is up, following Mount Kalaga on the state’s northern border"
     >
       <span aria-hidden="true" className="text-violet-200">▲</span>
-      NORTH
+      {compact ? null : "NORTH"}
     </div>
   );
 }
@@ -800,7 +846,7 @@ function Controls({
 }) {
   const icon = compact ? 15 : 18;
   const button = compact
-    ? "grid h-9 w-9 place-items-center rounded-xl border border-violet-200/20 bg-[#120b1c]/90 text-white shadow-lg backdrop-blur-xl transition hover:border-violet-300/50"
+    ? "grid h-8 w-8 place-items-center rounded-lg border border-violet-200/20 bg-[#120b1c]/90 text-white shadow-lg backdrop-blur-xl transition hover:border-violet-300/50"
     : "grid h-11 w-11 place-items-center rounded-2xl border border-violet-200/20 bg-[#120b1c]/80 text-white shadow-lg backdrop-blur-xl transition hover:border-violet-300/50";
   return (
     <div className={className}>

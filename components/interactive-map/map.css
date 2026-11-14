@@ -99,7 +99,25 @@
   white-space: nowrap;
 }
 
+.region-name {
+  display: block;
+  color: #f4f0ff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 18px;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    0 0 4px #04140f,
+    0 1px 0 #04140f,
+    0 -1px 0 #04140f,
+    1px 0 0 #04140f,
+    -1px 0 0 #04140f;
+}
+
 @media (max-width: 1023px) {
+  .region-name { font-size: 12px; line-height: 14px; }
   .gta-label { display: none; }
   .gta-hit.is-selected .gta-label { display: block; }
   .gta-disc {

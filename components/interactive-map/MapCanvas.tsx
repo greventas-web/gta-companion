@@ -8,7 +8,7 @@ import {
 } from "react";
 import type { LatLngBoundsExpression, Map as LeafletMap } from "leaflet";
 
-import { ACTIVE_MAP_LAYER, MAP_FRAME } from "@/src/data/map/config";
+import { ACTIVE_MAP_LAYER, MAP_FRAME, MAP_HEIGHT } from "@/src/data/map/config";
 import { CATEGORY_META } from "@/src/data/map/categories";
 import type { MapMarker } from "@/src/data/map/types";
 import type { VisibleCategory } from "@/src/data/map/types";
@@ -82,15 +82,8 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
     },
     reset() {
       const map = mapRef.current;
-      const bounds = boundsRef.current;
-      if (!map || !bounds) return;
-      map.fitBounds(
-        [
-          [MAP_FRAME.south, MAP_FRAME.west],
-          [MAP_FRAME.north, MAP_FRAME.east],
-        ],
-        { ...framePadding(false), animate: true, duration: 0.6 }
-      );
+      if (!map) return;
+      fitFrame(map, true);
     },
     flyTo(x, y, zoom, focus) {
       const map = mapRef.current;
@@ -136,7 +129,7 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
         zoomControl: false,
         minZoom: -2.5,
         maxZoom: layer.type === "tiles" ? layer.maxZoom : 3,
-        zoomSnap: 0.25,
+        zoomSnap: 0,
         zoomDelta: 0.5,
         wheelPxPerZoomLevel: 70,
         doubleClickZoom: true,
@@ -163,28 +156,11 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
         }).addTo(map);
       }
 
-      const frame = L.latLngBounds(
-        [MAP_FRAME.south, MAP_FRAME.west],
-        [MAP_FRAME.north, MAP_FRAME.east]
-      );
       map.setMaxBounds(bounds.pad(2));
       const fit = () => {
         if (!map) return;
         map.invalidateSize();
-        if (window.innerWidth < 1024) {
-          const size = map.getSize();
-          const pad = framePadding(false);
-          const availW = Math.max(120, size.x - pad.paddingTopLeft[0] - pad.paddingBottomRight[0]);
-          const span = MAP_FRAME.east - MAP_FRAME.west;
-          const zoom = Math.log2(availW / span);
-          const midX = (MAP_FRAME.west + MAP_FRAME.east) / 2;
-          const midY = (MAP_FRAME.south + MAP_FRAME.north) / 2;
-          map.setView(viewCenterFor(map, midX, midY, zoom, false), zoom, { animate: false });
-          const northEdge = map.latLngToContainerPoint([MAP_FRAME.north, midX]);
-          if (northEdge.y > 18) map.panBy([0, northEdge.y - 12], { animate: false });
-        } else {
-          map.fitBounds(frame, { ...framePadding(false), animate: false });
-        }
+        fitFrame(map, false);
       };
       fit();
       requestAnimationFrame(fit);
@@ -238,6 +214,23 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
           })
             .on("click", () => onSelectRef.current(marker.id))
             .addTo(group);
+        }
+
+        for (const region of REGION_LABELS) {
+          const width = Math.max(72, region.title.length * (narrow ? 6.6 : 8.4));
+          const height = narrow ? 14 : 18;
+          const nudge = narrow ? region.mobile : undefined;
+          L.marker([MAP_HEIGHT - region.svgY, region.svgX], {
+            icon: L.divIcon({
+              className: "map-pin-wrap",
+              iconSize: [width, height],
+              iconAnchor: [width / 2 - (nudge?.x ?? 0), height - (nudge?.y ?? 0)],
+              html: `<span class="region-name">${escapeHtml(region.title)}</span>`,
+            }),
+            interactive: false,
+            keyboard: false,
+            zIndexOffset: -200,
+          }).addTo(group);
         }
       };
 
@@ -304,19 +297,66 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
 
 export default MapCanvas;
 
+const REGION_LABELS = [
+  { title: "Mount Kalaga", svgX: 760, svgY: 210, mobile: { x: 0, y: -12 } },
+  { title: "Ambrosia", svgX: 700, svgY: 430 },
+  { title: "Port Gellhorn", svgX: 430, svgY: 520, mobile: { x: 0, y: -40 } },
+  { title: "Grassrivers", svgX: 860, svgY: 700 },
+  { title: "Vice City", svgX: 1510, svgY: 460, mobile: { x: -18, y: 0 } },
+  { title: "Leonida Keys", svgX: 1280, svgY: 1090, mobile: { x: 0, y: 8 } },
+];
+
 const PANEL_LEFT = 16;
 const PANEL_WIDTH = 340;
 const PANEL_MARGIN = 96;
 const CARD_WIDTH = 360;
 const CARD_MARGIN = 28;
 
+function fitFrame(map: LeafletMap, animate: boolean) {
+  if (window.innerWidth < 1024) {
+    const size = map.getSize();
+    const pad = framePadding(false);
+    const availW = Math.max(120, size.x - pad.paddingTopLeft[0] - pad.paddingBottomRight[0]);
+    const span = MAP_FRAME.east - MAP_FRAME.west;
+    const zoom = Math.log2(availW / span);
+    const midX = (MAP_FRAME.west + MAP_FRAME.east) / 2;
+    const north = map.project([MAP_FRAME.north, midX], zoom);
+    const mid = map.project([(MAP_FRAME.south + MAP_FRAME.north) / 2, midX], zoom);
+    const visX =
+      pad.paddingTopLeft[0] +
+      (size.x - pad.paddingTopLeft[0] - pad.paddingBottomRight[0]) / 2;
+    const top = 12;
+    map.setView(
+      map.unproject([mid.x - (visX - size.x / 2), north.y - top + size.y / 2], zoom),
+      zoom,
+      { animate, duration: animate ? 0.6 : 0 }
+    );
+    return;
+  }
+  map.fitBounds(
+    [
+      [MAP_FRAME.south, MAP_FRAME.west],
+      [MAP_FRAME.north, MAP_FRAME.east],
+    ],
+    { ...framePadding(false), animate, duration: animate ? 0.6 : 0 }
+  );
+}
+
+function sheetOverlap() {
+  const sheet = document.querySelector("[data-map-sheet]");
+  const map = document.querySelector(".leonida-map");
+  if (!sheet || !map) return 0;
+  const overlap = map.getBoundingClientRect().bottom - sheet.getBoundingClientRect().top;
+  return overlap > 0 ? Math.round(overlap) : 0;
+}
+
 function framePadding(cardOpen: boolean) {
   const narrow = window.innerWidth < 1024;
   if (narrow) {
-    const sheet = cardOpen ? Math.round(window.innerHeight * 0.58) : 168;
+    const covered = cardOpen ? sheetOverlap() : 0;
     return {
-      paddingTopLeft: [14, 10] as [number, number],
-      paddingBottomRight: [14, sheet] as [number, number],
+      paddingTopLeft: [14, 12] as [number, number],
+      paddingBottomRight: [14, 20 + covered] as [number, number],
     };
   }
   const left = PANEL_LEFT + PANEL_WIDTH + PANEL_MARGIN;
