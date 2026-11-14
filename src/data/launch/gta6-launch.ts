@@ -165,6 +165,10 @@ export const gta6Launch = {
     body: "Xbox Cloud Gaming plays Grand Theft Auto VI on Xbox One and Xbox Series X|S. Xbox One streams it. Series X and Series S can play natively or stream. The game is bought separately from any cloud playtime. A PC release date has not been announced.",
     sourceIds: ["xbox-wire", "rockstar-date"],
   },
+  festival: {
+    line: "Rockstar Games announced Grand Theft Auto VI: The Festival, a live event on November 21, 2026 at Mana Wynwood in Miami, presented in partnership with PlayStation, with two stages and artists from the game and the official soundtrack. The pre-sale lottery has closed.",
+    sourceIds: ["rockstar-festival", "rockstar-festival-page"],
+  },
   faqs: [
     {
       question: "What time does GTA 6 unlock?",
@@ -203,6 +207,18 @@ export const gta6Launch = {
     },
   ],
   sources: [
+    {
+      id: "rockstar-festival",
+      label: "Rockstar Newswire",
+      href: "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival",
+      published: "November 9, 2026",
+    },
+    {
+      id: "rockstar-festival-page",
+      label: "Rockstar Games",
+      href: "https://www.rockstargames.com/VI/gtavi-thefestival",
+      published: "November 9, 2026",
+    },
     {
       id: "rockstar-date",
       label: "Rockstar Newswire",

@@ -10,6 +10,12 @@ export type TimelineEvent = {
   sourceLabel: string;
   sourceHref: string;
   moreSources?: TimelineSource[];
+  image?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
 };
 
 export const timeline: TimelineEvent[] = [
@@ -111,6 +117,27 @@ export const timeline: TimelineEvent[] = [
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
+    date: "November 9, 2026",
+    title: "The Festival announced",
+    description:
+      "Rockstar Games announces Grand Theft Auto VI: The Festival, a special live event on November 21 at Mana Wynwood in Miami to celebrate the launch. It is presented in partnership with PlayStation and produced by the creators of III Points, with two stages of nonstop music and artists from the game and the official soundtrack: Cactus Jack presents Travis Scott, Don Toliver, Kodak Black, and Sofaygo; Cardi B; Ca7riel & Paco Amoroso; Justice (DJ set); Metro Boomin; Nick León B2B DJ Python; Prospa B2B Skream; Rauw & Friends; Suero; Tainy; and The Dare B2B Fcukers (DJ set). The pre-sale lottery closed at 4 p.m. ET on November 10. Tickets are limited to two per pre-sale code. They are non-transferable, and attendance is 17+.",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival",
+    moreSources: [
+      {
+        label: "Rockstar Games",
+        href: "https://www.rockstargames.com/VI/gtavi-thefestival",
+      },
+    ],
+    image: {
+      src: "/images/official/gta-vi-the-festival.webp",
+      alt: "Official key art: Rockstar Games and PlayStation present Grand Theft Auto VI: The Festival on November 21, 2026 at Mana Wynwood, Miami.",
+      width: 1600,
+      height: 900,
+    },
+  },
+  {
     date: "November 10, 2026",
     title: "Pre-load opens",
     description:
@@ -156,5 +183,20 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+  },
+  {
+    date: "November 21, 2026",
+    title: "The Festival",
+    description:
+      "Grand Theft Auto VI: The Festival at Mana Wynwood in Miami, the live event Rockstar Games announced on November 9. The pre-sale lottery has closed.",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival",
+    moreSources: [
+      {
+        label: "Rockstar Games",
+        href: "https://www.rockstargames.com/VI/gtavi-thefestival",
+      },
+    ],
   },
 ];

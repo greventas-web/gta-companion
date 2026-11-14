@@ -80,6 +80,14 @@ export default function Gta6LaunchPage() {
             </Link>{" "}
             page.
           </p>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300">
+            {gta6Launch.festival.line}{" "}
+            <Link href="/timeline" className="text-pink-300 hover:text-pink-200">
+              The lineup is on the timeline
+            </Link>
+            .
+          </p>
+          <Sources ids={gta6Launch.festival.sourceIds} />
 
           <dl className="mt-8 grid gap-3 sm:grid-cols-3">
             {gta6Launch.stats.map((stat) => (
