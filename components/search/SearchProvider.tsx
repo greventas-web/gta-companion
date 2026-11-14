@@ -29,16 +29,16 @@ export function SearchProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [openOn, setOpenOn] = useState<string | null>(null);
+  const isOpen = openOn === pathname;
 
-  const open = useCallback(() => setIsOpen(true), []);
-  const close = useCallback(() => setIsOpen(false), []);
-  const toggle = useCallback(() => setIsOpen((v) => !v), []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  const open = useCallback(() => setOpenOn(pathname), [pathname]);
+  const close = useCallback(() => setOpenOn(null), []);
+  const toggle = useCallback(
+    () => setOpenOn((current) => (current === pathname ? null : pathname)),
+    [pathname]
+  );
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {

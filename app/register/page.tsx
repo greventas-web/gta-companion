@@ -7,7 +7,6 @@ import {
   Check,
   Sparkles,
   Bell,
-  Smartphone,
   Map,
   Trophy,
 } from "lucide-react";
@@ -71,8 +70,9 @@ export default function RegisterPage() {
       );
 
       router.push("/dashboard");
-    } catch (err: any) {
-      setError(err.message.replace("Firebase: ", ""));
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Could not create the account.";
+      setError(message.replace("Firebase: ", ""));
     } finally {
       setLoading(false);
     }
@@ -129,11 +129,6 @@ export default function RegisterPage() {
               <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4">
                 <Map className="text-pink-400" />
                 Interactive Map
-              </div>
-
-              <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4">
-                <Smartphone className="text-pink-400" />
-                Mobile App
               </div>
 
               <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4">

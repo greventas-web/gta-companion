@@ -9,7 +9,7 @@ const features = [
     icon: ShieldCheck,
     title: "Fan-written notes",
     description:
-      "The notes on this site are written by fans. Rockstar pictures are not hosted here.",
+      "The notes are written for this site. Screenshots, artwork, and trailers are official Rockstar Games material, used for commentary and credited 'Images: Rockstar Games'.",
   },
   {
     icon: Sparkles,

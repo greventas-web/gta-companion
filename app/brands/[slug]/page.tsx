@@ -105,7 +105,7 @@ export default async function BrandPage({
 
               <Info
                 label="Status"
-                value="Confirmed"
+                value={brand.status ?? "Not described by Rockstar"}
               />
 
               <Info

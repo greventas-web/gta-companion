@@ -10,13 +10,13 @@ export default function TimelinePage() {
         <PageHero
           badge="Unofficial fan timeline"
           title="Every Official Reveal"
-          description="Follow official Grand Theft Auto VI announcements from the first trailer through pre-load. Last updated November 13, 2026."
+          description="Follow official Grand Theft Auto VI announcements from the first trailer through pre-load. Last updated November 14, 2026."
         />
 
         <section className="relative mt-20 ml-4 border-l border-pink-500/20">
           {timeline.map((event) => (
             <div
-              key={event.date}
+              key={`${event.date}-${event.title}`}
               className="relative mb-12 pl-12"
             >
               <div className="absolute -left-[10px] top-4 h-5 w-5 rounded-full border-4 border-[#040404] bg-pink-500 shadow-[0_0_20px_rgba(236,72,153,.55)]" />

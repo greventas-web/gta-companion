@@ -45,18 +45,6 @@ const roadmap = [
       "Premium Membership",
     ],
   },
-  {
-    version: "Phase 4",
-    title: "Mobile App",
-    status: "Future",
-    items: [
-      "iOS App",
-      "Android App",
-      "Cloud Sync",
-      "Offline Database",
-      "Push Notifications",
-    ],
-  },
 ];
 
 export default function RoadmapPage() {

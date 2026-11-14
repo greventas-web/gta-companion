@@ -15,7 +15,7 @@ export default function NotFound() {
         </h1>
 
         <p className="mt-6 text-xl leading-9 text-zinc-400">
-          This page doesn't exist yet or Rockstar Games hasn't officially
+          This page doesn&apos;t exist yet or Rockstar Games hasn&apos;t officially
           revealed enough information.
         </p>
 

@@ -42,7 +42,7 @@ const features = [
     icon: Smartphone,
     title: "Cross-Platform Companion",
     description:
-      "Designed for desktop today and built with a future mobile companion app featuring synchronized progress and favorites.",
+      "Designed for desktop and phone browsers.",
   },
 ];
 

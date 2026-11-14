@@ -5,7 +5,6 @@ export default function LaunchFeatures() {
     "💰 Money Making Guides",
     "🔫 Weapons Guide",
     "📍 Collectible Tracker",
-    "📱 Mobile App (In Development)",
   ];
 
   return (

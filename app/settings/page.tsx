@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { updateProfile } from "firebase/auth";
 
@@ -47,8 +47,11 @@ export default function SettingsPage() {
     setDraft(null);
     setError("");
     setPending(null);
-    pendingRef.current = false;
   }
+
+  useEffect(() => {
+    pendingRef.current = false;
+  }, [uid]);
 
   if (loading || (user && profileLoading)) {
     return (

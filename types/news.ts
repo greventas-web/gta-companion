@@ -12,4 +12,12 @@ export interface NewsArticle {
   summary: string;
 
   date: string;
+
+  paragraphs?: string[];
+
+  points?: string[];
+
+  sources?: { label: string; href: string }[];
+
+  sourceName?: string;
 }

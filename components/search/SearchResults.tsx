@@ -39,7 +39,7 @@ export default function SearchResults({ query, results }: Props) {
         </h3>
 
         <p className="mx-auto mt-3 max-w-md text-sm leading-7 text-zinc-400">
-          We couldn't find anything matching your search. Try searching for a
+          We couldn&apos;t find anything matching your search. Try searching for a
           vehicle, character, location, business, weapon, or official news article.
         </p>
       </div>

@@ -56,13 +56,13 @@ export default function ManufacturerDetailsPage({
 
             <Info
               icon={<Globe size={18} />}
-              label="Country"
+              label="Country (fan note)"
               value={manufacturer.country}
             />
 
             <Info
               icon={<Building2 size={18} />}
-              label="Headquarters"
+              label="Headquarters (fan note)"
               value={
                 manufacturer.headquarters ??
                 manufacturer.country
@@ -112,8 +112,10 @@ export default function ManufacturerDetailsPage({
             <p className="mt-5 leading-8 text-zinc-400">
 
               Names and counts come from the vehicles listed on this site.
-              A photo on the manufacturer list is an official Rockstar
-              picture of one vehicle from that maker. Images: Rockstar Games.
+              Country, headquarters, and status are fan notes. Rockstar has
+              not published them. A photo on the manufacturer list is an
+              official Rockstar picture of one vehicle from that maker.
+              Images: Rockstar Games.
 
             </p>
 
@@ -156,7 +158,7 @@ export default function ManufacturerDetailsPage({
 
             <Info
               icon={<Globe size={18} />}
-              label="Country"
+              label="Country (fan note)"
               value={manufacturer.country}
             />
 

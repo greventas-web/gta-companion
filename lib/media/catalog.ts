@@ -67,8 +67,9 @@ export function manufacturerListImage(
 
 /** Detail pages use a wordmark so a vehicle photo is not shown twice. */
 export function manufacturerPortrait(
-  _manufacturer: Pick<Manufacturer, "slug" | "logo">
+  manufacturer: Pick<Manufacturer, "slug" | "logo">
 ) {
+  void manufacturer;
   return "";
 }
 

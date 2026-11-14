@@ -9,9 +9,9 @@ export const sportsVehicles: Vehicle[] = [
     category: "Sports",
     image: "/images/original/vehicles/bravado-banshee.jpg",
     description:
-      "High-performance sports car officially seen in Grand Theft Auto VI promotional material. The Bravado Banshee returns with an updated design while retaining its iconic styling.",
-    firstAppearance: "Trailer 1",
-    status: "Officially Confirmed",
+      "Fan ID from Trailer 1 (not named by Rockstar).",
+    firstAppearance: "Fan ID from Trailer 1 (not named by Rockstar)",
+    status: "Expected / unconfirmed",
     gallery: [],
   },
 
@@ -23,9 +23,9 @@ export const sportsVehicles: Vehicle[] = [
     category: "Sports",
     image: "/images/original/vehicles/bravado-buffalo.jpg",
     description:
-      "Modern Bravado performance sedan appearing throughout official GTA VI screenshots and trailers.",
-    firstAppearance: "Trailer 1",
-    status: "Officially Confirmed",
+      "Fan ID from Trailer 1 (not named by Rockstar).",
+    firstAppearance: "Fan ID from Trailer 1 (not named by Rockstar)",
+    status: "Expected / unconfirmed",
     gallery: [],
   },
 
@@ -37,9 +37,9 @@ export const sportsVehicles: Vehicle[] = [
     category: "Sports",
     image: "/images/original/vehicles/annis-euros.jpg",
     description:
-      "Japanese-inspired sports coupe featured in official Rockstar promotional media for Grand Theft Auto VI.",
-    firstAppearance: "Trailer 2",
-    status: "Officially Confirmed",
+      "Fan ID from Trailer 2 (not named by Rockstar).",
+    firstAppearance: "Fan ID from Trailer 2 (not named by Rockstar)",
+    status: "Expected / unconfirmed",
     gallery: [],
   },
 

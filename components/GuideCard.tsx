@@ -98,7 +98,7 @@ export default function GuideCard({
           <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
 
             <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-300">
-              Official Guide
+              Fan guide
             </span>
 
             <div className="flex items-center gap-2 font-semibold text-pink-400 transition duration-300 group-hover:translate-x-2">

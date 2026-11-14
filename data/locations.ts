@@ -37,7 +37,7 @@ export const locations: Location[] = [
     type: "Wetlands",
     image: "/images/official/locations/grassrivers.webp",
     description:
-      "A dangerous swamp ecosystem home to alligators and other wildlife.",
+      "The untamable jewel of Leonida's crown. Gators are the famous attraction.",
     firstAppearance: "Rockstar Website",
     gallery: [],
     x: 63,
@@ -51,7 +51,7 @@ export const locations: Location[] = [
     type: "Mountain",
     image: "/images/official/locations/mount-kalaga.webp",
     description:
-      "A mountainous wilderness offering forests, trails and rugged terrain.",
+      "Up against the state's northern border, with prime hunting, fishing, and off-road trails.",
     firstAppearance: "Rockstar Website",
     gallery: [],
     x: 31,
@@ -65,7 +65,7 @@ export const locations: Location[] = [
     type: "Town",
     image: "/images/official/locations/port-gellhorn.webp",
     description:
-      "A once-bustling coastal town with motels, industrial areas and waterfront businesses.",
+      "Leonida's forgotten coast: a once-popular vacation spot of cheap motels, shut-down attractions, and empty strip malls, now running on malt liquor, painkillers, and truck stop energy drinks.",
     firstAppearance: "Trailer 2",
     gallery: [],
     x: 69,
@@ -76,10 +76,10 @@ export const locations: Location[] = [
     slug: "ambrosia",
     name: "Ambrosia",
     region: "Leonida",
-    type: "City",
+    type: "Town",
     image: "/images/official/locations/ambrosia.webp",
     description:
-      "An inland Leonida community surrounded by industrial activity and rural landscapes, forming part of the state's northern interior.",
+      "In the heart of Leonida, where American industry and old-school values reign. The Allied Crystal sugar refinery provides the jobs; the local biker gang provides almost everything else.",
     firstAppearance: "Trailer 2",
     gallery: [],
     x: 53,

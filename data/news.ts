@@ -1,4 +1,10 @@
 import { NewsArticle } from "@/types/news";
+import {
+  characterSwitching,
+  gameplaySystems,
+  relationshipSystem,
+  switchingSources,
+} from "@/src/data/gameplay/confirmed";
 
 export const news: NewsArticle[] = [
   {
@@ -17,9 +23,20 @@ export const news: NewsArticle[] = [
     title: "Rockstar Opens GTA VI Pre-Orders",
     image: "/images/official/news/announcement.webp",
     summary:
-      "Take-Two announced pre-orders on June 25, 2026. The standard edition is $79.99 and the Ultimate Edition is $99.99, with pre-loading from November 10.",
+      "On June 24, 2026, Take-Two announced pre-orders opening June 25 at midnight local time. Standard is $79.99 and the Ultimate Edition is $99.99 (US). Pre-load was first set for November 12; on November 3 Rockstar moved it to November 10.",
     date: "2026-06-24",
     category: "Official News",
+    sourceName: "Take-Two Interactive",
+    sources: [
+      {
+        label: "Take-Two — pre-orders announcement",
+        href: "https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi/",
+      },
+      {
+        label: "Rockstar Support — pre-load FAQ",
+        href: "https://support.rockstargames.com/articles/7nPqOA2uCbpEQHXx7KVrYd/grand-theft-auto-vi-pre-load-faq",
+      },
+    ],
   },
   {
     id: 6,
@@ -27,9 +44,19 @@ export const news: NewsArticle[] = [
     title: "GTA VI Launches November 19, 2026",
     image: "/images/official/media/screenshots-places-mount-kalaga-national-park-mount-kalaga-national-park-01.webp",
     summary:
-      "Rockstar Games has set Grand Theft Auto VI for November 19, 2026 on PlayStation 5 and Xbox Series X|S. The launch trailer also confirms pre-orders are open.",
-    date: "2026-10-15",
+      "The launch trailer (Oct 15, 2026) restates the November 19, 2026 release on PS5 and Xbox Series X|S, set by Rockstar on November 6, 2025.",
+    date: "2025-11-06",
     category: "Official News",
+    sources: [
+      {
+        label: "Rockstar Newswire — November 19, 2026",
+        href: "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+      },
+      {
+        label: "Rockstar Games — Launch trailer",
+        href: "https://www.rockstargames.com/VI/launch-trailer",
+      },
+    ],
   },
   {
     id: 5,
@@ -37,7 +64,7 @@ export const news: NewsArticle[] = [
     title: "Rockstar Releases the GTA VI Launch Trailer",
     image: "/images/official/news/gallery.webp",
     summary:
-      "The official launch trailer debuts Flower in a Hurricane, from score composers Justice with Tame Impala, SZA, and King Gizzard & The Lizard Wizard.",
+      "The launch trailer debuts 'Flower in a Hurricane' by Justice (composers of the original score) feat. Tame Impala, SZA, and King Gizzard & The Lizard Wizard.",
     date: "2026-10-15",
     category: "Official News",
   },
@@ -50,6 +77,9 @@ export const news: NewsArticle[] = [
       "A 26-minute extended look, captured on PlayStation 5, shows more of Jason, Lucia, Vice City, and Leonida.",
     date: "2026-08-27",
     category: "Official News",
+    paragraphs: [characterSwitching, relationshipSystem],
+    points: [...gameplaySystems],
+    sources: [...switchingSources],
   },
   {
     id: 1,

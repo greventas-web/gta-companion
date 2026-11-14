@@ -95,7 +95,7 @@ export const searchIndex: SearchItem[] = [
     description: activity.description,
   })),
 
-  ...guides.map((guide) => ({
+  ...guides.filter((guide) => guide.listed !== false).map((guide) => ({
     id: guide.id,
     title: guide.title,
     href: `/guides/${guide.slug}`,

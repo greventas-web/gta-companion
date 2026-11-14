@@ -14,13 +14,13 @@ export const businesses: Business[] = [
     imageCaption:
       "Studio still of a mixing desk, not a labeled Only Raw Records storefront.",
     description:
-      "Independent Vice City record label working with Dre'Quan Priest and the rap duo Real Dimez. The label has become one of the city's fastest-growing names in the music industry.",
+      "Vice City label that has signed Real Dimez. Rockstar says they just need a hit. Boobie Ike and Dre'Quan Priest run it as a partnership.",
     firstAppearance: "Rockstar Games Website",
     status: "Officially Confirmed",
-    owner: "Dre'Quan Priest",
+    owner: "Boobie Ike and Dre'Quan Priest",
     district: "Vice City",
     type: "Music Label",
-    relatedBusinesses: ["high-rollerz-lifestyle"],
+    relatedBusinesses: ["jack-of-hearts"],
     gallery: [],
   },
 
@@ -28,19 +28,16 @@ export const businesses: Business[] = [
     id: 2,
     slug: "high-rollerz-lifestyle",
     name: "High Rollerz Lifestyle",
-    category: "Entertainment",
+    category: "Car culture",
     location: "Vice City",
     image: "",
     description:
-      "A shop photo and a written description of High Rollerz Lifestyle have not been published. This card stays typographic.",
-    firstAppearance: "Rockstar Games Website",
-    status: "Officially Confirmed",
+      "A car-culture social media group seen in Trailer 1. Rockstar has not described it further.",
+    firstAppearance: "Trailer 1",
+    status: "Seen in Trailer 1",
     district: "Vice City",
-    type: "Entertainment Company",
-    relatedBusinesses: [
-      "only-raw-records",
-      "nine1nine",
-    ],
+    type: "Car culture",
+    relatedBusinesses: [],
     gallery: [],
   },
 
@@ -55,7 +52,7 @@ export const businesses: Business[] = [
     imageAlt: "Night storefront with a neon Jack of Hearts sign",
     imageCaption: "Night storefront. The neon sign reads Jack of Hearts.",
     description:
-      "A famous Vice City strip club featured in Rockstar promotional material and one of the city's best-known nightlife destinations.",
+      "Boobie Ike's strip club in Vice City. His profile tagline is \"It's all about heart — the Jack of Hearts.\" Dre'Quan Priest books acts there.",
     gallery: [
       {
         src: "/images/official/media/screenshots-people-boobie-ike-boobie-ike-04.webp",
@@ -66,9 +63,10 @@ export const businesses: Business[] = [
     ],
     firstAppearance: "Trailer 1",
     status: "Officially Confirmed",
+    owner: "Boobie Ike",
     district: "Vice City",
     type: "Nightlife",
-    relatedBusinesses: ["nine1nine"],
+    relatedBusinesses: ["only-raw-records"],
   },
 
   {
@@ -79,8 +77,8 @@ export const businesses: Business[] = [
     location: "Leonida Keys",
     image: "",
     description:
-      "Boat yard owned by Brian Heder that serves as both a marine repair business and the center of his smuggling operation in the Leonida Keys.",
-    firstAppearance: "Rockstar Games Website",
+      "The name comes from Trailer 2 signage, Brian's Boat Works & Marina. Rockstar's text calls it his boat yard. Brian Heder moves product through it with his third wife, Lori.",
+    firstAppearance: "Trailer 2",
     status: "Officially Confirmed",
     owner: "Brian Heder",
     district: "Leonida Keys",
@@ -97,15 +95,12 @@ export const businesses: Business[] = [
     location: "Vice City",
     image: "",
     description:
-      "Luxury Vice City nightclub known for exclusive parties, live music and a vibrant nightlife atmosphere.",
-    firstAppearance: "Rockstar Games Website",
-    status: "Officially Confirmed",
+      "Vice City nightclub seen in Trailer 1 (banner towed over Ocean Beach) and Trailer 2 (Jason and Lucia dancing).",
+    firstAppearance: "Trailer 1 and Trailer 2",
+    status: "Seen in Trailer 1 and Trailer 2",
     district: "Vice City",
     type: "Nightclub",
-    relatedBusinesses: [
-      "jack-of-hearts",
-      "high-rollerz-lifestyle",
-    ],
+    relatedBusinesses: [],
     gallery: [],
   },
 ];

@@ -1,4 +1,17 @@
 import { Character } from "@/types/character";
+import {
+  characterSwitching,
+  relationshipSystem,
+  switchingSources,
+} from "@/src/data/gameplay/confirmed";
+
+const protagonistPlay = {
+  details: [
+    characterSwitching,
+    `${relationshipSystem} The relationship notes are from Rob Nelson's Famitsu interview.`,
+  ],
+  sources: [...switchingSources],
+};
 
 export const characters: Character[] = [
   {
@@ -10,7 +23,8 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Trailer 1",
     description:
-      "Jason Duval is one of the two playable protagonists. Rockstar says he grew up around grifters and small-time crooks, served a stint in the Army, and then worked for drug runners in the Leonida Keys. He wants an easier life, and he has to rely on Lucia after an easy score goes wrong. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Jason Duval is one of the two playable protagonists. Rockstar says he grew up around grifters and crooks, served a stint in the Army, and then worked for drug runners in the Leonida Keys. He wants an easier life, and he has to rely on Lucia after an easy score goes wrong. Source: Rockstar Games, Grand Theft Auto VI.",
+    ...protagonistPlay,
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city", "leonida-keys"],
@@ -29,6 +43,7 @@ export const characters: Character[] = [
     firstAppearance: "Trailer 1",
     description:
       "Lucia Caminos is one of the two playable protagonists. Rockstar says she learned to fight young, that fighting for her family put her in Leonida Penitentiary, and that she is out and wants the life her mother has talked about since their days in Liberty City. Source: Rockstar Games, Grand Theft Auto VI.",
+    ...protagonistPlay,
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -46,7 +61,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Cal Hampton is Jason's friend and works with Brian Heder. Rockstar describes him as someone who would rather stay home, listen to Coast Guard radio, and keep a wary eye on the government. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Jason's friend and a fellow associate of Brian's. Cal feels safest at home, snooping on Coast Guard comms with a few beers and some private browser tabs open. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["grassrivers"],
@@ -68,14 +83,8 @@ export const characters: Character[] = [
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
-    relatedBusinesses: [
-      "high-rollerz-lifestyle",
-      "nine1nine",
-    ],
-    relatedBrands: [
-      "high-rollerz-lifestyle",
-      "only-raw-records",
-    ],
+    relatedBusinesses: ["only-raw-records", "jack-of-hearts"],
+    relatedBrands: ["only-raw-records"],
     imagePosition: "center",
   },
 
@@ -92,9 +101,7 @@ export const characters: Character[] = [
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
-    relatedBusinesses: [
-      "only-raw-records",
-    ],
+    relatedBusinesses: ["only-raw-records", "jack-of-hearts"],
     relatedBrands: [
       "only-raw-records",
     ],
@@ -150,7 +157,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Brian Heder is a longtime smuggler in the Leonida Keys and Jason's landlord. Cal Hampton works with him. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Brian Heder is a longtime smuggler in the Leonida Keys. He moves product through his boat yard with his third wife, Lori, and lets Jason live rent-free at one of his properties in exchange for help with local shakedowns. Cal Hampton works with him. Source: Rockstar Games, Grand Theft Auto VI.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["leonida-keys"],

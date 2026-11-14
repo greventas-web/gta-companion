@@ -14,8 +14,6 @@ export function useUserProfile() {
 
   useEffect(() => {
     if (!user) {
-      setProfile(null);
-      setLoading(false);
       return;
     }
 
@@ -28,7 +26,7 @@ export function useUserProfile() {
   }, [user]);
 
   return {
-    profile,
-    loading,
+    profile: user ? profile : null,
+    loading: user ? loading : false,
   };
 }
