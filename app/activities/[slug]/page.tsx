@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import ActivityCard from "@/components/ActivityCard";
 
+import { IMAGE_CREDIT } from "@/lib/site";
 import { activities } from "@/data/activities";
 
 type Props = {
@@ -74,6 +75,11 @@ export default async function ActivityPage({
               )}
 
             </div>
+            {isNameCard(activity.image) ? null : (
+              <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+                {IMAGE_CREDIT}
+              </p>
+            )}
 
           </div>
 

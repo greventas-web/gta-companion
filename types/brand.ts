@@ -9,6 +9,8 @@ export interface Brand {
 
   image: string;
 
+  imageAlt?: string;
+
   description: string;
 
   firstAppearance: string;
