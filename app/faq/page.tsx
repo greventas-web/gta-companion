@@ -10,6 +10,7 @@ import {
   characterSwitching,
   esrbRating,
   esrbSources,
+  gameplaySources,
   gameplaySystems,
   relationshipSystem,
   switchingSources,
@@ -49,9 +50,9 @@ const faqs: {
   {
     question: "What gameplay systems has Rockstar confirmed?",
     answer:
-      "Rob Nelson has described these systems in interviews, including Famitsu.",
+      "Rob Nelson has described these systems in interviews, including Famitsu, IGN, and Edge.",
     points: gameplaySystems,
-    sources: switchingSources.slice(0, 2),
+    sources: gameplaySources,
   },
   {
     question: "What is the age rating?",

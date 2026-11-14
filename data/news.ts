@@ -1,7 +1,10 @@
 import { NewsArticle } from "@/types/news";
 import {
   characterSwitching,
+  edgeViaVice,
   gameplaySystems,
+  ignBigInterview,
+  ignStepForward,
   relationshipSystem,
   switchingSources,
 } from "@/src/data/gameplay/confirmed";
@@ -79,7 +82,12 @@ export const news: NewsArticle[] = [
     category: "Official News",
     paragraphs: [characterSwitching, relationshipSystem],
     points: [...gameplaySystems],
-    sources: [...switchingSources],
+    sources: [
+      ...switchingSources,
+      ignBigInterview,
+      ignStepForward,
+      edgeViaVice,
+    ],
   },
   {
     id: 1,

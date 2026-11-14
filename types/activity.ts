@@ -18,4 +18,6 @@ export interface Activity {
   firstAppearance: string;
 
   gallery?: string[];
+
+  sources?: { label: string; href: string }[];
 }

@@ -84,14 +84,32 @@ export default async function AnimalPage({
               {animal.category}
             </span>
 
-            <h1 className="mt-6 text-6xl font-extrabold">
+            <h1 className="mt-6 break-words text-4xl font-extrabold sm:text-6xl">
               {animal.name}
             </h1>
 
             <p className="mt-8 text-lg leading-8 text-zinc-400">
               {animal.description}
             </p>
-            {animal.status === "Shown in a Rockstar caption" ? (
+            {animal.sources && animal.sources.length > 0 ? (
+              <p className="mt-4 break-words text-sm leading-7 text-zinc-500">
+                {animal.sources.length === 1 ? "Source" : "Sources"}:{" "}
+                {animal.sources.map((source, index) => (
+                  <span key={source.href}>
+                    {index > 0 ? "; " : ""}
+                    <a
+                      href={source.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-300 hover:text-pink-200"
+                    >
+                      {source.label}
+                    </a>
+                  </span>
+                ))}
+                .
+              </p>
+            ) : animal.status === "Shown in a Rockstar caption" ? (
               <a
                 href="https://www.rockstargames.com/VI"
                 target="_blank"
@@ -102,7 +120,7 @@ export default async function AnimalPage({
               </a>
             ) : null}
 
-            <div className="mt-10 grid grid-cols-2 gap-5">
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
 
               <Info
                 label="Category"
@@ -188,7 +206,7 @@ function Info({
         {label}
       </p>
 
-      <h3 className="mt-2 text-2xl font-bold">
+      <h3 className="mt-2 break-words text-2xl font-bold">
         {value}
       </h3>
 

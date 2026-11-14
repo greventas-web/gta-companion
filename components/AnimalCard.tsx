@@ -63,6 +63,13 @@ export default function AnimalCard({
             {animal.description}
           </p>
 
+          {animal.sources && animal.sources.length > 0 ? (
+            <p className="mt-4 break-words text-sm leading-6 text-zinc-500">
+              {animal.sources.length === 1 ? "Source" : "Sources"}:{" "}
+              {animal.sources.map((source) => source.label).join("; ")}
+            </p>
+          ) : null}
+
           <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
             <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-300 backdrop-blur-xl">
               {animal.firstAppearance}

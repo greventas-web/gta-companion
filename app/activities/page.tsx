@@ -1,4 +1,21 @@
 import ActivityDatabase from "@/components/ActivityDatabase";
+import {
+  extendedLook,
+  famitsuSources,
+  gamespotTgg,
+  ignBigInterview,
+  maccaSource,
+  rockstarVi,
+} from "@/src/data/gameplay/confirmed";
+
+const activitySources = [
+  rockstarVi,
+  extendedLook,
+  ...famitsuSources,
+  ignBigInterview,
+  gamespotTgg,
+  maccaSource,
+];
 
 export default function ActivitiesPage() {
   return (
@@ -23,34 +40,21 @@ export default function ActivitiesPage() {
           <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
             Activities Rockstar has shown or described, including ones from the Extended Look and from the Rob Nelson interviews.
           </p>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-500">
+          <p className="mt-4 max-w-3xl break-words text-sm leading-7 text-zinc-500">
             Sources:{" "}
-            <a
-              href="https://www.rockstargames.com/VI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-300 hover:text-pink-200"
-            >
-              Rockstar Games — Grand Theft Auto VI
-            </a>
-            ;{" "}
-            <a
-              href="https://www.youtube.com/watch?v=tJbzMqJGH4k"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-300 hover:text-pink-200"
-            >
-              Extended Look
-            </a>
-            ;{" "}
-            <a
-              href="https://www.famitsu.com/article/202608/85753"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-300 hover:text-pink-200"
-            >
-              Famitsu — Rob Nelson
-            </a>
+            {activitySources.map((source, index) => (
+              <span key={source.href}>
+                {index > 0 ? "; " : ""}
+                <a
+                  href={source.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-300 hover:text-pink-200"
+                >
+                  {source.label}
+                </a>
+              </span>
+            ))}
             .
           </p>
 

@@ -1,4 +1,12 @@
 import { Activity } from "@/types/activity";
+import {
+  extendedLook,
+  famitsuSources,
+  gamespotTgg,
+  ignBigInterview,
+  maccaSource,
+  rockstarVi,
+} from "@/src/data/gameplay/confirmed";
 
 const shown =
   "Confirmed in the Extended Look and in Rockstar interviews.";
@@ -52,9 +60,10 @@ export const activities: Activity[] = [
       "/images/official/media/screenshots-people-jason-duval-jason-duval-03.webp",
     imageAlt: "Jason holding a fishing rod on a boat in an official Rockstar screenshot",
     description:
-      "Mount Kalaga has prime hunting, fishing, and off-road trails. Official screenshot Jason Duval 03 shows Jason holding a fishing rod on a boat.",
+      "Mount Kalaga has prime hunting, fishing, and off-road trails. Official screenshot Jason Duval 03 shows Jason holding a fishing rod on a boat. Rob Nelson told TGG that fishing is catch-and-release only, with fishing challenges and collectibles.",
     firstAppearance: "Rockstar Games Website",
     gallery: [],
+    sources: [rockstarVi, gamespotTgg],
   },
   {
     id: 5,
@@ -84,14 +93,15 @@ export const activities: Activity[] = [
   {
     id: 7,
     slug: "pool",
-    name: "Pool",
+    name: "Pool (billiards)",
     category: "Activity",
     location: "Leonida",
-    image: "/images/official/media/screenshots-places-vice-city-vice-city-02.webp",
-    imageAlt: "Swimming pools at a beachfront property in official Vice City screenshot 02",
-    description: `Swimming pools are visible at a beachfront property in official screenshot Vice City 02. ${shown}`,
-    firstAppearance: "Extended Look",
+    image: "",
+    description:
+      "Rob Nelson lists playing pool alongside mini golf and kayaking as things Jason and Lucia can do together to build their relationship.",
+    firstAppearance: "IGN interview",
     gallery: [],
+    sources: [ignBigInterview],
   },
   {
     id: 8,
@@ -200,10 +210,14 @@ export const activities: Activity[] = [
     name: "Track racing",
     category: "Driving",
     location: "Leonida",
-    image: "",
-    description: `Track racing. ${shown}`,
+    image: "/images/official/frames/track-racing.webp",
+    imageAlt:
+      "Numbered stock cars on a wet road course with a Lap 1/2 counter, Extended Look at 17:42",
+    description:
+      "The Extended Look at 17:42 shows a lap on a road course. The on-screen counter reads Lap 1/2, with a field of numbered cars.",
     firstAppearance: "Extended Look",
     gallery: [],
+    sources: [extendedLook],
   },
   {
     id: 17,
@@ -214,8 +228,80 @@ export const activities: Activity[] = [
     image: "/images/official/frames/hunting.webp",
     imageAlt: "Two men with rifles in Mount Kalaga woods, a downed animal in the foreground",
     description:
-      "Mount Kalaga has prime hunting, fishing, and off-road trails. Official screenshot Mount Kalaga National Park 03 shows two men with rifles in the woods and a downed animal in the lower right.",
+      "Mount Kalaga has prime hunting, fishing, and off-road trails. Official screenshot Mount Kalaga National Park 03 shows two men with rifles in the woods and a downed animal in the lower right. Rob Nelson told TGG that hunting is one of the ways to make money, and that it's unlocked through a friend of Jason's.",
     firstAppearance: "Rockstar screenshot",
     gallery: [],
+    sources: [rockstarVi, gamespotTgg],
+  },
+  {
+    id: 18,
+    slug: "shooting-range",
+    name: "Shooting range",
+    category: "Activity",
+    location: "Leonida",
+    image: "/images/official/frames/shooting-range.webp",
+    imageAlt:
+      "Lucia at an outdoor shooting range with Targets remaining 7/12, Extended Look at 18:32",
+    description:
+      "The Extended Look at 18:32 shows Lucia at an outdoor shooting range, firing at targets against a timer. The counter reads Targets remaining 7/12.",
+    firstAppearance: "Extended Look",
+    gallery: [],
+    sources: [extendedLook],
+  },
+  {
+    id: 19,
+    slug: "zoo-visits",
+    name: "Zoo visits",
+    category: "Activity",
+    location: "Leonida",
+    image: "",
+    description:
+      "Rob Nelson lists going to a zoo among the things that count as quality time for Jason and Lucia.",
+    firstAppearance: "IGN interview",
+    gallery: [],
+    sources: [ignBigInterview],
+  },
+  {
+    id: 20,
+    slug: "studying-animals",
+    name: "Studying animals",
+    category: "Activity",
+    location: "Leonida",
+    image: "",
+    description:
+      "You can study animals, including dogs you meet, as a collection and to learn more about them. Rob Nelson says it carries over from Red Dead Redemption 2 and lets you engage with wildlife without shooting it.",
+    firstAppearance: "IGN interview",
+    gallery: [],
+    sources: [ignBigInterview],
+  },
+  {
+    id: 21,
+    slug: "clothing-stores-and-hair-salons",
+    name: "Clothing stores and hair salons",
+    category: "Activity",
+    location: "Leonida",
+    image: "/images/official/editions/ultimate_edition_stock_305_01.webp",
+    imageAlt:
+      "Stock 305 clothing store in official Ultimate Edition artwork",
+    description:
+      "Rob Nelson says there are thousands of outfits, earned from missions or bought in stores, with countless clothing stores and hair salons around the map. You can cut your hair at a hideout, but with fewer options than a salon. Rockstar's Ultimate Edition artwork shows the Stock 305 clothing store.",
+    firstAppearance: "Famitsu",
+    gallery: [],
+    sources: [...famitsuSources, rockstarVi],
+  },
+  {
+    id: 22,
+    slug: "watching-tv",
+    name: "Watching TV",
+    category: "Entertainment",
+    location: "Leonida",
+    image: "/images/official/frames/watching-tv.webp",
+    imageAlt:
+      "A television in an interior playing a nature program, Extended Look at 7:40",
+    description:
+      "The Extended Look at 7:40 shows a television in an interior playing a nature program. TV audio also plays in Jason and Lucia's hideout, and Weazel airs the animated series Macca & Friends. Rob Nelson says there are more radio and in-game TV ads than ever before.",
+    firstAppearance: "Extended Look",
+    gallery: [],
+    sources: [extendedLook, ...famitsuSources, ignBigInterview, maccaSource],
   },
 ];

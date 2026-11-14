@@ -144,7 +144,7 @@ export default async function NewsArticlePage({
                   ))}
                 </ul>
                 <p className="mt-6 text-base leading-8 text-zinc-400">
-                  Rob Nelson described these systems in interviews, including Famitsu. The relationship notes are from that Famitsu interview. Switching is also covered by the Dazed deep dive and PC Gamer.
+                  Rob Nelson described these systems in interviews, including Famitsu, IGN, and Edge. The relationship notes are from the Famitsu interview. Switching is also covered by the Dazed deep dive and PC Gamer.
                 </p>
               </>
             ) : null}

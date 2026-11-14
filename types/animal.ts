@@ -20,4 +20,6 @@ export interface Animal {
   gallery?: string[];
 
   status?: string;
+
+  sources?: { label: string; href: string }[];
 }

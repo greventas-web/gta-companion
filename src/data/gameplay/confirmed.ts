@@ -32,6 +32,48 @@ export const switchingSources = [
   },
 ] as const satisfies readonly CitedSource[];
 
+export const ignBigInterview = {
+  label: "IGN — GTA 6: The Big Interview",
+  href: "https://sea.ign.com/grand-theft-auto-vi-rumored-title/249916/gta-6-the-big-interview",
+} as const satisfies CitedSource;
+
+export const ignStepForward = {
+  label: "IGN — It's a Step Forward in All Respects",
+  href: "https://in.ign.com/grand-theft-auto-vi/270365/its-a-step-forward-in-all-respects-exclusive-gta-6-interview",
+} as const satisfies CitedSource;
+
+export const edgeViaVice = {
+  label: "Vice — Edge #430 preview",
+  href: "https://www.vice.com/en/article/gta-6-edge-magazine-new-screenshots-features/",
+} as const satisfies CitedSource;
+
+export const gameInformerAnimals = {
+  label: "Game Informer — over 170 animal species",
+  href: "https://gameinformer.com/exclusive/2026/09/29/exclusive-grand-theft-auto-vi-includes-over-170-animal-species",
+} as const satisfies CitedSource;
+
+export const gamespotTgg = {
+  label: "GameSpot — fishing and hunting (TGG)",
+  href: "https://www.gamespot.com/articles/gta-6-fishing-and-hunting-doesnt-work-like-you-think-it-does/",
+} as const satisfies CitedSource;
+
+export const extendedLook = {
+  label: "Rockstar Games — An Extended Look",
+  href: "https://www.youtube.com/watch?v=tJbzMqJGH4k",
+} as const satisfies CitedSource;
+
+export const maccaSource = {
+  label: "Gematsu — Macca & Friends teaser",
+  href: "https://www.gematsu.com/2026/11/grand-theft-auto-vi-in-game-animated-series-macca-friends-teaser-trailer",
+} as const satisfies CitedSource;
+
+export const gameplaySources = [
+  ...famitsuSources,
+  ignBigInterview,
+  ignStepForward,
+  edgeViaVice,
+] as const satisfies readonly CitedSource[];
+
 export const gameplaySystems = [
   "Criminal Profile: professional versus violent.",
   "A witness-based wanted system, up to six stars.",
@@ -41,7 +83,7 @@ export const gameplaySystems = [
   "A vehicle scanner, plus Pay 'n' Spray value and registration.",
   "Long guns cannot be concealed. Ammu-Nation lockers and trunk storage are how Rockstar described keeping them.",
   "Suppressive fire.",
-  "An in-world phone with apps, including Scooter Bros car delivery. You cannot post to social media.",
+  "An in-world phone with apps: Snapmatic (follow and browse others' posts; Jason and Lucia can't post because they're on the run), Ryde Me (ride-share you can use for fast travel, riding along and chatting on the way), WAINK (scan a car for locks, alarm, tracker, value, registration cost, and the tool you need; it also lists cars fences want), Scooter Bros (your personal vehicle delivered, weapons in the trunk), plus a video app, a fitness app, and a banking app.",
   "Unexplored map areas stay hidden until visited.",
   "Gyms: 3 exercises, and 3 days in a row levels up health and strength.",
   "Food buffs.",

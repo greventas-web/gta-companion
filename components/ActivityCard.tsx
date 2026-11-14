@@ -51,6 +51,13 @@ export default function ActivityCard({
             {activity.description}
           </p>
 
+          {activity.sources && activity.sources.length > 0 ? (
+            <p className="mt-4 break-words text-sm leading-6 text-zinc-500">
+              {activity.sources.length === 1 ? "Source" : "Sources"}:{" "}
+              {activity.sources.map((source) => source.label).join("; ")}
+            </p>
+          ) : null}
+
           <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-zinc-800 pt-6">
 
             <span className="text-xs uppercase tracking-[0.12em] text-zinc-500 sm:text-sm">
