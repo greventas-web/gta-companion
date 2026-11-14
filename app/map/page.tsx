@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function MapPage() {
   return (
-    <div className="fixed inset-x-0 bottom-0 top-28 z-40 bg-[#07141f]">
+    <div className="fixed inset-x-0 bottom-0 top-28 z-40 bg-[#1276c9]">
       <link
         rel="preload"
         as="image"

@@ -12,6 +12,7 @@ import {
 } from "react";
 import {
   Check,
+  ChevronLeft,
   LocateFixed,
   Maximize2,
   Minimize2,
@@ -90,6 +91,8 @@ export default function MapExperience() {
   const [view, setView] = useState<MapView | null>(null);
   const [fullscreen, setFullscreen] = useState(false);
   const [sheet, setSheet] = useState<"peek" | "filters" | "detail">("peek");
+  const [panelOpen, setPanelOpen] = useState(true);
+  const skipPanelFit = useRef(true);
 
   const onReady = useCallback(() => setReady(true), []);
   const flyRequest = useRef<{ x: number; y: number; z?: number | null } | null>(null);
@@ -128,6 +131,15 @@ export default function MapExperience() {
     flyRequest.current = null;
     mapRef.current?.flyTo(request.x, request.y, request.z ?? undefined, { card: true });
   }, [ready, selectedId, sheet]);
+
+  useLayoutEffect(() => {
+    if (!ready) return;
+    if (skipPanelFit.current) {
+      skipPanelFit.current = false;
+      return;
+    }
+    mapRef.current?.reset();
+  }, [panelOpen, ready]);
 
   const selectMarker = useCallback((id: string) => {
     const marker = markerById(id);
@@ -267,8 +279,12 @@ export default function MapExperience() {
   ).length;
 
   return (
-    <div ref={rootRef} className="relative flex h-full w-full flex-col bg-transparent text-white lg:block">
-      <div className="relative h-[calc((100vw-28px)*1040/1620+36px)] w-full shrink-0 lg:absolute lg:inset-0 lg:h-full">
+    <div
+      ref={rootRef}
+      data-panel={panelOpen ? "open" : "closed"}
+      className="relative flex h-full w-full flex-col bg-transparent text-white lg:block"
+    >
+      <div className="relative min-h-[60vh] w-full flex-1 lg:absolute lg:inset-0 lg:h-full lg:min-h-0">
         <MapCanvas
           ref={mapRef}
           markers={shown}
@@ -277,9 +293,58 @@ export default function MapExperience() {
           onViewChange={setView}
           onReady={onReady}
         />
+        <div className="absolute bottom-3 right-2 z-20 lg:hidden">
+          <Controls
+            compact
+            className="flex flex-col gap-1"
+            onZoomIn={() => mapRef.current?.zoomIn()}
+            onZoomOut={() => mapRef.current?.zoomOut()}
+            onReset={() => {
+              setSelectedId(null);
+              setSheet("peek");
+              mapRef.current?.reset();
+            }}
+            fullscreen={fullscreen}
+            onFullscreen={() => void toggleFullscreen()}
+          />
+        </div>
       </div>
 
-      <aside className="absolute bottom-4 left-4 top-4 z-20 hidden w-[340px] flex-col overflow-hidden rounded-3xl border border-violet-200/15 bg-[#120b1c]/95 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:flex">
+      <aside
+        className={`absolute bottom-4 left-4 top-4 z-20 hidden flex-col overflow-hidden rounded-3xl border border-white/15 bg-[#120b1c]/72 shadow-[0_24px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl lg:flex ${
+          panelOpen ? "w-[340px]" : "w-14"
+        }`}
+      >
+        {panelOpen ? (
+          <button
+            type="button"
+            className="absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center rounded-full border border-white/15 bg-black/40 text-white"
+            aria-label="Collapse map tools"
+            onClick={() => setPanelOpen(false)}
+          >
+            <ChevronLeft size={16} />
+          </button>
+        ) : (
+          <div className="flex flex-1 flex-col items-center gap-2 py-3">
+            <button
+              type="button"
+              className="grid h-10 w-10 place-items-center rounded-2xl border border-white/15 bg-white/10 text-white"
+              aria-label="Open map tools"
+              onClick={() => setPanelOpen(true)}
+            >
+              <Search size={18} />
+            </button>
+            <button
+              type="button"
+              className="grid h-10 w-10 place-items-center rounded-2xl border border-white/15 bg-white/10 text-violet-200"
+              aria-label="Show place filters"
+              onClick={() => setPanelOpen(true)}
+            >
+              <LocateFixed size={18} />
+            </button>
+          </div>
+        )}
+        {panelOpen ? (
         <PanelBody
           query={query}
           setQuery={setQuery}
@@ -299,6 +364,7 @@ export default function MapExperience() {
           onSelect={selectMarker}
           selectedId={selectedId}
         />
+        ) : null}
       </aside>
 
       {selected ? (
@@ -352,7 +418,7 @@ export default function MapExperience() {
         className={
           sheet === "detail" && selected
             ? "absolute inset-x-0 bottom-0 z-30 flex max-h-[calc(100%-108px)] flex-col lg:hidden"
-            : "relative z-30 flex min-h-0 flex-1 flex-col lg:hidden"
+            : "relative z-30 shrink-0 lg:hidden"
         }
       >
         <div className="flex max-h-full flex-col overflow-hidden rounded-t-3xl border border-violet-200/20 bg-[#140c22] shadow-[0_-20px_80px_rgba(0,0,0,0.55)]">
@@ -398,47 +464,72 @@ export default function MapExperience() {
                 }}
               />
             </div>
-          ) : (
-            <div className="relative min-h-0 flex-1 overflow-y-auto">
-              <div className="absolute right-2 top-2 z-10 flex flex-col items-end gap-1">
-                <Compass compact />
-                <Controls
-                  compact
-                  className="flex flex-col gap-1"
-                  onZoomIn={() => mapRef.current?.zoomIn()}
-                  onZoomOut={() => mapRef.current?.zoomOut()}
-                  onReset={() => {
-                    setSelectedId(null);
-                    setSheet("peek");
-                    mapRef.current?.reset();
+          ) : sheet === "peek" ? (
+            <div className="px-3 pb-3">
+              <div className="relative">
+                <Search
+                  size={16}
+                  className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-violet-200"
+                  aria-hidden="true"
+                />
+                <input
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  onFocus={() => {
+                    setSheet("filters");
+                    requestAnimationFrame(() => mobileSearchRef.current?.focus());
                   }}
-                  fullscreen={fullscreen}
-                  onFullscreen={() => void toggleFullscreen()}
+                  aria-label="Search the map"
+                  placeholder="Search places"
+                  className="w-full rounded-2xl border border-white/10 bg-[#0c0816] py-2.5 pl-10 pr-3 text-sm text-white outline-none placeholder:text-zinc-500"
                 />
               </div>
-              <div className="pr-12">
-                <PanelBody
-                  query={query}
-                  setQuery={setQuery}
-                  searchRef={mobileSearchRef}
-                  suggestions={suggestions}
-                  searchOpen={searchOpen}
-                  setSearchOpen={setSearchOpen}
-                  activeIndex={activeIndex}
-                  setActiveIndex={setActiveIndex}
-                  onPick={selectMarker}
-                  activeCategories={activeCategories}
-                  onToggleCategory={toggleCategory}
-                  found={found}
-                  hideFound={hideFound}
-                  setHideFound={setHideFound}
-                  shown={shown}
-                  onSelect={selectMarker}
-                  selectedId={selectedId}
-                  onSearchFocus={() => setSheet("filters")}
-                  compact={false}
-                />
+              <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1">
+                {CATEGORY_ORDER.map((category) => {
+                  const meta = CATEGORY_META[category];
+                  const on = activeCategories.includes(category);
+                  return (
+                    <button
+                      key={category}
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() => toggleCategory(category)}
+                      className={`shrink-0 rounded-full border px-3 py-1 text-xs font-semibold ${
+                        on
+                          ? "border-transparent text-[#1a1028]"
+                          : "border-white/15 bg-white/5 text-zinc-300"
+                      }`}
+                      style={on ? { background: meta.color } : undefined}
+                    >
+                      {meta.label}
+                    </button>
+                  );
+                })}
               </div>
+            </div>
+          ) : (
+            <div className="max-h-[36vh] overflow-y-auto">
+              <PanelBody
+                query={query}
+                setQuery={setQuery}
+                searchRef={mobileSearchRef}
+                suggestions={suggestions}
+                searchOpen={searchOpen}
+                setSearchOpen={setSearchOpen}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                onPick={selectMarker}
+                activeCategories={activeCategories}
+                onToggleCategory={toggleCategory}
+                found={found}
+                hideFound={hideFound}
+                setHideFound={setHideFound}
+                shown={shown}
+                onSelect={selectMarker}
+                selectedId={selectedId}
+                onSearchFocus={() => setSheet("filters")}
+                compact={false}
+              />
             </div>
           )}
         </div>

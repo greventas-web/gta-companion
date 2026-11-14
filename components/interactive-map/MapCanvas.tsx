@@ -91,7 +91,7 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
       const nextZoom =
         zoom ??
         (focus?.card
-          ? Math.min(map.getMaxZoom(), map.getZoom() + (window.innerWidth < 1024 ? 0.35 : 0.6))
+          ? Math.min(map.getMaxZoom(), map.getZoom() + (window.innerWidth < 1024 ? 1 : 1.25))
           : map.getZoom());
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const center = viewCenterFor(map, x, y, nextZoom, Boolean(focus?.card));
@@ -167,22 +167,40 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
 
       group = L.layerGroup().addTo(map);
 
-      const draw = () => {
+        const draw = () => {
         if (!map || !group) return;
+        const atlas = map;
         group.clearLayers();
         const current = markersRef.current.filter(
           (marker) => marker.confirmed && isVisibleCategory(marker.category)
         );
 
         const narrow = window.innerWidth < 1024;
-        const placed = narrow ? spreadBlips(map, current) : current.map((marker) => ({
-          marker,
-          lat: marker.y,
-          lng: marker.x,
-        }));
+        const groups = clusterMarkers(map, current, selectedRef.current);
 
-        for (const item of placed) {
-          const marker = item.marker;
+        for (const item of groups) {
+          if (item.markers.length > 1) {
+            const count = item.markers.length;
+            const icon = L.divIcon({
+              className: "map-pin-wrap",
+              iconSize: [44, 44],
+              iconAnchor: [22, 22],
+              html: `<div class="map-cluster" aria-hidden="true">${count}</div>`,
+            });
+            L.marker([item.lat, item.lng], {
+              icon,
+              title: `${count} places`,
+              keyboard: true,
+              zIndexOffset: 400,
+            })
+              .on("click", () => {
+                const next = Math.min(atlas.getMaxZoom(), atlas.getZoom() + 1.25);
+                atlas.flyTo([item.lat, item.lng], next, { duration: 0.45 });
+              })
+              .addTo(group);
+            continue;
+          }
+          const marker = item.markers[0];
           if (!isVisibleCategory(marker.category)) continue;
           const category = marker.category;
           const selected = marker.id === selectedRef.current;
@@ -320,17 +338,11 @@ function fitFrame(map: LeafletMap, animate: boolean) {
     const span = MAP_FRAME.east - MAP_FRAME.west;
     const zoom = Math.log2(availW / span);
     const midX = (MAP_FRAME.west + MAP_FRAME.east) / 2;
-    const north = map.project([MAP_FRAME.north, midX], zoom);
-    const mid = map.project([(MAP_FRAME.south + MAP_FRAME.north) / 2, midX], zoom);
-    const visX =
-      pad.paddingTopLeft[0] +
-      (size.x - pad.paddingTopLeft[0] - pad.paddingBottomRight[0]) / 2;
-    const top = 12;
-    map.setView(
-      map.unproject([mid.x - (visX - size.x / 2), north.y - top + size.y / 2], zoom),
-      zoom,
-      { animate, duration: animate ? 0.6 : 0 }
-    );
+    const midY = (MAP_FRAME.south + MAP_FRAME.north) / 2;
+    map.setView(viewCenterFor(map, midX, midY, zoom, false), zoom, {
+      animate,
+      duration: animate ? 0.6 : 0,
+    });
     return;
   }
   map.fitBounds(
@@ -359,7 +371,8 @@ function framePadding(cardOpen: boolean) {
       paddingBottomRight: [14, 20 + covered] as [number, number],
     };
   }
-  const left = PANEL_LEFT + PANEL_WIDTH + PANEL_MARGIN;
+  const panelOpen = document.querySelector("[data-panel]")?.getAttribute("data-panel") !== "closed";
+  const left = panelOpen ? PANEL_LEFT + PANEL_WIDTH + PANEL_MARGIN : PANEL_LEFT + 56 + 24;
   const right = cardOpen ? 16 + CARD_WIDTH + CARD_MARGIN : 36;
   return {
     paddingTopLeft: [left, 28] as [number, number],
@@ -387,35 +400,39 @@ function viewCenterFor(
   return map.unproject(centerPoint, zoom);
 }
 
-function spreadBlips(map: LeafletMap, markers: MapMarker[]) {
-  const placed = markers.map((marker) => ({
+function clusterMarkers(map: LeafletMap, markers: MapMarker[], selectedId: string | null) {
+  const radius = 58;
+  const points = markers.map((marker) => ({
     marker,
     point: map.latLngToContainerPoint([marker.y, marker.x]),
+    used: false,
   }));
-  const min = 36;
-  for (let pass = 0; pass < 10; pass += 1) {
-    for (let i = 0; i < placed.length; i += 1) {
-      for (let j = i + 1; j < placed.length; j += 1) {
-        const a = placed[i].point;
-        const b = placed[j].point;
-        let dx = b.x - a.x;
-        let dy = b.y - a.y;
-        const dist = Math.hypot(dx, dy) || 0.01;
-        if (dist >= min) continue;
-        const push = (min - dist) / 2;
-        dx /= dist;
-        dy /= dist;
-        a.x -= dx * push;
-        a.y -= dy * push;
-        b.x += dx * push;
-        b.y += dy * push;
+  const groups: { markers: MapMarker[]; lat: number; lng: number }[] = [];
+  for (const item of points) {
+    if (item.used) continue;
+    item.used = true;
+    if (item.marker.id === selectedId) {
+      groups.push({ markers: [item.marker], lat: item.marker.y, lng: item.marker.x });
+      continue;
+    }
+    const near = [item];
+    for (const other of points) {
+      if (other.used || other.marker.id === selectedId) continue;
+      const dist = Math.hypot(other.point.x - item.point.x, other.point.y - item.point.y);
+      if (dist <= radius) {
+        other.used = true;
+        near.push(other);
       }
     }
+    const lat = near.reduce((sum, entry) => sum + entry.marker.y, 0) / near.length;
+    const lng = near.reduce((sum, entry) => sum + entry.marker.x, 0) / near.length;
+    groups.push({
+      markers: near.map((entry) => entry.marker),
+      lat,
+      lng,
+    });
   }
-  return placed.map((item) => {
-    const latlng = map.containerPointToLatLng(item.point);
-    return { marker: item.marker, lat: latlng.lat, lng: latlng.lng };
-  });
+  return groups;
 }
 
 function labelBox(side: "left" | "right" | "top" | "bottom") {
