@@ -1,6 +1,8 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
 import RepresentativeMark from "@/components/RepresentativeMark";
+import { SourceList } from "@/components/SourceLink";
 import { IMAGE_CREDIT } from "@/lib/site";
+import { rockstarVi } from "@/src/data/gameplay/confirmed";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -94,32 +96,9 @@ export default async function AnimalPage({
               {animal.description}
             </p>
             {animal.sources && animal.sources.length > 0 ? (
-              <p className="mt-4 break-words text-sm leading-7 text-zinc-500">
-                {animal.sources.length === 1 ? "Source" : "Sources"}:{" "}
-                {animal.sources.map((source, index) => (
-                  <span key={source.href}>
-                    {index > 0 ? "; " : ""}
-                    <a
-                      href={source.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-pink-300 hover:text-pink-200"
-                    >
-                      {source.label}
-                    </a>
-                  </span>
-                ))}
-                .
-              </p>
+              <SourceList sources={animal.sources} className="mt-4" />
             ) : animal.status === "Shown in a Rockstar caption" ? (
-              <a
-                href="https://www.rockstargames.com/VI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm text-pink-300 hover:text-pink-200"
-              >
-                Source: Rockstar Games — Grand Theft Auto VI
-              </a>
+              <SourceList sources={[rockstarVi]} className="mt-4" />
             ) : null}
 
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">

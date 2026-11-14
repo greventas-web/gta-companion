@@ -1,4 +1,5 @@
 import CharacterCard from "@/components/CharacterCard";
+import CitedNotes from "@/components/CitedNotes";
 import DatabaseSection from "@/components/DatabaseSection";
 import PageCTA from "@/components/PageCTA";
 import PageGrid from "@/components/PageGrid";
@@ -7,6 +8,10 @@ import PageShell from "@/components/PageShell";
 
 import { characters } from "@/data/characters";
 import { pageMetadata } from "@/lib/launch";
+import {
+  characterPrintNotes,
+  guardianPrintIntro,
+} from "@/src/data/gameplay/guardian";
 
 export const metadata = pageMetadata(
   "GTA 6 characters",
@@ -35,6 +40,13 @@ export default function CharactersPage() {
           ))}
         </PageGrid>
       </DatabaseSection>
+
+      <CitedNotes
+        eyebrow="Saturday magazine"
+        title="Jason and Lucia, from the Guardian print"
+        intro={guardianPrintIntro}
+        notes={characterPrintNotes}
+      />
 
       <PageCTA
         title="The Character Database Continues to Grow"

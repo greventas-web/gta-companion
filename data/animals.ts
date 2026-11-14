@@ -7,6 +7,7 @@ import {
   gamespotTgg,
   ignBigInterview,
 } from "@/src/data/gameplay/confirmed";
+import { guardianPrint } from "@/src/data/gameplay/guardian";
 
 export const animals: Animal[] = [
   {
@@ -211,11 +212,11 @@ export const animals: Animal[] = [
     image: animalStandIns.dog.src,
     imageAlt: animalStandIns.dog.alt,
     description:
-      "You can pet dogs, and study is an option, as Rob Nelson showed IGN. He told TGG you can also scold and inspect them. Edge reports police dogs join pursuits. Rockstar hasn't named any breeds.",
+      "Jason says, “Is it cool if I pet your dog?” The woman replies, “Course, she loves to greet her public,” and Jason stoops to give the pup a fuss. You can pet dogs, and study is an option, as Rob Nelson showed IGN. He told TGG you can also scold and inspect them. Edge reports police dogs join pursuits. Rockstar hasn't named any breeds.",
     firstAppearance: "IGN interview",
     status: "Described by Rockstar",
     gallery: [],
-    sources: [ignBigInterview, gamespotTgg, edgeViaVice],
+    sources: [guardianPrint("33"), ignBigInterview, gamespotTgg, edgeViaVice],
   },
   {
     id: 15,

@@ -1,3 +1,4 @@
+import { SourceList } from "@/components/SourceLink";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SITE } from "@/lib/site";
 import { radioNotes, radioSource, radioStations } from "@/data/radio";
@@ -50,14 +51,7 @@ export default function RadioPage() {
               </li>
             ))}
           </ul>
-          <a
-            href={radioSource.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block text-pink-300 hover:text-pink-200"
-          >
-            {radioSource.label} — {radioSource.published}
-          </a>
+          <SourceList sources={[radioSource]} className="mt-6" />
           <p className="mt-6 text-sm text-zinc-500">{IMAGE_CREDIT}</p>
         </section>
       </div>

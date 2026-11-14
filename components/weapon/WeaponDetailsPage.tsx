@@ -1,4 +1,5 @@
 import ItemImage from "@/components/ItemImage";
+import { SourceLink } from "@/components/SourceLink";
 import RepresentativeMark from "@/components/RepresentativeMark";
 import { IMAGE_CREDIT } from "@/lib/site";
 import Link from "next/link";
@@ -84,6 +85,12 @@ export default function WeaponDetailsPage({
             {weapon.description}
 
           </p>
+
+          {weapon.source ? (
+            <p className="mt-4">
+              <SourceLink label="Rockstar Games" href={weapon.source} />
+            </p>
+          ) : null}
 
           <div className="mt-10 rounded-[28px] border border-pink-500/20 bg-gradient-to-br from-pink-500/10 via-zinc-900 to-black p-7">
 

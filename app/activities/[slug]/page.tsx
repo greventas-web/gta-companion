@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import ActivityCard from "@/components/ActivityCard";
 
+import { SourceList } from "@/components/SourceLink";
 import { IMAGE_CREDIT } from "@/lib/site";
 import { activities } from "@/data/activities";
 
@@ -100,23 +101,7 @@ export default async function ActivityPage({
             </p>
 
             {activity.sources && activity.sources.length > 0 ? (
-              <p className="mt-6 break-words text-base leading-8 text-zinc-500">
-                {activity.sources.length === 1 ? "Source" : "Sources"}:{" "}
-                {activity.sources.map((source, index) => (
-                  <span key={source.href}>
-                    {index > 0 ? "; " : ""}
-                    <a
-                      href={source.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-pink-300 hover:text-pink-200"
-                    >
-                      {source.label}
-                    </a>
-                  </span>
-                ))}
-                .
-              </p>
+              <SourceList sources={activity.sources} className="mt-6" />
             ) : null}
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">

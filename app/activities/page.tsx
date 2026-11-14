@@ -1,4 +1,6 @@
 import ActivityDatabase from "@/components/ActivityDatabase";
+import CitedNotes from "@/components/CitedNotes";
+import { SourceList } from "@/components/SourceLink";
 import {
   extendedLook,
   famitsuSources,
@@ -7,6 +9,7 @@ import {
   maccaSource,
   rockstarVi,
 } from "@/src/data/gameplay/confirmed";
+import { activityPrintNotes, guardianPrintIntro } from "@/src/data/gameplay/guardian";
 
 const activitySources = [
   rockstarVi,
@@ -40,23 +43,14 @@ export default function ActivitiesPage() {
           <p className="mt-8 max-w-3xl text-xl leading-10 text-zinc-400">
             Activities Rockstar has shown or described, including ones from the Extended Look and from the Rob Nelson interviews.
           </p>
-          <p className="mt-4 max-w-3xl break-words text-sm leading-7 text-zinc-500">
-            Sources:{" "}
-            {activitySources.map((source, index) => (
-              <span key={source.href}>
-                {index > 0 ? "; " : ""}
-                <a
-                  href={source.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-pink-300 hover:text-pink-200"
-                >
-                  {source.label}
-                </a>
-              </span>
-            ))}
-            .
-          </p>
+          <SourceList sources={activitySources} className="mt-4" />
+
+          <CitedNotes
+            eyebrow="Saturday magazine"
+            title="From the Guardian print"
+            intro={guardianPrintIntro}
+            notes={activityPrintNotes}
+          />
 
           <ActivityDatabase />
 

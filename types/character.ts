@@ -29,5 +29,5 @@ export interface Character {
 
   details?: string[];
 
-  sources?: { label: string; href: string }[];
+  sources?: { label: string; href?: string }[];
 }

@@ -18,11 +18,11 @@ export const timeline: TimelineEvent[] = [
     title: "Trailer 1",
     description:
       "Rockstar publishes the first Grand Theft Auto VI trailer, showing Lucia, her partner (named as Jason Duval in May 2025), Vice City, and the state of Leonida, with a 2025 window that was later changed.",
-    sourceLabel: "Rockstar Games — Launch trailer page",
+    sourceLabel: "Launch trailer",
     sourceHref: "https://www.rockstargames.com/VI/launch-trailer",
     moreSources: [
       {
-        label: "GamesRadar — Lucia and Jason full names with Trailer 2",
+        label: "GamesRadar",
         href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6s-lucia-and-jason-get-full-names-and-backstories-as-trailer-2-drops-and-rockstar-shares-loads-more-details-about-its-protagonists/",
       },
     ],
@@ -32,7 +32,7 @@ export const timeline: TimelineEvent[] = [
     title: "Release moves to May 26, 2026",
     description:
       "Rockstar moves the release from 2025 to May 26, 2026.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
@@ -40,7 +40,7 @@ export const timeline: TimelineEvent[] = [
     title: "Trailer 2 and the first screenshot drop",
     description:
       "Trailer 2 arrives with the official synopsis and a large set of screenshots and character profiles on the Grand Theft Auto VI site.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
@@ -48,7 +48,7 @@ export const timeline: TimelineEvent[] = [
     title: "Release moves to November 19, 2026",
     description:
       "Rockstar sets the PlayStation 5 and Xbox Series X|S release for November 19, 2026. A PC date is not part of that announcement.",
-    sourceLabel: "Rockstar Newswire — November 19, 2026",
+    sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
   },
@@ -57,7 +57,7 @@ export const timeline: TimelineEvent[] = [
     title: "Pre-orders announced",
     description:
       "Rockstar and Take-Two announce Standard and Ultimate Edition pre-orders, the Vintage Vice City Pack, and a later pre-load window.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
@@ -65,7 +65,7 @@ export const timeline: TimelineEvent[] = [
     title: "An Extended Look",
     description:
       "Rockstar releases a long in-game look at Grand Theft Auto VI.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
@@ -73,7 +73,7 @@ export const timeline: TimelineEvent[] = [
     title: "Six radio stations",
     description:
       "Rockstar names Cocoteo FM, Back Country Radio, AfroBank FM, The Chamber 106.6, Flash FM, and Dirty South Classics, and says on-demand podcasts will play in vehicles and on foot.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
@@ -81,7 +81,7 @@ export const timeline: TimelineEvent[] = [
     title: "Launch trailer",
     description:
       "The launch trailer debuts 'Flower in a Hurricane' by Justice (composers of the original score) feat. Tame Impala, SZA, and King Gizzard & The Lizard Wizard.",
-    sourceLabel: "Rockstar Games — Launch trailer",
+    sourceLabel: "Launch trailer",
     sourceHref: "https://www.rockstargames.com/VI/launch-trailer",
   },
   {
@@ -89,7 +89,7 @@ export const timeline: TimelineEvent[] = [
     title: "Pre-load date and file size",
     description:
       "Rockstar says digital pre-load starts November 10 and that the file needs up to 212 GB, depending on the device. Code-in-box copies are expected at retailers from November 12.",
-    sourceLabel: "Rockstar Newswire — Pre-load begins November 10",
+    sourceLabel: "Rockstar Newswire (Nov 3)",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
   },
@@ -98,8 +98,7 @@ export const timeline: TimelineEvent[] = [
     title: "Release time confirmed",
     description:
       "Rockstar Support says Grand Theft Auto VI releases at midnight local time on November 19, 2026, in all regions, on both PlayStation 5 and Xbox Series X|S.",
-    sourceLabel:
-      "Rockstar Support — Regional pre-load and release times",
+    sourceLabel: "Rockstar Support",
     sourceHref:
       "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s",
   },
@@ -108,7 +107,7 @@ export const timeline: TimelineEvent[] = [
     title: "Launch Gallery",
     description:
       "Rockstar publishes the Launch Gallery, a set of screenshots on the Grand Theft Auto VI site.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
@@ -116,7 +115,7 @@ export const timeline: TimelineEvent[] = [
     title: "Pre-load opens",
     description:
       "Rockstar says pre-loading is available for digital pre-orders. PlayStation describes a rolling midnight unlock by country on November 19.",
-    sourceLabel: "Rockstar Newswire — Pre-load now",
+    sourceLabel: "Rockstar Newswire (Nov 10)",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
   },
@@ -125,11 +124,11 @@ export const timeline: TimelineEvent[] = [
     title: "Pre-Load Now video",
     description:
       "Rockstar releases Grand Theft Auto VI: Pre-Load Now, a 0:30 video.",
-    sourceLabel: "Rockstar Games — Pre-Load Now",
+    sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI/pre-load-now",
     moreSources: [
       {
-        label: "Rockstar Games on YouTube — Pre-Load Now",
+        label: "YouTube",
         href: "https://www.youtube.com/watch?v=TIPlpDAsfWo",
       },
     ],
@@ -139,12 +138,12 @@ export const timeline: TimelineEvent[] = [
     title: "Macca & Friends teaser",
     description:
       "Rockstar Games released a teaser trailer for Macca & Friends, an animated series inside Grand Theft Auto VI. It follows the adventures of Macca the Gator and his wetland friends across the state of Leonida. The series airs on the in-game Weazel TV network and is watchable from launch on November 19, 2026. The teaser was a Rockstar-provided exclusive via DiscussingFilm.",
-    sourceLabel: "Gematsu — Macca & Friends teaser trailer",
+    sourceLabel: "Gematsu",
     sourceHref:
       "https://www.gematsu.com/2026/11/grand-theft-auto-vi-in-game-animated-series-macca-friends-teaser-trailer",
     moreSources: [
       {
-        label: "GamingBible — Macca & Friends",
+        label: "GamingBible",
         href: "https://www.gamingbible.com/news/gta-6-macca-and-friends-explained-rockstar-reveal-933637-20261113",
       },
     ],
@@ -154,7 +153,7 @@ export const timeline: TimelineEvent[] = [
     title: "Launch day",
     description:
       "The published release date for PlayStation 5 and Xbox Series X|S. A PC date has not been announced.",
-    sourceLabel: "Rockstar Newswire — November 19, 2026",
+    sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
   },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { SourceList } from "@/components/SourceLink";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { famitsuSources, rockstarVi } from "@/src/data/gameplay/confirmed";
 
@@ -64,14 +65,7 @@ export default function PropertiesPage() {
             </article>
           ))}
         </div>
-        <a
-          href={rockstarVi.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-block text-pink-300 hover:text-pink-200"
-        >
-          Source: {rockstarVi.label}
-        </a>
+        <SourceList sources={[rockstarVi]} className="mt-6" />
       </section>
 
       <section className="mt-16">
@@ -92,19 +86,7 @@ export default function PropertiesPage() {
             </article>
           ))}
         </div>
-        <div className="mt-6 space-y-2">
-          {famitsuSources.map((source) => (
-            <a
-              key={source.href}
-              href={source.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-pink-300 hover:text-pink-200"
-            >
-              Source: {source.label}
-            </a>
-          ))}
-        </div>
+        <SourceList sources={famitsuSources} className="mt-6" />
       </section>
 
       <p className="mt-12 text-sm leading-7 text-zinc-500">

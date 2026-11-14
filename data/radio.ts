@@ -5,7 +5,7 @@ export type RadioStation = {
 };
 
 export const radioSource = {
-  label: "Rockstar Games — The Music of Grand Theft Auto VI: In-Game Radio Stations",
+  label: "Rockstar Games",
   href: "https://www.rockstargames.com/VI",
   published: "October 8, 2026",
 };

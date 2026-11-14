@@ -32,11 +32,11 @@ export const news: NewsArticle[] = [
     sourceName: "Take-Two Interactive",
     sources: [
       {
-        label: "Take-Two — pre-orders announcement",
+        label: "Take-Two",
         href: "https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi/",
       },
       {
-        label: "Rockstar Support — pre-load FAQ",
+        label: "Rockstar Support",
         href: "https://support.rockstargames.com/articles/7nPqOA2uCbpEQHXx7KVrYd/grand-theft-auto-vi-pre-load-faq",
       },
     ],
@@ -52,11 +52,11 @@ export const news: NewsArticle[] = [
     category: "Official News",
     sources: [
       {
-        label: "Rockstar Newswire — November 19, 2026",
+        label: "Rockstar Newswire",
         href: "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
       },
       {
-        label: "Rockstar Games — Launch trailer",
+        label: "Launch trailer",
         href: "https://www.rockstargames.com/VI/launch-trailer",
       },
     ],

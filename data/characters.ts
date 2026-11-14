@@ -4,13 +4,24 @@ import {
   relationshipSystem,
   switchingSources,
 } from "@/src/data/gameplay/confirmed";
+import {
+  guardianApart,
+  guardianCharacterSources,
+  guardianHands,
+  guardianRelationship,
+  guardianSwitching,
+} from "@/src/data/gameplay/guardian";
 
 const protagonistPlay = {
   details: [
     characterSwitching,
     `${relationshipSystem} The relationship notes are from Rob Nelson's Famitsu interview.`,
+    guardianSwitching,
+    guardianApart,
+    guardianRelationship,
+    guardianHands,
   ],
-  sources: [...switchingSources],
+  sources: [...switchingSources, ...guardianCharacterSources],
 };
 
 export const characters: Character[] = [
@@ -23,7 +34,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Trailer 1",
     description:
-      "Jason Duval is one of the two playable protagonists. Rockstar says he grew up around grifters and crooks, served a stint in the Army, and then worked for drug runners in the Leonida Keys. He wants an easier life, and he has to rely on Lucia after an easy score goes wrong. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Jason Duval is one of the two playable protagonists. Rockstar says he grew up around grifters and crooks, served a stint in the Army, and then worked for drug runners in the Leonida Keys. He wants an easier life, and he has to rely on Lucia after an easy score goes wrong.",
     ...protagonistPlay,
     gallery: [],
     relatedVehicles: [],
@@ -42,7 +53,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Trailer 1",
     description:
-      "Lucia Caminos is one of the two playable protagonists. Rockstar says she learned to fight young, that fighting for her family put her in Leonida Penitentiary, and that she is out and wants the life her mother has talked about since their days in Liberty City. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Lucia Caminos is one of the two playable protagonists. Rockstar says she learned to fight young, that fighting for her family put her in Leonida Penitentiary, and that she is out and wants the life her mother has talked about since their days in Liberty City.",
     ...protagonistPlay,
     gallery: [],
     relatedVehicles: [],
@@ -61,7 +72,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Jason's friend and a fellow associate of Brian's. Cal feels safest at home, snooping on Coast Guard comms with a few beers and some private browser tabs open. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Jason's friend and a fellow associate of Brian's. Cal feels safest at home, snooping on Coast Guard comms with a few beers and some private browser tabs open.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["grassrivers"],
@@ -79,7 +90,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Boobie Ike is a Vice City figure Rockstar calls a local legend. The official profile says he turned a street reputation into businesses that include real estate, a strip club, and a recording studio, and that he co-runs Only Raw Records with Dre'Quan Priest. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Boobie Ike is a Vice City figure Rockstar calls a local legend. The official profile says he turned a street reputation into businesses that include real estate, a strip club, and a recording studio, and that he co-runs Only Raw Records with Dre'Quan Priest.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -97,7 +108,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Dre'Quan Priest moved from street sales into music. Rockstar says he signed Real Dimez to Only Raw Records, books acts at Boobie Ike's club, and is trying to break into the Vice City music scene. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Dre'Quan Priest moved from street sales into music. Rockstar says he signed Real Dimez to Only Raw Records, books acts at Boobie Ike's club, and is trying to break into the Vice City music scene.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -117,7 +128,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Real Dimez are Bae-Luxe and Roxy. Rockstar says they have been friends since high school and turned time spent shaking down local dealers into rap tracks and a constant social media presence. They are signed to Only Raw Records. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Real Dimez are Bae-Luxe and Roxy. Rockstar says they have been friends since high school and turned time spent shaking down local dealers into rap tracks and a constant social media presence. They are signed to Only Raw Records.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -139,7 +150,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Raul Bautista is a bank robber. Rockstar describes him as someone with experience who is looking for people willing to take the risk. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Raul Bautista is a bank robber. Rockstar describes him as someone with experience who is looking for people willing to take the risk.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
@@ -157,7 +168,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Brian Heder is a longtime smuggler in the Leonida Keys. He moves product through his boat yard with his third wife, Lori, and lets Jason live rent-free at one of his properties in exchange for help with local shakedowns. Cal Hampton works with him. Source: Rockstar Games, Grand Theft Auto VI.",
+      "Brian Heder is a longtime smuggler in the Leonida Keys. He moves product through his boat yard with his third wife, Lori, and lets Jason live rent-free at one of his properties in exchange for help with local shakedowns. Cal Hampton works with him.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["leonida-keys"],
