@@ -1,5 +1,6 @@
 import HeroV2 from "./HeroV2";
 import FeaturedNewsV2 from "./FeaturedNewsV2";
+import MapFeature from "./MapFeature";
 import CategoryGridSection from "./sections/CategoryGridSection";
 
 export default function HomePageV2() {
@@ -7,6 +8,7 @@ export default function HomePageV2() {
     <main className="overflow-x-hidden bg-[#040404] text-white">
       <HeroV2 />
       <CategoryGridSection />
+      <MapFeature />
       <FeaturedNewsV2 />
     </main>
   );

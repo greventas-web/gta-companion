@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/gta-6-launch",
+    "/map",
     "/about",
     "/news",
     "/vehicles",
@@ -58,6 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency: "daily",
-    priority: route === "" ? 1 : route === "/gta-6-launch" ? 0.9 : 0.8,
+    priority: route === "" ? 1 : route === "/gta-6-launch" || route === "/map" ? 0.9 : 0.8,
   }));
 }

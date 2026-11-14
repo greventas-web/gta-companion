@@ -1,0 +1,73 @@
+.leonida-map,
+.leonida-map.leaflet-container,
+.leonida-map .leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #07141f;
+  font-family: inherit;
+  outline: none;
+}
+
+.leonida-map .leaflet-container img {
+  max-width: none !important;
+}
+
+@media (max-width: 1023px) {
+  .leonida-map .leaflet-control-attribution {
+    display: none;
+  }
+}
+
+.leonida-map .leaflet-control-attribution {
+  margin: 0 0 10px 12px;
+  border-radius: 999px;
+  background: rgba(10, 8, 18, 0.72);
+  color: #a1a1aa;
+  backdrop-filter: blur(10px);
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.leonida-map .leaflet-control-attribution a {
+  color: #c4b5fd;
+}
+
+.map-pin-wrap {
+  background: transparent;
+  border: 0;
+}
+
+.map-pin {
+  display: grid;
+  height: 28px;
+  width: 28px;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(12, 8, 22, 0.88);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--pin) 28%, transparent),
+    0 8px 18px rgba(0, 0, 0, 0.35);
+  color: var(--pin);
+}
+
+.map-pin.is-selected {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--pin) 45%, transparent),
+    0 0 22px color-mix(in srgb, var(--pin) 70%, transparent);
+}
+
+.map-cluster {
+  display: grid;
+  height: 36px;
+  width: 36px;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(196, 181, 253, 0.6);
+  background: rgba(46, 16, 86, 0.92);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+}
