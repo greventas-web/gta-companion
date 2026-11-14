@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import BrandedNameCard from "@/components/BrandedNameCard";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Breadcrumb from "@/components/Breadcrumb";
 import VehicleCard from "@/components/VehicleCard";
 
@@ -24,7 +25,12 @@ export default function ManufacturerDetailsPage({
   manufacturer,
   vehicles,
 }: Props) {
-  const portrait = manufacturerListImage(manufacturer);
+  const listed = manufacturerListImage(manufacturer);
+  const portrait =
+    listed ??
+    (manufacturer.image
+      ? { src: manufacturer.image, alt: manufacturer.imageAlt || manufacturer.name }
+      : null);
 
   return (
     <section className="mx-auto max-w-[1700px]">
@@ -65,6 +71,7 @@ export default function ManufacturerDetailsPage({
                 <p className="absolute bottom-3 left-3 z-10 text-[11px] font-bold uppercase tracking-[0.16em] text-white">
                   {IMAGE_CREDIT}
                 </p>
+                <RepresentativeMark show={manufacturer.imageRepresentative} />
               </>
             ) : (
               <BrandedNameCard name={manufacturer.name} />

@@ -1,4 +1,5 @@
 import ItemImage from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -37,6 +38,7 @@ export default function GuideCard({
             sizes="(max-width: 768px) 100vw, 420px"
             className="object-cover"
           />
+          <RepresentativeMark show={guide.imageRepresentative} />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 

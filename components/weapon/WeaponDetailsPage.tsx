@@ -1,4 +1,6 @@
 import ItemImage from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
+import { IMAGE_CREDIT } from "@/lib/site";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -43,7 +45,7 @@ export default function WeaponDetailsPage({
 
             <ItemImage
               src={weapon.image}
-              alt={weapon.name}
+              alt={weapon.imageAlt || weapon.name}
               name={weapon.name}
               fill
               priority
@@ -52,8 +54,12 @@ export default function WeaponDetailsPage({
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <RepresentativeMark show={weapon.imageRepresentative} />
 
           </div>
+          <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+            {IMAGE_CREDIT}
+          </p>
 
         </div>
 

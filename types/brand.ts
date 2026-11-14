@@ -11,6 +11,8 @@ export interface Brand {
 
   imageAlt?: string;
 
+  imageRepresentative?: boolean;
+
   description: string;
 
   firstAppearance: string;

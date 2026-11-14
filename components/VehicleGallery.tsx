@@ -3,16 +3,20 @@
 import { useState } from "react";
 import Image from "@/components/SafeImage";
 import BrandedNameCard from "@/components/BrandedNameCard";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import { isPlaceholderSrc } from "@/lib/media/catalog";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 type Props = {
   images: string[];
   alt: string;
+  representative?: boolean;
 };
 
 export default function VehicleGallery({
   images,
   alt,
+  representative,
 }: Props) {
   const gallery = images.filter((image) => image && !isPlaceholderSrc(image));
 
@@ -39,8 +43,12 @@ export default function VehicleGallery({
           className="object-cover"
           priority
         />
+        <RepresentativeMark show={representative} />
 
       </div>
+      <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+        {IMAGE_CREDIT}
+      </p>
 
       {gallery.length > 1 && (
 

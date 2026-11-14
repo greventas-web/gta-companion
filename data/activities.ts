@@ -1,3 +1,4 @@
+import { activityStandIns } from "@/data/standIns";
 import { Activity } from "@/types/activity";
 import {
   extendedLook,
@@ -96,7 +97,9 @@ export const activities: Activity[] = [
     name: "Pool (billiards)",
     category: "Activity",
     location: "Leonida",
-    image: "",
+    image: activityStandIns.pool.src,
+    imageAlt: activityStandIns.pool.alt,
+    imageRepresentative: true,
     description:
       "Rob Nelson lists playing pool alongside mini golf and kayaking as things Jason and Lucia can do together to build their relationship.",
     firstAppearance: "IGN interview",
@@ -254,7 +257,9 @@ export const activities: Activity[] = [
     name: "Zoo visits",
     category: "Activity",
     location: "Leonida",
-    image: "",
+    image: activityStandIns["zoo-visits"].src,
+    imageAlt: activityStandIns["zoo-visits"].alt,
+    imageRepresentative: true,
     description:
       "Rob Nelson lists going to a zoo among the things that count as quality time for Jason and Lucia.",
     firstAppearance: "IGN interview",
@@ -267,7 +272,9 @@ export const activities: Activity[] = [
     name: "Studying animals",
     category: "Activity",
     location: "Leonida",
-    image: "",
+    image: activityStandIns["studying-animals"].src,
+    imageAlt: activityStandIns["studying-animals"].alt,
+    imageRepresentative: true,
     description:
       "You can study animals, including dogs you meet, as a collection and to learn more about them. Rob Nelson says it carries over from Red Dead Redemption 2 and lets you engage with wildlife without shooting it.",
     firstAppearance: "IGN interview",

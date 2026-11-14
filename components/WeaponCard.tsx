@@ -1,6 +1,7 @@
 "use client";
 
 import ItemImage from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -36,12 +37,13 @@ export default function WeaponCard({
 
           <ItemImage
             src={weapon.image}
-            alt={weapon.name}
+            alt={weapon.imageAlt || weapon.name}
             name={weapon.name}
             fill
             sizes="(max-width: 768px) 100vw, 420px"
             className="object-cover"
           />
+          <RepresentativeMark show={weapon.imageRepresentative} />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
 

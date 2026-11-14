@@ -6,7 +6,8 @@ export const guides: Guide[] = [
     title: "Getting Started in GTA VI",
     slug: "getting-started",
     category: "Beginner",
-    image: "",
+    image: "/images/official/media/screenshots-people-brian-heder-brian-heder-01.webp",
+    imageRepresentative: true,
     description:
       "A fan guide for after launch. This page has no walkthrough yet.",
     listed: false,
@@ -19,7 +20,8 @@ export const guides: Guide[] = [
     title: "Best Starter Vehicles",
     slug: "best-starter-vehicles",
     category: "Vehicles",
-    image: "",
+    image: "/images/official/media/screenshots-people-brian-heder-brian-heder-02.webp",
+    imageRepresentative: true,
     description:
       "Rockstar has not published early-game vehicle recommendations. This page has no list yet.",
     listed: false,
@@ -32,7 +34,8 @@ export const guides: Guide[] = [
     title: "Making Money",
     slug: "making-money",
     category: "Money",
-    image: "",
+    image: "/images/official/media/screenshots-people-brian-heder-brian-heder-03.webp",
+    imageRepresentative: true,
     description:
       "Money tips will be written after the game launches. Nothing here is a working method yet.",
     listed: false,
@@ -45,7 +48,8 @@ export const guides: Guide[] = [
     title: "Exploring Leonida",
     slug: "exploring-leonida",
     category: "Exploration",
-    image: "",
+    image: "/images/official/media/screenshots-people-brian-heder-brian-heder-04.webp",
+    imageRepresentative: true,
     description:
       "A fan guide to Leonida will be written after launch. Rockstar's place descriptions are on the Locations pages.",
     listed: false,
@@ -58,7 +62,8 @@ export const guides: Guide[] = [
     title: "Combat Tips",
     slug: "combat-tips",
     category: "Combat",
-    image: "",
+    image: "/images/official/media/screenshots-people-boobie-ike-boobie-ike-01.webp",
+    imageRepresentative: true,
     description:
       "Combat notes will be written after the game launches.",
     listed: false,

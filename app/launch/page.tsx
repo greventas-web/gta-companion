@@ -1,5 +1,7 @@
+import { paradiseGarageStandIn } from "@/data/standIns";
 import type { Metadata } from "next";
 import ItemImage from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 
 import PageHero from "@/components/PageHero";
@@ -88,7 +90,8 @@ const editionPlaces = [
   },
   {
     name: "Paradise Garage",
-    image: "",
+    image: paradiseGarageStandIn.src,
+    representative: true,
     note: "Rockstar says the Dominator Buggy can be stored at the Paradise Garage in Watson Bay. This image is the buggy, not a separate garage exterior.",
   },
   {
@@ -244,6 +247,9 @@ export default function LaunchPage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
+                />
+                <RepresentativeMark
+                  show={"representative" in place && place.representative}
                 />
               </div>
               <div className="p-8">

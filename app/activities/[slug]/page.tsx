@@ -1,4 +1,5 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -69,6 +70,7 @@ export default async function ActivityPage({
                 priority
                 className="object-cover"
               />
+              <RepresentativeMark show={activity.imageRepresentative} />
 
               {isNameCard(activity.image) ? null : (
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

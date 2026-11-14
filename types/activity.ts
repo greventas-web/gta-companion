@@ -13,6 +13,8 @@ export interface Activity {
 
   imageAlt?: string;
 
+  imageRepresentative?: boolean;
+
   description: string;
 
   firstAppearance: string;

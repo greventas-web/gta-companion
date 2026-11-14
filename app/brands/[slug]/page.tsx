@@ -1,4 +1,5 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import { IMAGE_CREDIT } from "@/lib/site";
 import Link from "next/link";
 
@@ -71,6 +72,7 @@ export default async function BrandPage({
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
+              <RepresentativeMark show={brand.imageRepresentative} />
 
             </div>
             {isNameCard(brand.image) ? null : (

@@ -1,3 +1,4 @@
+import { animalStandIns } from "@/data/standIns";
 import { Animal } from "@/types/animal";
 import {
   edgeViaVice,
@@ -144,7 +145,9 @@ export const animals: Animal[] = [
     name: "Manatee",
     category: "Wildlife",
     habitat: "Leonida",
-    image: "",
+    image: animalStandIns.manatee.src,
+    imageAlt: animalStandIns.manatee.alt,
+    imageRepresentative: true,
     description:
       "Named in Game Informer's Rockstar cover story as one of the native Florida animals in Leonida.",
     firstAppearance: "Game Informer",
@@ -158,7 +161,9 @@ export const animals: Animal[] = [
     name: "Cane toad",
     category: "Wildlife",
     habitat: "Leonida",
-    image: "",
+    image: animalStandIns["cane-toad"].src,
+    imageAlt: animalStandIns["cane-toad"].alt,
+    imageRepresentative: true,
     description:
       "Named in Game Informer's cover story as an invasive species in Leonida.",
     firstAppearance: "Game Informer",
@@ -172,7 +177,9 @@ export const animals: Animal[] = [
     name: "Rhesus macaque",
     category: "Wildlife",
     habitat: "Leonida",
-    image: "",
+    image: animalStandIns["rhesus-macaque"].src,
+    imageAlt: animalStandIns["rhesus-macaque"].alt,
+    imageRepresentative: true,
     description:
       "Named in Game Informer's cover story. Leonida has rhesus macaque monkeys, like Florida.",
     firstAppearance: "Game Informer",
@@ -186,7 +193,8 @@ export const animals: Animal[] = [
     name: "Feral cat",
     category: "Wildlife",
     habitat: "Leonida",
-    image: "",
+    image: animalStandIns["feral-cat"].src,
+    imageAlt: animalStandIns["feral-cat"].alt,
     description:
       "Named in Game Informer's cover story as an invasive species.",
     firstAppearance: "Game Informer",
@@ -200,7 +208,8 @@ export const animals: Animal[] = [
     name: "Dog",
     category: "Domestic",
     habitat: "Not published",
-    image: "",
+    image: animalStandIns.dog.src,
+    imageAlt: animalStandIns.dog.alt,
     description:
       "You can pet dogs, and study is an option, as Rob Nelson showed IGN. He told TGG you can also scold and inspect them. Edge reports police dogs join pursuits. Rockstar hasn't named any breeds.",
     firstAppearance: "IGN interview",
@@ -214,7 +223,9 @@ export const animals: Animal[] = [
     name: "Peacock",
     category: "Wildlife",
     habitat: "Not published",
-    image: "",
+    image: animalStandIns.peacock.src,
+    imageAlt: animalStandIns.peacock.alt,
+    imageRepresentative: true,
     description: "Rob Nelson came across a peacock during the Famitsu demo.",
     firstAppearance: "Famitsu",
     status: "Seen in the Famitsu demo",
