@@ -11,6 +11,10 @@ export interface Weapon {
 
   image: string;
 
+  imageAlt?: string;
+
+  imageRepresentative?: boolean;
+
   description: string;
 
   firstAppearance: string;

@@ -1,3 +1,4 @@
+import { brandStandIns } from "@/data/standIns";
 import { Brand } from "@/types/brand";
 
 export const brands: Brand[] = [
@@ -48,7 +49,9 @@ export const brands: Brand[] = [
     slug: "burger-shot",
     name: "Burger Shot",
     category: "Restaurant",
-    image: "",
+    image: brandStandIns["burger-shot"].src,
+    imageAlt: brandStandIns["burger-shot"].alt,
+    imageRepresentative: true,
     description:
       "Rockstar hosted a Burger Shot stand at Kaseya Center in October 2026. Rockstar has not published an in-game description on the Grand Theft Auto VI site.",
     firstAppearance: "Kaseya Center, October 2026",
@@ -61,7 +64,9 @@ export const brands: Brand[] = [
     slug: "up-n-atom",
     name: "Up-n-Atom",
     category: "Restaurant",
-    image: "",
+    image: brandStandIns["up-n-atom"].src,
+    imageAlt: brandStandIns["up-n-atom"].alt,
+    imageRepresentative: true,
     description:
       "Rockstar has not published an Up-n-Atom description for Grand Theft Auto VI.",
     firstAppearance: "",
@@ -74,7 +79,9 @@ export const brands: Brand[] = [
     slug: "only-raw-records",
     name: "Only Raw Records",
     category: "Record Label",
-    image: "",
+    image: brandStandIns["only-raw-records"].src,
+    imageAlt: brandStandIns["only-raw-records"].alt,
+    imageRepresentative: true,
     description:
       "Vice City label run in partnership by Boobie Ike and Dre'Quan Priest. It has signed Real Dimez. Rockstar says they just need a hit.",
     firstAppearance: "Rockstar Games Website",

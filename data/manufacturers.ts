@@ -1,5 +1,6 @@
 import { Manufacturer } from "@/types/manufacturer";
 
+import { manufacturerStandIns } from "@/data/standIns";
 import { vehicles } from "@/data/vehicles";
 
 const manufacturerRecords: Manufacturer[] = [
@@ -473,12 +474,18 @@ const manufacturerRecords: Manufacturer[] = [
 ];
 
 export const manufacturers: Manufacturer[] = manufacturerRecords.map(
-  (manufacturer) => ({
-    ...manufacturer,
-    vehicleCount: vehicles.filter(
-      (vehicle) => vehicle.manufacturer === manufacturer.name
-    ).length,
-  })
+  (manufacturer) => {
+    const stand = manufacturerStandIns[manufacturer.slug];
+    return {
+      ...manufacturer,
+      vehicleCount: vehicles.filter(
+        (vehicle) => vehicle.manufacturer === manufacturer.name
+      ).length,
+      image: stand?.src,
+      imageAlt: stand?.alt,
+      imageRepresentative: stand ? !stand.exact : undefined,
+    };
+  }
 );
 
 export function manufacturerByName(name: string) {

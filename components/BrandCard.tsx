@@ -1,4 +1,5 @@
 import ItemImage from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 
 import { Brand } from "@/types/brand";
@@ -31,6 +32,7 @@ export default function BrandCard({
           {!brand.image ? null : (
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           )}
+          <RepresentativeMark show={brand.imageRepresentative} />
 
           <div className="absolute left-6 top-6 z-20 max-w-[calc(100%-3rem)] rounded-full bg-pink-500 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white sm:tracking-[0.22em]">
             {brand.category}

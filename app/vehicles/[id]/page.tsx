@@ -67,7 +67,8 @@ export default async function VehicleDetailsPage({
 
           <VehicleGallery
             images={photos}
-            alt={vehicle.name}
+            alt={vehicle.imageAlt || vehicle.name}
+            representative={vehicle.imageRepresentative}
           />
 
           {/* Information */}

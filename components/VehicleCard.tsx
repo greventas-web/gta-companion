@@ -1,5 +1,6 @@
 "use client";
 
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Image from "@/components/SafeImage";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -39,11 +40,12 @@ export default function VehicleCard({
 
           <Image
             src={photo}
-            alt={vehicle.name}
+            alt={vehicle.imageAlt || vehicle.name}
             fill
             sizes="(max-width: 768px) 100vw, 480px"
             className="object-cover transition duration-700 group-hover:scale-110"
           />
+          <RepresentativeMark show={vehicle.imageRepresentative} />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
 

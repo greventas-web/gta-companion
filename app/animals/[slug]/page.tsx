@@ -1,4 +1,5 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import { IMAGE_CREDIT } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -68,6 +69,7 @@ export default async function AnimalPage({
                 fill
                 className="object-cover"
               />
+              <RepresentativeMark show={animal.imageRepresentative} />
 
             </div>
             {isNameCard(animal.image) ? null : (

@@ -8,6 +8,8 @@ export interface Guide {
 
   image: string;
 
+  imageRepresentative?: boolean;
+
   description: string;
 
   readingTime: string;

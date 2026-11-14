@@ -1,4 +1,5 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 
 import { Animal } from "@/types/animal";
@@ -34,6 +35,7 @@ export default function AnimalCard({
             sizes="(max-width: 768px) 100vw, 420px"
             className="object-cover"
           />
+          <RepresentativeMark show={animal.imageRepresentative} />
 
           {isNameCard(animal.image) ? null : (
             <>

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 import BrandedNameCard from "@/components/BrandedNameCard";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import FavoriteButton from "@/components/FavoriteButton";
 import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
 
@@ -24,7 +25,12 @@ type Props = {
 export default function ManufacturerCard({
   manufacturer,
 }: Props) {
-  const portrait = manufacturerListImage(manufacturer);
+  const listed = manufacturerListImage(manufacturer);
+  const portrait =
+    listed ??
+    (manufacturer.image
+      ? { src: manufacturer.image, alt: manufacturer.imageAlt || manufacturer.name }
+      : null);
 
   return (
     <Link
@@ -56,6 +62,7 @@ export default function ManufacturerCard({
           {portrait ? (
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/20" />
           ) : null}
+          <RepresentativeMark show={manufacturer.imageRepresentative} />
 
           <div className="absolute left-4 top-4 z-20 flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-zinc-200 backdrop-blur-xl sm:left-6 sm:top-6 sm:px-4 sm:text-[11px] sm:tracking-[0.22em]">
 

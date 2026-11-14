@@ -1,4 +1,5 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 
 import { Activity } from "@/types/activity";
@@ -26,6 +27,7 @@ export default function ActivityCard({
             fill
             className="object-cover"
           />
+          <RepresentativeMark show={activity.imageRepresentative} />
 
           {isNameCard(activity.image) ? null : (
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />

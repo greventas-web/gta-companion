@@ -1,4 +1,5 @@
 import ItemImage from "@/components/ItemImage";
+import RepresentativeMark from "@/components/RepresentativeMark";
 import { notFound } from "next/navigation";
 import {
   BookOpen,
@@ -75,6 +76,7 @@ export default async function GuidePage({
                 priority
                 className="object-cover"
               />
+              <RepresentativeMark show={guide.imageRepresentative} />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 

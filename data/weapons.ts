@@ -1,3 +1,4 @@
+import { weaponStandIns } from "@/data/standIns";
 import { Weapon } from "@/types/weapon";
 
 const rockstar =
@@ -55,7 +56,9 @@ export const weapons: Weapon[] = [
     name: "Standard Pistol",
     manufacturer: "Not named",
     category: "Handgun",
-    image: "",
+    image: weaponStandIns["standard-pistol"].src,
+    imageAlt: weaponStandIns["standard-pistol"].alt,
+    imageRepresentative: true,
     description:
       "Handguns appear in official trailers. Rockstar has not published this name or a caliber.",
     firstAppearance: "Trailer footage",
@@ -69,7 +72,9 @@ export const weapons: Weapon[] = [
     name: "Compact Pistol",
     manufacturer: "Not named",
     category: "Handgun",
-    image: "",
+    image: weaponStandIns["compact-pistol"].src,
+    imageAlt: weaponStandIns["compact-pistol"].alt,
+    imageRepresentative: true,
     description:
       "A smaller handgun shape appears in official footage. Rockstar has not published this name or a caliber.",
     firstAppearance: "Trailer footage",
@@ -83,7 +88,9 @@ export const weapons: Weapon[] = [
     name: "Assault Rifle",
     manufacturer: "Not named",
     category: "Rifle",
-    image: "",
+    image: weaponStandIns["assault-rifle"].src,
+    imageAlt: weaponStandIns["assault-rifle"].alt,
+    imageRepresentative: true,
     description:
       "Rifles appear in official screenshots. Rockstar has not published this name or a caliber.",
     firstAppearance: "Official screenshots",
@@ -97,7 +104,9 @@ export const weapons: Weapon[] = [
     name: "Pump Shotgun",
     manufacturer: "Not named",
     category: "Shotgun",
-    image: "",
+    image: weaponStandIns["pump-shotgun"].src,
+    imageAlt: weaponStandIns["pump-shotgun"].alt,
+    imageRepresentative: true,
     description:
       "Rockstar has not published this shotgun name or a gauge.",
     firstAppearance: "Not published",
@@ -111,7 +120,9 @@ export const weapons: Weapon[] = [
     name: "Sniper Rifle",
     manufacturer: "Not named",
     category: "Rifle",
-    image: "",
+    image: weaponStandIns["sniper-rifle"].src,
+    imageAlt: weaponStandIns["sniper-rifle"].alt,
+    imageRepresentative: true,
     description:
       "Rockstar has not published this rifle name or a caliber.",
     firstAppearance: "Not published",
@@ -125,7 +136,9 @@ export const weapons: Weapon[] = [
     name: "Rocket Launcher",
     manufacturer: "Not named",
     category: "Heavy",
-    image: "",
+    image: weaponStandIns["rocket-launcher"].src,
+    imageAlt: weaponStandIns["rocket-launcher"].alt,
+    imageRepresentative: true,
     description:
       "Rockstar has not published this weapon name.",
     firstAppearance: "Not published",

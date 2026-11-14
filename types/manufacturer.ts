@@ -7,6 +7,12 @@ export interface Manufacturer {
 
   logo: string;
 
+  image?: string;
+
+  imageAlt?: string;
+
+  imageRepresentative?: boolean;
+
   country: string;
 
   description: string;
