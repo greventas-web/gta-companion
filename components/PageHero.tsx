@@ -61,7 +61,7 @@ export default function PageHero({
         </p>
 
         {children && (
-          <div className="mt-12">
+          <div className="mt-5">
             {children}
           </div>
         )}

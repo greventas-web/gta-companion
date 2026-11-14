@@ -5,6 +5,7 @@ import PageShell from "@/components/PageShell";
 import PageStats from "@/components/PageStats";
 
 import { animals } from "@/data/animals";
+import { gameInformerAnimals } from "@/src/data/gameplay/confirmed";
 
 export default function AnimalsPage() {
   return (
@@ -12,8 +13,21 @@ export default function AnimalsPage() {
       <PageHero
         badge="Unofficial fan database"
         title="Animal Database"
-        description="Animals tied to Rockstar captions. Species names and habitats are included only when a caption supports them. Rockstar has not published a species list."
-      />
+        description="Rockstar told Game Informer that Leonida has over 170 animal species across land, air, and sea. Some can be tracked as Rare, Discoverable, or Legendary. Animals below are tied to a Rockstar statement, caption, screenshot, or trailer."
+      >
+        <p className="max-w-3xl break-words text-sm leading-7 text-zinc-500">
+          Source:{" "}
+          <a
+            href={gameInformerAnimals.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-300 hover:text-pink-200"
+          >
+            {gameInformerAnimals.label}
+          </a>
+          .
+        </p>
+      </PageHero>
 
       <PageStats
         stats={[
@@ -26,8 +40,8 @@ export default function AnimalsPage() {
             label: "Wildlife Region",
           },
           {
-            value: "None",
-            label: "Species named by Rockstar",
+            value: "170+",
+            label: "Species in Leonida",
             accent: true,
           },
         ]}
@@ -37,7 +51,7 @@ export default function AnimalsPage() {
 
       <PageCTA
         title="More Wildlife Coming Soon"
-        description="This list grows when Rockstar publishes a caption that names or shows an animal. Species and habitats stay off the page until a caption supports them."
+        description="This list grows when Rockstar names or shows an animal. Each entry stays tied to a statement, caption, screenshot, or trailer."
       />
     </PageShell>
   );

@@ -1,4 +1,11 @@
 import { Animal } from "@/types/animal";
+import {
+  edgeViaVice,
+  famitsuSources,
+  gameInformerAnimals,
+  gamespotTgg,
+  ignBigInterview,
+} from "@/src/data/gameplay/confirmed";
 
 export const animals: Animal[] = [
   {
@@ -130,5 +137,88 @@ export const animals: Animal[] = [
     firstAppearance: "Rockstar Games Website",
     status: "Shown in a Rockstar screenshot",
     gallery: [],
+  },
+  {
+    id: 10,
+    slug: "manatee",
+    name: "Manatee",
+    category: "Wildlife",
+    habitat: "Leonida",
+    image: "",
+    description:
+      "Named in Game Informer's Rockstar cover story as one of the native Florida animals in Leonida.",
+    firstAppearance: "Game Informer",
+    status: "Named by Rockstar (Game Informer)",
+    gallery: [],
+    sources: [gameInformerAnimals],
+  },
+  {
+    id: 11,
+    slug: "cane-toad",
+    name: "Cane toad",
+    category: "Wildlife",
+    habitat: "Leonida",
+    image: "",
+    description:
+      "Named in Game Informer's cover story as an invasive species in Leonida.",
+    firstAppearance: "Game Informer",
+    status: "Named by Rockstar (Game Informer)",
+    gallery: [],
+    sources: [gameInformerAnimals],
+  },
+  {
+    id: 12,
+    slug: "rhesus-macaque",
+    name: "Rhesus macaque",
+    category: "Wildlife",
+    habitat: "Leonida",
+    image: "",
+    description:
+      "Named in Game Informer's cover story. Leonida has rhesus macaque monkeys, like Florida.",
+    firstAppearance: "Game Informer",
+    status: "Named by Rockstar (Game Informer)",
+    gallery: [],
+    sources: [gameInformerAnimals],
+  },
+  {
+    id: 13,
+    slug: "feral-cat",
+    name: "Feral cat",
+    category: "Wildlife",
+    habitat: "Leonida",
+    image: "",
+    description:
+      "Named in Game Informer's cover story as an invasive species.",
+    firstAppearance: "Game Informer",
+    status: "Named by Rockstar (Game Informer)",
+    gallery: [],
+    sources: [gameInformerAnimals],
+  },
+  {
+    id: 14,
+    slug: "dog",
+    name: "Dog",
+    category: "Domestic",
+    habitat: "Not published",
+    image: "",
+    description:
+      "You can pet dogs, and study is an option, as Rob Nelson showed IGN. He told TGG you can also scold and inspect them. Edge reports police dogs join pursuits. Rockstar hasn't named any breeds.",
+    firstAppearance: "IGN interview",
+    status: "Described by Rockstar",
+    gallery: [],
+    sources: [ignBigInterview, gamespotTgg, edgeViaVice],
+  },
+  {
+    id: 15,
+    slug: "peacock",
+    name: "Peacock",
+    category: "Wildlife",
+    habitat: "Not published",
+    image: "",
+    description: "Rob Nelson came across a peacock during the Famitsu demo.",
+    firstAppearance: "Famitsu",
+    status: "Seen in the Famitsu demo",
+    gallery: [],
+    sources: [...famitsuSources],
   },
 ];
