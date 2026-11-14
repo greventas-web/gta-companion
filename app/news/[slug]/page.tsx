@@ -9,6 +9,7 @@ import {
 
 import Breadcrumb from "@/components/Breadcrumb";
 import NewsCard from "@/components/NewsCard";
+import { SourceList } from "@/components/SourceLink";
 import ShareButtons from "@/components/news/ShareButtons";
 
 import { news } from "@/data/news";
@@ -150,23 +151,7 @@ export default async function NewsArticlePage({
             ) : null}
 
             {article.sources && article.sources.length > 0 ? (
-              <p className="mt-8 text-base leading-8 text-zinc-400">
-                Sources:{" "}
-                {article.sources.map((source, index) => (
-                  <span key={source.href}>
-                    {index > 0 ? "; " : ""}
-                    <a
-                      href={source.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-pink-300 hover:text-pink-200"
-                    >
-                      {source.label}
-                    </a>
-                  </span>
-                ))}
-                .
-              </p>
+              <SourceList sources={article.sources} className="mt-8" />
             ) : (
               <>
                 <p className="mt-8 text-lg leading-9 text-zinc-400">

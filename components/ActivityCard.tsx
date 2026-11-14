@@ -1,5 +1,6 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
 import RepresentativeMark from "@/components/RepresentativeMark";
+import { SourceList } from "@/components/SourceLink";
 import Link from "next/link";
 
 import { Activity } from "@/types/activity";
@@ -12,11 +13,11 @@ export default function ActivityCard({
   activity,
 }: Props) {
   return (
-    <Link
-      href={`/activities/${activity.slug}`}
-      className="group block"
-    >
-      <article className="overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:-translate-y-3 hover:border-pink-500 hover:shadow-[0_35px_90px_rgba(236,72,153,0.18)]">
+      <article className="group overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:-translate-y-3 hover:border-pink-500 hover:shadow-[0_35px_90px_rgba(236,72,153,0.18)]">
+        <Link
+          href={`/activities/${activity.slug}`}
+          className="block"
+        >
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
@@ -53,13 +54,6 @@ export default function ActivityCard({
             {activity.description}
           </p>
 
-          {activity.sources && activity.sources.length > 0 ? (
-            <p className="mt-4 break-words text-sm leading-6 text-zinc-500">
-              {activity.sources.length === 1 ? "Source" : "Sources"}:{" "}
-              {activity.sources.map((source) => source.label).join("; ")}
-            </p>
-          ) : null}
-
           <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-zinc-800 pt-6">
 
             <span className="text-xs uppercase tracking-[0.12em] text-zinc-500 sm:text-sm">
@@ -73,8 +67,14 @@ export default function ActivityCard({
           </div>
 
         </div>
+        </Link>
+
+        {activity.sources && activity.sources.length > 0 ? (
+          <div className="px-8 pb-8">
+            <SourceList sources={activity.sources} />
+          </div>
+        ) : null}
 
       </article>
-    </Link>
   );
 }

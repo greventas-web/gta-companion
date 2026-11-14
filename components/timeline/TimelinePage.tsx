@@ -1,3 +1,4 @@
+import { SourceList } from "@/components/SourceLink";
 import PageContainer from "../shared/PageContainer";
 import PageHero from "../shared/PageHero";
 
@@ -33,25 +34,13 @@ export default function TimelinePage() {
                 <p className="mt-6 max-w-4xl text-lg leading-9 text-zinc-400">
                   {event.description}
                 </p>
-                <a
-                  href={event.sourceHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-block text-sm text-pink-300 hover:text-pink-200"
-                >
-                  {event.sourceLabel}
-                </a>
-                {event.moreSources?.map((source) => (
-                  <a
-                    key={source.href}
-                    href={source.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 block break-words text-sm text-pink-300 hover:text-pink-200"
-                  >
-                    {source.label}
-                  </a>
-                ))}
+                <SourceList
+                  className="mt-5"
+                  sources={[
+                    { label: event.sourceLabel, href: event.sourceHref },
+                    ...(event.moreSources ?? []),
+                  ]}
+                />
               </div>
             </div>
           ))}

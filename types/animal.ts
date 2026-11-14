@@ -23,5 +23,5 @@ export interface Animal {
 
   status?: string;
 
-  sources?: { label: string; href: string }[];
+  sources?: { label: string; href?: string }[];
 }

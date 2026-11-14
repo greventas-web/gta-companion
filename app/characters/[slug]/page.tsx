@@ -9,8 +9,10 @@ import {
 import Breadcrumb from "@/components/Breadcrumb";
 import CharacterCard from "@/components/CharacterCard";
 
+import { SourceList } from "@/components/SourceLink";
 import { characters } from "@/data/characters";
 import { IMAGE_CREDIT } from "@/lib/site";
+import { rockstarVi } from "@/src/data/gameplay/confirmed";
 
 type Props = {
   params: Promise<{
@@ -101,25 +103,10 @@ export default async function CharacterPage({
                 {detail}
               </p>
             ))}
-            <a
-              href="https://www.rockstargames.com/VI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm text-pink-300 hover:text-pink-200"
-            >
-              Source: Rockstar Games — Grand Theft Auto VI
-            </a>
-            {character.sources?.map((source) => (
-              <a
-                key={source.href}
-                href={source.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block text-sm text-pink-300 hover:text-pink-200"
-              >
-                Source: {source.label}
-              </a>
-            ))}
+            <SourceList
+              className="mt-4"
+              sources={[rockstarVi, ...(character.sources ?? [])]}
+            />
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
 

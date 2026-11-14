@@ -11,11 +11,11 @@ export const relationshipSystem =
 
 export const famitsuSources = [
   {
-    label: "Famitsu — Rob Nelson interview",
+    label: "Famitsu",
     href: "https://www.famitsu.com/article/202608/85753",
   },
   {
-    label: "English translation — GTAVice",
+    label: "GTAVice",
     href: "https://www.gtavice.net/news/gta-6-famitsus-full-rob-nelson-interview-translated-into-english",
   },
 ] as const satisfies readonly CitedSource[];
@@ -23,47 +23,47 @@ export const famitsuSources = [
 export const switchingSources = [
   ...famitsuSources,
   {
-    label: "Dazed — Rockstar deep dive",
+    label: "Dazed",
     href: "https://www.dazeddigital.com/life-culture/article/70859/1/gta-6-grand-theft-auto-vi-rockstar-exclusive-deep-dive-game-unparalleled-world",
   },
   {
-    label: "PC Gamer — character switching",
+    label: "PC Gamer",
     href: "https://www.pcgamer.com/games/grand-theft-auto/gta-6s-story-is-too-important-for-rockstar-to-let-you-swap-between-lucia-and-jason-whenever-you-want/",
   },
 ] as const satisfies readonly CitedSource[];
 
 export const ignBigInterview = {
-  label: "IGN — GTA 6: The Big Interview",
+  label: "IGN",
   href: "https://sea.ign.com/grand-theft-auto-vi-rumored-title/249916/gta-6-the-big-interview",
 } as const satisfies CitedSource;
 
 export const ignStepForward = {
-  label: "IGN — It's a Step Forward in All Respects",
+  label: "IGN (Step Forward)",
   href: "https://in.ign.com/grand-theft-auto-vi/270365/its-a-step-forward-in-all-respects-exclusive-gta-6-interview",
 } as const satisfies CitedSource;
 
 export const edgeViaVice = {
-  label: "Vice — Edge #430 preview",
+  label: "Vice",
   href: "https://www.vice.com/en/article/gta-6-edge-magazine-new-screenshots-features/",
 } as const satisfies CitedSource;
 
 export const gameInformerAnimals = {
-  label: "Game Informer — over 170 animal species",
+  label: "Game Informer",
   href: "https://gameinformer.com/exclusive/2026/09/29/exclusive-grand-theft-auto-vi-includes-over-170-animal-species",
 } as const satisfies CitedSource;
 
 export const gamespotTgg = {
-  label: "GameSpot — fishing and hunting (TGG)",
+  label: "GameSpot",
   href: "https://www.gamespot.com/articles/gta-6-fishing-and-hunting-doesnt-work-like-you-think-it-does/",
 } as const satisfies CitedSource;
 
 export const extendedLook = {
-  label: "Rockstar Games — An Extended Look",
+  label: "Extended Look",
   href: "https://www.youtube.com/watch?v=tJbzMqJGH4k",
 } as const satisfies CitedSource;
 
 export const maccaSource = {
-  label: "Gematsu — Macca & Friends teaser",
+  label: "Gematsu",
   href: "https://www.gematsu.com/2026/11/grand-theft-auto-vi-in-game-animated-series-macca-friends-teaser-trailer",
 } as const satisfies CitedSource;
 
@@ -94,16 +94,51 @@ export const esrbRating =
 
 export const esrbSources = [
   {
-    label: "ESRB — Grand Theft Auto VI",
+    label: "ESRB",
     href: "https://www.esrb.org/ratings/41627/grand-theft-auto-vi/",
   },
   {
-    label: "Rockstar Games — Grand Theft Auto VI",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
 ] as const satisfies readonly CitedSource[];
 
 export const rockstarVi = {
-  label: "Rockstar Games — Grand Theft Auto VI",
+  label: "Rockstar Games",
   href: "https://www.rockstargames.com/VI",
+} as const satisfies CitedSource;
+
+export const rockstarViPage = {
+  label: "Rockstar Games (GTA VI page)",
+  href: "https://www.rockstargames.com/VI",
+} as const satisfies CitedSource;
+
+export const rockstarSupportEditions = {
+  label: "Rockstar Support",
+  href: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
+} as const satisfies CitedSource;
+
+export const playstationStandard = {
+  label: "PlayStation Store",
+  href: "https://store.playstation.com/en-us/product/EP1004-PPSA01547_00-GTAVISTANDARD001",
+} as const satisfies CitedSource;
+
+export const playstationUltimate = {
+  label: "PlayStation Store",
+  href: "https://store.playstation.com/en-us/product/EP1004-PPSA01547_00-GTAVIULTIMATE001",
+} as const satisfies CitedSource;
+
+export const xboxStandard = {
+  label: "Xbox Store",
+  href: "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi/9NL3WWNZLZZN",
+} as const satisfies CitedSource;
+
+export const xboxUltimate = {
+  label: "Xbox Store",
+  href: "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi-ultimate-edition/9nnzsnhlr63l",
+} as const satisfies CitedSource;
+
+export const xboxUpgrade = {
+  label: "Xbox Store",
+  href: "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi-ultimate-edition-upgrade/9pn4llbr8rch",
 } as const satisfies CitedSource;

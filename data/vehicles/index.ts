@@ -35,31 +35,31 @@ const catalog = [
 
 const confirmedSources: Record<string, { label: string; href: string }> = {
   "grotti-cheetah-1995": {
-    label: "Rockstar Games — Grand Theft Auto VI, Ultimate Edition",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
   "vapid-ganado": {
-    label: "Rockstar Games — Grand Theft Auto VI, Ultimate Edition",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
   "vapid-dominator-buggy": {
-    label: "Rockstar Games — Grand Theft Auto VI, Ultimate Edition",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
   "shitzu-squalo": {
-    label: "Rockstar Games — Grand Theft Auto VI, Ultimate Edition",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
   "dinka-enduro": {
-    label: "Rockstar Games — Grand Theft Auto VI, Ultimate Edition",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
   "crest-kayak": {
-    label: "Rockstar Games — Grand Theft Auto VI, Ultimate Edition",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
   "vapid-stanier-1955": {
-    label: "Rockstar Games — Grand Theft Auto VI, Vintage Vice City Pack",
+    label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
 };

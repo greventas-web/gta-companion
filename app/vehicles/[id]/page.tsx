@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import { SourceLink } from "@/components/SourceLink";
 import VehicleCard from "@/components/VehicleCard";
 import VehicleGallery from "@/components/VehicleGallery";
 import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
@@ -109,14 +110,9 @@ export default async function VehicleDetailsPage({
               {vehicle.status}
             </p>
             {vehicle.source ? (
-              <a
-                href={vehicle.source}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-block text-sm text-pink-300 hover:text-pink-200"
-              >
-                Source: Rockstar Games
-              </a>
+              <p className="mt-3">
+                <SourceLink label="Rockstar Games" href={vehicle.source} />
+              </p>
             ) : null}
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">

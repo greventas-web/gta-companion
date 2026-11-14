@@ -16,7 +16,7 @@ export default function WeaponsPage() {
       <PageHero
         badge="Grand Theft Auto Weapons"
         title="Weapon Database"
-        description="Hawk & Little Morgan revolvers, the Girardi ES9, and the Klose K17 are the names Rockstar has published. Other shapes stay unlabeled. Last updated November 10, 2026."
+        description="Hawk & Little Morgan Revolvers, the Girardi ES9, and the Klose K17 are the names Rockstar has published. Other shapes stay unlabeled. Last updated November 14, 2026."
       />
 
       <WeaponDatabase />

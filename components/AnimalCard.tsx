@@ -1,5 +1,6 @@
 import ItemImage, { isNameCard } from "@/components/ItemImage";
 import RepresentativeMark from "@/components/RepresentativeMark";
+import { SourceList } from "@/components/SourceLink";
 import Link from "next/link";
 
 import { Animal } from "@/types/animal";
@@ -12,11 +13,11 @@ export default function AnimalCard({
   animal,
 }: Props) {
   return (
-    <Link
-      href={`/animals/${animal.slug}`}
-      className="group block"
-    >
-      <article className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900/95 via-zinc-950 to-black transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:shadow-[0_45px_130px_rgba(236,72,153,.20)]">
+      <article className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900/95 via-zinc-950 to-black transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:shadow-[0_45px_130px_rgba(236,72,153,.20)]">
+        <Link
+          href={`/animals/${animal.slug}`}
+          className="block"
+        >
 
         {/* Ambient Glow */}
 
@@ -65,13 +66,6 @@ export default function AnimalCard({
             {animal.description}
           </p>
 
-          {animal.sources && animal.sources.length > 0 ? (
-            <p className="mt-4 break-words text-sm leading-6 text-zinc-500">
-              {animal.sources.length === 1 ? "Source" : "Sources"}:{" "}
-              {animal.sources.map((source) => source.label).join("; ")}
-            </p>
-          ) : null}
-
           <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
             <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-300 backdrop-blur-xl">
               {animal.firstAppearance}
@@ -82,10 +76,16 @@ export default function AnimalCard({
             </span>
           </div>
         </div>
+        </Link>
+
+        {animal.sources && animal.sources.length > 0 ? (
+          <div className="relative px-8 pb-8">
+            <SourceList sources={animal.sources} />
+          </div>
+        ) : null}
 
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-pink-500/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
 
       </article>
-    </Link>
   );
 }

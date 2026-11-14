@@ -1,4 +1,5 @@
 import PageTitle from "@/components/PageTitle";
+import { SourceList, type SourceRef } from "@/components/SourceLink";
 
 import {
   Badge,
@@ -11,16 +12,29 @@ import {
   esrbRating,
   esrbSources,
   gameplaySources,
+  playstationStandard,
+  playstationUltimate,
+  rockstarSupportEditions,
+  xboxStandard,
+  xboxUltimate,
+  xboxUpgrade,
   gameplaySystems,
   relationshipSystem,
   switchingSources,
 } from "@/src/data/gameplay/confirmed";
+import {
+  guardianApart,
+  guardianCharacterSources,
+  guardianHands,
+  guardianRelationship,
+  guardianSwitching,
+} from "@/src/data/gameplay/guardian";
 
 const faqs: {
   question: string;
   answer: string;
   points?: readonly string[];
-  sources?: readonly { label: string; href: string }[];
+  sources?: readonly SourceRef[];
 }[] = [
   {
     question: "When does GTA VI come out?",
@@ -30,12 +44,20 @@ const faqs: {
   {
     question: "How much does GTA VI cost?",
     answer:
-      "Take-Two announced the standard edition at $79.99 in the United States. The Ultimate Edition is $99.99 and adds vehicles, weapons, apparel, and story content for Jason and Lucia. Purchases before November 20, 2026 include the Vintage Vice City Pack, and digital pre-orders include one month of GTA+.",
+      `The PlayStation Store lists the Standard Edition at $79.99 (US). The PlayStation Store and the Xbox Store list the Ultimate Edition at $99.99 (US). Standard owners can upgrade later. The Xbox Store lists the Ultimate Edition Upgrade at $20.00 (US). There is no physical Ultimate Edition. Check your store; PlayStation and Xbox list November 19, 2026 at 23:59:59. 1 month of GTA+ included with digital pre-orders. It auto-renews and isn't included with physical pre-orders.`,
+    sources: [
+      playstationStandard,
+      playstationUltimate,
+      xboxUltimate,
+      xboxUpgrade,
+      rockstarSupportEditions,
+    ],
   },
   {
     question: "What is in each edition?",
     answer:
-      "Both editions include the game. Purchases before November 20, 2026 add the Vintage Vice City Pack: the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. Digital pre-orders also include one month of GTA+. The Ultimate Edition, at $99.99 in the United States, adds named vehicles, the Hawk & Little Morgan revolvers, Jason's Girardi ES9, Lucia's Klose K17, and other Ultimate Edition items. The full list is on the Editions page.",
+      `Both editions include the game. There is no physical Ultimate Edition. The Vintage Vice City Pack adds the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. Check your store; PlayStation and Xbox list November 19, 2026 at 23:59:59. 1 month of GTA+ included with digital pre-orders. It auto-renews and isn't included with physical pre-orders. The Ultimate Edition adds the Hawk & Little Morgan Revolvers, the '67 Vapid Dominator Buggy and Garage, Electric Fang Tattoo Parlor, Jason's Girardi ES9, Lucia's Klose K17, and other items. The full list is on the Editions page.`,
+    sources: [rockstarSupportEditions, playstationUltimate, xboxStandard],
   },
   {
     question: "Where can I buy or pre-order it?",
@@ -44,8 +66,8 @@ const faqs: {
   },
   {
     question: "Who are the main characters?",
-    answer: `The two playable protagonists are Jason Duval and Lucia Caminos. Their story is set in Vice City and the state of Leonida. ${characterSwitching} ${relationshipSystem} The relationship notes are from Rob Nelson's Famitsu interview.`,
-    sources: switchingSources,
+    answer: `The two playable protagonists are Jason Duval and Lucia Caminos. Their story is set in Vice City and the state of Leonida. ${characterSwitching} ${relationshipSystem} Those notes are from Rob Nelson's Famitsu interview. ${guardianSwitching} ${guardianApart} ${guardianRelationship} ${guardianHands}`,
+    sources: [...switchingSources, ...guardianCharacterSources],
   },
   {
     question: "What gameplay systems has Rockstar confirmed?",
@@ -114,23 +136,7 @@ export default function FAQPage() {
                   </ul>
                 ) : null}
                 {faq.sources && faq.sources.length > 0 ? (
-                  <p className="mt-5 text-base leading-8 text-zinc-500">
-                    Sources:{" "}
-                    {faq.sources.map((source, index) => (
-                      <span key={source.href}>
-                        {index > 0 ? "; " : ""}
-                        <a
-                          href={source.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-pink-300 hover:text-pink-200"
-                        >
-                          {source.label}
-                        </a>
-                      </span>
-                    ))}
-                    .
-                  </p>
+                  <SourceList sources={faq.sources} className="mt-5" />
                 ) : null}
               </Card>
             ))}

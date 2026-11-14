@@ -1,11 +1,14 @@
 import AnimalDatabase from "@/components/AnimalDatabase";
+import CitedNotes from "@/components/CitedNotes";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import PageStats from "@/components/PageStats";
+import { SourceList } from "@/components/SourceLink";
 
 import { animals } from "@/data/animals";
 import { gameInformerAnimals } from "@/src/data/gameplay/confirmed";
+import { animalPrintNotes, guardianPrintIntro } from "@/src/data/gameplay/guardian";
 
 export default function AnimalsPage() {
   return (
@@ -15,18 +18,7 @@ export default function AnimalsPage() {
         title="Animal Database"
         description="Rockstar told Game Informer that Leonida has over 170 animal species across land, air, and sea. Some can be tracked as Rare, Discoverable, or Legendary. Animals below are tied to a Rockstar statement, caption, screenshot, or trailer."
       >
-        <p className="max-w-3xl break-words text-sm leading-7 text-zinc-500">
-          Source:{" "}
-          <a
-            href={gameInformerAnimals.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pink-300 hover:text-pink-200"
-          >
-            {gameInformerAnimals.label}
-          </a>
-          .
-        </p>
+        <SourceList sources={[gameInformerAnimals]} />
       </PageHero>
 
       <PageStats
@@ -45,6 +37,13 @@ export default function AnimalsPage() {
             accent: true,
           },
         ]}
+      />
+
+      <CitedNotes
+        eyebrow="Saturday magazine"
+        title="From the Guardian print"
+        intro={guardianPrintIntro}
+        notes={animalPrintNotes}
       />
 
       <AnimalDatabase />

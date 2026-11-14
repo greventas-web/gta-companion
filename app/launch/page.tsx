@@ -6,7 +6,18 @@ import Link from "next/link";
 
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { SourceList } from "@/components/SourceLink";
 import { IMAGE_CREDIT } from "@/lib/site";
+import {
+  esrbSources,
+  playstationStandard,
+  playstationUltimate,
+  rockstarSupportEditions,
+  rockstarViPage,
+  xboxStandard,
+  xboxUltimate,
+  xboxUpgrade,
+} from "@/src/data/gameplay/confirmed";
 
 export const metadata: Metadata = {
   title: "Editions and pre-load",
@@ -41,7 +52,7 @@ const ultimateVehicles = [
     note: "Pink-and-blue boat docked at Washington Beach, set up for fishing in Gambit Bay.",
   },
   {
-    name: "'67 Vapid Dominator Buggy",
+    name: "'67 Vapid Dominator Buggy and Garage",
     href: "/vehicles/vapid-dominator-buggy",
     note: "Mud Club buggy for Mount Kalaga. Stored at the Paradise Garage in Watson Bay.",
   },
@@ -69,9 +80,9 @@ const editionPlaces = [
     note: "A clothing store included with the Ultimate Edition.",
   },
   {
-    name: "Electric Fang Tattoo",
+    name: "Electric Fang Tattoo Parlor",
     image: "/images/official/editions/ultimate_edition_electric_fang_01.webp",
-    note: "Electric Fang Tattoo has 50+ tattoos designed by FAILE.",
+    note: "Electric Fang Tattoo Parlor has 50+ tattoos designed by FAILE.",
   },
   {
     name: "Goodtime Gear",
@@ -111,7 +122,7 @@ const ultimatePlaces = [
   "One-Eyed Willie's, an off-road mod shop at Lake Leonida",
   "Sara's Unisex Salon",
   "Stock 305 clothing store",
-  "Electric Fang Tattoo: 50+ tattoos designed by FAILE",
+  "Electric Fang Tattoo Parlor: 50+ tattoos designed by FAILE",
   "Goodtime Gear: a capsule collection of apparel and accessories inspired by Macca the Gator, the Goodtime State's hit TV show character",
   "PTT Youngin$ Illegal Goods Store (gang compound): raid the compound of one of Southside Vice City's loudest gangs and escape to score special items and contraband",
   "Classic Car Collection (special commission): track down abandoned classic and project cars and restore them for eccentric collector and local fixer Wyman",
@@ -138,26 +149,9 @@ export default function LaunchPage() {
             The physical box contains a download code. The ESRB rated it M
             (Mature 17+): Blood and Gore, Intense Violence, Mature Humor,
             Nudity, Strong Language, Strong Sexual Content, Use of Drugs and
-            Alcohol, and In-Game Purchases.{" "}
-            <a
-              href="https://www.esrb.org/ratings/41627/grand-theft-auto-vi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-300 hover:text-pink-200"
-            >
-              ESRB rating
-            </a>
-            . Descriptors are also on the{" "}
-            <a
-              href="https://www.rockstargames.com/VI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-300 hover:text-pink-200"
-            >
-              Rockstar VI page
-            </a>
-            .
+            Alcohol, and In-Game Purchases.
           </p>
+          <SourceList sources={esrbSources} className="mt-4" />
         </article>
 
         <article className="rounded-[32px] border border-white/10 bg-[#0B0B0D] p-8">
@@ -166,10 +160,14 @@ export default function LaunchPage() {
           </p>
           <h2 className="mt-4 text-3xl font-black">$79.99</h2>
           <p className="mt-4 leading-8 text-zinc-400">
-            Take-Two&apos;s United States price for the standard edition.
-            Purchases before November 20, 2026 include the Vintage Vice City Pack.
-            Digital pre-orders also include one month of GTA+.
+            United States price on the PlayStation Store. Standard owners can
+            upgrade later. The Xbox Store lists the Ultimate Edition Upgrade
+            at $20.00 (US).
           </p>
+          <SourceList
+            className="mt-4"
+            sources={[playstationStandard, xboxUpgrade, rockstarSupportEditions]}
+          />
         </article>
 
         <article className="rounded-[32px] border border-white/10 bg-[#0B0B0D] p-8">
@@ -178,10 +176,14 @@ export default function LaunchPage() {
           </p>
           <h2 className="mt-4 text-3xl font-black">$99.99</h2>
           <p className="mt-4 leading-8 text-zinc-400">
-            Take-Two&apos;s United States price. It includes the standard game
-            plus vehicles, weapons, clothes, and story items for Jason and Lucia.
-            Those items unlock as the story moves forward.
+            United States price on the PlayStation Store and the Xbox Store.
+            There is no physical Ultimate Edition. It is digital only. Bonuses
+            unlock as the story moves forward.
           </p>
+          <SourceList
+            className="mt-4"
+            sources={[playstationUltimate, xboxUltimate, rockstarSupportEditions]}
+          />
         </article>
       </div>
 
@@ -190,9 +192,16 @@ export default function LaunchPage() {
           Vintage Vice City Pack
         </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-          This pack comes with purchases before November 20, 2026. It is not
-          limited to the Ultimate Edition.
+          Check your store; PlayStation and Xbox list November 19, 2026 at
+          23:59:59. Rockstar Support says prior to November 20, 2026. The pack
+          is not limited to the Ultimate Edition. 1 month of GTA+ included with
+          digital pre-orders. It auto-renews and isn&apos;t included with
+          physical pre-orders.
         </p>
+        <SourceList
+          className="mt-4"
+          sources={[playstationStandard, xboxStandard, rockstarSupportEditions]}
+        />
         <div className="mt-8 rounded-[32px] border border-white/10 bg-[#0B0B0D] p-8">
           <Link href="/vehicles/vapid-stanier-1955" className="text-2xl font-black text-white hover:text-pink-400">
             &apos;55 Vapid Stanier
@@ -262,14 +271,10 @@ export default function LaunchPage() {
             </article>
           ))}
         </div>
-        <a
-          href="https://www.rockstargames.com/VI"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-block text-pink-300 hover:text-pink-200"
-        >
-          Source: Rockstar Games — Grand Theft Auto VI
-        </a>
+        <SourceList
+          sources={[rockstarSupportEditions, rockstarViPage]}
+          className="mt-6"
+        />
       </section>
 
       <section className="mt-16 grid gap-8 lg:grid-cols-2">
@@ -278,7 +283,7 @@ export default function LaunchPage() {
           <ul className="mt-6 space-y-4 text-lg leading-8 text-zinc-300">
             <li>
               <Link href="/weapons/hawk-little-morgan" className="font-semibold text-white hover:text-pink-400">
-                Hawk &amp; Little Morgan revolvers
+                Hawk &amp; Little Morgan Revolvers
               </Link>
               . His and hers revolvers sourced from the Vercetti Estate, with palm-tree-etched grips and a high-performance scope.
             </li>

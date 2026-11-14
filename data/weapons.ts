@@ -8,12 +8,12 @@ export const weapons: Weapon[] = [
   {
     id: 1,
     slug: "hawk-little-morgan",
-    name: "Hawk & Little Morgan revolvers",
+    name: "Hawk & Little Morgan Revolvers",
     manufacturer: "Hawk & Little",
     category: "Handgun",
     image: "/images/official/weapons/hawk-little-morgan.webp",
     description:
-      "Rockstar includes a matching pair of Hawk & Little Morgan revolvers with the Ultimate Edition. The published images show engraved metal. Rockstar has not published a caliber.",
+      "Rockstar includes a matching pair of Hawk & Little Morgan Revolvers with the Ultimate Edition. The published images show engraved metal. Rockstar has not published a caliber.",
     firstAppearance: "Ultimate Edition",
     ammunition: "Not published",
     status: "Confirmed",

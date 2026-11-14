@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import LaunchHubCountdown from "@/components/launch/LaunchHubCountdown";
 import PageShell from "@/components/PageShell";
+import { SourceList } from "@/components/SourceLink";
 import { pageMetadata } from "@/lib/launch";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
@@ -266,25 +267,13 @@ function Status({ tone, label }: { tone: LaunchStatus; label: string }) {
 }
 
 function Sources({ ids }: { ids: readonly string[] }) {
-  const sources = launchSources(ids);
-
   return (
-    <p className="mt-5 text-sm leading-6 text-zinc-500">
-      Source
-      {sources.length > 1 ? "s" : ""}:{" "}
-      {sources.map((source, index) => (
-        <span key={source.id}>
-          {index > 0 ? ", " : ""}
-          <a
-            href={source.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-teal-300 hover:text-teal-200"
-          >
-            {source.label}
-          </a>
-        </span>
-      ))}
-    </p>
+    <SourceList
+      className="mt-5"
+      sources={launchSources(ids).map((source) => ({
+        label: source.label,
+        href: source.href,
+      }))}
+    />
   );
 }
