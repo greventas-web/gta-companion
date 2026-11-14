@@ -1,0 +1,152 @@
+.leonida-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  height: 100%;
+  width: 100%;
+}
+
+.leonida-map,
+.leonida-map.leaflet-container,
+.leonida-map .leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #1276c9;
+  font-family: inherit;
+  outline: none;
+}
+
+.leonida-map .leaflet-container img {
+  max-width: none !important;
+}
+
+@media (max-width: 1023px) {
+  .leonida-map .leaflet-control-attribution {
+    display: none;
+  }
+}
+
+.leonida-map .leaflet-control-attribution {
+  margin: 0 0 10px 12px;
+  border-radius: 999px;
+  background: rgba(10, 8, 18, 0.72);
+  color: #a1a1aa;
+  backdrop-filter: blur(10px);
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.leonida-map .leaflet-control-attribution a {
+  color: #c4b5fd;
+}
+
+.map-pin-wrap,
+.leaflet-marker-icon {
+  background: transparent;
+  border: 0;
+  overflow: visible !important;
+}
+
+.leaflet-marker-icon:focus-visible {
+  outline: 2px solid #ddd6fe;
+  outline-offset: 3px;
+}
+
+.gta-hit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gta-disc {
+  position: absolute;
+  display: block;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.45));
+  transition: transform 160ms ease;
+}
+
+.gta-side-right .gta-disc { left: 0; top: 0; }
+.gta-side-left .gta-disc { right: 0; top: 0; }
+.gta-side-bottom .gta-disc { left: 50%; top: 0; margin-left: -20px; }
+.gta-side-top .gta-disc { left: 50%; bottom: 0; margin-left: -20px; }
+
+.gta-hit:hover .gta-disc,
+.gta-hit.is-selected .gta-disc {
+  transform: scale(1.12);
+}
+
+.gta-side-top.gta-hit:hover .gta-disc,
+.gta-side-top.gta-hit.is-selected .gta-disc {
+  transform: scale(1.12);
+}
+
+.gta-hit.is-selected .gta-disc {
+  filter:
+    drop-shadow(0 0 10px var(--pin))
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.45));
+}
+
+.gta-label {
+  position: absolute;
+  z-index: 2;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(8, 6, 16, 0.82);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.region-name {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 2px #102018,
+    0 0 6px #102018,
+    1px 0 0 #102018,
+    -1px 0 0 #102018,
+    0 1px 0 #102018,
+    0 -1px 0 #102018;
+}
+
+.map-cluster {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: #6d28d9;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(16, 8, 32, 0.35);
+}
+
+@media (max-width: 1023px) {
+  .region-name { font-size: 13px; line-height: 15px; }
+  .gta-label { display: none; }
+  .gta-hit.is-selected .gta-label { display: block; }
+  .gta-disc {
+    width: 22px;
+    height: 22px;
+    left: 11px !important;
+    top: 11px !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+  }
+}
+
+.gta-side-right .gta-label { left: 46px; top: 8px; }
+.gta-side-left .gta-label { right: 46px; top: 8px; }
+.gta-side-top .gta-label { left: 50%; bottom: 44px; transform: translateX(-50%); }
+.gta-side-bottom .gta-label { left: 50%; top: 44px; transform: translateX(-50%); }

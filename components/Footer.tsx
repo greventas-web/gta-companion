@@ -73,6 +73,10 @@ export default function Footer() {
                 Launch hub
               </Link>
 
+              <Link href="/map" className="block text-zinc-400 transition hover:text-pink-400">
+                Map
+              </Link>
+
               <Link href="/news" className="block text-zinc-400 transition hover:text-pink-400">
                 News
               </Link>
