@@ -1,3 +1,11 @@
+.leonida-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  height: 100%;
+  width: 100%;
+}
+
 .leonida-map,
 .leonida-map.leaflet-container,
 .leonida-map .leaflet-container {
@@ -32,42 +40,71 @@
   color: #c4b5fd;
 }
 
-.map-pin-wrap {
+.map-pin-wrap,
+.leaflet-marker-icon {
   background: transparent;
   border: 0;
+  overflow: visible !important;
 }
 
-.map-pin {
-  display: grid;
-  height: 28px;
-  width: 28px;
-  place-items: center;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(12, 8, 22, 0.88);
-  box-shadow:
-    0 0 0 4px color-mix(in srgb, var(--pin) 28%, transparent),
-    0 8px 18px rgba(0, 0, 0, 0.35);
-  color: var(--pin);
+.leaflet-marker-icon:focus-visible {
+  outline: 2px solid #ddd6fe;
+  outline-offset: 3px;
 }
 
-.map-pin.is-selected {
+.gta-hit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gta-disc {
+  position: absolute;
+  display: block;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.45));
+  transition: transform 160ms ease;
+}
+
+.gta-side-right .gta-disc { left: 0; top: 0; }
+.gta-side-left .gta-disc { right: 0; top: 0; }
+.gta-side-bottom .gta-disc { left: 50%; top: 0; margin-left: -20px; }
+.gta-side-top .gta-disc { left: 50%; bottom: 0; margin-left: -20px; }
+
+.gta-hit:hover .gta-disc,
+.gta-hit.is-selected .gta-disc {
   transform: scale(1.12);
-  box-shadow:
-    0 0 0 6px color-mix(in srgb, var(--pin) 45%, transparent),
-    0 0 22px color-mix(in srgb, var(--pin) 70%, transparent);
 }
 
-.map-cluster {
-  display: grid;
-  height: 36px;
-  width: 36px;
-  place-items: center;
-  border-radius: 999px;
-  border: 1px solid rgba(196, 181, 253, 0.6);
-  background: rgba(46, 16, 86, 0.92);
-  color: white;
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+.gta-side-top.gta-hit:hover .gta-disc,
+.gta-side-top.gta-hit.is-selected .gta-disc {
+  transform: scale(1.12);
 }
+
+.gta-hit.is-selected .gta-disc {
+  filter:
+    drop-shadow(0 0 10px var(--pin))
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.45));
+}
+
+.gta-label {
+  position: absolute;
+  z-index: 2;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(8, 6, 16, 0.82);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .gta-label { display: none; }
+  .gta-hit.is-selected .gta-label { display: block; }
+}
+
+.gta-side-right .gta-label { left: 46px; top: 8px; }
+.gta-side-left .gta-label { right: 46px; top: 8px; }
+.gta-side-top .gta-label { left: 50%; bottom: 44px; transform: translateX(-50%); }
+.gta-side-bottom .gta-label { left: 50%; top: 44px; transform: translateX(-50%); }

@@ -8,11 +8,11 @@ import {
 } from "react";
 import type { LatLngBoundsExpression, Map as LeafletMap } from "leaflet";
 
-import { ACTIVE_MAP_LAYER } from "@/src/data/map/config";
+import { ACTIVE_MAP_LAYER, MAP_FRAME } from "@/src/data/map/config";
 import { CATEGORY_META } from "@/src/data/map/categories";
 import type { MapMarker } from "@/src/data/map/types";
 import type { VisibleCategory } from "@/src/data/map/types";
-import { categoryIconMarkup } from "./icons";
+import { blipMarkup } from "./icons";
 
 import "leaflet/dist/leaflet.css";
 import "./map.css";
@@ -21,6 +21,10 @@ export type MapView = {
   x: number;
   y: number;
   z: number;
+  west: number;
+  east: number;
+  south: number;
+  north: number;
 };
 
 export type MapCanvasHandle = {
@@ -80,17 +84,29 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
       const map = mapRef.current;
       const bounds = boundsRef.current;
       if (!map || !bounds) return;
-      map.fitBounds(bounds, { padding: [32, 32] });
+      map.fitBounds(
+        [
+          [MAP_FRAME.south, MAP_FRAME.west],
+          [MAP_FRAME.north, MAP_FRAME.east],
+        ],
+        { ...framePadding(), animate: true, duration: 0.6 }
+      );
     },
     flyTo(x, y, zoom) {
       const map = mapRef.current;
       if (!map) return;
-      const nextZoom = zoom ?? Math.max(map.getZoom(), 1);
+      const nextZoom = zoom ?? Math.min(map.getMaxZoom(), Math.max(map.getZoom(), 0.85));
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const finish = () => {
+        const narrow = window.innerWidth < 1024;
+        map.panBy(narrow ? [0, -30] : [-70, 0], { animate: !reduce, duration: 0.25 });
+      };
       if (reduce) {
         map.setView([y, x], nextZoom, { animate: false });
+        finish();
       } else {
-        map.flyTo([y, x], nextZoom, { duration: 0.55 });
+        map.flyTo([y, x], nextZoom, { duration: 0.85 });
+        map.once("moveend", finish);
       }
     },
     setView(x, y, zoom) {
@@ -148,8 +164,12 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
         }).addTo(map);
       }
 
-      map.setMaxBounds(bounds.pad(0.2));
-      map.fitBounds(bounds, { padding: [36, 36], animate: false });
+      const frame = L.latLngBounds(
+        [MAP_FRAME.south, MAP_FRAME.west],
+        [MAP_FRAME.north, MAP_FRAME.east]
+      );
+      map.setMaxBounds(bounds.pad(0.05));
+      map.fitBounds(frame, { ...framePadding(), animate: false });
 
       group = L.layerGroup().addTo(map);
 
@@ -159,62 +179,50 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
         const current = markersRef.current.filter(
           (marker) => marker.confirmed && isVisibleCategory(marker.category)
         );
-        const zoom = map.getZoom();
-        const radius = zoom >= 1.25 ? 0 : zoom >= 0 ? 36 : 52;
-        const clusters = cluster(map, current, radius);
 
-        for (const items of clusters) {
-          if (items.length === 1) {
-            const marker = items[0];
-            const selected = marker.id === selectedRef.current;
-            const color = isVisibleCategory(marker.category)
-              ? CATEGORY_META[marker.category].color
-              : "#c4b5fd";
-            const icon = L.divIcon({
-              className: "map-pin-wrap",
-              iconSize: [28, 28],
-              iconAnchor: [14, 14],
-              html: `<div class="map-pin${selected ? " is-selected" : ""}" style="--pin:${color}" title="${escapeHtml(marker.title)}">${categoryIconMarkup(marker.category as VisibleCategory, color)}</div>`,
-            });
-            L.marker([marker.y, marker.x], {
-              icon,
-              title: marker.title,
-              keyboard: true,
-              zIndexOffset: selected ? 500 : 0,
-            })
-              .on("click", () => onSelectRef.current(marker.id))
-              .addTo(group);
-          } else {
-            const lat = items.reduce((sum, item) => sum + item.y, 0) / items.length;
-            const lng = items.reduce((sum, item) => sum + item.x, 0) / items.length;
-            const icon = L.divIcon({
-              className: "map-pin-wrap",
-              iconSize: [36, 36],
-              iconAnchor: [18, 18],
-              html: `<div class="map-cluster" title="${items.length} places">${items.length}</div>`,
-            });
-            L.marker([lat, lng], { icon, keyboard: true })
-              .on("click", () => {
-                const clusterBounds = L.latLngBounds(
-                  items.map((item) => [item.y, item.x] as [number, number])
-                );
-                map?.fitBounds(clusterBounds.pad(0.45), {
-                  maxZoom: (map?.getZoom() ?? 0) + 1.25,
-                });
-              })
-              .addTo(group);
-          }
+        for (const marker of current) {
+          if (!isVisibleCategory(marker.category)) continue;
+          const category = marker.category;
+          const selected = marker.id === selectedRef.current;
+          const color = CATEGORY_META[category].color;
+          const side = marker.labelSide;
+          const labeled = marker.showLabel;
+          const icon = L.divIcon({
+            className: "map-pin-wrap",
+            iconSize: labeled ? labelBox(side).size : [40, 40],
+            iconAnchor: labeled ? labelBox(side).anchor : [20, 20],
+            html: blipMarkup(
+              category,
+              color,
+              selected,
+              labeled ? escapeHtml(marker.title) : null,
+              side
+            ),
+          });
+          L.marker([marker.y, marker.x], {
+            icon,
+            title: marker.title,
+            keyboard: true,
+            zIndexOffset: selected ? 800 : 0,
+          })
+            .on("click", () => onSelectRef.current(marker.id))
+            .addTo(group);
         }
       };
 
       map.on("zoomend", draw);
       map.on("moveend", () => {
         const center = map?.getCenter();
-        if (!map || !center) return;
+        const box = map?.getBounds();
+        if (!map || !center || !box) return;
         onViewRef.current({
           x: center.lng,
           y: center.lat,
           z: map.getZoom(),
+          west: box.getWest(),
+          east: box.getEast(),
+          south: box.getSouth(),
+          north: box.getNorth(),
         });
       });
 
@@ -265,31 +273,23 @@ const MapCanvas = forwardRef<MapCanvasHandle, Props>(function MapCanvas(
 
 export default MapCanvas;
 
-function cluster(map: LeafletMap, markers: MapMarker[], radius: number) {
-  if (radius <= 0) return markers.map((marker) => [marker]);
-
-  const points = markers.map((marker) => ({
-    marker,
-    point: map.latLngToContainerPoint([marker.y, marker.x]),
-  }));
-  const used = new Set<string>();
-  const groups: MapMarker[][] = [];
-
-  for (const item of points) {
-    if (used.has(item.marker.id)) continue;
-    const group = [item.marker];
-    used.add(item.marker.id);
-    for (const other of points) {
-      if (used.has(other.marker.id)) continue;
-      const dx = item.point.x - other.point.x;
-      const dy = item.point.y - other.point.y;
-      if (dx * dx + dy * dy <= radius * radius) {
-        group.push(other.marker);
-        used.add(other.marker.id);
-      }
-    }
-    groups.push(group);
+function framePadding() {
+  const narrow = window.innerWidth < 1024;
+  if (narrow) {
+    return {
+      paddingTopLeft: [16, 16] as [number, number],
+      paddingBottomRight: [16, 188] as [number, number],
+    };
   }
+  return {
+    paddingTopLeft: [380, 18] as [number, number],
+    paddingBottomRight: [24, 18] as [number, number],
+  };
+}
 
-  return groups;
+function labelBox(side: "left" | "right" | "top" | "bottom") {
+  if (side === "left") return { size: [188, 40] as [number, number], anchor: [168, 20] as [number, number] };
+  if (side === "top") return { size: [160, 68] as [number, number], anchor: [80, 48] as [number, number] };
+  if (side === "bottom") return { size: [160, 68] as [number, number], anchor: [80, 20] as [number, number] };
+  return { size: [188, 40] as [number, number], anchor: [20, 20] as [number, number] };
 }

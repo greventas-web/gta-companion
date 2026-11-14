@@ -40,7 +40,7 @@ export default function MapPage() {
         src="/map/layers/leonida-schematic.svg"
         alt=""
         fetchPriority="high"
-        className="pointer-events-none absolute inset-0 h-full w-full object-contain"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
       <MapLoader />
     </div>

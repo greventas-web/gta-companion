@@ -41,4 +41,7 @@ export type MapMarker = {
   y: number;
   /** True when the pin is a diagram placement, not a surveyed in-game coordinate. */
   approximate: boolean;
+  /** Region names are painted on the atlas. Smaller places get a side label. */
+  showLabel: boolean;
+  labelSide: "left" | "right" | "top" | "bottom";
 };

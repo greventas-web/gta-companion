@@ -5,8 +5,8 @@
  * x increases east (right). y increases north (up).
  * This matches Leaflet CRS.Simple, where a marker is placed at [y, x].
  *
- * The schematic layer is 1200 by 1600 of these units. Its SVG is drawn with
- * the usual top-left origin, so a pixel at (svgX, svgY) is map (svgX, 1600 - svgY).
+ * The schematic layer is 1920 by 1200 of these units. Its SVG is drawn with
+ * the usual top-left origin, so a pixel at (svgX, svgY) is map (svgX, 1200 - svgY).
  *
  * Launch day
  * ----------
@@ -21,8 +21,8 @@
  * equal to the source image's pixel size so markers stay aligned.
  */
 
-export const MAP_WIDTH = 1200;
-export const MAP_HEIGHT = 1600;
+export const MAP_WIDTH = 1920;
+export const MAP_HEIGHT = 1200;
 
 export type MapImageLayer = {
   id: string;
@@ -66,7 +66,7 @@ export const MAP_LAYERS = {
     width: MAP_WIDTH,
     height: MAP_HEIGHT,
     officialImagery: true,
-    attribution: "Map imagery: Rockstar Games",
+    attribution: "Images: Rockstar Games",
   },
   tiles: {
     id: "tiles",
@@ -78,7 +78,7 @@ export const MAP_LAYERS = {
     minZoom: 0,
     maxZoom: 4,
     officialImagery: true,
-    attribution: "Map imagery: Rockstar Games",
+    attribution: "Images: Rockstar Games",
   },
 } as const satisfies Record<string, MapLayer>;
 
@@ -86,6 +86,18 @@ export const MAP_LAYERS = {
 export const ACTIVE_LAYER_ID: keyof typeof MAP_LAYERS = "schematic";
 
 export const ACTIVE_MAP_LAYER: MapLayer = MAP_LAYERS[ACTIVE_LAYER_ID];
+
+/**
+ * Visible frame used to fit the schematic. On launch day, set these to the
+ * full layer (0, 0, width, height) if the new art should be shown edge to edge.
+ * south/north are map-space y; west/east are map-space x.
+ */
+export const MAP_FRAME = {
+  west: 180,
+  east: 1860,
+  south: 60,
+  north: 1120,
+};
 
 export const MAP_ATTRIBUTION_NOTE =
   "Map based on official Rockstar footage, positions approximate until launch";

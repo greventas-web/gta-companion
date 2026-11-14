@@ -20,11 +20,11 @@ import {
   X,
 } from "lucide-react";
 
-import { ACTIVE_MAP_LAYER, MAP_ATTRIBUTION_NOTE } from "@/src/data/map/config";
+import { ACTIVE_MAP_LAYER, MAP_ATTRIBUTION_NOTE, MAP_HEIGHT, MAP_WIDTH } from "@/src/data/map/config";
 import { CATEGORY_META, CATEGORY_ORDER } from "@/src/data/map/categories";
 import { markerById, publicMapMarkers } from "@/src/data/map/markers";
 import type { VisibleCategory } from "@/src/data/map/types";
-import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
+import { IMAGE_CREDIT, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { CategoryIcon } from "./icons";
 import MapCanvas, {
   type MapCanvasHandle,
@@ -288,7 +288,7 @@ export default function MapExperience() {
       </aside>
 
       {selected ? (
-        <aside className="absolute bottom-4 right-4 top-4 z-20 hidden w-[360px] overflow-hidden rounded-3xl border border-violet-200/15 bg-[#120b1c]/85 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:flex">
+        <aside className="absolute bottom-4 right-4 top-4 z-30 hidden w-[360px] overflow-hidden rounded-3xl border border-violet-200/20 bg-[#140c22] shadow-[0_24px_80px_rgba(0,0,0,0.55)] lg:flex">
           <Detail
             marker={selected}
             found={found.includes(selected.id)}
@@ -315,7 +315,27 @@ export default function MapExperience() {
         onFullscreen={() => void toggleFullscreen()}
       />
 
-      <p className="pointer-events-none absolute left-1/2 top-4 z-10 hidden -translate-x-1/2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-center text-[11px] font-medium tracking-wide text-zinc-300 backdrop-blur-md lg:left-[calc(50%+12px)] lg:block">
+      <div
+        className={`pointer-events-none absolute top-4 z-20 hidden items-center gap-2 lg:flex ${
+          selected ? "right-[392px]" : "right-4"
+        }`}
+      >
+        <Compass />
+      </div>
+
+      <div
+        className={`absolute bottom-24 z-20 hidden lg:block ${
+          selected ? "right-[392px]" : "right-4"
+        }`}
+      >
+        <Minimap view={view} />
+      </div>
+
+      <div className="pointer-events-none absolute right-3 top-3 z-20 lg:hidden">
+        <Compass />
+      </div>
+
+      <p className="pointer-events-none absolute left-1/2 top-4 z-10 hidden max-w-md -translate-x-1/2 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-center text-[11px] font-medium tracking-wide text-zinc-300 backdrop-blur-md lg:left-[calc(50%+8px)] lg:block">
         {MAP_ATTRIBUTION_NOTE}
       </p>
 
@@ -332,7 +352,7 @@ export default function MapExperience() {
           fullscreen={fullscreen}
           onFullscreen={() => void toggleFullscreen()}
         />
-        <div className="max-h-[72vh] overflow-hidden rounded-t-3xl border border-violet-200/15 bg-[#120b1c] shadow-[0_-20px_80px_rgba(0,0,0,0.45)]">
+        <div className="max-h-[78vh] overflow-hidden rounded-t-3xl border border-violet-200/20 bg-[#140c22] shadow-[0_-20px_80px_rgba(0,0,0,0.55)]">
           <button
             type="button"
             className="flex w-full justify-center py-2"
@@ -447,6 +467,7 @@ function PanelBody({
               GTA 6 Interactive Map
             </p>
             <h1 className="mt-1 text-2xl font-black tracking-[-0.03em]">Leonida</h1>
+            <p className="mt-1 text-[11px] text-zinc-500">Arrows move · +/− zoom · / search</p>
             <p className="mt-2 text-xs leading-5 text-zinc-400">
               {MAP_ATTRIBUTION_NOTE}. {UNOFFICIAL_DISCLAIMER}
             </p>
@@ -538,6 +559,9 @@ function PanelBody({
                 Hide found
               </label>
             </div>
+            <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+              Legend
+            </p>
             <div className="flex flex-col gap-1.5">
               {CATEGORY_ORDER.map((category) => {
                 const meta = CATEGORY_META[category];
@@ -550,6 +574,22 @@ function PanelBody({
                 ).length;
                 const on = activeCategories.includes(category);
                 const width = total === 0 ? 0 : Math.round((done / total) * 100);
+                if (total === 0) {
+                  return (
+                    <div
+                      key={category}
+                      className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-2.5 py-2 text-zinc-500"
+                    >
+                      <span className="flex items-center gap-2">
+                        <CategoryIcon id={category} className="h-4 w-4" />
+                        <span className="text-sm font-semibold">{meta.label}</span>
+                      </span>
+                      <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-violet-200/80">
+                        Coming at launch
+                      </span>
+                    </div>
+                  );
+                }
                 return (
                   <button
                     key={category}
@@ -693,14 +733,53 @@ function Detail({
           </a>
         </div>
         {marker.image ? (
-          <p className="text-[11px] text-zinc-500">Map imagery: Rockstar Games</p>
+          <p className="text-[11px] text-zinc-500">{IMAGE_CREDIT}</p>
         ) : null}
         {ACTIVE_MAP_LAYER.officialImagery ? (
-          <p className="text-[11px] text-zinc-500">Map imagery: Rockstar Games</p>
+          <p className="text-[11px] text-zinc-500">{IMAGE_CREDIT}</p>
         ) : null}
         <p className="text-[11px] leading-5 text-zinc-500">{UNOFFICIAL_DISCLAIMER}</p>
       </div>
     </article>
+  );
+}
+
+function Compass() {
+  return (
+    <div
+      className="flex items-center gap-1 rounded-full border border-violet-200/20 bg-[#120b1c]/85 px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-violet-100 shadow-lg backdrop-blur"
+      aria-label="North is up, following Mount Kalaga on the state’s northern border"
+    >
+      <span aria-hidden="true" className="text-violet-200">▲</span>
+      NORTH
+    </div>
+  );
+}
+
+function Minimap({ view }: { view: MapView | null }) {
+  if (!view) return null;
+  const left = (view.west / MAP_WIDTH) * 100;
+  const top = ((MAP_HEIGHT - view.north) / MAP_HEIGHT) * 100;
+  const width = Math.max(4, ((view.east - view.west) / MAP_WIDTH) * 100);
+  const height = Math.max(4, ((view.north - view.south) / MAP_HEIGHT) * 100);
+  return (
+    <div className="relative aspect-[1920/1200] w-40 overflow-hidden rounded-xl border border-violet-200/25 bg-[#07141f] shadow-lg">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/map/layers/leonida-schematic.svg"
+        alt=""
+        className="h-full w-full object-fill"
+      />
+      <div
+        className="absolute border border-white/90 bg-white/10"
+        style={{
+          left: `${left}%`,
+          top: `${top}%`,
+          width: `${Math.min(width, 100)}%`,
+          height: `${Math.min(height, 100)}%`,
+        }}
+      />
+    </div>
   );
 }
 

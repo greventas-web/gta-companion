@@ -15,7 +15,7 @@ Published relationships that the drawing follows:
 - **Port Gellhorn.** Rockstar calls it “Leonida’s forgotten coast.” It is drawn on a different shore from Vice City. Which compass coast that is has not been published.
 - **Vice City neighborhoods** named in Rockstar’s own Vice City paragraph (Ocean Beach, Little Cuba, Tisha-Wocka, VC Port) are pinned inside the city blob. Blocks are not shown.
 
-Everything else on the sheet is approximate. The on-map note says so.
+Everything else on the sheet is approximate. The on-map note says so. The coastline, inlets, barrier islands, marsh marks, and hillshade are stylized texture. They are not surveyed shores, roads, or extra towns.
 
 ## Coordinate system
 

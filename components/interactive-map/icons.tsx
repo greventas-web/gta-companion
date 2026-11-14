@@ -29,6 +29,32 @@ export function CategoryIcon({
   );
 }
 
-export function categoryIconMarkup(id: VisibleCategory, color: string) {
-  return `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="${color}" d="${PATHS[id]}"></path></svg>`;
+const BLIP_GLYPH: Record<VisibleCategory, string> = {
+  locations:
+    '<circle cx="20" cy="20" r="3.4" fill="#fff"/>',
+  businesses:
+    '<path fill="#fff" d="M13.5 25V16.2L20 12l6.5 4.2V25h-4.2v-4.2h-4.6V25z"/>',
+  garages:
+    '<path fill="#fff" d="M12 19.5 20 13l8 6.5V26h-5v-5h-6v5h-5z"/>',
+  activities:
+    '<path fill="#fff" d="M16 27V13h2.2v6.2H26l-2.2 2.6L26 24.4h-7.8V27z"/>',
+  shops:
+    '<path fill="none" stroke="#fff" stroke-width="1.8" d="M14 17h12l-1.1 9H15.1zM16.2 17v-1.2a3.8 3.8 0 0 1 7.6 0V17"/>',
+  collectibles:
+    '<path fill="#fff" d="M20 11.5 26 17l-6 10-6-10z"/>',
+};
+
+/** GTA-style radar blip: colored disc, white glyph, crisp rim. */
+export function blipMarkup(
+  id: VisibleCategory,
+  color: string,
+  selected: boolean,
+  label: string | null,
+  side: "left" | "right" | "top" | "bottom"
+) {
+  const glyph = BLIP_GLYPH[id];
+  const name = label
+    ? `<span class="gta-label">${label}</span>`
+    : "";
+  return `<div class="gta-hit${selected ? " is-selected" : ""} gta-side-${side}" style="--pin:${color}"><svg class="gta-disc" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="${color}"/><circle cx="20" cy="20" r="15" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="1.6"/>${glyph}</svg>${name}</div>`;
 }

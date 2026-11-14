@@ -1,132 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600" role="img" aria-labelledby="mapTitle mapDesc">
-  <title id="mapTitle">Stylized diagram of Leonida</title>
-  <desc id="mapDesc">Approximate diagram from official Rockstar footage. Mount Kalaga is on the northern border. Other positions are not surveyed.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1200" width="1920" height="1200" role="img" aria-labelledby="t d">
+  <title id="t">Stylized atlas of Leonida</title>
+  <desc id="d">Original diagram. Coastline texture is not a survey. Positions follow Rockstar footage and copy and stay approximate until launch.</desc>
   <defs>
-    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#07141f"/>
-      <stop offset="0.55" stop-color="#0a2433"/>
-      <stop offset="1" stop-color="#061018"/>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#071825"/>
+      <stop offset="0.55" stop-color="#0b3148"/>
+      <stop offset="1" stop-color="#041018"/>
     </linearGradient>
-    <radialGradient id="oceanGlow" cx="0.62" cy="0.72" r="0.45">
-      <stop offset="0" stop-color="#1a3a55" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#07141f" stop-opacity="0"/>
+    <radialGradient id="deep" cx="0.5" cy="0.62" r="0.72">
+      <stop offset="0" stop-color="#164e6b" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#0a3044" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#02070c" stop-opacity="0.65"/>
     </radialGradient>
-    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1c3b32"/>
-      <stop offset="0.45" stop-color="#16352c"/>
-      <stop offset="1" stop-color="#102820"/>
+    <linearGradient id="land" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#2c4a3c"/>
+      <stop offset="0.45" stop-color="#1b382d"/>
+      <stop offset="1" stop-color="#12281f"/>
     </linearGradient>
     <linearGradient id="north" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2a4a3c"/>
-      <stop offset="1" stop-color="#1a3a30" stop-opacity="0"/>
+      <stop offset="0" stop-color="#d7efe4" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#d7efe4" stop-opacity="0"/>
     </linearGradient>
-    <radialGradient id="city" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#6d28d9" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#6d28d9" stop-opacity="0"/>
+    <radialGradient id="city" cx="0.5" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
     </radialGradient>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#02060a" flood-opacity="0.45"/>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#c4b5fd" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <pattern id="marsh" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M2 16c5-9 8-9 12 0M8 18c4-7 6-7 9 0" fill="none" stroke="#9ddeb8" stroke-opacity="0.45" stroke-width="1"/>
+    </pattern>
+    <pattern id="crops" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 14h16M3 2v10M11 4v8" fill="none" stroke="#d6c98a" stroke-opacity="0.28" stroke-width="1"/>
+    </pattern>
+    <filter id="grain" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="3" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.08  0 0 0 0 0.12  0 0 0 0 0.09  0 0 0 0.18 0" result="g"/>
+      <feBlend in="SourceGraphic" in2="g" mode="overlay"/>
     </filter>
-    <pattern id="marsh" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M2 20c6-10 10-10 14 0" fill="none" stroke="#7dcea0" stroke-opacity="0.28" stroke-width="1.2"/>
-    </pattern>
-    <pattern id="crops" width="18" height="18" patternUnits="userSpaceOnUse">
-      <path d="M0 16h18M4 2v12M12 4v10" fill="none" stroke="#c4b56a" stroke-opacity="0.22" stroke-width="1"/>
-    </pattern>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#02060a" flood-opacity="0.45"/>
+    </filter>
+    <clipPath id="landClip"><path d="M 290.5 245.3 L 309.5 244.9 L 299.5 206.0 L 340.4 210.7 L 343.9 193.7 L 354.5 202.1 L 384.1 184.1 L 407.9 181.3 L 423.3 223.2 L 427.6 178.3 L 471.7 188.3 L 488.1 166.8 L 498.6 128.4 L 527.9 142.7 L 556.5 144.3 L 579.1 156.6 L 592.0 208.4 L 600.5 157.0 L 646.2 169.4 L 649.8 127.6 L 682.3 142.1 L 699.3 143.9 L 724.2 156.7 L 762.6 142.3 L 778.9 148.6 L 797.8 143.1 L 819.5 122.5 L 846.1 110.1 L 880.8 126.7 L 900.3 138.4 L 941.9 119.7 L 970.1 130.8 L 991.5 143.4 L 1023.3 173.8 L 1042.1 134.5 L 1077.7 156.6 L 1098.6 140.2 L 1138.6 124.6 L 1147.9 173.0 L 1193.6 154.7 L 1210.6 175.8 L 1245.3 194.6 L 1259.4 152.6 L 1288.2 143.0 L 1318.9 163.7 L 1340.8 167.3 L 1382.2 156.8 L 1407.5 175.8 L 1431.3 187.3 L 1443.5 169.7 L 1480.5 192.3 L 1488.2 149.1 L 1522.4 139.5 L 1529.3 189.3 L 1546.1 208.6 L 1569.7 218.7 L 1610.7 209.3 L 1596.2 254.1 L 1646.7 247.5 L 1626.7 293.7 L 1646.5 300.0 L 1656.7 326.7 L 1639.7 339.7 L 1605.9 335.9 L 1611.4 356.5 L 1615.7 390.8 L 1641.2 407.6 L 1682.8 401.4 L 1715.3 425.6 L 1695.0 456.0 L 1685.3 478.1 L 1669.7 495.1 L 1621.8 505.6 L 1657.3 527.8 L 1680.1 546.5 L 1720.5 535.9 L 1726.9 564.0 L 1707.5 562.5 L 1701.7 587.9 L 1677.5 597.5 L 1668.8 631.6 L 1689.5 659.5 L 1705.4 681.7 L 1755.2 665.2 L 1781.1 700.0 L 1747.1 724.5 L 1730.9 744.6 L 1690.2 732.0 L 1671.8 745.2 L 1649.7 756.9 L 1625.0 767.5 L 1612.1 807.7 L 1580.0 824.0 L 1563.9 767.9 L 1538.4 759.0 L 1499.2 784.5 L 1478.4 745.3 L 1466.2 783.3 L 1426.0 771.3 L 1408.1 789.1 L 1400.0 802.7 L 1389.7 792.0 L 1353.4 798.8 L 1350.8 760.5 L 1319.0 744.1 L 1315.5 795.2 L 1288.4 804.6 L 1245.5 795.9 L 1239.0 814.6 L 1213.0 824.3 L 1192.0 810.6 L 1166.8 802.6 L 1157.9 758.9 L 1153.3 804.3 L 1105.5 802.1 L 1085.7 824.8 L 1082.6 875.7 L 1065.5 827.5 L 1019.8 847.0 L 1012.8 802.0 L 978.3 784.7 L 948.2 808.2 L 929.5 829.5 L 935.3 875.3 L 898.5 867.6 L 887.1 855.5 L 868.3 838.9 L 829.5 849.0 L 817.9 802.8 L 788.1 828.1 L 769.3 849.3 L 751.2 871.2 L 738.7 889.7 L 713.4 893.7 L 710.9 855.4 L 671.4 866.5 L 657.9 823.5 L 650.5 870.5 L 604.5 864.5 L 589.4 889.4 L 583.0 943.8 L 553.9 913.2 L 526.5 908.1 L 527.7 864.8 L 501.5 848.5 L 489.0 881.4 L 474.1 895.9 L 457.8 908.1 L 435.7 880.0 L 420.8 872.7 L 378.8 874.2 L 363.7 852.0 L 365.2 803.2 L 336.5 817.3 L 323.4 830.1 L 304.6 834.4 L 305.3 850.2 L 297.6 830.0 L 286.8 804.1 L 272.8 779.9 L 233.6 757.3 L 277.7 747.7 L 273.3 703.3 L 294.0 684.0 L 343.7 681.7 L 333.9 645.8 L 284.9 651.3 L 271.9 629.8 L 259.2 598.5 L 282.0 574.3 L 320.3 583.7 L 343.8 573.4 L 334.1 538.9 L 314.8 535.5 L 326.1 490.3 L 310.9 468.3 L 299.6 462.8 L 309.2 455.1 L 334.8 444.6 L 339.6 403.2 L 356.0 398.0 L 334.9 395.4 L 345.1 351.2 L 307.8 348.5 L 286.5 319.0 L 325.4 316.1 L 329.8 278.7 L 372.0 301.7 L 392.6 266.4 L 357.6 252.0 L 325.8 281.0 L 300.7 276.4 Z"/></clipPath>
   </defs>
-
-  <rect width="1200" height="1600" fill="url(#ocean)"/>
-  <rect width="1200" height="1600" fill="url(#oceanGlow)"/>
-
-  <g fill="none" stroke="#9fd4e8" stroke-opacity="0.08" stroke-width="1">
-    <path d="M80 220c80 20 140-10 220 16"/>
-    <path d="M40 980c120 30 200 10 280 40"/>
-    <path d="M860 1480c90-20 160 10 240-8"/>
+  <rect width="1920" height="1200" fill="url(#sea)"/>
+  <rect width="1920" height="1200" fill="url(#deep)"/>
+  <rect width="1920" height="1200" fill="url(#grid)"/>
+  <path d="M 290.5 245.3 L 309.5 244.9 L 299.5 206.0 L 340.4 210.7 L 343.9 193.7 L 354.5 202.1 L 384.1 184.1 L 407.9 181.3 L 423.3 223.2 L 427.6 178.3 L 471.7 188.3 L 488.1 166.8 L 498.6 128.4 L 527.9 142.7 L 556.5 144.3 L 579.1 156.6 L 592.0 208.4 L 600.5 157.0 L 646.2 169.4 L 649.8 127.6 L 682.3 142.1 L 699.3 143.9 L 724.2 156.7 L 762.6 142.3 L 778.9 148.6 L 797.8 143.1 L 819.5 122.5 L 846.1 110.1 L 880.8 126.7 L 900.3 138.4 L 941.9 119.7 L 970.1 130.8 L 991.5 143.4 L 1023.3 173.8 L 1042.1 134.5 L 1077.7 156.6 L 1098.6 140.2 L 1138.6 124.6 L 1147.9 173.0 L 1193.6 154.7 L 1210.6 175.8 L 1245.3 194.6 L 1259.4 152.6 L 1288.2 143.0 L 1318.9 163.7 L 1340.8 167.3 L 1382.2 156.8 L 1407.5 175.8 L 1431.3 187.3 L 1443.5 169.7 L 1480.5 192.3 L 1488.2 149.1 L 1522.4 139.5 L 1529.3 189.3 L 1546.1 208.6 L 1569.7 218.7 L 1610.7 209.3 L 1596.2 254.1 L 1646.7 247.5 L 1626.7 293.7 L 1646.5 300.0 L 1656.7 326.7 L 1639.7 339.7 L 1605.9 335.9 L 1611.4 356.5 L 1615.7 390.8 L 1641.2 407.6 L 1682.8 401.4 L 1715.3 425.6 L 1695.0 456.0 L 1685.3 478.1 L 1669.7 495.1 L 1621.8 505.6 L 1657.3 527.8 L 1680.1 546.5 L 1720.5 535.9 L 1726.9 564.0 L 1707.5 562.5 L 1701.7 587.9 L 1677.5 597.5 L 1668.8 631.6 L 1689.5 659.5 L 1705.4 681.7 L 1755.2 665.2 L 1781.1 700.0 L 1747.1 724.5 L 1730.9 744.6 L 1690.2 732.0 L 1671.8 745.2 L 1649.7 756.9 L 1625.0 767.5 L 1612.1 807.7 L 1580.0 824.0 L 1563.9 767.9 L 1538.4 759.0 L 1499.2 784.5 L 1478.4 745.3 L 1466.2 783.3 L 1426.0 771.3 L 1408.1 789.1 L 1400.0 802.7 L 1389.7 792.0 L 1353.4 798.8 L 1350.8 760.5 L 1319.0 744.1 L 1315.5 795.2 L 1288.4 804.6 L 1245.5 795.9 L 1239.0 814.6 L 1213.0 824.3 L 1192.0 810.6 L 1166.8 802.6 L 1157.9 758.9 L 1153.3 804.3 L 1105.5 802.1 L 1085.7 824.8 L 1082.6 875.7 L 1065.5 827.5 L 1019.8 847.0 L 1012.8 802.0 L 978.3 784.7 L 948.2 808.2 L 929.5 829.5 L 935.3 875.3 L 898.5 867.6 L 887.1 855.5 L 868.3 838.9 L 829.5 849.0 L 817.9 802.8 L 788.1 828.1 L 769.3 849.3 L 751.2 871.2 L 738.7 889.7 L 713.4 893.7 L 710.9 855.4 L 671.4 866.5 L 657.9 823.5 L 650.5 870.5 L 604.5 864.5 L 589.4 889.4 L 583.0 943.8 L 553.9 913.2 L 526.5 908.1 L 527.7 864.8 L 501.5 848.5 L 489.0 881.4 L 474.1 895.9 L 457.8 908.1 L 435.7 880.0 L 420.8 872.7 L 378.8 874.2 L 363.7 852.0 L 365.2 803.2 L 336.5 817.3 L 323.4 830.1 L 304.6 834.4 L 305.3 850.2 L 297.6 830.0 L 286.8 804.1 L 272.8 779.9 L 233.6 757.3 L 277.7 747.7 L 273.3 703.3 L 294.0 684.0 L 343.7 681.7 L 333.9 645.8 L 284.9 651.3 L 271.9 629.8 L 259.2 598.5 L 282.0 574.3 L 320.3 583.7 L 343.8 573.4 L 334.1 538.9 L 314.8 535.5 L 326.1 490.3 L 310.9 468.3 L 299.6 462.8 L 309.2 455.1 L 334.8 444.6 L 339.6 403.2 L 356.0 398.0 L 334.9 395.4 L 345.1 351.2 L 307.8 348.5 L 286.5 319.0 L 325.4 316.1 L 329.8 278.7 L 372.0 301.7 L 392.6 266.4 L 357.6 252.0 L 325.8 281.0 L 300.7 276.4 Z" fill="#1a6a86" fill-opacity="0.35" transform="translate(0 10) scale(1.012)" />
+  <path d="M 290.5 245.3 L 309.5 244.9 L 299.5 206.0 L 340.4 210.7 L 343.9 193.7 L 354.5 202.1 L 384.1 184.1 L 407.9 181.3 L 423.3 223.2 L 427.6 178.3 L 471.7 188.3 L 488.1 166.8 L 498.6 128.4 L 527.9 142.7 L 556.5 144.3 L 579.1 156.6 L 592.0 208.4 L 600.5 157.0 L 646.2 169.4 L 649.8 127.6 L 682.3 142.1 L 699.3 143.9 L 724.2 156.7 L 762.6 142.3 L 778.9 148.6 L 797.8 143.1 L 819.5 122.5 L 846.1 110.1 L 880.8 126.7 L 900.3 138.4 L 941.9 119.7 L 970.1 130.8 L 991.5 143.4 L 1023.3 173.8 L 1042.1 134.5 L 1077.7 156.6 L 1098.6 140.2 L 1138.6 124.6 L 1147.9 173.0 L 1193.6 154.7 L 1210.6 175.8 L 1245.3 194.6 L 1259.4 152.6 L 1288.2 143.0 L 1318.9 163.7 L 1340.8 167.3 L 1382.2 156.8 L 1407.5 175.8 L 1431.3 187.3 L 1443.5 169.7 L 1480.5 192.3 L 1488.2 149.1 L 1522.4 139.5 L 1529.3 189.3 L 1546.1 208.6 L 1569.7 218.7 L 1610.7 209.3 L 1596.2 254.1 L 1646.7 247.5 L 1626.7 293.7 L 1646.5 300.0 L 1656.7 326.7 L 1639.7 339.7 L 1605.9 335.9 L 1611.4 356.5 L 1615.7 390.8 L 1641.2 407.6 L 1682.8 401.4 L 1715.3 425.6 L 1695.0 456.0 L 1685.3 478.1 L 1669.7 495.1 L 1621.8 505.6 L 1657.3 527.8 L 1680.1 546.5 L 1720.5 535.9 L 1726.9 564.0 L 1707.5 562.5 L 1701.7 587.9 L 1677.5 597.5 L 1668.8 631.6 L 1689.5 659.5 L 1705.4 681.7 L 1755.2 665.2 L 1781.1 700.0 L 1747.1 724.5 L 1730.9 744.6 L 1690.2 732.0 L 1671.8 745.2 L 1649.7 756.9 L 1625.0 767.5 L 1612.1 807.7 L 1580.0 824.0 L 1563.9 767.9 L 1538.4 759.0 L 1499.2 784.5 L 1478.4 745.3 L 1466.2 783.3 L 1426.0 771.3 L 1408.1 789.1 L 1400.0 802.7 L 1389.7 792.0 L 1353.4 798.8 L 1350.8 760.5 L 1319.0 744.1 L 1315.5 795.2 L 1288.4 804.6 L 1245.5 795.9 L 1239.0 814.6 L 1213.0 824.3 L 1192.0 810.6 L 1166.8 802.6 L 1157.9 758.9 L 1153.3 804.3 L 1105.5 802.1 L 1085.7 824.8 L 1082.6 875.7 L 1065.5 827.5 L 1019.8 847.0 L 1012.8 802.0 L 978.3 784.7 L 948.2 808.2 L 929.5 829.5 L 935.3 875.3 L 898.5 867.6 L 887.1 855.5 L 868.3 838.9 L 829.5 849.0 L 817.9 802.8 L 788.1 828.1 L 769.3 849.3 L 751.2 871.2 L 738.7 889.7 L 713.4 893.7 L 710.9 855.4 L 671.4 866.5 L 657.9 823.5 L 650.5 870.5 L 604.5 864.5 L 589.4 889.4 L 583.0 943.8 L 553.9 913.2 L 526.5 908.1 L 527.7 864.8 L 501.5 848.5 L 489.0 881.4 L 474.1 895.9 L 457.8 908.1 L 435.7 880.0 L 420.8 872.7 L 378.8 874.2 L 363.7 852.0 L 365.2 803.2 L 336.5 817.3 L 323.4 830.1 L 304.6 834.4 L 305.3 850.2 L 297.6 830.0 L 286.8 804.1 L 272.8 779.9 L 233.6 757.3 L 277.7 747.7 L 273.3 703.3 L 294.0 684.0 L 343.7 681.7 L 333.9 645.8 L 284.9 651.3 L 271.9 629.8 L 259.2 598.5 L 282.0 574.3 L 320.3 583.7 L 343.8 573.4 L 334.1 538.9 L 314.8 535.5 L 326.1 490.3 L 310.9 468.3 L 299.6 462.8 L 309.2 455.1 L 334.8 444.6 L 339.6 403.2 L 356.0 398.0 L 334.9 395.4 L 345.1 351.2 L 307.8 348.5 L 286.5 319.0 L 325.4 316.1 L 329.8 278.7 L 372.0 301.7 L 392.6 266.4 L 357.6 252.0 L 325.8 281.0 L 300.7 276.4 Z" fill="url(#land)" filter="url(#grain)" />
+  <path d="M 290.5 245.3 L 309.5 244.9 L 299.5 206.0 L 340.4 210.7 L 343.9 193.7 L 354.5 202.1 L 384.1 184.1 L 407.9 181.3 L 423.3 223.2 L 427.6 178.3 L 471.7 188.3 L 488.1 166.8 L 498.6 128.4 L 527.9 142.7 L 556.5 144.3 L 579.1 156.6 L 592.0 208.4 L 600.5 157.0 L 646.2 169.4 L 649.8 127.6 L 682.3 142.1 L 699.3 143.9 L 724.2 156.7 L 762.6 142.3 L 778.9 148.6 L 797.8 143.1 L 819.5 122.5 L 846.1 110.1 L 880.8 126.7 L 900.3 138.4 L 941.9 119.7 L 970.1 130.8 L 991.5 143.4 L 1023.3 173.8 L 1042.1 134.5 L 1077.7 156.6 L 1098.6 140.2 L 1138.6 124.6 L 1147.9 173.0 L 1193.6 154.7 L 1210.6 175.8 L 1245.3 194.6 L 1259.4 152.6 L 1288.2 143.0 L 1318.9 163.7 L 1340.8 167.3 L 1382.2 156.8 L 1407.5 175.8 L 1431.3 187.3 L 1443.5 169.7 L 1480.5 192.3 L 1488.2 149.1 L 1522.4 139.5 L 1529.3 189.3 L 1546.1 208.6 L 1569.7 218.7 L 1610.7 209.3 L 1596.2 254.1 L 1646.7 247.5 L 1626.7 293.7 L 1646.5 300.0 L 1656.7 326.7 L 1639.7 339.7 L 1605.9 335.9 L 1611.4 356.5 L 1615.7 390.8 L 1641.2 407.6 L 1682.8 401.4 L 1715.3 425.6 L 1695.0 456.0 L 1685.3 478.1 L 1669.7 495.1 L 1621.8 505.6 L 1657.3 527.8 L 1680.1 546.5 L 1720.5 535.9 L 1726.9 564.0 L 1707.5 562.5 L 1701.7 587.9 L 1677.5 597.5 L 1668.8 631.6 L 1689.5 659.5 L 1705.4 681.7 L 1755.2 665.2 L 1781.1 700.0 L 1747.1 724.5 L 1730.9 744.6 L 1690.2 732.0 L 1671.8 745.2 L 1649.7 756.9 L 1625.0 767.5 L 1612.1 807.7 L 1580.0 824.0 L 1563.9 767.9 L 1538.4 759.0 L 1499.2 784.5 L 1478.4 745.3 L 1466.2 783.3 L 1426.0 771.3 L 1408.1 789.1 L 1400.0 802.7 L 1389.7 792.0 L 1353.4 798.8 L 1350.8 760.5 L 1319.0 744.1 L 1315.5 795.2 L 1288.4 804.6 L 1245.5 795.9 L 1239.0 814.6 L 1213.0 824.3 L 1192.0 810.6 L 1166.8 802.6 L 1157.9 758.9 L 1153.3 804.3 L 1105.5 802.1 L 1085.7 824.8 L 1082.6 875.7 L 1065.5 827.5 L 1019.8 847.0 L 1012.8 802.0 L 978.3 784.7 L 948.2 808.2 L 929.5 829.5 L 935.3 875.3 L 898.5 867.6 L 887.1 855.5 L 868.3 838.9 L 829.5 849.0 L 817.9 802.8 L 788.1 828.1 L 769.3 849.3 L 751.2 871.2 L 738.7 889.7 L 713.4 893.7 L 710.9 855.4 L 671.4 866.5 L 657.9 823.5 L 650.5 870.5 L 604.5 864.5 L 589.4 889.4 L 583.0 943.8 L 553.9 913.2 L 526.5 908.1 L 527.7 864.8 L 501.5 848.5 L 489.0 881.4 L 474.1 895.9 L 457.8 908.1 L 435.7 880.0 L 420.8 872.7 L 378.8 874.2 L 363.7 852.0 L 365.2 803.2 L 336.5 817.3 L 323.4 830.1 L 304.6 834.4 L 305.3 850.2 L 297.6 830.0 L 286.8 804.1 L 272.8 779.9 L 233.6 757.3 L 277.7 747.7 L 273.3 703.3 L 294.0 684.0 L 343.7 681.7 L 333.9 645.8 L 284.9 651.3 L 271.9 629.8 L 259.2 598.5 L 282.0 574.3 L 320.3 583.7 L 343.8 573.4 L 334.1 538.9 L 314.8 535.5 L 326.1 490.3 L 310.9 468.3 L 299.6 462.8 L 309.2 455.1 L 334.8 444.6 L 339.6 403.2 L 356.0 398.0 L 334.9 395.4 L 345.1 351.2 L 307.8 348.5 L 286.5 319.0 L 325.4 316.1 L 329.8 278.7 L 372.0 301.7 L 392.6 266.4 L 357.6 252.0 L 325.8 281.0 L 300.7 276.4 Z" fill="url(#north)" clip-path="url(#landClip)"/>
+  <g fill="none" stroke="#e7f6ef" stroke-opacity="0.35" stroke-linecap="round" clip-path="url(#landClip)">
+    <path d="M430 210c80-40 150-20 230 10" stroke-width="3"/>
+    <path d="M520 250c90-30 180-10 260 24" stroke-width="2.5"/>
+    <path d="M700 190c70-28 140 0 210 18" stroke-width="2"/>
+    <path d="M900 220c60-20 120 8 180 6" stroke-width="2"/>
   </g>
-
-  <path filter="url(#soft)" fill="url(#land)" d="M420 120
-    C560 50 860 55 1040 170
-    C1180 270 1160 430 1100 580
-    C1050 710 1140 820 1100 960
-    C1060 1100 980 1200 880 1180
-    C790 1165 800 1060 720 1020
-    C630 970 560 1020 520 1120
-    C470 1240 380 1280 280 1180
-    C180 1080 140 940 190 800
-    C230 680 160 540 250 400
-    C320 280 300 170 420 120 Z"/>
-
-  <path fill="url(#north)" d="M420 120
-    C560 50 860 55 1040 170
-    C1120 250 1140 360 1040 450
-    C900 540 700 520 540 470
-    C400 420 300 320 280 220
-    C270 160 330 130 420 120 Z"/>
-
-  <g fill="none" stroke="#d7efe4" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round">
-    <path d="M470 210c70-50 150-46 230-10"/>
-    <path d="M520 280c80-36 170-20 240 24"/>
-    <path d="M430 340c90-20 200 0 280 40"/>
-  </g>
-
-  <ellipse cx="610" cy="520" rx="210" ry="120" fill="url(#crops)" opacity="0.9"/>
-  <g fill="#c8c2b0" opacity="0.8">
-    <rect x="520" y="440" width="16" height="46" rx="2"/>
-    <rect x="542" y="422" width="12" height="64" rx="2"/>
-    <rect x="560" y="448" width="14" height="38" rx="2"/>
-  </g>
-
-  <path d="M500 1600 L500 1160 C540 1060 640 1020 730 1080 C800 1130 820 1260 790 1600 Z" fill="#0a3144"/>
-  <path d="M520 1500 C600 1420 760 1400 860 1480" fill="none" stroke="#8fd0ea" stroke-opacity="0.18" stroke-width="10"/>
-
-  <path d="M210 980
-    C270 950 350 1020 330 1110
-    C310 1210 230 1240 180 1150
-    C140 1060 150 1000 210 980 Z" fill="url(#marsh)"/>
-
-  <ellipse cx="920" cy="1020" rx="190" ry="145" fill="url(#city)"/>
-  <g fill="#ddd6fe" opacity="0.75">
-    <rect x="860" y="940" width="10" height="28"/>
-    <rect x="876" y="926" width="8" height="42"/>
-    <rect x="890" y="948" width="12" height="22"/>
-    <rect x="908" y="932" width="7" height="36"/>
-    <rect x="922" y="950" width="11" height="20"/>
-  </g>
-
-  <g fill="#1f6a52">
-    <ellipse cx="680" cy="1348" rx="78" ry="42"/>
-    <ellipse cx="770" cy="1415" rx="96" ry="48"/>
-    <ellipse cx="880" cy="1375" rx="54" ry="30"/>
-    <ellipse cx="620" cy="1460" rx="36" ry="20"/>
-  </g>
-  <path d="M740 1368 C800 1300 880 1220 960 1145" fill="none" stroke="#d6dde8" stroke-width="7" stroke-linecap="round"/>
-  <path d="M740 1368 C800 1300 880 1220 960 1145" fill="none" stroke="#8b93a7" stroke-width="2"/>
-
-  <g fill="#e7e2ff" font-family="ui-sans-serif, system-ui, sans-serif">
-    <g font-size="13" letter-spacing="3" fill="#c4b5fd">
-      <polygon points="1122,90 1134,124 1122,116 1110,124" fill="#c4b5fd"/>
-      <text x="1122" y="144" text-anchor="middle">N</text>
+  <g clip-path="url(#landClip)">
+    <ellipse cx="760" cy="470" rx="220" ry="120" fill="url(#crops)"/>
+    <path d="M620 620 C760 560 980 600 1100 700 C1000 820 780 860 640 760 Z" fill="url(#marsh)"/>
+    <ellipse cx="1480" cy="560" rx="230" ry="160" fill="url(#city)"/>
+    <g fill="#e9e4ff" opacity="0.8">
+      <rect x="1428" y="520" width="8" height="34"/>
+      <rect x="1442" y="500" width="7" height="54"/>
+      <rect x="1454" y="528" width="11" height="28"/>
+      <rect x="1470" y="508" width="6" height="46"/>
+      <rect x="1482" y="532" width="10" height="22"/>
     </g>
-    <text x="620" y="210" text-anchor="middle" font-size="28" font-weight="700">Mount Kalaga</text>
-    <text x="620" y="236" text-anchor="middle" font-size="15" fill="#b7c4be">National Park · northern border</text>
-
-    <text x="620" y="510" text-anchor="middle" font-size="28" font-weight="700">Ambrosia</text>
-    <text x="620" y="536" text-anchor="middle" font-size="15" fill="#b7c4be">Heart of Leonida</text>
-
-    <text x="320" y="730" text-anchor="middle" font-size="22" font-weight="700">Port Gellhorn</text>
-    <text x="320" y="752" text-anchor="middle" font-size="13" fill="#b7c4be">Forgotten coast</text>
-
-    <text x="280" y="1005" text-anchor="middle" font-size="22" font-weight="700">Grassrivers</text>
-    <text x="280" y="1026" text-anchor="middle" font-size="13" fill="#b7c4be">Wetlands</text>
-
-    <text x="940" y="990" text-anchor="middle" font-size="28" font-weight="700">Vice City</text>
-    <text x="940" y="1014" text-anchor="middle" font-size="13" fill="#ddd6fe">Coastal metropolis</text>
-
-    <text x="770" y="1455" text-anchor="middle" font-size="22" font-weight="700">Leonida Keys</text>
-    <text x="770" y="1476" text-anchor="middle" font-size="13" fill="#b7c4be">Archipelago</text>
+    <g fill="#d9d3c2" opacity="0.75">
+      <rect x="900" y="360" width="10" height="36" rx="1"/>
+      <rect x="916" y="344" width="8" height="52" rx="1"/>
+      <rect x="930" y="368" width="12" height="28" rx="1"/>
+    </g>
   </g>
-
-  <text x="600" y="1564" text-anchor="middle" fill="#9fb0c0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15">
-    Diagram from official Rockstar footage · positions approximate
-  </text>
+  <g fill="#1e6b52" stroke="#0e3a2c" stroke-width="1">
+    <ellipse cx="1040" cy="980" rx="78" ry="34"/>
+    <ellipse cx="1180" cy="1010" rx="64" ry="28"/>
+    <ellipse cx="1310" cy="970" rx="86" ry="32"/>
+    <ellipse cx="1460" cy="1024" rx="58" ry="24"/>
+    <ellipse cx="1590" cy="990" rx="48" ry="20"/>
+    <ellipse cx="980" cy="1048" rx="28" ry="14"/>
+    <ellipse cx="1388" cy="1072" rx="34" ry="14"/>
+    <ellipse cx="1708" cy="470" rx="26" ry="10"/>
+    <ellipse cx="1764" cy="640" rx="34" ry="11"/>
+    <ellipse cx="1688" cy="820" rx="22" ry="9"/>
+  </g>
+  <g fill="none" stroke="#d5deea" stroke-width="5" stroke-linecap="round">
+    <path d="M1505 800 C1520 860 1460 940 1388 1000"/>
+    <path d="M1310 1000 C1280 1006 1220 1008 1180 1010"/>
+    <path d="M1180 1010 C1140 1004 1090 992 1040 980"/>
+    <path d="M1460 1004 C1500 1000 1550 994 1590 990"/>
+  </g>
+  <g fill="none" stroke="#c4b5fd" stroke-opacity="0.35" stroke-dasharray="7 8" stroke-width="1.5">
+    <path d="M400 300 C700 280 1100 300 1500 340"/>
+    <path d="M620 620 C820 600 1040 640 1180 760"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" fill="#f4f0ff" text-anchor="middle">
+    <text x="760" y="210" font-size="34" font-weight="700" letter-spacing="1" stroke="#04140f" stroke-width="5" paint-order="stroke">Mount Kalaga</text>
+    <text x="760" y="234" font-size="13" letter-spacing="3" fill="#d5ebe2" stroke="#04140f" stroke-width="3" paint-order="stroke">NATIONAL PARK</text>
+    <text x="700" y="430" font-size="30" font-weight="700" stroke="#04140f" stroke-width="5" paint-order="stroke">Ambrosia</text>
+    <text x="700" y="452" font-size="13" letter-spacing="2.5" fill="#d5ebe2" stroke="#04140f" stroke-width="3" paint-order="stroke">HEART OF LEONIDA</text>
+    <text x="430" y="520" font-size="20" font-weight="700" stroke="#04140f" stroke-width="4" paint-order="stroke">Port Gellhorn</text>
+    <text x="430" y="540" font-size="12" letter-spacing="2" fill="#d5ebe2" stroke="#04140f" stroke-width="3" paint-order="stroke">FORGOTTEN COAST</text>
+    <text x="860" y="700" font-size="26" font-weight="700" stroke="#04140f" stroke-width="5" paint-order="stroke">Grassrivers</text>
+    <text x="860" y="722" font-size="12" letter-spacing="2.4" fill="#d5ebe2" stroke="#04140f" stroke-width="3" paint-order="stroke">WETLANDS</text>
+    <text x="1510" y="460" font-size="40" font-weight="700" stroke="#12081f" stroke-width="6" paint-order="stroke">Vice City</text>
+    <text x="1510" y="484" font-size="13" letter-spacing="3" fill="#efe9ff" stroke="#12081f" stroke-width="3" paint-order="stroke">COASTAL METROPOLIS</text>
+    <text x="1280" y="1090" font-size="22" font-weight="700" stroke="#04140f" stroke-width="4" paint-order="stroke">Leonida Keys</text>
+    <text x="1280" y="1110" font-size="12" letter-spacing="2.2" fill="#d5ebe2" stroke="#04140f" stroke-width="3" paint-order="stroke">ARCHIPELAGO</text>
+  </g>
+  <text x="960" y="1168" text-anchor="middle" fill="#9fb4c4" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15">Diagram from official Rockstar footage · positions approximate until launch</text>
 </svg>
