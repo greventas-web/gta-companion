@@ -12,22 +12,22 @@ export default function AnimalsPage() {
       <PageHero
         badge="Unofficial fan database"
         title="Animal Database"
-        description="Browse every officially confirmed animal and wildlife species discovered across Leonida, including predators, marine life, birds and other native wildlife revealed by Rockstar Games."
+        description="Animals tied to Rockstar captions. Species names and habitats are included only when a caption supports them. Rockstar has not published a species list."
       />
 
       <PageStats
         stats={[
           {
             value: animals.length,
-            label: "Confirmed Species",
+            label: "Entries",
           },
           {
             value: "Leonida",
             label: "Wildlife Region",
           },
           {
-            value: "100%",
-            label: "Verified Information",
+            value: "None",
+            label: "Species named by Rockstar",
             accent: true,
           },
         ]}
@@ -37,7 +37,7 @@ export default function AnimalsPage() {
 
       <PageCTA
         title="More Wildlife Coming Soon"
-        description="As Rockstar Games officially reveals additional wildlife across Leonida, GTA Companion will continue expanding the animal database with detailed information, habitats and official screenshots."
+        description="This list grows when Rockstar publishes a caption that names or shows an animal. Species and habitats stay off the page until a caption supports them."
       />
     </PageShell>
   );

@@ -8,8 +8,9 @@ export const brands: Brand[] = [
     category: "Beverage",
     image: "",
     description:
-      "One of Rockstar's iconic fictional beer brands returning in Grand Theft Auto VI.",
+      "Fictional beer brand. Rockstar has not published a Grand Theft Auto VI description of it.",
     firstAppearance: "",
+    status: "Not described by Rockstar",
     gallery: [],
   },
 
@@ -20,8 +21,9 @@ export const brands: Brand[] = [
     category: "Soft Drink",
     image: "",
     description:
-      "The famous green soft drink returns throughout Vice City in GTA VI.",
+      "Fictional soft drink. Rockstar has not published a Grand Theft Auto VI description of it.",
     firstAppearance: "",
+    status: "Not described by Rockstar",
     gallery: [],
   },
 
@@ -32,8 +34,9 @@ export const brands: Brand[] = [
     category: "Soft Drink",
     image: "",
     description:
-      "eCola continues to compete with Sprunk across Leonida.",
+      "Fictional soft drink. Rockstar has not published a Grand Theft Auto VI description of it.",
     firstAppearance: "",
+    status: "Not described by Rockstar",
     gallery: [],
   },
 
@@ -44,8 +47,9 @@ export const brands: Brand[] = [
     category: "Restaurant",
     image: "",
     description:
-      "The iconic fast-food chain returns in Grand Theft Auto VI.",
-    firstAppearance: "",
+      "Rockstar hosted a Burger Shot stand at Kaseya Center in October 2026. Rockstar has not published an in-game description on the Grand Theft Auto VI site.",
+    firstAppearance: "Kaseya Center, October 2026",
+    status: "Promo stand, October 2026",
     gallery: [],
   },
 
@@ -56,8 +60,9 @@ export const brands: Brand[] = [
     category: "Restaurant",
     image: "",
     description:
-      "Popular fast-food brand seen in official Rockstar promotional material.",
+      "Rockstar has not published an Up-n-Atom description for Grand Theft Auto VI.",
     firstAppearance: "",
+    status: "Not described by Rockstar",
     gallery: [],
   },
 
@@ -68,8 +73,9 @@ export const brands: Brand[] = [
     category: "Record Label",
     image: "",
     description:
-      "Vice City record label associated with Dre'Quan Priest and Real Dimez.",
+      "Vice City label run in partnership by Boobie Ike and Dre'Quan Priest. It has signed Real Dimez. Rockstar says they just need a hit.",
     firstAppearance: "Rockstar Games Website",
+    status: "Confirmed",
     gallery: [],
   },
 
@@ -77,11 +83,12 @@ export const brands: Brand[] = [
     id: 7,
     slug: "high-rollerz-lifestyle",
     name: "High Rollerz Lifestyle",
-    category: "Entertainment",
+    category: "Car culture",
     image: "",
     description:
-      "Boobie Ike's entertainment and lifestyle brand operating across Vice City.",
-    firstAppearance: "Rockstar Games Website",
+      "A car-culture social media group seen in Trailer 1. Rockstar has not described it further.",
+    firstAppearance: "Trailer 1",
+    status: "Seen in Trailer 1",
     gallery: [],
   },
 
@@ -92,8 +99,9 @@ export const brands: Brand[] = [
     category: "Nightlife",
     image: "",
     description:
-      "Vice City nightclub brand featured in official Rockstar material.",
-    firstAppearance: "Rockstar Games Website",
+      "Vice City nightclub seen in Trailer 1 (banner towed over Ocean Beach) and Trailer 2 (Jason and Lucia dancing).",
+    firstAppearance: "Trailer 1 and Trailer 2",
+    status: "Seen in Trailer 1 and Trailer 2",
     gallery: [],
   },
 ];

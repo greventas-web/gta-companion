@@ -96,6 +96,11 @@ export default async function CharacterPage({
             <p className="mt-8 max-w-4xl text-xl leading-9 text-zinc-400">
               {character.description}
             </p>
+            {character.details?.map((detail) => (
+              <p key={detail} className="mt-6 max-w-4xl text-xl leading-9 text-zinc-300">
+                {detail}
+              </p>
+            ))}
             <a
               href="https://www.rockstargames.com/VI"
               target="_blank"
@@ -104,6 +109,17 @@ export default async function CharacterPage({
             >
               Source: Rockstar Games — Grand Theft Auto VI
             </a>
+            {character.sources?.map((source) => (
+              <a
+                key={source.href}
+                href={source.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 block text-sm text-pink-300 hover:text-pink-200"
+              >
+                Source: {source.label}
+              </a>
+            ))}
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
 

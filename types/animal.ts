@@ -16,4 +16,6 @@ export interface Animal {
   firstAppearance: string;
 
   gallery?: string[];
+
+  status?: string;
 }

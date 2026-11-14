@@ -58,7 +58,7 @@ export default function ContactPage() {
 
                 <p className="mt-4 leading-8 text-zinc-400">
                   Interested in collaborating with GTA Companion or becoming a
-                  launch partner? We'd love to hear from you.
+                  launch partner? We&apos;d love to hear from you.
                 </p>
               </Card>
 

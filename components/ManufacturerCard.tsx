@@ -61,7 +61,7 @@ export default function ManufacturerCard({
 
             <Globe size={12} />
 
-            {manufacturer.country}
+            Fan note
 
           </div>
 
@@ -102,7 +102,7 @@ export default function ManufacturerCard({
 
                 <span className="text-xs font-bold uppercase tracking-[0.22em]">
 
-                  Headquarters
+                  Headquarters (fan note)
 
                 </span>
 

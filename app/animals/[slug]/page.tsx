@@ -85,6 +85,16 @@ export default async function AnimalPage({
             <p className="mt-8 text-lg leading-8 text-zinc-400">
               {animal.description}
             </p>
+            {animal.status === "Shown in a Rockstar caption" ? (
+              <a
+                href="https://www.rockstargames.com/VI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-sm text-pink-300 hover:text-pink-200"
+              >
+                Source: Rockstar Games — Grand Theft Auto VI
+              </a>
+            ) : null}
 
             <div className="mt-10 grid grid-cols-2 gap-5">
 
@@ -105,7 +115,7 @@ export default async function AnimalPage({
 
               <Info
                 label="Status"
-                value="Confirmed"
+                value={animal.status ?? "Shown in a Rockstar caption"}
               />
 
             </div>

@@ -1,4 +1,8 @@
 import { Character } from "@/types/character";
+import {
+  characterSwitching,
+  relationshipSystem,
+} from "@/src/data/gameplay/confirmed";
 
 export const characters: Character[] = [
   {
@@ -9,7 +13,8 @@ export const characters: Character[] = [
     role: "Protagonist",
     status: "Confirmed",
     description:
-      "Jason Duval is one of the two playable protagonists in Grand Theft Auto VI. Rockstar describes him as someone searching for an easier life, but trouble continues to find him.",
+      "Jason Duval is one of the two playable protagonists in Grand Theft Auto VI. Rockstar says he grew up around grifters and crooks. He is searching for an easier life, but trouble continues to find him.",
+    details: [characterSwitching, relationshipSystem],
     firstAppearance: "Trailer 1",
     gallery: [],
     relatedVehicles: [],
@@ -27,6 +32,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     description:
       "Lucia Caminos is one of the two playable protagonists in Grand Theft Auto VI. Recently released from prison, she is determined to build a better future through calculated decisions.",
+    details: [characterSwitching, relationshipSystem],
     firstAppearance: "Trailer 1",
     gallery: [],
     relatedVehicles: [],
@@ -43,7 +49,7 @@ export const characters: Character[] = [
     role: "Supporting Character",
     status: "Confirmed",
     description:
-      "Cal Hampton is Jason's friend. He spends much of his time monitoring communications and following conspiracy theories while living a quiet life.",
+      "Jason's friend and a fellow associate of Brian's. Cal feels safest at home, snooping on Coast Guard comms with a few beers and some private browser tabs open.",
     firstAppearance: "Rockstar Games Website",
     gallery: [],
     relatedVehicles: [],
@@ -65,14 +71,8 @@ export const characters: Character[] = [
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["vice-city"],
-    relatedBusinesses: [
-      "high-rollerz-lifestyle",
-      "nine1nine",
-    ],
-    relatedBrands: [
-      "high-rollerz-lifestyle",
-      "only-raw-records",
-    ],
+    relatedBusinesses: ["only-raw-records", "jack-of-hearts"],
+    relatedBrands: ["only-raw-records"],
   },
 
   {
@@ -134,7 +134,7 @@ export const characters: Character[] = [
     role: "Drug Smuggler",
     status: "Confirmed",
     description:
-      "Brian Heder is a longtime drug smuggler operating from the Leonida Keys.",
+      "Brian Heder moves product through his boat yard with his third wife, Lori, and lets Jason live rent-free at one of his properties in exchange for help with local shakedowns.",
     firstAppearance: "Rockstar Games Website",
     gallery: [],
     relatedVehicles: [],

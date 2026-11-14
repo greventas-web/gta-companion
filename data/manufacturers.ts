@@ -17,7 +17,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -28,14 +28,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/vapid.webp",
     country: "United States",
     description:
-      "Vapid produces pickups, SUVs, muscle cars and commercial vehicles inspired by classic American manufacturers.",
+      "Vapid produces pickups, SUVs, muscle cars and commercial vehicles in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "United States",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -46,14 +46,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/pegassi.webp",
     country: "Italy",
     description:
-      "Pegassi is known for producing exotic Italian supercars and high-performance motorcycles inspired by Lamborghini and Ducati.",
+      "Pegassi produces exotic supercars and high-performance motorcycles in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "Italy",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -64,14 +64,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/annis.webp",
     country: "Japan",
     description:
-      "Annis specializes in Japanese-inspired sports cars, tuner vehicles and performance coupes.",
+      "Annis produces sports cars, tuner vehicles and performance coupes in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "Japan",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -89,7 +89,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -100,14 +100,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/declasse.webp",
     country: "United States",
     description:
-      "Declasse manufactures dependable sedans, muscle cars, vans and utility vehicles inspired by Chevrolet.",
+      "Declasse manufactures sedans, muscle cars, vans and utility vehicles in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "United States",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -125,7 +125,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -136,14 +136,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/dinka.webp",
     country: "Japan",
     description:
-      "Dinka manufactures compact cars, sports cars and motorcycles inspired by Honda and Acura.",
+      "Dinka manufactures compact cars, sports cars and motorcycles in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "Japan",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -154,14 +154,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/gallivanter.webp",
     country: "United Kingdom",
     description:
-      "Gallivanter produces premium British luxury SUVs inspired by Land Rover.",
+      "Gallivanter produces luxury SUVs in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "United Kingdom",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -172,14 +172,14 @@ const manufacturerRecords: Manufacturer[] = [
     logo: "/images/manufacturers/pfister.webp",
     country: "Germany",
     description:
-      "Pfister designs high-performance sports cars and luxury SUVs inspired by Porsche.",
+      "Pfister designs high-performance sports cars and luxury SUVs in the Grand Theft Auto series.",
     founded: "Unknown",
     headquarters: "Germany",
     parentCompany: "Unknown",
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -197,7 +197,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -215,7 +215,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -233,7 +233,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -251,7 +251,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -269,7 +269,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -287,7 +287,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -305,7 +305,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -323,7 +323,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Aviation",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -341,7 +341,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Marine",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -359,7 +359,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Marine",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -377,7 +377,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Marine",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -395,7 +395,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -413,7 +413,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -431,7 +431,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -449,7 +449,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 
@@ -467,7 +467,7 @@ const manufacturerRecords: Manufacturer[] = [
     industry: "Automotive",
     website: "",
     vehicleCount: 0,
-    status: "Active",
+    status: "Fan note",
     gallery: [],
   },
 ];

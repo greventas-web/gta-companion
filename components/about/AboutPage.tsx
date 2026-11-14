@@ -18,14 +18,14 @@ export default function AboutPage() {
         <PageHero
           badge="About GTA Companion"
           title="Built For GTA Players"
-          description="Everything you need for GTA 6. GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two. The notes and pictures are made for this site."
+          description="Everything you need for GTA 6. GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two. The notes are written for this site. Screenshots, artwork, and trailers are official Rockstar Games material, used for commentary and credited 'Images: Rockstar Games'."
         />
 
         <section className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
             icon={<ShieldCheck size={36} />}
-            title="Original art"
-            description="Vehicle, character, and location pictures on this site are original illustrations. Rockstar's own images are not hosted here."
+            title="Official images"
+            description="Screenshots, artwork, and trailers are official Rockstar Games material, used for commentary and credited 'Images: Rockstar Games'."
           />
 
           <FeatureCard
@@ -77,7 +77,6 @@ export default function AboutPage() {
             </div>
 
             <ul className="mt-8 space-y-5 text-lg leading-8 text-zinc-300">
-              <li>• More original illustrations</li>
               <li>• Fan notes after launch</li>
               <li>• Guides written for this site</li>
               <li>• A phone-friendly version of this website</li>

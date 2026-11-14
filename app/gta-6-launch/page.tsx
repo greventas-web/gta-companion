@@ -102,6 +102,7 @@ export default function Gta6LaunchPage() {
           <div className="mt-4">
             <LaunchHubCountdown
               local={gta6Launch.clocks.ps5}
+              xbox={gta6Launch.clocks.xbox}
               cloud={gta6Launch.clocks.xboxCloud}
             />
           </div>

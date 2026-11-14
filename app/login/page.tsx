@@ -41,8 +41,12 @@ export default function LoginPage() {
       await loginUser(email, password);
 
       router.push("/dashboard");
-    } catch (err: any) {
-      switch (err.code) {
+    } catch (err: unknown) {
+      const code =
+        typeof err === "object" && err !== null && "code" in err
+          ? String(err.code)
+          : "";
+      switch (code) {
         case "auth/invalid-credential":
         case "auth/wrong-password":
         case "auth/user-not-found":

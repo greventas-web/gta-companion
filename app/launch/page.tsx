@@ -69,22 +69,22 @@ const editionPlaces = [
   {
     name: "Electric Fang Tattoo",
     image: "/images/official/editions/ultimate_edition_electric_fang_01.webp",
-    note: "A tattoo shop included with the Ultimate Edition.",
+    note: "Electric Fang Tattoo has 50+ tattoos designed by FAILE.",
   },
   {
     name: "Goodtime Gear",
     image: "/images/official/editions/ultimate_edition_goodtime_gear_01.webp",
-    note: "An apparel shop included with the Ultimate Edition.",
+    note: "Goodtime Gear: a capsule collection of apparel and accessories inspired by Macca the Gator, the Goodtime State's hit TV show character.",
   },
   {
     name: "PTT Youngin$",
     image: "/images/official/editions/ultimate_edition_ptt_store_01.webp",
-    note: "An illegal-goods store included with the Ultimate Edition.",
+    note: "PTT Youngin$ Illegal Goods Store (gang compound): raid the compound of one of Southside Vice City's loudest gangs and escape to score special items and contraband.",
   },
   {
-    name: "Wyman's Classic Car Collection",
+    name: "Classic Car Collection",
     image: "/images/official/editions/ultimate_edition_wyman_car_collection_01.webp",
-    note: "A car collection commissioned through the fixer Wyman.",
+    note: "Classic Car Collection (special commission): track down abandoned classic and project cars and restore them for eccentric collector and local fixer Wyman.",
   },
   {
     name: "Paradise Garage",
@@ -94,7 +94,7 @@ const editionPlaces = [
   {
     name: "Vice City Style",
     image: "/images/official/editions/ultimate_edition_vice_city_style_01.webp",
-    note: "Clothes for Jason and Lucia included with the Ultimate Edition.",
+    note: "Vice City Style includes clothes and tattoos for Jason and Lucia.",
   },
   {
     name: "Jason's safehouse",
@@ -108,10 +108,10 @@ const ultimatePlaces = [
   "One-Eyed Willie's, an off-road mod shop at Lake Leonida",
   "Sara's Unisex Salon",
   "Stock 305 clothing store",
-  "Electric Fang Tattoo",
-  "Goodtime Gear apparel",
-  "PTT Youngin$ illegal goods store",
-  "Classic Car Collection, a commission from the fixer Wyman",
+  "Electric Fang Tattoo: 50+ tattoos designed by FAILE",
+  "Goodtime Gear: a capsule collection of apparel and accessories inspired by Macca the Gator, the Goodtime State's hit TV show character",
+  "PTT Youngin$ Illegal Goods Store (gang compound): raid the compound of one of Southside Vice City's loudest gangs and escape to score special items and contraband",
+  "Classic Car Collection (special commission): track down abandoned classic and project cars and restore them for eccentric collector and local fixer Wyman",
 ];
 
 export default function LaunchPage() {
@@ -132,7 +132,28 @@ export default function LaunchPage() {
           <p className="mt-4 leading-8 text-zinc-400">
             PlayStation 5 and Xbox Series X|S. A PC date has not been announced.
             Digital pre-orders can start pre-loading on November 10, 2026.
-            The physical box contains a download code.
+            The physical box contains a download code. The ESRB rated it M
+            (Mature 17+): Blood and Gore, Intense Violence, Mature Humor,
+            Nudity, Strong Language, Strong Sexual Content, Use of Drugs and
+            Alcohol, and In-Game Purchases.{" "}
+            <a
+              href="https://www.esrb.org/ratings/41627/grand-theft-auto-vi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-300 hover:text-pink-200"
+            >
+              ESRB rating
+            </a>
+            . Descriptors are also on the{" "}
+            <a
+              href="https://www.rockstargames.com/VI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-300 hover:text-pink-200"
+            >
+              Rockstar VI page
+            </a>
+            .
           </p>
         </article>
 
@@ -253,7 +274,7 @@ export default function LaunchPage() {
               <Link href="/weapons/hawk-little-morgan" className="font-semibold text-white hover:text-pink-400">
                 Hawk &amp; Little Morgan revolvers
               </Link>
-              . A matching pair with engraved metal and palm-etched grips.
+              . His and hers revolvers sourced from the Vercetti Estate, with palm-tree-etched grips and a high-performance scope.
             </li>
             <li>
               <Link href="/weapons/girardi-es9" className="font-semibold text-white hover:text-pink-400">

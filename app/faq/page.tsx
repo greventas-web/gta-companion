@@ -6,8 +6,21 @@ import {
   Container,
   Section,
 } from "@/components/ui";
+import {
+  characterSwitching,
+  esrbRating,
+  esrbSources,
+  gameplaySystems,
+  relationshipSystem,
+  switchingSources,
+} from "@/src/data/gameplay/confirmed";
 
-const faqs = [
+const faqs: {
+  question: string;
+  answer: string;
+  points?: readonly string[];
+  sources?: readonly { label: string; href: string }[];
+}[] = [
   {
     question: "When does GTA VI come out?",
     answer:
@@ -21,7 +34,7 @@ const faqs = [
   {
     question: "What is in each edition?",
     answer:
-      "Both editions include the game. Purchases before November 20, 2026 add the Vintage Vice City Pack: the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. Digital pre-orders also include one month of GTA+. The Ultimate Edition, at $99.99 in the United States, adds named vehicles, the Hawk & Little Morgan revolvers, Jason's Girardi ES9, Lucia's Klose K17, and extra shops. The full list is on the Editions page.",
+      "Both editions include the game. Purchases before November 20, 2026 add the Vintage Vice City Pack: the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. Digital pre-orders also include one month of GTA+. The Ultimate Edition, at $99.99 in the United States, adds named vehicles, the Hawk & Little Morgan revolvers, Jason's Girardi ES9, Lucia's Klose K17, and other Ultimate Edition items. The full list is on the Editions page.",
   },
   {
     question: "Where can I buy or pre-order it?",
@@ -30,8 +43,20 @@ const faqs = [
   },
   {
     question: "Who are the main characters?",
+    answer: `The two playable protagonists are Jason Duval and Lucia Caminos. Their story is set in Vice City and the state of Leonida. ${characterSwitching} ${relationshipSystem} The relationship notes are from Rob Nelson's Famitsu interview.`,
+    sources: switchingSources,
+  },
+  {
+    question: "What gameplay systems has Rockstar confirmed?",
     answer:
-      "The two playable protagonists are Jason Duval and Lucia Caminos. Their story is set in Vice City and the state of Leonida.",
+      "Rob Nelson has described these systems in interviews, including Famitsu.",
+    points: gameplaySystems,
+    sources: switchingSources.slice(0, 2),
+  },
+  {
+    question: "What is the age rating?",
+    answer: esrbRating,
+    sources: esrbSources,
   },
   {
     question: "What is GTA Companion?",
@@ -47,11 +72,6 @@ const faqs = [
     question: "Is this affiliated with Rockstar Games?",
     answer:
       "No. GTA Companion is an independent fan project and is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.",
-  },
-  {
-    question: "Will there be a mobile app?",
-    answer:
-      "Yes. iOS and Android apps are planned after the web platform is established.",
   },
   {
     question: "How often is the database updated?",
@@ -85,6 +105,32 @@ export default function FAQPage() {
                 <p className="mt-5 text-lg leading-8 text-zinc-400">
                   {faq.answer}
                 </p>
+                {faq.points && faq.points.length > 0 ? (
+                  <ul className="mt-5 list-disc space-y-2 pl-6 text-lg leading-8 text-zinc-400">
+                    {faq.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {faq.sources && faq.sources.length > 0 ? (
+                  <p className="mt-5 text-base leading-8 text-zinc-500">
+                    Sources:{" "}
+                    {faq.sources.map((source, index) => (
+                      <span key={source.href}>
+                        {index > 0 ? "; " : ""}
+                        <a
+                          href={source.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-pink-300 hover:text-pink-200"
+                        >
+                          {source.label}
+                        </a>
+                      </span>
+                    ))}
+                    .
+                  </p>
+                ) : null}
               </Card>
             ))}
           </div>

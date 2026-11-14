@@ -55,7 +55,7 @@ export default function NewsSection() {
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
 
           <Link
-            href="/news"
+            href="/news/gta-vi-launch-date"
             className="group overflow-hidden rounded-[40px] border border-white/10 bg-[#09090B] transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:shadow-[0_35px_90px_rgba(236,72,153,.18)]"
           >
 
@@ -63,7 +63,7 @@ export default function NewsSection() {
 
               <Image
                 src="/images/official/news/trailer.webp"
-                alt="Trailer 2"
+                alt="Grand Theft Auto VI"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -83,12 +83,13 @@ export default function NewsSection() {
                 </div>
 
                 <h3 className="mt-7 max-w-[760px] text-6xl font-black leading-tight tracking-[-0.03em] text-white">
-                  Grand Theft Auto VI launches May 26, 2026
+                  Grand Theft Auto VI launches November 19, 2026
                 </h3>
 
                 <p className="mt-6 max-w-[760px] text-xl leading-9 text-zinc-300">
-                  Trailer 2, screenshots, artwork and every official Rockstar
-                  announcement organized into one premium experience.
+                  The November 19, 2026 release on PlayStation 5 and Xbox Series
+                  X|S was set by Rockstar on November 6, 2025. The launch
+                  trailer restates it.
                 </p>
 
               </div>

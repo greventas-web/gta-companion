@@ -14,4 +14,6 @@ export interface Brand {
   firstAppearance: string;
 
   gallery?: string[];
+
+  status?: string;
 }

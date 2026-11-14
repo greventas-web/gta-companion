@@ -105,7 +105,7 @@ export default async function NewsArticlePage({
               <Info
                 icon={<Building2 size={18} />}
                 label="Source"
-                value="Rockstar Games"
+                value={article.sourceName ?? "Rockstar Games"}
               />
 
               <Info
@@ -127,18 +127,62 @@ export default async function NewsArticlePage({
               {article.summary}
             </p>
 
-            <p className="mt-8 text-lg leading-9 text-zinc-400">
-              Rockstar Games officially announced this update as part of its
-              ongoing coverage of Grand Theft Auto VI. GTA Companion tracks
-              every official announcement, trailer, screenshot and Newswire
-              post to provide players with an organized reference library.
-            </p>
+            {article.paragraphs?.map((paragraph) => (
+              <p key={paragraph} className="mt-8 text-lg leading-9 text-zinc-300">
+                {paragraph}
+              </p>
+            ))}
 
-            <p className="mt-8 text-lg leading-9 text-zinc-400">
-              As Rockstar releases additional information, this article will be
-              expanded with new details, media and related content to keep it
-              accurate and up to date.
-            </p>
+            {article.points && article.points.length > 0 ? (
+              <>
+                <h2 className="mt-10 text-2xl font-black text-white">
+                  Gameplay confirmed by Rockstar
+                </h2>
+                <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-8 text-zinc-300">
+                  {article.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-base leading-8 text-zinc-400">
+                  Rob Nelson described these systems in interviews, including Famitsu. The relationship notes are from that Famitsu interview. Switching is also covered by the Dazed deep dive and PC Gamer.
+                </p>
+              </>
+            ) : null}
+
+            {article.sources && article.sources.length > 0 ? (
+              <p className="mt-8 text-base leading-8 text-zinc-400">
+                Sources:{" "}
+                {article.sources.map((source, index) => (
+                  <span key={source.href}>
+                    {index > 0 ? "; " : ""}
+                    <a
+                      href={source.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-300 hover:text-pink-200"
+                    >
+                      {source.label}
+                    </a>
+                  </span>
+                ))}
+                .
+              </p>
+            ) : (
+              <>
+                <p className="mt-8 text-lg leading-9 text-zinc-400">
+                  Rockstar Games officially announced this update as part of its
+                  ongoing coverage of Grand Theft Auto VI. GTA Companion tracks
+                  every official announcement, trailer, screenshot and Newswire
+                  post to provide players with an organized reference library.
+                </p>
+
+                <p className="mt-8 text-lg leading-9 text-zinc-400">
+                  As Rockstar releases additional information, this article will be
+                  expanded with new details, media and related content to keep it
+                  accurate and up to date.
+                </p>
+              </>
+            )}
           </div>
         </section>
 

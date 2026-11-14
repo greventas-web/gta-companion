@@ -91,7 +91,9 @@ export default function GuideDatabase() {
           </h3>
 
           <p className="mt-6 text-xl text-zinc-400">
-            Try another search term.
+            {query.trim()
+              ? "Try another search term."
+              : "Fan guides will be written after launch. Nothing is listed yet."}
           </p>
 
         </div>

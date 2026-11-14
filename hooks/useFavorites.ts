@@ -21,8 +21,6 @@ export function useFavorites() {
 
   useEffect(() => {
     if (!user) {
-      setFavorites([]);
-      setLoading(false);
       return;
     }
 
@@ -80,8 +78,8 @@ export function useFavorites() {
   }
 
   return {
-    favorites,
-    loading,
+    favorites: user ? favorites : [],
+    loading: user ? loading : false,
     toggleFavorite,
   };
 }

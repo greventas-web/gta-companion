@@ -24,6 +24,10 @@ export interface Character {
   relatedBusinesses?: string[];
 
   relatedBrands?: string[];
-  
+
   imagePosition?: "left" | "center" | "right";
+
+  details?: string[];
+
+  sources?: { label: string; href: string }[];
 }

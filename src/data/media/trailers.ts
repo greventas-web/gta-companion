@@ -17,6 +17,14 @@ export const trailers: Trailer[] = [
     duration: "1:31",
   },
   {
+    id: 5,
+    title: "Grand Theft Auto VI: Pre-Load Now",
+    youtubeId: "TIPlpDAsfWo",
+    releaseDate: "November 10, 2026",
+    thumbnail: "/images/official/news/trailer.webp",
+    duration: "0:30",
+  },
+  {
     id: 3,
     title: "Grand Theft Auto VI: An Extended Look",
     youtubeId: "tJbzMqJGH4k",

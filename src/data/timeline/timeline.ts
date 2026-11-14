@@ -17,9 +17,15 @@ export const timeline: TimelineEvent[] = [
     date: "December 4, 2023",
     title: "Trailer 1",
     description:
-      "Rockstar publishes the first Grand Theft Auto VI trailer, naming Jason, Lucia, Vice City, and the state of Leonida, with a 2025 window that was later changed.",
-    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
-    sourceHref: "https://www.rockstargames.com/VI",
+      "Rockstar publishes the first Grand Theft Auto VI trailer, showing Lucia, her partner (named as Jason Duval in May 2025), Vice City, and the state of Leonida, with a 2025 window that was later changed.",
+    sourceLabel: "Rockstar Games — Launch trailer page",
+    sourceHref: "https://www.rockstargames.com/VI/launch-trailer",
+    moreSources: [
+      {
+        label: "GamesRadar — Lucia and Jason full names with Trailer 2",
+        href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6s-lucia-and-jason-get-full-names-and-backstories-as-trailer-2-drops-and-rockstar-shares-loads-more-details-about-its-protagonists/",
+      },
+    ],
   },
   {
     date: "May 2, 2025",
@@ -74,7 +80,7 @@ export const timeline: TimelineEvent[] = [
     date: "October 15, 2026",
     title: "Launch trailer",
     description:
-      "The launch trailer debuts Flower in a Hurricane, from the original score by Justice.",
+      "The launch trailer debuts 'Flower in a Hurricane' by Justice (composers of the original score) feat. Tame Impala, SZA, and King Gizzard & The Lizard Wizard.",
     sourceLabel: "Rockstar Games — Launch trailer",
     sourceHref: "https://www.rockstargames.com/VI/launch-trailer",
   },
@@ -88,6 +94,24 @@ export const timeline: TimelineEvent[] = [
       "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
   },
   {
+    date: "November 3, 2026",
+    title: "Release time confirmed",
+    description:
+      "Rockstar Support says Grand Theft Auto VI releases at midnight local time on November 19, 2026, in all regions, on both PlayStation 5 and Xbox Series X|S.",
+    sourceLabel:
+      "Rockstar Support — Regional pre-load and release times",
+    sourceHref:
+      "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s",
+  },
+  {
+    date: "November 5, 2026",
+    title: "Launch Gallery",
+    description:
+      "Rockstar publishes the Launch Gallery, a set of screenshots on the Grand Theft Auto VI site.",
+    sourceLabel: "Rockstar Games — Grand Theft Auto VI",
+    sourceHref: "https://www.rockstargames.com/VI",
+  },
+  {
     date: "November 10, 2026",
     title: "Pre-load opens",
     description:
@@ -95,6 +119,20 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire — Pre-load now",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
+  },
+  {
+    date: "November 10, 2026",
+    title: "Pre-Load Now video",
+    description:
+      "Rockstar releases Grand Theft Auto VI: Pre-Load Now, a 0:30 video.",
+    sourceLabel: "Rockstar Games — Pre-Load Now",
+    sourceHref: "https://www.rockstargames.com/VI/pre-load-now",
+    moreSources: [
+      {
+        label: "Rockstar Games on YouTube — Pre-Load Now",
+        href: "https://www.youtube.com/watch?v=TIPlpDAsfWo",
+      },
+    ],
   },
   {
     date: "November 13, 2026",

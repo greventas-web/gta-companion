@@ -20,12 +20,13 @@ type CloudClock = {
 
 type Props = {
   local: LocalClock;
+  xbox: LocalClock;
   cloud: CloudClock;
 };
 
 const units = ["Days", "Hours", "Minutes", "Seconds"] as const;
 
-export default function LaunchHubCountdown({ local, cloud }: Props) {
+export default function LaunchHubCountdown({ local, xbox, cloud }: Props) {
   const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {
@@ -35,24 +36,23 @@ export default function LaunchHubCountdown({ local, cloud }: Props) {
     return () => window.clearInterval(timer);
   }, []);
 
-  const localAt = new Date(
-    local.year,
-    local.month - 1,
-    local.day,
-    0,
-    0,
-    0,
-    0
-  ).getTime();
+  const localAt = localMidnight(local);
+  const xboxAt = localMidnight(xbox);
   const cloudAt = new Date(cloud.iso).getTime();
 
   return (
-    <div className="grid gap-4 lg:grid-cols-2">
+    <div className="grid gap-4 lg:grid-cols-3">
       <Clock
         label={local.label}
         detail={local.detail}
         done={local.done}
         remaining={now === null ? null : localAt - now}
+      />
+      <Clock
+        label={xbox.label}
+        detail={xbox.detail}
+        done={xbox.done}
+        remaining={now === null ? null : xboxAt - now}
       />
       <Clock
         label={cloud.label}
@@ -64,6 +64,10 @@ export default function LaunchHubCountdown({ local, cloud }: Props) {
       />
     </div>
   );
+}
+
+function localMidnight(clock: LocalClock) {
+  return new Date(clock.year, clock.month - 1, clock.day, 0, 0, 0, 0).getTime();
 }
 
 function Clock({
