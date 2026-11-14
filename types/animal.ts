@@ -11,6 +11,8 @@ export interface Animal {
 
   image: string;
 
+  imageAlt?: string;
+
   description: string;
 
   firstAppearance: string;

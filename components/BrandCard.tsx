@@ -21,7 +21,7 @@ export default function BrandCard({
 
           <ItemImage
             src={brand.image}
-            alt={brand.name}
+            alt={brand.imageAlt || brand.name}
             name={brand.name}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"

@@ -1,4 +1,5 @@
-import ItemImage from "@/components/ItemImage";
+import ItemImage, { isNameCard } from "@/components/ItemImage";
+import { IMAGE_CREDIT } from "@/lib/site";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -62,13 +63,18 @@ export default async function AnimalPage({
 
               <ItemImage
                 src={animal.image}
-                alt={animal.name}
+                alt={animal.imageAlt || animal.name}
                 name={animal.name}
                 fill
                 className="object-cover"
               />
 
             </div>
+            {isNameCard(animal.image) ? null : (
+              <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+                {IMAGE_CREDIT}
+              </p>
+            )}
 
           </div>
 
