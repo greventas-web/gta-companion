@@ -1,6 +1,6 @@
 "use client";
 
-import ItemImage from "@/components/ItemImage";
+import ItemImage, { isNameCard } from "@/components/ItemImage";
 import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
 import {
@@ -45,9 +45,13 @@ export default function WeaponCard({
           />
           <RepresentativeMark show={weapon.imageRepresentative} />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
+          {isNameCard(weapon.image) ? null : (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+            </>
+          )}
 
           <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
             {weapon.category}
