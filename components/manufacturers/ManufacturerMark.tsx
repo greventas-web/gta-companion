@@ -31,7 +31,7 @@ export default function ManufacturerMark({
     >
       <span
         className={`flex shrink-0 items-center justify-center border border-pink-400/50 bg-gradient-to-br from-pink-500/35 via-fuchsia-500/15 to-violet-500/25 font-black tracking-tight text-white ${frames[mark.frame]} ${
-          lockup ? "h-28 w-28 text-4xl" : "h-10 w-10 text-[11px]"
+          lockup ? "h-28 w-28 text-4xl" : "h-10 w-10 text-xs"
         }`}
       >
         {mark.monogram}
@@ -43,7 +43,7 @@ export default function ManufacturerMark({
             ? "mt-6 text-3xl font-black uppercase tracking-[0.22em] text-white"
             : `min-w-0 truncate font-black uppercase text-white ${
                 compactName
-                  ? "text-[11px] tracking-[0.12em]"
+                  ? "text-xs tracking-[0.12em]"
                   : "text-sm tracking-[0.18em]"
               }`
         }

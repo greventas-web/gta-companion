@@ -9,6 +9,8 @@ export interface NewsArticle {
 
   image: string;
 
+  imageAlt?: string;
+
   summary: string;
 
   date: string;

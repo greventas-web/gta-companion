@@ -9,12 +9,31 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 
 import { animals } from "@/data/animals";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return animals.map((animal) => ({ slug: animal.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const animal = animals.find((item) => item.slug === slug);
+
+  if (!animal) {
+    return {};
+  }
+
+  return detailMetadata(animal.name, animal.description);
+}
 
 export default async function AnimalPage({
   params,

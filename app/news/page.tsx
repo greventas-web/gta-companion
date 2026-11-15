@@ -3,8 +3,13 @@ import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import PageStats from "@/components/PageStats";
-
 import { news } from "@/data/news";
+import { pageMetadata } from "@/lib/launch";
+
+export const metadata = pageMetadata(
+  "GTA 6 news",
+  "Official Grand Theft Auto VI announcements from Rockstar Newswire: trailers, pre-load, music, and the launch gallery. Unofficial fan site."
+);
 
 export default function NewsPage() {
   const categories = new Set(

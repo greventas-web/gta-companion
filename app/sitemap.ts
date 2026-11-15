@@ -1,5 +1,15 @@
 import type { MetadataRoute } from "next";
 
+import { activities } from "@/data/activities";
+import { animals } from "@/data/animals";
+import { brands } from "@/data/brands";
+import { businesses } from "@/data/businesses";
+import { characters } from "@/data/characters";
+import { locations } from "@/data/locations";
+import { manufacturers } from "@/data/manufacturers";
+import { news } from "@/data/news";
+import { vehicles } from "@/data/vehicles";
+import { weapons } from "@/data/weapons";
 import { SITE } from "@/lib/site";
 import { cheats } from "@/src/data/launch/cheats";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
@@ -13,6 +23,19 @@ const launchPaths = [
   ...fastestCars.map((entry) => `/fastest-cars/${entry.slug}`),
   ...mapLocations.map((entry) => `/map-locations/${entry.slug}`),
   ...cheats.map((entry) => `/cheats/${entry.slug}`),
+];
+
+const detailPaths = [
+  ...vehicles.map((entry) => `/vehicles/${entry.slug}`),
+  ...characters.map((entry) => `/characters/${entry.slug}`),
+  ...locations.map((entry) => `/locations/${entry.slug}`),
+  ...businesses.map((entry) => `/businesses/${entry.slug}`),
+  ...brands.map((entry) => `/brands/${entry.slug}`),
+  ...manufacturers.map((entry) => `/manufacturers/${entry.slug}`),
+  ...weapons.map((entry) => `/weapons/${entry.slug}`),
+  ...animals.map((entry) => `/animals/${entry.slug}`),
+  ...activities.map((entry) => `/activities/${entry.slug}`),
+  ...news.map((entry) => `/news/${entry.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -50,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/changelog",
     "/roadmap",
     ...launchPaths,
+    ...detailPaths,
   ];
 
   const now = new Date();

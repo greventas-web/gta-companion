@@ -8,12 +8,31 @@ import ActivityCard from "@/components/ActivityCard";
 import { SourceList } from "@/components/SourceLink";
 import { IMAGE_CREDIT } from "@/lib/site";
 import { activities } from "@/data/activities";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return activities.map((activity) => ({ slug: activity.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const activity = activities.find((item) => item.slug === slug);
+
+  if (!activity) {
+    return {};
+  }
+
+  return detailMetadata(activity.name, activity.description);
+}
 
 export default async function ActivityPage({
   params,

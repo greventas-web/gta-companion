@@ -32,7 +32,7 @@ export default function FeaturedNews({
 
           <Image
             src={article.image}
-            alt={article.title}
+            alt={article.imageAlt || article.title}
             fill
             priority
             className="object-cover transition duration-700 group-hover:scale-105"

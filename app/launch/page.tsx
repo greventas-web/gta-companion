@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
 import { IMAGE_CREDIT } from "@/lib/site";
+import { editionCutoff, goodtimeLine, goodtimeSource } from "@/data/merch";
 import {
   esrbSources,
   playstationStandard,
@@ -192,11 +193,7 @@ export default function LaunchPage() {
           Vintage Vice City Pack
         </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-          Check your store; PlayStation and Xbox list November 19, 2026 at
-          23:59:59. Rockstar Support says prior to November 20, 2026. The pack
-          is not limited to the Ultimate Edition. 1 month of GTA+ included with
-          digital pre-orders. It auto-renews and isn&apos;t included with
-          physical pre-orders.
+          {editionCutoff} The pack is not limited to the Ultimate Edition.
         </p>
         <SourceList
           className="mt-4"
@@ -214,6 +211,18 @@ export default function LaunchPage() {
             Lucia&apos;s red sequin dress, plus a tropical pattern for most guns.
           </p>
         </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-4xl font-black tracking-[-0.03em]">
+          Merchandise, not an edition
+        </h2>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
+          {goodtimeLine} The box includes a 6-inch Macca the Gator figure,
+          GTAVI Oakley Frogskins, a New Era 9FORTY hat, a Chunkee the Manatee
+          shot glass, and a Leonida poster.
+        </p>
+        <SourceList sources={[goodtimeSource]} className="mt-4" />
       </section>
 
       <section className="mt-16">

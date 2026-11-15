@@ -150,12 +150,6 @@ export const animalStandIns: Record<string, StandIn> = {
 
 export const brandStandIns: Record<string, StandIn> = {
   "burger-shot": city(vc(8), "a Vice City street"),
-  "up-n-atom": {
-    src: `${media}/screenshots-people-boobie-ike-boobie-ike-02.webp`,
-    alt: "A Vice City night storefront from an official Boobie Ike screenshot, used as a representative image",
-    source: "Official Boobie Ike screenshot 02 — night storefront",
-    exact: false,
-  },
   "only-raw-records": {
     src: `${media}/screenshots-people-drequan-priest-drequan-priest-04.webp`,
     alt: "A studio mixing desk from an official Dre'Quan Priest screenshot, not a labeled Only Raw Records storefront",

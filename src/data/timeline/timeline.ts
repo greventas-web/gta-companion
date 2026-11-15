@@ -75,12 +75,40 @@ export const timeline: TimelineEvent[] = [
     sourceHref: "https://www.rockstargames.com/VI",
   },
   {
+    date: "September 17, 2026",
+    title: "The Album announced",
+    description:
+      "Rockstar announces Grand Theft Auto VI: The Album, the official soundtrack made with Atlantic Records, launching November 19 alongside the game. It has 34 original tracks, with vinyl and CD editions. The first six singles are Yung Lean, \"That's It\" (feat. Future & Metro Boomin); Travis Scott, \"RHYNO\" (prod. by Guy-Manuel de Homem-Christo); CA7RIEL & Paco Amoroso, PinkPantheress, Fred again.. & Etienne de Crécy, \"Sexy Magic\"; Morgan Wallen, \"Last Thing You Need\"; Rauw Alejandro, \"Macacoa 2000\"; and Keith Richards, \"Bright Lights, Big City\".",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/7599a881942544/announcing-grand-theft-auto-vi-the-album-coming-november-19",
+  },
+  {
+    date: "September 24, 2026",
+    title: "The Goodtime State Collector's Box",
+    description:
+      "Rockstar opens pre-orders for The Goodtime State – Vice City Collection, a limited Collector's Box arriving November 19. The game is sold separately. The box includes a 6-inch Macca the Gator figure, GTAVI Oakley Frogskins, a New Era 9FORTY hat, a Chunkee the Manatee shot glass, and a Leonida poster, plus other Macca merchandise.",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/9k2a49ook82o57/pre-order-the-goodtime-state-vice-city-collection-now-while-supplies-l",
+  },
+  {
     date: "October 8, 2026",
     title: "Six radio stations",
     description:
       "Rockstar names Cocoteo FM, Back Country Radio, AfroBank FM, The Chamber 106.6, Flash FM, and Dirty South Classics, and says on-demand podcasts will play in vehicles and on foot.",
-    sourceLabel: "Rockstar Games",
-    sourceHref: "https://www.rockstargames.com/VI",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/o3982oa93a23k4/the-music-of-grand-theft-auto-vi-in-game-radio-stations",
+  },
+  {
+    date: "October 8, 2026",
+    title: "Rockstar Store collection",
+    description:
+      "Rockstar opens the Grand Theft Auto VI Collection at the Rockstar Store: apparel and collectibles inspired by the game, including Goodtime State tees, caps, a keychain, a money clip, a Zippo lighter, totes, and stickers.",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/759875393o5253/grand-theft-auto-vi-collection-now-at-the-rockstar-store",
   },
   {
     date: "October 15, 2026",
@@ -89,6 +117,15 @@ export const timeline: TimelineEvent[] = [
       "The launch trailer debuts 'Flower in a Hurricane' by Justice (composers of the original score) feat. Tame Impala, SZA, and King Gizzard & The Lizard Wizard.",
     sourceLabel: "Launch trailer",
     sourceHref: "https://www.rockstargames.com/VI/launch-trailer",
+  },
+  {
+    date: "October 29, 2026",
+    title: "Original score by Justice",
+    description:
+      "Rockstar says Justice (Gaspard Augé and Xavier de Rosnay) composed an adaptive original score. The score album has 30 tracks and comes out December 11 on streaming, CD, and vinyl. It includes \"Flower in a Hurricane\" and the single \"Pusher\" (feat. Gesaffelstein).",
+    sourceLabel: "Rockstar Newswire",
+    sourceHref:
+      "https://www.rockstargames.com/newswire/article/39ak8a12395591/grand-theft-auto-vi-original-score-by-justice",
   },
   {
     date: "November 3, 2026",
@@ -164,7 +201,7 @@ export const timeline: TimelineEvent[] = [
     date: "November 13, 2026",
     title: "Macca & Friends teaser",
     description:
-      "Rockstar Games released a teaser trailer for Macca & Friends, an animated series inside Grand Theft Auto VI. It follows the adventures of Macca the Gator and his wetland friends across the state of Leonida. The series airs on the in-game Weazel TV network and is watchable from launch on November 19, 2026. The teaser was a Rockstar-provided exclusive via DiscussingFilm.",
+      "Rockstar Games released a teaser trailer for Macca & Friends, an animated series inside Grand Theft Auto VI. It follows the adventures of Macca the Gator and his wetland friends across the state of Leonida. The series is reported to air on the in-game Weazel network and is watchable from launch on November 19, 2026. The teaser was a Rockstar-provided exclusive via DiscussingFilm.",
     sourceLabel: "Gematsu",
     sourceHref:
       "https://www.gematsu.com/2026/11/grand-theft-auto-vi-in-game-animated-series-macca-friends-teaser-trailer",

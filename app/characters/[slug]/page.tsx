@@ -11,6 +11,8 @@ import CharacterCard from "@/components/CharacterCard";
 
 import { SourceList } from "@/components/SourceLink";
 import { characters } from "@/data/characters";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 import { IMAGE_CREDIT } from "@/lib/site";
 import { rockstarVi } from "@/src/data/gameplay/confirmed";
 
@@ -19,6 +21,23 @@ type Props = {
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return characters.map((character) => ({ slug: character.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const character = characters.find((item) => item.slug === slug);
+
+  if (!character) {
+    return {};
+  }
+
+  return detailMetadata(character.name, character.description);
+}
 
 export default async function CharacterPage({
   params,

@@ -13,12 +13,32 @@ import { SourceList } from "@/components/SourceLink";
 import ShareButtons from "@/components/news/ShareButtons";
 
 import { news } from "@/data/news";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
+import { IMAGE_CREDIT } from "@/lib/site";
 
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return news.map((article) => ({ slug: article.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const article = news.find((item) => item.slug === slug);
+
+  if (!article) {
+    return {};
+  }
+
+  return detailMetadata(article.title, article.summary);
+}
 
 export default async function NewsArticlePage({
   params,
@@ -63,13 +83,16 @@ export default async function NewsArticlePage({
             <div className="relative aspect-[16/10]">
               <Image
                 src={article.image}
-                alt={article.title}
+                alt={article.imageAlt || article.title}
                 fill
                 priority
                 className="object-cover"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-200">
+                {IMAGE_CREDIT}
+              </p>
             </div>
           </div>
 
@@ -78,7 +101,7 @@ export default async function NewsArticlePage({
               {article.category}
             </span>
 
-            <h1 className="mt-8 text-6xl font-black tracking-[-0.03em]">
+            <h1 className="mt-8 break-words text-4xl font-black tracking-[-0.03em] sm:text-6xl">
               {article.title}
             </h1>
 

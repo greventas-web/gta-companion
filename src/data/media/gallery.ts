@@ -166,5 +166,6 @@ export const officialMedia: OfficialMedia[] = [
   { group: "Artwork", section: "Artwork", title: "Raul Bautista", src: "/images/official/media/artwork-raul-bautista-raul-bautista-landscape.webp", thumb: "/images/official/media/thumbs/artwork-raul-bautista-raul-bautista-landscape.webp" },
   { group: "Artwork", section: "Artwork", title: "Real Dimez", src: "/images/official/media/artwork-real-dimez-real-dimez-landscape.webp", thumb: "/images/official/media/thumbs/artwork-real-dimez-real-dimez-landscape.webp" },
   { group: "Artwork", section: "Album", title: "The Album Cover Art", src: "/images/official/media/artwork-the-album-cover-art-the-album-cover-art-landscape.webp", thumb: "/images/official/media/thumbs/artwork-the-album-cover-art-the-album-cover-art-landscape.webp" },
+  { group: "Artwork", section: "Album", title: "Original Score by Justice", src: "/images/official/news/original-score-justice.webp", thumb: "/images/official/news/original-score-justice.webp" },
 ];
 

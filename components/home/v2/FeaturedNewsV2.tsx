@@ -45,7 +45,7 @@ export default function FeaturedNewsV2() {
 
               <Image
                 src={article.image}
-                alt={article.title}
+                alt={article.imageAlt || article.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover transition duration-700 group-hover:scale-110"

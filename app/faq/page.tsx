@@ -1,6 +1,6 @@
 import PageTitle from "@/components/PageTitle";
 import { SourceList, type SourceRef } from "@/components/SourceLink";
-
+import { pageMetadata } from "@/lib/launch";
 import {
   Badge,
   Card,
@@ -19,16 +19,21 @@ import {
   xboxUltimate,
   xboxUpgrade,
   gameplaySystems,
+  ignConsequencesQuote,
+  ignCoupleQuote,
+  ignEmpathy,
+  ignEmpathyQuote,
   relationshipSystem,
   switchingSources,
 } from "@/src/data/gameplay/confirmed";
-import {
-  guardianApart,
-  guardianCharacterSources,
-  guardianHands,
-  guardianRelationship,
-  guardianSwitching,
-} from "@/src/data/gameplay/guardian";
+import { editionCutoff, goodtimeSource } from "@/data/merch";
+import { guardianCharacterSources } from "@/src/data/gameplay/guardian";
+
+export const metadata = pageMetadata(
+  "GTA 6 FAQ",
+  "Release date, price, editions, characters, and other answers limited to what Rockstar and the stores have published. Unofficial fan site."
+);
+
 
 const faqs: {
   question: string;
@@ -44,7 +49,7 @@ const faqs: {
   {
     question: "How much does GTA VI cost?",
     answer:
-      `The PlayStation Store lists the Standard Edition at $79.99 (US). The PlayStation Store and the Xbox Store list the Ultimate Edition at $99.99 (US). Standard owners can upgrade later. The Xbox Store lists the Ultimate Edition Upgrade at $20.00 (US). There is no physical Ultimate Edition. Check your store; PlayStation and Xbox list November 19, 2026 at 23:59:59. 1 month of GTA+ included with digital pre-orders. It auto-renews and isn't included with physical pre-orders.`,
+      `The PlayStation Store lists the Standard Edition at $79.99 (US). The PlayStation Store and the Xbox Store list the Ultimate Edition at $99.99 (US). Standard owners can upgrade later. The Xbox Store lists the Ultimate Edition Upgrade at $20.00 (US). There is no physical Ultimate Edition. ${editionCutoff}`,
     sources: [
       playstationStandard,
       playstationUltimate,
@@ -56,8 +61,8 @@ const faqs: {
   {
     question: "What is in each edition?",
     answer:
-      `Both editions include the game. There is no physical Ultimate Edition. The Vintage Vice City Pack adds the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. Check your store; PlayStation and Xbox list November 19, 2026 at 23:59:59. 1 month of GTA+ included with digital pre-orders. It auto-renews and isn't included with physical pre-orders. The Ultimate Edition adds the Hawk & Little Morgan Revolvers, the '67 Vapid Dominator Buggy and Garage, Electric Fang Tattoo Parlor, Jason's Girardi ES9, Lucia's Klose K17, and other items. The full list is on the Editions page.`,
-    sources: [rockstarSupportEditions, playstationUltimate, xboxStandard],
+      `Both editions include the game. There is no physical Ultimate Edition. The Vintage Vice City Pack adds the '55 Vapid Stanier, the Shore Court garage, outfits and hairstyles, and a tropical weapon pattern. ${editionCutoff} The Ultimate Edition adds the Hawk & Little Morgan Revolvers, the '67 Vapid Dominator Buggy and Garage, Electric Fang Tattoo Parlor, Jason's Girardi ES9, Lucia's Klose K17, and other items. The full list is on the Editions page. The Goodtime State – Vice City Collection is a merchandise box, not a game edition.`,
+    sources: [rockstarSupportEditions, playstationUltimate, xboxStandard, goodtimeSource],
   },
   {
     question: "Where can I buy or pre-order it?",
@@ -66,8 +71,8 @@ const faqs: {
   },
   {
     question: "Who are the main characters?",
-    answer: `The two playable protagonists are Jason Duval and Lucia Caminos. Their story is set in Vice City and the state of Leonida. ${characterSwitching} ${relationshipSystem} Those notes are from Rob Nelson's Famitsu interview. ${guardianSwitching} ${guardianApart} ${guardianRelationship} ${guardianHands}`,
-    sources: [...switchingSources, ...guardianCharacterSources],
+    answer: `The two playable protagonists are Jason Duval and Lucia Caminos. ${ignCoupleQuote} Their story is set in Vice City and the state of Leonida. ${characterSwitching} When they are apart, you can have them text and call each other. ${relationshipSystem} Rob Nelson says the relationship is yours to nurture or yours to lose, and whether it remains romantic is in your hands. When they are together, you can press a button to make them hold hands. ${ignEmpathyQuote} ${ignConsequencesQuote}`,
+    sources: [...switchingSources, ...guardianCharacterSources, ignEmpathy],
   },
   {
     question: "What gameplay systems has Rockstar confirmed?",

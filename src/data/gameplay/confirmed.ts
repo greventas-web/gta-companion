@@ -32,6 +32,20 @@ export const switchingSources = [
   },
 ] as const satisfies readonly CitedSource[];
 
+export const ignEmpathy = {
+  label: "IGN",
+  href: "https://sea.ign.com/grand-theft-auto-vi-rumored-title/251983/gta-6-will-do-something-the-franchise-has-never-done-before-encourage-empathy",
+} as const satisfies CitedSource;
+
+export const ignCoupleQuote =
+  "Rob Nelson described Jason and Lucia as a \"younger couple with their backs against the wall.\"";
+
+export const ignEmpathyQuote =
+  "Asked whether the game would encourage empathy, Rob Nelson said: \"We've tried for the first time in a GTA to provide mechanisms that encourage it, for those who want to.\"";
+
+export const ignConsequencesQuote =
+  "\"Crime is a fundamental part of GTA – at least up until now, it has been,\" Nelson said. He added that Rockstar is trying not to punish people for playing the game they are used to, and that \"your actions will have some effect on how the game plays out.\"";
+
 export const ignBigInterview = {
   label: "IGN",
   href: "https://sea.ign.com/grand-theft-auto-vi-rumored-title/249916/gta-6-the-big-interview",

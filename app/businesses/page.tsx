@@ -1,7 +1,13 @@
 import BusinessDatabase from "@/components/BusinessDatabase";
+import { pageMetadata } from "@/lib/launch";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+
+export const metadata = pageMetadata(
+  "GTA 6 businesses",
+  "Businesses Rockstar has shown in Vice City and Leonida for Grand Theft Auto VI. Unofficial fan site."
+);
 
 export default function BusinessesPage() {
   return (

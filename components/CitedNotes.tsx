@@ -4,6 +4,7 @@ export type CitedNote = {
   title: string;
   body: string;
   source: SourceRef;
+  sources?: readonly SourceRef[];
 };
 
 type Props = {
@@ -31,7 +32,7 @@ export default function CitedNotes({ eyebrow, title, intro, notes }: Props) {
           >
             <h3 className="break-words text-xl font-black">{note.title}</h3>
             <p className="mt-3 text-base leading-7 text-zinc-400">{note.body}</p>
-            <SourceList sources={[note.source]} className="mt-4" />
+            <SourceList sources={note.sources ?? [note.source]} className="mt-4" />
           </article>
         ))}
       </div>

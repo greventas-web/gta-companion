@@ -14,7 +14,6 @@ const presets: Record<string, WordmarkStyle> = {
   Sprunk: { h1: 168, h2: 196, h3: 276, angle: 200, motif: 1 },
   eCola: { h1: 328, h2: 292, h3: 174, angle: 145, motif: 2 },
   "Burger Shot": { h1: 312, h2: 258, h3: 186, angle: 220, motif: 3 },
-  "Up-n-Atom": { h1: 186, h2: 276, h3: 322, angle: 160, motif: 0 },
   "Only Raw Records": { h1: 292, h2: 174, h3: 328, angle: 110, motif: 1 },
   "High Rollerz Lifestyle": { h1: 258, h2: 328, h3: 188, angle: 240, motif: 2 },
   Nine1Nine: { h1: 198, h2: 312, h3: 274, angle: 175, motif: 3 },
