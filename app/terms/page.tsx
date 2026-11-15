@@ -1,11 +1,17 @@
 import PageTitle from "@/components/PageTitle";
-
+import { pageMetadata } from "@/lib/launch";
 import {
   Badge,
   Card,
   Container,
   Section,
 } from "@/components/ui";
+
+export const metadata = pageMetadata(
+  "Terms of use",
+  "Terms for using GTA Companion. Unofficial fan site, not affiliated with Rockstar Games or Take-Two."
+);
+
 
 export default function TermsPage() {
   return (

@@ -50,12 +50,12 @@ function GalleryBlock({
 
   return (
     <section id={id} aria-labelledby={`${id}-title`}>
-      <div className="mb-10 flex items-end justify-between gap-6">
+      <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.4em] text-pink-400">
             {eyebrow}
           </p>
-          <h2 id={`${id}-title`} className="mt-4 text-5xl font-black">
+          <h2 id={`${id}-title`} className="mt-4 text-4xl font-black sm:text-5xl">
             {title}
           </h2>
         </div>

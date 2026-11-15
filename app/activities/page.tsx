@@ -1,4 +1,5 @@
 import ActivityDatabase from "@/components/ActivityDatabase";
+import { pageMetadata } from "@/lib/launch";
 import CitedNotes from "@/components/CitedNotes";
 import { SourceList } from "@/components/SourceLink";
 import {
@@ -9,7 +10,12 @@ import {
   maccaSource,
   rockstarVi,
 } from "@/src/data/gameplay/confirmed";
-import { activityPrintNotes, guardianPrintIntro } from "@/src/data/gameplay/guardian";
+import { activityPrintNotes, guardianOnlineNotes, guardianPrintIntro } from "@/src/data/gameplay/guardian";
+
+export const metadata = pageMetadata(
+  "GTA 6 activities",
+  "Activities Rockstar has shown or described for Grand Theft Auto VI, from the trailers, the Extended Look, and Rob Nelson's interviews. Unofficial fan site."
+);
 
 const activitySources = [
   rockstarVi,
@@ -50,6 +56,13 @@ export default function ActivitiesPage() {
             title="From the Guardian print"
             intro={guardianPrintIntro}
             notes={activityPrintNotes}
+          />
+
+          <CitedNotes
+            eyebrow="The Guardian"
+            title="Research trips"
+            intro="Keza MacDonald's November 11, 2026 article. The hands-on notes above are from the November 14 print edition, which is not online yet."
+            notes={guardianOnlineNotes}
           />
 
           <ActivityDatabase />

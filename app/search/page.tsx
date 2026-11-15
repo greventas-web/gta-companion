@@ -1,13 +1,22 @@
 import SearchBar from "@/components/SearchBar";
 import PageTitle from "@/components/PageTitle";
 import StatsCard from "@/components/StatsCard";
-
+import { characters } from "@/data/characters";
+import { locations } from "@/data/locations";
+import { vehicles } from "@/data/vehicles";
+import { pageMetadata } from "@/lib/launch";
 import {
   Badge,
   Card,
   Container,
   Section,
 } from "@/components/ui";
+
+export const metadata = pageMetadata(
+  "Search",
+  "Search the GTA Companion databases for vehicles, characters, locations, and the rest of the fan notes. Unofficial fan site."
+);
+
 
 export default function SearchPage() {
   return (
@@ -34,17 +43,17 @@ export default function SearchPage() {
 
             <StatsCard
               label="Vehicles"
-              value="50+"
+              value={String(vehicles.length)}
             />
 
             <StatsCard
               label="Characters"
-              value="10+"
+              value={String(characters.length)}
             />
 
             <StatsCard
               label="Locations"
-              value="20+"
+              value={String(locations.length)}
             />
 
             <StatsCard

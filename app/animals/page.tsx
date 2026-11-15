@@ -5,10 +5,15 @@ import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import PageStats from "@/components/PageStats";
 import { SourceList } from "@/components/SourceLink";
-
 import { animals } from "@/data/animals";
+import { pageMetadata } from "@/lib/launch";
 import { gameInformerAnimals } from "@/src/data/gameplay/confirmed";
 import { animalPrintNotes, guardianPrintIntro } from "@/src/data/gameplay/guardian";
+
+export const metadata = pageMetadata(
+  "GTA 6 animals",
+  "Animals Rockstar has shown or named for Leonida, including the species in Game Informer's cover story. Unofficial fan site."
+);
 
 export default function AnimalsPage() {
   return (

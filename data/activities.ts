@@ -22,9 +22,20 @@ export const activities: Activity[] = [
     image:
       "/images/official/media/screenshots-places-vice-city-vice-city-06.webp",
     description:
-      "Vice City's clubs, bars and live music venues form one of Leonida's biggest attractions.",
-    firstAppearance: "Trailer 2",
+      "Trailer 1 shows a plane towing a Nine1Nine banner over the Vice City beach. Trailer 2 shows Jason and Lucia dancing in a club. Boobie Ike's Rockstar profile names the Jack of Hearts, his strip club in Vice City.",
+    firstAppearance: "Trailer 1",
     gallery: [],
+    sources: [
+      {
+        label: "Trailer 1",
+        href: "https://www.youtube.com/watch?v=QdBZY2fkU-0",
+      },
+      {
+        label: "Trailer 2",
+        href: "https://www.youtube.com/watch?v=VQRLujxTm3c",
+      },
+      rockstarVi,
+    ],
   },
   {
     id: 2,
@@ -306,7 +317,7 @@ export const activities: Activity[] = [
     imageAlt:
       "A television in an interior playing a nature program, Extended Look at 7:40",
     description:
-      "The Extended Look at 7:40 shows a television in an interior playing a nature program. TV audio also plays in Jason and Lucia's hideout, and Weazel airs the animated series Macca & Friends. Rob Nelson says there are more radio and in-game TV ads than ever before.",
+      "The Extended Look at 7:40 shows a television in an interior playing a nature program. TV audio also plays in Jason and Lucia's hideout, and Macca & Friends is reported to air on the in-game Weazel network. Rob Nelson says there are more radio and in-game TV ads than ever before.",
     firstAppearance: "Extended Look",
     gallery: [],
     sources: [extendedLook, ...famitsuSources, ignBigInterview, maccaSource],

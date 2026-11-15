@@ -9,6 +9,8 @@ import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
 
 import { manufacturerByName } from "@/data/manufacturers";
 import { vehicles } from "@/data/vehicles";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 import { vehicleImages } from "@/lib/media/catalog";
 
 type Props = {
@@ -16,6 +18,23 @@ type Props = {
     id: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return vehicles.map((vehicle) => ({ id: vehicle.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const vehicle = vehicles.find((item) => item.slug === id);
+
+  if (!vehicle) {
+    return {};
+  }
+
+  return detailMetadata(vehicle.name, vehicle.description);
+}
 
 export default async function VehicleDetailsPage({
   params,

@@ -16,7 +16,7 @@ import { trailers } from "../../src/data/media/trailers";
 
 export default function MediaPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#040404] text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#040404] text-white">
 
       <div className="absolute left-[-240px] top-[-150px] h-[700px] w-[700px] rounded-full bg-pink-500/15 blur-[220px]" />
 

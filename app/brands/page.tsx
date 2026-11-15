@@ -1,5 +1,11 @@
 import BrandDatabase from "@/components/BrandDatabase";
+import { pageMetadata } from "@/lib/launch";
 import PageHero from "@/components/PageHero";
+
+export const metadata = pageMetadata(
+  "GTA 6 brands",
+  "Brands Rockstar has shown on screen or at an official Grand Theft Auto VI event. Unofficial fan site."
+);
 
 export default function BrandsPage() {
   return (
@@ -16,7 +22,7 @@ export default function BrandsPage() {
           <PageHero
             badge="Unofficial fan database"
             title="Brands"
-            description="Browse every officially confirmed GTA VI brand including restaurants, beverages, entertainment companies, retailers, record labels and more."
+            description="Brands Rockstar has shown on screen or at an official event. Official stills are credited. Stand-in stills are labelled Representative image."
             image="/images/official/editions/ultimate_edition_electric_fang_01.webp"
             imageAlt="Electric Fang Tattoo storefront"
           />

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const launch = new Date("2026-11-19T00:00:00Z").getTime();
+import { gta6LocalMidnight } from "@/lib/launchDate";
 
 export default function LaunchCountdown() {
   const [now, setNow] = useState<number | null>(null);
@@ -14,7 +14,7 @@ export default function LaunchCountdown() {
     return () => window.clearInterval(timer);
   }, []);
 
-  const remaining = now === null ? null : Math.max(0, launch - now);
+  const remaining = now === null ? null : Math.max(0, gta6LocalMidnight() - now);
   const days = remaining === null ? "--" : Math.floor(remaining / 86400000);
   const hours = remaining === null ? "--" : Math.floor((remaining % 86400000) / 3600000);
   const minutes = remaining === null ? "--" : Math.floor((remaining % 3600000) / 60000);

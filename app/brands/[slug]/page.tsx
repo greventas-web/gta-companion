@@ -8,12 +8,31 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 
 import { brands } from "@/data/brands";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return brands.map((brand) => ({ slug: brand.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const brand = brands.find((item) => item.slug === slug);
+
+  if (!brand) {
+    return {};
+  }
+
+  return detailMetadata(brand.name, brand.description);
+}
 
 export default async function BrandPage({
   params,

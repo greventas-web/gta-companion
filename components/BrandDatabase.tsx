@@ -60,9 +60,8 @@ export default function BrandDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Fan-written brand notes. A Rockstar still is used only when that
-          frame shows the brand. These cards use a unique wordmark because
-          no hosted still shows the logo clearly.
+          Official Rockstar stills. Stand-in stills are labelled
+          Representative image.
         </p>
 
       </div>

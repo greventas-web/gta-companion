@@ -4,8 +4,13 @@ import PageCTA from "@/components/PageCTA";
 import PageGrid from "@/components/PageGrid";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
-
 import { locations } from "@/data/locations";
+import { pageMetadata } from "@/lib/launch";
+
+export const metadata = pageMetadata(
+  "GTA 6 locations",
+  "Vice City, Leonida, and the other regions Rockstar has shown for Grand Theft Auto VI. Unofficial fan site."
+);
 
 export default function LocationsPage() {
   return (

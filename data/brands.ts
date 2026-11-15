@@ -60,21 +60,6 @@ export const brands: Brand[] = [
   },
 
   {
-    id: 5,
-    slug: "up-n-atom",
-    name: "Up-n-Atom",
-    category: "Restaurant",
-    image: brandStandIns["up-n-atom"].src,
-    imageAlt: brandStandIns["up-n-atom"].alt,
-    imageRepresentative: true,
-    description:
-      "Rockstar has not published an Up-n-Atom description for Grand Theft Auto VI.",
-    firstAppearance: "",
-    status: "Not described by Rockstar",
-    gallery: [],
-  },
-
-  {
     id: 6,
     slug: "only-raw-records",
     name: "Only Raw Records",

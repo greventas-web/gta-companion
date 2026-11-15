@@ -1,11 +1,17 @@
 import PageTitle from "@/components/PageTitle";
-
+import { pageMetadata } from "@/lib/launch";
 import {
   Badge,
   Card,
   Container,
   Section,
 } from "@/components/ui";
+
+export const metadata = pageMetadata(
+  "Roadmap",
+  "What GTA Companion plans to add after launch. Unofficial fan site for Grand Theft Auto VI."
+);
+
 
 const roadmap = [
   {

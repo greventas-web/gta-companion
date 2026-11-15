@@ -1,6 +1,7 @@
 import { SourceList } from "@/components/SourceLink";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SITE } from "@/lib/site";
+import { albumSingles, albumSource, albumSummary, scoreSource, scoreSummary } from "@/data/music";
 import { radioNotes, radioSource, radioStations } from "@/data/radio";
 
 export const metadata = pageMetadata(
@@ -13,7 +14,7 @@ export default function RadioPage() {
     <main className="min-h-screen bg-[#040404] px-6 pb-24 pt-36 text-white sm:px-10">
       <div className="mx-auto max-w-5xl">
         <p className="text-xs font-black uppercase tracking-[0.28em] text-pink-300">
-          Last updated November 10, 2026
+          Last updated November 15, 2026
         </p>
         <h1 className="mt-4 text-5xl font-black tracking-[-0.03em]">
           Radio stations
@@ -41,6 +42,22 @@ export default function RadioPage() {
             </article>
           ))}
         </div>
+
+        <section className="mt-10 rounded-[28px] border border-white/10 bg-[#0B0B0D] p-6 sm:p-8">
+          <h2 className="text-2xl font-black">Music</h2>
+          <h3 className="mt-6 text-xl font-black">Grand Theft Auto VI: The Album</h3>
+          <p className="mt-3 leading-7 text-zinc-400">{albumSummary}</p>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-zinc-300">
+            {albumSingles.map((single) => (
+              <li key={single}>{single}</li>
+            ))}
+          </ul>
+          <SourceList sources={[albumSource]} className="mt-4" />
+
+          <h3 className="mt-8 text-xl font-black">Original score by Justice</h3>
+          <p className="mt-3 leading-7 text-zinc-400">{scoreSummary}</p>
+          <SourceList sources={[scoreSource]} className="mt-4" />
+        </section>
 
         <section className="mt-10 rounded-[28px] border border-white/10 bg-[#0B0B0D] p-6 sm:p-8">
           <h2 className="text-2xl font-black">Talk shows and podcasts</h2>

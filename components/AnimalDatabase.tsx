@@ -56,8 +56,9 @@ export default function AnimalDatabase() {
         </h2>
 
         <p className="mt-4 text-lg text-zinc-400">
-          Fan-written notes on animals Rockstar has shown. The alligator
-          card uses an official still. Images: Rockstar Games.
+          Official Rockstar stills. Stand-in stills are labelled
+          Representative image. Rockstar has not published a species name
+          for every animal shown. Images: Rockstar Games.
         </p>
 
       </div>

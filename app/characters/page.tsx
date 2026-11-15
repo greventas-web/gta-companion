@@ -9,6 +9,12 @@ import PageShell from "@/components/PageShell";
 import { characters } from "@/data/characters";
 import { pageMetadata } from "@/lib/launch";
 import {
+  ignConsequencesQuote,
+  ignCoupleQuote,
+  ignEmpathy,
+  ignEmpathyQuote,
+} from "@/src/data/gameplay/confirmed";
+import {
   characterPrintNotes,
   guardianPrintIntro,
 } from "@/src/data/gameplay/guardian";
@@ -43,9 +49,26 @@ export default function CharactersPage() {
 
       <CitedNotes
         eyebrow="Saturday magazine"
-        title="Jason and Lucia, from the Guardian print"
+        title="Jason and Lucia"
         intro={guardianPrintIntro}
-        notes={characterPrintNotes}
+        notes={[
+          ...characterPrintNotes,
+          {
+            title: "A younger couple",
+            body: ignCoupleQuote,
+            source: ignEmpathy,
+          },
+          {
+            title: "Empathy",
+            body: ignEmpathyQuote,
+            source: ignEmpathy,
+          },
+          {
+            title: "Consequences",
+            body: ignConsequencesQuote,
+            source: ignEmpathy,
+          },
+        ]}
       />
 
       <PageCTA

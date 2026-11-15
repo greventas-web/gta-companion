@@ -79,7 +79,6 @@ export default function AboutPage() {
             <ul className="mt-8 space-y-5 text-lg leading-8 text-zinc-300">
               <li>• Fan notes after launch</li>
               <li>• Guides written for this site</li>
-              <li>• A phone-friendly version of this website</li>
             </ul>
           </div>
 

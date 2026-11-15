@@ -12,12 +12,34 @@ import Breadcrumb from "@/components/Breadcrumb";
 import GuideCard from "@/components/GuideCard";
 
 import { guides } from "@/data/guides";
+import { detailMetadata, hiddenMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return guides.map((guide) => ({ slug: guide.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const guide = guides.find((item) => item.slug === slug);
+
+  if (!guide) {
+    return {};
+  }
+
+  const metadata =
+    guide.listed === false ? hiddenMetadata : detailMetadata;
+
+  return metadata(guide.title, guide.description);
+}
 
 export default async function GuidePage({
   params,

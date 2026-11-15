@@ -1,7 +1,13 @@
 import ManufacturerDatabase from "@/components/ManufacturerDatabase";
+import { pageMetadata } from "@/lib/launch";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+
+export const metadata = pageMetadata(
+  "GTA 6 manufacturers",
+  "Vehicle manufacturers in the Grand Theft Auto VI database, with the models Rockstar has named kept separate from fan identifications. Unofficial fan site."
+);
 
 export default function ManufacturersPage() {
   return (

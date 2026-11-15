@@ -5,6 +5,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import LocationCard from "@/components/LocationCard";
 
 import { locations } from "@/data/locations";
+import { detailMetadata } from "@/lib/pages";
+import type { Metadata } from "next";
 import { IMAGE_CREDIT } from "@/lib/site";
 
 type Props = {
@@ -12,6 +14,23 @@ type Props = {
     slug: string;
   }>;
 };
+
+export function generateStaticParams() {
+  return locations.map((location) => ({ slug: location.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const location = locations.find((item) => item.slug === slug);
+
+  if (!location) {
+    return {};
+  }
+
+  return detailMetadata(location.name, location.description);
+}
 
 export default async function LocationPage({
   params,

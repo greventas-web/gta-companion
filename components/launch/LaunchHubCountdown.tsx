@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { localMidnight } from "@/lib/launchDate";
+
 type LocalClock = {
   year: number;
   month: number;
@@ -64,10 +66,6 @@ export default function LaunchHubCountdown({ local, xbox, cloud }: Props) {
       />
     </div>
   );
-}
-
-function localMidnight(clock: LocalClock) {
-  return new Date(clock.year, clock.month - 1, clock.day, 0, 0, 0, 0).getTime();
 }
 
 function Clock({
