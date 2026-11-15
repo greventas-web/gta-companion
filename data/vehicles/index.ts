@@ -1,4 +1,3 @@
-import { vehicleStandIns } from "@/data/standIns";
 import { aircraftVehicles } from "./aircraft";
 import { bikeVehicles } from "./bikes";
 import { boatVehicles } from "./boats";
@@ -73,14 +72,11 @@ export const vehicles = catalog.map((vehicle) => {
     vehicle.gallery.length > 0 ? vehicle.gallery : [vehicle.image];
 
   if (!source) {
-    const stand = vehicleStandIns[vehicle.slug];
     return {
       ...vehicle,
       status: "Expected / unconfirmed",
       description: unconfirmedNote,
-      image: stand?.src ?? "",
-      imageAlt: stand?.alt,
-      imageRepresentative: stand ? !stand.exact : undefined,
+      image: "",
       gallery: [],
       topSpeed: undefined,
       drivetrain: undefined,

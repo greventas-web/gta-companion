@@ -1,4 +1,4 @@
-import ItemImage from "@/components/ItemImage";
+import ItemImage, { isNameCard } from "@/components/ItemImage";
 import { SourceLink } from "@/components/SourceLink";
 import RepresentativeMark from "@/components/RepresentativeMark";
 import { IMAGE_CREDIT } from "@/lib/site";
@@ -54,13 +54,17 @@ export default function WeaponDetailsPage({
               className="object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            {isNameCard(weapon.image) ? null : (
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            )}
             <RepresentativeMark show={weapon.imageRepresentative} />
 
           </div>
-          <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-            {IMAGE_CREDIT}
-          </p>
+          {isNameCard(weapon.image) ? null : (
+            <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+              {IMAGE_CREDIT}
+            </p>
+          )}
 
         </div>
 
@@ -183,7 +187,9 @@ export default function WeaponDetailsPage({
                   className="object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                {isNameCard(related.image) ? null : (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                )}
 
               </div>
 

@@ -49,9 +49,7 @@ export const brands: Brand[] = [
     slug: "burger-shot",
     name: "Burger Shot",
     category: "Restaurant",
-    image: brandStandIns["burger-shot"].src,
-    imageAlt: brandStandIns["burger-shot"].alt,
-    imageRepresentative: true,
+    image: "",
     description:
       "Rockstar hosted a Burger Shot stand at Kaseya Center in October 2026. Rockstar has not published an in-game description on the Grand Theft Auto VI site.",
     firstAppearance: "Kaseya Center, October 2026",

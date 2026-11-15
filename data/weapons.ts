@@ -136,9 +136,7 @@ export const weapons: Weapon[] = [
     name: "Rocket Launcher",
     manufacturer: "Not named",
     category: "Heavy",
-    image: weaponStandIns["rocket-launcher"].src,
-    imageAlt: weaponStandIns["rocket-launcher"].alt,
-    imageRepresentative: true,
+    image: "",
     description:
       "Rockstar has not published this weapon name.",
     firstAppearance: "Not published",

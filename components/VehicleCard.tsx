@@ -47,9 +47,13 @@ export default function VehicleCard({
           />
           <RepresentativeMark show={vehicle.imageRepresentative} />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
+          {photo ? (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+            </>
+          ) : null}
 
           <div className="absolute left-6 top-6 z-20 flex max-w-[calc(100%-3rem)] flex-wrap gap-2">
             <span className="rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
