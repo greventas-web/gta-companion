@@ -1,4 +1,7 @@
+import Image from "next/image";
+
 import { SourceList } from "@/components/SourceLink";
+import { IMAGE_CREDIT } from "@/lib/site";
 import PageContainer from "../shared/PageContainer";
 import PageHero from "../shared/PageHero";
 
@@ -11,7 +14,7 @@ export default function TimelinePage() {
         <PageHero
           badge="Unofficial fan timeline"
           title="Every Official Reveal"
-          description="Follow official Grand Theft Auto VI announcements from the first trailer through pre-load. Last updated November 14, 2026."
+          description="Follow official Grand Theft Auto VI announcements from the first trailer through The Festival on November 21. Last updated November 14, 2026."
         />
 
         <section className="relative mt-20 ml-4 border-l border-pink-500/20">
@@ -30,6 +33,22 @@ export default function TimelinePage() {
                 <h2 className="mt-5 text-4xl font-black tracking-[-0.03em] text-white">
                   {event.title}
                 </h2>
+
+                {event.image ? (
+                  <figure className="mt-6 max-w-4xl">
+                    <Image
+                      src={event.image.src}
+                      alt={event.image.alt}
+                      width={event.image.width}
+                      height={event.image.height}
+                      className="h-auto w-full rounded-2xl"
+                      sizes="(max-width: 768px) 100vw, 896px"
+                    />
+                    <figcaption className="mt-2 text-xs leading-5 text-zinc-500">
+                      {IMAGE_CREDIT}
+                    </figcaption>
+                  </figure>
+                ) : null}
 
                 <p className="mt-6 max-w-4xl text-lg leading-9 text-zinc-400">
                   {event.description}
