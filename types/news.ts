@@ -22,4 +22,6 @@ export interface NewsArticle {
   sources?: { label: string; href: string }[];
 
   sourceName?: string;
+
+  status?: string;
 }

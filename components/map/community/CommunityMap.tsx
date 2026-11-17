@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import type { Canvas, CircleMarker, LayerGroup, Map as LeafletMap } from "leaflet";
+import type { Canvas, CircleMarker, LayerGroup, Map as LeafletMap, Renderer } from "leaflet";
 import * as L from "leaflet";
 import {
   CATEGORY_COLOR,
@@ -45,7 +45,7 @@ export default function CommunityMap({
   const landmarkLayer = useRef<LayerGroup | null>(null);
   const companionLayer = useRef<LayerGroup | null>(null);
   const landmarkRenderer = useRef<Canvas | null>(null);
-  const companionRenderer = useRef<Canvas | null>(null);
+  const companionRenderer = useRef<Renderer | null>(null);
   const draftMarker = useRef<CircleMarker | null>(null);
   const highlightMarker = useRef<CircleMarker | null>(null);
   const suggestingRef = useRef(false);
@@ -171,8 +171,13 @@ export default function CommunityMap({
     map.attributionControl.setPrefix("Leaflet");
     landmarkLayer.current = L.layerGroup().addTo(map);
     companionLayer.current = L.layerGroup().addTo(map);
+    // Pins use their own SVG pane above the landmark canvas. A canvas covers the
+    // whole map and would swallow taps that miss a landmark, including every pin.
+    const pinPane = map.createPane("companionPins");
+    pinPane.style.zIndex = "640";
+    pinPane.style.pointerEvents = "none";
     landmarkRenderer.current = L.canvas({ padding: 0.5 });
-    companionRenderer.current = L.canvas({ padding: 0.5 });
+    companionRenderer.current = L.svg({ pane: "companionPins" });
     map.fitBounds(L.latLngBounds([-8200, -10000], [9100, 3400]), {
       padding: [28, 28],
       maxZoom: 3,
@@ -203,30 +208,37 @@ export default function CommunityMap({
 
   useEffect(() => {
     const layer = landmarkLayer.current;
-    if (!layer || !ready) return;
+    const map = mapRef.current;
+    const renderer = landmarkRenderer.current;
+    if (!layer || !map || !renderer || !ready) return;
     layer.clearLayers();
-    if (!showLandmarks) return;
-    const renderer = landmarkRenderer.current ?? undefined;
-    for (const landmark of landmarks) {
-      if (tags.length > 0 && !landmark.tags.some((tag) => tags.includes(tag as LandmarkFilterId))) {
-        continue;
+    if (showLandmarks) {
+      for (const landmark of landmarks) {
+        if (tags.length > 0 && !landmark.tags.some((tag) => tags.includes(tag as LandmarkFilterId))) {
+          continue;
+        }
+        const marker = L.circleMarker([landmark.y, landmark.x], {
+          renderer,
+          radius: 4,
+          weight: 1,
+          color: "#ddd6fe",
+          fillColor: "#7c3aed",
+          fillOpacity: 0.9,
+        });
+        marker.on("click", (event) => {
+          if (suggestingRef.current) return;
+          L.DomEvent.stopPropagation(event);
+          setPicked({ kind: "landmark", landmark });
+          setDismissedFocus(false);
+          setSheetOpen(true);
+        });
+        layer.addLayer(marker);
       }
-      const marker = L.circleMarker([landmark.y, landmark.x], {
-        renderer,
-        radius: 4,
-        weight: 1,
-        color: "#ddd6fe",
-        fillColor: "#7c3aed",
-        fillOpacity: 0.9,
-      });
-      marker.on("click", (event) => {
-        if (suggestingRef.current) return;
-        L.DomEvent.stopPropagation(event);
-        setPicked({ kind: "landmark", landmark });
-        setDismissedFocus(false);
-        setSheetOpen(true);
-      });
-      layer.addLayer(marker);
+    }
+    // An empty canvas still covers the map and takes the tap. Drop it when
+    // landmarks are hidden or none of them match the filters.
+    if (layer.getLayers().length === 0 && map.hasLayer(renderer)) {
+      map.removeLayer(renderer);
     }
   }, [landmarks, ready, showLandmarks, tags]);
 
@@ -404,13 +416,13 @@ export default function CommunityMap({
       <button
         type="button"
         onClick={() => setSheetOpen((open) => !open)}
-        className="absolute bottom-3 left-3 z-[500] rounded-full border border-violet-300/30 bg-[#140a22]/95 px-4 py-2 text-sm font-semibold text-white shadow-lg md:hidden"
+        className="absolute bottom-3 left-3 z-[1100] rounded-full border border-violet-300/30 bg-[#140a22]/95 px-4 py-2 text-sm font-semibold text-white shadow-lg md:hidden"
       >
         {sheetOpen ? "Hide panel" : "Search and layers"}
       </button>
 
       <aside
-        className={`${sheetOpen ? "flex" : "hidden"} absolute inset-x-0 bottom-0 z-[450] max-h-[min(58vh,520px)] flex-col gap-3 overflow-y-auto rounded-t-3xl border border-violet-300/20 bg-[#100816]/95 p-3 text-white shadow-2xl backdrop-blur md:inset-y-3 md:left-3 md:right-auto md:max-h-none md:w-[340px] md:rounded-3xl md:p-4`}
+        className={`${sheetOpen ? "flex" : "hidden"} absolute inset-x-0 bottom-0 z-[1050] max-h-[min(58vh,520px)] flex-col gap-3 overflow-y-auto rounded-t-3xl border border-violet-300/20 bg-[#100816]/95 p-3 text-white shadow-2xl backdrop-blur md:inset-y-3 md:left-3 md:right-auto md:z-[450] md:max-h-none md:w-[340px] md:rounded-3xl md:p-4`}
       >
         <label className="block">
           <span className="sr-only">Search the map</span>
@@ -626,6 +638,21 @@ export default function CommunityMap({
           white-space: normal;
           background: rgba(8, 6, 16, 0.82);
           color: #d4d4d8;
+        }
+        .companion-map .leaflet-companionPins-pane { pointer-events: none; }
+        .companion-map .leaflet-companionPins-pane path.leaflet-interactive { pointer-events: auto; }
+        @media (max-width: 767px) {
+          .companion-map .leaflet-bottom.leaflet-right {
+            max-width: calc(100% - 12.75rem);
+          }
+          .companion-map .leaflet-control-attribution {
+            max-width: 100%;
+            margin: 0 4px 6px 0 !important;
+            padding: 2px 6px;
+            font-size: 10px;
+            line-height: 1.3;
+            border-radius: 0.6rem;
+          }
         }
         .companion-map .leaflet-control-attribution a { color: #d8b4fe; }
         .companion-map .leaflet-bar a,

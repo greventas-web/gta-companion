@@ -8,6 +8,7 @@ const launchTrailerId = "rz1B4B2yBZY";
 
 const starts = [
   { href: "/gta-6-launch", label: "Unlock times" },
+  { href: "/map", label: "Interactive map" },
   { href: "/vehicles", label: "Vehicles" },
   { href: "/characters", label: "Characters" },
   { href: "/launch", label: "Editions" },

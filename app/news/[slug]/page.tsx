@@ -137,7 +137,7 @@ export default async function NewsArticlePage({
               <Info
                 icon={<BadgeCheck size={18} />}
                 label="Status"
-                value="Official"
+                value={article.status ?? "Official"}
               />
             </div>
           </div>
