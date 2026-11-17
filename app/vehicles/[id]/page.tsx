@@ -133,7 +133,7 @@ export default async function VehicleDetailsPage({
             </p>
             {vehicle.source ? (
               <p className="mt-3">
-                <SourceLink label="Rockstar Games" href={vehicle.source} />
+                <SourceLink label={vehicle.sourceLabel ?? "Rockstar Games"} href={vehicle.source} />
               </p>
             ) : null}
 

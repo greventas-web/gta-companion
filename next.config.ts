@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: longCache }] },
       { source: "/logo/:path*", headers: [{ key: "Cache-Control", value: longCache }] },
       { source: "/icons/:path*", headers: [{ key: "Cache-Control", value: longCache }] },
+      { source: "/_v/:path*", headers: [{ key: "Cache-Control", value: longCache }] },
     ];
   },
 
@@ -50,12 +51,14 @@ const nextConfig: NextConfig = {
   },
 
   images: {
+    // No Vercel Image Optimization: Hobby includes 5,000 transformations a
+    // cycle. Images are pre-sized at build (scripts/images/variants.mjs) and
+    // picked by lib/images/loader.ts, so new pages never add transformations.
+    loader: "custom",
+    loaderFile: "./lib/images/loader.ts",
+    deviceSizes: [640, 1080, 1600],
+    imageSizes: [128, 384],
     contentDispositionType: "inline",
-    deviceSizes: [640, 828, 1080, 1200, 1920],
-    imageSizes: [64, 128, 256, 384],
-    formats: ["image/avif", "image/webp"],
-    // All site images are local files. Only allow YouTube thumbnails remotely so
-    // the image optimizer cannot be used as an open proxy during a traffic spike.
     remotePatterns: [
       { protocol: "https", hostname: "i.ytimg.com" },
       { protocol: "https", hostname: "img.youtube.com" },

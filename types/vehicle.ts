@@ -51,5 +51,8 @@ export interface Vehicle {
 
   source?: string;
 
+  /** Label for the source link. Defaults to "Rockstar Games". */
+  sourceLabel?: string;
+
   relatedVehicles?: string[];
 }

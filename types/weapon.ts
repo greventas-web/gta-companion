@@ -26,4 +26,7 @@ export interface Weapon {
   gallery: string[];
 
   source?: string;
+
+  /** Label for the source link. Defaults to "Rockstar Games". */
+  sourceLabel?: string;
 }
