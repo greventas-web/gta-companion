@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import MapLoader from "@/components/map/community/MapLoader";
+import { Suspense } from "react";
+import MapLoader, { MapLoading } from "@/components/map/community/MapLoader";
 import { getStaticPins } from "@/lib/map/catalog";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 
@@ -10,16 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/map" },
 };
 
-type Props = {
-  searchParams: Promise<{
-    pin?: string;
-    entity?: string;
-    slug?: string;
-  }>;
-};
-
-export default async function MapPage({ searchParams }: Props) {
-  const params = await searchParams;
+export default function MapPage() {
   const curated = getStaticPins();
 
   return (
@@ -43,18 +35,11 @@ export default async function MapPage({ searchParams }: Props) {
         </div>
 
         <div className="relative mt-3 h-[calc(100dvh-9.5rem)] min-h-[560px] w-full overflow-hidden rounded-[28px] border border-violet-400/20">
-          <MapLoader
-            curated={curated}
-            focusPin={one(params.pin)}
-            focusEntity={one(params.entity)}
-            focusSlug={one(params.slug)}
-          />
+          <Suspense fallback={<MapLoading />}>
+            <MapLoader curated={curated} />
+          </Suspense>
         </div>
       </div>
     </main>
   );
-}
-
-function one(value: string | undefined): string {
-  return typeof value === "string" ? value : "";
 }

@@ -2,15 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import LaunchHubCountdown from "@/components/launch/LaunchHubCountdown";
+import LaunchPhaseBanner from "@/components/launch/LaunchPhaseBanner";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
 import { pageMetadata } from "@/lib/launch";
+import { globalLaunchPhase } from "@/lib/launchState";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
   gta6Launch,
   launchSources,
   type LaunchStatus,
 } from "@/src/data/launch/gta6-launch";
+
+// Re-render every 5 minutes so the launch-state copy flips on its own.
+export const revalidate = 300;
 
 const base = pageMetadata(gta6Launch.title, gta6Launch.description);
 
@@ -70,6 +75,7 @@ export default function Gta6LaunchPage() {
           <h1 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-[-0.03em] text-white lg:text-6xl">
             {gta6Launch.h1}
           </h1>
+          <LaunchPhaseBanner initial={globalLaunchPhase()} />
           <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-300">
             {gta6Launch.lede}
           </p>
