@@ -1,6 +1,8 @@
 import { Heart } from "lucide-react";
 
-export const SUPPORT_URL = "https://ko-fi.com/gtacompanion";
+import { SUPPORT_URL } from "@/lib/site";
+
+export { SUPPORT_URL };
 
 type SupportLinkProps = {
   className?: string;
