@@ -213,6 +213,52 @@ export const timeline: TimelineEvent[] = [
     ],
   },
   {
+    date: "November 18, 2026",
+    title: "A Night in Vice City",
+    description:
+      "The Miami Heat host the Milwaukee Bucks at Kaseya Center in an official Rockstar Games collaboration, on ESPN at 7 PM ET / 6 PM CT / 4 PM PT. Confirmed details are a one-night Vice City court, a custom Vice City Cactus Jack Edition uniform in limited quantities at the arena, and special game-night programming.",
+    sourceLabel: "ESPN Press Room (Nov 17)",
+    sourceHref:
+      "https://espnpressroom.com/press-release/espn-nba-full-court-press-celtics-and-jayson-tatum-visit-nuggets-and-nikola-jokic-wednesday/",
+    moreSources: [
+      {
+        label: "Miami Heat",
+        href: "https://www.nba.com/heat/game/0022600260-bucks-vs-heat-miami-fl-11-18-2026",
+      },
+      {
+        label: "Rockstar Games on X",
+        href: "https://x.com/RockstarGames/status/2122745929442759040",
+      },
+      {
+        label: "Official video",
+        href: "https://www.youtube.com/watch?v=Rj2Jnbt-5p4",
+      },
+      {
+        label: "Rockstar Games on X (uniform)",
+        href: "https://x.com/RockstarGames/status/2120881926957637954",
+      },
+    ],
+  },
+  {
+    date: "November 18, 2026",
+    title: "YouTube 24-hour launch livestream",
+    description:
+      "YouTube and Rockstar Games partner on a 24-hour Grand Theft Auto VI launch livestream. The pre-show, hosted by RDCWorld, starts at 11 PM ET / 10 PM CT / 8 PM PT on Wednesday, November 18. The 24-hour stream starts at 12 AM ET on Thursday, November 19 (11 PM CT / 9 PM PT on Wednesday, November 18), with live gameplay, creator podcasts, and on-the-ground coverage from Miami.",
+    sourceLabel: "YouTube Blog (Nov 12)",
+    sourceHref:
+      "https://blog.youtube/news-and-events/youtube-rockstar-games-gta-vi-launch/",
+    moreSources: [
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/youtube",
+      },
+      {
+        label: "Rockstar Games on X",
+        href: "https://x.com/RockstarGames/status/2120907315352367600",
+      },
+    ],
+  },
+  {
     date: "November 19, 2026",
     title: "Launch day",
     description:

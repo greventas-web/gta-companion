@@ -14,23 +14,23 @@ export default function TimelinePage() {
         <PageHero
           badge="Unofficial fan timeline"
           title="Every Official Reveal"
-          description="Follow official Grand Theft Auto VI announcements from the first trailer through The Festival on November 21. Last updated November 14, 2026."
+          description="Follow official Grand Theft Auto VI announcements from the first trailer through launch week and The Festival on November 21. Last updated November 17, 2026."
         />
 
-        <section className="relative mt-20 ml-4 border-l border-pink-500/20">
+        <section className="relative mt-20 border-l border-pink-500/20 sm:ml-4">
           {timeline.map((event) => (
             <div
               key={`${event.date}-${event.title}`}
-              className="relative mb-12 pl-12"
+              className="relative mb-12 pl-8 sm:pl-12"
             >
               <div className="absolute -left-[10px] top-4 h-5 w-5 rounded-full border-4 border-[#040404] bg-pink-500 shadow-[0_0_20px_rgba(236,72,153,.55)]" />
 
-              <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-[#101014] to-[#09090B] p-10 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/40 hover:shadow-[0_25px_70px_rgba(236,72,153,.18)]">
-                <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
+              <div className="min-w-0 rounded-[32px] border border-white/10 bg-gradient-to-br from-[#101014] to-[#09090B] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/40 hover:shadow-[0_25px_70px_rgba(236,72,153,.18)] sm:p-10">
+                <div className="break-words text-xs font-black uppercase tracking-[0.16em] text-pink-400 sm:tracking-[0.35em]">
                   {event.date}
                 </div>
 
-                <h2 className="mt-5 text-4xl font-black tracking-[-0.03em] text-white">
+                <h2 className="mt-5 break-words text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
                   {event.title}
                 </h2>
 
@@ -50,7 +50,7 @@ export default function TimelinePage() {
                   </figure>
                 ) : null}
 
-                <p className="mt-6 max-w-4xl text-lg leading-9 text-zinc-400">
+                <p className="mt-6 max-w-4xl break-words text-base leading-8 text-zinc-400 sm:text-lg sm:leading-9">
                   {event.description}
                 </p>
                 <SourceList
