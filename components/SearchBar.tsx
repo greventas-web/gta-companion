@@ -2,10 +2,16 @@
 
 import { Search } from "lucide-react";
 
+import { useSearch } from "@/components/search/SearchProvider";
+
 export default function SearchBar() {
+  const { open } = useSearch();
+
   return (
     <button
+      type="button"
       aria-label="Open search"
+      onClick={open}
       className="group flex h-12 w-[240px] items-center justify-between gap-3 rounded-full border border-white/10 bg-white/[0.04] px-3 backdrop-blur-xl transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.07] hover:shadow-[0_12px_40px_rgba(236,72,153,.15)] min-[1600px]:w-[320px] min-[1600px]:px-4"
     >
       <div className="flex items-center gap-4">

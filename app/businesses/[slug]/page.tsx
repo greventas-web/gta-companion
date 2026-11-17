@@ -4,7 +4,7 @@ import PageShell from "@/components/PageShell";
 import BusinessDetailsPage from "@/components/business/BusinessDetailsPage";
 
 import { businesses } from "@/data/businesses";
-import { detailMetadata } from "@/lib/pages";
+import { detailMetadata, sectionTitle } from "@/lib/pages";
 import type { Metadata } from "next";
 
 type Props = {
@@ -38,7 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  return detailMetadata(business.name, business.description);
+  return detailMetadata(
+    sectionTitle(business.name, "Business"),
+    business.description
+  );
 }
 
 export default async function BusinessPage({

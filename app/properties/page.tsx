@@ -1,16 +1,15 @@
-import type { Metadata } from "next";
-
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
+import { pageMetadata } from "@/lib/launch";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { famitsuSources, rockstarVi } from "@/src/data/gameplay/confirmed";
 
-export const metadata: Metadata = {
-  title: "Properties",
-  description:
-    "Garages and safehouses Rockstar and Rob Nelson have confirmed for Grand Theft Auto VI. Unofficial fan site.",
-};
+const propertiesTitle = "GTA 6 properties";
+const propertiesDescription =
+  "Garages and safehouses Rockstar and Rob Nelson have confirmed for Grand Theft Auto VI. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.";
+
+export const metadata = pageMetadata(propertiesTitle, propertiesDescription);
 
 const rockstarPlaces = [
   {
