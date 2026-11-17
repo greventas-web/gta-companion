@@ -1,0 +1,1147 @@
+[
+  {
+    "id": "vice-city",
+    "name": "Vice City",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Vice City",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1028.2,
+      "y": -115.2,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 1230,
+      "address_match": "Vice City"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI official site",
+        "url": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "notes": "Official headline city of Leonida. Rockstar: still 'the sun and fun capital of America'; 'the glamour, hustle, and greed of America captured in a single city.' Position is a centroid of 1,230 gtadb landmarks whose address includes 'Vice City' and is only a rough city-wide reference, not a civic center."
+  },
+  {
+    "id": "leonida-keys",
+    "name": "Leonida Keys",
+    "category": "landmark",
+    "region": "Leonida Keys",
+    "area": "Leonida Keys",
+    "position": {
+      "gtadb_landmark_id": "L326",
+      "x": -2508.9,
+      "y": -5893.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 195,
+      "address_match": "Key Lento / Leonida Keys"
+    },
+    "linked_site_entity_slug": "locations/leonida-keys",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Leonida Keys",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/leonida-keys"
+      }
+    ],
+    "notes": "Official region. Tagline 'Gateway to Paradise.' Rockstar: 'The dress code is casual, the bars are loaded.' 'Life in this tropical archipelago isn’t flashy but it’s easy… right on the doorstep of some of the most beautiful and dangerous waters in all of America.' Jason grew up into work in the Keys; Brian's boat yard is here. gtadb currently files the island chain under the community name Key Lento; that island name is not in official Rockstar copy, so it is not used as the official name here. Centroid of 195 Key Lento / Keys landmarks."
+  },
+  {
+    "id": "grassrivers",
+    "name": "Grassrivers",
+    "category": "landmark",
+    "region": "Grassrivers",
+    "area": "Grassrivers",
+    "position": {
+      "gtadb_landmark_id": "L625",
+      "x": -2935.3,
+      "y": -4615.0,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 3,
+      "address_match": "Grassrivers"
+    },
+    "linked_site_entity_slug": "locations/grassrivers",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Grassrivers",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/grassrivers"
+      }
+    ],
+    "notes": "Official region. Tagline 'Welcome to the Wetlands.' Rockstar: 'The untamable jewel of Leonida’s crown.' Gators are 'the most famous attraction,' with 'far deadlier predators and weirder discoveries among the mangroves.' Official screenshots show airboats. gtadb coverage is thin (only 3 landmarks), so this centroid is a weak approximate pin."
+  },
+  {
+    "id": "port-gellhorn",
+    "name": "Port Gellhorn",
+    "category": "landmark",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -6564.0,
+      "y": 3671.3,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 195,
+      "address_match": "Port Gellhorn"
+    },
+    "linked_site_entity_slug": "locations/port-gellhorn",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Port Gellhorn",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/port-gellhorn"
+      }
+    ],
+    "notes": "Official region. Tagline 'Live Hard.' Rockstar: 'This is Leonida’s forgotten coast' — 'cheap motels, shut-down attractions, and empty strip malls' in a once-popular vacation spot now 'fueled by malt liquor, painkillers, and truck stop energy drinks.' An official alt text describes 'the outside of a motel in Port Gellhorn with the vacancy sign lit up at night.'"
+  },
+  {
+    "id": "ambrosia",
+    "name": "Ambrosia",
+    "category": "landmark",
+    "region": "Ambrosia",
+    "area": "Ambrosia",
+    "position": {
+      "gtadb_landmark_id": "L399",
+      "x": -2803.4,
+      "y": 3972.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 91,
+      "address_match": "Ambrosia"
+    },
+    "linked_site_entity_slug": "locations/ambrosia",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Ambrosia",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/ambrosia"
+      }
+    ],
+    "notes": "Official region. Rockstar: 'In the heart of Leonida, American industry and old school values still reign supreme — whatever the cost.' 'The battle for the health and wealth of Leonida begins here.' Official alts mention the Ambrosia skyline with smoke stacks, a motorcycle gang, and a car being washed. The Allied Crystal sugar refinery is the named industrial anchor."
+  },
+  {
+    "id": "mount-kalaga-national-park",
+    "name": "Mount Kalaga National Park",
+    "category": "landmark",
+    "region": "Mount Kalaga National Park",
+    "area": "Mount Kalaga National Park",
+    "position": {
+      "gtadb_landmark_id": "L530",
+      "x": -3430.483,
+      "y": 6370.646,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/mount-kalaga",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Mount Kalaga",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/kalaga"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "notes": "Official region / national landmark. Tagline 'Wild, Wild Country.' Rockstar: 'Room to breathe on the state's northern fringes.' 'A national landmark up against the state’s northern border, Mount Kalaga offers prime hunting, fishing, and off-road trails.' Official screenshot alts show woods, a winding road between hills, a kayaker, a news helicopter, and a cougar stalking deer. gtadb L530 is the named peak; the 'Lummox County' suffix is a community/gtadb label, not official Rockstar copy."
+  },
+  {
+    "id": "ocean-beach",
+    "name": "Ocean Beach",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L36",
+      "x": 1743.3,
+      "y": 702.0,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 360,
+      "address_match": "Ocean Beach"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official Vice City neighborhood. Rockstar: 'the pastel art deco hotels and bright white sands of Ocean Beach.' The Vintage Vice City Pack puts the Shore Court garage 'just a stone's throw from the glistening sands of Ocean Beach' and the '55 Vapid Stanier is for cruising Shore Drive alongside it."
+  },
+  {
+    "id": "little-cuba",
+    "name": "Little Cuba",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Little Cuba",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1199.9,
+      "y": 75.2,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 75,
+      "address_match": "Little Cuba"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      }
+    ],
+    "notes": "Official Vice City neighborhood. Rockstar: 'the bustling panaderías of Little Cuba.'"
+  },
+  {
+    "id": "tisha-wocka-flea-market",
+    "name": "Tisha-Wocka flea market",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Tisha-Wocka",
+    "position": {
+      "gtadb_landmark_id": "L1006",
+      "x": -2786.186,
+      "y": 716.403,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Vice City landmark/market. Rockstar: 'the bootleg brands of the Tisha-Wocka flea market.' gtadb maps a single pin (L1006) and treats Tisha-Wocka as the surrounding area name. That landmark is tagged 'demolished' in the 17 Nov 2026 gtadb dump — the official name is confirmed, but the mapped structure may have changed. No dedicated store page exists on GTA Companion yet; linked to the clothing-stores activity page."
+  },
+  {
+    "id": "vc-port",
+    "name": "VC Port",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "VC Port",
+    "position": {
+      "gtadb_landmark_id": "L132",
+      "x": 708.8,
+      "y": -499.3,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 34,
+      "address_match": "Port Vice City"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Vice City waterfront. Rockstar: 'the VC Port, the cruise ship capital of the world.' gtadb labels the same area 'Port Vice City' (34 landmarks). Official name used here is VC Port. Coordinates are a region centroid, not a specific terminal building."
+  },
+  {
+    "id": "shore-drive",
+    "name": "Shore Drive",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L36",
+      "x": 1942.6,
+      "y": 446.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 33,
+      "address_match": "Shore Dr"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official Ocean Beach waterfront road. The '95 Grotti Cheetah is 'Grotti's signature mid '90s sports car and ode to Shore Drive.' The Vintage Vice City Pack invites players to 'Cruise Shore Drive' in the '55 Vapid Stanier. Many art-deco hotels face this street; only the Ocean View Hotel is confirmed by official image alt text (see that entry). Other hotel names are in unconfirmed.json."
+  },
+  {
+    "id": "stockyard",
+    "name": "Stockyard",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Stockyard",
+    "position": {
+      "gtadb_landmark_id": "L1488",
+      "x": -341.6,
+      "y": 1797.7,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 48,
+      "address_match": "Stockyard"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official Vice City district named in Ultimate Edition copy: Stock 305 is 'Stockyard’s premier destination for elevated streetwear' and Electric Fang Tattoo is 'Stockyard’s most iconic ink bar.' Rockstar has not published a district description beyond those shop lines."
+  },
+  {
+    "id": "washington-beach",
+    "name": "Washington Beach",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Washington Beach",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": 1702.2,
+      "y": 2182.7,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 43,
+      "address_match": "Washington Beach"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official Vice City waterfront. The Ultimate Edition Shitzu Squalo is 'docked at Washington Beach' and described as 'perfect for casting in Gambit Bay.' Linked vehicle page: vehicles/shitzu-squalo."
+  },
+  {
+    "id": "southside-vice-city",
+    "name": "Southside Vice City",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Southside",
+    "position": {
+      "gtadb_landmark_id": "L1491",
+      "x": -1790.9,
+      "y": -2071.4,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 100,
+      "address_match": "Southside"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official Vice City district. Ultimate Edition: 'Raid the compound of one of Southside Vice City’s loudest and most socially active gangs' (the PTT Youngin$ benefit). See also the mission/store pin for that compound."
+  },
+  {
+    "id": "lake-leonida",
+    "name": "Lake Leonida",
+    "category": "landmark",
+    "region": "Lake Leonida",
+    "area": "Lake Leonida",
+    "position": {
+      "gtadb_landmark_id": "L1000",
+      "x": -1975.159,
+      "y": 4731.927,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official named water body. One-Eyed Willie's 'mod shop in Lake Leonida' is only open with the Ultimate Edition. gtadb L1000 is the lake itself; the 'Leonard County' suffix is a community/gtadb label, not official. The shop pin currently has no coordinates in gtadb (see one-eyed-willies)."
+  },
+  {
+    "id": "watson-bay",
+    "name": "Watson Bay",
+    "category": "landmark",
+    "region": "Watson Bay",
+    "area": "Watson Bay",
+    "position": {
+      "gtadb_landmark_id": "L1495",
+      "x": -4954.6,
+      "y": -3307.9,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 61,
+      "address_match": "Watson Bay"
+    },
+    "linked_site_entity_slug": "properties",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official named place. The Ultimate Edition '67 Vapid Dominator Buggy is stored at the Paradise Garage in Watson Bay. Rockstar has not published a regional blurb. No individual location page on the site yet; the garage is listed on /properties."
+  },
+  {
+    "id": "gambit-bay",
+    "name": "Gambit Bay",
+    "category": "landmark",
+    "region": "Gambit Bay",
+    "area": "Gambit Bay",
+    "position": null,
+    "linked_site_entity_slug": "vehicles/shitzu-squalo",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official named water body. The Ultimate Edition Squalo is 'perfect for casting in Gambit Bay and reeling in catches of all sorts' and is itself docked at Washington Beach. gtadb has no landmarks whose address contains Gambit Bay, so no approximate coordinates are available yet."
+  },
+  {
+    "id": "stock-305",
+    "name": "Stock 305",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Stockyard",
+    "position": {
+      "gtadb_landmark_id": "L1488",
+      "x": -328.668,
+      "y": 1766.117,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition clothing store. Rockstar: 'Style various unique and exclusive looks for Jason and Lucia at Stockyard’s premier destination for elevated streetwear. Only open for business with the Ultimate Edition.' Official alts include the exterior and interiors. No dedicated store page on GTA Companion yet."
+  },
+  {
+    "id": "electric-fang-tattoo",
+    "name": "Electric Fang Tattoo",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Stockyard",
+    "position": {
+      "gtadb_landmark_id": "L1482",
+      "x": -378.64,
+      "y": 1839.555,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition tattoo shop. Rockstar: 'Stockyard’s most iconic ink bar, with over 50 signature tattoos for both Jason and Lucia — all designed by the artist collective FAILE. Only open for business with the Ultimate Edition.' Official alts describe the neon wolf sign and the interior. No dedicated store page on GTA Companion yet."
+  },
+  {
+    "id": "rideout-customs",
+    "name": "Rideout Customs",
+    "category": "vehicle-dealer",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L2375",
+      "x": -865.564,
+      "y": 975.341,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition mod shop. Rockstar: 'Transform vanilla vehicles into magnificent works of art with detailed interiors, exquisite rims, and donk stylings. Only open for business with the Ultimate Edition.' Official copy does not name a district. gtadb places L2375 in Crosstown, Vice City — that neighborhood name is not in official Rockstar prose, so area is left unset and the pin should be treated as an approximate community placement of a confirmed business."
+  },
+  {
+    "id": "saras-unisex-salon",
+    "name": "Sara's Unisex Salon",
+    "category": "store",
+    "region": null,
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L360",
+      "x": -2554.002,
+      "y": -3414.5,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition salon. Rockstar: 'Get signature salon styles for both Jason and Lucia, including facial hair for Jason and makeup and nails for Lucia. Only open for business with the Ultimate Edition.' An official alt shows 'Jason looking over his shoulder, sporting a mullet haircut from Sara's Unisex Salon.' Official copy does not name a town. gtadb places L360 in Hamlet — a community/gtadb place name, not official — so region/area are left unset."
+  },
+  {
+    "id": "one-eyed-willies",
+    "name": "One-Eyed Willie's",
+    "category": "vehicle-dealer",
+    "region": "Lake Leonida",
+    "area": "Lake Leonida",
+    "position": {
+      "gtadb_landmark_id": "L1493",
+      "x": null,
+      "y": null,
+      "placement": "gtadb-id-only"
+    },
+    "linked_site_entity_slug": "activities/off-roading",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition off-road mod shop. Rockstar: 'This mod shop in Lake Leonida specializes in off-road modifications and hand-painted automotive artistry. Only open for business with the Ultimate Edition.' gtadb has landmark L1493 but no ig_coordinates in the 17 Nov 2026 dump, so the pin cannot be placed yet beyond the Lake Leonida region (L1000)."
+  },
+  {
+    "id": "jack-of-hearts",
+    "name": "Jack of Hearts",
+    "category": "business",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L172",
+      "x": -685.939,
+      "y": 1194.937,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "businesses/jack-of-hearts",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Boobie Ike strip club in Vice City. Rockstar character copy: 'It's all about heart — the Jack of Hearts.' Boobie has 'a legitimate empire spanning real estate, a strip club, and a recording studio'; Dre'Quan books acts into 'Boobie's strip club.' Also linked from activities/nightlife. gtadb L172 addresses it as Miramar Dr, Crosstown; 'Crosstown' and that street are community/gtadb labels, not official prose. The landmark is tagged 'demolished' in the current gtadb dump — official existence is confirmed, the mapped building may have been revised."
+  },
+  {
+    "id": "only-raw-records",
+    "name": "Only Raw Records",
+    "category": "business",
+    "region": "Vice City",
+    "area": null,
+    "position": null,
+    "linked_site_entity_slug": "businesses/only-raw-records",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      }
+    ],
+    "notes": "Official Vice City record label and studio. Rockstar: Boobie's 'partnership with the young aspiring music mogul Dre'Quan for Only Raw Records'; Real Dimez are 'signed to Only Raw Records.' The studio is in Vice City but no official street or storefront has been published, and gtadb has no landmark named Only Raw Records. Also listed on the site as brands/only-raw-records."
+  },
+  {
+    "id": "brians-boat-works",
+    "name": "Brian's Boat Works & Marina",
+    "category": "business",
+    "region": "Leonida Keys",
+    "area": "Leonida Keys",
+    "position": {
+      "gtadb_landmark_id": "L326",
+      "x": -2554.67,
+      "y": -5859.472,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "businesses/brian-boat-works",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Leonida Keys",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/leonida-keys"
+      },
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Keys boat yard. Rockstar: Brian is 'still moving product through his boat yard with his third wife, Lori.' Trailer 2 shows a night sign reading Brian's Boat Works & Marina (Boat Repairs, Equipment & Storage). gtadb L326 matches that sign; related pins L1421 (workshop) and L3269 (boat racks) sit next to it. gtadb files them under Key Lento, a community island name."
+  },
+  {
+    "id": "nine1nine",
+    "name": "Nine1Nine",
+    "category": "business",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L190",
+      "x": -671.097,
+      "y": 467.579,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "businesses/nine1nine",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, GTA VI Trailer 1 (plane banner over the Vice City beach, ~0:14) and Trailer 2 (club interior)",
+        "url": "https://www.rockstargames.com/VI"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "The name is visible on an official Trailer 1 plane banner over the Vice City beach; Trailer 2 shows Jason and Lucia dancing in the club. It is a confirmed GTA Companion business (also brands/nine1nine) and an activities/nightlife venue. Official website prose does not name the club. gtadb L190 places it in Downtown, Vice City; 'Downtown' as a district name has not been found in official written copy (see unconfirmed.json)."
+  },
+  {
+    "id": "allied-crystal-sugar-refinery",
+    "name": "Allied Crystal sugar refinery",
+    "category": "business",
+    "region": "Ambrosia",
+    "area": "Allied Crystal",
+    "position": {
+      "gtadb_landmark_id": "L399",
+      "x": -3016.511,
+      "y": 3346.662,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/ambrosia",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Ambrosia",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/ambrosia"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ambrosia industry. Rockstar: 'The Allied Crystal sugar refinery provides the jobs, while the local biker gang provides almost everything else.' gtadb maps a 42-landmark industrial complex under Allied Crystal, Ambrosia. L399 (Sugar Mill) is the representative pin; use the complex centroid (-2885.6, 3624.2) if a wider industrial-area marker is preferred."
+  },
+  {
+    "id": "ptt-youngins-illegal-goods-store",
+    "name": "PTT Youngin$ Illegal Goods Store",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Southside",
+    "position": {
+      "gtadb_landmark_id": "L1491",
+      "x": -1714.126,
+      "y": -1826.006,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition location. Rockstar names the 'PTT YOUNGIN$ Illegal Goods Store' and an official alt shows 'Members of the PTT Youngin$ gathered outside the Illegal Goods Store.' This is the storefront associated with the Southside raid benefit (see southside-gang-compound-raid). No site entity page yet."
+  },
+  {
+    "id": "ocean-view-hotel",
+    "name": "Ocean View Hotel",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L36",
+      "x": 1959.5,
+      "y": 639.0,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Confirmed by official image alt text on the Editions / Ultimate Edition / media pages: 'Jason and Lucia standing outside the Ocean View Hotel holding handguns. The '55 Vapid Stanier sedan is behind them.' gtadb places it on Shore Dr, Ocean Beach (L36)."
+  },
+  {
+    "id": "leonida-penitentiary",
+    "name": "Leonida Penitentiary",
+    "category": "landmark",
+    "region": null,
+    "area": null,
+    "position": null,
+    "linked_site_entity_slug": "characters/lucia-caminos",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "Rockstar Games, Only in Leonida: Leonida Keys",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/leonida-keys"
+      }
+    ],
+    "notes": "Official named prison. Lucia's official bio: 'Fighting for her family landed her in the Leonida Penitentiary. Sheer luck got her out.' Rockstar has not said where it sits. gtadb has at least two prison complexes (a 'Prison, Kelly County' at L527 and a large 'Prison, Hamlet' campus around L688, much of it tagged closed). Those placements and county/town labels are community/gtadb, not official, and are listed in unconfirmed.json. Do not pick one as the official pin yet."
+  },
+  {
+    "id": "vercetti-estate",
+    "name": "The Vercetti Estate",
+    "category": "landmark",
+    "region": null,
+    "area": null,
+    "position": null,
+    "linked_site_entity_slug": "weapons/hawk-little-morgan",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official named property. Ultimate Edition: 'His and hers versions of this powerful revolver with classic Vice City stylings sourced from the Vercetti Estate' — the matching Hawk & Little Morgan Revolvers. Rockstar has not placed the estate on the map. gtadb L2731 puts it on Starfish Island; that placement is community and is listed in unconfirmed.json."
+  },
+  {
+    "id": "shore-court-garage",
+    "name": "Shore Court",
+    "category": "safehouse",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L2980",
+      "x": null,
+      "y": null,
+      "placement": "gtadb-id-only"
+    },
+    "linked_site_entity_slug": "properties",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "GTA Companion, Properties",
+        "url": "https://www.gta-companion.com/properties"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Vintage Vice City Pack personal garage. Rockstar: 'Cruise Shore Drive in this classic sedan and store it in the Shore Court personal garage that's just a stone's throw from the glistening sands of Ocean Beach. It features a weapon locker plus a secure place to deposit stolen goods to be fenced.' Also listed on GTA Companion /properties. gtadb has L2980 ('Shore Court Garage, Shore Ct, Ocean Beach') but no ig_coordinates in the 17 Nov 2026 dump, so it cannot be pinned more tightly than Ocean Beach / Shore Drive yet. Linked vehicle: vehicles/vapid-stanier-1955."
+  },
+  {
+    "id": "paradise-garage",
+    "name": "Paradise Garage",
+    "category": "safehouse",
+    "region": "Watson Bay",
+    "area": "Watson Bay",
+    "position": {
+      "gtadb_landmark_id": "L1495",
+      "x": -4087.996,
+      "y": -2424.239,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "properties",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "GTA Companion, Properties",
+        "url": "https://www.gta-companion.com/properties"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Official Ultimate Edition garage in Watson Bay. Rockstar: store the '67 Vapid Dominator Buggy 'at the Paradise Garage in Watson Bay, which features a weapon locker plus a secure place to deposit stolen goods to be fenced.' Official alt: 'The '67 Vapid Dominator Buggy pulling out of the Paradise Garage.' Listed on GTA Companion /properties. Linked vehicle: vehicles/vapid-dominator-buggy."
+  },
+  {
+    "id": "jasons-place",
+    "name": "Jason's place (Brian's property)",
+    "category": "safehouse",
+    "region": "Leonida Keys",
+    "area": "Leonida Keys",
+    "position": null,
+    "linked_site_entity_slug": "characters/jason-duval",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Leonida Keys",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/leonida-keys"
+      },
+      {
+        "name": "Rockstar Games, Only in Leonida: Vice City",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+      },
+      {
+        "name": "GTA Companion, Properties",
+        "url": "https://www.gta-companion.com/properties"
+      }
+    ],
+    "notes": "Officially, 'Brian’s letting Jason live rent-free at one of his properties' in the Keys. GTA Companion /properties also records Rob Nelson telling Famitsu that Jason's first house is in the Leonida Keys, and that hideouts change chapter by chapter. The exact building has not been officially identified. gtadb L266 ('Jason's House, Key Lento') is a community identification and is listed in unconfirmed.json. Also related: characters/cal-hampton (Cal is 'Jason's friend and a fellow associate of Brian’s' and 'feels safest hanging at home') — Cal's house is not officially placed."
+  },
+  {
+    "id": "southside-gang-compound-raid",
+    "name": "Southside Vice City gang compound raid",
+    "category": "mission",
+    "region": "Vice City",
+    "area": "Southside",
+    "position": {
+      "gtadb_landmark_id": "L1491",
+      "x": -1714.126,
+      "y": -1826.006,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official Ultimate Edition benefit/mission hook: 'Raid the compound of one of Southside Vice City’s loudest and most socially active gangs and escape safely to score some special items and distinct contraband.' The PTT Youngin$ Illegal Goods Store (L1491) is the officially named storefront tied to that gang and is used here as the approximate pin. The full compound footprint is not officially mapped. No missions section exists on the site yet."
+  },
+  {
+    "id": "activity-hunting-mount-kalaga",
+    "name": "Hunting at Mount Kalaga",
+    "category": "activity",
+    "region": "Mount Kalaga National Park",
+    "area": "Mount Kalaga National Park",
+    "position": {
+      "gtadb_landmark_id": "L530",
+      "x": -3430.483,
+      "y": 6370.646,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/hunting",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Mount Kalaga",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/kalaga"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "notes": "Official activity in this region. Rockstar says Mount Kalaga offers 'prime hunting, fishing, and off-road trails.' Official alt: 'Two people holding rifles walking side by side through the woods of Mount Kalaga National Park.' This is a region-level pin, not a specific hunting-stand coordinate. The site also notes Rob Nelson (TGG) saying hunting is a money method unlocked through a friend of Jason's."
+  },
+  {
+    "id": "activity-fishing-mount-kalaga",
+    "name": "Fishing at Mount Kalaga",
+    "category": "activity",
+    "region": "Mount Kalaga National Park",
+    "area": "Mount Kalaga National Park",
+    "position": {
+      "gtadb_landmark_id": "L530",
+      "x": -3430.483,
+      "y": 6370.646,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/fishing",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Mount Kalaga",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/kalaga"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "notes": "Official activity in this region ('prime hunting, fishing, and off-road trails'). GTA Companion also cites official screenshot Jason Duval 03 (Jason with a fishing rod on a boat) and Rob Nelson (TGG) saying fishing is catch-and-release, with challenges and collectibles. No individual fishing-spot coordinates are officially published. Gambit Bay is a separately named fishing water (see gambit-bay)."
+  },
+  {
+    "id": "activity-off-roading-mount-kalaga",
+    "name": "Off-road trails at Mount Kalaga",
+    "category": "activity",
+    "region": "Mount Kalaga National Park",
+    "area": "Mount Kalaga National Park",
+    "position": {
+      "gtadb_landmark_id": "L530",
+      "x": -3430.483,
+      "y": 6370.646,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/off-roading",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Mount Kalaga",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/kalaga"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Editions",
+        "url": "https://www.rockstargames.com/VI/editions"
+      }
+    ],
+    "notes": "Official activity in this region. The Ultimate Edition '67 Vapid Dominator Buggy is 'a Mud Club monster offering impressive off-road handling for the backwoods of Mount Kalaga and beyond.' One-Eyed Willie's in Lake Leonida specializes in off-road mods. Linked vehicle: vehicles/vapid-dominator-buggy."
+  },
+  {
+    "id": "activity-kayaking-mount-kalaga",
+    "name": "Kayaking at Mount Kalaga",
+    "category": "activity",
+    "region": "Mount Kalaga National Park",
+    "area": "Mount Kalaga National Park",
+    "position": {
+      "gtadb_landmark_id": "L530",
+      "x": -3430.483,
+      "y": 6370.646,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/kayaking",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Mount Kalaga",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/kalaga"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
+        "url": "https://www.rockstargames.com/VI/ultimate-edition"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "notes": "Official screenshot alt: 'A person wearing a life vest kayaks toward a bridge in Mount Kalaga National Park.' The Ultimate Edition also includes a Crest Kayak (vehicles/crest-kayak). This is a region-level pin, not a specific put-in."
+  },
+  {
+    "id": "activity-airboats-grassrivers",
+    "name": "Airboats in Grassrivers",
+    "category": "activity",
+    "region": "Grassrivers",
+    "area": "Grassrivers",
+    "position": {
+      "gtadb_landmark_id": "L625",
+      "x": -2935.3,
+      "y": -4615.0,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 3,
+      "address_match": "Grassrivers"
+    },
+    "linked_site_entity_slug": "activities/airboats",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Grassrivers",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/grassrivers"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "notes": "Official Grassrivers activity. GTA Companion records official screenshot Grassrivers 03 (an airboat in the swamp with alligators), confirmed in the Extended Look and Rockstar interviews. Region-level pin; gtadb Grassrivers coverage is sparse."
+  },
+  {
+    "id": "activity-scuba-leonida-keys",
+    "name": "Scuba diving in the Leonida Keys",
+    "category": "activity",
+    "region": "Leonida Keys",
+    "area": "Leonida Keys",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -2508.9,
+      "y": -5893.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 195,
+      "address_match": "Key Lento / Leonida Keys"
+    },
+    "linked_site_entity_slug": "activities/scuba-diving",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Leonida Keys",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/leonida-keys"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "notes": "Official Keys-waters activity. Rockstar describes 'some of the most beautiful and dangerous waters in all of America.' GTA Companion records official screenshot Leonida Keys 04 (scuba divers and a sea turtle), confirmed in the Extended Look and interviews. Region-level pin; no official named reef coordinate. A 'reef' reported from the Launch Gallery is in unconfirmed.json."
+  },
+  {
+    "id": "activity-jet-skis-leonida-keys",
+    "name": "Jet skis in the Leonida Keys",
+    "category": "activity",
+    "region": "Leonida Keys",
+    "area": "Leonida Keys",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -2508.9,
+      "y": -5893.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 195,
+      "address_match": "Key Lento / Leonida Keys"
+    },
+    "linked_site_entity_slug": "activities/jet-skis",
+    "confirmed_by": [
+      {
+        "name": "Rockstar Games, Only in Leonida: Leonida Keys",
+        "url": "https://www.rockstargames.com/VI/only-in-leonida/leonida-keys"
+      },
+      {
+        "name": "Rockstar Games, GTA VI official screenshots / media",
+        "url": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "notes": "Official Keys-waters activity. GTA Companion records official screenshot Leonida Keys 05 (jet skis among the boats), confirmed in the Extended Look and interviews. Also related: activities/boating. Region-level pin."
+  }
+]

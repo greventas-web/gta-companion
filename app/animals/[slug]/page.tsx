@@ -7,6 +7,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ViewOnMap from "@/components/map/ViewOnMap";
 
 import { animals } from "@/data/animals";
 import { detailMetadata } from "@/lib/pages";
@@ -114,6 +115,7 @@ export default async function AnimalPage({
             <p className="mt-8 text-lg leading-8 text-zinc-400">
               {animal.description}
             </p>
+            <ViewOnMap entityType="animal" entitySlug={animal.slug} />
             {animal.sources && animal.sources.length > 0 ? (
               <SourceList sources={animal.sources} className="mt-4" />
             ) : animal.status === "Shown in a Rockstar caption" ? (

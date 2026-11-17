@@ -18,6 +18,7 @@ const groups = [
   {
     title: "World",
     links: [
+      { title: "Map", href: "/map" },
       { title: "Weapons", href: "/weapons" },
       { title: "Animals", href: "/animals" },
       { title: "Activities", href: "/activities" },

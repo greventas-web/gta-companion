@@ -77,7 +77,7 @@ export default function MapPreviewV2() {
             </div>
 
             <Link
-              href="/locations"
+              href="/map"
               className="mt-12 inline-flex w-fit items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-9 py-4 text-lg font-bold text-white transition duration-300 hover:scale-105"
             >
               Explore Map

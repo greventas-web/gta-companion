@@ -1,8 +1,10 @@
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
 import { pageMetadata } from "@/lib/launch";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
+import { staticPinByTitle } from "@/lib/map/catalog";
 import { famitsuSources, rockstarVi } from "@/src/data/gameplay/confirmed";
 
 const propertiesTitle = "GTA 6 properties";
@@ -61,6 +63,7 @@ export default function PropertiesPage() {
               </p>
               <h3 className="mt-3 text-2xl font-black">{place.name}</h3>
               <p className="mt-4 leading-8 text-zinc-400">{place.note}</p>
+              <PropertyMapLink title={place.name} />
             </article>
           ))}
         </div>
@@ -92,5 +95,18 @@ export default function PropertiesPage() {
         {UNOFFICIAL_DISCLAIMER}
       </p>
     </PageShell>
+  );
+}
+
+function PropertyMapLink({ title }: { title: string }) {
+  const pin = staticPinByTitle(title);
+  if (!pin) return null;
+  return (
+    <Link
+      href={`/map?pin=${encodeURIComponent(pin.id)}`}
+      className="mt-6 inline-flex rounded-full border border-violet-400/40 bg-violet-500/15 px-5 py-2.5 text-sm font-semibold text-violet-100 transition hover:bg-violet-500/25"
+    >
+      View on map
+    </Link>
   );
 }

@@ -1,0 +1,13 @@
+gtadb.org and all contributors
+https://gtadb.org
+
+Map tiles (maps/tiles/6/yanis,17, zoom 0 through 4) and landmark
+data are used under CC BY 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Changes: tiles were copied without image edits. Landmark records were
+reduced to id, in-game name, game coordinates, and public tags. Real-world
+addresses, photo files, and edit history were not included.
+
+Source checkout: https://github.com/rolux/gtadb.org
+Preferred credit line: gtadb.org and all contributors

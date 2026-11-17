@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vehicles",
     "/characters",
     "/locations",
+    "/map",
     "/timeline",
     "/media",
     "/guides",

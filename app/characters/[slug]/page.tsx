@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ViewOnMap from "@/components/map/ViewOnMap";
 import CharacterCard from "@/components/CharacterCard";
 
 import { SourceList } from "@/components/SourceLink";
@@ -117,6 +118,7 @@ export default async function CharacterPage({
             <p className="mt-8 max-w-4xl text-xl leading-9 text-zinc-400">
               {character.description}
             </p>
+            <ViewOnMap entityType="character" entitySlug={character.slug} />
             {character.details?.map((detail) => (
               <p key={detail} className="mt-6 max-w-4xl text-xl leading-9 text-zinc-300">
                 {detail}

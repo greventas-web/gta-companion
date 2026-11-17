@@ -5,6 +5,7 @@ import { IMAGE_CREDIT } from "@/lib/site";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ViewOnMap from "@/components/map/ViewOnMap";
 
 import { Weapon } from "@/types/weapon";
 
@@ -89,6 +90,8 @@ export default function WeaponDetailsPage({
             {weapon.description}
 
           </p>
+
+          <ViewOnMap entityType="weapon" entitySlug={weapon.slug} />
 
           {weapon.source ? (
             <p className="mt-4">

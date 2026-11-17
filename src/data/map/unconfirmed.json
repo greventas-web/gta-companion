@@ -1,0 +1,610 @@
+[
+  {
+    "id": "downtown-vice-city",
+    "name": "Downtown Vice City",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Downtown",
+    "position": {
+      "gtadb_landmark_id": "L190",
+      "x": -662.0,
+      "y": -102.3,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 140,
+      "address_match": "Downtown, Vice City"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing Trailer 2 / official footage highway signs",
+        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
+      }
+    ],
+    "reason": "on-screen-signage-unverified-in-this-pass",
+    "notes": "Widely reported as appearing on highway signs in official footage, and gtadb uses Downtown as an address component (140 landmarks, including Nine1Nine at L190). Not found in official website prose or image alt text during this pass. Promote after a frame-by-frame check of official trailers."
+  },
+  {
+    "id": "vice-city-international-airport",
+    "name": "Vice City International Airport",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Vice City International Airport",
+    "position": {
+      "gtadb_landmark_id": "L345",
+      "x": -2373.008,
+      "y": -774.323,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing official footage highway signs (airport / VCI)",
+        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
+      }
+    ],
+    "reason": "on-screen-signage-unverified-in-this-pass",
+    "notes": "An airport apron and highway signs are widely reported in official trailers. gtadb maps a large 'Vice City International Airport' / VCIA complex (control tower L345 used as the representative pin; 43 landmarks, centroid approx -2296.1, -713.7). The full official name has not been found in Rockstar website copy. Promote once a sign or caption is checked in official media."
+  },
+  {
+    "id": "peacock-bay",
+    "name": "Peacock Bay",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Peacock Bay",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1194.9,
+      "y": -1902.6,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 86,
+      "address_match": "Peacock Bay"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing a highway sign in official footage",
+        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
+      }
+    ],
+    "reason": "on-screen-signage-unverified-in-this-pass",
+    "notes": "Reported as a name on a highway sign in official footage. Not found in official website prose. gtadb maps 86 landmarks in Peacock Bay."
+  },
+  {
+    "id": "effluvia",
+    "name": "Effluvia",
+    "category": "business",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L104",
+      "x": 1492.0,
+      "y": 1342.5,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/nightlife",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look rooftop-bar signage",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Widely listed as a rooftop bar whose sign appears in An Extended Look. Official website copy/alts did not name it in this pass. gtadb L104, Ocean Beach, tagged #drinks, closed, enterable."
+  },
+  {
+    "id": "diamond-dawgs",
+    "name": "Diamond Dawgs",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Vice Beach",
+    "position": {
+      "gtadb_landmark_id": "L1790",
+      "x": 1511.295,
+      "y": 1759.255,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/jewelry-and-bank-robberies",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look ~18:05 (jewellery and watches)",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Reported as a jewellery/watch shop visible in the official Extended Look. GTA Companion's jewelry-robbery activity cites the Extended Look jewellery-store sequence but does not name this shop. gtadb L1790, SW 4th St, Vice Beach."
+  },
+  {
+    "id": "hobbs-milford",
+    "name": "Hobbs Milford",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Vice Beach",
+    "position": {
+      "gtadb_landmark_id": "L1555",
+      "x": 1462.967,
+      "y": 1764.383,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look ~18:09",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Reported as visible in the official Extended Look. gtadb has two pins: L1555 on SW 4th St, Vice Beach (preferred, next to Diamond Dawgs) and L2178 in Ocean Beach tagged demolished. Confirm which (if either) matches the footage before promoting."
+  },
+  {
+    "id": "lickety-split",
+    "name": "Lickety Split",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L2189",
+      "x": 1565.011,
+      "y": 1256.091,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look ice-cream parlour",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Reported as an ice-cream parlour in the official Extended Look. gtadb L2189, Ocean Beach."
+  },
+  {
+    "id": "zekes-gadgets",
+    "name": "Zeke's Gadgets",
+    "category": "store",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L2757",
+      "x": -1146.26,
+      "y": 1003.393,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look ~17:49",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Reported with Video Forever and Joyería Empeños as a strip of shops in the official Extended Look (~17:49). gtadb places all three in Rockridge, Vice City (community district name) and tags this one closed."
+  },
+  {
+    "id": "video-forever",
+    "name": "Video Forever",
+    "category": "store",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L2758",
+      "x": -1143.69,
+      "y": 996.94,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look ~17:49",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Reported in the official Extended Look next to Zeke's Gadgets. gtadb L2758, Rockridge, Vice City, tagged closed."
+  },
+  {
+    "id": "joyeria-empenos",
+    "name": "Joyería Empeños",
+    "category": "store",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L2759",
+      "x": -1148.188,
+      "y": 1012.19,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing An Extended Look ~17:49",
+        "url": "https://progressbar.gg/gta6/shops/"
+      }
+    ],
+    "reason": "extended-look-signage-unverified-in-this-pass",
+    "notes": "Reported in the official Extended Look next to Zeke's Gadgets and Video Forever. gtadb L2759 spells it 'Joyeria Empenos' and places it in Rockridge, Vice City."
+  },
+  {
+    "id": "the-rusty-anchor",
+    "name": "The Rusty Anchor",
+    "category": "business",
+    "region": "Leonida Keys",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L325",
+      "x": -2271.57,
+      "y": -5256.913,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/nightlife",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing a Launch Gallery bar sign",
+        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
+      }
+    ],
+    "reason": "launch-gallery-signage-unverified-in-this-pass",
+    "notes": "Reported as a bar sign in the official Launch Gallery. Not found in official website prose during this pass. gtadb L325, Key Lento, tagged #bar, enterable."
+  },
+  {
+    "id": "delights-cabaret",
+    "name": "Delights Cabaret",
+    "category": "business",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": "L629",
+      "x": -6360.16,
+      "y": 3590.852,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/nightlife",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing a Launch Gallery neon sign",
+        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
+      }
+    ],
+    "reason": "launch-gallery-signage-unverified-in-this-pass",
+    "notes": "Reported as neon signage in the official Launch Gallery. gtadb L629 is named 'Delights' on Interstate 404, Port Gellhorn, and is itself tagged 'unconfirmed' plus #stripclub. Do not promote without checking the official still."
+  },
+  {
+    "id": "chips-body-shop",
+    "name": "Chip's Body Shop",
+    "category": "business",
+    "region": "Leonida Keys",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L1381",
+      "x": -2975.622,
+      "y": -6461.464,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/leonida-keys",
+    "reported_by": [
+      {
+        "name": "GTA Companion, Leonida Keys location page (cites official screenshot Leonida Keys 02 billboard)",
+        "url": "https://www.gta-companion.com/locations/leonida-keys"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "official-screenshot-billboard-unverified-in-this-pass",
+    "notes": "GTA Companion's Leonida Keys page says official screenshot Leonida Keys 02 shows a billboard for Chip's Body Shop. The name was not found in official website HTML/alt text during this pass. gtadb L1381, Key Lento. Confirm the screenshot caption/frame before promoting."
+  },
+  {
+    "id": "hotel-dixon",
+    "name": "Hotel Dixon",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L32",
+      "x": 1973.5,
+      "y": 737.0,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "shore-drive-hotel-name-not-in-official-copy",
+    "notes": "gtadb names this Shore Dr hotel. Unlike Ocean View Hotel, no official alt/caption naming Hotel Dixon was found in this pass. Likely readable in Ocean Beach trailer footage — check before promoting. Nearby community-named Shore Dr hotels in the same dump include Dominion Hotel (L25), Paramour Hotel (L35), Boardwalk (L40), Hotel Neptune (L41), Seashell, Cortez, Atlantis, Seahorse, Cordelia, and Bobby Hurricane's (L48)."
+  },
+  {
+    "id": "boardwalk-hotel",
+    "name": "Boardwalk Hotel",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L40",
+      "x": 1939.0,
+      "y": 564.5,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "Fan catalogs citing Trailer 1 ~0:32",
+        "url": "https://www.gta6database.com/database/locations"
+      }
+    ],
+    "reason": "shore-drive-hotel-name-not-in-official-copy",
+    "notes": "Widely identified as an art-deco Shore Dr hotel in Trailer 1. No official alt/caption naming it was found in this pass. gtadb L40 ('Boardwalk, Shore Dr, Ocean Beach')."
+  },
+  {
+    "id": "hotel-neptune",
+    "name": "Hotel Neptune",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Ocean Beach",
+    "position": {
+      "gtadb_landmark_id": "L41",
+      "x": 1934.5,
+      "y": 540.5,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "shore-drive-hotel-name-not-in-official-copy",
+    "notes": "gtadb L41, Shore Dr, Ocean Beach, next to the Boardwalk hotel. Not named in official website copy/alts found in this pass."
+  },
+  {
+    "id": "vercetti-estate-starfish-island-placement",
+    "name": "Vercetti Estate (Starfish Island placement)",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Starfish Island",
+    "position": {
+      "gtadb_landmark_id": "L2731",
+      "x": 906.328,
+      "y": 661.051,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "weapons/hawk-little-morgan",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "officially-named-but-placement-is-community",
+    "notes": "The estate itself is confirmed (see locations.json vercetti-estate). This entry is only the gtadb placement on Starfish Island (L2731). 'Starfish Island' is a community/VC-lore label, not found in official GTA VI website copy. Keep the official entry unplaced until Rockstar or in-game data locates it."
+  },
+  {
+    "id": "jasons-house-key-lento-building",
+    "name": "Jason's House (Key Lento building)",
+    "category": "safehouse",
+    "region": "Leonida Keys",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L266",
+      "x": -2353.531,
+      "y": -5532.255,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "characters/jason-duval",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "officially-in-the-keys-building-is-community",
+    "notes": "Official text only says Jason lives rent-free in one of Brian's properties in the Keys (see locations.json jasons-place). gtadb L266 identifies a specific house on Key Lento and tags it #safehouse. Key Lento is a community island name. Do not treat this building as officially confirmed."
+  },
+  {
+    "id": "lucias-apartment",
+    "name": "Lucia's Apartment",
+    "category": "safehouse",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L475",
+      "x": -472.694,
+      "y": 1218.932,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "characters/lucia-caminos",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "not-officially-named-possible-leak-derived",
+    "notes": "Not named in official Rockstar copy. gtadb L475 ('Lucia's Apartment, Crosstown, Vice City') is tagged #safehouse, demolished, enterable. Official bio does not say where Lucia lives after prison. Treat as unconfirmed and possibly leak-derived. Hideouts also change chapter by chapter (Rob Nelson via GTA Companion /properties)."
+  },
+  {
+    "id": "leonida-penitentiary-kelly-county-candidate",
+    "name": "Prison, Kelly County (penitentiary candidate)",
+    "category": "landmark",
+    "region": null,
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L527",
+      "x": -5056.012,
+      "y": 1830.919,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "characters/lucia-caminos",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "official-prison-unplaced-community-candidate",
+    "notes": "One of two gtadb prison complexes that could be the official Leonida Penitentiary (which has no official map position). L527 is tagged #jail, government. 'Kelly County' is a community/gtadb label, not official Rockstar copy."
+  },
+  {
+    "id": "leonida-penitentiary-hamlet-candidate",
+    "name": "Prison, Hamlet (penitentiary candidate)",
+    "category": "landmark",
+    "region": null,
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L688",
+      "x": -2971.886,
+      "y": -2843.457,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "characters/lucia-caminos",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "official-prison-unplaced-community-candidate",
+    "notes": "Large prison campus in gtadb (main building L688 plus many towers and buildings), mostly tagged closed. 'Hamlet' is a community/gtadb place name. Do not assume this is the Leonida Penitentiary; official placement is still unknown. Sara's Unisex Salon is also community-placed in Hamlet."
+  },
+  {
+    "id": "gellhorn-international-raceway",
+    "name": "Gellhorn International Raceway",
+    "category": "activity",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": "L281",
+      "x": -6733.309,
+      "y": 2325.446,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/track-racing",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "community-name-not-in-official-copy",
+    "notes": "The Extended Look shows a road-course lap (on-screen 'Lap 1/2'), and Rob Nelson told The Guardian about being driven around a racetrack during Florida research — but Rockstar has not officially named a raceway. gtadb maps Gellhorn International Raceway (L281) plus many turn pins in Port Gellhorn. Promote only after an official name or in-game confirmation."
+  },
+  {
+    "id": "leaf-links-golf-club",
+    "name": "Leaf Links Golf Club",
+    "category": "activity",
+    "region": "Vice City",
+    "area": null,
+    "position": {
+      "gtadb_landmark_id": "L533",
+      "x": 577.824,
+      "y": 2486.733,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/mini-golf",
+    "reported_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "reason": "community-name-not-in-official-copy",
+    "notes": "gtadb L533 (and a queried L431 'Leaf Links Golf Club?'). Official material confirms mini golf (official alt: 'Cal and another man playing mini golf at a course decorated with fake alligators') and Rob Nelson lists playing pool, mini golf and kayaking as couple activities — but the golf-club name is not official. The Cal mini-golf course may also be a separate alligator-themed putt-putt, not this club."
+  },
+  {
+    "id": "high-rollerz-lifestyle",
+    "name": "High Rollerz Lifestyle",
+    "category": "other",
+    "region": null,
+    "area": null,
+    "position": null,
+    "linked_site_entity_slug": "businesses/high-rollerz-lifestyle",
+    "reported_by": [
+      {
+        "name": "GTA Companion, High Rollerz Lifestyle (Trailer 1 social overlay at 1:08)",
+        "url": "https://www.gta-companion.com/businesses/high-rollerz-lifestyle"
+      }
+    ],
+    "reason": "brand-not-a-confirmed-map-location",
+    "notes": "Confirmed in-game brand / social overlay ('High Rollerz Lifestyle' and @HighRollerzMag) in Trailer 1, and it has a site business/brand page. No official evidence it is a physical storefront or mappable place, so it is kept out of locations.json."
+  },
+  {
+    "id": "generic-guardian-activity-places",
+    "name": "Unnamed Guardian hands-on places (gas station, gym, bar, jewellery store, mall boutique, liquor store, meditation retreat)",
+    "category": "other",
+    "region": "Vice City",
+    "area": null,
+    "position": null,
+    "linked_site_entity_slug": "activities",
+    "reported_by": [
+      {
+        "name": "Keza MacDonald, The Guardian, 11 Nov 2026 (online hands-on / interview)",
+        "url": "https://www.theguardian.com/games/2026/nov/11/a-world-of-its-own-inside-the-making-of-the-most-detailed-grand-theft-auto-yet"
+      },
+      {
+        "name": "Keza MacDonald, The Guardian Saturday magazine, 14 Nov 2026 (print hands-on)",
+        "url": "https://www.theguardian.com/games/2026/nov/11/a-world-of-its-own-inside-the-making-of-the-most-detailed-grand-theft-auto-yet"
+      },
+      {
+        "name": "GTA Companion, Activities",
+        "url": "https://www.gta-companion.com/activities"
+      }
+    ],
+    "reason": "activity-confirmed-specific-place-not-named",
+    "notes": "The 11 Nov 2026 Guardian online piece (Keza MacDonald at Rockstar North) describes freely exploring Vice City, a gas station where Jason eats a donut and sips a beer with sloshing liquid, and a jewellery-store stick-up. The 14 Nov print Saturday magazine (summarized on GTA Companion /activities) adds little dates (gym, bar, meditation retreat, liquor-store stick-up) and robbery prep at a gas station or upscale mall boutique, plus hotwiring/locks. These confirm systems and generic place types, not named map pins. Do not invent coordinates for them. Arrow Gas Station and other gtadb gas stations remain community identifications until matched to footage or in-game data."
+  }
+]

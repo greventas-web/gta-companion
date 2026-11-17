@@ -3,6 +3,7 @@ import RepresentativeMark from "@/components/RepresentativeMark";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ViewOnMap from "@/components/map/ViewOnMap";
 import ActivityCard from "@/components/ActivityCard";
 
 import { SourceList } from "@/components/SourceLink";
@@ -118,6 +119,7 @@ export default async function ActivityPage({
             <p className="mt-8 text-xl leading-9 text-zinc-400">
               {activity.description}
             </p>
+            <ViewOnMap entityType="activity" entitySlug={activity.slug} />
 
             {activity.sources && activity.sources.length > 0 ? (
               <SourceList sources={activity.sources} className="mt-6" />
