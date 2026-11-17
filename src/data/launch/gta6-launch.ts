@@ -199,7 +199,7 @@ export const gta6Launch = {
         when: "Wednesday, November 18, into Thursday, November 19, 2026",
         time: "Pre-show hosted by RDCWorld at 11 PM ET / 10 PM CT / 8 PM PT on Wednesday, November 18. The 24-hour stream starts at 12 AM ET on Thursday, November 19 (11 PM CT / 9 PM PT on Wednesday, November 18).",
         place: "YouTube",
-        placeHref: "https://www.youtube.com/youtube",
+        placeHref: "https://www.youtube.com/live/KY4DWumZffg",
         body: "YouTube and Rockstar Games are partnering on a 24-hour Grand Theft Auto VI launch livestream, with live gameplay, creator podcasts, and on-the-ground coverage from Miami.",
         sourceIds: ["youtube-blog-nov-12", "youtube-live", "rockstar-x-youtube"],
       },
@@ -294,7 +294,7 @@ export const gta6Launch = {
     {
       id: "youtube-live",
       label: "YouTube",
-      href: "https://www.youtube.com/youtube",
+      href: "https://www.youtube.com/live/KY4DWumZffg",
       published: "YouTube",
     },
     {

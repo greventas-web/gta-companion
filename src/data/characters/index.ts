@@ -134,7 +134,7 @@ export const characters: Character[] = [
     role: "Drug Smuggler",
     status: "Confirmed",
     description:
-      "Brian Heder moves product through his boat yard with his third wife, Lori, and lets Jason live rent-free at one of his properties in exchange for help with local shakedowns.",
+      "Brian Heder moves product through his boat yard with his third wife, Lori, and lets Jason live at one of his properties without paying rent, in exchange for help with local shakedowns.",
     firstAppearance: "Rockstar Games Website",
     gallery: [],
     relatedVehicles: [],

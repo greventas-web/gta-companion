@@ -19,6 +19,20 @@ export function oneLine(text: string, max = 155) {
   return `${shortened.trim()}…`;
 }
 
+const sharedBrandBusinessNames = new Set([
+  "High Rollerz Lifestyle",
+  "Nine1Nine",
+  "Only Raw Records",
+]);
+
+export function sectionTitle(name: string, section: "Brand" | "Business") {
+  if (!sharedBrandBusinessNames.has(name)) {
+    return name;
+  }
+
+  return `${name} (${section})`;
+}
+
 export function detailMetadata(title: string, description: string): Metadata {
   return pageMetadata(title, oneLine(description));
 }
