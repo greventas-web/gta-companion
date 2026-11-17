@@ -15,7 +15,7 @@ export type LaunchStatus = "confirmed" | "live" | "pending";
 
 export const gta6Launch = {
   path: "/gta-6-launch",
-  lastUpdated: "November 14, 2026",
+  lastUpdated: "November 17, 2026",
   title: "GTA 6 Unlock Time, Release Time, and Countdown",
   description:
     "GTA 6 unlock time, release time, file size, and pre-load for November 19, 2026, plus a live countdown. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
@@ -169,6 +169,42 @@ export const gta6Launch = {
     line: "Rockstar Games announced Grand Theft Auto VI: The Festival, a live event on November 21, 2026 at Mana Wynwood in Miami, presented in partnership with PlayStation, with two stages and artists from the game and the official soundtrack. The pre-sale lottery has closed.",
     sourceIds: ["rockstar-festival", "rockstar-festival-page"],
   },
+  launchWeek: {
+    title: "Launch-week events",
+    intro:
+      "Unofficial notes on two confirmed events the night before the November 19, 2026 launch. Times are Eastern, Central, and Pacific.",
+    events: [
+      {
+        id: "night-in-vice-city",
+        title: "A Night in Vice City",
+        status: "confirmed" as LaunchStatus,
+        statusLabel: "Confirmed",
+        when: "Wednesday, November 18, 2026",
+        time: "7 PM ET / 6 PM CT / 4 PM PT",
+        place: "Kaseya Center, Miami",
+        body: "The Miami Heat host the Milwaukee Bucks in an official Rockstar Games collaboration, on ESPN. Confirmed details are a one-night Vice City court, a custom Vice City Cactus Jack Edition uniform in limited quantities at the arena, and special game-night programming.",
+        sourceIds: [
+          "espn-press-nov-17",
+          "heat-game",
+          "rockstar-x-heat",
+          "heat-official-video",
+          "rockstar-x-uniform",
+        ],
+      },
+      {
+        id: "youtube-livestream",
+        title: "YouTube 24-hour GTA 6 launch livestream",
+        status: "confirmed" as LaunchStatus,
+        statusLabel: "Confirmed",
+        when: "Wednesday, November 18, into Thursday, November 19, 2026",
+        time: "Pre-show hosted by RDCWorld at 11 PM ET / 10 PM CT / 8 PM PT on Wednesday, November 18. The 24-hour stream starts at 12 AM ET on Thursday, November 19 (11 PM CT / 9 PM PT on Wednesday, November 18).",
+        place: "YouTube",
+        placeHref: "https://www.youtube.com/youtube",
+        body: "YouTube and Rockstar Games are partnering on a 24-hour Grand Theft Auto VI launch livestream, with live gameplay, creator podcasts, and on-the-ground coverage from Miami.",
+        sourceIds: ["youtube-blog-nov-12", "youtube-live", "rockstar-x-youtube"],
+      },
+    ],
+  },
   faqs: [
     {
       question: "What time does GTA 6 unlock?",
@@ -218,6 +254,54 @@ export const gta6Launch = {
       label: "Rockstar Games",
       href: "https://www.rockstargames.com/VI/gtavi-thefestival",
       published: "November 9, 2026",
+    },
+    {
+      id: "espn-press-nov-17",
+      label: "ESPN Press Room (Nov 17)",
+      href: "https://espnpressroom.com/press-release/espn-nba-full-court-press-celtics-and-jayson-tatum-visit-nuggets-and-nikola-jokic-wednesday/",
+      published: "November 17, 2026",
+    },
+    {
+      id: "heat-game",
+      label: "Miami Heat",
+      href: "https://www.nba.com/heat/game/0022600260-bucks-vs-heat-miami-fl-11-18-2026",
+      published: "November 18, 2026",
+    },
+    {
+      id: "rockstar-x-heat",
+      label: "Rockstar Games on X",
+      href: "https://x.com/RockstarGames/status/2122745929442759040",
+      published: "Rockstar Games",
+    },
+    {
+      id: "heat-official-video",
+      label: "Official video",
+      href: "https://www.youtube.com/watch?v=Rj2Jnbt-5p4",
+      published: "YouTube",
+    },
+    {
+      id: "rockstar-x-uniform",
+      label: "Rockstar Games on X (uniform)",
+      href: "https://x.com/RockstarGames/status/2120881926957637954",
+      published: "Rockstar Games",
+    },
+    {
+      id: "youtube-blog-nov-12",
+      label: "YouTube Blog (Nov 12)",
+      href: "https://blog.youtube/news-and-events/youtube-rockstar-games-gta-vi-launch/",
+      published: "November 12, 2026",
+    },
+    {
+      id: "youtube-live",
+      label: "YouTube",
+      href: "https://www.youtube.com/youtube",
+      published: "YouTube",
+    },
+    {
+      id: "rockstar-x-youtube",
+      label: "Rockstar Games on X",
+      href: "https://x.com/RockstarGames/status/2120907315352367600",
+      published: "Rockstar Games",
     },
     {
       id: "rockstar-date",

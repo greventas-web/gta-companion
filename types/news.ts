@@ -7,7 +7,7 @@ export interface NewsArticle {
 
   category: string;
 
-  image: string;
+  image?: string;
 
   imageAlt?: string;
 

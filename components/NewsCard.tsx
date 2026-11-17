@@ -26,6 +26,7 @@ export default function NewsCard({
 
         <div className="absolute -left-20 bottom-0 h-60 w-60 rounded-full bg-violet-500/10 opacity-0 blur-[140px] transition duration-500 group-hover:opacity-100" />
 
+        {article.image ? (
         <div className="relative aspect-[16/10] overflow-hidden">
 
           <Image
@@ -38,11 +39,12 @@ export default function NewsCard({
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-          <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-300 backdrop-blur-xl">
+          <div className="absolute left-6 top-6 max-w-[calc(100%-3rem)] break-words rounded-full border border-pink-500/30 bg-black/40 px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-pink-300 backdrop-blur-xl sm:tracking-[0.35em]">
             {article.category}
           </div>
 
         </div>
+        ) : null}
 
         <div className="relative p-8">
 
@@ -57,7 +59,7 @@ export default function NewsCard({
 
           </div>
 
-          <h3 className="mt-5 text-4xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300">
+          <h3 className="mt-5 break-words text-3xl font-black tracking-[-0.03em] text-white transition duration-300 group-hover:text-pink-300 sm:text-4xl">
             {article.title}
           </h3>
 

@@ -23,6 +23,80 @@ const keyArtAlt =
 
 export const news: NewsArticle[] = [
   {
+    id: 18,
+    slug: "gta-vi-launch-eve-events",
+    title: "A Night in Vice City and the YouTube launch livestream",
+    summary:
+      "The Miami Heat host the Bucks on November 18 in an official Rockstar Games collaboration, and YouTube runs a 24-hour Grand Theft Auto VI launch livestream with a pre-show the same night.",
+    date: "2026-11-17",
+    category: "Official News",
+    paragraphs: [
+      "A Night in Vice City is the Miami Heat versus Milwaukee Bucks game on Wednesday, November 18, 2026, at Kaseya Center. It is an official Rockstar Games collaboration, on ESPN at 7 PM ET / 6 PM CT / 4 PM PT. Confirmed details are a one-night Vice City court, a custom Vice City Cactus Jack Edition uniform in limited quantities at the arena, and special game-night programming.",
+      "YouTube and Rockstar Games are partnering on a 24-hour Grand Theft Auto VI launch livestream. The pre-show, hosted by RDCWorld, starts at 11 PM ET / 10 PM CT / 8 PM PT on Wednesday, November 18. The 24-hour stream starts at 12 AM ET on Thursday, November 19 (11 PM CT / 9 PM PT on Wednesday, November 18) on YouTube, with live gameplay, creator podcasts, and on-the-ground coverage from Miami.",
+      "Unofficial fan note. Rockstar Games is credited for the collaboration and the partnership.",
+    ],
+    sources: [
+      {
+        label: "ESPN Press Room (Nov 17)",
+        href: "https://espnpressroom.com/press-release/espn-nba-full-court-press-celtics-and-jayson-tatum-visit-nuggets-and-nikola-jokic-wednesday/",
+      },
+      {
+        label: "Miami Heat",
+        href: "https://www.nba.com/heat/game/0022600260-bucks-vs-heat-miami-fl-11-18-2026",
+      },
+      {
+        label: "Rockstar Games on X",
+        href: "https://x.com/RockstarGames/status/2122745929442759040",
+      },
+      {
+        label: "Official video",
+        href: "https://www.youtube.com/watch?v=Rj2Jnbt-5p4",
+      },
+      {
+        label: "Rockstar Games on X (uniform)",
+        href: "https://x.com/RockstarGames/status/2120881926957637954",
+      },
+      {
+        label: "YouTube Blog (Nov 12)",
+        href: "https://blog.youtube/news-and-events/youtube-rockstar-games-gta-vi-launch/",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/youtube",
+      },
+      {
+        label: "Rockstar Games on X (livestream)",
+        href: "https://x.com/RockstarGames/status/2120907315352367600",
+      },
+    ],
+  },
+  {
+    id: 17,
+    slug: "gta-vi-the-festival",
+    title: "Grand Theft Auto VI: The Festival",
+    image: "/images/official/gta-vi-the-festival.webp",
+    imageAlt:
+      "Official key art: Rockstar Games and PlayStation present Grand Theft Auto VI: The Festival on November 21, 2026 at Mana Wynwood, Miami.",
+    summary:
+      "Rockstar Games announced Grand Theft Auto VI: The Festival, a live event on November 21, 2026 at Mana Wynwood in Miami, presented in partnership with PlayStation. The pre-sale lottery has closed.",
+    date: "2026-11-09",
+    category: "Official News",
+    paragraphs: [
+      "Rockstar Games announced Grand Theft Auto VI: The Festival, a special live event on November 21 at Mana Wynwood in Miami to celebrate the launch. It is presented in partnership with PlayStation and produced by the creators of III Points, with two stages of nonstop music and artists from the game and the official soundtrack: Cactus Jack presents Travis Scott, Don Toliver, Kodak Black, and Sofaygo; Cardi B; Ca7riel & Paco Amoroso; Justice (DJ set); Metro Boomin; Nick León B2B DJ Python; Prospa B2B Skream; Rauw & Friends; Suero; Tainy; and The Dare B2B Fcukers (DJ set). The pre-sale lottery closed at 4 p.m. ET on November 10. Tickets are limited to two per pre-sale code. They are non-transferable, and attendance is 17+.",
+      "Unofficial fan note. Images: Rockstar Games.",
+    ],
+    sources: [
+      {
+        label: "Rockstar Newswire",
+        href: "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival",
+      },
+      {
+        label: "Rockstar Games",
+        href: "https://www.rockstargames.com/VI/gtavi-thefestival",
+      },
+    ],
+  },
+  {
     id: 16,
     slug: "gta-vi-preload-now",
     title: "Pre-Load Grand Theft Auto VI Now",

@@ -10,7 +10,7 @@ export default function PageHero({
   description,
 }: Props) {
   return (
-    <section className="relative mb-24 overflow-hidden rounded-[42px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#09090B] to-black px-10 py-16 lg:px-20 lg:py-24">
+    <section className="relative mb-24 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#121216] via-[#09090B] to-black px-6 py-12 sm:rounded-[42px] sm:px-10 sm:py-16 lg:px-20 lg:py-24">
 
       {/* Background Glow */}
 
@@ -20,11 +20,11 @@ export default function PageHero({
 
       <div className="relative z-10">
 
-        <div className="inline-flex rounded-full border border-pink-500/30 bg-pink-500/10 px-6 py-3 text-[11px] font-black uppercase tracking-[0.45em] text-pink-400">
+        <div className="inline-flex max-w-full break-words rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-pink-400 sm:px-6 sm:py-3 sm:tracking-[0.45em]">
           {badge}
         </div>
 
-        <h1 className="mt-8 max-w-5xl text-6xl font-black leading-[0.9] tracking-[-0.03em] text-white lg:text-8xl">
+        <h1 className="mt-8 max-w-5xl break-words text-4xl font-black leading-[0.95] tracking-[-0.03em] text-white sm:text-6xl sm:leading-[0.9] lg:text-8xl">
           {title}
         </h1>
 

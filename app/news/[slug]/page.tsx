@@ -61,7 +61,7 @@ export default async function NewsArticlePage({
 
   return (
     <main className="min-h-screen bg-[#040404] text-white">
-      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-44">
+      <section className="mx-auto max-w-[1700px] px-6 pb-20 pt-36 sm:px-8 sm:pt-44">
         <Breadcrumb
           items={[
             {
@@ -78,7 +78,8 @@ export default async function NewsArticlePage({
           ]}
         />
 
-        <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <div className={`mt-12 grid gap-14 ${article.image ? "xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]" : ""}`}>
+          {article.image ? (
           <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
             <div className="relative aspect-[16/10]">
               <Image
@@ -95,6 +96,7 @@ export default async function NewsArticlePage({
               </p>
             </div>
           </div>
+          ) : null}
 
           <div>
             <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.3em] text-pink-400">

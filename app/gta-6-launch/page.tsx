@@ -84,6 +84,13 @@ export default function Gta6LaunchPage() {
             {gta6Launch.festival.line}{" "}
             <Link href="/timeline" className="text-pink-300 hover:text-pink-200">
               The lineup is on the timeline
+            </Link>{" "}
+            and in the{" "}
+            <Link
+              href="/news/gta-vi-the-festival"
+              className="text-pink-300 hover:text-pink-200"
+            >
+              news index
             </Link>
             .
           </p>
@@ -117,6 +124,80 @@ export default function Gta6LaunchPage() {
           </div>
         </div>
       </header>
+
+      <section className="mt-10" aria-labelledby="launch-week">
+        <h2 id="launch-week" className="text-3xl font-black tracking-[-0.03em]">
+          {gta6Launch.launchWeek.title}
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-400">
+          {gta6Launch.launchWeek.intro}{" "}
+          <Link href="/timeline" className="text-pink-300 hover:text-pink-200">
+            The same events are on the timeline
+          </Link>
+          , and a short note is in the{" "}
+          <Link
+            href="/news/gta-vi-launch-eve-events"
+            className="text-pink-300 hover:text-pink-200"
+          >
+            news index
+          </Link>
+          .
+        </p>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {gta6Launch.launchWeek.events.map((event) => (
+            <article
+              key={event.id}
+              className="min-w-0 rounded-[32px] border border-white/10 bg-[#0B0B0D] p-6 sm:p-8"
+            >
+              <div className="flex flex-wrap items-center gap-3">
+                <Status tone={event.status} label={event.statusLabel} />
+              </div>
+              <h3 className="mt-4 text-2xl font-black tracking-[-0.03em]">
+                {event.title}
+              </h3>
+              <dl className="mt-5 space-y-3">
+                <div>
+                  <dt className="text-[11px] font-black uppercase tracking-[0.18em] text-teal-300">
+                    When
+                  </dt>
+                  <dd className="mt-1 break-words text-base leading-7 text-zinc-300">
+                    {event.when}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-[11px] font-black uppercase tracking-[0.18em] text-teal-300">
+                    Time
+                  </dt>
+                  <dd className="mt-1 break-words text-base leading-7 text-zinc-300">
+                    {event.time}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-[11px] font-black uppercase tracking-[0.18em] text-teal-300">
+                    Where
+                  </dt>
+                  <dd className="mt-1 break-words text-base leading-7 text-zinc-300">
+                    {"placeHref" in event && event.placeHref ? (
+                      <a
+                        href={event.placeHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-pink-300 underline-offset-2 hover:text-pink-200 hover:underline"
+                      >
+                        {event.place}
+                      </a>
+                    ) : (
+                      event.place
+                    )}
+                  </dd>
+                </div>
+              </dl>
+              <p className="mt-4 text-base leading-7 text-zinc-400">{event.body}</p>
+              <Sources ids={event.sourceIds} />
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-10" aria-labelledby="unlock-times">
         <h2 id="unlock-times" className="text-3xl font-black tracking-[-0.03em]">

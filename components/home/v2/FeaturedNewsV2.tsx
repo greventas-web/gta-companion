@@ -41,6 +41,7 @@ export default function FeaturedNewsV2() {
             className="group overflow-hidden rounded-[36px] border border-white/10 bg-[#09090B] transition-all duration-500 hover:-translate-y-3 hover:border-pink-500/30 hover:shadow-[0_45px_120px_rgba(236,72,153,.20)]"
           >
 
+            {article.image ? (
             <div className="relative aspect-[16/10] overflow-hidden">
 
               <Image
@@ -53,11 +54,18 @@ export default function FeaturedNewsV2() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-              <div className="absolute left-6 top-6 rounded-full border border-pink-500/30 bg-black/60 px-5 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-400 backdrop-blur-xl">
+              <div className="absolute left-6 top-6 max-w-[calc(100%-3rem)] break-words rounded-full border border-pink-500/30 bg-black/60 px-5 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-pink-400 backdrop-blur-xl sm:tracking-[0.35em]">
                 {article.category}
               </div>
 
             </div>
+            ) : (
+            <div className="border-b border-white/10 px-8 pt-8">
+              <div className="inline-flex max-w-full break-words rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-pink-300">
+                {article.category}
+              </div>
+            </div>
+            )}
 
             <div className="p-8">
 
@@ -65,7 +73,7 @@ export default function FeaturedNewsV2() {
                 {article.date}
               </div>
 
-              <h3 className="mt-3 text-2xl font-black leading-tight text-white transition group-hover:text-pink-400">
+              <h3 className="mt-3 break-words text-2xl font-black leading-tight text-white transition group-hover:text-pink-400">
                 {article.title}
               </h3>
 

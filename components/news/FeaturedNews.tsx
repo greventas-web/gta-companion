@@ -28,6 +28,7 @@ export default function FeaturedNews({
 
         <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-violet-500/10 blur-[180px]" />
 
+        {article.image ? (
         <div className="relative aspect-[21/9] overflow-hidden">
 
           <Image
@@ -43,14 +44,15 @@ export default function FeaturedNews({
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
         </div>
+        ) : null}
 
-        <div className="absolute inset-0 flex items-end">
+        <div className={article.image ? "absolute inset-0 flex items-end" : "relative"}>
 
-          <div className="relative max-w-5xl p-10 md:p-14 lg:p-16">
+          <div className="relative max-w-5xl p-8 sm:p-10 md:p-14 lg:p-16">
 
             <div className="flex flex-wrap items-center gap-4">
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-[11px] font-black uppercase tracking-[0.35em] text-pink-400 backdrop-blur-xl">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-pink-400 backdrop-blur-xl sm:px-5 sm:tracking-[0.35em]">
 
                 <Sparkles size={14} />
 
@@ -68,7 +70,7 @@ export default function FeaturedNews({
 
             </div>
 
-            <h2 className="mt-8 max-w-4xl text-4xl font-black leading-tight tracking-[-0.03em] text-white md:text-6xl">
+            <h2 className="mt-8 max-w-4xl break-words text-3xl font-black leading-tight tracking-[-0.03em] text-white sm:text-4xl md:text-6xl">
               {article.title}
             </h2>
 
