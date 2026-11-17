@@ -11,23 +11,54 @@ export const SITE = {
   officialOnly: true,
 } as const;
 
+export const SUPPORT_URL = "https://ko-fi.com/gtacompanion";
+
 export const SOCIAL_PROFILES = [
   {
+    id: "youtube",
     label: "YouTube",
     href: "https://www.youtube.com/@GTACompanion-c5e",
-    title: "@GTACompanion-c5e",
+    title: "GTA Companion on YouTube",
   },
   {
+    id: "tiktok",
+    label: "TikTok",
+    href: "https://www.tiktok.com/@gtacompanionhub",
+    title: "GTA Companion on TikTok",
+  },
+  {
+    id: "instagram",
     label: "Instagram",
-    href: "https://www.instagram.com/gta_companion/",
-    title: "@gta_companion",
+    href: "https://www.instagram.com/gtacompanion.hq/",
+    title: "GTA Companion on Instagram",
   },
   {
+    id: "x",
     label: "X",
     href: "https://x.com/GTACompanion",
-    title: "@GTACompanion",
+    title: "GTA Companion on X",
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61596688830240",
+    title: "GTA Companion on Facebook",
+  },
+  {
+    id: "discord",
+    label: "Join our Discord",
+    href: "https://discord.gg/QBbzqRR3G",
+    title: "Join our Discord",
+  },
+  {
+    id: "kofi",
+    label: "Ko-fi",
+    href: SUPPORT_URL,
+    title: "GTA Companion on Ko-fi",
   },
 ] as const;
+
+export type SocialProfileId = (typeof SOCIAL_PROFILES)[number]["id"];
 
 export const UNOFFICIAL_DISCLAIMER =
   "Unofficial fan site, not affiliated with Rockstar Games or Take-Two.";

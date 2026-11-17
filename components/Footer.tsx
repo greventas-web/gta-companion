@@ -1,21 +1,10 @@
 import Link from "next/link";
-import { X, type LucideProps } from "lucide-react";
 
 import SiteLogo from "@/components/SiteLogo";
+import SocialLinks from "@/components/SocialLinks";
 import SubscribeForm from "@/components/SubscribeForm";
 import SupportLink from "@/components/SupportLink";
-import { IMAGE_CREDIT, SITE, SOCIAL_PROFILES } from "@/lib/site";
-
-const socialIcons = {
-  YouTube: YouTubeIcon,
-  Instagram: InstagramIcon,
-  X,
-} as const;
-
-const socialLinks = SOCIAL_PROFILES.map((profile) => ({
-  ...profile,
-  icon: socialIcons[profile.label],
-}));
+import { IMAGE_CREDIT, SITE } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -38,25 +27,7 @@ export default function Footer() {
 
             <SupportLink className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-pink-300 transition hover:text-pink-200" />
 
-            <nav aria-label="Social links" className="mt-8 space-y-4">
-              {socialLinks.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={item.title}
-                    className="flex items-center gap-2 text-zinc-400 transition hover:text-pink-400"
-                  >
-                    <Icon size={16} aria-hidden="true" />
-                    {item.label}
-                  </a>
-                );
-              })}
-            </nav>
+            <SocialLinks className="mt-8 flex max-w-[360px] flex-wrap gap-x-5 gap-y-3" />
           </div>
 
           <div>
@@ -181,46 +152,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function InstagramIcon({ size = 16, ...props }: LucideProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <circle cx="12" cy="12" r="4" />
-      <path d="M17.5 6.5h.01" />
-    </svg>
-  );
-}
-
-function YouTubeIcon({ size = 16, ...props }: LucideProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-      <path d="m10 15 5-3-5-3z" />
-    </svg>
   );
 }
