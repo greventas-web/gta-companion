@@ -14,14 +14,16 @@ import {
 /**
  * Pending and approved suggestions.
  *
- * Production: a private Vercel Blob store.
- *   BLOB_READ_WRITE_TOKEN  (local or a public-token store)
- *   BLOB_STORE_ID          (set when a Blob store is connected on Vercel)
- * The file is private so pending rows are not readable from a public URL.
+ * Production and Preview use the private store gta-companion-map-submissions.
+ * That store is connected with the MAP prefix, so its credential is
+ * MAP_READ_WRITE_TOKEN. Pass that token on every Blob call. Do not use
+ * BLOB_READ_WRITE_TOKEN or BLOB_STORE_ID; those belong to a different,
+ * public store.
  *
- * Local dev without those variables uses .data/map-submissions.json.
- * On Vercel, writes fail closed until Blob is configured. The map still
- * loads curated pins.
+ * The submissions file is private so pending rows are not readable from a
+ * public URL. Local dev without MAP_READ_WRITE_TOKEN uses
+ * .data/map-submissions.json. On Vercel, writes fail closed until
+ * MAP_READ_WRITE_TOKEN is set. The map still loads curated pins.
  */
 
 const BLOB_PATH = "map/submissions.json";
@@ -62,8 +64,13 @@ function emptyStore(): StoreShape {
   return { submissions: [], hits: {} };
 }
 
+function mapBlobToken(): string | null {
+  const token = process.env.MAP_READ_WRITE_TOKEN?.trim();
+  return token ? token : null;
+}
+
 export function blobConfigured(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
+  return mapBlobToken() !== null;
 }
 
 function backend(): "blob" | "file" | "none" {
@@ -94,7 +101,13 @@ async function readStore(): Promise<StoreShape> {
       store = emptyStore();
     }
   } else if (kind === "blob") {
-    const result = await get(BLOB_PATH, { access: "private", useCache: false });
+    const token = mapBlobToken();
+    if (!token) throw new StorageUnavailable();
+    const result = await get(BLOB_PATH, {
+      access: "private",
+      useCache: false,
+      token,
+    });
     if (result && result.statusCode === 200) {
       store = parseStore(await new Response(result.stream).text());
     }
@@ -122,12 +135,15 @@ async function writeStore(store: StoreShape): Promise<void> {
     return;
   }
 
+  const token = mapBlobToken();
+  if (!token) throw new StorageUnavailable();
   await put(BLOB_PATH, body, {
     access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
     cacheControlMaxAge: 60,
+    token,
   });
 }
 
