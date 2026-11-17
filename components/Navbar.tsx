@@ -108,6 +108,8 @@ export default function Navbar() {
               Launch
             </NavLink>
 
+            <NavLink href="/map">Map</NavLink>
+
             <MegaMenu />
 
             <NavLink href="/news">News</NavLink>
@@ -283,6 +285,7 @@ export default function Navbar() {
               {[
                 { title: "Home", href: "/" },
                 { title: "Launch", href: "/gta-6-launch" },
+                { title: "Map", href: "/map" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
               ]

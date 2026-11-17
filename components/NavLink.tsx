@@ -18,8 +18,9 @@ export default function NavLink({
   const pathname = usePathname();
 
   const active =
-    pathname === href ||
-    (href !== "/" && pathname.startsWith(href));
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <Link
