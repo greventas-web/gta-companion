@@ -2,6 +2,7 @@ import Image from "@/components/SafeImage";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ViewOnMap from "@/components/map/ViewOnMap";
 import { isNameCard } from "@/components/ItemImage";
 import { IMAGE_CREDIT } from "@/lib/site";
 
@@ -111,6 +112,8 @@ export default function BusinessDetailsPage({
             {business.description}
 
           </p>
+
+          <ViewOnMap entityType="business" entitySlug={business.slug} />
 
           <div className="mt-10 rounded-[28px] border border-pink-500/20 bg-gradient-to-br from-pink-500/10 via-zinc-900 to-black p-7">
 

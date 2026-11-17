@@ -1,0 +1,12 @@
+{
+  "tileset": "yanis,17",
+  "game": 6,
+  "minZoom": 0,
+  "maxNativeZoom": 4,
+  "tileSize": 256,
+  "worldMeters": 32768,
+  "origin": "center",
+  "template": "/maps/tiles/6/yanis,17/{z}/{z},{y},{x}.jpg",
+  "attribution": "gtadb.org and all contributors",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}

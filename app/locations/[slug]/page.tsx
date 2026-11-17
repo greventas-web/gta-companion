@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import LocationCard from "@/components/LocationCard";
+import ViewOnMap from "@/components/map/ViewOnMap";
 
 import { locations } from "@/data/locations";
 import { detailMetadata } from "@/lib/pages";
@@ -111,6 +112,8 @@ export default async function LocationPage({
             <p className="mt-8 text-xl leading-9 text-zinc-400">
               {location.description}
             </p>
+
+            <ViewOnMap entityType="location" entitySlug={location.slug} />
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2">
 

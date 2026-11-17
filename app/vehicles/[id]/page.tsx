@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import ViewOnMap from "@/components/map/ViewOnMap";
 import { SourceLink } from "@/components/SourceLink";
 import VehicleCard from "@/components/VehicleCard";
 import VehicleGallery from "@/components/VehicleGallery";
@@ -124,6 +125,8 @@ export default async function VehicleDetailsPage({
               {vehicle.description}
 
             </p>
+
+            <ViewOnMap entityType="vehicle" entitySlug={vehicle.slug} />
 
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-teal-300">
               {vehicle.status}

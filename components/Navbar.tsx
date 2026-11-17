@@ -108,6 +108,8 @@ export default function Navbar() {
               Launch
             </NavLink>
 
+            <NavLink href="/map">Map</NavLink>
+
             <MegaMenu />
 
             <NavLink href="/news">News</NavLink>
