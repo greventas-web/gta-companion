@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 
 import { brands } from "@/data/brands";
-import { detailMetadata } from "@/lib/pages";
+import { detailMetadata, sectionTitle } from "@/lib/pages";
 import type { Metadata } from "next";
 
 type Props = {
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  return detailMetadata(brand.name, brand.description);
+  return detailMetadata(sectionTitle(brand.name, "Brand"), brand.description);
 }
 
 export default async function BrandPage({

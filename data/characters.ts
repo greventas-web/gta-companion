@@ -168,7 +168,7 @@ export const characters: Character[] = [
     status: "Confirmed",
     firstAppearance: "Rockstar Games Website",
     description:
-      "Brian Heder is a longtime smuggler in the Leonida Keys. He moves product through his boat yard with his third wife, Lori, and lets Jason live rent-free at one of his properties in exchange for help with local shakedowns. Cal Hampton works with him.",
+      "Brian Heder is a longtime smuggler in the Leonida Keys. He moves product through his boat yard with his third wife, Lori, and lets Jason live at one of his properties without paying rent, in exchange for help with local shakedowns. Cal Hampton works with him.",
     gallery: [],
     relatedVehicles: [],
     relatedLocations: ["leonida-keys"],

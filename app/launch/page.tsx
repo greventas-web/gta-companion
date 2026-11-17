@@ -1,5 +1,4 @@
 import { paradiseGarageStandIn } from "@/data/standIns";
-import type { Metadata } from "next";
 import ItemImage from "@/components/ItemImage";
 import RepresentativeMark from "@/components/RepresentativeMark";
 import Link from "next/link";
@@ -7,6 +6,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
+import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT } from "@/lib/site";
 import { editionCutoff, goodtimeLine, goodtimeSource } from "@/data/merch";
 import {
@@ -20,11 +20,11 @@ import {
   xboxUpgrade,
 } from "@/src/data/gameplay/confirmed";
 
-export const metadata: Metadata = {
-  title: "Editions and pre-load",
-  description:
-    "What Rockstar and Take-Two have published about GTA VI editions, pre-load, and the named bonus vehicles and weapons.",
-};
+const launchTitle = "Editions and pre-load";
+const launchDescription =
+  "What Rockstar and Take-Two have published about GTA VI editions, pre-load, and the named bonus vehicles and weapons. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.";
+
+export const metadata = pageMetadata(launchTitle, launchDescription);
 
 const ultimateVehicles = [
   {

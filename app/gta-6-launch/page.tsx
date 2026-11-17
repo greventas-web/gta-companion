@@ -59,8 +59,8 @@ export default function Gta6LaunchPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,.12),transparent_42%),radial-gradient(circle_at_top_right,rgba(236,72,153,.14),transparent_46%)]" />
         <div className="relative">
           <div className="flex flex-wrap items-center gap-3">
-            <p className="inline-flex rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-pink-300">
-              {SITE.slogan}
+            <p className="inline-block min-w-0 max-w-full rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-[11px] font-black uppercase leading-5 tracking-[0.22em] text-pink-300">
+              <LaunchEyebrow />
             </p>
             <p className="text-sm text-zinc-500">
               Last updated {gta6Launch.lastUpdated}
@@ -342,6 +342,23 @@ export default function Gta6LaunchPage() {
         Last updated {gta6Launch.lastUpdated}. {UNOFFICIAL_DISCLAIMER}
       </p>
     </PageShell>
+  );
+}
+
+function LaunchEyebrow() {
+  const marker = "GTA 6";
+  const index = SITE.slogan.indexOf(marker);
+
+  if (index === -1) {
+    return SITE.slogan;
+  }
+
+  return (
+    <>
+      {SITE.slogan.slice(0, index)}
+      <span className="whitespace-nowrap">GTA&nbsp;6</span>
+      {SITE.slogan.slice(index + marker.length)}
+    </>
   );
 }
 
