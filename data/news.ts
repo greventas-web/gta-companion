@@ -23,6 +23,46 @@ const keyArtAlt =
 
 export const news: NewsArticle[] = [
   {
+    id: 19,
+    slug: "gta-companion-interactive-map-live",
+    title: "The GTA Companion interactive map is live",
+    summary:
+      "GTA Companion now has an interactive community map of Leonida. It opens with 35 confirmed pins from official Rockstar material, and players can suggest new locations for review.",
+    date: "2026-11-17",
+    category: "Site Update",
+    sourceName: "GTA Companion",
+    status: "Site update",
+    paragraphs: [
+      "The interactive map is live at gta-companion.com/map. It is a pan-and-zoom map of Leonida built on the gtadb.org base map. It opens with 35 confirmed pins, and each one comes from official Rockstar Games material: places across Vice City, the Leonida Keys, Grassrivers, Mount Kalaga and more, plus confirmed stores, businesses, activities, a car dealer, a safehouse and a mission.",
+      "Use the category filters to show only what you want, search for a place by name, and open a pin to read about it. Pins that match a GTA Companion database page link straight to it, and database pages have a View on map button that takes you back to the right spot.",
+      "To suggest a location, open the map panel (on phones, tap Search and layers), choose Suggest a location, tap the map to drop a pin, then add a category, a title and a short description. A source link is optional but helps. Choose Submit for review. Every suggestion is reviewed before it appears on the map.",
+      "After Grand Theft Auto VI launches on Thursday, November 19, we will fill the map with confirmed in-game locations, including the stores, weapons, activities, businesses, vehicles, missions and collectibles in the database.",
+      "Map tiles and landmarks are by gtadb.org and all contributors, used under CC BY 4.0. Unofficial fan site. Grand Theft Auto VI is by Rockstar Games. Not affiliated with Rockstar Games or Take-Two Interactive.",
+    ],
+    sources: [
+      {
+        label: "GTA Companion map",
+        href: "https://www.gta-companion.com/map",
+      },
+      {
+        label: "gtadb.org and all contributors",
+        href: "https://gtadb.org",
+      },
+      {
+        label: "CC BY 4.0 license",
+        href: "https://creativecommons.org/licenses/by/4.0/",
+      },
+      {
+        label: "Rockstar Games: Only in Leonida, Vice City",
+        href: "https://www.rockstargames.com/VI/only-in-leonida/vice-city",
+      },
+      {
+        label: "Rockstar Games: Grand Theft Auto VI",
+        href: "https://www.rockstargames.com/VI",
+      },
+    ],
+  },
+  {
     id: 18,
     slug: "gta-vi-launch-eve-events",
     title: "A Night in Vice City and the YouTube launch livestream",
