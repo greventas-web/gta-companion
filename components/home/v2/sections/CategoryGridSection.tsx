@@ -17,7 +17,7 @@ import { businesses } from "@/data/businesses";
 import { characters } from "@/data/characters";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
-import { confirmedVehicles, vehicles } from "@/data/vehicles";
+import { vehicleCounts } from "@/src/data/launch/launch-facts";
 import { confirmedWeapons, weapons } from "@/data/weapons";
 
 import CategoryCard from "../cards/CategoryCard";
@@ -27,7 +27,7 @@ const cards = [
     title: "Vehicles",
     href: "/vehicles",
     image: "/images/official/categories/vehicles.webp",
-    count: `${confirmedVehicles.length} named · ${vehicles.length} listed`,
+    count: `${vehicleCounts.total} in the game`,
     icon: Car,
   },
   {

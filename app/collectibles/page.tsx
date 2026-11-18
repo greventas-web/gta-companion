@@ -1,7 +1,9 @@
 import CitedNotes from "@/components/CitedNotes";
+import JsonLd from "@/components/JsonLd";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { pageMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 import {
   gameInformerAnimals,
   gamespotTgg,
@@ -74,6 +76,13 @@ const launchNotes = [
 export default function Page() {
   return (
     <PageShell>
+      <JsonLd
+        data={itemListJsonLd(
+          "GTA 6 collectibles",
+          "/collectibles",
+          launchNotes.map((note) => ({ name: note.title }))
+        )}
+      />
       <PageHero
         badge="Unofficial fan notes"
         title="Collectibles"

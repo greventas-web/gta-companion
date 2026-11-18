@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import JsonLd from "@/components/JsonLd";
 import { SourceList } from "@/components/SourceLink";
 import TrophyTable from "@/components/trophies/TrophyTable";
 import { launchMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { TROPHY_COUNTS, TROPHY_LIST_NOTE, trophies } from "@/src/data/trophies";
 
-const title =
-  trophies.length === 0
-    ? "GTA 6 trophies list (unofficial) — not published yet"
-    : "GTA 6 trophies list (unofficial)";
+const title = "GTA 6 Trophies List";
 
 const description =
   trophies.length === 0
-    ? `GTA 6 trophies and Xbox achievements. No official list has been published. ${SITE.slogan}. ${UNOFFICIAL_DISCLAIMER}`
-    : `GTA 6 trophies and Xbox achievements from the published lists. ${SITE.slogan}. ${UNOFFICIAL_DISCLAIMER}`;
+    ? `Unofficial GTA 6 trophies and Xbox achievements list. No official list has been published yet. ${UNOFFICIAL_DISCLAIMER}`
+    : `Unofficial GTA 6 trophies list and Xbox achievements from the published lists. Hidden story trophies are held back for now. ${UNOFFICIAL_DISCLAIMER}`;
 
 export const metadata: Metadata = {
   ...launchMetadata(title, description),
@@ -32,6 +31,18 @@ export const metadata: Metadata = {
 export default function TrophiesPage() {
   return (
     <PageShell>
+      {trophies.length > 0 ? (
+        <JsonLd
+          data={itemListJsonLd(
+            "GTA 6 trophies list",
+            "/trophies",
+            trophies.map((trophy) => ({
+              name: trophy.name,
+              url: `/trophies/${trophy.slug}`,
+            }))
+          )}
+        />
+      ) : null}
       <PageHero
         badge={trophies.length === 0 ? "Unofficial · not published yet" : "Unofficial"}
         title="Trophies"

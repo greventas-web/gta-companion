@@ -4,11 +4,43 @@ import MapLoader, { MapLoading } from "@/components/map/community/MapLoader";
 import { getStaticPins } from "@/lib/map/catalog";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 
+const title = "GTA 6 Map – Every Location (Interactive)";
+const description =
+  "Unofficial interactive GTA 6 map of Leonida and Vice City. Browse confirmed locations, landmarks, and in-game spots as they are added. Not affiliated with Rockstar Games.";
+
 export const metadata: Metadata = {
-  title: "Leonida map",
-  description:
-    "Unofficial GTA 6 community map of Leonida. Pan the gtadb.org base map, filter landmarks, and open places from the GTA Companion database. Not affiliated with Rockstar Games.",
+  title,
+  description,
   alternates: { canonical: "/map" },
+  keywords: [
+    "GTA 6 map",
+    "GTA 6 interactive map",
+    "Leonida map",
+    "Vice City map",
+    "GTA VI map",
+  ],
+  openGraph: {
+    title,
+    description,
+    url: "/map",
+    siteName: SITE.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/logo/og-night.jpg",
+        width: 1200,
+        height: 630,
+        alt: "GTA 6 Map – Every Location (Interactive), unofficial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/logo/og-night.jpg"],
+  },
 };
 
 export default function MapPage() {

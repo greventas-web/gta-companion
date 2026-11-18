@@ -1,23 +1,36 @@
 import CitedNotes from "@/components/CitedNotes";
+import JsonLd from "@/components/JsonLd";
 import VehicleDatabase from "@/components/VehicleDatabase";
 import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { vehicles } from "@/data/vehicles";
 import { pageMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 import { vehicleCounts } from "@/src/data/launch/launch-facts";
 
 export const metadata = pageMetadata(
-  "GTA 6 vehicles",
-  "Vehicles Rockstar has named for Grand Theft Auto VI, plus earlier Grand Theft Auto names kept in a separate unconfirmed section. Unofficial fan site."
+  "GTA 6 Cars List",
+  `Unofficial GTA 6 cars list: ${vehicleCounts.total} vehicles confirmed at launch (${vehicleCounts.baseModels} base models and ${vehicleCounts.standout} Standout vehicles), plus named entries in the database, with sources.`
 );
 
 export default function VehiclesPage() {
   return (
     <PageShell>
+      <JsonLd
+        data={itemListJsonLd(
+          "GTA 6 vehicles",
+          "/vehicles",
+          vehicles.map((vehicle) => ({
+            name: vehicle.name,
+            url: `/vehicles/${vehicle.slug}`,
+          }))
+        )}
+      />
       <PageHero
         badge="Unofficial fan database"
         title="Vehicle Database"
-        description="Seven vehicles Rockstar has named, shown first. Earlier Grand Theft Auto names sit below as expected and unconfirmed. Last updated November 10, 2026."
+        description={`${vehicleCounts.total} vehicles are confirmed in the game: ${vehicleCounts.baseModels} base models and ${vehicleCounts.standout} Standout vehicles. Named entries in the database are shown below, with sources. Last updated November 18, 2026.`}
       />
 
       <CitedNotes

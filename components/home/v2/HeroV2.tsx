@@ -9,12 +9,13 @@ import { globalLaunchPhase } from "@/lib/launchState";
 const launchTrailerId = "rz1B4B2yBZY";
 
 const starts = [
-  { href: "/gta-6-launch", label: "Unlock times" },
   { href: "/map", label: "Interactive map" },
+  { href: "/missions", label: "Missions" },
+  { href: "/trophies", label: "Trophies" },
   { href: "/vehicles", label: "Vehicles" },
-  { href: "/characters", label: "Characters" },
-  { href: "/launch", label: "Editions" },
-  { href: "/news", label: "News" },
+  { href: "/ammu-nation-locations", label: "Ammu-Nation" },
+  { href: "/collectibles", label: "Collectibles" },
+  { href: "/gta-6-launch", label: "Unlock times" },
 ];
 
 export default function HeroV2() {
@@ -40,11 +41,10 @@ export default function HeroV2() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-zinc-300">
-              Everything you need for GTA 6. GTA Companion is an unofficial
-              fan site for the public facts about Grand Theft Auto VI: the
-              launch date, the editions, the characters, the vehicles, and
-              Vice City. Images: Rockstar Games. Not affiliated with
-              Rockstar Games or Take-Two.
+              Unofficial GTA 6 fan site for the interactive Leonida map, a
+              spoiler-safe missions list, trophies, vehicles, Ammu-Nation
+              stores, and collectibles. Images: Rockstar Games. Not
+              affiliated with Rockstar Games or Take-Two.
             </p>
 
             <div className="mt-6">
