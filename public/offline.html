@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#6d28d9" />
+    <meta name="gta-offline" content="1" />
+    <meta name="robots" content="noindex" />
+    <title>Offline | GTA Companion</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(236, 72, 153, 0.22), transparent 42%),
+          radial-gradient(circle at top right, rgba(109, 40, 217, 0.45), transparent 46%),
+          #1a0a2e;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 4.5rem 1.5rem 3rem;
+      }
+      img {
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 999px;
+        object-fit: cover;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16);
+      }
+      .eyebrow {
+        margin: 1.25rem 0 0;
+        color: #ddd6fe;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0.6rem 0 0;
+        font-size: clamp(2.2rem, 6vw, 3.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+      p {
+        color: #d4d4d8;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.75rem;
+      }
+      button,
+      a.home {
+        appearance: none;
+        border: 0;
+        border-radius: 1rem;
+        padding: 0.85rem 1.2rem;
+        font: inherit;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button {
+        background: #6d28d9;
+        color: #fff;
+      }
+      a.home {
+        background: transparent;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+      }
+      .fine {
+        margin-top: 2.5rem;
+        color: #a1a1aa;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/logo/logo-night.jpg" alt="" width="88" height="88" />
+      <p class="eyebrow">Unofficial</p>
+      <h1>You are offline</h1>
+      <p>
+        This page is not saved on this device yet. Pages you have already
+        opened in GTA Companion can still be read. Connect again for new
+        pages, map pins, and updates.
+      </p>
+      <div class="actions">
+        <button type="button" onclick="location.reload()">Try again</button>
+        <a class="home" href="/">Back to home</a>
+      </div>
+      <p class="fine">
+        GTA Companion is an unofficial fan site. Not affiliated with Rockstar
+        Games or Take-Two. Images: Rockstar Games.
+      </p>
+    </main>
+  </body>
+</html>

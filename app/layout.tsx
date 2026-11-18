@@ -10,7 +10,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/components/auth/AuthProvider";
+import InstallPrompt from "@/components/pwa/InstallPrompt";
+import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import { SearchProvider } from "@/components/search/SearchProvider";
+import { PWA_THEME_COLOR } from "@/lib/pwa";
 import { SITE, SOCIAL_PROFILES } from "@/lib/site";
 
 const geistSans = Geist({
@@ -79,8 +82,15 @@ export const metadata: Metadata = {
     google: "291I1lQDN4nGxm0FmODtq439eooj37COvVvwcsPv-qU",
   },
 
+  appleWebApp: {
+    capable: true,
+    title: "GTA Companion",
+    statusBarStyle: "black",
+  },
+
   other: {
     "google-adsense-account": "ca-pub-1639723880207640",
+    "apple-mobile-web-app-capable": "yes",
   },
 
   robots: {
@@ -138,7 +148,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#040404",
+  themeColor: PWA_THEME_COLOR,
+  colorScheme: "dark",
 };
 
 // GA4 measurement IDs look like G-XXXXXXXXXX. The tag is omitted until
@@ -160,6 +171,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-[#040404] text-white antialiased">
+        <Script id="pwa-install-capture" strategy="beforeInteractive">
+          {`window.addEventListener("beforeinstallprompt",function(event){event.preventDefault();window.__gtaInstallPrompt=event;window.dispatchEvent(new Event("gta-install-prompt"));});`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -173,6 +187,8 @@ export default function RootLayout({
             {children}
 
             <Footer />
+            <InstallPrompt />
+            <ServiceWorkerRegister />
           </SearchProvider>
         </AuthProvider>
         <Analytics />

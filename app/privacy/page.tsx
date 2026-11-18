@@ -137,6 +137,24 @@ export default function PrivacyPage() {
 
               <div>
                 <h2 className="text-3xl font-black">
+                  Installed app and offline pages
+                </h2>
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
+                  If you install GTA Companion, or use a browser that saves
+                  pages for offline reading, a copy of pages you open and the
+                  app icon can be stored on your device. That copy stays on
+                  the device so those pages can open without a connection. It
+                  is not uploaded as a separate archive. Choosing Not now on
+                  the install reminder stores that choice in local storage on
+                  your device. Map submissions and admin tools are not saved
+                  for offline use. You can remove the saved pages by clearing
+                  this site&apos;s data in your browser, or by removing the
+                  app from your home screen.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-black">
                   How your data is used
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
@@ -152,7 +170,7 @@ export default function PrivacyPage() {
                   Updates
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  This policy was updated on November 10, 2026. It will
+                  This policy was updated on November 18, 2026. It will
                   change again if the site starts collecting something new.
                 </p>
               </div>

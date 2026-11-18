@@ -10,7 +10,8 @@
     "lint": "eslint",
     "qa": "node scripts/qa/site-qa.mjs",
     "map:vendor": "node scripts/map/vendor-gtadb.mjs",
-    "data:add": "node scripts/launch/add-data.mjs"
+    "data:add": "node scripts/launch/add-data.mjs",
+    "icons": "node scripts/pwa/icons.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.2.10",
