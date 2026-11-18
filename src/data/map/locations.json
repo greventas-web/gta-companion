@@ -828,7 +828,7 @@
       "y": null,
       "placement": "gtadb-id-only"
     },
-    "linked_site_entity_slug": "properties",
+    "linked_site_entity_slug": "properties/shore-court",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -861,7 +861,7 @@
       "y": -2424.239,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": "properties",
+    "linked_site_entity_slug": "properties/paradise-garage",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -893,7 +893,7 @@
     "region": "Leonida Keys",
     "area": "Leonida Keys",
     "position": null,
-    "linked_site_entity_slug": "characters/jason-duval",
+    "linked_site_entity_slug": "properties/jasons-place",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Only in Leonida: Leonida Keys",

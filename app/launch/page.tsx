@@ -102,6 +102,7 @@ const editionPlaces = [
   },
   {
     name: "Paradise Garage",
+    href: "/properties/paradise-garage",
     image: paradiseGarageStandIn.src,
     representative: true,
     note: "Rockstar says the Dominator Buggy can be stored at the Paradise Garage in Watson Bay. This image is the buggy, not a separate garage exterior.",
@@ -204,8 +205,11 @@ export default function LaunchPage() {
             &apos;55 Vapid Stanier
           </Link>
           <p className="mt-4 leading-8 text-zinc-400">
-            Rockstar&apos;s classic sedan for this pack. It is kept at the Shore
-            Court garage near Ocean Beach. The garage has a weapon locker and a
+            Rockstar&apos;s classic sedan for this pack. It is kept at the{" "}
+            <Link href="/properties/shore-court" className="font-semibold text-white hover:text-pink-400">
+              Shore Court
+            </Link>{" "}
+            garage near Ocean Beach. The garage has a weapon locker and a
             place to leave stolen goods. The pack also adds outfits and hairstyles
             for Jason and Lucia, including Jason&apos;s pastel linen suit and
             Lucia&apos;s red sequin dress, plus a tropical pattern for most guns.
@@ -274,7 +278,15 @@ export default function LaunchPage() {
                 <p className="text-[11px] font-black uppercase tracking-[0.18em] text-teal-300">
                   Confirmed
                 </p>
-                <h3 className="mt-3 text-2xl font-black">{place.name}</h3>
+                {"href" in place && place.href ? (
+                  <h3 className="mt-3 text-2xl font-black">
+                    <Link href={place.href} className="hover:text-pink-300">
+                      {place.name}
+                    </Link>
+                  </h3>
+                ) : (
+                  <h3 className="mt-3 text-2xl font-black">{place.name}</h3>
+                )}
                 <p className="mt-4 leading-8 text-zinc-400">{place.note}</p>
               </div>
             </article>
