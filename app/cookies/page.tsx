@@ -46,7 +46,9 @@ export default function CookiesPage() {
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
                   GTA Companion may store cookies or similar data so sign-in
-                  and preferences can persist. Google AdSense may set cookies
+                  and preferences can persist. Choosing Not now on the install
+                  reminder is saved in local storage on your device.
+                  Google AdSense may set cookies
                   to show and measure third-party ads. Vercel Web Analytics
                   and Speed Insights do not use cookies; they record page
                   views and performance measurements such as the page, browser,

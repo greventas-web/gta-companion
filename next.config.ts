@@ -15,6 +15,25 @@ const nextConfig: NextConfig = {
     // does not revalidate every tile on every visit.
     const longCache = "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400";
     return [
+      {
+        source: "/sw.js",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+          { key: "Service-Worker-Allowed", value: "/" },
+        ],
+      },
+      {
+        source: "/offline.html",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+          { key: "X-Gta-Offline", value: "1" },
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/manifest.webmanifest",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
       { source: "/maps/:path*", headers: [{ key: "Cache-Control", value: longCache }] },
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: longCache }] },
       { source: "/logo/:path*", headers: [{ key: "Cache-Control", value: longCache }] },

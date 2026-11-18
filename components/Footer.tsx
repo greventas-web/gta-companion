@@ -63,6 +63,10 @@ export default function Footer() {
               <Link href="/about" className="block text-zinc-400 transition hover:text-pink-400">
                 About
               </Link>
+
+              <Link href="/app" className="block text-zinc-400 transition hover:text-pink-400">
+                Install the app
+              </Link>
             </div>
           </div>
 

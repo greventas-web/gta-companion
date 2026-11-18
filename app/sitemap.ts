@@ -55,6 +55,7 @@ const detailPaths = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
+    "/app",
     "/gta-6-launch",
     "/about",
     "/news",
