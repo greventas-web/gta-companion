@@ -1,87 +1,5 @@
 [
   {
-    "id": "downtown-vice-city",
-    "name": "Downtown Vice City",
-    "category": "landmark",
-    "region": "Vice City",
-    "area": "Downtown",
-    "position": {
-      "gtadb_landmark_id": "L190",
-      "x": -662.0,
-      "y": -102.3,
-      "placement": "gtadb-region-centroid",
-      "landmark_count": 140,
-      "address_match": "Downtown, Vice City"
-    },
-    "linked_site_entity_slug": "locations/vice-city",
-    "reported_by": [
-      {
-        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
-        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
-      },
-      {
-        "name": "Fan catalogs citing Trailer 2 / official footage highway signs",
-        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
-      }
-    ],
-    "reason": "on-screen-signage-unverified-in-this-pass",
-    "notes": "Widely reported as appearing on highway signs in official footage, and gtadb uses Downtown as an address component (140 landmarks, including Nine1Nine at L190). Not found in official website prose or image alt text during this pass. Promote after a frame-by-frame check of official trailers."
-  },
-  {
-    "id": "vice-city-international-airport",
-    "name": "Vice City International Airport",
-    "category": "landmark",
-    "region": "Vice City",
-    "area": "Vice City International Airport",
-    "position": {
-      "gtadb_landmark_id": "L345",
-      "x": -2373.008,
-      "y": -774.323,
-      "placement": "gtadb-point"
-    },
-    "linked_site_entity_slug": "locations/vice-city",
-    "reported_by": [
-      {
-        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
-        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
-      },
-      {
-        "name": "Fan catalogs citing official footage highway signs (airport / VCI)",
-        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
-      }
-    ],
-    "reason": "on-screen-signage-unverified-in-this-pass",
-    "notes": "An airport apron and highway signs are widely reported in official trailers. gtadb maps a large 'Vice City International Airport' / VCIA complex (control tower L345 used as the representative pin; 43 landmarks, centroid approx -2296.1, -713.7). The full official name has not been found in Rockstar website copy. Promote once a sign or caption is checked in official media."
-  },
-  {
-    "id": "peacock-bay",
-    "name": "Peacock Bay",
-    "category": "landmark",
-    "region": "Vice City",
-    "area": "Peacock Bay",
-    "position": {
-      "gtadb_landmark_id": null,
-      "x": -1194.9,
-      "y": -1902.6,
-      "placement": "gtadb-region-centroid",
-      "landmark_count": 86,
-      "address_match": "Peacock Bay"
-    },
-    "linked_site_entity_slug": "locations/vice-city",
-    "reported_by": [
-      {
-        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
-        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
-      },
-      {
-        "name": "Fan catalogs citing a highway sign in official footage",
-        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
-      }
-    ],
-    "reason": "on-screen-signage-unverified-in-this-pass",
-    "notes": "Reported as a name on a highway sign in official footage. Not found in official website prose. gtadb maps 86 landmarks in Peacock Bay."
-  },
-  {
     "id": "effluvia",
     "name": "Effluvia",
     "category": "business",
@@ -264,58 +182,6 @@
     "notes": "Reported in the official Extended Look next to Zeke's Gadgets and Video Forever. gtadb L2759 spells it 'Joyeria Empenos' and places it in Rockridge, Vice City."
   },
   {
-    "id": "the-rusty-anchor",
-    "name": "The Rusty Anchor",
-    "category": "business",
-    "region": "Leonida Keys",
-    "area": null,
-    "position": {
-      "gtadb_landmark_id": "L325",
-      "x": -2271.57,
-      "y": -5256.913,
-      "placement": "gtadb-point"
-    },
-    "linked_site_entity_slug": "activities/nightlife",
-    "reported_by": [
-      {
-        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
-        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
-      },
-      {
-        "name": "Fan catalogs citing a Launch Gallery bar sign",
-        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
-      }
-    ],
-    "reason": "launch-gallery-signage-unverified-in-this-pass",
-    "notes": "Reported as a bar sign in the official Launch Gallery. Not found in official website prose during this pass. gtadb L325, Key Lento, tagged #bar, enterable."
-  },
-  {
-    "id": "delights-cabaret",
-    "name": "Delights Cabaret",
-    "category": "business",
-    "region": "Port Gellhorn",
-    "area": "Port Gellhorn",
-    "position": {
-      "gtadb_landmark_id": "L629",
-      "x": -6360.16,
-      "y": 3590.852,
-      "placement": "gtadb-point"
-    },
-    "linked_site_entity_slug": "activities/nightlife",
-    "reported_by": [
-      {
-        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
-        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
-      },
-      {
-        "name": "Fan catalogs citing a Launch Gallery neon sign",
-        "url": "https://grandtheftautowiki.com/articles/gta-6-leonida-locations-confirmed-vs-rumor"
-      }
-    ],
-    "reason": "launch-gallery-signage-unverified-in-this-pass",
-    "notes": "Reported as neon signage in the official Launch Gallery. gtadb L629 is named 'Delights' on Interstate 404, Port Gellhorn, and is itself tagged 'unconfirmed' plus #stripclub. Do not promote without checking the official still."
-  },
-  {
     "id": "chips-body-shop",
     "name": "Chip's Body Shop",
     "category": "business",
@@ -432,28 +298,6 @@
     ],
     "reason": "officially-named-but-placement-is-community",
     "notes": "The estate itself is confirmed (see locations.json vercetti-estate). This entry is only the gtadb placement on Starfish Island (L2731). 'Starfish Island' is a community/VC-lore label, not found in official GTA VI website copy. Keep the official entry unplaced until Rockstar or in-game data locates it."
-  },
-  {
-    "id": "jasons-house-key-lento-building",
-    "name": "Jason's House (Key Lento building)",
-    "category": "safehouse",
-    "region": "Leonida Keys",
-    "area": null,
-    "position": {
-      "gtadb_landmark_id": "L266",
-      "x": -2353.531,
-      "y": -5532.255,
-      "placement": "gtadb-point"
-    },
-    "linked_site_entity_slug": "characters/jason-duval",
-    "reported_by": [
-      {
-        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
-        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
-      }
-    ],
-    "reason": "officially-in-the-keys-building-is-community",
-    "notes": "Official text only says Jason lives rent-free in one of Brian's properties in the Keys (see locations.json jasons-place). gtadb L266 identifies a specific house on Key Lento and tags it #safehouse. Key Lento is a community island name. Do not treat this building as officially confirmed."
   },
   {
     "id": "lucias-apartment",
