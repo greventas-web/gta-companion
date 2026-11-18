@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import ItemImage, { isNameCard } from "@/components/ItemImage";
 import RepresentativeMark from "@/components/RepresentativeMark";
 import { notFound } from "next/navigation";
@@ -120,6 +122,20 @@ export default async function ActivityPage({
               {activity.description}
             </p>
             <ViewOnMap entityType="activity" entitySlug={activity.slug} />
+
+            {activity.related && activity.related.length > 0 ? (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {activity.related.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-full border border-violet-400/40 bg-violet-500/15 px-4 py-2 text-sm font-semibold text-violet-100 transition hover:bg-violet-500/25"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
 
             {activity.sources && activity.sources.length > 0 ? (
               <SourceList sources={activity.sources} className="mt-6" />

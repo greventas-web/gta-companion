@@ -122,6 +122,31 @@ export const rockstarVi = {
   href: "https://www.rockstargames.com/VI",
 } as const satisfies CitedSource;
 
+export const rockstarEditions = {
+  label: "Rockstar Editions",
+  href: "https://www.rockstargames.com/VI/editions",
+} as const satisfies CitedSource;
+
+export const rockstarUltimate = {
+  label: "Rockstar Ultimate Edition",
+  href: "https://www.rockstargames.com/VI/ultimate-edition",
+} as const satisfies CitedSource;
+
+export const rockstarViceCity = {
+  label: "Rockstar, Vice City",
+  href: "https://www.rockstargames.com/VI/only-in-leonida/vice-city",
+} as const satisfies CitedSource;
+
+export const playstationGame = {
+  label: "PlayStation",
+  href: "https://www.playstation.com/en-us/games/grand-theft-auto-vi/",
+} as const satisfies CitedSource;
+
+export const gtadb = {
+  label: "gtadb.org",
+  href: "https://gtadb.org",
+} as const satisfies CitedSource;
+
 export const rockstarViPage = {
   label: "Rockstar Games (GTA VI page)",
   href: "https://www.rockstargames.com/VI",

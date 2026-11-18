@@ -62,36 +62,43 @@ const ultimateVehicles = [
 const editionPlaces = [
   {
     name: "Rideout Customs",
+    href: "/stores/rideout-customs",
     image: "/images/official/editions/ultimate_edition_rideout_customs_01.webp",
     note: "A mod shop included with the Ultimate Edition.",
   },
   {
     name: "One-Eyed Willie's",
+    href: "/stores/one-eyed-willies",
     image: "/images/official/editions/ultimate_edition_one_eyed_willie_01.webp",
     note: "An off-road mod shop at Lake Leonida.",
   },
   {
     name: "Sara's Unisex Salon",
+    href: "/stores/saras-unisex-salon",
     image: "/images/official/editions/ultimate_edition_saras_salon_01.webp",
     note: "A salon included with the Ultimate Edition.",
   },
   {
     name: "Stock 305",
+    href: "/stores/stock-305",
     image: "/images/official/editions/ultimate_edition_stock_305_01.webp",
     note: "A clothing store included with the Ultimate Edition.",
   },
   {
     name: "Electric Fang Tattoo Parlor",
+    href: "/stores/electric-fang-tattoo",
     image: "/images/official/editions/ultimate_edition_electric_fang_01.webp",
     note: "Electric Fang Tattoo Parlor has 50+ tattoos designed by FAILE.",
   },
   {
     name: "Goodtime Gear",
+    href: "/clothing/goodtime-gear",
     image: "/images/official/editions/ultimate_edition_goodtime_gear_01.webp",
     note: "Goodtime Gear: a capsule collection of apparel and accessories inspired by Macca the Gator, the Goodtime State's hit TV show character.",
   },
   {
     name: "PTT Youngin$",
+    href: "/stores/ptt-youngins-illegal-goods-store",
     image: "/images/official/editions/ultimate_edition_ptt_store_01.webp",
     note: "PTT Youngin$ Illegal Goods Store (gang compound): raid the compound of one of Southside Vice City's loudest gangs and escape to score special items and contraband.",
   },
@@ -109,6 +116,7 @@ const editionPlaces = [
   },
   {
     name: "Vice City Style",
+    href: "/clothing/vice-city-style",
     image: "/images/official/editions/ultimate_edition_vice_city_style_01.webp",
     note: "Vice City Style includes clothes and tattoos for Jason and Lucia.",
   },
@@ -210,9 +218,19 @@ export default function LaunchPage() {
               Shore Court
             </Link>{" "}
             garage near Ocean Beach. The garage has a weapon locker and a
-            place to leave stolen goods. The pack also adds outfits and hairstyles
-            for Jason and Lucia, including Jason&apos;s pastel linen suit and
-            Lucia&apos;s red sequin dress, plus a tropical pattern for most guns.
+            place to leave stolen goods. The pack also adds{" "}
+            <Link href="/clothing/vintage-vice-city-looks" className="text-white hover:text-pink-300">
+              outfits and hairstyles
+            </Link>{" "}
+            for Jason and Lucia, including{" "}
+            <Link href="/clothing/jason-pastel-linen-suit" className="text-white hover:text-pink-300">
+              Jason&apos;s pastel linen suit
+            </Link>{" "}
+            and{" "}
+            <Link href="/clothing/lucia-red-sequin-mini-dress" className="text-white hover:text-pink-300">
+              Lucia&apos;s red sequin dress
+            </Link>
+            , plus a tropical pattern for most guns.
           </p>
         </div>
       </section>

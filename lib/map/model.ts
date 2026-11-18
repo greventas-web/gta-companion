@@ -128,6 +128,7 @@ export const CATEGORY_COLOR: Record<MapCategoryId, string> = {
 const DETAIL_PATH: Partial<Record<MapEntityType, (slug: string) => string>> = {
   location: (slug) => `/locations/${slug}`,
   business: (slug) => `/businesses/${slug}`,
+  store: (slug) => `/stores/${slug}`,
   weapon: (slug) => `/weapons/${slug}`,
   activity: (slug) => `/activities/${slug}`,
   vehicle: (slug) => `/vehicles/${slug}`,
@@ -141,6 +142,7 @@ const DETAIL_PATH: Partial<Record<MapEntityType, (slug: string) => string>> = {
 const INDEX_PATH: Partial<Record<MapEntityType, string>> = {
   location: "/locations",
   business: "/businesses",
+  store: "/stores",
   weapon: "/weapons",
   activity: "/activities",
   vehicle: "/vehicles",

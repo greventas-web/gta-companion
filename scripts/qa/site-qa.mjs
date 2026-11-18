@@ -29,6 +29,8 @@ const sectionRoutes = [
   ["data/animals.ts", "/animals"],
   ["data/brands.ts", "/brands"],
   ["data/businesses.ts", "/businesses"],
+  ["data/stores.ts", "/stores"],
+  ["data/clothing.ts", "/clothing"],
   ["data/weapons.ts", "/weapons"],
   ["data/phone.ts", "/phone"],
   ["data/properties.ts", "/properties"],
