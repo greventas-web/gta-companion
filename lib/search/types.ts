@@ -11,7 +11,9 @@ export type SearchCategory =
   | "Guide"
   | "News"
   | "Mission"
-  | "Trophy";
+  | "Trophy"
+  | "Phone"
+  | "Property";
 
 export type SearchItem = {
   id: number;

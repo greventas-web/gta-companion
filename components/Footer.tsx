@@ -120,8 +120,24 @@ export default function Footer() {
                 Radio
               </Link>
 
+              <Link href="/properties" className="block text-zinc-400 transition hover:text-pink-400">
+                Properties
+              </Link>
+
+              <Link href="/collectibles" className="block text-zinc-400 transition hover:text-pink-400">
+                Collectibles
+              </Link>
+
+              <Link href="/phone" className="block text-zinc-400 transition hover:text-pink-400">
+                Phone
+              </Link>
+
               <Link href="/faq" className="block text-zinc-400 transition hover:text-pink-400">
                 FAQ
+              </Link>
+
+              <Link href="/partners" className="block text-zinc-400 transition hover:text-pink-400">
+                Partners
               </Link>
 
               <Link href="/contact" className="block text-zinc-400 transition hover:text-pink-400">
