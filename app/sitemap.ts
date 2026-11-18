@@ -5,6 +5,8 @@ import { animals } from "@/data/animals";
 import { brands } from "@/data/brands";
 import { businesses } from "@/data/businesses";
 import { characters } from "@/data/characters";
+import { clothing } from "@/data/clothing";
+import { stores } from "@/data/stores";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
@@ -19,6 +21,7 @@ import { trophies } from "@/src/data/trophies";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
 import { mapLocations } from "@/src/data/launch/map-locations";
 import { moneyMethods } from "@/src/data/launch/money-methods";
+import { whereToFindTopics } from "@/src/data/launch/where-to-find";
 
 const baseUrl = SITE.url;
 
@@ -29,6 +32,7 @@ const launchPaths = [
   ...cheats.map((entry) => `/cheats/${entry.slug}`),
   ...missions.map((entry) => `/missions/${entry.slug}`),
   ...trophies.map((entry) => `/trophies/${entry.slug}`),
+  ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
 ];
 
 const detailPaths = [
@@ -36,6 +40,8 @@ const detailPaths = [
   ...characters.map((entry) => `/characters/${entry.slug}`),
   ...locations.map((entry) => `/locations/${entry.slug}`),
   ...businesses.map((entry) => `/businesses/${entry.slug}`),
+  ...stores.map((entry) => `/stores/${entry.slug}`),
+  ...clothing.map((entry) => `/clothing/${entry.slug}`),
   ...brands.map((entry) => `/brands/${entry.slug}`),
   ...manufacturers.map((entry) => `/manufacturers/${entry.slug}`),
   ...weapons.map((entry) => `/weapons/${entry.slug}`),
@@ -63,6 +69,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/money-methods",
     "/fastest-cars",
     "/map-locations",
+    "/ammu-nation-locations",
+    "/where-to-find",
     "/cheats",
     "/missions",
     "/trophies",
@@ -75,6 +83,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cookies",
     "/weapons",
     "/businesses",
+    "/stores",
+    "/clothing",
     "/manufacturers",
     "/brands",
     "/activities",
@@ -82,8 +92,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/properties",
     "/collectibles",
     "/phone",
+    "/how-long-is-gta-6",
+    "/wanted-system",
+    "/gta-6-apps",
+    "/girlypop",
     "/radio",
-    "/search",
     "/changelog",
     "/roadmap",
     ...launchPaths,
@@ -91,11 +104,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const now = new Date();
+  const highPriority = new Set([
+    "/gta-6-launch",
+    "/map",
+    "/missions",
+    "/trophies",
+    "/vehicles",
+    "/ammu-nation-locations",
+    "/where-to-find",
+    ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
+    "/collectibles",
+    "/cheats",
+    "/fastest-cars",
+  ]);
+  const lowPriority = new Set([
+    "/about",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/cookies",
+    "/partners",
+    "/changelog",
+    "/roadmap",
+  ]);
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
-    changeFrequency: "daily",
-    priority: route === "" ? 1 : route === "/gta-6-launch" ? 0.9 : 0.8,
+    changeFrequency: "daily" as const,
+    priority: route === "" ? 1 : highPriority.has(route) ? 0.9 : lowPriority.has(route) ? 0.3 : 0.8,
   }));
 }

@@ -39,7 +39,7 @@ export default function VehicleGallery({
           src={selected}
           alt={alt}
           fill
-          sizes="(max-width: 1024px) 100vw, 60vw"
+          sizes="(max-width: 480px) 80vw, (max-width: 1024px) 100vw, 60vw"
           className="object-cover"
           priority
         />

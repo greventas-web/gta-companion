@@ -7,6 +7,7 @@ import {
   maccaSource,
   rockstarVi,
 } from "@/src/data/gameplay/confirmed";
+import { launchSources } from "@/src/data/launch/launch-facts";
 
 const shown =
   "Confirmed in the Extended Look and in Rockstar interviews.";
@@ -299,6 +300,11 @@ export const activities: Activity[] = [
     firstAppearance: "Famitsu",
     gallery: [],
     sources: [...famitsuSources, rockstarVi],
+    related: [
+      { title: "Stores", href: "/stores" },
+      { title: "Clothing", href: "/clothing" },
+      { title: "Stock 305", href: "/stores/stock-305" },
+    ],
   },
   {
     id: 22,
@@ -314,5 +320,122 @@ export const activities: Activity[] = [
     firstAppearance: "Extended Look",
     gallery: [],
     sources: [extendedLook, ...famitsuSources, ignBigInterview, maccaSource],
+  },
+  {
+    id: 30,
+    slug: "stunts",
+    name: "Stunts",
+    category: "Driving",
+    location: "Leonida",
+    image: "",
+    description:
+      "Stunts are tracked in the Progress menu and include stunt jumps. The trophy Cunning Stunts asks for 250 stunts.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress],
+  },
+  {
+    id: 31,
+    slug: "top-fun-drone-races",
+    name: "Top Fun drone races",
+    category: "Activity",
+    location: "Leonida",
+    image: "",
+    description:
+      "Top Fun Drone Races are time trials at locations across Leonida. The trophy Top Fun asks you to win one at every location.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress],
+  },
+  {
+    id: 32,
+    slug: "arcade-games",
+    name: "Arcade games",
+    category: "Entertainment",
+    location: "Leonida",
+    image: "",
+    description:
+      "You can play arcade video games. The trophy Stick Fiddler asks you to complete one.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress],
+  },
+  {
+    id: 33,
+    slug: "strangers",
+    name: "Strangers",
+    category: "Side missions",
+    location: "Leonida",
+    image: "",
+    description:
+      "Stranger mission strands are spread across Leonida. The trophy Strangers & Freaks asks you to complete 8 of them.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies],
+  },
+  {
+    id: 34,
+    slug: "meditation",
+    name: "Meditation",
+    category: "Outdoor",
+    location: "Leonida",
+    image: "",
+    description:
+      "Meditation spots are spread across Leonida. The trophy Positive Mental Attitude asks you to meditate at every spot.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress, launchSources.gtaCulture],
+  },
+  {
+    id: 35,
+    slug: "bank-vaults-and-armored-trucks",
+    name: "Bank vaults and armored trucks",
+    category: "Activity",
+    location: "Leonida",
+    image: "",
+    description:
+      "You can rob bank vaults and armored trucks. The trophies Maximum Withdrawal (5 bank vaults) and A Classic Blitz Play (one armored truck) ask you to escape afterwards.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies],
+  },
+  {
+    id: 36,
+    slug: "gang-illegal-operations",
+    name: "Gang illegal operations",
+    category: "Activity",
+    location: "Leonida",
+    image: "",
+    description:
+      "Each gang runs Illegal Operations you can rob. The trophy Pest Control asks you to rob one from every gang.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress],
+  },
+  {
+    id: 37,
+    slug: "laundering-marked-bills",
+    name: "Laundering marked bills",
+    category: "Money",
+    location: "Leonida",
+    image: "",
+    description:
+      "Marked Bills are laundered through your contacts. The trophy Dime on the Dollar asks you to launder $250,000.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies],
+  },
+  {
+    id: 38,
+    slug: "partner-robberies",
+    name: "Robbing with your partner",
+    category: "Activity",
+    location: "Leonida",
+    image: "",
+    description:
+      "Jason and Lucia can rob shops together. The trophy Retail Therapy asks for 3 shops back-to-back without losing your Wanted Level.",
+    firstAppearance: "Launch (November 18, 2026)",
+    gallery: [],
+    sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies],
   },
 ];

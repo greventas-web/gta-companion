@@ -4,7 +4,9 @@ import { activities } from "@/data/activities";
 import { animals } from "@/data/animals";
 import { brands } from "@/data/brands";
 import { businesses } from "@/data/businesses";
+import { clothing } from "@/data/clothing";
 import { characters } from "@/data/characters";
+import { stores } from "@/data/stores";
 import { guides } from "@/data/guides";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
@@ -51,6 +53,24 @@ export const searchIndex: SearchItem[] = [
     category: "Business" as const,
     image: business.image,
     description: business.description,
+  })),
+
+  ...stores.map((store) => ({
+    id: store.id,
+    title: store.name,
+    href: `/stores/${store.slug}`,
+    category: "Store" as const,
+    image: store.image,
+    description: store.summary,
+  })),
+
+  ...clothing.map((item) => ({
+    id: item.id,
+    title: item.name,
+    href: `/clothing/${item.slug}`,
+    category: "Clothing" as const,
+    image: item.image,
+    description: item.summary,
   })),
 
   ...manufacturers.map((manufacturer) => ({
@@ -121,7 +141,52 @@ export const searchIndex: SearchItem[] = [
     href: "/trophies",
     category: "Trophy" as const,
     description:
-      "PlayStation trophies and Xbox achievements. No official list has been published yet.",
+      "PlayStation trophies and Xbox achievements from the list published at launch. Hidden story trophies are held back.",
+  },
+
+  {
+    id: 80200,
+    title: "How long is GTA 6?",
+    href: "/how-long-is-gta-6",
+    category: "Mission" as const,
+    description:
+      "Story length and mission count from launch-day coverage, with sources.",
+  },
+
+  {
+    id: 80201,
+    title: "GTA 6 wanted system",
+    href: "/wanted-system",
+    category: "Guide" as const,
+    description:
+      "Heat, Heat Area, and the six-star wanted system from Rockstar interviews.",
+  },
+
+  {
+    id: 80202,
+    title: "GTA 6 Scooter Bros, BuckMe, and WAiNK",
+    href: "/gta-6-apps",
+    category: "Phone" as const,
+    description:
+      "Scooter Bros, BuckMe, and WAiNK phone apps explained, with sources.",
+  },
+
+  {
+    id: 80203,
+    title: "GTA 6 Girlypop vehicles cheat filter",
+    href: "/girlypop",
+    category: "Vehicle" as const,
+    description:
+      "The 16-vehicle Girlypop Standout group and the cheat filter it unlocks.",
+  },
+
+  {
+    id: 80204,
+    title: "GTA 6 Ammu-Nation locations",
+    href: "/ammu-nation-locations",
+    category: "Weapon" as const,
+    description:
+      "All 24 Ammu-Nation gun stores in Leonida, by county and stock tier.",
   },
 
   ...guides.filter((guide) => guide.listed !== false).map((guide) => ({

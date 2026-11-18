@@ -17,7 +17,9 @@ export default function LaunchTrailer({ videoId }: Props) {
         className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black text-left"
       >
         <img
-          src="/images/official/news/trailer.webp"
+          src="/_v/1080/images/official/news/trailer.webp"
+          loading="lazy"
+          decoding="async"
           alt="Grand Theft Auto VI launch trailer"
           className="h-full w-full object-cover"
         />

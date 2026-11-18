@@ -33,6 +33,7 @@ const CATEGORY: Record<string, MapCategoryId> = {
 const SECTION: Record<string, MapEntityType> = {
   locations: "location",
   businesses: "business",
+  stores: "store",
   activities: "activity",
   vehicles: "vehicle",
   weapons: "weapon",

@@ -11,10 +11,13 @@ import {
   Section,
 } from "@/components/ui";
 
-export const metadata = pageMetadata(
-  "Search",
-  "Search the GTA Companion databases for vehicles, characters, locations, and the rest of the fan notes. Unofficial fan site."
-);
+export const metadata = {
+  ...pageMetadata(
+    "Search",
+    "Search the GTA Companion databases for vehicles, characters, locations, and the rest of the fan notes. Unofficial fan site."
+  ),
+  robots: { index: false, follow: true },
+};
 
 
 export default function SearchPage() {

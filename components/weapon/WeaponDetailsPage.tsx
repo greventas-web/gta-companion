@@ -51,7 +51,7 @@ export default function WeaponDetailsPage({
               name={weapon.name}
               fill
               priority
-              sizes="(max-width: 1280px) 100vw, 58vw"
+              sizes="(max-width: 480px) 80vw, (max-width: 1280px) 100vw, 58vw"
               className="object-cover"
             />
 

@@ -22,7 +22,7 @@ export default function SearchInput({
         autoFocus
         type="text"
         value={value}
-        placeholder="Search vehicles, characters, locations, businesses, weapons..."
+        placeholder="Search vehicles, characters, stores, clothing, locations..."
         onChange={(e) => onChange(e.target.value)}
         spellCheck={false}
         autoComplete="off"

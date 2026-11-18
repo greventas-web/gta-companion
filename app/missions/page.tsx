@@ -4,13 +4,21 @@ import Link from "next/link";
 import MapPinLink from "@/components/map/MapPinLink";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import JsonLd from "@/components/JsonLd";
 import { SourceList } from "@/components/SourceLink";
 import { launchMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
-import { MISSION_TYPE_LABEL, missions } from "@/src/data/missions";
+import {
+  MISSION_TYPE_LABEL,
+  missions,
+  otherMissions,
+  STORY_LIST_NOTE,
+  storyChapters,
+} from "@/src/data/missions";
 
-const title = "GTA 6 missions list (unofficial, spoiler-safe)";
-const description = `Spoiler-safe GTA 6 missions list. Only jobs Rockstar has named, with sources. Plot and rewards stay hidden until you reveal them. ${SITE.slogan}. ${UNOFFICIAL_DISCLAIMER}`;
+const title = "GTA 6 Missions List – Story Missions";
+const description = `Unofficial, spoiler-safe GTA 6 missions list. Story missions in Story Recap order for Chapters 1 to 3, with sources. Later chapters stay hidden for now. Plot and rewards stay hidden until you reveal them. ${UNOFFICIAL_DISCLAIMER}`;
 
 export const metadata: Metadata = {
   ...launchMetadata(title, description),
@@ -29,26 +37,84 @@ function shown(value?: string) {
 export default function MissionsPage() {
   return (
     <PageShell>
+      <JsonLd
+        data={itemListJsonLd(
+          "GTA 6 missions list",
+          "/missions",
+          missions.map((mission) => ({
+            name: mission.name,
+            url: `/missions/${mission.slug}`,
+          }))
+        )}
+      />
       <PageHero
         badge="Unofficial · spoiler-safe"
         title="Missions"
-        description={`A GTA 6 missions list of jobs Rockstar has named. Names, givers, regions, and map pins are visible. Plot and rewards stay behind a reveal. Grand Theft Auto VI launches ${SITE.launchLabel}.`}
+        description={`A GTA 6 missions list in the order the in-game Story Recap shows, from launch coverage. Names only, no plot. Anything that would spoil the story stays behind a reveal.`}
       />
 
       <p className="text-sm leading-7 text-zinc-500">{UNOFFICIAL_DISCLAIMER}</p>
 
+      <p className="mt-6 text-zinc-400">
+        Looking for play time and the full mission count?{" "}
+        <Link
+          href="/how-long-is-gta-6"
+          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
+        >
+          How long is GTA 6?
+        </Link>
+      </p>
+
       <section className="mt-10">
         <h2 className="text-3xl font-black tracking-[-0.03em]">
-          Confirmed
+          Story missions in order
         </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-          {missions.length} confirmed {missions.length === 1 ? "job" : "jobs"}.
-          Rockstar has not published a story mission list. A row is added only
-          after a name is confirmed, with a source on the page.
+          {STORY_LIST_NOTE} Each name links to a page with its sources.
+        </p>
+        <div className="mt-8 grid gap-6">
+          {storyChapters.map((chapter) => (
+            <article
+              key={chapter.chapter}
+              className="rounded-[32px] border border-white/10 bg-[#0B0B0D] p-8"
+            >
+              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-violet-300">
+                Chapter {chapter.chapter} · {chapter.missions.length} missions
+              </p>
+              <h3 className="mt-3 text-2xl font-black">
+                {chapter.name ?? `Chapter ${chapter.chapter}`}
+              </h3>
+              <ol className="mt-6 grid gap-2 sm:grid-cols-2">
+                {chapter.missions.map((mission) => (
+                  <li key={mission.slug} className="flex gap-3 text-zinc-300">
+                    <span className="w-7 shrink-0 text-right font-black text-violet-300">
+                      {mission.order}.
+                    </span>
+                    <Link
+                      href={`/missions/${mission.slug}`}
+                      className="underline decoration-white/20 underline-offset-4 transition hover:text-violet-200"
+                    >
+                      {mission.name}
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+              <SourceList className="mt-6" sources={chapter.sources} />
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-3xl font-black tracking-[-0.03em]">
+          Edition and side jobs
+        </h2>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
+          Jobs named outside the story list, with a source on each one.
         </p>
 
         <div className="mt-8 grid gap-6">
-          {missions.map((mission) => (
+          {otherMissions.map((mission) => (
             <article
               key={mission.slug}
               className="rounded-[32px] border border-white/10 bg-[#0B0B0D] p-8"

@@ -3,6 +3,7 @@ import { animals } from "@/data/animals";
 import { businesses } from "@/data/businesses";
 import { characters } from "@/data/characters";
 import { locations } from "@/data/locations";
+import { stores } from "@/data/stores";
 import { vehicles } from "@/data/vehicles";
 import { properties } from "@/data/properties";
 import { weapons } from "@/data/weapons";
@@ -20,19 +21,19 @@ type Named = { slug: string; name: string };
 
 /**
  * Slug registries for entity types that already have database records.
- * Stores and collectibles have no per-item catalog yet. When one is added,
- * register it here and pins can link to `/that-section/[slug]`.
- * Safehouse and property pins share /properties.
+ * Collectibles have no per-item catalog yet. When one is added, register
+ * it here and pins can link to `/that-section/[slug]`.
+ * Safehouse and property pins share /properties. Store pins use /stores.
  */
 const registries: Record<MapEntityType, Map<string, Named> | null> = {
   location: indexBySlug(locations),
   business: indexBySlug(businesses),
+  store: indexBySlug(stores),
   weapon: indexBySlug(weapons),
   activity: indexBySlug(activities),
   vehicle: indexBySlug(vehicles),
   animal: indexBySlug(animals),
   character: indexBySlug(characters),
-  store: null,
   collectible: null,
   mission: indexBySlug(missions),
   safehouse: indexBySlug(properties),

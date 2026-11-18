@@ -14,6 +14,7 @@ import InstallPrompt from "@/components/pwa/InstallPrompt";
 import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import { SearchProvider } from "@/components/search/SearchProvider";
 import { PWA_THEME_COLOR } from "@/lib/pwa";
+import { websiteJsonLd } from "@/lib/seo";
 import { SITE, SOCIAL_PROFILES } from "@/lib/site";
 
 const geistSans = Geist({
@@ -78,8 +79,12 @@ export const metadata: Metadata = {
 
   applicationName: "GTA Companion",
 
+  // Override with NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in Vercel if the
+  // Search Console code ever changes. The fallback keeps the live tag in place.
   verification: {
-    google: "291I1lQDN4nGxm0FmODtq439eooj37COvVvwcsPv-qU",
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ||
+      "291I1lQDN4nGxm0FmODtq439eooj37COvVvwcsPv-qU",
   },
 
   appleWebApp: {
@@ -178,6 +183,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd()).replace(/</g, "\\u003c"),
           }}
         />
         <AuthProvider>

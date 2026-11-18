@@ -35,7 +35,7 @@ export default function BusinessCard({
                 : business.imageAlt || business.name
             }
             fill
-            sizes="(max-width: 768px) 100vw, 420px"
+            sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 420px"
             className="object-cover"
           />
 

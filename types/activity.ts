@@ -22,4 +22,6 @@ export interface Activity {
   gallery?: string[];
 
   sources?: { label: string; href?: string }[];
+
+  related?: { title: string; href: string }[];
 }

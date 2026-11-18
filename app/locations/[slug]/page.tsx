@@ -86,7 +86,7 @@ export default async function LocationPage({
                 alt={location.name}
                 fill
                 priority
-                sizes="(max-width: 1280px) 100vw, 42vw"
+                sizes="(max-width: 480px) 80vw, (max-width: 1280px) 100vw, 42vw"
                 className="object-cover"
               />
 

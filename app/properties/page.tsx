@@ -11,6 +11,7 @@ import { pageMetadata } from "@/lib/launch";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { famitsuSources } from "@/src/data/gameplay/confirmed";
 import { PropertyMapLinks } from "@/components/properties/PropertyMapLinks";
+import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
 
 const title = "GTA 6 properties and garages (unofficial)";
 const description =
@@ -86,6 +87,14 @@ export default function PropertiesPage() {
         </div>
         <SourceList sources={famitsuSources} className="mt-6" />
       </section>
+
+      <p className="mt-12 text-zinc-300">
+        Looking for a place to park?{" "}
+        <Link href="/where-to-find/garages" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
+          All 10 garages with prices
+        </Link>
+      </p>
+      <WhereToFindLinks className="mt-6" />
 
       <p className="mt-12 text-sm leading-7 text-zinc-500">
         {UNOFFICIAL_DISCLAIMER} Grand Theft Auto VI and these properties are
