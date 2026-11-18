@@ -33,6 +33,7 @@ const groups = [
       { title: "News", href: "/news" },
       { title: "Media", href: "/media" },
       { title: "Timeline", href: "/timeline" },
+      { title: "Partners", href: "/partners" },
     ],
   },
   {

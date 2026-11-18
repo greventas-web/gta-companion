@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cheats",
     "/launch",
     "/faq",
+    "/partners",
     "/contact",
     "/privacy",
     "/terms",

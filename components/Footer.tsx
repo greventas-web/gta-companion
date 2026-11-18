@@ -116,6 +116,10 @@ export default function Footer() {
                 FAQ
               </Link>
 
+              <Link href="/partners" className="block text-zinc-400 transition hover:text-pink-400">
+                Partners
+              </Link>
+
               <Link href="/contact" className="block text-zinc-400 transition hover:text-pink-400">
                 Contact
               </Link>
