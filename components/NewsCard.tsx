@@ -33,7 +33,7 @@ export default function NewsCard({
             src={article.image}
             alt={article.imageAlt || article.title}
             fill
-            sizes="(max-width: 768px) 100vw, 420px"
+            sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 420px"
             className="object-cover transition duration-700 group-hover:scale-110"
           />
 

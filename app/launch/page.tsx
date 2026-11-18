@@ -267,7 +267,7 @@ export default function LaunchPage() {
                   alt={place.name}
                   name={place.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <RepresentativeMark

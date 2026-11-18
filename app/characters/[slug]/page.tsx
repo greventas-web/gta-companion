@@ -93,7 +93,7 @@ export default async function CharacterPage({
                 alt={character.name}
                 fill
                 priority
-                sizes="(max-width: 1280px) 100vw, 42vw"
+                sizes="(max-width: 480px) 80vw, (max-width: 1280px) 100vw, 42vw"
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

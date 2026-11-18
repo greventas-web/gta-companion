@@ -34,7 +34,7 @@ export default function CharacterCard({
             src={character.image}
             alt={character.name}
             fill
-            sizes="(max-width: 768px) 100vw, 420px"
+            sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 420px"
             className="object-cover object-center transition duration-700 group-hover:scale-105"
           />
 

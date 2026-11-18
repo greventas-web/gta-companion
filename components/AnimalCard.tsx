@@ -33,7 +33,7 @@ export default function AnimalCard({
             alt={animal.imageAlt || animal.name}
             name={animal.name}
             fill
-            sizes="(max-width: 768px) 100vw, 420px"
+            sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 420px"
             className="object-cover"
           />
           <RepresentativeMark show={animal.imageRepresentative} />

@@ -71,7 +71,7 @@ export default function HeroV2() {
               alt="Original illustration of a neon coastal city"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 480px) 80vw, (max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center"
             />
           </div>
