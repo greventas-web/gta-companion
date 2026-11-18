@@ -9,6 +9,8 @@ import { guides } from "@/data/guides";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
+import { phoneItems } from "@/data/phone";
+import { properties } from "@/data/properties";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
 import { manufacturerPortrait, vehicleImages } from "@/lib/media/catalog";
@@ -111,5 +113,21 @@ export const searchIndex: SearchItem[] = [
     category: "News" as const,
     image: article.image,
     description: article.summary,
+  })),
+
+  ...phoneItems.map((item, index) => ({
+    id: 8000 + index,
+    title: item.name,
+    href: `/phone/${item.slug}`,
+    category: "Phone" as const,
+    description: item.description,
+  })),
+
+  ...properties.map((place, index) => ({
+    id: 8100 + index,
+    title: place.name,
+    href: `/properties/${place.slug}`,
+    category: "Property" as const,
+    description: place.description,
   })),
 ].sort((a, b) => a.title.localeCompare(b.title));

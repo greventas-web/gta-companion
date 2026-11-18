@@ -9,6 +9,8 @@ import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
 import { vehicles } from "@/data/vehicles";
+import { phoneItems } from "@/data/phone";
+import { properties } from "@/data/properties";
 import { weapons } from "@/data/weapons";
 import { SITE } from "@/lib/site";
 import { cheats } from "@/src/data/launch/cheats";
@@ -36,6 +38,8 @@ const detailPaths = [
   ...animals.map((entry) => `/animals/${entry.slug}`),
   ...activities.map((entry) => `/activities/${entry.slug}`),
   ...news.map((entry) => `/news/${entry.slug}`),
+  ...phoneItems.map((entry) => `/phone/${entry.slug}`),
+  ...properties.map((entry) => `/properties/${entry.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -69,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/animals",
     "/properties",
     "/collectibles",
+    "/phone",
     "/radio",
     "/search",
     "/changelog",

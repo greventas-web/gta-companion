@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { SourceList } from "@/components/SourceLink";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SITE } from "@/lib/site";
@@ -69,6 +71,17 @@ export default function RadioPage() {
             ))}
           </ul>
           <SourceList sources={[radioSource]} className="mt-6" />
+          <p className="mt-4 leading-7 text-zinc-400">
+            The podcast and headphone notes are also in the{" "}
+            <Link href="/phone/podcasts" className="font-semibold text-pink-300 hover:text-pink-200">
+              phone catalog
+            </Link>
+            , with{" "}
+            <Link href="/phone/headphones" className="font-semibold text-pink-300 hover:text-pink-200">
+              headphones and earbuds
+            </Link>
+            .
+          </p>
           <p className="mt-6 text-sm text-zinc-500">{IMAGE_CREDIT}</p>
         </section>
       </div>
