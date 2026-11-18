@@ -6,14 +6,14 @@ import SimpleCard, { CardGrid, SimpleHero, TrackProgress } from "@/components/si
 import { launchMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
-import { MISSION_TYPE_LABEL, missions, otherMissions, storyChapters } from "@/src/data/missions";
+import { MISSION_TYPE_LABEL, editionMissions, missions, sideMissions, storyChapters } from "@/src/data/missions";
 
 const title = "GTA 6 Missions List – Story Missions";
-const description = `Unofficial, spoiler-safe GTA 6 missions list. Story missions in order for Chapters 1 to 3. Later chapters stay hidden, and plot and rewards stay hidden until you tap to reveal. ${UNOFFICIAL_DISCLAIMER}`;
+const description = `Unofficial, spoiler-safe GTA 6 missions list. Story missions in order for Chapters 1 to 3, plus Strangers & Freaks side missions. Later chapters stay hidden, and plot and rewards stay hidden until you tap to reveal. ${UNOFFICIAL_DISCLAIMER}`;
 
 export const metadata: Metadata = {
   ...launchMetadata(title, description),
-  keywords: ["GTA 6 missions list", "GTA 6 missions", "GTA VI missions", "Grand Theft Auto VI missions"],
+  keywords: ["GTA 6 missions list", "GTA 6 missions", "GTA VI missions", "Grand Theft Auto VI missions", "GTA 6 Strangers and Freaks", "GTA 6 side missions"],
 };
 
 export default function MissionsPage() {
@@ -51,8 +51,26 @@ export default function MissionsPage() {
         </CardGrid>
       ))}
 
-      <CardGrid heading="Edition and side jobs">
-        {otherMissions.map((mission) => (
+      <CardGrid
+        id="strangers"
+        heading="Strangers & Freaks"
+        dense
+        trackIds={sideMissions.map((mission) => `mission:${mission.slug}`)}
+      >
+        {sideMissions.map((mission) => (
+          <SimpleCard
+            key={mission.slug}
+            href={`/missions/${mission.slug}`}
+            title={mission.name}
+            eyebrow={`Chapter ${mission.chapter}`}
+            small
+            trackId={`mission:${mission.slug}`}
+          />
+        ))}
+      </CardGrid>
+
+      <CardGrid heading="Edition jobs">
+        {editionMissions.map((mission) => (
           <SimpleCard
             key={mission.slug}
             href={`/missions/${mission.slug}`}

@@ -25,6 +25,8 @@ export type PropertyRecord = {
   region: string;
   area: string;
   edition: string;
+  /** "$4,000" style price, when the garage is for sale. */
+  price?: string;
   howToGet: string;
   summary: string;
   description: string;
@@ -43,6 +45,60 @@ export const rockstarUltimate = {
   label: "Rockstar Ultimate Edition",
   href: "https://www.rockstargames.com/VI/ultimate-edition",
 } as const satisfies CitedSource;
+
+const powerpyxGarages = {
+  label: "PowerPyx, all garage locations",
+  href: "https://www.powerpyx.com/gta-6-all-garage-locations/",
+} as const satisfies CitedSource;
+
+const gamespotGarages = {
+  label: "GameSpot, all garage locations and prices",
+  href: "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/",
+} as const satisfies CitedSource;
+
+const gamesradarTrophies = {
+  label: "GamesRadar+, trophy and achievement list",
+  href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/",
+} as const satisfies CitedSource;
+
+const garageSources = [powerpyxGarages, gamespotGarages, gamesradarTrophies] as const;
+
+/** One of the 8 garages for sale (content batch 3). */
+function saleGarage(
+  slug: string,
+  name: string,
+  area: string,
+  region: string,
+  price: string,
+  pinId: string,
+  pinLabel: string
+): PropertyRecord {
+  return {
+    slug,
+    name,
+    type: "Garage for sale",
+    region,
+    area: area.charAt(0).toUpperCase() + area.slice(1),
+    edition: "Not an edition bonus",
+    price,
+    howToGet: "Buy it in the Vice City Real Estate app from Chapter 2, after Daily Driver, or at the garage.",
+    summary: `A garage for one vehicle in ${area}. Buy it in the Vice City Real Estate app from Chapter 2.`,
+    description: `${name} is one of the 8 garages you can buy. It holds one vehicle.`,
+    features: ["Holds 1 vehicle.", "Counts toward the Little Boxes trophy."],
+    links: [
+      { href: "/where-to-find/garages", label: "All garages" },
+      { href: "/phone/vice-city-real-estate", label: "Vice City Real Estate app" },
+      { href: "/trophies/little-boxes", label: "Little Boxes trophy" },
+    ],
+    sources: garageSources,
+    map: {
+      kind: "area",
+      pinId,
+      label: pinLabel,
+      note: "The garage has no exact pin yet, so this opens the area.",
+    },
+  };
+}
 
 export const leonidaKeysPage = {
   label: "Only in Leonida: Leonida Keys",
@@ -149,6 +205,66 @@ export const properties: PropertyRecord[] = [
     },
   },
 ];
+
+
+/** Content batch 3: the 8 garages for sale, the first story garage, and the Chapter 2 motel. */
+properties.push(
+  saleGarage("mitchell-auto-center", "Mitchell Auto Center", "central Kelly County, east of Port Gellhorn", "Kelly County", "$4,000", "confirmed:port-gellhorn", "Port Gellhorn on the map"),
+  saleGarage("persistence-road-garage", "Persistence Road Garage", "western Belville, Leonard County", "Leonard County", "$7,600–$9,500", "confirmed:belville", "Belville on the map"),
+  saleGarage("7th-avenue-garage", "7th Avenue Garage", "Vice-Dale County, east of the airport", "Vice-Dale County", "$12,000", "confirmed:vice-city-international-airport", "The airport on the map"),
+  saleGarage("store-n-bolt", "Store ’N’ Bolt", "northern Ambrosia", "Kelly County", "$16,800", "confirmed:ambrosia", "Ambrosia on the map"),
+  saleGarage("wyatt-motors", "Wyatt Motors", "central Ambrosia, near the Pay ’n’ Spray", "Kelly County", "$21,600", "confirmed:ambrosia", "Ambrosia on the map"),
+  saleGarage("vela-rota-drive-garage", "Vela Rota Drive Garage", "the middle of Capri", "Mariana County", "$24,000–$30,000", "confirmed:capri", "Capri on the map"),
+  saleGarage("bonita-court-garage", "Bonita Court Garage", "the center of Washington Island", "Vice City", "$34,000", "confirmed:washington-beach", "Washington Beach on the map"),
+  saleGarage("atlantic-court-garage", "Atlantic Court Garage", "Ocean Beach, south of the Y Hotel", "Vice City", "$40,000", "confirmed:y-hotel", "The Y Hotel on the map"),
+  {
+    slug: "port-gellhorn-station-garage",
+    name: "Port Gellhorn Station Garage",
+    type: "Story garage",
+    region: "Kelly County",
+    area: "Port Gellhorn",
+    edition: "Not an edition bonus",
+    howToGet: "Moses gives it to you in Chapter 2, after the mission Daily Driver.",
+    summary: "A garage for one vehicle in Port Gellhorn, north of Moses' shop and west of Delights. Moses gives it to you in Chapter 2.",
+    description: "Port Gellhorn Station Garage comes with the story. It holds one vehicle.",
+    features: ["Holds 1 vehicle.", "Comes with the story, so it does not count for Little Boxes."],
+    links: [
+      { href: "/where-to-find/garages", label: "All garages" },
+      { href: "/characters/moses-watkins", label: "Moses" },
+      { href: "/businesses/delights", label: "Delights" },
+    ],
+    sources: garageSources,
+    map: {
+      kind: "area",
+      pinId: "confirmed:delights",
+      label: "Delights on the map",
+      note: "The garage is just west of Delights.",
+    },
+  },
+  {
+    slug: "starlet-motel",
+    name: "Starlet Motel",
+    type: "Hideout",
+    region: "Kelly County",
+    area: "Historic Route 628, Kelly County",
+    edition: "Not an edition bonus",
+    howToGet: "Jason and Lucia stay here in Chapter 2.",
+    summary: "The motel on Historic Route 628 where Jason and Lucia stay in Chapter 2.",
+    description: "The Starlet Motel is Jason and Lucia's hideout in Chapter 2.",
+    features: ["Chapter 2 hideout."],
+    links: [
+      { href: "/businesses/starlet-motel", label: "Starlet Motel" },
+      { href: "/where-to-find/garages", label: "Garages and safehouses" },
+    ],
+    sources: [gamespotGarages],
+    map: {
+      kind: "area",
+      pinId: "confirmed:starlet-motel",
+      label: "Starlet Motel on the map",
+      note: "Opens the Starlet Motel pin.",
+    },
+  }
+);
 
 export function findProperty(slug: string) {
   return properties.find((item) => item.slug === slug);

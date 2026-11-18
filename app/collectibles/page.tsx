@@ -7,7 +7,7 @@ import { collectibleGuides } from "@/src/data/launch/collectible-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 collectibles",
-  "GTA 6 collectibles: card sets, Cocaine Flamingos, stunt jumps, WAiNK It scans, meditation spots, styles, and vehicle discovery, with counts and trophies. Unofficial fan site."
+  "GTA 6 collectibles: card sets, Cocaine Flamingos, stunt jumps, meditation spots, drone races, race challenges, golf courses, WAiNK It scans, styles, and vehicle discovery, with counts and trophies. Unofficial fan site."
 );
 
 const otherTypes = [
@@ -17,12 +17,7 @@ const otherTypes = [
     line: "Scan landmarks with your phone.",
     chips: [{ label: "Trophy", value: "100 scans" }],
   },
-  {
-    href: "/activities/meditation",
-    title: "Meditation spots",
-    line: "Meditate at every spot.",
-    chips: [{ value: "18 spots" }, { label: "100%", value: "15" }],
-  },
+
   {
     href: "/clothing",
     title: "Styles",

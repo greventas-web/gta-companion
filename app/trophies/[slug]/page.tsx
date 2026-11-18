@@ -10,6 +10,19 @@ import { findTrophy, trophies, trophyPlatformLabel } from "@/src/data/trophies";
 
 type Props = { params: Promise<{ slug: string }> };
 
+/** Guide pages that help with a trophy. */
+const TROPHY_GUIDES: Record<string, { href: string; label: string }[]> = {
+  "one-last-thing": [{ href: "/challenges", label: "All 80 challenges" }],
+  "little-boxes": [{ href: "/where-to-find/garages", label: "All 8 garages for sale" }, { href: "/properties", label: "Properties" }],
+  "positive-mental-attitude": [{ href: "/collectibles/meditation-spots", label: "All 10 meditation spots" }],
+  "top-fun": [{ href: "/collectibles/top-fun-drone-races", label: "All 14 drone race spots" }],
+  "strangers-freaks": [{ href: "/missions#strangers", label: "Strangers & Freaks side missions" }],
+  "cunning-stunts": [{ href: "/collectibles/stunt-jumps", label: "Stunt jumps" }],
+  "the-shootist": [{ href: "/shooting-ranges", label: "Shooting ranges" }],
+  "dont-touch-my-deck": [{ href: "/collectibles/card-sets", label: "Collectible card sets" }],
+  "dime-on-the-dollar": [{ href: "/activities/laundering-marked-bills", label: "Laundering marked bills" }, { href: "/where-to-find/fences", label: "Fences" }],
+};
+
 export function generateStaticParams() {
   return trophies.map((trophy) => ({ slug: trophy.slug }));
 }
@@ -43,6 +56,7 @@ export default async function TrophyPage({ params }: Props) {
           { label: "Tip", value: tip && !trophy.tipsSpoiler ? tip : "" },
         ]}
         mapPin={trophy.mapPinId}
+        links={TROPHY_GUIDES[trophy.slug]}
         trackId={`trophy:${trophy.slug}`}
         related={others.map((item) => ({ href: `/trophies/${item.slug}`, title: item.name, small: true }))}
       >

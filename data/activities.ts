@@ -127,6 +127,10 @@ export const activities: Activity[] = [
       "Official screenshot Cal Hampton 01 shows Cal in a bucket hat holding a putter on an alligator-themed mini-golf course, with another person putting behind him.",
     firstAppearance: "Rockstar screenshot",
     gallery: [],
+    related: [
+      { title: "All 5 golf courses", href: "/collectibles/golf-courses" },
+      { title: "Golf challenges", href: "/challenges#sports" },
+    ],
   },
   {
     id: 9,
@@ -230,6 +234,10 @@ export const activities: Activity[] = [
     firstAppearance: "Extended Look",
     gallery: [],
     sources: [extendedLook],
+    related: [
+      { title: "All 13 race challenges", href: "/collectibles/race-challenges" },
+      { title: "Vehicle challenges", href: "/challenges#vehicle" },
+    ],
   },
   {
     id: 17,
@@ -356,6 +364,10 @@ export const activities: Activity[] = [
     firstAppearance: "Launch (November 18, 2026)",
     gallery: [],
     sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress],
+    related: [
+      { title: "All 14 drone race spots", href: "/collectibles/top-fun-drone-races" },
+      { title: "Top Fun trophy", href: "/trophies/top-fun" },
+    ],
   },
   {
     id: 32,
@@ -382,6 +394,10 @@ export const activities: Activity[] = [
     firstAppearance: "Launch (November 18, 2026)",
     gallery: [],
     sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies],
+    related: [
+      { title: "Strangers & Freaks side missions", href: "/missions#strangers" },
+      { title: "Strangers & Freaks trophy", href: "/trophies/strangers-freaks" },
+    ],
   },
   {
     id: 34,
@@ -395,6 +411,10 @@ export const activities: Activity[] = [
     firstAppearance: "Launch (November 18, 2026)",
     gallery: [],
     sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress, launchSources.gtaCulture],
+    related: [
+      { title: "All 10 meditation spots", href: "/collectibles/meditation-spots" },
+      { title: "Positive Mental Attitude", href: "/trophies/positive-mental-attitude" },
+    ],
   },
   {
     id: 35,

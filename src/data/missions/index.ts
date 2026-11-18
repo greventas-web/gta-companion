@@ -1280,6 +1280,155 @@ const storyMissions: Mission[] = [
 export const missions: Mission[] = [
   ...storyMissions,
   {
+    slug: "strangers-shirley",
+    name: "Shirley's side jobs",
+    type: "side",
+    giver: "Shirley",
+    region: "Leonida",
+    chapter: 1,
+    summary: "Two small jobs for Shirley that are gone after Chapter 1. They do not count for Strangers & Freaks.",
+    spoiler: "Jobs: Get Shirley's Rum, Steal the Scooter.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-kirk",
+    name: "Kirk's side missions",
+    type: "side",
+    giver: "Kirk",
+    region: "Leonida",
+    chapter: 1,
+    summary: "Kirk's strand runs from Chapter 1 into Chapter 2 and counts for Strangers & Freaks. Some parts only start at night.",
+    spoiler: "Jobs: Search for the Skunk Ape, Search for Tree Effigies, Help Kirk Find Mr. Mangrove (Lucia only).",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-kyle",
+    name: "Kyle's side missions",
+    type: "side",
+    giver: "Kyle",
+    region: "Leonida",
+    chapter: 2,
+    summary: "Kyle's strand starts in Chapter 2 and counts for Strangers & Freaks.",
+    spoiler: "Jobs: Check Out McKittrick Farm, Collect Chemicals for Kyle, Buddy?",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-bret",
+    name: "Bret's side missions",
+    type: "side",
+    giver: "Bret Vogel",
+    region: "Leonida",
+    chapter: 2,
+    summary: "Bret's hunting jobs start in Chapter 2, and the first one is for Jason only. Hunting a unique animal for him earns the Fair Game trophy.",
+    spoiler: "Jobs: Veteran Hunted (Jason only), Bret's Hunting Decks.",
+    rewards: "Fair Game trophy.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-billy",
+    name: "Billy's side missions",
+    type: "side",
+    giver: "Billy",
+    region: "Leonida",
+    chapter: 2,
+    summary: "Billy's Mud Club jobs start in Chapter 2, and his last one earns The Lone Rider trophy. They do not count for Strangers & Freaks.",
+    spoiler: "Jobs: Thrillbillies, Twist Wrist, Smash, Grab, Mall Rats (solo), The Impaler, Hometown Heroes.",
+    rewards: "The Lone Rider trophy.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-yago",
+    name: "Yago's side missions",
+    type: "side",
+    giver: "Yago",
+    region: "Leonida",
+    chapter: 3,
+    summary: "Yago's street racing strand starts in Chapter 3 and counts for Strangers & Freaks. One race is time-limited and can be missed.",
+    spoiler: "Jobs: Join a Street Race, Bumper to Bumper (Jason only), Race Against Yago (time-limited), Brother to Brother (Jason only).",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-andy",
+    name: "Andy's side missions",
+    type: "side",
+    giver: "Andy",
+    region: "Leonida",
+    chapter: 3,
+    summary: "Andy's strand is for Lucia only and starts in Chapter 3. His last job earns Road to Rehabilitation but does not count for Strangers & Freaks.",
+    spoiler: "Jobs: Climbing the Cellerichain (3 parts), Pay the Cellerica Fee, Peach!, Read the Label, Puff Puff Pass.",
+    rewards: "Road to Rehabilitation trophy.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-yasmani",
+    name: "Yasmani's jobs",
+    type: "side",
+    giver: "Yasmani",
+    character: "Yasmani",
+    characterSlug: "yasmani-cabrera",
+    region: "Leonida",
+    chapter: 3,
+    summary: "Yasmani's robbery jobs start in Chapter 3: jewelry stores, ATMs, and payday loans. They do not count for Strangers & Freaks.",
+    spoiler: "Jobs: Yasmani's Jewelry Jobs, Yasmani's ATM Jobs, Yasmani's Payday Loans Jobs, Tail the Security Van.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-randy",
+    name: "Randy's wish list",
+    type: "side",
+    giver: "Randy",
+    character: "Randy",
+    characterSlug: "randy-kozlov",
+    region: "Leonida",
+    chapter: 3,
+    summary: "Randy's car wish list starts in Chapter 3. Finishing it earns the Supply & Demand trophy.",
+    spoiler: "Job: Randy's Wish List.",
+    rewards: "Supply & Demand trophy.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
+    slug: "strangers-tyrone",
+    name: "Tyrone's side missions",
+    type: "side",
+    giver: "Tyrone",
+    region: "Leonida",
+    chapter: 3,
+    summary: "Tyrone's jobs start in Chapter 3, and his last one earns the Spin On This! trophy. They do not count for Strangers & Freaks.",
+    spoiler: "Jobs: Take Out Kitty Litter, Spin On This.",
+    rewards: "Spin On This! trophy.",
+    sources: [
+      { label: "PowerPyx, all Strangers & Freaks side missions", href: "https://www.powerpyx.com/gta-6-all-strangers-freaks-side-missions/" },
+      { label: "GamesRadar+, trophy and achievement list", href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-trophy-achievement-list/" },
+    ],
+  },
+  {
     slug: "southside-gang-compound-raid",
     name: "Southside Vice City gang compound raid",
     type: "edition",
@@ -1335,6 +1484,10 @@ export const storyChapters = Array.from(
 });
 
 export const otherMissions = missions.filter((mission) => mission.type !== "story");
+
+/** Strangers & Freaks and other side strands, Chapters 1 to 3 (content batch 3). */
+export const sideMissions = missions.filter((mission) => mission.type === "side");
+export const editionMissions = missions.filter((mission) => mission.type === "edition");
 
 export const STORY_LIST_NOTE =
   "About 91 to 93 story missions over five chapters. Chapters 1 to 3 are here. Chapters 4 and 5 stay hidden because their names spoil the story.";

@@ -30,12 +30,13 @@ export default async function MissionPage({ params }: Props) {
   if (!mission) notFound();
 
   const hasSpoiler = Boolean(mission.spoiler || mission.rewards);
-  const next = mission.chapter
-    ? missions
-        .filter((other) => other.chapter === mission.chapter && (other.order ?? 0) > (mission.order ?? 0))
-        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-        .slice(0, 4)
-    : [];
+  const next =
+    mission.type === "story" && mission.chapter
+      ? missions
+          .filter((other) => other.type === "story" && other.chapter === mission.chapter && (other.order ?? 0) > (mission.order ?? 0))
+          .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+          .slice(0, 4)
+      : missions.filter((other) => other.type === mission.type && other.slug !== mission.slug).slice(0, 4);
 
   return (
     <PageShell>
@@ -62,19 +63,20 @@ export default async function MissionPage({ params }: Props) {
           ...(mission.characterSlug ? [{ href: `/characters/${mission.characterSlug}`, label: mission.character ?? "Character" }] : []),
           ...(mission.regionSlug ? [{ href: `/locations/${mission.regionSlug}`, label: mission.region }] : []),
           ...(mission.edition ? [{ href: "/launch", label: "Editions" }] : []),
+          ...(mission.type === "side" ? [{ href: "/trophies/strangers-freaks", label: "Strangers & Freaks trophy" }, { href: "/missions#strangers", label: "All side missions" }] : []),
         ]}
         related={next.map((other) => ({
           href: `/missions/${other.slug}`,
           title: other.name,
-          eyebrow: `Mission ${other.order}`,
+          eyebrow: other.order ? `Mission ${other.order}` : other.chapter ? `Chapter ${other.chapter}` : MISSION_TYPE_LABEL[other.type],
           trackId: `mission:${other.slug}`,
           small: true,
         }))}
-        relatedHeading="Next up"
+        relatedHeading={mission.type === "story" ? "Next up" : "More side missions"}
       >
         {hasSpoiler ? (
           <div className="mt-10">
-            <SpoilerReveal>
+            <SpoilerReveal {...(mission.type === "side" ? { showLabel: "Show job names", hideLabel: "Hide job names" } : {})}>
               {mission.spoiler ? <p>{mission.spoiler}</p> : null}
               {mission.rewards ? (
                 <p className={mission.spoiler ? "mt-4" : ""}>

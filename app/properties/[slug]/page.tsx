@@ -32,7 +32,10 @@ export default async function PropertiesDetailPage({ params }: Props) {
   if (!item) notFound();
   
   const map = item.map.kind === "area" ? `/map?pin=${encodeURIComponent(item.map.pinId)}` : staticMapHref("property", item.slug);
-  const related = items.filter((entry) => entry.slug !== item.slug && true).slice(0, 4);
+  const related = [
+    ...items.filter((entry) => entry.slug !== item.slug && entry.type === item.type),
+    ...items.filter((entry) => entry.slug !== item.slug && entry.type !== item.type),
+  ].slice(0, 4);
 
   return (
     <PageShell>
@@ -43,6 +46,7 @@ export default async function PropertiesDetailPage({ params }: Props) {
         image={undefined}
         imageAlt={undefined}
         summary={item.summary}
+        price={item.price}
         facts={[{ label: "Type", value: item.type }, { label: "Where", value: item.area }, { label: "Edition", value: /not an edition/i.test(item.edition) ? "" : item.edition }, { label: "How to get", value: shortText(item.howToGet, 1) }]}
         mapHref={map}
         mapLabel={item.map.kind === "area" ? "Find the area on map" : undefined}
@@ -51,6 +55,7 @@ export default async function PropertiesDetailPage({ params }: Props) {
           href: `/properties/${entry.slug}`,
           title: entry.name,
           image: undefined,
+          price: entry.price,
           small: true,
         }))}
       >

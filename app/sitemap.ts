@@ -25,6 +25,7 @@ import { moneyMethods } from "@/src/data/launch/money-methods";
 import { collectibleGuides, collectibleItemPages } from "@/src/data/launch/collectible-guides";
 import { whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
 import { shootingRanges } from "@/src/data/launch/shooting-ranges";
+import { challenges } from "@/src/data/launch/challenges";
 import { ammuStores } from "@/lib/simple/ammu";
 import { stationPages } from "@/lib/simple/radio";
 
@@ -40,6 +41,7 @@ const launchPaths = [
   ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
   ...collectibleGuides.map((entry) => `/collectibles/${entry.slug}`),
   ...shootingRanges.map((entry) => `/shooting-ranges/${entry.slug}`),
+  ...challenges.map((entry) => `/challenges/${entry.slug}`),
   ...ammuStores.map((store) => `/ammu-nation-locations/${store.slug}`),
   ...stationPages.map((station) => `/radio/${station.slug}`),
   ...whereToFindTopics.flatMap((topic) => wherePlaces(topic).map((place) => `/where-to-find/${topic.slug}/${place.slug}`)),
@@ -86,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/map-locations",
     "/ammu-nation-locations",
     "/shooting-ranges",
+    "/challenges",
     "/where-to-find",
     "/cheats",
     "/missions",
@@ -132,6 +135,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
     "/collectibles",
     ...collectibleGuides.map((entry) => `/collectibles/${entry.slug}`),
+    "/challenges",
+    "/properties",
     "/cheats",
     "/fastest-cars",
   ]);
