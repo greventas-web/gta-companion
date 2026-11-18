@@ -62,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/money-methods",
     "/fastest-cars",
     "/map-locations",
+    "/ammu-nation-locations",
     "/cheats",
     "/missions",
     "/trophies",
