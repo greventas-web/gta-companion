@@ -60,3 +60,16 @@ body {
     backdrop-filter: none !important;
   }
 }
+
+/* Homepage hero: slow Ken Burns zoom, off for reduced motion. */
+@keyframes hero-kenburns {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
+}
+.hero-kenburns {
+  animation: hero-kenburns 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns { animation: none; }
+}

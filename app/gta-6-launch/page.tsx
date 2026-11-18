@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simple/SimpleCard";
 import { pageMetadata } from "@/lib/launch";
+import { pickHubs } from "@/lib/simple/hubs";
 import { gta6Launch } from "@/src/data/launch/gta6-launch";
 
 // Re-render every 5 minutes so the launch-state copy flips on its own.
@@ -33,12 +34,9 @@ const facts = [
   { label: "PC", value: "No date yet" },
 ];
 
-const next = [
-  { href: "/map", title: "Map", image: "/images/official/locations/vice-city.webp" },
-  { href: "/missions", title: "Missions" },
-  { href: "/money-methods", title: "Make money" },
-  { href: "/weapons", title: "Weapons", image: "/images/official/categories/weapons.webp" },
-  { href: "/launch", title: "Editions" },
+const next: { href: string; title: string; image?: string; line?: string; kind?: string }[] = [
+  ...pickHubs(["map", "missions", "money", "weapons"]),
+  { href: "/launch", title: "Editions", image: "/images/official/editions/ultimate_edition_01.webp" },
   { href: "/news/gta-vi-the-festival", title: "The Festival, Nov 21", image: "/images/official/gta-vi-the-festival.webp" },
 ];
 
@@ -49,7 +47,7 @@ export default function Gta6LaunchPage() {
       <QuickFacts facts={facts} />
       <CardGrid heading="Start here">
         {next.map((item) => (
-          <SimpleCard key={item.href} href={item.href} title={item.title} image={item.image} />
+          <SimpleCard key={item.href} href={item.href} title={item.title} image={item.image} line={item.line} kind={item.kind} />
         ))}
       </CardGrid>
     </PageShell>

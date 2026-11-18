@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { launchMetadata } from "@/lib/launch";
+import { pickHubs } from "@/lib/simple/hubs";
 import { mapLocations } from "@/src/data/launch/map-locations";
 
 const title = "GTA 6 map locations (unofficial)";
@@ -11,13 +12,9 @@ const description =
 
 export const metadata: Metadata = launchMetadata(title, description);
 
-const hubs = [
-  { href: "/map", title: "Interactive map", image: "/images/official/locations/vice-city.webp" },
-  { href: "/ammu-nation-locations", title: "Ammu-Nation", line: "All 24 gun stores." },
-  { href: "/where-to-find", title: "Where to find" },
-  { href: "/locations", title: "Regions", image: "/images/official/categories/locations.webp" },
-  { href: "/stores", title: "Stores", image: "/images/official/editions/ultimate_edition_stock_305_01.webp" },
-  { href: "/properties", title: "Garages and hideouts" },
+const hubs: { href: string; title: string; image?: string; line?: string; kind?: string }[] = [
+  ...pickHubs(["map", "ammuNation", "whereToFind", "locations", "stores"]),
+  { href: "/properties", title: "Garages and hideouts", image: "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp", kind: "garage" },
 ];
 
 export default function MapLocationsPage() {
@@ -33,7 +30,7 @@ export default function MapLocationsPage() {
       ) : null}
       <CardGrid heading={mapLocations.length > 0 ? "More" : undefined}>
         {hubs.map((hub) => (
-          <SimpleCard key={hub.href} href={hub.href} title={hub.title} image={hub.image} line={hub.line} />
+          <SimpleCard key={hub.href} href={hub.href} title={hub.title} image={hub.image} line={hub.line} kind={hub.kind} />
         ))}
       </CardGrid>
     </PageShell>
