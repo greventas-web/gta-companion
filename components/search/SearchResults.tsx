@@ -21,7 +21,7 @@ export default function SearchResults({ query, results }: Props) {
           Search GTA Companion
         </h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-7 text-zinc-400">
-          Look up a vehicle, character, location, business, weapon, or official news article.
+          Look up a vehicle, character, location, business, weapon, mission, or official news article.
         </p>
       </div>
     );

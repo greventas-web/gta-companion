@@ -44,6 +44,7 @@ const SECTION: Record<string, MapEntityType> = {
   characters: "character",
   animals: "animal",
   properties: "property",
+  missions: "mission",
 };
 
 /**

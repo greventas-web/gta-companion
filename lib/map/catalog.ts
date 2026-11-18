@@ -5,6 +5,7 @@ import { characters } from "@/data/characters";
 import { locations } from "@/data/locations";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
+import { missions } from "@/src/data/missions";
 import { mapPlacements } from "@/src/data/map/placements";
 import {
   hrefForEntity,
@@ -18,7 +19,7 @@ type Named = { slug: string; name: string };
 
 /**
  * Slug registries for entity types that already have database records.
- * stores, missions, collectibles, safehouses, and properties have no
+ * stores, collectibles, safehouses, and properties have no
  * per-item catalog yet. When one is added, register it here and pins can
  * link to `/that-section/[slug]`.
  */
@@ -32,7 +33,7 @@ const registries: Record<MapEntityType, Map<string, Named> | null> = {
   character: indexBySlug(characters),
   store: null,
   collectible: null,
-  mission: null,
+  mission: indexBySlug(missions),
   safehouse: null,
   property: null,
 };
