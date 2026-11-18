@@ -56,12 +56,12 @@ export type AmmuNationInventory = "Limited" | "Standard" | "Hunting" | "Expanded
 
 export type AmmuNationStore = {
   name: string;
-  county: "Mariana County" | "Vice-Dale County" | "Kelly County";
+  county: "Mariana County" | "Vice-Dale County" | "Kelly County" | "Leonard County" | "Lummox County";
   area: string;
   inventory: AmmuNationInventory;
 };
 
-/** All 24 branches. Names, county, and stock tier agree in both sources. */
+/** All 24 branches. Names and stock tiers agree in PowerPyx and DayOne. Counties follow PowerPyx's in-game map headings (Leonard and Lummox are separate from Kelly). */
 export const ammuNationStores: AmmuNationStore[] = [
   { name: "Barrage Gun Supply", county: "Mariana County", area: "Keys, near Mile Zero Air Station", inventory: "Standard" },
   { name: "Chuck’s Tackle & Shot", county: "Mariana County", area: "Key Lento", inventory: "Limited" },
@@ -82,11 +82,11 @@ export const ammuNationStores: AmmuNationStore[] = [
   { name: "Zenon’s Pawn Shop", county: "Vice-Dale County", area: "North Vice City", inventory: "Standard" },
   { name: "Iron & Oak", county: "Vice-Dale County", area: "North Vice City", inventory: "Expanded" },
   { name: "Prestige Firearms", county: "Vice-Dale County", area: "Ocean Beach, Vice City", inventory: "Expanded" },
-  { name: "Tactical Outlet Guns", county: "Kelly County", area: "Belville", inventory: "Standard" },
+  { name: "Tactical Outlet Guns", county: "Leonard County", area: "Belville", inventory: "Standard" },
   { name: "Pawn & Gun – Port Gellhorn", county: "Kelly County", area: "Port Gellhorn", inventory: "Standard" },
   { name: "Gellhorn Outfitters", county: "Kelly County", area: "Port Gellhorn", inventory: "Standard" },
   { name: "Biff’s Gun Supply", county: "Kelly County", area: "Ambrosia", inventory: "Standard" },
-  { name: "Rusty Willis Jr. Hunting Supplies", county: "Kelly County", area: "Mount Kalaga National Park", inventory: "Hunting" },
+  { name: "Rusty Willis Jr. Hunting Supplies", county: "Lummox County", area: "Mount Kalaga National Park", inventory: "Hunting" },
 ];
 
 export const ammuNationSources = [
