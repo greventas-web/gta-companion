@@ -25,6 +25,7 @@ const REGISTRY_FILES = {
   vehicle: ["data/vehicles"],
   animal: ["data/animals.ts", "src/data/animals/index.ts"],
   character: ["data/characters.ts", "src/data/characters/index.ts"],
+  mission: ["src/data/missions/index.ts"],
 };
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -140,7 +141,7 @@ function addPin(opts, data) {
   checkUrl(opts.clip);
   const entityType = opts.entity;
   if (opts.slug) {
-    if (!entityType) fail("--slug needs --entity (vehicle, weapon, location, business, activity, animal, character)");
+    if (!entityType) fail("--slug needs --entity (vehicle, weapon, location, business, activity, animal, character, mission)");
     if (!SLUG.test(opts.slug)) fail("--slug must be lowercase-with-dashes");
     const exists = slugExists(entityType, opts.slug);
     const ingameNew = (data.vehicles ?? []).concat(data.weapons ?? []).some((e) => e.slug === opts.slug);

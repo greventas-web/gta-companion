@@ -112,6 +112,14 @@ export default function Footer() {
                 Map Locations
               </Link>
 
+              <Link href="/missions" className="block text-zinc-400 transition hover:text-pink-400">
+                Missions
+              </Link>
+
+              <Link href="/trophies" className="block text-zinc-400 transition hover:text-pink-400">
+                Trophies
+              </Link>
+
               <Link href="/cheats" className="block text-zinc-400 transition hover:text-pink-400">
                 Cheats
               </Link>

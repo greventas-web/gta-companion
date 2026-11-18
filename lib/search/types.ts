@@ -12,6 +12,8 @@ export type SearchCategory =
   | "Activity"
   | "Guide"
   | "News"
+  | "Mission"
+  | "Trophy"
   | "Phone"
   | "Property";
 

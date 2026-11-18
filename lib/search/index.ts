@@ -16,6 +16,7 @@ import { properties } from "@/data/properties";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
 import { manufacturerPortrait, vehicleImages } from "@/lib/media/catalog";
+import { missions } from "@/src/data/missions";
 
 export const searchIndex: SearchItem[] = [
   ...vehicles.map((vehicle) => ({
@@ -116,6 +117,32 @@ export const searchIndex: SearchItem[] = [
     image: activity.image,
     description: activity.description,
   })),
+
+  ...missions.map((mission, index) => ({
+    id: 80000 + index,
+    title: mission.name,
+    href: `/missions/${mission.slug}`,
+    category: "Mission" as const,
+    description: mission.summary,
+  })),
+
+  {
+    id: 80050,
+    title: "GTA 6 missions list",
+    href: "/missions",
+    category: "Mission" as const,
+    description:
+      "Spoiler-safe list of Grand Theft Auto VI missions Rockstar has named.",
+  },
+
+  {
+    id: 80051,
+    title: "GTA 6 trophies list",
+    href: "/trophies",
+    category: "Trophy" as const,
+    description:
+      "PlayStation trophies and Xbox achievements. No official list has been published yet.",
+  },
 
   ...guides.filter((guide) => guide.listed !== false).map((guide) => ({
     id: guide.id,

@@ -49,6 +49,8 @@ const groups = [
       { title: "Money", href: "/money-methods" },
       { title: "Fastest Cars", href: "/fastest-cars" },
       { title: "Map Locations", href: "/map-locations" },
+      { title: "Missions", href: "/missions" },
+      { title: "Trophies", href: "/trophies" },
       { title: "Cheats", href: "/cheats" },
     ],
   },
