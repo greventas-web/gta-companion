@@ -2,24 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import SimpleCard from "@/components/simple/SimpleCard";
+import { homeHubs } from "@/lib/simple/hubs";
 
-import CategoryGridSection from "./sections/CategoryGridSection";
 import FeaturedNewsV2 from "./FeaturedNewsV2";
-
-const play = [
-  { href: "/map", title: "Map", image: "/images/official/locations/vice-city.webp", line: "Find anything in Leonida." },
-  { href: "/missions", title: "Missions", line: "Tick off every story mission." },
-  { href: "/weapons", title: "Weapons", image: "/images/official/categories/weapons.webp", line: "Every gun and its price." },
-  { href: "/vehicles", title: "Vehicles", image: "/images/official/categories/vehicles.webp", line: "Cars, bikes, boats, planes." },
-  { href: "/money-methods", title: "Make money", line: "Fastest cash by chapter." },
-  { href: "/shooting-ranges", title: "Shooting ranges", image: "/images/official/frames/shooting-range.webp", line: "12 courses, 42 golds." },
-  { href: "/collectibles", title: "Collectibles", line: "Cards, flamingos, stunts." },
-  { href: "/cheats", title: "Cheats", line: "61 cheats and codes." },
-  { href: "/where-to-find", title: "Where to find", line: "Shops, garages, barbers." },
-  { href: "/trophies", title: "Trophies", line: "Tick off every trophy." },
-  { href: "/activities", title: "Activities", image: "/images/official/categories/activities.webp", line: "Things to do." },
-  { href: "/ammu-nation-locations", title: "Ammu-Nation", line: "All 24 gun stores." },
-];
 
 export default function HomePageV2() {
   return (
@@ -54,15 +39,15 @@ export default function HomePageV2() {
         </Link>
       </section>
 
-      <section className="mx-auto max-w-[1600px] px-6 py-12 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-          {play.map((item) => (
-            <SimpleCard key={item.href} href={item.href} title={item.title} image={item.image} line={item.line} small />
+      <section className="mx-auto max-w-[1600px] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+        <h2 className="mb-8 text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">Browse</h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {homeHubs.map((hub) => (
+            <SimpleCard key={hub.href} href={hub.href} title={hub.title} image={hub.image} line={hub.line} kind={hub.kind} />
           ))}
         </div>
       </section>
 
-      <CategoryGridSection />
       <FeaturedNewsV2 />
     </main>
   );
