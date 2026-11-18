@@ -5,6 +5,8 @@ import { animals } from "@/data/animals";
 import { brands } from "@/data/brands";
 import { businesses } from "@/data/businesses";
 import { characters } from "@/data/characters";
+import { clothing } from "@/data/clothing";
+import { stores } from "@/data/stores";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
@@ -30,6 +32,8 @@ const detailPaths = [
   ...characters.map((entry) => `/characters/${entry.slug}`),
   ...locations.map((entry) => `/locations/${entry.slug}`),
   ...businesses.map((entry) => `/businesses/${entry.slug}`),
+  ...stores.map((entry) => `/stores/${entry.slug}`),
+  ...clothing.map((entry) => `/clothing/${entry.slug}`),
   ...brands.map((entry) => `/brands/${entry.slug}`),
   ...manufacturers.map((entry) => `/manufacturers/${entry.slug}`),
   ...weapons.map((entry) => `/weapons/${entry.slug}`),
@@ -63,6 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cookies",
     "/weapons",
     "/businesses",
+    "/stores",
+    "/clothing",
     "/manufacturers",
     "/brands",
     "/activities",

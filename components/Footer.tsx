@@ -84,6 +84,14 @@ export default function Footer() {
                 Locations
               </Link>
 
+              <Link href="/stores" className="block text-zinc-400 transition hover:text-pink-400">
+                Stores
+              </Link>
+
+              <Link href="/clothing" className="block text-zinc-400 transition hover:text-pink-400">
+                Clothing
+              </Link>
+
               <Link href="/map" className="block text-zinc-400 transition hover:text-pink-400">
                 Map
               </Link>

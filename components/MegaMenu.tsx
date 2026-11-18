@@ -13,6 +13,7 @@ const groups = [
       { title: "Characters", href: "/characters" },
       { title: "Locations", href: "/locations" },
       { title: "Businesses", href: "/businesses" },
+      { title: "Stores", href: "/stores" },
     ],
   },
   {
@@ -22,6 +23,7 @@ const groups = [
       { title: "Weapons", href: "/weapons" },
       { title: "Animals", href: "/animals" },
       { title: "Activities", href: "/activities" },
+      { title: "Clothing", href: "/clothing" },
       { title: "Brands", href: "/brands" },
     ],
   },

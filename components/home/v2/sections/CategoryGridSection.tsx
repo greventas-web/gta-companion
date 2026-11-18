@@ -7,6 +7,8 @@ import {
   MapPin,
   PawPrint,
   Shield,
+  Shirt,
+  Store,
   User,
 } from "lucide-react";
 
@@ -14,7 +16,9 @@ import { activities } from "@/data/activities";
 import { animals } from "@/data/animals";
 import { brands } from "@/data/brands";
 import { businesses } from "@/data/businesses";
+import { clothing } from "@/data/clothing";
 import { characters } from "@/data/characters";
+import { stores } from "@/data/stores";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { confirmedVehicles, vehicles } from "@/data/vehicles";
@@ -57,6 +61,20 @@ const cards = [
     image: "/images/official/categories/businesses.webp",
     count: String(businesses.length),
     icon: Briefcase,
+  },
+  {
+    title: "Stores",
+    href: "/stores",
+    image: "/images/official/editions/ultimate_edition_stock_305_01.webp",
+    count: String(stores.length),
+    icon: Store,
+  },
+  {
+    title: "Clothing",
+    href: "/clothing",
+    image: "/images/official/editions/ultimate_edition_goodtime_gear_01.webp",
+    count: String(clothing.length),
+    icon: Shirt,
   },
   {
     title: "Weapons",

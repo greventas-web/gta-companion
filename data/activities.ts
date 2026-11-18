@@ -299,6 +299,11 @@ export const activities: Activity[] = [
     firstAppearance: "Famitsu",
     gallery: [],
     sources: [...famitsuSources, rockstarVi],
+    related: [
+      { title: "Stores", href: "/stores" },
+      { title: "Clothing", href: "/clothing" },
+      { title: "Stock 305", href: "/stores/stock-305" },
+    ],
   },
   {
     id: 22,

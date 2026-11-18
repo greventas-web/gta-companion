@@ -4,7 +4,9 @@ import { activities } from "@/data/activities";
 import { animals } from "@/data/animals";
 import { brands } from "@/data/brands";
 import { businesses } from "@/data/businesses";
+import { clothing } from "@/data/clothing";
 import { characters } from "@/data/characters";
+import { stores } from "@/data/stores";
 import { guides } from "@/data/guides";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
@@ -48,6 +50,24 @@ export const searchIndex: SearchItem[] = [
     category: "Business" as const,
     image: business.image,
     description: business.description,
+  })),
+
+  ...stores.map((store) => ({
+    id: store.id,
+    title: store.name,
+    href: `/stores/${store.slug}`,
+    category: "Store" as const,
+    image: store.image,
+    description: store.summary,
+  })),
+
+  ...clothing.map((item) => ({
+    id: item.id,
+    title: item.name,
+    href: `/clothing/${item.slug}`,
+    category: "Clothing" as const,
+    image: item.image,
+    description: item.summary,
   })),
 
   ...manufacturers.map((manufacturer) => ({

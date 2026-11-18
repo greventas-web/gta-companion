@@ -3,6 +3,8 @@ export type SearchCategory =
   | "Character"
   | "Location"
   | "Business"
+  | "Store"
+  | "Clothing"
   | "Manufacturer"
   | "Brand"
   | "Weapon"

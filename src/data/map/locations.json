@@ -209,7 +209,7 @@
       "y": 716.403,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "linked_site_entity_slug": "stores/tisha-wocka-flea-market",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Only in Leonida: Vice City",
@@ -220,7 +220,7 @@
         "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
       }
     ],
-    "notes": "Official Vice City landmark/market. Rockstar: 'the bootleg brands of the Tisha-Wocka flea market.' gtadb maps a single pin (L1006) and treats Tisha-Wocka as the surrounding area name. That landmark is tagged 'demolished' in the 17 Nov 2026 gtadb dump — the official name is confirmed, but the mapped structure may have changed. No dedicated store page exists on GTA Companion yet; linked to the clothing-stores activity page."
+    "notes": "Official Vice City landmark/market. Rockstar: 'the bootleg brands of the Tisha-Wocka flea market.' gtadb maps a single pin (L1006) and treats Tisha-Wocka as the surrounding area name. That landmark is tagged 'demolished' in the 17 Nov 2026 gtadb dump — the official name is confirmed, but the mapped structure may have changed. Store page: stores/tisha-wocka-flea-market."
   },
   {
     "id": "vc-port",
@@ -445,7 +445,7 @@
       "y": 1766.117,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "linked_site_entity_slug": "stores/stock-305",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -464,7 +464,7 @@
         "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
       }
     ],
-    "notes": "Official Ultimate Edition clothing store. Rockstar: 'Style various unique and exclusive looks for Jason and Lucia at Stockyard’s premier destination for elevated streetwear. Only open for business with the Ultimate Edition.' Official alts include the exterior and interiors. No dedicated store page on GTA Companion yet."
+    "notes": "Official Ultimate Edition clothing store. Rockstar: 'Style various unique and exclusive looks for Jason and Lucia at Stockyard’s premier destination for elevated streetwear. Only open for business with the Ultimate Edition.' Official alts include the exterior and interiors. Store page: stores/stock-305."
   },
   {
     "id": "electric-fang-tattoo",
@@ -478,7 +478,7 @@
       "y": 1839.555,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "linked_site_entity_slug": "stores/electric-fang-tattoo",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -497,12 +497,12 @@
         "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
       }
     ],
-    "notes": "Official Ultimate Edition tattoo shop. Rockstar: 'Stockyard’s most iconic ink bar, with over 50 signature tattoos for both Jason and Lucia — all designed by the artist collective FAILE. Only open for business with the Ultimate Edition.' Official alts describe the neon wolf sign and the interior. No dedicated store page on GTA Companion yet."
+    "notes": "Official Ultimate Edition tattoo shop. Rockstar: 'Stockyard’s most iconic ink bar, with over 50 signature tattoos for both Jason and Lucia — all designed by the artist collective FAILE. Only open for business with the Ultimate Edition.' Official alts describe the neon wolf sign and the interior. Store page: stores/electric-fang-tattoo."
   },
   {
     "id": "rideout-customs",
     "name": "Rideout Customs",
-    "category": "vehicle-dealer",
+    "category": "store",
     "region": "Vice City",
     "area": null,
     "position": {
@@ -511,7 +511,7 @@
       "y": 975.341,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": null,
+    "linked_site_entity_slug": "stores/rideout-customs",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -540,7 +540,7 @@
       "y": -3414.5,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "linked_site_entity_slug": "stores/saras-unisex-salon",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -564,7 +564,7 @@
   {
     "id": "one-eyed-willies",
     "name": "One-Eyed Willie's",
-    "category": "vehicle-dealer",
+    "category": "store",
     "region": "Lake Leonida",
     "area": "Lake Leonida",
     "position": {
@@ -573,7 +573,7 @@
       "y": null,
       "placement": "gtadb-id-only"
     },
-    "linked_site_entity_slug": "activities/off-roading",
+    "linked_site_entity_slug": "stores/one-eyed-willies",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -722,7 +722,7 @@
       "y": -1826.006,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": null,
+    "linked_site_entity_slug": "stores/ptt-youngins-illegal-goods-store",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -741,7 +741,7 @@
         "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
       }
     ],
-    "notes": "Official Ultimate Edition location. Rockstar names the 'PTT YOUNGIN$ Illegal Goods Store' and an official alt shows 'Members of the PTT Youngin$ gathered outside the Illegal Goods Store.' This is the storefront associated with the Southside raid benefit (see southside-gang-compound-raid). No site entity page yet."
+    "notes": "Official Ultimate Edition location. Rockstar names the 'PTT YOUNGIN$ Illegal Goods Store' and an official alt shows 'Members of the PTT Youngin$ gathered outside the Illegal Goods Store.' This is the storefront associated with the Southside raid benefit (see southside-gang-compound-raid). Store page: stores/ptt-youngins-illegal-goods-store."
   },
   {
     "id": "ocean-view-hotel",

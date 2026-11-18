@@ -21,7 +21,7 @@ export default function SearchResults({ query, results }: Props) {
           Search GTA Companion
         </h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-7 text-zinc-400">
-          Look up a vehicle, character, location, business, weapon, or official news article.
+          Look up a vehicle, character, store, outfit, location, business, weapon, or official news article.
         </p>
       </div>
     );
@@ -40,7 +40,7 @@ export default function SearchResults({ query, results }: Props) {
 
         <p className="mx-auto mt-3 max-w-md text-sm leading-7 text-zinc-400">
           We couldn&apos;t find anything matching your search. Try searching for a
-          vehicle, character, location, business, weapon, or official news article.
+          vehicle, character, store, outfit, location, business, or weapon.
         </p>
       </div>
     );
