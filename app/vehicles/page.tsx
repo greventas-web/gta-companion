@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import CitedNotes from "@/components/CitedNotes";
 import JsonLd from "@/components/JsonLd";
 import VehicleDatabase from "@/components/VehicleDatabase";
@@ -52,6 +54,23 @@ export default function VehiclesPage() {
           },
         ]}
       />
+
+      <p className="mt-6 text-zinc-400">
+        More on the{" "}
+        <Link
+          href="/girlypop"
+          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
+        >
+          Girlypop vehicles cheat filter
+        </Link>
+        {" · "}
+        <Link
+          href="/gta-6-apps"
+          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
+        >
+          WAiNK and Scooter Bros
+        </Link>
+      </p>
 
       <VehicleDatabase />
 

@@ -55,6 +55,16 @@ export default function MissionsPage() {
 
       <p className="text-sm leading-7 text-zinc-500">{UNOFFICIAL_DISCLAIMER}</p>
 
+      <p className="mt-6 text-zinc-400">
+        Looking for play time and the full mission count?{" "}
+        <Link
+          href="/how-long-is-gta-6"
+          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
+        >
+          How long is GTA 6?
+        </Link>
+      </p>
+
       <section className="mt-10">
         <h2 className="text-3xl font-black tracking-[-0.03em]">
           Story missions in order
