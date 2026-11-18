@@ -6,7 +6,7 @@ import { SourceList } from "@/components/SourceLink";
 import TrophyTable from "@/components/trophies/TrophyTable";
 import { launchMetadata } from "@/lib/launch";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
-import { TROPHY_LIST_NOTE, trophies } from "@/src/data/trophies";
+import { TROPHY_COUNTS, TROPHY_LIST_NOTE, trophies } from "@/src/data/trophies";
 
 const title =
   trophies.length === 0
@@ -38,7 +38,7 @@ export default function TrophiesPage() {
         description={
           trophies.length === 0
             ? `A GTA 6 trophies list and Xbox achievement list will go in the table below after Sony, Microsoft, or Rockstar publishes one. Nothing is filled in early. Grand Theft Auto VI launches ${SITE.launchLabel}.`
-            : "PlayStation trophies and Xbox achievements Rockstar, Sony, or Microsoft have published."
+            : `The list published at launch has ${TROPHY_COUNTS.total} trophies and achievements. The ${trophies.length} non-hidden ones are below. The ${TROPHY_COUNTS.hidden} hidden ones are story spoilers and are left out.`
         }
       />
 
@@ -67,10 +67,13 @@ export default function TrophiesPage() {
           {trophies.length === 0 ? "Ready for the official list" : "Published list"}
         </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-          Each row can hold a name, description, PlayStation or Xbox label,
-          tips, and a missable flag. Tips that would spoil a job can stay
-          hidden on that trophy’s page.
+          {trophies.length === 0
+            ? "Each row can hold a name, description, PlayStation or Xbox label, tips, and a missable flag. Tips that would spoil a job can stay hidden on that trophy’s page."
+            : "Names, descriptions, and PS5 grades as the published lists show them. The same list applies to Xbox achievements. Gamerscore is not shown yet."}
         </p>
+        {trophies.length > 0 ? (
+          <SourceList className="mt-4" sources={[...TROPHY_LIST_NOTE.publishedSources]} />
+        ) : null}
         <TrophyTable />
       </section>
     </PageShell>
