@@ -45,15 +45,17 @@ export default function CookiesPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  GTA Companion may store cookies or similar data so sign-in
-                  and preferences can persist. Choosing Not now on the install
-                  reminder is saved in local storage on your device.
-                  Google AdSense may set cookies
-                  to show and measure third-party ads. Vercel Web Analytics
-                  and Speed Insights do not use cookies; they record page
-                  views and performance measurements such as the page, browser,
-                  and country. You can control ad personalization in your
-                  Google Ads Settings.
+                  GTA Companion is an unofficial fan site, not affiliated
+                  with Rockstar Games or Take-Two. It may store cookies or
+                  similar data so sign-in and preferences can persist.
+                  Choosing Not now on the install reminder is saved in local
+                  storage on your device. A first-party cookie stores your
+                  analytics and advertising cookie choice. Google Analytics
+                  4 may set cookies to measure how the site is used. Google
+                  AdSense may set cookies to show and measure third-party
+                  ads. Vercel Web Analytics and Speed Insights do not use
+                  cookies; they record page views and performance
+                  measurements such as the page, browser, and country.
                 </p>
               </div>
 
@@ -63,9 +65,26 @@ export default function CookiesPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Most browsers allow you to control or disable cookies through
-                  their settings. Disabling cookies may affect certain website
-                  features.
+                  Visitors in the European Economic Area, the United Kingdom,
+                  and Switzerland will see a cookie banner with Accept,
+                  Reject, and Manage. You can reopen those settings at any
+                  time from Cookie settings in the footer. You can also
+                  control ad personalization in{" "}
+                  <a
+                    href="https://adssettings.google.com"
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Google Ads Settings
+                  </a>
+                  . Most browsers let you control or disable cookies through
+                  their settings. Disabling cookies may affect certain
+                  website features. The{" "}
+                  <a href="/privacy" className="text-pink-400 hover:text-pink-300">
+                    Privacy Policy
+                  </a>{" "}
+                  explains this in more detail.
                 </p>
               </div>
 
