@@ -6,6 +6,7 @@ import ViewOnMap from "@/components/map/ViewOnMap";
 import { SourceLink } from "@/components/SourceLink";
 import VehicleCard from "@/components/VehicleCard";
 import VehicleGallery from "@/components/VehicleGallery";
+import VehicleIntentFaq from "@/components/vehicles/VehicleIntentFaq";
 import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
 
 import { manufacturerByName } from "@/data/manufacturers";
@@ -164,6 +165,8 @@ export default async function VehicleDetailsPage({
           </div>
 
         </div>
+
+        <VehicleIntentFaq vehicle={vehicle} />
 
         {/* Related Vehicles */}
 

@@ -112,3 +112,35 @@ export const vehicleCounts = {
     launchSources.gtaCulture,
   ],
 } as const;
+
+export const girlypopGroup = {
+  name: "Girlypop",
+  count: 16,
+  unlock: "Finding all 16 unlocks a cheat filter.",
+  countsToward100: false,
+  sources: vehicleCounts.sources,
+} as const;
+
+/** Reviewer counts and play times for the story, from launch-day coverage. */
+export const storyLength = {
+  pressStartMissions: 93,
+  chapters: 5,
+  pcGamerMissions: 91,
+  pressStartPlaythrough: "under 50 hours",
+  powerpyxEstimate: "60 to 80 hours",
+  listedChapters: "1 to 3",
+  sources: [
+    {
+      label: "Press Start, story mission count",
+      href: "https://press-start.com.au/news/2026/11/18/heres-how-many-story-missions-are-in-grand-theft-auto-6/",
+    },
+    {
+      label: "PC Gamer, mission list",
+      href: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/",
+    },
+    {
+      label: "PowerPyx, full walkthrough",
+      href: "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+    },
+  ],
+} as const;

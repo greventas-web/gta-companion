@@ -36,6 +36,16 @@ export default function PhonePage() {
         <SourceList sources={famitsuSources} className="mt-4" />
       </section>
 
+      <p className="mt-8 text-zinc-400">
+        New to the launch-week apps?{" "}
+        <Link
+          href="/gta-6-apps"
+          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
+        >
+          Scooter Bros, BuckMe, and WAiNK explained
+        </Link>
+      </p>
+
       <CatalogGroup title="Apps" items={apps} />
       <CatalogGroup title="Podcasts and headphones" items={listening} />
 
