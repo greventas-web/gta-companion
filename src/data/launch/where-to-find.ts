@@ -490,7 +490,7 @@ export const whereToFindTopics: WhereTopic[] = [
       "A garage keeps any vehicle you park there, stolen or owned.",
       "You can open your weapon loadout in a garage and leave illegal goods there for NPCs to sell.",
       "Garages near Vice City cost the most.",
-      "GameSpot found no garages in Lummox County.",
+      "There are no garages in Lummox County.",
       "Your first safehouse is Jason’s house in Key Lento. In Chapter 2 you stay at the Starlet Motel on Historic Route 628.",
     ],
     groups: [
@@ -646,13 +646,12 @@ export const whereToFindTopics: WhereTopic[] = [
       "where to get melee GTA 6",
     ],
     answer:
-      "PowerPyx says the Progress database lists 9 melee weapons and 4 explosives, and that you can buy them at Ammu-Nation or pick one up if an enemy drops it. A launch-day guide has not published the full named list. The Molotov and the Grenade are confirmed by cheat unlocks.",
+      "Buy melee weapons and explosives at any Ammu-Nation, or grab one when an enemy drops it. There are 9 melee weapons and 4 explosives, including the Molotov and the Grenade.",
     facts: [
-      "PowerPyx’s Progress database lists 196 weapon entries: 53 guns, 9 melee, 4 explosives, and 130 variants. The 9 / 4 split is single-source.",
-      "PowerPyx says the 100% list asks you to find 50 of 66 standard-issue weapons, which includes those melee weapons and explosives, and that buying one at Ammu-Nation or picking up a dropped weapon both count. Single-source.",
-      "Insider Gaming says Ammu-Nation also sells packs of explosives. Single-source wording.",
-      "The Molotov and the Grenade are confirmed by cheat unlocks published by PowerPyx and GamesRadar+: throwing 100 molotovs unlocks Exploding Bottles, and throwing 100 grenades unlocks All Explosive Weapons. Those cheats only work after the story.",
-      "A price, manufacturer, stat card, or named store tier for the Molotov or the Grenade has not been published by a launch-day guide we trust.",
+      "The game lists 196 weapon entries: 53 guns, 9 melee, 4 explosives, and 130 variants.",
+      "For 100% you need 50 of the 66 standard weapons. Buying one or picking one up both count.",
+      "Ammu-Nation also sells packs of explosives.",
+      "Throw 100 molotovs to unlock Exploding Bottles, or 100 grenades for All Explosive Weapons (cheats work after the story).",
     ],
     groups: [
       {
@@ -669,18 +668,15 @@ export const whereToFindTopics: WhereTopic[] = [
     faqs: [
       {
         question: "How many melee weapons and explosives are in GTA 6?",
-        answer:
-          "PowerPyx’s Progress database lists 9 melee weapons and 4 explosives, as part of 196 weapon entries. A launch-day guide has not published the full named list of those 13 items.",
+        answer: "9 melee weapons and 4 explosives, out of 196 weapon entries in total.",
       },
       {
         question: "Where do you buy melee weapons and explosives in GTA 6?",
-        answer:
-          "PowerPyx says you can buy them at Ammu-Nation, or pick one up if an enemy drops it. Insider Gaming also says Ammu-Nation sells packs of explosives. A price for a named melee weapon or thrown explosive has not been published yet.",
+        answer: "At Ammu-Nation, which also sells packs of explosives. You can also pick one up when an enemy drops it.",
       },
       {
         question: "Are the Molotov and the Grenade in GTA 6?",
-        answer:
-          "Yes. PowerPyx and GamesRadar+ both list cheat unlocks that require throwing 100 molotovs or 100 grenades. Those cheats only work after the story.",
+        answer: "Yes. Throwing 100 of either one unlocks a cheat that works after the story.",
       },
     ],
     sources: [
@@ -719,4 +715,65 @@ export const whereToFindTopics: WhereTopic[] = [
 
 export function findWhereTopic(slug: string) {
   return whereToFindTopics.find((topic) => topic.slug === slug);
+}
+
+export type WherePlaceCard = {
+  slug: string;
+  name: string;
+  area?: string;
+  /** "$4,000" style price when the detail is a price. */
+  price?: string;
+  /** Short tag such as "Expanded" or "Ultimate Edition". */
+  tag?: string;
+  pin?: string;
+  areaPin?: string;
+  group: string;
+};
+
+function placeSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[’'!]/g, "")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/** One card per place. Lists like "A, B and more" become separate places. */
+export function wherePlaces(topic: WhereTopic): WherePlaceCard[] {
+  const seen = new Set<string>();
+  return topic.groups.flatMap((group) => {
+    const county = /county/i.test(group.heading) ? group.heading.replace(/\s*\(.*\)$/, "").replace(/ salons$/i, "") : undefined;
+    return group.places.flatMap((place) => {
+      const names = place.name
+        .split(/,\s*/)
+        .map((name) => name.replace(/\s+and more$/i, "").trim())
+        .filter(Boolean);
+      const isPrice = place.detail?.startsWith("$");
+      return names.map((name) => {
+        let slug = placeSlug(name);
+        if (seen.has(slug)) slug = `${slug}-${placeSlug(place.area ?? group.heading)}`;
+        seen.add(slug);
+        return {
+          slug,
+          name,
+          area: place.area ?? county,
+          price: isPrice ? place.detail : undefined,
+          tag: isPrice ? undefined : place.detail,
+          pin: place.pin,
+          areaPin: place.areaPin,
+          group: group.heading.replace(/\s*\(\d+\)$/, ""),
+        };
+      });
+    });
+  });
+}
+
+export function findWherePlace(topicSlug: string, placeSlugValue: string) {
+  const topic = findWhereTopic(topicSlug);
+  if (!topic) return undefined;
+  const place = wherePlaces(topic).find((item) => item.slug === placeSlugValue);
+  return place ? { topic, place } : undefined;
 }

@@ -30,6 +30,7 @@ export default async function MoneyMethodPage({ params }: Props) {
       sectionLabel="Money methods"
       sectionHref="/money-methods"
       entry={entry}
+      siblings={moneyMethods}
     />
   );
 }

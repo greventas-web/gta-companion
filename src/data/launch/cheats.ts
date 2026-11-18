@@ -68,3 +68,32 @@ export const cheats: LaunchEntry[] = cheatGroups.map((group) => {
     ],
   };
 });
+
+export function cheatSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/^\$/, "money-")
+    .replace(/[’',]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export function groupForCheat(category: CheatCategory) {
+  return cheatGroups.find((group) => group.category === category)!;
+}
+
+/** Every single cheat with its own page: /cheats/<group>/<cheat>. */
+export function cheatPages() {
+  return cheatList.map((cheat) => ({ group: groupForCheat(cheat.category), cheat, slug: cheatSlug(cheat.name) }));
+}
+
+export function findCheat(groupSlug: string, slug: string) {
+  return cheatPages().find((entry) => entry.group.slug === groupSlug && entry.slug === slug);
+}
+
+const ARROWS: Record<string, string> = { Up: "↑", Down: "↓", Left: "←", Right: "→" };
+
+/** "↑ → ↓ ←" for a D-pad code. */
+export function arrowCode(code?: string[]) {
+  return code ? code.map((step) => ARROWS[step] ?? step).join(" ") : "";
+}

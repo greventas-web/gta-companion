@@ -22,7 +22,7 @@ import { stores } from "@/data/stores";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { vehicleCounts } from "@/src/data/launch/launch-facts";
-import { confirmedWeapons, weapons } from "@/data/weapons";
+import { weapons } from "@/data/weapons";
 
 import CategoryCard from "../cards/CategoryCard";
 
@@ -80,7 +80,7 @@ const cards = [
     title: "Weapons",
     href: "/weapons",
     image: "/images/official/categories/weapons.webp",
-    count: `${confirmedWeapons.length} named · ${weapons.length} listed`,
+    count: `${weapons.length}`,
     icon: Crosshair,
   },
   {
@@ -114,11 +114,8 @@ export default function CategoryGridSection() {
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
-              Databases
+              Browse
             </h2>
-            <p className="mt-2 max-w-xl text-zinc-400">
-              Open one list. Each subject has its own page.
-            </p>
           </div>
         </div>
 

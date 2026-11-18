@@ -1,225 +1,61 @@
-import Link from "next/link";
-
-import ItemImage, { isNameCard } from "@/components/ItemImage";
-import RepresentativeMark from "@/components/RepresentativeMark";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import Breadcrumb from "@/components/Breadcrumb";
 import ViewOnMap from "@/components/map/ViewOnMap";
-import ActivityCard from "@/components/ActivityCard";
-
-import { SourceList } from "@/components/SourceLink";
-import { IMAGE_CREDIT } from "@/lib/site";
+import PageShell from "@/components/PageShell";
+import SimpleDetail from "@/components/simple/SimpleDetail";
 import { activities } from "@/data/activities";
+import { staticMapHref } from "@/lib/map/catalog";
 import { detailMetadata } from "@/lib/pages";
-import type { Metadata } from "next";
+import { shortText } from "@/lib/simple/text";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+type Props = { params: Promise<{ slug: string }> };
+
+const items = activities;
 
 export function generateStaticParams() {
-  return activities.map((activity) => ({ slug: activity.slug }));
+  return items.map((item) => ({ slug: item.slug }));
 }
 
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const activity = activities.find((item) => item.slug === slug);
-
-  if (!activity) {
-    return {};
-  }
-
-  return detailMetadata(activity.name, activity.description);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) return {};
+  return detailMetadata(item.name, shortText(item.description, 2) || item.name);
 }
 
-export default async function ActivityPage({
-  params,
-}: Props) {
+export default async function ActivitiesDetailPage({ params }: Props) {
   const { slug } = await params;
-
-  const activity = activities.find(
-    (a) => a.slug === slug
-  );
-
-  if (!activity) {
-    notFound();
-  }
-
-  const relatedActivities = activities
-    .filter(
-      (a) =>
-        a.category === activity.category &&
-        a.slug !== activity.slug
-    )
-    .slice(0, 3);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) notFound();
+  
+  const map = staticMapHref("activity", item.slug);
+  const related = items.filter((entry) => entry.slug !== item.slug && entry.category === item.category).slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-black text-white">
-
-      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-44">
-
-        <Breadcrumb
-          items={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "Activities",
-              href: "/activities",
-            },
-            {
-              label: activity.name,
-            },
-          ]}
-        />
-
-        <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
-
-          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black">
-
-            <div className="relative aspect-[3/4]">
-
-              <ItemImage
-                src={activity.image}
-                alt={activity.imageAlt || activity.name}
-                name={activity.name}
-                fill
-                priority
-                className="object-cover"
-              />
-              <RepresentativeMark show={activity.imageRepresentative} />
-
-              {isNameCard(activity.image) ? null : (
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              )}
-
-            </div>
-            {isNameCard(activity.image) ? null : (
-              <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-                {IMAGE_CREDIT}
-              </p>
-            )}
-
-          </div>
-
-          <div>
-
-            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.25em] text-pink-400">
-              {activity.category}
-            </span>
-
-            <h1 className="mt-8 break-words text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-              {activity.name}
-            </h1>
-
-            <p className="mt-8 text-xl leading-9 text-zinc-400">
-              {activity.description}
-            </p>
-            <ViewOnMap entityType="activity" entitySlug={activity.slug} />
-
-            {activity.related && activity.related.length > 0 ? (
-              <div className="mt-6 flex flex-wrap gap-3">
-                {activity.related.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="rounded-full border border-violet-400/40 bg-violet-500/15 px-4 py-2 text-sm font-semibold text-violet-100 transition hover:bg-violet-500/25"
-                  >
-                    {link.title}
-                  </Link>
-                ))}
-              </div>
-            ) : null}
-
-            {activity.sources && activity.sources.length > 0 ? (
-              <SourceList sources={activity.sources} className="mt-6" />
-            ) : null}
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2">
-
-              <Info
-                label="Category"
-                value={activity.category}
-              />
-
-              <Info
-                label="Location"
-                value={activity.location}
-              />
-
-              <Info
-                label="First Appearance"
-                value={activity.firstAppearance}
-              />
-
-              <Info
-                label="Status"
-                value="Confirmed"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {relatedActivities.length > 0 ? (
-        <section className="mt-28">
-
-          <h2 className="text-5xl font-black">
-            Related Activities
-          </h2>
-
-          <p className="mt-3 text-zinc-400">
-            More activities from the same category.
-          </p>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {relatedActivities.map((activity) => (
-
-              <ActivityCard
-                key={activity.id}
-                activity={activity}
-              />
-
-            ))}
-
-          </div>
-
-        </section>
-        ) : null}
-
-      </section>
-
-    </main>
-  );
-}
-
-function Info({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
-
-      <p className="text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-        {label}
-      </p>
-
-      <h3 className="mt-3 text-2xl font-black">
-        {value}
-      </h3>
-
-    </div>
+    <PageShell>
+      <SimpleDetail
+        crumbs={[{ label: "Home", href: "/" }, { label: 'Activities', href: "/activities" }, { label: item.name }]}
+        eyebrow={undefined}
+        title={item.name}
+        image={item.image}
+        imageAlt={item.imageAlt}
+        summary={item.description}
+        facts={[{ label: "Type", value: item.category }, { label: "Where", value: (item.location && !/not published/i.test(item.location) ? item.location : undefined) ?? "" }]}
+        mapHref={map}
+        
+        related={related.map((entry) => ({
+          href: `/activities/${entry.slug}`,
+          title: entry.name,
+          image: entry.image,
+          small: true,
+        }))}
+      >
+        {map ? null : <ViewOnMap entityType="activity" entitySlug={item.slug} />}
+        
+      </SimpleDetail>
+    </PageShell>
   );
 }

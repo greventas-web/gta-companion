@@ -1,20 +1,56 @@
-import Link from "next/link";
-
-import CitedNotes from "@/components/CitedNotes";
 import JsonLd from "@/components/JsonLd";
-import VehicleDatabase from "@/components/VehicleDatabase";
-import PageCTA from "@/components/PageCTA";
-import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simple/SimpleCard";
 import { vehicles } from "@/data/vehicles";
 import { pageMetadata } from "@/lib/launch";
+import { vehicleImages } from "@/lib/media/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { vehicleCounts } from "@/src/data/launch/launch-facts";
+import type { Vehicle } from "@/types/vehicle";
 
 export const metadata = pageMetadata(
   "GTA 6 Cars List",
-  `Unofficial GTA 6 cars list: ${vehicleCounts.total} vehicles confirmed at launch (${vehicleCounts.baseModels} base models and ${vehicleCounts.standout} Standout vehicles), plus named entries in the database, with sources.`
+  `Unofficial GTA 6 cars list: ${vehicleCounts.total} vehicles in the game (${vehicleCounts.baseModels} base models and ${vehicleCounts.standout} Standout vehicles), with pictures and where to get them.`
 );
+
+const ORDER = ["Super", "Sports", "Muscle", "Sedan", "SUV", "Off-Road", "Bike", "Boat", "Aircraft", "Emergency", "Service", "Industrial", "Military", "Other"];
+
+function plural(category: string) {
+  if (category === "Other") return "More vehicles";
+  if (category === "Military" || category === "Emergency" || category === "Industrial" || category === "Service" || category === "Off-Road") return category;
+  if (category === "Super") return "Supercars";
+  if (category === "Sports") return "Sports cars";
+  if (category === "Muscle") return "Muscle cars";
+  if (category === "Aircraft") return "Aircraft";
+  return `${category}s`;
+}
+
+function anchor(category: string) {
+  return plural(category).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+function card(vehicle: Vehicle) {
+  const photo = vehicleImages(vehicle)[0];
+  return (
+    <SimpleCard
+      key={vehicle.slug}
+      href={`/vehicles/${vehicle.slug}`}
+      title={vehicle.name}
+      image={photo}
+      imageAlt={vehicle.imageAlt}
+      eyebrow={vehicle.manufacturer}
+      price={vehicle.price}
+      small
+    />
+  );
+}
+
+const confirmed = vehicles.filter((vehicle) => vehicle.status === "Confirmed");
+const expected = vehicles.filter((vehicle) => vehicle.status !== "Confirmed");
+const categories = [...ORDER, ...new Set(confirmed.map((v) => v.category).filter((c) => !ORDER.includes(c)))];
+const groups = categories
+  .map((category) => ({ category, items: confirmed.filter((vehicle) => vehicle.category === category) }))
+  .filter((group) => group.items.length > 0);
 
 export default function VehiclesPage() {
   return (
@@ -23,61 +59,43 @@ export default function VehiclesPage() {
         data={itemListJsonLd(
           "GTA 6 vehicles",
           "/vehicles",
-          vehicles.map((vehicle) => ({
-            name: vehicle.name,
-            url: `/vehicles/${vehicle.slug}`,
-          }))
+          vehicles.map((vehicle) => ({ name: vehicle.name, url: `/vehicles/${vehicle.slug}` }))
         )}
       />
-      <PageHero
-        badge="Unofficial fan database"
-        title="Vehicle Database"
-        description={`${vehicleCounts.total} vehicles are confirmed in the game: ${vehicleCounts.baseModels} base models and ${vehicleCounts.standout} Standout vehicles. Named entries in the database are shown below, with sources. Last updated November 18, 2026.`}
-      />
+      <SimpleHero title="Vehicles" image="/images/official/categories/vehicles.webp" />
 
-      <CitedNotes
-        eyebrow="Confirmed at launch"
-        title={`${vehicleCounts.total} vehicles in the game`}
-        intro="Totals from the in-game Progress menu (Map > Progress > Vehicles), reported by launch-day guides."
-        notes={[
-          {
-            title: `${vehicleCounts.baseModels} base models`,
-            body: `Everyday vehicles you find in traffic, split into cars, bikes, watercraft, aircraft, and service vehicles. Scan them with the WAiNK phone app to log them. ${vehicleCounts.neededFor100} base models count toward 100% completion.`,
-            source: vehicleCounts.sources[0],
-            sources: vehicleCounts.sources,
-          },
-          {
-            title: `${vehicleCounts.standout} Standout vehicles`,
-            body: "Unique custom vehicles in fixed places, grouped into styles. One group, Girlypop, has 16 vehicles, and finding all of them unlocks a cheat filter. They do not count toward the 100% base-model goal.",
-            source: vehicleCounts.sources[0],
-            sources: vehicleCounts.sources,
-          },
+      <QuickFacts
+        facts={[
+          { label: "In the game", value: `${vehicleCounts.total}` },
+          { label: "Base models", value: `${vehicleCounts.baseModels}` },
+          { label: "Standout", value: `${vehicleCounts.standout}` },
+          { label: "For 100%", value: `${vehicleCounts.neededFor100} scans` },
         ]}
       />
 
-      <p className="mt-6 text-zinc-400">
-        More on the{" "}
-        <Link
-          href="/girlypop"
-          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
-        >
-          Girlypop vehicles cheat filter
-        </Link>
-        {" · "}
-        <Link
-          href="/gta-6-apps"
-          className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
-        >
-          WAiNK and Scooter Bros
-        </Link>
-      </p>
+      <nav className="mt-8 flex flex-wrap gap-2">
+        {groups.map((group) => (
+          <a
+            key={group.category}
+            href={`#${anchor(group.category)}`}
+            className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-zinc-200 transition hover:border-violet-400/40"
+          >
+            {plural(group.category)} <span className="text-zinc-500">{group.items.length}</span>
+          </a>
+        ))}
+      </nav>
 
-      <VehicleDatabase />
+      {groups.map((group) => (
+        <CardGrid key={group.category} id={anchor(group.category)} heading={plural(group.category)} count={group.items.length} dense>
+          {group.items.map(card)}
+        </CardGrid>
+      ))}
 
-      <PageCTA
-        title="Only named vehicles are marked confirmed"
-        description="Speeds, prices, and engines are left blank until Rockstar publishes them."
-      />
+      {expected.length > 0 ? (
+        <CardGrid id="not-seen-yet" heading="Not seen in the game yet" count={expected.length} dense>
+          {expected.map(card)}
+        </CardGrid>
+      ) : null}
     </PageShell>
   );
 }

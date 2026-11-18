@@ -11,7 +11,7 @@ type Props = {
 
 export default function SpoilerReveal({
   children,
-  summary = "The official description and any stated rewards stay hidden so this page does not spoil the job.",
+  summary = "Hidden so it doesn't spoil the job. Tap to show.",
   showLabel = "Show official description",
   hideLabel = "Hide official description",
 }: Props) {

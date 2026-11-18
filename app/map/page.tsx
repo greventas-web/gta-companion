@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import MapLoader, { MapLoading } from "@/components/map/community/MapLoader";
 import { getStaticPins } from "@/lib/map/catalog";
 import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
-import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 const title = "GTA 6 Map – Every Location (Interactive)";
 const description =
@@ -58,8 +58,7 @@ export default function MapPage() {
             <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Leonida map</h1>
           </div>
           <p className="max-w-xl min-w-0 text-xs leading-5 text-zinc-400">
-            {SITE.name} map for Grand Theft Auto VI. {UNOFFICIAL_DISCLAIMER} Map tiles and
-            landmarks by{" "}
+            Map tiles and landmarks by{" "}
             <a className="text-violet-200 underline" href="https://gtadb.org">
               gtadb.org and all contributors
             </a>{" "}
@@ -73,7 +72,7 @@ export default function MapPage() {
           </Suspense>
         </div>
 
-        <WhereToFindLinks className="mt-6" title="Where to find it: quick lists with map pins" />
+        <WhereToFindLinks className="mt-6" title="Where to find" />
       </div>
     </main>
   );

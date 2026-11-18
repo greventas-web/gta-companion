@@ -24,9 +24,9 @@ const baseWeapons: Weapon[] = [
     category: "Handgun",
     image: "/images/official/weapons/hawk-little-morgan.webp",
     description:
-      "Rockstar includes a matching pair of Hawk & Little Morgan Revolvers with the Ultimate Edition. The published images show engraved metal. Rockstar has not published a caliber.",
+      "A matching pair of engraved revolvers that comes with the Ultimate Edition.",
     firstAppearance: "Ultimate Edition",
-    ammunition: "Not published",
+    ammunition: "",
     status: "Confirmed",
     gallery: [],
     source: rockstar,
@@ -39,9 +39,9 @@ const baseWeapons: Weapon[] = [
     category: "Handgun",
     image: "/images/official/weapons/girardi-es9.webp",
     description:
-      "Rockstar names the Girardi ES9 as Jason's engraved pistol in the Ultimate Edition. A caliber has not been published.",
+      "Jason's pistol. The Ultimate Edition gives him an engraved version.",
     firstAppearance: "Ultimate Edition",
-    ammunition: "Not published",
+    ammunition: "",
     status: "Confirmed",
     gallery: [],
     source: rockstar,
@@ -54,9 +54,9 @@ const baseWeapons: Weapon[] = [
     category: "Handgun",
     image: "/images/official/weapons/klose-k17.webp",
     description:
-      "Rockstar names the Klose K17 as Lucia's engraved pistol in the Ultimate Edition. A caliber has not been published.",
+      "Lucia's pistol. The Ultimate Edition gives her an engraved version.",
     firstAppearance: "Ultimate Edition",
-    ammunition: "Not published",
+    ammunition: "",
     status: "Confirmed",
     gallery: [],
     source: rockstar,
@@ -83,13 +83,13 @@ function howToGet(weapon: LaunchWeapon): {
   switch (weapon.how) {
     case "gearup":
       return {
-        text: `Sold at Ammu-Nation. In the Chapter 1 mission Gear Up, Jason can buy it for ${weapon.price} at Chuck's Tackle & Shot in Key Lento, his first gun store, as his choice of longarm.`,
+        text: `Sold at Ammu-Nation. In the Chapter 1 mission Gear Up, Jason can pick it as his first longarm at Chuck's Tackle & Shot in Key Lento for ${weapon.price}.`,
         links: [GUN_STORES],
         sources: [src.beebomGearUp, src.powerpyxGearUp],
       };
     case "expanded":
       return {
-        text: `Sold only at the six Expanded Ammu-Nations: Big Shots (Hamlet), Woodhatch (Capri), Phil's Ammu-Nation, Black Eagle, Iron & Oak, and Prestige Firearms (Ocean Beach).${weapon.price ? ` Price: ${weapon.price}.` : ""}`,
+        text: "Only at the six Expanded Ammu-Nations.",
         links: [GUN_STORES, EXPANDED_PIN],
         sources: [
           weapon.category === "Sniper Rifle" ? src.powerpyxSniper : weapon.category === "Launcher" ? src.powerpyxLaunchers : src.powerpyxAmmuNation,
@@ -98,25 +98,25 @@ function howToGet(weapon: LaunchWeapon): {
       };
     case "expanded+cheat":
       return {
-        text: `Sold for ${weapon.price} at the six Expanded Ammu-Nations. After the story, the Hauners H-AT cheat (unlocked by blowing up 100 vehicles) also adds one to your loadout.`,
+        text: "Buy it at any of the six Expanded Ammu-Nations. After the story, blow up 100 vehicles to unlock a cheat that gives you one.",
         links: [GUN_STORES, EXPANDED_PIN, CHEATS],
         sources: [src.powerpyxLaunchers, src.powerpyxCheats, src.gamesradarCheats],
       };
     case "cheat-shotgun":
       return {
-        text: "The Explosive Shotgun cheat adds a Mason & Keen Shortstraw that fires explosive shells. Cheats work only after the story, and this one unlocks after you hit 100 enemies with explosive damage.",
+        text: "Comes from the Explosive Shotgun cheat, which fires explosive shells. Hit 100 enemies with explosive damage to unlock it. Cheats only work after the story.",
         links: [CHEATS, GUN_STORES],
         sources: [src.powerpyxCheats, src.gamesradarCheats],
       };
     case "bret":
       return {
-        text: `Sold for ${weapon.price} at Expanded Ammu-Nations once you finish Bret Vogel's 9th hunting quest. His questline starts in Chapter 2 with the optional mission Veteran Hunted (Meet Bret).`,
+        text: "Unlocks at Expanded Ammu-Nations after Bret Vogel's 9th hunting quest. His quests start in Chapter 2 with the side mission Veteran Hunted.",
         links: [GUN_STORES, EXPANDED_PIN],
         sources: [src.powerpyxSniper],
       };
     case "ue":
       return {
-        text: "An Ultimate Edition reward, sold as a matching pair for Jason and Lucia.",
+        text: "Comes with the Ultimate Edition, as a matching pair for Jason and Lucia.",
         links: [{ href: "/where-to-find/gun-stores", label: "Gun stores" }],
         sources: [{ label: "Rockstar Games, editions", href: "https://www.rockstargames.com/VI/editions" }, src.dayOneWeapons],
       };
@@ -126,7 +126,7 @@ function howToGet(weapon: LaunchWeapon): {
         ? "After the story, throwing 100 molotovs unlocks the Exploding Bottles cheat."
         : "After the story, throwing 100 grenades unlocks the All Explosive Weapons cheat.";
       return {
-        text: `PowerPyx says melee weapons and explosives can be bought at Ammu-Nation, or picked up if an enemy drops one, and that they count toward the standard-issue weapons list. A price and a specific store tier for the ${weapon.name} have not been published yet. ${cheat}`,
+        text: `Buy it at Ammu-Nation or grab one when an enemy drops it. ${cheat}`,
         links: [GUN_STORES, CHEATS, { href: "/where-to-find/melee-and-explosives", label: "Melee and explosives" }],
         sources: [src2.powerpyxHundred, src.powerpyxAmmuNation, src.insiderWeapons, src.powerpyxCheats, src.gamesradarCheats],
       };
@@ -134,7 +134,7 @@ function howToGet(weapon: LaunchWeapon): {
     case "jason":
     case "lucia":
       return {
-        text: `${weapon.how === "jason" ? "Jason" : "Lucia"}'s pistol. The Ultimate Edition adds an engraved version; personalized pistol decals become available at an Ammu-Nation after Coffee Break starts.`,
+        text: `${weapon.how === "jason" ? "Jason" : "Lucia"}'s pistol. The Ultimate Edition adds an engraved version, and Ammu-Nation sells personal decals for it once the mission Coffee Break starts.`,
         links: [GUN_STORES],
         sources: [
           { label: "Rockstar Games, editions", href: "https://www.rockstargames.com/VI/editions" },
@@ -144,7 +144,7 @@ function howToGet(weapon: LaunchWeapon): {
       };
     default:
       return {
-        text: "Ammu-Nation gun stores sell weapons, ammo, body armor, and parachutes, and stock depends on the store tier (Limited, Standard, Hunting, or Expanded). Which branches carry this one has not been published yet.",
+        text: "Sold at Ammu-Nation gun stores. Bigger stores carry more guns.",
         links: [GUN_STORES],
         sources: [src.powerpyxAmmuNation],
       };
@@ -154,17 +154,15 @@ function howToGet(weapon: LaunchWeapon): {
 function describe(weapon: LaunchWeapon) {
   if (weapon.category === "Explosives" || weapon.category === "Melee") {
     const kind = (weapon.type ?? weapon.category).toLowerCase();
-    return `The ${weapon.name} is a ${kind} in Grand Theft Auto VI. A launch-day guide has not published a manufacturer or stat card for it yet.`;
+    return `A ${kind} you can buy at Ammu-Nation or take from enemies.`;
   }
   const kind = (weapon.type ?? weapon.category).toLowerCase();
   const fire = weapon.fireMode ? `${weapon.fireMode.toLowerCase()} ` : "";
   const cal = weapon.caliber ? `${weapon.caliber} ` : "";
-  const lead = `The ${weapon.name} is ${article(fire || cal || kind)} ${fire}${cal}${kind} made by ${weapon.manufacturer} in Grand Theft Auto VI.`;
-  const mag = weapon.magazine ? ` It holds ${weapon.magazine} round${weapon.magazine === 1 ? "" : "s"}.` : "";
-  const stats = weapon.stats
-    ? ` Its in-game stat card reads damage ${weapon.stats.damage.toFixed(1)}, accuracy ${weapon.stats.accuracy.toFixed(1)}, handling ${weapon.stats.handling.toFixed(1)}, and range ${weapon.stats.range.toFixed(1)} out of 10.`
-    : " Its stat card has not been published yet.";
-  const price = weapon.price ? ` Ammu-Nation price: ${weapon.price}.` : "";
+  const lead = `${article(fire || cal || kind) === "an" ? "An" : "A"} ${fire}${cal}${kind} made by ${weapon.manufacturer}.`;
+  const mag = weapon.magazine ? ` Holds ${weapon.magazine} round${weapon.magazine === 1 ? "" : "s"}.` : "";
+  const stats = "";
+  const price = weapon.price ? ` Costs ${weapon.price} at Ammu-Nation.` : "";
   return `${lead}${mag}${stats}${price}`;
 }
 
@@ -186,7 +184,7 @@ function toWeapon(weapon: LaunchWeapon, id: number, base?: Weapon): Weapon {
     imageRepresentative: base?.imageRepresentative,
     description: describe(weapon),
     firstAppearance: base?.firstAppearance ?? "Grand Theft Auto VI",
-    ammunition: weapon.caliber ?? "Not published",
+    ammunition: weapon.caliber ?? "",
     status: "Confirmed",
     gallery: base?.gallery ?? [],
     source: sources[0]?.href,
@@ -250,12 +248,12 @@ export const weapons: Weapon[] = [
           id: 10000 + index,
           slug: entry.slug,
           name: entry.name ?? entry.slug,
-          manufacturer: entry.manufacturer ?? "Not shown",
+          manufacturer: entry.manufacturer ?? "",
           category: entry.category ?? "Other",
           image: "",
           description: "",
           firstAppearance: "Grand Theft Auto VI gameplay",
-          ammunition: "Not shown",
+          ammunition: "",
           status: "Confirmed",
           gallery: [],
         },
@@ -271,3 +269,12 @@ export const confirmedWeapons = weapons.filter(
 export const unconfirmedWeapons = weapons.filter(
   (weapon) => weapon.status !== "Confirmed"
 );
+
+/** One short line for weapon cards. */
+export function weaponLine(weapon: Weapon): string {
+  const kind = weapon.type ?? weapon.category;
+  const bits = [weapon.caliber ? `${weapon.caliber} ${kind.toLowerCase()}` : kind];
+  if (weapon.magazine) bits.push(`${weapon.magazine}-round mag`);
+  if (weapon.fireMode) bits.push(weapon.fireMode.toLowerCase());
+  return bits.join(" · ");
+}

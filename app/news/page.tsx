@@ -1,55 +1,44 @@
-import NewsDatabase from "@/components/NewsDatabase";
-import PageCTA from "@/components/PageCTA";
-import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
-import PageStats from "@/components/PageStats";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { news } from "@/data/news";
 import { pageMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   "GTA 6 news",
-  "Official Grand Theft Auto VI announcements from Rockstar Newswire: trailers, pre-load, music, and the launch gallery. Unofficial fan site."
+  "Unofficial GTA 6 news: trailers, launch, music and site updates."
 );
 
-export default function NewsPage() {
-  const categories = new Set(
-    news.map((article) => article.category)
-  ).size;
+function shortDate(date: string) {
+  const parsed = new Date(`${date}T12:00:00`);
+  if (Number.isNaN(parsed.getTime())) return date;
+  return parsed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
 
+export default function NewsPage() {
   return (
     <PageShell>
-
-      <PageHero
-        badge="Unofficial fan notes"
-        title="News"
-        description="Stay up to date with official GTA VI announcements, Rockstar Games Newswire posts, trailers, screenshots and every verified update as soon as it is released."
+      <JsonLd
+        data={itemListJsonLd(
+          "GTA 6 news",
+          "/news",
+          news.map((article) => ({ name: article.title, url: `/news/${article.slug}` }))
+        )}
       />
-
-      <PageStats
-        stats={[
-          {
-            value: news.length,
-            label: "News Articles",
-          },
-          {
-            value: categories,
-            label: "Categories",
-          },
-          {
-            value: "Official",
-            label: "Rockstar Sources",
-            accent: true,
-          },
-        ]}
-      />
-
-      <NewsDatabase />
-
-      <PageCTA
-        title="Never Miss A GTA VI Update"
-        description="Every official Rockstar announcement, trailer, screenshot and Newswire article will be added to GTA Companion with detailed summaries, media and related content."
-      />
-
+      <SimpleHero title="News" />
+      <CardGrid count={news.length}>
+        {news.map((article) => (
+          <SimpleCard
+            key={article.slug}
+            href={`/news/${article.slug}`}
+            title={article.title}
+            image={article.image}
+            imageAlt={article.imageAlt}
+            eyebrow={shortDate(article.date)}
+          />
+        ))}
+      </CardGrid>
     </PageShell>
   );
 }

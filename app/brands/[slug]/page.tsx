@@ -1,213 +1,61 @@
-import ItemImage, { isNameCard } from "@/components/ItemImage";
-import RepresentativeMark from "@/components/RepresentativeMark";
-import { IMAGE_CREDIT } from "@/lib/site";
-import Link from "next/link";
-
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import Breadcrumb from "@/components/Breadcrumb";
-
+import ViewOnMap from "@/components/map/ViewOnMap";
+import PageShell from "@/components/PageShell";
+import SimpleDetail from "@/components/simple/SimpleDetail";
 import { brands } from "@/data/brands";
-import { detailMetadata, sectionTitle } from "@/lib/pages";
-import type { Metadata } from "next";
+import { staticMapHref } from "@/lib/map/catalog";
+import { detailMetadata } from "@/lib/pages";
+import { shortText } from "@/lib/simple/text";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+type Props = { params: Promise<{ slug: string }> };
+
+const items = brands;
 
 export function generateStaticParams() {
-  return brands.map((brand) => ({ slug: brand.slug }));
+  return items.map((item) => ({ slug: item.slug }));
 }
 
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const brand = brands.find((item) => item.slug === slug);
-
-  if (!brand) {
-    return {};
-  }
-
-  return detailMetadata(sectionTitle(brand.name, "Brand"), brand.description);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) return {};
+  return detailMetadata(item.name, shortText(item.description, 2) || item.name);
 }
 
-export default async function BrandPage({
-  params,
-}: Props) {
+export default async function BrandsDetailPage({ params }: Props) {
   const { slug } = await params;
-
-  const brand = brands.find(
-    (b) => b.slug === slug
-  );
-
-  if (!brand) {
-    notFound();
-  }
-
-  const relatedBrands = brands
-    .filter(
-      (b) =>
-        b.category === brand.category &&
-        b.slug !== brand.slug
-    )
-    .slice(0, 3);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) notFound();
+  
+  const map = null;
+  const related = items.filter((entry) => entry.slug !== item.slug && true).slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-background text-white">
-
-      <section className="mx-auto max-w-7xl px-6 pb-20 pt-44">
-
-        <Breadcrumb
-          items={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "Brands",
-              href: "/brands",
-            },
-            {
-              label: brand.name,
-            },
-          ]}
-        />
-
-        <div className="mt-10 grid gap-14 lg:grid-cols-2">
-
-          <div>
-
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
-
-              <ItemImage
-                src={brand.image}
-                alt={brand.imageAlt || brand.name}
-                name={brand.name}
-                fill
-                priority
-                sizes="(max-width: 480px) 80vw, (max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <RepresentativeMark show={brand.imageRepresentative} />
-
-            </div>
-            {isNameCard(brand.image) ? null : (
-              <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-                {IMAGE_CREDIT}
-              </p>
-            )}
-
-          </div>
-
-          <div>
-
-            <span className="rounded-full bg-pink-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-400">
-              {brand.category}
-            </span>
-
-            <h1 className="mt-6 break-words text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-              {brand.name}
-            </h1>
-
-            <p className="mt-8 text-lg leading-8 text-zinc-400">
-              {brand.description}
-            </p>
-
-            <div className="mt-10 grid grid-cols-2 gap-5">
-
-              <Info
-                label="Category"
-                value={brand.category}
-              />
-
-              {brand.firstAppearance ? (
-                <Info
-                  label="First Appearance"
-                  value={brand.firstAppearance}
-                />
-              ) : null}
-
-              <Info
-                label="Status"
-                value={brand.status ?? "Not described by Rockstar"}
-              />
-
-              <Info
-                label="Database"
-                value="Fan notes"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {relatedBrands.length > 0 ? (
-        <div className="mt-24">
-
-          <h2 className="text-4xl font-bold">
-            Related Brands
-          </h2>
-
-          <p className="mt-2 text-zinc-400">
-            More brands from the same category.
-          </p>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {relatedBrands.map((related) => (
-
-              <Link
-                key={related.id}
-                href={`/brands/${related.slug}`}
-                className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-pink-500"
-              >
-
-                <h3 className="text-2xl font-bold">
-                  {related.name}
-                </h3>
-
-                <p className="mt-2 text-zinc-400">
-                  {related.category}
-                </p>
-
-              </Link>
-
-            ))}
-
-          </div>
-
-        </div>
-        ) : null}
-
-      </section>
-
-    </main>
-  );
-}
-
-function Info({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-
-      <p className="text-sm text-zinc-500">
-        {label}
-      </p>
-
-      <h3 className="mt-2 text-2xl font-bold">
-        {value}
-      </h3>
-
-    </div>
+    <PageShell>
+      <SimpleDetail
+        crumbs={[{ label: "Home", href: "/" }, { label: 'Brands', href: "/brands" }, { label: item.name }]}
+        eyebrow={item.category}
+        title={item.name}
+        image={item.image}
+        imageAlt={item.imageAlt}
+        summary={item.description}
+        facts={[{ label: "Type", value: item.category }]}
+        mapHref={map}
+        
+        related={related.map((entry) => ({
+          href: `/brands/${entry.slug}`,
+          title: entry.name,
+          image: entry.image,
+          small: true,
+        }))}
+      >
+        {map ? null : null}
+        
+      </SimpleDetail>
+    </PageShell>
   );
 }

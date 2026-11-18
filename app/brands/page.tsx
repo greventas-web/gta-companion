@@ -1,38 +1,49 @@
-import BrandDatabase from "@/components/BrandDatabase";
+import JsonLd from "@/components/JsonLd";
+import PageShell from "@/components/PageShell";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { brands } from "@/data/brands";
 import { pageMetadata } from "@/lib/launch";
-import PageHero from "@/components/PageHero";
+import { staticMapHref } from "@/lib/map/catalog";
+import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
-  "GTA 6 brands",
-  "Brands Rockstar has shown on screen or at an official Grand Theft Auto VI event. Unofficial fan site."
+  'GTA 6 brands',
+  'Unofficial GTA 6 brands seen in Leonida, with pictures.'
 );
+
+const items = brands;
+const groupNames = ["all"];
+const groups = groupNames
+  .map((name) => ({ name, list: items.filter((item) => "all" === name) }))
+  .filter((group) => group.list.length > 0);
 
 export default function BrandsPage() {
   return (
-    <main className="min-h-screen bg-[#040404] text-white">
-
-      <section className="relative overflow-hidden">
-
-        <div className="absolute left-[-220px] top-[-140px] h-[620px] w-[620px] rounded-full bg-pink-500/10 blur-[180px]" />
-
-        <div className="absolute right-[-220px] bottom-[-140px] h-[620px] w-[620px] rounded-full bg-violet-500/10 blur-[180px]" />
-
-        <div className="relative mx-auto max-w-[1700px] px-4 pb-10 pt-36 sm:px-8 sm:pt-44">
-
-          <PageHero
-            badge="Unofficial fan database"
-            title="Brands"
-            description="Brands Rockstar has shown on screen or at an official event. Official stills are credited. Stand-in stills are labelled Representative image."
-            image="/images/official/editions/ultimate_edition_electric_fang_01.webp"
-            imageAlt="Electric Fang Tattoo storefront"
-          />
-
-          <BrandDatabase />
-
-        </div>
-
-      </section>
-
-    </main>
+    <PageShell>
+      <JsonLd
+        data={itemListJsonLd(
+          'GTA 6 brands',
+          "/brands",
+          items.map((item) => ({ name: item.name, url: `/brands/${item.slug}` }))
+        )}
+      />
+      <SimpleHero title='Brands' />
+      {groups.map((group) => (
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+          {group.list.map((item) => (
+            <SimpleCard
+              key={item.slug}
+              href={`/brands/${item.slug}`}
+              title={item.name}
+              image={item.image}
+              eyebrow={item.category}
+              line={undefined}
+              mapHref={undefined}
+              small
+            />
+          ))}
+        </CardGrid>
+      ))}
+    </PageShell>
   );
 }

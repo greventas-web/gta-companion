@@ -15,11 +15,8 @@ export default function FeaturedNewsV2() {
 
         <div>
           <h2 className="text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
-            Latest notes
+            News
           </h2>
-          <p className="mt-2 max-w-xl text-zinc-400">
-            Short notes on public announcements.
-          </p>
         </div>
 
         <Link
@@ -76,10 +73,6 @@ export default function FeaturedNewsV2() {
               <h3 className="mt-3 break-words text-2xl font-black leading-tight text-white transition group-hover:text-pink-400">
                 {article.title}
               </h3>
-
-              <p className="mt-6 line-clamp-3 text-lg leading-8 text-zinc-400">
-                {article.summary}
-              </p>
 
               <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6">
 

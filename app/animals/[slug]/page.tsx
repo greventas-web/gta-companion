@@ -1,217 +1,61 @@
-import ItemImage, { isNameCard } from "@/components/ItemImage";
-import RepresentativeMark from "@/components/RepresentativeMark";
-import { SourceList } from "@/components/SourceLink";
-import { IMAGE_CREDIT } from "@/lib/site";
-import { rockstarVi } from "@/src/data/gameplay/confirmed";
-import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import Breadcrumb from "@/components/Breadcrumb";
 import ViewOnMap from "@/components/map/ViewOnMap";
-
+import PageShell from "@/components/PageShell";
+import SimpleDetail from "@/components/simple/SimpleDetail";
 import { animals } from "@/data/animals";
+import { staticMapHref } from "@/lib/map/catalog";
 import { detailMetadata } from "@/lib/pages";
-import type { Metadata } from "next";
+import { shortText } from "@/lib/simple/text";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+type Props = { params: Promise<{ slug: string }> };
+
+const items = animals;
 
 export function generateStaticParams() {
-  return animals.map((animal) => ({ slug: animal.slug }));
+  return items.map((item) => ({ slug: item.slug }));
 }
 
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const animal = animals.find((item) => item.slug === slug);
-
-  if (!animal) {
-    return {};
-  }
-
-  return detailMetadata(animal.name, animal.description);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) return {};
+  return detailMetadata(item.name, shortText(item.description, 2) || item.name);
 }
 
-export default async function AnimalPage({
-  params,
-}: Props) {
+export default async function AnimalsDetailPage({ params }: Props) {
   const { slug } = await params;
-
-  const animal = animals.find(
-    (a) => a.slug === slug
-  );
-
-  if (!animal) {
-    notFound();
-  }
-
-  const relatedAnimals = animals
-    .filter(
-      (a) =>
-        a.category === animal.category &&
-        a.slug !== animal.slug
-    )
-    .slice(0, 3);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) notFound();
+  
+  const map = staticMapHref("animal", item.slug);
+  const related = items.filter((entry) => entry.slug !== item.slug && true).slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-background text-white">
-
-      <section className="mx-auto max-w-7xl px-6 pb-20 pt-44">
-
-        <Breadcrumb
-          items={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "Animals",
-              href: "/animals",
-            },
-            {
-              label: animal.name,
-            },
-          ]}
-        />
-
-        <div className="mt-10 grid gap-14 lg:grid-cols-2">
-
-          <div>
-
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900">
-
-              <ItemImage
-                src={animal.image}
-                alt={animal.imageAlt || animal.name}
-                name={animal.name}
-                fill
-                className="object-cover"
-              />
-              <RepresentativeMark show={animal.imageRepresentative} />
-
-            </div>
-            {isNameCard(animal.image) ? null : (
-              <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-                {IMAGE_CREDIT}
-              </p>
-            )}
-
-          </div>
-
-          <div>
-
-            <span className="rounded-full bg-pink-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-pink-400">
-              {animal.category}
-            </span>
-
-            <h1 className="mt-6 break-words text-4xl font-extrabold sm:text-6xl">
-              {animal.name}
-            </h1>
-
-            <p className="mt-8 text-lg leading-8 text-zinc-400">
-              {animal.description}
-            </p>
-            <ViewOnMap entityType="animal" entitySlug={animal.slug} />
-            {animal.sources && animal.sources.length > 0 ? (
-              <SourceList sources={animal.sources} className="mt-4" />
-            ) : animal.status === "Shown in a Rockstar caption" ? (
-              <SourceList sources={[rockstarVi]} className="mt-4" />
-            ) : null}
-
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-              <Info
-                label="Category"
-                value={animal.category}
-              />
-
-              <Info
-                label="Habitat"
-                value={animal.habitat}
-              />
-
-              <Info
-                label="First Appearance"
-                value={animal.firstAppearance}
-              />
-
-              <Info
-                label="Status"
-                value={animal.status ?? "Shown in a Rockstar caption"}
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {relatedAnimals.length > 0 ? (
-        <div className="mt-24">
-
-          <h2 className="break-words text-4xl font-bold">
-            Related Animals
-          </h2>
-
-          <p className="mt-2 text-zinc-400">
-            More wildlife from the same category.
-          </p>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {relatedAnimals.map((related) => (
-
-              <Link
-                key={related.id}
-                href={`/animals/${related.slug}`}
-                className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:border-pink-500"
-              >
-
-                <h3 className="text-2xl font-bold">
-                  {related.name}
-                </h3>
-
-                <p className="mt-2 text-zinc-400">
-                  {related.habitat}
-                </p>
-
-              </Link>
-
-            ))}
-
-          </div>
-
-        </div>
-        ) : null}
-
-      </section>
-
-    </main>
-  );
-}
-
-function Info({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-
-      <p className="text-sm text-zinc-500">
-        {label}
-      </p>
-
-      <h3 className="mt-2 break-words text-2xl font-bold">
-        {value}
-      </h3>
-
-    </div>
+    <PageShell>
+      <SimpleDetail
+        crumbs={[{ label: "Home", href: "/" }, { label: 'Animals', href: "/animals" }, { label: item.name }]}
+        eyebrow={item.category}
+        title={item.name}
+        image={item.image}
+        imageAlt={item.imageAlt}
+        summary={item.description}
+        facts={[{ label: "Where", value: (item.habitat && !/not published/i.test(item.habitat) ? item.habitat : undefined) ?? "" }]}
+        mapHref={map}
+        
+        related={related.map((entry) => ({
+          href: `/animals/${entry.slug}`,
+          title: entry.name,
+          image: entry.image,
+          small: true,
+        }))}
+      >
+        {map ? null : <ViewOnMap entityType="animal" entitySlug={item.slug} />}
+        
+      </SimpleDetail>
+    </PageShell>
   );
 }

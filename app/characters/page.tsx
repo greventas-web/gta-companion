@@ -1,80 +1,49 @@
-import CharacterCard from "@/components/CharacterCard";
-import CitedNotes from "@/components/CitedNotes";
-import DatabaseSection from "@/components/DatabaseSection";
-import PageCTA from "@/components/PageCTA";
-import PageGrid from "@/components/PageGrid";
-import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
-
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { characters } from "@/data/characters";
 import { pageMetadata } from "@/lib/launch";
-import {
-  ignConsequencesQuote,
-  ignCoupleQuote,
-  ignEmpathy,
-  ignEmpathyQuote,
-} from "@/src/data/gameplay/confirmed";
-import {
-  characterPrintNotes,
-  guardianPrintIntro,
-} from "@/src/data/gameplay/guardian";
+import { staticMapHref } from "@/lib/map/catalog";
+import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
-  "GTA 6 characters",
-  "Official Grand Theft Auto VI character profiles for Jason Duval, Lucia Caminos, and the supporting cast Rockstar has named. Unofficial fan site."
+  'GTA 6 characters',
+  'Unofficial GTA 6 characters: Jason Duval, Lucia Caminos and the rest of the cast, with pictures.'
 );
+
+const items = characters;
+const groupNames = ["all"];
+const groups = groupNames
+  .map((name) => ({ name, list: items.filter((item) => "all" === name) }))
+  .filter((group) => group.list.length > 0);
 
 export default function CharactersPage() {
   return (
     <PageShell>
-      <PageHero
-        badge="Grand Theft Auto Characters"
-        title="Character Database"
-        description="The eight profiles Rockstar has published: Jason, Lucia, and six supporting characters, including Real Dimez. Last updated November 10, 2026."
+      <JsonLd
+        data={itemListJsonLd(
+          'GTA 6 characters',
+          "/characters",
+          items.map((item) => ({ name: item.name, url: `/characters/${item.slug}` }))
+        )}
       />
-
-      <DatabaseSection
-        eyebrow="Character Database"
-        title={`${characters.length} Characters`}
-      >
-        <PageGrid>
-          {characters.map((character) => (
-            <CharacterCard
-              key={character.id}
-              character={character}
+      <SimpleHero title='Characters' />
+      {groups.map((group) => (
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+          {group.list.map((item) => (
+            <SimpleCard
+              key={item.slug}
+              href={`/characters/${item.slug}`}
+              title={item.name}
+              image={item.image}
+              eyebrow={item.role}
+              line={undefined}
+              mapHref={staticMapHref("character", item.slug) ?? undefined}
+              small
             />
           ))}
-        </PageGrid>
-      </DatabaseSection>
-
-      <CitedNotes
-        eyebrow="Saturday magazine"
-        title="Jason and Lucia"
-        intro={guardianPrintIntro}
-        notes={[
-          ...characterPrintNotes,
-          {
-            title: "A younger couple",
-            body: ignCoupleQuote,
-            source: ignEmpathy,
-          },
-          {
-            title: "Empathy",
-            body: ignEmpathyQuote,
-            source: ignEmpathy,
-          },
-          {
-            title: "Consequences",
-            body: ignConsequencesQuote,
-            source: ignEmpathy,
-          },
-        ]}
-      />
-
-      <PageCTA
-        title="The Character Database Continues to Grow"
-        description="As Rockstar Games introduces new characters and expands the world of Grand Theft Auto VI, GTA Companion will continue adding verified profiles, artwork and detailed character information."
-      />
+        </CardGrid>
+      ))}
     </PageShell>
   );
 }
