@@ -5,6 +5,7 @@ import {
   ignBigInterview,
   type CitedSource,
 } from "@/src/data/gameplay/confirmed";
+import { launchSources } from "@/src/data/launch/launch-facts";
 
 export type PhoneItem = {
   slug: string;
@@ -76,8 +77,16 @@ export const phoneItems: PhoneItem[] = [
     details: [
       "Vice's write-up of the Edge interview says players use WAINK to locate specific vehicles that criminal fences want, and that a car's condition changes how much money you receive.",
       "In the IGN interview, Rob Nelson showed a scanner on the phone. He said it reports whether a car is locked, whether it has an alarm or a tracker, what it is worth at Pay 'n' Spray or a specialty fence, what it costs to register, and which tool it needs, such as a key cloner or a slim-jim. That passage does not call the scanner WAINK.",
+      "Confirmed at launch: you scan vehicles with WAiNK to log them in the Progress menu, and 200 base-model scans count toward 100% completion.",
+      "Confirmed at launch: WAiNK It scans also cover landmarks, curiosities, and sculptures. The trophy You WAiNKer! asks for WAiNK It at 100 locations.",
     ],
-    sources: [edgeViaVice, ignBigInterview],
+    sources: [
+      edgeViaVice,
+      ignBigInterview,
+      launchSources.cultrTrophies,
+      launchSources.gamespewTrophies,
+      launchSources.powerpyxHundred,
+    ],
     links: [
       { href: "/phone/scooter-bros", label: "Scooter Bros" },
       { href: "/vehicles", label: "Vehicles" },
@@ -98,8 +107,15 @@ export const phoneItems: PhoneItem[] = [
       "Rob Nelson told Famitsu the phone includes an app called Scooter Bros that delivers your car.",
       "Vice's report on the Edge interview says Scooter Bros brings your vehicles to you, including the weapons stored in the trunk.",
       "In the IGN interview, Nelson said you can call your personal vehicle at any time, and that purchased weapons are available in the back of that vehicle. He did not say the service name in that passage.",
+      "Confirmed at launch: you register vehicles to the Scooter Bros app. The trophy On the Spot asks you to register 10 vehicles.",
     ],
-    sources: [...famitsuAndTranslation, edgeViaVice, ignBigInterview],
+    sources: [
+      ...famitsuAndTranslation,
+      edgeViaVice,
+      ignBigInterview,
+      launchSources.cultrTrophies,
+      launchSources.gamespewTrophies,
+    ],
     links: [
       { href: "/phone/waink", label: "WAINK" },
       { href: "/vehicles", label: "Vehicles" },
@@ -143,20 +159,25 @@ export const phoneItems: PhoneItem[] = [
   },
   {
     slug: "banking-app",
-    name: "Banking app",
+    name: "BuckMe",
     group: "App",
     kind: "Banking app",
-    origin: "Interview",
+    origin: "Launch",
     related: "Money",
     summary:
-      "Famitsu lists a banking app. The same interview describes a bank account and the cash you lose when Wasted or Busted.",
+      "BuckMe is the banking app. Money in your BuckMe account is safer than the cash you carry.",
     description:
-      "Rob Nelson told Famitsu the phone includes a banking app. He also described a bank account and the cash you are carrying. Rockstar has not published the app's name.",
+      "Launch coverage names the banking app BuckMe. Story missions have you open an account and deposit cash at an ATM. Rob Nelson told Famitsu you lose the cash you carry when Wasted or Busted.",
     details: [
-      "The Famitsu interview lists a banking app among the phone apps and does not give it a product name.",
-      "Earlier in that interview, Nelson said you have a bank account in addition to the cash you are carrying. If you are Wasted or Busted, you lose the cash you are carrying, so he said you are better off depositing it somewhere safe. He did not say the banking app is the only way to deposit.",
+      "Confirmed at launch: the Chapter 1 story has a mission called Buck Me, followed by the tasks Deposit Cash Into BuckMe (at any ATM) and Save for the Future.",
+      "The Famitsu interview lists a banking app among the phone apps. Nelson said you have a bank account in addition to the cash you are carrying. If you are Wasted or Busted, you lose the cash you are carrying, so he said you are better off depositing it somewhere safe.",
     ],
-    sources: famitsuAndTranslation,
+    sources: [
+      launchSources.gtabaseMissions,
+      launchSources.powerpyxWalkthrough,
+      launchSources.beebomApps,
+      ...famitsuAndTranslation,
+    ],
     links: [{ href: "/money-methods", label: "Money" }],
   },
   {
