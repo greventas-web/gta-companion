@@ -36,6 +36,8 @@ const sectionRoutes = [
   ["data/guides.ts", "/guides"],
   ["data/manufacturers.ts", "/manufacturers"],
   ["src/data/launch/cheats.ts", "/cheats"],
+  ["src/data/missions/index.ts", "/missions"],
+  ["src/data/trophies/index.ts", "/trophies"],
   ["src/data/launch/fastest-cars.ts", "/fastest-cars"],
   ["src/data/launch/map-locations.ts", "/map-locations"],
   ["src/data/launch/money-methods.ts", "/money-methods"],

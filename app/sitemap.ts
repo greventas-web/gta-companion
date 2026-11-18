@@ -14,6 +14,8 @@ import { properties } from "@/data/properties";
 import { weapons } from "@/data/weapons";
 import { SITE } from "@/lib/site";
 import { cheats } from "@/src/data/launch/cheats";
+import { missions } from "@/src/data/missions";
+import { trophies } from "@/src/data/trophies";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
 import { mapLocations } from "@/src/data/launch/map-locations";
 import { moneyMethods } from "@/src/data/launch/money-methods";
@@ -25,6 +27,8 @@ const launchPaths = [
   ...fastestCars.map((entry) => `/fastest-cars/${entry.slug}`),
   ...mapLocations.map((entry) => `/map-locations/${entry.slug}`),
   ...cheats.map((entry) => `/cheats/${entry.slug}`),
+  ...missions.map((entry) => `/missions/${entry.slug}`),
+  ...trophies.map((entry) => `/trophies/${entry.slug}`),
 ];
 
 const detailPaths = [
@@ -59,6 +63,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/fastest-cars",
     "/map-locations",
     "/cheats",
+    "/missions",
+    "/trophies",
     "/launch",
     "/faq",
     "/partners",
