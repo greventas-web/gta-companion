@@ -14,6 +14,7 @@ const groups = [
       { title: "Locations", href: "/locations" },
       { title: "Businesses", href: "/businesses" },
       { title: "Stores", href: "/stores" },
+      { title: "Properties", href: "/properties" },
     ],
   },
   {
@@ -25,6 +26,8 @@ const groups = [
       { title: "Activities", href: "/activities" },
       { title: "Clothing", href: "/clothing" },
       { title: "Brands", href: "/brands" },
+      { title: "Collectibles", href: "/collectibles" },
+      { title: "Phone", href: "/phone" },
     ],
   },
   {
@@ -35,6 +38,7 @@ const groups = [
       { title: "News", href: "/news" },
       { title: "Media", href: "/media" },
       { title: "Timeline", href: "/timeline" },
+      { title: "Partners", href: "/partners" },
     ],
   },
   {

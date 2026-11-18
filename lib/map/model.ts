@@ -134,6 +134,8 @@ const DETAIL_PATH: Partial<Record<MapEntityType, (slug: string) => string>> = {
   vehicle: (slug) => `/vehicles/${slug}`,
   animal: (slug) => `/animals/${slug}`,
   character: (slug) => `/characters/${slug}`,
+  property: (slug) => `/properties/${slug}`,
+  safehouse: (slug) => `/properties/${slug}`,
 };
 
 const INDEX_PATH: Partial<Record<MapEntityType, string>> = {

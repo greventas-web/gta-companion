@@ -1,5 +1,7 @@
 import { clothing } from "@/data/clothing";
 import { news } from "@/data/news";
+import { phoneItems } from "@/data/phone";
+import { properties } from "@/data/properties";
 import { stores } from "@/data/stores";
 import { vehicles } from "@/data/vehicles";
 
@@ -42,5 +44,21 @@ export const searchIndex: SearchItem[] = [
     description: article.summary,
     category: "News",
     href: `/news/${article.slug}`,
+  })),
+
+  ...phoneItems.map((item) => ({
+    id: `phone-${item.slug}`,
+    title: item.name,
+    description: item.summary,
+    category: "Phone",
+    href: `/phone/${item.slug}`,
+  })),
+
+  ...properties.map((place) => ({
+    id: `property-${place.slug}`,
+    title: place.name,
+    description: place.summary,
+    category: "Property",
+    href: `/properties/${place.slug}`,
   })),
 ];

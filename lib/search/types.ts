@@ -11,7 +11,9 @@ export type SearchCategory =
   | "Animal"
   | "Activity"
   | "Guide"
-  | "News";
+  | "News"
+  | "Phone"
+  | "Property";
 
 export type SearchItem = {
   id: number;
