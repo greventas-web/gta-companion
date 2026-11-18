@@ -1,233 +1,61 @@
-import Image from "@/components/SafeImage";
-import { notFound } from "next/navigation";
-import {
-  BadgeCheck,
-  Calendar,
-  User,
-} from "lucide-react";
-
-import Breadcrumb from "@/components/Breadcrumb";
-import ViewOnMap from "@/components/map/ViewOnMap";
-import CharacterCard from "@/components/CharacterCard";
-
-import { SourceList } from "@/components/SourceLink";
-import { characters } from "@/data/characters";
-import { detailMetadata } from "@/lib/pages";
 import type { Metadata } from "next";
-import { IMAGE_CREDIT } from "@/lib/site";
-import { rockstarVi } from "@/src/data/gameplay/confirmed";
+import { notFound } from "next/navigation";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+import ViewOnMap from "@/components/map/ViewOnMap";
+import PageShell from "@/components/PageShell";
+import SimpleDetail from "@/components/simple/SimpleDetail";
+import { characters } from "@/data/characters";
+import { staticMapHref } from "@/lib/map/catalog";
+import { detailMetadata } from "@/lib/pages";
+import { shortText } from "@/lib/simple/text";
+
+type Props = { params: Promise<{ slug: string }> };
+
+const items = characters;
 
 export function generateStaticParams() {
-  return characters.map((character) => ({ slug: character.slug }));
+  return items.map((item) => ({ slug: item.slug }));
 }
 
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const character = characters.find((item) => item.slug === slug);
-
-  if (!character) {
-    return {};
-  }
-
-  return detailMetadata(character.name, character.description);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) return {};
+  return detailMetadata(item.name, shortText(item.description, 2) || item.name);
 }
 
-export default async function CharacterPage({
-  params,
-}: Props) {
+export default async function CharactersDetailPage({ params }: Props) {
   const { slug } = await params;
-
-  const character = characters.find(
-    (c) => c.slug === slug
-  );
-
-  if (!character) {
-    notFound();
-  }
-
-  const relatedCharacters = characters
-    .filter(
-      (c) =>
-        c.role === character.role &&
-        c.slug !== character.slug
-    )
-    .slice(0, 3);
+  const item = items.find((entry) => entry.slug === slug);
+  if (!item) notFound();
+  
+  const map = staticMapHref("character", item.slug);
+  const related = items.filter((entry) => entry.slug !== item.slug && true).slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-[#040404] text-white">
-
-      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-44">
-
-        <Breadcrumb
-          items={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "Characters",
-              href: "/characters",
-            },
-            {
-              label: character.name,
-            },
-          ]}
-        />
-
-        <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
-
-          <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
-
-            <div className="relative aspect-video">
-
-              <Image
-                src={character.image}
-                alt={character.name}
-                fill
-                priority
-                sizes="(max-width: 480px) 80vw, (max-width: 1280px) 100vw, 42vw"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-200">
-                {IMAGE_CREDIT}
-              </p>
-
-            </div>
-
-          </div>
-
-          <div>
-
-            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.3em] text-pink-400">
-              {character.role}
-            </span>
-
-            <h1 className="mt-8 break-words text-4xl font-black tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              {character.name}
-            </h1>
-
-            <p className="mt-8 max-w-4xl text-xl leading-9 text-zinc-400">
-              {character.description}
-            </p>
-            <ViewOnMap entityType="character" entitySlug={character.slug} />
-            {character.details?.map((detail) => (
-              <p key={detail} className="mt-6 max-w-4xl text-xl leading-9 text-zinc-300">
-                {detail}
-              </p>
-            ))}
-            <SourceList
-              className="mt-4"
-              sources={[rockstarVi, ...(character.sources ?? [])]}
-            />
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2">
-
-              <Info
-                icon={<BadgeCheck size={18} />}
-                label="Status"
-                value={character.status}
-              />
-
-              <Info
-                icon={<Calendar size={18} />}
-                label="First Appearance"
-                value={character.firstAppearance}
-              />
-
-              <Info
-                icon={<User size={18} />}
-                label="Role"
-                value={character.role}
-              />
-
-              <Info
-                icon={<BadgeCheck size={18} />}
-                label="Source"
-                value="Rockstar Games"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {relatedCharacters.length > 0 ? (
-        <section className="mt-28">
-
-          <div className="mb-12">
-
-            <div className="text-xs font-black uppercase tracking-[0.18em] text-pink-400 sm:tracking-[0.35em]">
-              Related Characters
-            </div>
-
-            <h2 className="mt-4 break-words text-4xl font-black sm:text-5xl">
-              Similar Characters
-            </h2>
-
-            <p className="mt-4 text-lg text-zinc-400">
-              More officially revealed GTA VI characters.
-            </p>
-
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {relatedCharacters.map((character) => (
-
-              <CharacterCard
-                key={character.id}
-                character={character}
-              />
-
-            ))}
-
-          </div>
-
-        </section>
-        ) : null}
-
-      </section>
-
-    </main>
-  );
-}
-
-function Info({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
-
-      <div className="flex items-center gap-3 text-pink-400">
-
-        {icon}
-
-        <span className="text-xs font-bold uppercase tracking-[0.25em]">
-          {label}
-        </span>
-
-      </div>
-
-      <h3 className="mt-4 text-2xl font-black text-white">
-        {value}
-      </h3>
-
-    </div>
+    <PageShell>
+      <SimpleDetail
+        crumbs={[{ label: "Home", href: "/" }, { label: 'Characters', href: "/characters" }, { label: item.name }]}
+        eyebrow={item.role}
+        title={item.name}
+        image={item.image}
+        imageAlt={undefined}
+        summary={item.description}
+        facts={[{ label: "Role", value: item.role }]}
+        mapHref={map}
+        
+        related={related.map((entry) => ({
+          href: `/characters/${entry.slug}`,
+          title: entry.name,
+          image: entry.image,
+          small: true,
+        }))}
+      >
+        {map ? null : <ViewOnMap entityType="character" entitySlug={item.slug} />}
+        
+      </SimpleDetail>
+    </PageShell>
   );
 }

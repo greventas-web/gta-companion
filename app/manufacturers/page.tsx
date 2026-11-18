@@ -1,33 +1,50 @@
-import ManufacturerDatabase from "@/components/ManufacturerDatabase";
-import { pageMetadata } from "@/lib/launch";
-import PageCTA from "@/components/PageCTA";
-import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { manufacturers } from "@/data/manufacturers";
+import { manufacturerListImage } from "@/lib/media/catalog";
+import { pageMetadata } from "@/lib/launch";
+import { staticMapHref } from "@/lib/map/catalog";
+import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
-  "GTA 6 manufacturers",
-  "Vehicle manufacturers in the Grand Theft Auto VI database, with the models Rockstar has named kept separate from fan identifications. Unofficial fan site."
+  'GTA 6 manufacturers',
+  'Unofficial GTA 6 vehicle makers, with their cars and pictures.'
 );
+
+const items = manufacturers;
+const groupNames = ["all"];
+const groups = groupNames
+  .map((name) => ({ name, list: items.filter((item) => "all" === name) }))
+  .filter((group) => group.list.length > 0);
 
 export default function ManufacturersPage() {
   return (
     <PageShell>
-
-      <PageHero
-        badge="Grand Theft Auto Manufacturers"
-        title="Manufacturer Database"
-        description="Browse automotive manufacturers from across the Grand Theft Auto universe. Discover their history, country of origin, vehicle lineups and officially confirmed GTA VI models."
-        image="/images/official/vehicles/vapid-stanier-1955.webp"
-        imageAlt="1955 Vapid Stanier"
+      <JsonLd
+        data={itemListJsonLd(
+          'GTA 6 manufacturers',
+          "/manufacturers",
+          items.map((item) => ({ name: item.name, url: `/manufacturers/${item.slug}` }))
+        )}
       />
-
-      <ManufacturerDatabase />
-
-      <PageCTA
-        title="The Manufacturer Database Continues to Grow"
-        description="As Rockstar Games introduces new automotive brands and officially confirms additional vehicles, GTA Companion will continue expanding this database with manufacturer history, logos, specifications and complete vehicle lineups."
-      />
-
+      <SimpleHero title='Manufacturers' />
+      {groups.map((group) => (
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+          {group.list.map((item) => (
+            <SimpleCard
+              key={item.slug}
+              href={`/manufacturers/${item.slug}`}
+              title={item.name}
+              image={manufacturerListImage(item)?.src}
+              eyebrow={item.country}
+              line={undefined}
+              mapHref={undefined}
+              small
+            />
+          ))}
+        </CardGrid>
+      ))}
     </PageShell>
   );
 }

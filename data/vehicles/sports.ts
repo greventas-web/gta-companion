@@ -135,7 +135,7 @@ export const sportsVehicles: Vehicle[] = [
     category: "Sports",
     image: "/images/official/vehicles/grotti-cheetah-1995.webp",
     description:
-      "Rockstar names this Ultimate Edition car as Grotti's mid-1990s sports car, an ode to Shore Drive, with a minimalist retro livery. It shows up later in Jason and Lucia's story. Rockstar has not published a top speed or an in-game price.",
+      "An Ultimate Edition mid-'90s Grotti sports car with a clean retro livery.",
     firstAppearance: "Ultimate Edition",
     status: "Named by Rockstar",
     gallery: [],

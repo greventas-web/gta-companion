@@ -1,10 +1,10 @@
 import { cheatSources } from "./batch1-sources";
 
+/** Short "how cheats work" rows. */
 export const cheatBasics = [
-  "Cheats only work after you finish the story. The Cheats list then appears in the Progress menu.",
-  "Each cheat also has its own unlock requirement, such as shooting range medals or challenges.",
-  "To enter a code, open the phone (D-pad Up), hold L1/LB, press R1/RB, then enter the D-pad sequence.",
-  "Using a cheat turns off trophies, achievements, and saving for that play session.",
+  { label: "When", value: "After the story" },
+  { label: "Enter a code", value: "Phone, hold L1/LB, press R1/RB, then the code" },
+  { label: "Catch", value: "No trophies or saving that session" },
 ] as const;
 
 export const cheatFaqs = [

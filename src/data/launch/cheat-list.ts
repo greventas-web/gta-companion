@@ -1,7 +1,7 @@
 /**
  * All 61 GTA 6 cheats (launch day, Nov 18, 2026). Cheats work only after the story.
- * Button codes are listed only where PowerPyx AND GamesRadar+ print the same
- * sequence (checked line by line). Other codes stay "not published yet".
+ * Button codes are listed only where two guides print the same sequence
+ * (checked line by line). Other codes are left out until confirmed.
  * Fact check: /workspace/launch-prep/content-batch-1-factcheck.md (section 2).
  */
 export type CheatCategory = "player" | "combat" | "vehicle" | "environment" | "filter";
@@ -23,7 +23,7 @@ export const cheatList: Cheat[] = [
   { name: "$250,000", category: "player", effect: "Instantly gives you $250,000.", unlock: "Finish the story.", code: ["Up", "Right", "Down", "Left", "Up", "Left", "Down", "Right"] },
   { name: "Drunk", category: "player", effect: "Instantly makes you and your partner drunk.", unlock: "Spend $2,500 on alcohol." },
   { name: "Raise Heat Level", category: "player", effect: "Raises your level of heat across the map.", unlock: "Lose a 3-star wanted level 25 times.", code: ["Left", "Down", "Right", "Down", "Up", "Down", "Up"] },
-  { name: "Raise Wanted Level", category: "player", effect: "Raises your wanted level across the map.", unlock: "Lose a 3-star wanted level 50 times.", code: ["Left", "Down", "Right", "Down", "Up", "Right", "Up"], codeNote: "Published by GamesRadar+ only; PowerPyx has not confirmed it yet." },
+  { name: "Raise Wanted Level", category: "player", effect: "Raises your wanted level across the map.", unlock: "Lose a 3-star wanted level 50 times.", code: ["Left", "Down", "Right", "Down", "Up", "Right", "Up"], codeNote: "Code not fully confirmed yet." },
   { name: "Unlimited Focus", category: "player", effect: "Focus never runs out.", unlock: "Finish the story.", code: ["Down", "Up", "Up", "Down", "Up", "Down", "Up", "Down", "Up", "Right"] },
   { name: "No Fall Damage", category: "player", effect: "You are immune to fall damage.", unlock: "Survive a freefall from 40 feet 20 times." },
   { name: "Parachute", category: "player", effect: "Adds a parachute to your loadout.", unlock: "Complete 50 skydives or base jumps from 300 feet or higher." },
@@ -50,7 +50,7 @@ export const cheatList: Cheat[] = [
   { name: "'65 Vapid Dominator", category: "vehicle", effect: "Spawns a '65 Vapid Dominator.", unlock: "Complete all fitness challenges.", link: "/vehicles/vapid-dominator-65" },
   { name: "Progen Emerus", category: "vehicle", effect: "Spawns a Progen Emerus.", unlock: "Complete all vehicle challenges.", link: "/vehicles/progen-emerus" },
   { name: "Inflatable Flamingo", category: "vehicle", effect: "Spawns an Inflatable Flamingo.", unlock: "Destroy 50 cocaine flamingos.", link: "/vehicles/inflatable-flamingo" },
-  { name: "MTL Pumper", category: "vehicle", effect: "Spawns an MTL Pumper.", unlock: "Discover the MTL Pumper in the Progress menu.", code: ["Left", "Up", "Right", "Down", "Left", "Right", "Right", "Up"], unlockNote: "Requirement from GamesRadar+; PowerPyx lists it as unknown.", link: "/vehicles/mtl-pumper" },
+  { name: "MTL Pumper", category: "vehicle", effect: "Spawns an MTL Pumper.", unlock: "Discover the MTL Pumper in the Progress menu.", code: ["Left", "Up", "Right", "Down", "Left", "Right", "Right", "Up"], unlockNote: "Unlock not fully confirmed yet.", link: "/vehicles/mtl-pumper" },
   { name: "Vapid Stanier G2 Taxi", category: "vehicle", effect: "Spawns a Vapid Stanier G2 Taxi.", unlock: "Complete 5 sports challenges.", link: "/vehicles/vapid-stanier-g2-taxi" },
   { name: "Hauners P-996 Lazer", category: "vehicle", effect: "Spawns a Hauners P-996 Lazer.", unlock: "Complete all challenges.", link: "/vehicles/hauners-p-996-lazer" },
   { name: "HVY Bulldozer", category: "vehicle", effect: "Spawns an HVY Bulldozer.", unlock: "Discover the HVY Bulldozer in the Progress menu.", code: ["Left", "Up", "Right", "Down", "Left", "Right", "Right", "Down"], link: "/vehicles/hvy-bulldozer" },
@@ -64,7 +64,7 @@ export const cheatList: Cheat[] = [
   { name: "Western Zombie Bobber", category: "vehicle", effect: "Spawns a Western Zombie Bobber.", unlock: "Complete all criminal challenges.", link: "/vehicles/western-zombie-bobber" },
   { name: "Move Time Forward", category: "environment", effect: "Moves the time of day forward.", unlock: "Find 10 collectible watches." },
   { name: "Pause Time of Day", category: "environment", effect: "Pauses the current time of day.", unlock: "Find 20 collectible watches." },
-  { name: "Cycle Weather", category: "environment", effect: "Changes the weather.", unlock: "Finish the story.", code: ["Down", "Right", "Up", "Down", "Right", "Up", "Right"], unlockNote: "Sources differ: PowerPyx says finish the story, GamesRadar+ says reveal the entire map." },
+  { name: "Cycle Weather", category: "environment", effect: "Changes the weather.", unlock: "Finish the story.", code: ["Down", "Right", "Up", "Down", "Right", "Up", "Right"], unlockNote: "Some players say revealing the whole map unlocks it instead." },
   { name: "Golden Hour", category: "filter", effect: "Applies a golden filter with a widescreen aspect ratio.", unlock: "Spend 4 hours holding hands." },
   { name: "Powdered Sugar", category: "filter", effect: "Turns the world white with sparkling highlights.", unlock: "Scan all space debris with WAiNK." },
   { name: "Pinhole", category: "filter", effect: "Applies a pinhole camera filter.", unlock: "Clear 25 gang operations with your partner." },

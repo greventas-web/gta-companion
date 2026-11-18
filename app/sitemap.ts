@@ -15,14 +15,17 @@ import { phoneItems } from "@/data/phone";
 import { properties } from "@/data/properties";
 import { weapons } from "@/data/weapons";
 import { SITE } from "@/lib/site";
-import { cheats } from "@/src/data/launch/cheats";
+import { cheatPages, cheats } from "@/src/data/launch/cheats";
 import { missions } from "@/src/data/missions";
 import { trophies } from "@/src/data/trophies";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
 import { mapLocations } from "@/src/data/launch/map-locations";
 import { moneyMethods } from "@/src/data/launch/money-methods";
-import { collectibleGuides } from "@/src/data/launch/collectible-guides";
-import { whereToFindTopics } from "@/src/data/launch/where-to-find";
+import { collectibleGuides, collectibleItemPages } from "@/src/data/launch/collectible-guides";
+import { whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
+import { shootingRanges } from "@/src/data/launch/shooting-ranges";
+import { ammuStores } from "@/lib/simple/ammu";
+import { stationPages } from "@/lib/simple/radio";
 
 const baseUrl = SITE.url;
 
@@ -35,6 +38,12 @@ const launchPaths = [
   ...trophies.map((entry) => `/trophies/${entry.slug}`),
   ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
   ...collectibleGuides.map((entry) => `/collectibles/${entry.slug}`),
+  ...shootingRanges.map((entry) => `/shooting-ranges/${entry.slug}`),
+  ...ammuStores.map((store) => `/ammu-nation-locations/${store.slug}`),
+  ...stationPages.map((station) => `/radio/${station.slug}`),
+  ...whereToFindTopics.flatMap((topic) => wherePlaces(topic).map((place) => `/where-to-find/${topic.slug}/${place.slug}`)),
+  ...cheatPages().map((entry) => `/cheats/${entry.group.slug}/${entry.slug}`),
+  ...collectibleItemPages().map(({ guide, item }) => `/collectibles/${guide.slug}/${item.slug}`),
 ];
 
 const detailPaths = [

@@ -1,61 +1,34 @@
-import GuideDatabase from "@/components/GuideDatabase";
-import PageCTA from "@/components/PageCTA";
-import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
-import PageStats from "@/components/PageStats";
-import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { pageMetadata } from "@/lib/launch";
-import { SITE } from "@/lib/site";
 
-import { guides } from "@/data/guides";
+export const metadata = pageMetadata(
+  "GTA 6 guides",
+  "Unofficial GTA 6 guides: missions, money, weapons, collectibles, cheats and the map."
+);
 
-const title = "GTA 6 Guides";
-const description = `GTA 6 guides, written after launch on ${SITE.launchLabel}. ${SITE.slogan}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`;
-
-export const metadata = pageMetadata(title, description);
+const hubs = [
+  { href: "/missions", title: "Missions", image: "/images/official/categories/characters.webp" },
+  { href: "/money-methods", title: "Make money", image: "/images/official/frames/jewelry-robbery.webp" },
+  { href: "/weapons", title: "Weapons", image: "/images/official/categories/weapons.webp" },
+  { href: "/vehicles", title: "Vehicles", image: "/images/official/categories/vehicles.webp" },
+  { href: "/shooting-ranges", title: "Shooting ranges", image: "/images/official/frames/shooting-range.webp" },
+  { href: "/collectibles", title: "Collectibles" },
+  { href: "/cheats", title: "Cheats" },
+  { href: "/where-to-find", title: "Where to find", image: "/images/official/categories/businesses.webp" },
+  { href: "/trophies", title: "Trophies" },
+  { href: "/map", title: "Map", image: "/images/official/locations/vice-city.webp" },
+];
 
 export default function GuidesPage() {
-  const visibleGuides = guides.filter((guide) => guide.listed !== false);
-  const categories = new Set(
-    visibleGuides.map((guide) => guide.category)
-  ).size;
-
   return (
     <PageShell>
-
-      <PageHero
-        badge="Unofficial fan database"
-        title="Guides"
-        description={`Pre-launch notes about what Rockstar has shown. Full guides will be written after launch on ${SITE.launchLabel}.`}
-      />
-
-      <PageStats
-        stats={[
-          {
-            value: visibleGuides.length,
-            label: "Published Guides",
-          },
-          {
-            value: categories,
-            label: "Guide Categories",
-          },
-          {
-            value: "After launch",
-            label: "Full walkthroughs",
-            accent: true,
-          },
-        ]}
-      />
-
-      <WhereToFindLinks className="mb-10" />
-
-      <GuideDatabase />
-
-      <PageCTA
-        title="More Guides Are On The Way"
-        description="Every official GTA VI reveal will be transformed into detailed walkthroughs, strategy guides, collectible locations and gameplay tips as Rockstar releases more information."
-      />
-
+      <SimpleHero title="Guides" />
+      <CardGrid>
+        {hubs.map((hub) => (
+          <SimpleCard key={hub.href} href={hub.href} title={hub.title} image={hub.image} />
+        ))}
+      </CardGrid>
     </PageShell>
   );
 }

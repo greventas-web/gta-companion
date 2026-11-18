@@ -8,7 +8,6 @@ import { batch2Sources as src, rangeSources, type Batch2Source } from "./batch2-
 export type ShootingCourse = {
   name: string;
   goldMedals: number;
-  note?: string;
 };
 
 export type ShootingRange = {
@@ -16,10 +15,22 @@ export type ShootingRange = {
   name: string;
   area: string;
   areaPin: string;
-  format: string;
+  image?: string;
+  imageAlt?: string;
+  /** One short plain line for the card. */
+  line: string;
+  /** Two or three plain sentences for the detail page. */
+  summary: string;
+  style: string;
   goldMedals: number;
   courses: ShootingCourse[];
 };
+
+/** Prices at both ranges. */
+export const rangePrices = [
+  { label: "Waiver pass", value: "$5" },
+  { label: "Rent a gun", value: "$10" },
+];
 
 export const shootingRanges: ShootingRange[] = [
   {
@@ -27,7 +38,10 @@ export const shootingRanges: ShootingRange[] = [
     name: "Griffin Shooting Range",
     area: "North-west Vice City",
     areaPin: "confirmed:vice-city",
-    format: "Timed courses where you move through the range and shoot targets.",
+    line: "Timed courses on the move.",
+    summary:
+      "Buy the $5 waiver pass from the clerk and the courses show up on your map. Run through each one and hit targets against the clock.",
+    style: "Timed, on the move",
     goldMedals: 18,
     courses: [
       { name: "3-Point Range", goldMedals: 3 },
@@ -43,7 +57,10 @@ export const shootingRanges: ShootingRange[] = [
     name: "Rodgers Ranch & Shooting Range",
     area: "North-east Port Gellhorn",
     areaPin: "confirmed:port-gellhorn",
-    format: "Stationary scoring courses. PowerPyx says a multiplier builds if you hit a target in the body before the head, and that a missed shot lowers it. Single-source for the scoring tip.",
+    line: "Score courses, standing still.",
+    summary:
+      "Stand still and shoot for points. Hit the body before the head to build your multiplier, and don't miss.",
+    style: "Score attack, standing still",
     goldMedals: 24,
     courses: [
       { name: "Market Range", goldMedals: 4 },
@@ -56,41 +73,56 @@ export const shootingRanges: ShootingRange[] = [
   },
 ];
 
-export const shootingRangeNotes = [
-  "PowerPyx and DayOne both describe two shooting ranges and the same 12 course names: six at Griffin Shooting Range in north-west Vice City, and six at Rodgers Ranch & Shooting Range in north-east Port Gellhorn.",
-  "PowerPyx’s dedicated range guide and 100% checklist count 12 challenges and 42 gold medals (18 at Griffin, 24 at Rodgers). The Progress database heading on the same site says “14 Shooting Range Challenges (42 Gold Medals).” This page follows the 12 named courses, which also match DayOne, and notes that heading.",
-  "The published trophy The Shootist asks you to earn a gold medal in all shooting range challenges. PowerPyx also lists all 42 gold medals on the 100% checklist. The 42 total is single-source; the trophy is in published trophy lists.",
-  "PowerPyx says that at each range you talk to the clerk and buy a $5 Waiver Pass, after which the challenges appear on the map. If you do not have the required weapon type, you can rent one for $10, or use your own. Those prices are single-source.",
-  "PowerPyx says finishing or quitting a challenge raises your Focus stat. Single-source.",
-  "After the story, combat cheats unlock from shooting-range medals: Max Ammo after 25 bronze medals or better, Infinite Ammo after 25 silver or better, and No Reload after 25 gold medals.",
-  "Exact coordinates for the two range buildings have not been published by a source we trust, so this page links the Vice City and Port Gellhorn area pins rather than adding new pins.",
+export function findShootingRange(slug: string) {
+  return shootingRanges.find((range) => range.slug === slug);
+}
+
+/** Short "good to know" rows shown on the ranges page. */
+export const shootingRangeQuickFacts = [
+  { label: "Ranges", value: "2" },
+  { label: "Courses", value: "12" },
+  { label: "Gold medals", value: "42" },
+  { label: "Trophy", value: "The Shootist (gold on every course)" },
+  { label: "Bonus", value: "Each run raises your Focus stat" },
+];
+
+/** Cheats you unlock with range medals (they only work after the story). */
+export const shootingRangeCheats = [
+  { label: "Max Ammo", value: "25 bronze medals" },
+  { label: "Infinite Ammo", value: "25 silver medals" },
+  { label: "No Reload", value: "25 gold medals" },
 ];
 
 export const shootingRangeFaqs: FaqItem[] = [
   {
     question: "How many shooting ranges are in GTA 6?",
     answer:
-      "Two: Griffin Shooting Range in north-west Vice City, and Rodgers Ranch & Shooting Range in north-east Port Gellhorn. PowerPyx and DayOne both list six courses at each range.",
+      "Two. Griffin Shooting Range is in north-west Vice City and Rodgers Ranch & Shooting Range is in north-east Port Gellhorn. Each one has six courses.",
     sources: rangeSources,
   },
   {
     question: "How many gold medals are there at the GTA 6 shooting ranges?",
     answer:
-      "PowerPyx counts 42 gold medals: 18 at Griffin (three per course) and 24 at Rodgers Ranch (four per course). The published trophy The Shootist asks you to earn a gold medal in all shooting range challenges. PowerPyx’s Progress database heading says 14 challenges with the same 42 gold medals; this page uses the 12 named courses from the range guide and from DayOne.",
+      "42 in total: 18 at Griffin (three per course) and 24 at Rodgers Ranch (four per course). Get gold on every course for The Shootist trophy.",
     sources: rangeSources,
   },
   {
     question: "How do you start the shooting range challenges in GTA 6?",
     answer:
-      "PowerPyx says you talk to the clerk at each range and buy a $5 Waiver Pass, and the challenges then appear on the map. If you do not have the required weapon type, you can rent one for $10, or use your own.",
+      "Talk to the clerk and buy a $5 waiver pass. The courses then show up on your map. No right gun? Rent one for $10 or bring your own.",
     sources: rangeSources,
   },
   {
     question: "Do shooting range medals unlock cheats in GTA 6?",
     answer:
-      "Yes, after the story. Max Ammo unlocks after 25 bronze medals or better, Infinite Ammo after 25 silver medals or better, and No Reload after 25 gold medals.",
+      "Yes, after the story. 25 bronze medals unlock Max Ammo, 25 silver unlock Infinite Ammo, and 25 gold unlock No Reload.",
     sources: [src.powerpyxCheats, src.gamesradarCheats, src.powerpyxRange],
   },
 ];
 
 export const shootingRangeSources: Batch2Source[] = rangeSources;
+
+/** Tap-to-check id for one course. */
+export function courseTrackId(rangeSlug: string, courseName: string) {
+  return `range:${rangeSlug}:${courseName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+}

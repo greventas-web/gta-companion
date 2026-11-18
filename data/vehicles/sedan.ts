@@ -79,7 +79,7 @@ export const sedanVehicles: Vehicle[] = [
     category: "Sedan",
     image: "/images/official/vehicles/vapid-stanier-1955.webp",
     description:
-      "The classic sedan in the Vintage Vice City Pack, which comes with purchases before November 20, 2026. Rockstar says it can be kept at the Shore Court garage near Ocean Beach. That garage has a weapon locker and a place to leave stolen goods.",
+      "A classic sedan from the Vintage Vice City Pack (buy before November 20, 2026). Keep it at the Shore Court garage near Ocean Beach.",
     firstAppearance: "Vintage Vice City Pack",
     status: "Named by Rockstar",
     gallery: [],

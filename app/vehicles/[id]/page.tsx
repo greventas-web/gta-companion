@@ -1,24 +1,18 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-import Breadcrumb from "@/components/Breadcrumb";
 import ViewOnMap from "@/components/map/ViewOnMap";
-import { SourceLink } from "@/components/SourceLink";
-import VehicleCard from "@/components/VehicleCard";
-import VehicleGallery from "@/components/VehicleGallery";
-import VehicleIntentFaq from "@/components/vehicles/VehicleIntentFaq";
-import ManufacturerMark from "@/components/manufacturers/ManufacturerMark";
-
+import PageShell from "@/components/PageShell";
+import SimpleDetail from "@/components/simple/SimpleDetail";
 import { manufacturerByName } from "@/data/manufacturers";
 import { vehicles } from "@/data/vehicles";
-import { detailMetadata } from "@/lib/pages";
-import type { Metadata } from "next";
 import { vehicleImages } from "@/lib/media/catalog";
+import { detailMetadata } from "@/lib/pages";
+import { cheatList } from "@/src/data/launch/cheat-list";
+import { cheatSlug, groupForCheat } from "@/src/data/launch/cheats";
 
 type Props = {
-  params: Promise<{
-    id: string;
-  }>;
+  params: Promise<{ id: string }>;
 };
 
 export function generateStaticParams() {
@@ -30,201 +24,53 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const vehicle = vehicles.find((item) => item.slug === id);
-
-  if (!vehicle) {
-    return {};
-  }
-
+  if (!vehicle) return {};
   return detailMetadata(vehicle.name, vehicle.description);
 }
 
-export default async function VehicleDetailsPage({
-  params,
-}: Props) {
+export default async function VehicleDetailsPage({ params }: Props) {
   const { id } = await params;
-
-  const vehicle = vehicles.find(
-    (v) => v.slug === id
-  );
-
-  if (!vehicle) {
-    notFound();
-  }
+  const vehicle = vehicles.find((v) => v.slug === id);
+  if (!vehicle) notFound();
 
   const maker = manufacturerByName(vehicle.manufacturer);
   const photos = vehicleImages(vehicle);
-
-  const relatedVehicles = vehicles
-    .filter(
-      (v) =>
-        v.category === vehicle.category &&
-        v.slug !== vehicle.slug
-    )
-    .slice(0, 3);
+  const cheat = cheatList.find((item) => item.link === `/vehicles/${vehicle.slug}`);
+  const related = vehicles.filter((v) => v.category === vehicle.category && v.slug !== vehicle.slug).slice(0, 4);
+  const confirmed = vehicle.status === "Confirmed";
 
   return (
-    <main className="min-h-screen bg-[#040404] text-white">
-
-      <section className="mx-auto max-w-[1700px] px-8 pb-20 pt-44">
-
-        <Breadcrumb
-          items={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "Vehicles",
-              href: "/vehicles",
-            },
-            {
-              label: vehicle.name,
-            },
-          ]}
-        />
-
-        <div className="mt-12 grid gap-14 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-
-          {/* Image */}
-
-          <VehicleGallery
-            images={photos}
-            alt={vehicle.imageAlt || vehicle.name}
-            representative={vehicle.imageRepresentative}
-          />
-
-          {/* Information */}
-
-          <div>
-
-            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.25em] text-pink-400">
-
-              {vehicle.category}
-
-            </span>
-
-            <h1 className="mt-8 break-words text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-
-              {vehicle.name}
-
-            </h1>
-
-            {maker ? (
-              <Link
-                href={`/manufacturers/${maker.slug}`}
-                className="mt-8 inline-flex"
-              >
-                <ManufacturerMark
-                  name={maker.name}
-                  slug={maker.slug}
-                />
-              </Link>
-            ) : null}
-
-            <p className="mt-8 text-xl leading-9 text-zinc-400">
-
-              {vehicle.description}
-
-            </p>
-
-            <ViewOnMap entityType="vehicle" entitySlug={vehicle.slug} />
-
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-teal-300">
-              {vehicle.status}
-            </p>
-            {vehicle.source ? (
-              <p className="mt-3">
-                <SourceLink label={vehicle.sourceLabel ?? "Rockstar Games"} href={vehicle.source} />
-              </p>
-            ) : null}
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2">
-
-              <Info
-                label="Manufacturer"
-                value={vehicle.manufacturer}
-              />
-
-              <Info
-                label="Category"
-                value={vehicle.category}
-              />
-
-              <Info
-                label="Status"
-                value={vehicle.status}
-              />
-
-              <Info
-                label="First Appearance"
-                value={vehicle.firstAppearance}
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <VehicleIntentFaq vehicle={vehicle} />
-
-        {/* Related Vehicles */}
-
-        {relatedVehicles.length > 0 ? (
-        <section className="mt-28">
-
-          <h2 className="text-5xl font-black">
-            Related Vehicles
-          </h2>
-
-          <p className="mt-3 text-zinc-400">
-            More vehicles in this category.
-          </p>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {relatedVehicles.map((vehicle) => (
-
-              <VehicleCard
-                key={vehicle.slug}
-                vehicle={vehicle}
-              />
-
-            ))}
-
-          </div>
-
-        </section>
-        ) : null}
-
-      </section>
-
-    </main>
-  );
-}
-
-function Info({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
-
-      <p className="text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-
-        {label}
-
-      </p>
-
-      <h3 className="mt-3 text-2xl font-black">
-
-        {value}
-
-      </h3>
-
-    </div>
+    <PageShell>
+      <SimpleDetail
+        crumbs={[{ label: "Home", href: "/" }, { label: "Vehicles", href: "/vehicles" }, { label: vehicle.name }]}
+        eyebrow={vehicle.category}
+        title={vehicle.name}
+        image={photos[0]}
+        imageAlt={vehicle.imageAlt}
+        price={vehicle.price}
+        summary={confirmed ? vehicle.description : "Not seen in GTA 6 yet. This name is from earlier GTA games."}
+        facts={[
+          { label: "Maker", value: vehicle.manufacturer },
+          { label: "Top speed", value: vehicle.topSpeed ?? "" },
+          { label: "Seats", value: vehicle.seats ? `${vehicle.seats}` : "" },
+          { label: "Cheat code", value: cheat?.code ? cheat.code.join(" ") : "" },
+        ]}
+        links={[
+          ...(maker ? [{ href: `/manufacturers/${maker.slug}`, label: maker.name }] : []),
+          ...(cheat ? [{ href: `/cheats/${groupForCheat(cheat.category).slug}/${cheatSlug(cheat.name)}`, label: "Cheat" }] : []),
+        ]}
+        related={related.map((item) => ({
+          href: `/vehicles/${item.slug}`,
+          title: item.name,
+          image: vehicleImages(item)[0],
+          eyebrow: item.manufacturer,
+          price: item.price,
+          small: true,
+        }))}
+        relatedHeading="Similar"
+      >
+        <ViewOnMap entityType="vehicle" entitySlug={vehicle.slug} />
+      </SimpleDetail>
+    </PageShell>
   );
 }

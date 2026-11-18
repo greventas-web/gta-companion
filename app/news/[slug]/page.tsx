@@ -1,27 +1,13 @@
-import Image from "@/components/SafeImage";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  BadgeCheck,
-  Calendar,
-  Newspaper,
-  Building2,
-} from "lucide-react";
 
-import Breadcrumb from "@/components/Breadcrumb";
-import NewsCard from "@/components/NewsCard";
-import { SourceList } from "@/components/SourceLink";
-import ShareButtons from "@/components/news/ShareButtons";
-
+import PageShell from "@/components/PageShell";
+import SimpleDetail from "@/components/simple/SimpleDetail";
 import { news } from "@/data/news";
 import { detailMetadata } from "@/lib/pages";
-import type { Metadata } from "next";
-import { IMAGE_CREDIT } from "@/lib/site";
+import { shortText } from "@/lib/simple/text";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return news.map((article) => ({ slug: article.slug }));
@@ -32,223 +18,41 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = news.find((item) => item.slug === slug);
-
-  if (!article) {
-    return {};
-  }
-
-  return detailMetadata(article.title, article.summary);
+  if (!article) return {};
+  return detailMetadata(article.title, shortText(article.summary, 2) || article.title);
 }
 
-export default async function NewsArticlePage({
-  params,
-}: Props) {
+function longDate(date: string) {
+  const parsed = new Date(`${date}T12:00:00`);
+  if (Number.isNaN(parsed.getTime())) return date;
+  return parsed.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
+export default async function NewsArticlePage({ params }: Props) {
   const { slug } = await params;
-
-  const article = news.find((n) => n.slug === slug);
-
-  if (!article) {
-    notFound();
-  }
-
-  const relatedNews = news
-    .filter(
-      (n) =>
-        n.category === article.category &&
-        n.slug !== article.slug
-    )
-    .slice(0, 3);
+  const article = news.find((item) => item.slug === slug);
+  if (!article) notFound();
+  const others = news.filter((item) => item.slug !== article.slug).slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-[#040404] text-white">
-      <section className="mx-auto max-w-[1700px] px-6 pb-20 pt-36 sm:px-8 sm:pt-44">
-        <Breadcrumb
-          items={[
-            {
-              label: "Home",
-              href: "/",
-            },
-            {
-              label: "News",
-              href: "/news",
-            },
-            {
-              label: article.title,
-            },
-          ]}
-        />
-
-        <div className={`mt-12 grid gap-14 ${article.image ? "xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]" : ""}`}>
-          {article.image ? (
-          <div className="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
-            <div className="relative aspect-[16/10]">
-              <Image
-                src={article.image}
-                alt={article.imageAlt || article.title}
-                fill
-                priority
-                className="object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-200">
-                {IMAGE_CREDIT}
-              </p>
-            </div>
-          </div>
-          ) : null}
-
-          <div>
-            <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.3em] text-pink-400">
-              {article.category}
-            </span>
-
-            <h1 className="mt-8 break-words text-4xl font-black tracking-[-0.03em] sm:text-6xl">
-              {article.title}
-            </h1>
-
-            <p className="mt-8 max-w-4xl text-xl leading-9 text-zinc-400">
-              {article.summary}
-            </p>
-
-            <div className="mt-10">
-              <ShareButtons title={article.title} />
-            </div>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2">
-              <Info
-                icon={<Newspaper size={18} />}
-                label="Category"
-                value={article.category}
-              />
-
-              <Info
-                icon={<Calendar size={18} />}
-                label="Published"
-                value={article.date}
-              />
-
-              <Info
-                icon={<Building2 size={18} />}
-                label="Source"
-                value={article.sourceName ?? "Rockstar Games"}
-              />
-
-              <Info
-                icon={<BadgeCheck size={18} />}
-                label="Status"
-                value={article.status ?? "Official"}
-              />
-            </div>
-          </div>
-        </div>
-
-        <section className="mt-24 rounded-[36px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-10 md:p-14">
-          <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
-            Article
-          </div>
-
-          <div className="prose prose-invert mt-8 max-w-none">
-            <p className="text-xl leading-9 text-zinc-300">
-              {article.summary}
-            </p>
-
-            {article.paragraphs?.map((paragraph) => (
-              <p key={paragraph} className="mt-8 text-lg leading-9 text-zinc-300">
-                {paragraph}
-              </p>
-            ))}
-
-            {article.points && article.points.length > 0 ? (
-              <>
-                <h2 className="mt-10 text-2xl font-black text-white">
-                  Gameplay confirmed by Rockstar
-                </h2>
-                <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-8 text-zinc-300">
-                  {article.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-                <p className="mt-6 text-base leading-8 text-zinc-400">
-                  Rob Nelson described these systems in interviews, including Famitsu, IGN, and Edge. The relationship notes are from the Famitsu interview. Switching is also covered by the Dazed deep dive and PC Gamer.
-                </p>
-              </>
-            ) : null}
-
-            {article.sources && article.sources.length > 0 ? (
-              <SourceList sources={article.sources} className="mt-8" />
-            ) : (
-              <>
-                <p className="mt-8 text-lg leading-9 text-zinc-400">
-                  Rockstar Games officially announced this update as part of its
-                  ongoing coverage of Grand Theft Auto VI. GTA Companion tracks
-                  every official announcement, trailer, screenshot and Newswire
-                  post to provide players with an organized reference library.
-                </p>
-
-                <p className="mt-8 text-lg leading-9 text-zinc-400">
-                  As Rockstar releases additional information, this article will be
-                  expanded with new details, media and related content to keep it
-                  accurate and up to date.
-                </p>
-              </>
-            )}
-          </div>
-        </section>
-
-        {relatedNews.length > 0 ? (
-        <section className="mt-28">
-          <div className="mb-12">
-            <div className="text-xs font-black uppercase tracking-[0.35em] text-pink-400">
-              Related Content
-            </div>
-
-            <h2 className="mt-4 text-5xl font-black">
-              Related News
-            </h2>
-
-            <p className="mt-4 text-lg text-zinc-400">
-              More official Rockstar announcements from the same category.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {relatedNews.map((article) => (
-              <NewsCard
-                key={article.id}
-                article={article}
-              />
-            ))}
-          </div>
-        </section>
-        ) : null}
-      </section>
-    </main>
-  );
-}
-
-function Info({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900 to-black p-6">
-      <div className="flex items-center gap-3 text-pink-400">
-        {icon}
-
-        <span className="text-xs font-bold uppercase tracking-[0.25em]">
-          {label}
-        </span>
-      </div>
-
-      <h3 className="mt-4 text-2xl font-black text-white">
-        {value}
-      </h3>
-    </div>
+    <PageShell>
+      <SimpleDetail
+        crumbs={[{ label: "Home", href: "/" }, { label: "News", href: "/news" }, { label: article.title }]}
+        eyebrow={longDate(article.date)}
+        title={article.title}
+        image={article.image}
+        imageAlt={article.imageAlt}
+        summary={article.summary}
+        facts={[{ label: "Type", value: article.category }]}
+        related={others.map((item) => ({
+          href: `/news/${item.slug}`,
+          title: item.title,
+          image: item.image,
+          eyebrow: longDate(item.date),
+          small: true,
+        }))}
+        relatedHeading="More news"
+      />
+    </PageShell>
   );
 }

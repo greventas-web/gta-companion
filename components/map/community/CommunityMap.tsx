@@ -571,7 +571,7 @@ export default function CommunityMap({
               onChange={() => setShowLandmarks((value) => !value)}
               className="accent-violet-400"
             />
-            gtadb landmarks
+            Landmarks
           </legend>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {LANDMARK_FILTERS.map((filter) => {

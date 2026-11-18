@@ -1,29 +1,49 @@
-import BusinessDatabase from "@/components/BusinessDatabase";
-import { pageMetadata } from "@/lib/launch";
-import PageCTA from "@/components/PageCTA";
-import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { businesses } from "@/data/businesses";
+import { pageMetadata } from "@/lib/launch";
+import { staticMapHref } from "@/lib/map/catalog";
+import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
-  "GTA 6 businesses",
-  "Businesses Rockstar has shown in Vice City and Leonida for Grand Theft Auto VI. Unofficial fan site."
+  'GTA 6 businesses',
+  'Unofficial GTA 6 businesses in Vice City and Leonida, with pictures and map links.'
 );
+
+const items = businesses;
+const groupNames = ["all"];
+const groups = groupNames
+  .map((name) => ({ name, list: items.filter((item) => "all" === name) }))
+  .filter((group) => group.list.length > 0);
 
 export default function BusinessesPage() {
   return (
     <PageShell>
-      <PageHero
-        badge="Unofficial fan database"
-        title="Business Database"
-        description="Explore companies, record labels, clubs, organizations and businesses featured throughout Vice City and the state of Leonida. Every entry is based on official Rockstar Games material."
+      <JsonLd
+        data={itemListJsonLd(
+          'GTA 6 businesses',
+          "/businesses",
+          items.map((item) => ({ name: item.name, url: `/businesses/${item.slug}` }))
+        )}
       />
-
-      <BusinessDatabase />
-
-      <PageCTA
-        title="The Database Continues to Grow"
-        description="Every officially revealed business, company and organization will be added to GTA Companion as Rockstar Games continues unveiling Grand Theft Auto VI."
-      />
+      <SimpleHero title='Businesses' />
+      {groups.map((group) => (
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+          {group.list.map((item) => (
+            <SimpleCard
+              key={item.slug}
+              href={`/businesses/${item.slug}`}
+              title={item.name}
+              image={item.image}
+              eyebrow={item.category}
+              line={item.location}
+              mapHref={staticMapHref("business", item.slug) ?? undefined}
+              small
+            />
+          ))}
+        </CardGrid>
+      ))}
     </PageShell>
   );
 }

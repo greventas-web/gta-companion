@@ -1,44 +1,49 @@
-import LocationCard from "@/components/LocationCard";
-import DatabaseSection from "@/components/DatabaseSection";
-import PageCTA from "@/components/PageCTA";
-import PageGrid from "@/components/PageGrid";
-import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { locations } from "@/data/locations";
 import { pageMetadata } from "@/lib/launch";
+import { staticMapHref } from "@/lib/map/catalog";
+import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
-  "GTA 6 locations",
-  "Vice City, Leonida, and the other regions Rockstar has shown for Grand Theft Auto VI. Unofficial fan site."
+  'GTA 6 locations',
+  'Unofficial GTA 6 locations: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga, with pictures and map links.'
 );
+
+const items = locations;
+const groupNames = ["all"];
+const groups = groupNames
+  .map((name) => ({ name, list: items.filter((item) => "all" === name) }))
+  .filter((group) => group.list.length > 0);
 
 export default function LocationsPage() {
   return (
     <PageShell>
-      <PageHero
-        badge="Grand Theft Auto Locations"
-        title="Location Database"
-        description="Explore cities, towns, regions, landmarks and iconic destinations from across the Grand Theft Auto universe. GTA Companion clearly identifies officially confirmed GTA VI locations while preserving the history of the series."
+      <JsonLd
+        data={itemListJsonLd(
+          'GTA 6 locations',
+          "/locations",
+          items.map((item) => ({ name: item.name, url: `/locations/${item.slug}` }))
+        )}
       />
-
-      <DatabaseSection
-        eyebrow="Location Database"
-        title={`${locations.length} Locations`}
-      >
-        <PageGrid>
-          {locations.map((location) => (
-            <LocationCard
-              key={location.id}
-              location={location}
+      <SimpleHero title='Locations' />
+      {groups.map((group) => (
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+          {group.list.map((item) => (
+            <SimpleCard
+              key={item.slug}
+              href={`/locations/${item.slug}`}
+              title={item.name}
+              image={item.image}
+              eyebrow={item.type}
+              line={item.region}
+              mapHref={staticMapHref("location", item.slug) ?? undefined}
+              small
             />
           ))}
-        </PageGrid>
-      </DatabaseSection>
-
-      <PageCTA
-        title="The World Continues to Expand"
-        description="As Rockstar Games reveals new cities, districts, landmarks and regions, GTA Companion will continue expanding the location database with verified information, screenshots and detailed location pages."
-      />
+        </CardGrid>
+      ))}
     </PageShell>
   );
 }

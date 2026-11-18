@@ -1,6 +1,6 @@
 import Image, { type ImageProps } from "next/image";
 
-import BrandedNameCard from "@/components/BrandedNameCard";
+import BrandPlaceholder from "@/components/simple/BrandPlaceholder";
 import { isPlaceholderSrc } from "@/lib/media/catalog";
 
 type Props = Omit<ImageProps, "alt" | "src"> & {
@@ -27,7 +27,7 @@ export default function ItemImage({
   if (isNameCard(src)) {
     return (
       <div className={fill ? "absolute inset-0 z-[1]" : "relative z-[1] h-full min-h-40 w-full"}>
-        <BrandedNameCard name={label} />
+        <BrandPlaceholder name={label} />
       </div>
     );
   }

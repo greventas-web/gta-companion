@@ -79,7 +79,7 @@ export const bikeVehicles: Vehicle[] = [
     category: "Bike",
     image: "/images/official/vehicles/dinka-enduro.webp",
     description:
-      "An Ultimate Edition motorcycle kept at Jason's safehouse. Rockstar describes the included version with an army-fatigue look. No performance figures have been published.",
+      "An Ultimate Edition dirt bike in army-fatigue colors. It waits at Jason's safehouse.",
     firstAppearance: "Ultimate Edition",
     status: "Named by Rockstar",
     gallery: [],

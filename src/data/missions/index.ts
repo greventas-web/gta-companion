@@ -28,7 +28,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 1,
-    "summary": "Story mission 1 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 1. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -52,7 +52,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 2,
-    "summary": "Story mission 2 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 2. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -76,7 +76,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 3,
-    "summary": "Story mission 3 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 3. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -100,7 +100,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 4,
-    "summary": "Story mission 4 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 4. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -124,7 +124,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 5,
-    "summary": "Story mission 5 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 5. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -148,7 +148,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 6,
-    "summary": "Story mission 6 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 6. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -172,7 +172,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 7,
-    "summary": "Story mission 7 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 7. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -196,7 +196,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 8,
-    "summary": "Story mission 8 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 8. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -220,7 +220,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 9,
-    "summary": "Story mission 9 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 9. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -244,7 +244,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 10,
-    "summary": "Story mission 10 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 10. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -268,7 +268,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 11,
-    "summary": "Story mission 11 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 11. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -292,7 +292,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 12,
-    "summary": "Story mission 12 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 12. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -316,7 +316,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 13,
-    "summary": "Story mission 13 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 13. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -340,7 +340,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 14,
-    "summary": "Story mission 14 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 14. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -364,7 +364,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 15,
-    "summary": "Story mission 15 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 15. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -388,7 +388,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 16,
-    "summary": "Story mission 16 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 16. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -412,7 +412,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 17,
-    "summary": "Story mission 17 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 17. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -436,7 +436,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 18,
-    "summary": "Story mission 18 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 18. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -461,7 +461,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 19,
-    "summary": "Story mission 19 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 19. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -485,7 +485,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 20,
-    "summary": "Story mission 20 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 20. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -509,7 +509,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 21,
-    "summary": "Story mission 21 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 21. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -533,7 +533,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 1,
     "order": 22,
-    "summary": "Story mission 22 of Chapter 1 (Just Like Paradise), in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 1 (Just Like Paradise), mission 22. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -557,7 +557,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 1,
-    "summary": "Story mission 1 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 1. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -576,7 +576,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 2,
-    "summary": "Story mission 2 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 2. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -595,7 +595,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 3,
-    "summary": "Story mission 3 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 3. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -614,7 +614,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 4,
-    "summary": "Story mission 4 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 4. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -633,7 +633,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 5,
-    "summary": "Story mission 5 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 5. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -652,7 +652,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 6,
-    "summary": "Story mission 6 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 6. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -671,7 +671,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 7,
-    "summary": "Story mission 7 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 7. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -690,7 +690,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 8,
-    "summary": "Story mission 8 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 8. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -709,7 +709,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 9,
-    "summary": "Story mission 9 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 9. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -728,7 +728,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 10,
-    "summary": "Story mission 10 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 10. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -747,7 +747,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 11,
-    "summary": "Story mission 11 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 11. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -762,7 +762,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 12,
-    "summary": "Story mission 12 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 12. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -777,7 +777,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 2,
     "order": 13,
-    "summary": "Story mission 13 of Chapter 2, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 2, mission 13. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -796,7 +796,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 1,
-    "summary": "Story mission 1 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 1. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -815,7 +815,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 2,
-    "summary": "Story mission 2 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 2. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -834,7 +834,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 3,
-    "summary": "Story mission 3 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 3. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -853,7 +853,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 4,
-    "summary": "Story mission 4 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 4. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -872,7 +872,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 5,
-    "summary": "Story mission 5 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 5. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -891,7 +891,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 6,
-    "summary": "Story mission 6 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 6. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -910,7 +910,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 7,
-    "summary": "Story mission 7 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 7. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -929,7 +929,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 8,
-    "summary": "Story mission 8 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 8. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -948,7 +948,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 9,
-    "summary": "Story mission 9 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 9. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -963,7 +963,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 10,
-    "summary": "Story mission 10 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 10. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -982,7 +982,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 11,
-    "summary": "Story mission 11 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 11. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1001,7 +1001,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 12,
-    "summary": "Story mission 12 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 12. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1020,7 +1020,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 13,
-    "summary": "Story mission 13 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 13. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1039,7 +1039,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 14,
-    "summary": "Story mission 14 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 14. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1058,7 +1058,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 15,
-    "summary": "Story mission 15 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 15. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1077,7 +1077,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 16,
-    "summary": "Story mission 16 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 16. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1092,7 +1092,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 17,
-    "summary": "Story mission 17 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 17. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1111,7 +1111,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 18,
-    "summary": "Story mission 18 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 18. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1130,7 +1130,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 19,
-    "summary": "Story mission 19 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 19. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1149,7 +1149,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 20,
-    "summary": "Story mission 20 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 20. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1168,7 +1168,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 21,
-    "summary": "Story mission 21 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 21. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1187,7 +1187,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 22,
-    "summary": "Story mission 22 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 22. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1206,7 +1206,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 23,
-    "summary": "Story mission 23 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 23. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1225,7 +1225,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 24,
-    "summary": "Story mission 24 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 24. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1244,7 +1244,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 25,
-    "summary": "Story mission 25 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 25. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1263,7 +1263,7 @@ const storyMissions: Mission[] = [
     "region": "Leonida",
     "chapter": 3,
     "order": 26,
-    "summary": "Story mission 26 of Chapter 3, in the order the in-game Story Recap shows. Missions can be played somewhat out of this order.",
+    "summary": "Chapter 3, mission 26. You can play some missions a little out of order.",
     "sources": [
       {
         "label": "Press Start",
@@ -1290,9 +1290,9 @@ export const missions: Mission[] = [
     edition: "Ultimate Edition",
     mapPinId: "confirmed:southside-gang-compound-raid",
     mapNote:
-      "The map pin marks the PTT Youngin$ Illegal Goods Store, the storefront Rockstar ties to this benefit. Rockstar has not published the compound’s full footprint, so the pin is approximate.",
+      "The pin marks the PTT Youngin$ Illegal Goods Store. The compound around it is bigger, so the spot is approximate.",
     summary:
-      "Ultimate Edition hook in Southside, Vice City. Rockstar titles the benefit Gang Compound and places it at the PTT Youngin$ Illegal Goods Store. Rockstar has not published a separate mission title, a giver, or a story list.",
+      "An Ultimate Edition job in Southside, Vice City, called Gang Compound. It starts at the PTT Youngin$ Illegal Goods Store.",
     rewards: "Special items and distinct contraband.",
     spoiler:
       "Rockstar: “Raid the compound of one of Southside Vice City’s loudest and most socially active gangs and escape safely to score some special items and distinct contraband.”",
@@ -1337,4 +1337,4 @@ export const storyChapters = Array.from(
 export const otherMissions = missions.filter((mission) => mission.type !== "story");
 
 export const STORY_LIST_NOTE =
-  "Press Start counts 93 story missions across five chapters in the in-game Story Recap, and PC Gamer counts 91. Chapters 1 to 3 are listed here; Chapters 4 and 5 are left out for now because their names give away late-story events.";
+  "About 91 to 93 story missions over five chapters. Chapters 1 to 3 are here. Chapters 4 and 5 stay hidden because their names spoil the story.";

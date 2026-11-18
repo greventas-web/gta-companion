@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/launch";
 
 export const metadata = pageMetadata(
   "GTA 6 timeline",
-  "A sourced index of official Grand Theft Auto VI announcements: trailers, the release date, pre-orders, radio, pre-load, launch-week events, and The Festival. Unofficial fan site."
+  "Unofficial GTA 6 timeline: every trailer, the release date, pre-orders, radio, pre-load, launch week and The Festival."
 );
 
 export default function Page() {

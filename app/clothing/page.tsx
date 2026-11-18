@@ -1,80 +1,49 @@
-import Link from "next/link";
-
-import CatalogCard from "@/components/entries/CatalogCard";
-import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
-import { SourceList } from "@/components/SourceLink";
-import { clothing, clothingGroups } from "@/data/clothing";
+import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { clothing } from "@/data/clothing";
 import { pageMetadata } from "@/lib/launch";
-import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
-import {
-  famitsuSources,
-  playstationGame,
-  rockstarEditions,
-  rockstarSupportEditions,
-  rockstarUltimate,
-} from "@/src/data/gameplay/confirmed";
+import { staticMapHref } from "@/lib/map/catalog";
+import { itemListJsonLd } from "@/lib/seo";
 
-const title = "GTA 6 outfits, hairstyles, and tattoos (unofficial)";
-const description =
-  "Outfits, hairstyles, and tattoos Rockstar has named for Grand Theft Auto VI, linked to the shops that sell or apply them. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.";
+export const metadata = pageMetadata(
+  'GTA 6 clothing',
+  'Unofficial GTA 6 clothing, hairstyles and tattoos for Jason and Lucia, with pictures.'
+);
 
-export const metadata = pageMetadata(title, description);
-
-const indexSources = [
-  rockstarUltimate,
-  rockstarEditions,
-  playstationGame,
-  rockstarSupportEditions,
-  ...famitsuSources,
-];
+const items = clothing;
+const groupNames = [...new Set(clothing.map((item) => item.group))];
+const groups = groupNames
+  .map((name) => ({ name, list: items.filter((item) => item.group === name) }))
+  .filter((group) => group.list.length > 0);
 
 export default function ClothingPage() {
   return (
     <PageShell>
-      <PageHero
-        badge="Unofficial fan database"
-        title="Clothing"
-        description="Packs and pieces Rockstar has named, plus the shop catalogs that are confirmed as places and still waiting on item names. Rob Nelson has also said there are thousands of outfits, earned from missions or bought in stores."
+      <JsonLd
+        data={itemListJsonLd(
+          'GTA 6 clothing',
+          "/clothing",
+          items.map((item) => ({ name: item.name, url: `/clothing/${item.slug}` }))
+        )}
       />
-      <SourceList sources={indexSources} />
-
-      <p className="mt-6 max-w-3xl leading-8 text-zinc-400">
-        The shops themselves are on{" "}
-        <Link href="/stores" className="text-violet-300 underline-offset-2 hover:underline">
-          Stores
-        </Link>
-        . Edition rules are on{" "}
-        <Link href="/launch" className="text-violet-300 underline-offset-2 hover:underline">
-          Editions
-        </Link>
-        .
-      </p>
-
-      {clothingGroups.map((group) => {
-        const items = clothing.filter((item) => item.group === group);
-        return (
-          <section key={group} className="mt-14">
-            <h2 className="text-3xl font-black tracking-[-0.03em]">{group}</h2>
-            <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {items.map((item) => (
-                <CatalogCard
-                  key={item.slug}
-                  href={`/clothing/${item.slug}`}
-                  title={item.name}
-                  eyebrow={`${item.kindLabel} · ${item.appliesTo}`}
-                  summary={item.summary}
-                  meta={item.editionLabel}
-                  image={item.image}
-                  imageAlt={item.imageAlt}
-                />
-              ))}
-            </div>
-          </section>
-        );
-      })}
-
-      <p className="mt-12 text-sm leading-7 text-zinc-500">{UNOFFICIAL_DISCLAIMER}</p>
+      <SimpleHero title='Clothing' />
+      {groups.map((group) => (
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+          {group.list.map((item) => (
+            <SimpleCard
+              key={item.slug}
+              href={`/clothing/${item.slug}`}
+              title={item.name}
+              image={item.image}
+              eyebrow={item.kindLabel}
+              line={item.appliesTo === "Not published" ? undefined : item.appliesTo}
+              mapHref={undefined}
+              small
+            />
+          ))}
+        </CardGrid>
+      ))}
     </PageShell>
   );
 }
