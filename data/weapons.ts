@@ -1,10 +1,16 @@
 import { weaponStandIns } from "@/data/standIns";
+import {
+  ingameSourceHref,
+  ingameWeapons,
+  INGAME_SOURCE_LABEL,
+  type IngameEntry,
+} from "@/lib/ingame";
 import { Weapon } from "@/types/weapon";
 
 const rockstar =
   "https://www.rockstargames.com/VI";
 
-export const weapons: Weapon[] = [
+const baseWeapons: Weapon[] = [
   {
     id: 1,
     slug: "hawk-little-morgan",
@@ -144,6 +150,52 @@ export const weapons: Weapon[] = [
     status: "Expected / unconfirmed",
     gallery: [],
   },
+];
+
+const ingameBySlug = new Map(ingameWeapons.map((entry) => [entry.slug, entry]));
+
+function applyIngame(weapon: Weapon, entry: IngameEntry): Weapon {
+  return {
+    ...weapon,
+    ...(entry.fields ?? {}),
+    name: entry.name ?? weapon.name,
+    manufacturer: entry.manufacturer ?? weapon.manufacturer,
+    category: entry.category ?? weapon.category,
+    description: entry.description ?? weapon.description,
+    image: entry.image ?? weapon.image,
+    imageAlt: entry.imageAlt ?? weapon.imageAlt,
+    status: "Confirmed",
+    source: ingameSourceHref(entry),
+    sourceLabel: INGAME_SOURCE_LABEL,
+  };
+}
+
+/** Pre-launch weapons, updated from our gameplay, plus new in-game finds. */
+export const weapons: Weapon[] = [
+  ...baseWeapons.map((weapon) => {
+    const entry = ingameBySlug.get(weapon.slug);
+    return entry ? applyIngame(weapon, entry) : weapon;
+  }),
+  ...ingameWeapons
+    .filter((entry) => !baseWeapons.some((weapon) => weapon.slug === entry.slug))
+    .map((entry, index) =>
+      applyIngame(
+        {
+          id: 10000 + index,
+          slug: entry.slug,
+          name: entry.name ?? entry.slug,
+          manufacturer: entry.manufacturer ?? "Not shown",
+          category: entry.category ?? "Other",
+          image: "",
+          description: "",
+          firstAppearance: "Grand Theft Auto VI gameplay",
+          ammunition: "Not shown",
+          status: "Confirmed",
+          gallery: [],
+        },
+        entry
+      )
+    ),
 ];
 
 export const confirmedWeapons = weapons.filter(

@@ -14,6 +14,10 @@ import { parseSuggestion } from "@/lib/map/validate";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
+// Approved pins are public. Cache them at the CDN for a minute so every map
+// view does not read the private Blob file. Approvals show up within ~1 minute.
+const PUBLIC_PINS_CACHE = "public, s-maxage=60, stale-while-revalidate=300";
+
 export async function GET(request: NextRequest) {
   const pins = (await listSubmissions())
     .filter((item) => item.status === "approved")
@@ -33,13 +37,13 @@ export async function GET(request: NextRequest) {
             : null,
         pins: matches,
       },
-      { headers: { "Cache-Control": "no-store" } }
+      { headers: { "Cache-Control": PUBLIC_PINS_CACHE } }
     );
   }
 
   return NextResponse.json(
     { pins },
-    { headers: { "Cache-Control": "no-store" } }
+    { headers: { "Cache-Control": PUBLIC_PINS_CACHE } }
   );
 }
 
@@ -77,6 +81,12 @@ export async function POST(request: NextRequest) {
 
   try {
     const result = await addSubmission(submission, rateKey(clientIp(request)));
+    if (result === "full") {
+      return NextResponse.json(
+        { error: "The review queue is full right now. Try again later." },
+        { status: 503 }
+      );
+    }
     if (result === "limited") {
       return NextResponse.json(
         { error: "Too many suggestions from this network. Try again in a little while." },

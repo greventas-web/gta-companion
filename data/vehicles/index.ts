@@ -1,3 +1,11 @@
+import {
+  ingameSourceHref,
+  ingameVehicles,
+  INGAME_SOURCE_LABEL,
+  type IngameEntry,
+} from "@/lib/ingame";
+import type { Vehicle } from "@/types/vehicle";
+
 import { aircraftVehicles } from "./aircraft";
 import { bikeVehicles } from "./bikes";
 import { boatVehicles } from "./boats";
@@ -14,7 +22,7 @@ import { truckVehicles } from "./truck";
 import { utilityVehicles } from "./utility";
 import { vanVehicles } from "./van";
 
-const catalog = [
+const baseCatalog = [
   ...aircraftVehicles,
   ...bikeVehicles,
   ...boatVehicles,
@@ -31,6 +39,44 @@ const catalog = [
   ...utilityVehicles,
   ...vanVehicles,
 ];
+
+const ingameBySlug = new Map(ingameVehicles.map((entry) => [entry.slug, entry]));
+
+/** New vehicles first found in our gameplay, not in the pre-launch catalog. */
+const ingameOnly: Vehicle[] = ingameVehicles
+  .filter((entry) => !baseCatalog.some((vehicle) => vehicle.slug === entry.slug))
+  .map((entry, index) => ({
+    id: 10000 + index,
+    slug: entry.slug,
+    name: entry.name ?? entry.slug,
+    manufacturer: entry.manufacturer ?? "Not shown",
+    category: entry.category ?? "Other",
+    image: entry.image ?? "",
+    description: entry.description ?? "",
+    firstAppearance: "Grand Theft Auto VI gameplay",
+    status: "Confirmed",
+    gallery: [],
+  }));
+
+const catalog = [...baseCatalog, ...ingameOnly];
+
+function applyIngame(vehicle: Vehicle, entry: IngameEntry): Vehicle {
+  const image = entry.image ?? vehicle.image;
+  return {
+    ...vehicle,
+    ...(entry.fields ?? {}),
+    name: entry.name ?? vehicle.name,
+    manufacturer: entry.manufacturer ?? vehicle.manufacturer,
+    category: entry.category ?? vehicle.category,
+    description: entry.description ?? vehicle.description,
+    image,
+    imageAlt: entry.imageAlt ?? vehicle.imageAlt,
+    gallery: image ? [image] : [],
+    status: "Confirmed",
+    source: ingameSourceHref(entry),
+    sourceLabel: INGAME_SOURCE_LABEL,
+  };
+}
 
 const confirmedSources: Record<string, { label: string; href: string }> = {
   "grotti-cheetah-1995": {
@@ -67,6 +113,9 @@ const unconfirmedNote =
   "This name is carried over from an earlier Grand Theft Auto game. Rockstar has not confirmed it for Grand Theft Auto VI, and no performance figures on this page should be treated as official.";
 
 export const vehicles = catalog.map((vehicle) => {
+  const fromGameplay = ingameBySlug.get(vehicle.slug);
+  if (fromGameplay) return applyIngame(vehicle, fromGameplay);
+
   const source = confirmedSources[vehicle.slug];
   const gallery =
     vehicle.gallery.length > 0 ? vehicle.gallery : [vehicle.image];

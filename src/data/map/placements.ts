@@ -1,4 +1,5 @@
 import type { MapPlacement } from "@/lib/map/model";
+import { ingamePlacements } from "@/lib/ingame";
 import { confirmedPlacements } from "@/src/data/map/from-seed";
 
 /**
@@ -23,4 +24,6 @@ import { confirmedPlacements } from "@/src/data/map/from-seed";
  *   entityType: "vehicle", entitySlug: "vapid-dominator", role: "spawn",
  *   x: 0, y: 0 }
  */
-export const mapPlacements: MapPlacement[] = [...confirmedPlacements()];
+// Pins confirmed from our own gameplay live in src/data/gameplay/ingame.json
+// (scripts/launch/add-data.mjs pin ...).
+export const mapPlacements: MapPlacement[] = [...confirmedPlacements(), ...ingamePlacements()];

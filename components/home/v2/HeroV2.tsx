@@ -1,8 +1,10 @@
 import Image from "@/components/SafeImage";
-import LaunchCountdown from "@/components/home/v2/LaunchCountdown";
+import { LaunchHeroCountdown, LaunchHubLink } from "@/components/launch/LaunchHeroStatus";
 import LaunchTrailer from "@/components/home/v2/LaunchTrailer";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
+
+import { globalLaunchPhase } from "@/lib/launchState";
 
 const launchTrailerId = "rz1B4B2yBZY";
 
@@ -16,23 +18,12 @@ const starts = [
 ];
 
 export default function HeroV2() {
+  const phase = globalLaunchPhase();
+
   return (
     <section className="relative overflow-hidden bg-[#040404]">
       <div className="relative mx-auto max-w-[1600px] px-6 pb-8 pt-32 sm:px-10 lg:px-14">
-        <Link
-          href="/gta-6-launch"
-          className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-[28px] border border-teal-400/30 bg-gradient-to-r from-violet-500/15 via-pink-500/10 to-teal-400/10 px-5 py-4 transition hover:border-teal-300/60"
-        >
-          <div>
-            <p className="text-[11px] font-black uppercase tracking-[0.22em] text-teal-300">
-              GTA 6 launch hub
-            </p>
-            <p className="mt-1 text-base font-semibold text-white sm:text-lg">
-              Unlock time, release time, file size, pre-load, and a live countdown
-            </p>
-          </div>
-          <span className="text-sm font-semibold text-pink-300">Open the hub</span>
-        </Link>
+        <LaunchHubLink initial={phase} />
 
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="min-w-0">
@@ -57,7 +48,7 @@ export default function HeroV2() {
             </p>
 
             <div className="mt-6">
-              <LaunchCountdown />
+              <LaunchHeroCountdown initial={phase} />
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">

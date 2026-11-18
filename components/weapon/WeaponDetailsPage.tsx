@@ -95,7 +95,7 @@ export default function WeaponDetailsPage({
 
           {weapon.source ? (
             <p className="mt-4">
-              <SourceLink label="Rockstar Games" href={weapon.source} />
+              <SourceLink label={weapon.sourceLabel ?? "Rockstar Games"} href={weapon.source} />
             </p>
           ) : null}
 

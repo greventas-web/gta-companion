@@ -30,6 +30,8 @@ const BLOB_PATH = "map/submissions.json";
 const LOCAL_PATH = path.join(process.cwd(), ".data", "map-submissions.json");
 const WINDOW_MS = 60 * 60 * 1000;
 const LIMIT = 5;
+/** Stop accepting new suggestions when this many are waiting for review. */
+const MAX_PENDING = 1500;
 
 export type SubmissionStatus = "pending" | "approved" | "rejected";
 
@@ -165,16 +167,21 @@ export function rateKey(ip: string): string {
 export async function addSubmission(
   submission: Submission,
   key: string
-): Promise<"ok" | "limited"> {
+): Promise<"ok" | "limited" | "full"> {
   let limited = false;
+  let full = false;
   await enqueue(async () => {
     const store = await readStore();
     const now = Date.now();
     const recent = (store.hits[key] ?? []).filter((time) => now - time < WINDOW_MS);
     if (recent.length >= LIMIT) {
-      store.hits[key] = recent;
+      // No write here: a blocked request should not cost a Blob write.
       limited = true;
-      await writeStore(store);
+      return;
+    }
+    const pending = store.submissions.filter((item) => item.status === "pending").length;
+    if (pending >= MAX_PENDING) {
+      full = true;
       return;
     }
     store.hits[key] = [...recent, now];
@@ -185,6 +192,7 @@ export async function addSubmission(
     store.submissions.push(submission);
     await writeStore(store);
   });
+  if (full) return "full";
   return limited ? "limited" : "ok";
 }
 
