@@ -1,6 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { ExtraGrids, extraHref } from "@/components/simple/Extras";
+import { extras } from "@/src/data/launch/expansion";
 import { characters } from "@/data/characters";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
@@ -24,12 +26,12 @@ export default function CharactersPage() {
         data={itemListJsonLd(
           'GTA 6 characters',
           "/characters",
-          items.map((item) => ({ name: item.name, url: `/characters/${item.slug}` }))
+          [...items.map((item) => ({ name: item.name, url: `/characters/${item.slug}` })), ...extras.characters.map((entry) => ({ name: entry.name, url: extraHref("characters", entry) }))]
         )}
       />
       <SimpleHero title='Characters' />
       {groups.map((group) => (
-        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : "Main cast"} count={group.list.length} dense>
           {group.list.map((item) => (
             <SimpleCard
               key={item.slug}
@@ -44,6 +46,7 @@ export default function CharactersPage() {
           ))}
         </CardGrid>
       ))}
+      <ExtraGrids category="characters" />
     </PageShell>
   );
 }

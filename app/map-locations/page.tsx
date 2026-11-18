@@ -14,7 +14,7 @@ export const metadata: Metadata = launchMetadata(title, description);
 const hubs = [
   { href: "/map", title: "Interactive map", image: "/images/official/locations/vice-city.webp" },
   { href: "/ammu-nation-locations", title: "Ammu-Nation", line: "All 24 gun stores." },
-  { href: "/where-to-find", title: "Where to find", image: "/images/official/categories/businesses.webp" },
+  { href: "/where-to-find", title: "Where to find" },
   { href: "/locations", title: "Regions", image: "/images/official/categories/locations.webp" },
   { href: "/stores", title: "Stores", image: "/images/official/editions/ultimate_edition_stock_305_01.webp" },
   { href: "/properties", title: "Garages and hideouts" },

@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
-import ItemImage, { isNameCard } from "@/components/ItemImage";
+import ItemImage from "@/components/ItemImage";
+import { resolveCardImage } from "@/lib/simple/cardImage";
 import { mapPinHref } from "@/components/map/MapPinLink";
 import { shortText } from "@/lib/simple/text";
 import { IMAGE_CREDIT } from "@/lib/site";
@@ -58,38 +59,36 @@ export default function SimpleDetail({
 }: SimpleDetailProps) {
   const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
   const text = shortText(summary, 2);
+  const hasImage = Boolean(resolveCardImage({ image, title }).src);
   const factList = (facts ?? []).filter((fact) => fact.value && !/^\s*not (yet )?(published|shown|announced)/i.test(fact.value));
 
   return (
     <section className="mx-auto max-w-[1400px]">
       <Breadcrumb items={crumbs} />
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12">
-        <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black">
-          <div className="relative aspect-[16/10]">
-            <ItemImage
-              src={image}
-              alt={imageAlt || title}
-              name={title}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover"
-            />
-            {trackId ? <TrackButton id={trackId} label={title} /> : null}
+      <div className={hasImage ? "mt-8 grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12" : "mt-6 max-w-3xl"}>
+        {hasImage ? (
+          <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black">
+            <div className="relative aspect-[16/10]">
+              <ItemImage src={image} alt={imageAlt || title} name={title} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
+              {trackId ? <TrackButton id={trackId} label={title} /> : null}
+            </div>
+            <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">{IMAGE_CREDIT}</p>
           </div>
-          {isNameCard(image) ? null : (
-            <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-              {IMAGE_CREDIT}
-            </p>
-          )}
-        </div>
+        ) : null}
 
         <div>
           {eyebrow ? (
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-violet-300">{eyebrow}</p>
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-pink-300">{eyebrow}</p>
           ) : null}
-          <h1 className="mt-3 break-words text-4xl font-black tracking-[-0.03em] sm:text-5xl">{title}</h1>
+          <div className="flex items-start gap-3">
+            <h1 className="mt-3 break-words text-4xl font-black tracking-[-0.03em] sm:text-5xl">{title}</h1>
+            {trackId && !hasImage ? (
+              <div className="relative mt-3 h-9 w-9 shrink-0 [&>button]:left-0 [&>button]:top-0">
+                <TrackButton id={trackId} label={title} />
+              </div>
+            ) : null}
+          </div>
           {price ? <PriceChip price={price} className="mt-5 px-4 py-1.5 text-lg" /> : null}
           {text ? <p className="mt-5 text-lg leading-8 text-zinc-300">{text}</p> : null}
 

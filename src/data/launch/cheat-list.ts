@@ -23,7 +23,7 @@ export const cheatList: Cheat[] = [
   { name: "$250,000", category: "player", effect: "Instantly gives you $250,000.", unlock: "Finish the story.", code: ["Up", "Right", "Down", "Left", "Up", "Left", "Down", "Right"] },
   { name: "Drunk", category: "player", effect: "Instantly makes you and your partner drunk.", unlock: "Spend $2,500 on alcohol." },
   { name: "Raise Heat Level", category: "player", effect: "Raises your level of heat across the map.", unlock: "Lose a 3-star wanted level 25 times.", code: ["Left", "Down", "Right", "Down", "Up", "Down", "Up"] },
-  { name: "Raise Wanted Level", category: "player", effect: "Raises your wanted level across the map.", unlock: "Lose a 3-star wanted level 50 times.", code: ["Left", "Down", "Right", "Down", "Up", "Right", "Up"], codeNote: "Code not fully confirmed yet." },
+  { name: "Raise Wanted Level", category: "player", effect: "Raises your wanted level across the map.", unlock: "Lose a 3-star wanted level 50 times.", code: ["Left", "Down", "Right", "Down", "Up", "Right", "Up"] },
   { name: "Unlimited Focus", category: "player", effect: "Focus never runs out.", unlock: "Finish the story.", code: ["Down", "Up", "Up", "Down", "Up", "Down", "Up", "Down", "Up", "Right"] },
   { name: "No Fall Damage", category: "player", effect: "You are immune to fall damage.", unlock: "Survive a freefall from 40 feet 20 times." },
   { name: "Parachute", category: "player", effect: "Adds a parachute to your loadout.", unlock: "Complete 50 skydives or base jumps from 300 feet or higher." },

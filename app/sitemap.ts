@@ -20,6 +20,7 @@ import { missions } from "@/src/data/missions";
 import { trophies } from "@/src/data/trophies";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
 import { mapLocations } from "@/src/data/launch/map-locations";
+import { extraPages, type ExtraCategory } from "@/src/data/launch/expansion";
 import { moneyMethods } from "@/src/data/launch/money-methods";
 import { collectibleGuides, collectibleItemPages } from "@/src/data/launch/collectible-guides";
 import { whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
@@ -58,6 +59,9 @@ const detailPaths = [
   ...weapons.map((entry) => `/weapons/${entry.slug}`),
   ...animals.map((entry) => `/animals/${entry.slug}`),
   ...activities.map((entry) => `/activities/${entry.slug}`),
+  ...(["locations", "businesses", "stores", "characters", "brands", "clothing", "animals", "activities"] as ExtraCategory[]).flatMap(
+    (category) => extraPages(category).map((entry) => `/${category}/${entry.slug}`)
+  ),
   ...news.map((entry) => `/news/${entry.slug}`),
   ...phoneItems.map((entry) => `/phone/${entry.slug}`),
   ...properties.map((entry) => `/properties/${entry.slug}`),

@@ -6,17 +6,22 @@ import { stores } from "@/data/stores";
 import { isPlaceholderSrc } from "@/lib/media/catalog";
 import pinData from "@/src/data/map/locations.json";
 
-type PinRow = { id: string; linked_site_entity_slug?: string | null };
+type PinRow = { id: string; name?: string; linked_site_entity_slug?: string | null };
 
-const tables: Record<string, readonly { slug: string; image?: string; imageAlt?: string }[]> = {
+const tables: Record<string, readonly { slug: string; name?: string; image?: string; imageAlt?: string }[]> = {
   activities,
   businesses,
   locations,
-  properties: properties as unknown as { slug: string; image?: string; imageAlt?: string }[],
+  properties: properties as unknown as { slug: string; name?: string; image?: string; imageAlt?: string }[],
   stores,
 };
 
-/** Photo of the place a map pin points at, when the site has one. */
+const norm = (value = "") => value.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+
+/**
+ * Photo of the exact place a map pin points at. Only when the pin is that same
+ * item (same name), never the photo of the area it sits in.
+ */
 export function imageForPin(pinId?: string): { src?: string; alt?: string } {
   if (!pinId) return {};
   const id = pinId.replace(/^confirmed:/, "");
@@ -26,5 +31,8 @@ export function imageForPin(pinId?: string): { src?: string; alt?: string } {
   const [table, slug] = linked.split("/");
   const entry = tables[table]?.find((item) => item.slug === slug);
   if (!entry?.image || isPlaceholderSrc(entry.image)) return {};
+  const pinName = norm(row?.name);
+  const entryName = norm(entry.name);
+  if (!pinName || !entryName || !(pinName.startsWith(entryName) || entryName.startsWith(pinName))) return {};
   return { src: entry.image, alt: entry.imageAlt };
 }

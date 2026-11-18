@@ -23,7 +23,7 @@ export const cheatGroups: CheatGroup[] = [
     slug: "combat-cheats",
     category: "combat",
     title: "GTA 6 Weapon Cheats: Infinite Ammo, Explosives, and More",
-    label: "Combat cheats",
+    label: "Weapon cheats",
     intro:
       "Eleven combat cheats: max ammo, infinite ammo, no reload, explosive weapons, incendiary ammo, the Explosive Shotgun, and the Hauners H-AT rocket launcher.",
   },
@@ -31,7 +31,7 @@ export const cheatGroups: CheatGroup[] = [
     slug: "vehicle-cheats",
     category: "vehicle",
     title: "GTA 6 Vehicle Spawn Cheats: All 21 Cars, Planes, and Boats",
-    label: "Vehicle spawn cheats",
+    label: "Vehicle cheats",
     intro:
       "Twenty-one cheats that spawn a vehicle, from the Progen Emerus and Truffade Thrax supercars to the Hauners Rhino Tank and P-996 Lazer jet.",
   },
@@ -39,7 +39,7 @@ export const cheatGroups: CheatGroup[] = [
     slug: "environment-cheats",
     category: "environment",
     title: "GTA 6 Weather and Time Cheats",
-    label: "Environment cheats",
+    label: "World cheats",
     intro: "Three environment cheats that move time forward, pause the clock, or change the weather.",
   },
   {

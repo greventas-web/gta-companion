@@ -16,21 +16,21 @@ export type LaunchStatus = "confirmed" | "live" | "pending";
 export const gta6Launch = {
   path: "/gta-6-launch",
   lastUpdated: "November 17, 2026",
-  title: "GTA 6 Unlock Time, Release Time, and Countdown",
+  title: "GTA 6 Is Out: Unlock Times, File Size, and Platforms",
   description:
-    "GTA 6 unlock time, release time, file size, and pre-load for November 19, 2026, plus a live countdown. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
+    "GTA 6 is out now on PS5 and Xbox Series X|S: unlock times, file size, and platforms. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
   keywords: [
     "GTA 6 unlock time",
     "GTA 6 release time",
     "GTA 6 file size",
     "GTA 6 pre-load",
     "GTA 6 preload",
-    "GTA 6 countdown",
+    "GTA 6 out now",
     "Grand Theft Auto VI unlock time",
     "Grand Theft Auto VI release time",
   ],
   h1: "GTA 6 unlock time",
-  lede: "A live countdown to November 19, 2026, with the unlock times, file size, and pre-load details published by Rockstar, PlayStation, and Xbox. Everything you need for GTA 6 launch day, in one place.",
+  lede: "GTA 6 is out now. Here are the unlock times, file size, and pre-load details published by Rockstar, PlayStation, and Xbox. Everything you need for GTA 6 launch day, in one place.",
   clocks: {
     ps5: {
       year: 2026,
@@ -67,7 +67,7 @@ export const gta6Launch = {
       status: "confirmed" as LaunchStatus,
       statusLabel: "Confirmed",
       headline: "Midnight local time, by country",
-      body: "PlayStation says Grand Theft Auto VI uses a rolling midnight launch by country. It begins at 12:00 a.m. NZDT in New Zealand and continues as each country reaches midnight on November 19, 2026. The countdown above reaches zero at midnight on that date in this device's time zone, which matches that schedule when the device zone matches the country on the PlayStation account.",
+      body: "PlayStation says Grand Theft Auto VI uses a rolling midnight launch by country. It begins at 12:00 a.m. NZDT in New Zealand and continues as each country reaches midnight on November 19, 2026.",
       sourceIds: ["ps-blog-nov-10"],
     },
     {
@@ -85,7 +85,7 @@ export const gta6Launch = {
       status: "confirmed" as LaunchStatus,
       statusLabel: "Confirmed",
       headline: "Midnight local time on November 19, 2026",
-      body: "Xbox Series X|S: midnight local time on November 19, 2026. Rockstar says the game releases at midnight local time in all regions on both PlayStation 5 and Xbox Series X|S. Xbox Cloud Gaming streaming starts separately at 1:00 a.m. ET. Store listings use one timestamp per store region (for example, the US store uses midnight Eastern). The console's own countdown is the final word.",
+      body: "Xbox Series X|S: midnight local time on November 19, 2026. Rockstar says the game releases at midnight local time in all regions on both PlayStation 5 and Xbox Series X|S. Xbox Cloud Gaming streaming starts separately at 1:00 a.m. ET. Store listings use one timestamp per store region (for example, the US store uses midnight Eastern).",
       sourceIds: ["rockstar-support-release"],
     },
   ],
@@ -214,7 +214,7 @@ export const gta6Launch = {
     {
       question: "What is the GTA 6 release time?",
       answer:
-        "Rockstar set the release for November 19, 2026, on PlayStation 5 and Xbox Series X|S, at midnight local time in all regions. Xbox Cloud Gaming starts at 1:00 a.m. ET the same day. Store listings use one timestamp per store region (for example, the US store uses midnight Eastern). The console's own countdown is the final word.",
+        "Rockstar set the release for November 19, 2026, on PlayStation 5 and Xbox Series X|S, at midnight local time in all regions. Xbox Cloud Gaming starts at 1:00 a.m. ET the same day. Store listings use one timestamp per store region (for example, the US store uses midnight Eastern).",
     },
     {
       question: "What is the GTA 6 file size?",
@@ -235,11 +235,6 @@ export const gta6Launch = {
       question: "Can I play GTA 6 on Xbox Cloud Gaming?",
       answer:
         "Yes, on Xbox One and Xbox Series X|S, starting at 1:00 a.m. ET on November 19, 2026. The game must be purchased separately. Streamed play uses Xbox Series S graphics settings. Cloud gaming availability can vary by market and device.",
-    },
-    {
-      question: "Where does the GTA 6 countdown end?",
-      answer:
-        "The PlayStation 5 and Xbox Series X|S countdowns on this page end at midnight on November 19, 2026, in the time zone of the device you are using. The Xbox Cloud Gaming countdown ends at 1:00 a.m. Eastern Time on the same date.",
     },
   ],
   sources: [

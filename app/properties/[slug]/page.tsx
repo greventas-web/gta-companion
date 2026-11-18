@@ -5,7 +5,6 @@ import ViewOnMap from "@/components/map/ViewOnMap";
 import PageShell from "@/components/PageShell";
 import SimpleDetail from "@/components/simple/SimpleDetail";
 import { properties } from "@/data/properties";
-import { imageForPin } from "@/lib/simple/pinImage";
 import { staticMapHref } from "@/lib/map/catalog";
 import { detailMetadata } from "@/lib/pages";
 import { shortText } from "@/lib/simple/text";
@@ -41,7 +40,7 @@ export default async function PropertiesDetailPage({ params }: Props) {
         crumbs={[{ label: "Home", href: "/" }, { label: 'Properties', href: "/properties" }, { label: item.name }]}
         eyebrow={item.type}
         title={item.name}
-        image={(item.map.kind === "area" ? imageForPin(item.map.pinId)?.src : undefined)}
+        image={undefined}
         imageAlt={undefined}
         summary={item.summary}
         facts={[{ label: "Type", value: item.type }, { label: "Where", value: item.area }, { label: "Edition", value: /not an edition/i.test(item.edition) ? "" : item.edition }, { label: "How to get", value: shortText(item.howToGet, 1) }]}
@@ -51,7 +50,7 @@ export default async function PropertiesDetailPage({ params }: Props) {
         related={related.map((entry) => ({
           href: `/properties/${entry.slug}`,
           title: entry.name,
-          image: (entry.map.kind === "area" ? imageForPin(entry.map.pinId)?.src : undefined),
+          image: undefined,
           small: true,
         }))}
       >

@@ -2,7 +2,6 @@ import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { properties } from "@/data/properties";
-import { imageForPin } from "@/lib/simple/pinImage";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
@@ -36,7 +35,7 @@ export default function PropertiesPage() {
               key={item.slug}
               href={`/properties/${item.slug}`}
               title={item.name}
-              image={(item.map.kind === "area" ? imageForPin(item.map.pinId)?.src : undefined)}
+              image={undefined}
               eyebrow={item.type}
               line={item.area}
               mapHref={staticMapHref("property", item.slug) ?? undefined}

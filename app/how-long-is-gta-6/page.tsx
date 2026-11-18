@@ -38,7 +38,7 @@ export default function HowLongIsGta6Page() {
         ))}
       </CardGrid>
       <CardGrid heading="Track your run">
-        <SimpleCard href="/missions" title="Missions" image="/images/official/categories/characters.webp" />
+        <SimpleCard href="/missions" title="Missions" />
         <SimpleCard href="/trophies" title="Trophies" />
         <SimpleCard href="/collectibles" title="Collectibles" />
       </CardGrid>
