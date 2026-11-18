@@ -13,7 +13,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI Launch Trailer",
     youtubeId: "rz1B4B2yBZY",
     releaseDate: "October 15, 2026",
-    thumbnail: "/images/official/news/trailer.webp",
+    thumbnail: "/images/official/videos/rz1B4B2yBZY.webp",
     duration: "1:31",
   },
   {
@@ -21,7 +21,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI: Pre-Load Now",
     youtubeId: "TIPlpDAsfWo",
     releaseDate: "November 10, 2026",
-    thumbnail: "/images/official/news/trailer.webp",
+    thumbnail: "/images/official/videos/TIPlpDAsfWo.webp",
     duration: "0:30",
   },
   {
@@ -29,7 +29,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI: An Extended Look",
     youtubeId: "tJbzMqJGH4k",
     releaseDate: "August 27, 2026",
-    thumbnail: "/images/official/news/gallery.webp",
+    thumbnail: "/images/official/videos/tJbzMqJGH4k.webp",
     duration: "26:48",
   },
   {
@@ -37,7 +37,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI Trailer 2",
     youtubeId: "VQRLujxTm3c",
     releaseDate: "May 6, 2025",
-    thumbnail: "/images/official/news/trailer.webp",
+    thumbnail: "/images/official/videos/VQRLujxTm3c.webp",
     duration: "2:47",
   },
   {
@@ -45,7 +45,7 @@ export const trailers: Trailer[] = [
     title: "Grand Theft Auto VI Trailer 1",
     youtubeId: "QdBZY2fkU-0",
     releaseDate: "December 4, 2023",
-    thumbnail: "/images/official/news/announcement.webp",
+    thumbnail: "/images/official/videos/QdBZY2fkU-0.webp",
     duration: "1:31",
   },
 ];

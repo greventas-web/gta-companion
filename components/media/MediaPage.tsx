@@ -54,7 +54,7 @@ export default function MediaPage() {
 
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2">
 
             {trailers.slice(1).map((trailer) => (
               <TrailerCard
@@ -62,6 +62,7 @@ export default function MediaPage() {
                 title={trailer.title}
                 youtubeId={trailer.youtubeId}
                 releaseDate={trailer.releaseDate}
+                thumbnail={trailer.thumbnail}
               />
             ))}
 

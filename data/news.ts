@@ -267,8 +267,6 @@ export const news: NewsArticle[] = [
     id: 8,
     slug: "gta-vi-edition-vehicles",
     title: "Rockstar Names the Edition Vehicles",
-    image: "/images/official/vehicles/grotti-cheetah-1995.webp",
-    imageAlt: "The '95 Grotti Cheetah in an official Rockstar still.",
     summary:
       "The Ultimate Edition names the '95 Grotti Cheetah, Vapid Ganado, Dinka Enduro, Crest Kayak, Shitzu Squalo, and '67 Vapid Dominator Buggy. The Vintage Vice City Pack adds the '55 Vapid Stanier.",
     date: "2026-06-25",
@@ -300,8 +298,8 @@ export const news: NewsArticle[] = [
     id: 6,
     slug: "gta-vi-launch-date",
     title: "GTA VI Launches November 19, 2026",
-    image: "/images/official/media/screenshots-places-mount-kalaga-national-park-mount-kalaga-national-park-01.webp",
-    imageAlt: "Mount Kalaga National Park in an official Rockstar screenshot.",
+    image: "/images/official/news/launch-date-november-19.webp",
+    imageAlt: "The Grand Theft Auto VI logo from Rockstar's launch date announcement.",
     summary:
       "The launch trailer (Oct 15, 2026) restates the November 19, 2026 release on PS5 and Xbox Series X|S, set by Rockstar on November 6, 2025.",
     date: "2025-11-06",
@@ -332,8 +330,8 @@ export const news: NewsArticle[] = [
     id: 4,
     slug: "gta-vi-extended-look",
     title: "Rockstar Releases an Extended Look at GTA VI",
-    image: "/images/official/media/screenshots-people-jason-and-lucia-jason-and-lucia-03.webp",
-    imageAlt: "Jason and Lucia in official Rockstar screenshot 03.",
+    image: "/images/official/videos/tJbzMqJGH4k.webp",
+    imageAlt: "The official thumbnail of Grand Theft Auto VI: An Extended Look.",
     summary:
       "A 26-minute extended look, captured on PlayStation 5, shows more of Jason, Lucia, Vice City, and Leonida.",
     date: "2026-08-27",
@@ -351,8 +349,8 @@ export const news: NewsArticle[] = [
     id: 1,
     slug: "rockstar-releases-trailer-2",
     title: "Rockstar Releases GTA VI Trailer 2",
-    image: "/images/official/media/screenshots-places-vice-city-vice-city-02.webp",
-    imageAlt: "Vice City in official Rockstar screenshot 02.",
+    image: "/images/official/videos/VQRLujxTm3c.webp",
+    imageAlt: "The official thumbnail of Grand Theft Auto VI Trailer 2.",
     summary:
       "Rockstar Games has officially released the second Grand Theft Auto VI trailer showcasing Leonida, Jason, Lucia and new gameplay.",
     date: "2025-05-06",

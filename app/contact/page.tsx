@@ -26,7 +26,7 @@ export default function ContactPage() {
             description="Questions, partnership opportunities, bug reports or general feedback? We'd love to hear from you."
           />
 
-          <div className="mt-16 grid gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="mt-16 grid gap-6">
             <Card className="rounded-[40px] border-white/10 bg-gradient-to-br from-[#121216] via-[#0B0B0D] to-black p-10 shadow-[0_30px_90px_rgba(0,0,0,.35)]">
               <h2 className="text-3xl font-black">
                 Contact Us
@@ -50,7 +50,7 @@ export default function ContactPage() {
               </p>
             </Card>
 
-            <div className="space-y-8">
+            <div className="grid gap-6 md:grid-cols-3">
               <Card className="rounded-[36px] border-white/10 bg-gradient-to-br from-[#121216] to-black p-8 transition hover:border-pink-500/30">
                 <h2 className="text-2xl font-black">
                   Partnerships

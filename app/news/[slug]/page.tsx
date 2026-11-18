@@ -48,8 +48,9 @@ export default async function NewsArticlePage({ params }: Props) {
           href: `/news/${item.slug}`,
           title: item.title,
           image: item.image,
+          tag: item.category,
           eyebrow: longDate(item.date),
-          small: true,
+          kind: "news",
         }))}
         relatedHeading="More news"
       />
