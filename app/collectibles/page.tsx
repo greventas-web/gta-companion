@@ -1,45 +1,51 @@
+import Link from "next/link";
+
 import CitedNotes from "@/components/CitedNotes";
+import FaqSection, { type FaqItem } from "@/components/intent/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { pageMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
+import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
   gameInformerAnimals,
   gamespotTgg,
 } from "@/src/data/gameplay/confirmed";
 import { animalPrintNotes } from "@/src/data/gameplay/guardian";
+import { batch2Sources as src } from "@/src/data/launch/batch2-sources";
+import { collectibleGuides } from "@/src/data/launch/collectible-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 collectibles",
-  "GTA 6 collectibles confirmed at launch: Collectible Cards, WAiNK It scans, meditation spots, Cocaine Flamingos, and more, with sources. Unofficial fan site."
+  "GTA 6 collectibles confirmed at launch: collectible card sets, Cocaine Flamingos, stunt jumps, WAiNK It scans, meditation spots, and more, with counts where two guides agree. Unofficial fan site."
 );
 
 const birdLog = animalPrintNotes[0];
 
-const cultr = {
-  label: "CULTR trophy list",
-  href: "https://www.cultr.com/news/complete-gta-6-trophy-list-every-trophy-and-achievement/",
-};
-const gamespew = {
-  label: "GameSpew trophy list",
-  href: "https://www.gamespew.com/2026/11/heres-the-full-trophy-achievement-list-for-grand-theft-auto-vi/",
-};
-const powerpyx = {
-  label: "PowerPyx collectible guide",
-  href: "https://www.powerpyx.com/gta-6-collectible-guide-progress-database/",
-};
-const bigLead = {
-  label: "The Big Lead collectibles guide",
-  href: "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/",
-};
+const cultr = src.cultrTrophies;
+const gamespew = src.gamespewTrophies;
+const powerpyx = src.powerpyxProgress;
+const bigLead = src.bigLead;
 
 const launchNotes = [
   {
     title: "Collectible Cards",
-    body: "Cards come in named sets, such as the Vice City Flamingos. The trophy Don’t Touch My Deck asks you to complete 3 Collectible Card sets.",
+    body: "Cards come in named sets, such as the Vice City Flamingos. PowerPyx lists 18 sets and 480 unique cards, and says the 100% list asks for 15 complete sets. The published trophy Don’t Touch My Deck asks you to complete 3 sets.",
     source: cultr,
-    sources: [cultr, gamespew, powerpyx, bigLead],
+    sources: [cultr, gamespew, powerpyx, src.powerpyxCards, src.powerpyxHundred, bigLead],
+  },
+  {
+    title: "Cocaine Flamingos",
+    body: "Hidden Cocaine Flamingo figures show up across the map. Destroying 50 unlocks the Inflatable Flamingo vehicle cheat after the story. PowerPyx counts 125 and says the 100% list asks for any 100 of them.",
+    source: powerpyx,
+    sources: [powerpyx, src.powerpyxFlamingos, src.powerpyxHundred, bigLead, src.powerpyxCheats, src.gamesradarCheats],
+  },
+  {
+    title: "Stunt jumps",
+    body: "Stunts are tracked in four categories. PowerPyx and DayOne both count 130 stunt jumps, 202 under-the-bridge stunts, 40 knife flights, and 25 base jumps (397 in total). The published trophy Cunning Stunts asks for 250 stunts.",
+    source: powerpyx,
+    sources: [powerpyx, src.powerpyxStunts, src.dayOneLeisure, cultr, gamespew],
   },
   {
     title: "WAiNK It scans",
@@ -49,15 +55,9 @@ const launchNotes = [
   },
   {
     title: "Meditation spots",
-    body: "Meditation spots are spread across Leonida. The trophy Positive Mental Attitude asks you to meditate at every spot.",
+    body: "Meditation spots are spread across Leonida. The trophy Positive Mental Attitude asks you to meditate at every spot. PowerPyx counts 18 spots and says the 100% list asks for 15 of them (single-source for those counts).",
     source: cultr,
-    sources: [cultr, gamespew, powerpyx, bigLead],
-  },
-  {
-    title: "Cocaine Flamingos",
-    body: "Hidden Cocaine Flamingo collectibles show up across the map.",
-    source: powerpyx,
-    sources: [powerpyx, bigLead],
+    sources: [cultr, gamespew, powerpyx, src.powerpyxHundred, bigLead],
   },
   {
     title: "Styles",
@@ -73,6 +73,27 @@ const launchNotes = [
   },
 ];
 
+const faqs: FaqItem[] = [
+  {
+    question: "What collectibles are in GTA 6?",
+    answer:
+      "Launch-day coverage confirms collectible card sets, Cocaine Flamingos, stunt jumps, WAiNK It scans, meditation spots, styles, and vehicle discovery, among other Progress-menu categories.",
+    sources: [powerpyx, bigLead, cultr, gamespew],
+  },
+  {
+    question: "How many collectible card sets are in GTA 6?",
+    answer:
+      "PowerPyx lists 18 sets and 480 unique cards, and says the 100% list asks for 15 complete sets. The published trophy Don’t Touch My Deck asks you to complete 3 sets.",
+    sources: [powerpyx, src.powerpyxCards, src.powerpyxHundred, cultr, gamespew],
+  },
+  {
+    question: "How many Cocaine Flamingos are in GTA 6?",
+    answer:
+      "PowerPyx counts 125 and says the 100% list asks for any 100 of them. Destroying 50 unlocks the Inflatable Flamingo vehicle cheat after the story.",
+    sources: [src.powerpyxFlamingos, src.powerpyxHundred, src.powerpyxCheats, src.gamesradarCheats],
+  },
+];
+
 export default function Page() {
   return (
     <PageShell>
@@ -80,19 +101,38 @@ export default function Page() {
         data={itemListJsonLd(
           "GTA 6 collectibles",
           "/collectibles",
-          launchNotes.map((note) => ({ name: note.title }))
+          [
+            ...collectibleGuides.map((guide) => ({ name: guide.title, url: `/collectibles/${guide.slug}` })),
+            ...launchNotes.map((note) => ({ name: note.title })),
+          ]
         )}
       />
       <PageHero
         badge="Unofficial fan notes"
         title="Collectibles"
-        description="Collectible types confirmed by launch coverage and the published trophy list, plus what Rockstar said before launch."
+        description="Collectible types confirmed by launch coverage and the published trophy list, with counts where a launch-day guide published them."
       />
+
+      <p className="text-sm leading-7 text-zinc-500">{UNOFFICIAL_DISCLAIMER}</p>
+
+      <section className="mt-10 grid gap-4 md:grid-cols-3">
+        {collectibleGuides.map((guide) => (
+          <Link
+            key={guide.slug}
+            href={`/collectibles/${guide.slug}`}
+            className="rounded-[28px] border border-white/10 bg-[#0B0B0D] p-6 transition hover:border-violet-400/40"
+          >
+            <h2 className="text-2xl font-black">{guide.title}</h2>
+            <p className="mt-3 text-sm leading-7 text-zinc-400">{guide.intro}</p>
+            <p className="mt-4 text-sm font-semibold text-violet-200">Open guide</p>
+          </Link>
+        ))}
+      </section>
 
       <CitedNotes
         eyebrow="Confirmed at launch"
         title="Collectibles in the game"
-        intro="Each type below is reported by at least two independent sources. Counts per type will be added when two sources agree."
+        intro="Each type below is reported by at least two independent sources, except where a count is labeled as coming from one launch-day guide."
         notes={launchNotes}
       />
 
@@ -118,6 +158,22 @@ export default function Page() {
           },
         ]}
       />
+
+      <FaqSection faqs={faqs} heading="GTA 6 collectibles: questions" />
+
+      <p className="mt-10 text-zinc-400">
+        <Link href="/shooting-ranges" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
+          Shooting ranges
+        </Link>
+        {" · "}
+        <Link href="/trophies" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
+          Trophies
+        </Link>
+        {" · "}
+        <Link href="/map" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
+          Leonida map
+        </Link>
+      </p>
     </PageShell>
   );
 }

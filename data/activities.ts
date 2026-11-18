@@ -255,10 +255,15 @@ export const activities: Activity[] = [
     imageAlt:
       "Lucia at an outdoor shooting range with Targets remaining 7/12, Extended Look at 18:32",
     description:
-      "The Extended Look at 18:32 shows Lucia at an outdoor shooting range, firing at targets against a timer. The counter reads Targets remaining 7/12.",
-    firstAppearance: "Extended Look",
+      "There are two shooting ranges in the release: Griffin Shooting Range in north-west Vice City and Rodgers Ranch & Shooting Range in north-east Port Gellhorn, with 12 named courses between them. The official Extended Look at 18:32 shows Lucia at an outdoor range, firing at targets against a timer, with a counter reading Targets remaining 7/12.",
+    firstAppearance: "Launch (November 18, 2026)",
     gallery: [],
-    sources: [extendedLook],
+    sources: [extendedLook, launchSources.powerpyxProgress],
+    related: [
+      { title: "Shooting ranges guide", href: "/shooting-ranges" },
+      { title: "Weapons", href: "/weapons" },
+      { title: "Trophies", href: "/trophies" },
+    ],
   },
   {
     id: 19,
@@ -329,10 +334,15 @@ export const activities: Activity[] = [
     location: "Leonida",
     image: "",
     description:
-      "Stunts are tracked in the Progress menu and include stunt jumps. The trophy Cunning Stunts asks for 250 stunts.",
+      "Stunts are tracked in four categories. PowerPyx and DayOne both count 130 stunt jumps, 202 under-the-bridge stunts, 40 knife flights, and 25 base jumps, for 397 in total. The published trophy Cunning Stunts asks for 250 stunts.",
     firstAppearance: "Launch (November 18, 2026)",
     gallery: [],
     sources: [launchSources.cultrTrophies, launchSources.gamespewTrophies, launchSources.pcGamerTrophies, launchSources.powerpyxProgress],
+    related: [
+      { title: "Stunt jumps guide", href: "/collectibles/stunt-jumps" },
+      { title: "Collectibles", href: "/collectibles" },
+      { title: "Trophies", href: "/trophies" },
+    ],
   },
   {
     id: 31,

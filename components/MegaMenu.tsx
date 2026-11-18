@@ -27,6 +27,7 @@ const groups = [
       { title: "Clothing", href: "/clothing" },
       { title: "Brands", href: "/brands" },
       { title: "Collectibles", href: "/collectibles" },
+      { title: "Shooting ranges", href: "/shooting-ranges" },
       { title: "Phone", href: "/phone" },
     ],
   },
@@ -52,6 +53,7 @@ const groups = [
       { title: "Missions", href: "/missions" },
       { title: "Trophies", href: "/trophies" },
       { title: "Cheats", href: "/cheats" },
+      { title: "Where to find", href: "/where-to-find" },
     ],
   },
 ];

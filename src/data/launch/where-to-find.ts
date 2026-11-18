@@ -292,6 +292,8 @@ export const whereToFindTopics: WhereTopic[] = [
     related: [
       { href: "/ammu-nation-locations", label: "All 24 Ammu-Nation locations" },
       { href: "/weapons", label: "Weapons database" },
+      { href: "/where-to-find/melee-and-explosives", label: "Melee and explosives" },
+      { href: "/shooting-ranges", label: "Shooting ranges" },
       { href: "/where-to-find/clothing-stores", label: "Clothing stores" },
     ],
   },
@@ -627,6 +629,90 @@ export const whereToFindTopics: WhereTopic[] = [
       { href: "/where-to-find/clothing-stores", label: "Clothing stores" },
       { href: "/activities/clothing-stores-and-hair-salons", label: "Clothing and salons activity" },
       { href: "/where-to-find/garages", label: "Garages and safehouses" },
+    ],
+  },
+  {
+    slug: "melee-and-explosives",
+    heading: "Where to get melee and explosives in GTA 6",
+    label: "Melee and explosives",
+    metaTitle: "Where to Get Melee Weapons and Explosives in GTA 6",
+    metaDescription:
+      "Where to get melee weapons and explosives in GTA 6: Ammu-Nation sells them, how they count on the weapons list, and the named Molotov and Grenade. Unofficial.",
+    keywords: [
+      "GTA 6 melee weapons",
+      "GTA 6 explosives",
+      "GTA 6 molotov",
+      "GTA 6 grenades",
+      "where to get melee GTA 6",
+    ],
+    answer:
+      "PowerPyx says the Progress database lists 9 melee weapons and 4 explosives, and that you can buy them at Ammu-Nation or pick one up if an enemy drops it. A launch-day guide has not published the full named list. The Molotov and the Grenade are confirmed by cheat unlocks.",
+    facts: [
+      "PowerPyx’s Progress database lists 196 weapon entries: 53 guns, 9 melee, 4 explosives, and 130 variants. The 9 / 4 split is single-source.",
+      "PowerPyx says the 100% list asks you to find 50 of 66 standard-issue weapons, which includes those melee weapons and explosives, and that buying one at Ammu-Nation or picking up a dropped weapon both count. Single-source.",
+      "Insider Gaming says Ammu-Nation also sells packs of explosives. Single-source wording.",
+      "The Molotov and the Grenade are confirmed by cheat unlocks published by PowerPyx and GamesRadar+: throwing 100 molotovs unlocks Exploding Bottles, and throwing 100 grenades unlocks All Explosive Weapons. Those cheats only work after the story.",
+      "A price, manufacturer, stat card, or named store tier for the Molotov or the Grenade has not been published by a launch-day guide we trust.",
+    ],
+    groups: [
+      {
+        heading: "Where to buy them",
+        places: [
+          { name: "Phil’s Ammu-Nation", area: "South Vice City", detail: "Expanded", pin: pin("phils-ammu-nation") },
+          { name: "Pawn & Gun – Port Gellhorn", area: "Port Gellhorn", detail: "Standard", pin: pin("pawn-and-gun-port-gellhorn") },
+          { name: "Chuck’s Tackle & Shot", area: "Key Lento", detail: "Limited; first gun store", areaPin: pin("leonida-keys") },
+        ],
+      },
+    ],
+    mapPin: pin("phils-ammu-nation"),
+    mapPinLabel: "Phil’s Ammu-Nation",
+    faqs: [
+      {
+        question: "How many melee weapons and explosives are in GTA 6?",
+        answer:
+          "PowerPyx’s Progress database lists 9 melee weapons and 4 explosives, as part of 196 weapon entries. A launch-day guide has not published the full named list of those 13 items.",
+      },
+      {
+        question: "Where do you buy melee weapons and explosives in GTA 6?",
+        answer:
+          "PowerPyx says you can buy them at Ammu-Nation, or pick one up if an enemy drops it. Insider Gaming also says Ammu-Nation sells packs of explosives. A price for a named melee weapon or thrown explosive has not been published yet.",
+      },
+      {
+        question: "Are the Molotov and the Grenade in GTA 6?",
+        answer:
+          "Yes. PowerPyx and GamesRadar+ both list cheat unlocks that require throwing 100 molotovs or 100 grenades. Those cheats only work after the story.",
+      },
+    ],
+    sources: [
+      src.powerpyxAmmu,
+      {
+        label: "PowerPyx, Progress Database",
+        href: "https://www.powerpyx.com/gta-6-collectible-guide-progress-database/",
+      },
+      {
+        label: "PowerPyx, 100% completion checklist",
+        href: "https://www.powerpyx.com/gta-6-100-completion-checklist-guide/",
+      },
+      {
+        label: "Insider Gaming, how weapons work",
+        href: "https://insider-gaming.com/gta-6-full-weapons-guide-types-and-how-to-buy/",
+      },
+      {
+        label: "PowerPyx, all cheats",
+        href: "https://www.powerpyx.com/gta-6-all-cheats/",
+      },
+      {
+        label: "GamesRadar+, all GTA 6 cheats",
+        href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-cheats/",
+      },
+    ],
+    related: [
+      { href: "/weapons", label: "Weapons database" },
+      { href: "/weapons/molotov", label: "Molotov" },
+      { href: "/weapons/grenade", label: "Grenade" },
+      { href: "/where-to-find/gun-stores", label: "Gun stores" },
+      { href: "/ammu-nation-locations", label: "All 24 Ammu-Nation locations" },
+      { href: "/cheats/combat-cheats", label: "Combat cheats" },
     ],
   },
 ];

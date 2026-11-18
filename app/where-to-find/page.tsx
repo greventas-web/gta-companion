@@ -28,7 +28,10 @@ export const metadata: Metadata = {
 
 const otherGuides = [
   { href: "/ammu-nation-locations", label: "All 24 Ammu-Nation locations" },
+  { href: "/shooting-ranges", label: "Shooting ranges" },
   { href: "/collectibles", label: "Collectibles" },
+  { href: "/collectibles/card-sets", label: "Collectible card sets" },
+  { href: "/where-to-find/melee-and-explosives", label: "Melee and explosives" },
   { href: "/properties", label: "Properties" },
   { href: "/map", label: "Leonida map" },
 ];

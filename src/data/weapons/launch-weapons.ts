@@ -13,7 +13,8 @@ export type LaunchWeaponHow =
   | "bret"
   | "ue"
   | "jason"
-  | "lucia";
+  | "lucia"
+  | "ammu-explosive";
 
 export type LaunchWeapon = {
   slug: string;
@@ -82,4 +83,6 @@ export const launchWeapons: LaunchWeapon[] = [
   { slug: "hauners-h-at", name: "Hauners H-AT", manufacturer: "Hauners", category: "Launcher", caliber: "66mm rocket", magazine: 1, fireMode: "Single shot", stats: { damage: 9.6, accuracy: 4.5, handling: 3.0, range: 8.0 }, price: "$16,000", how: "expanded+cheat" },
   { slug: "hawk-little-morgan", name: "Hawk & Little Morgan", manufacturer: "Hawk & Little", category: "Handgun", type: "Revolver", caliber: ".44 Magnum", magazine: 6, fireMode: "Semi-automatic", stats: { damage: 5.7, accuracy: 5.4, handling: 7.8, range: 6.0 }, how: "ue" },
   { slug: "shrewsbury-sms-01", name: "Shrewsbury SMS-01", manufacturer: "Shrewsbury", category: "Sniper Rifle", price: "$2,150", how: "bret" },
+  { slug: "molotov", name: "Molotov", manufacturer: "Not named", category: "Explosives", type: "Thrown", how: "ammu-explosive" },
+  { slug: "grenade", name: "Grenade", manufacturer: "Not named", category: "Explosives", type: "Thrown", how: "ammu-explosive" },
 ];

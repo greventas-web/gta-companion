@@ -23,7 +23,7 @@ const faqs: FaqItem[] = [
   {
     question: "How many weapons are in GTA 6?",
     answer:
-      "The in-game Progress database lists 196 weapon entries: 53 guns, 9 melee weapons, 4 explosives, and 130 weapon variants. Each Ammu-Nation also sells a unique weapon variant.",
+      "The in-game Progress database lists 196 weapon entries: 53 guns, 9 melee weapons, 4 explosives, and 130 weapon variants. Each Ammu-Nation also sells a unique weapon variant. The Molotov and the Grenade are the thrown explosives confirmed by name so far.",
     sources: [src.powerpyxProgress, src.powerpyxAmmuNation],
   },
   {
@@ -56,6 +56,18 @@ const faqs: FaqItem[] = [
       "Guns you buy at Ammu-Nation are owned weapons that both Jason and Lucia can use. If you drop one, you can get it back from your owned car's trunk or from a weapon locker, for example at any Ammu-Nation.",
     sources: [src.insiderWeapons],
   },
+  {
+    question: "Where do you get melee weapons and explosives in GTA 6?",
+    answer:
+      "PowerPyx says the Progress database lists 9 melee weapons and 4 explosives, and that you can buy them at Ammu-Nation or pick one up if an enemy drops it. The Molotov and the Grenade are confirmed by cheat unlocks. A full named list and prices have not been published yet.",
+    sources: [src.powerpyxProgress],
+  },
+  {
+    question: "Where are the shooting ranges in GTA 6?",
+    answer:
+      "There are two: Griffin Shooting Range in north-west Vice City, and Rodgers Ranch & Shooting Range in north-east Port Gellhorn. PowerPyx and DayOne both list 12 courses across those ranges.",
+    sources: [src.powerpyxRanges],
+  },
 ];
 
 export default function WeaponsPage() {
@@ -71,9 +83,17 @@ export default function WeaponsPage() {
       <p className="text-sm leading-7 text-zinc-500">{UNOFFICIAL_DISCLAIMER}</p>
 
       <p className="mt-6 max-w-3xl leading-8 text-zinc-400">
-        Stats come from the in-game stat cards. Damage, accuracy, handling, and range are each out of 10. Melee weapons and explosives are not listed by name yet. Where to buy:{" "}
+        Stats come from the in-game stat cards. Damage, accuracy, handling, and range are each out of 10. The Progress database also lists 9 melee weapons and 4 explosives; the Molotov and the Grenade are named so far. Where to buy:{" "}
         <Link href="/where-to-find/gun-stores" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
           all 24 Ammu-Nation gun stores
+        </Link>
+        {" "}and{" "}
+        <Link href="/where-to-find/melee-and-explosives" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
+          melee and explosives
+        </Link>
+        . Practice at the{" "}
+        <Link href="/shooting-ranges" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
+          shooting ranges
         </Link>
         . After the story, some weapons can also come from{" "}
         <Link href="/cheats/combat-cheats" className="underline decoration-white/20 underline-offset-4 hover:text-violet-200">
