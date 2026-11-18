@@ -1,3 +1,5 @@
+import { SHOW_PUBLIC_SOURCES } from "@/lib/sources";
+
 export type SourceRef = {
   label: string;
   href?: string;
@@ -15,6 +17,10 @@ export function SourceLink({
   href,
   prefixed = true,
 }: SourceRef & { prefixed?: boolean }) {
+  if (!SHOW_PUBLIC_SOURCES) {
+    return null;
+  }
+
   const name = sourceName(label);
   const text = prefixed ? `Source: ${name}` : name;
 
@@ -41,6 +47,10 @@ export function SourceList({
   sources: readonly SourceRef[];
   className?: string;
 }) {
+  if (!SHOW_PUBLIC_SOURCES) {
+    return null;
+  }
+
   const items = sources.filter((source) => sourceName(source.label).length > 0);
 
   if (items.length === 0) {

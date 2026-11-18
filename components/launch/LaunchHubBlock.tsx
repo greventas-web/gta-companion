@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SHOW_PUBLIC_SOURCES } from "@/lib/sources";
 import { ArrowRight } from "lucide-react";
 
 import { useLaunchPhase } from "@/components/launch/useLaunchPhase";
@@ -67,16 +68,21 @@ export default function LaunchHubBlock({ initial }: { initial: LaunchPhase }) {
           {phase === "pre"
             ? "Grand Theft Auto VI unlocks at midnight local time on November 19, 2026, on PlayStation 5 and Xbox Series X|S."
             : "Grand Theft Auto VI unlocks at midnight local time on November 19, 2026, on PlayStation 5 and Xbox Series X|S, so the launch rolls across time zones."}{" "}
-          Source:{" "}
-          <a
-            href={RELEASE_SOURCE.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-violet-200 underline underline-offset-2 hover:text-white"
-          >
-            {RELEASE_SOURCE.label}
-          </a>
-          . Grand Theft Auto VI is by Rockstar Games.
+          {SHOW_PUBLIC_SOURCES ? (
+            <>
+              Source:{" "}
+              <a
+                href={RELEASE_SOURCE.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-violet-200 underline underline-offset-2 hover:text-white"
+              >
+                {RELEASE_SOURCE.label}
+              </a>
+              .{" "}
+            </>
+          ) : null}
+          Grand Theft Auto VI is by Rockstar Games.
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {links.map((item) => (

@@ -49,6 +49,13 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Pre-launch stand-in weapon pages superseded by named release-build entries.
+      { source: "/weapons/standard-pistol", destination: "/weapons", permanent: true },
+      { source: "/weapons/compact-pistol", destination: "/weapons", permanent: true },
+      { source: "/weapons/assault-rifle", destination: "/weapons", permanent: true },
+      { source: "/weapons/pump-shotgun", destination: "/weapons/fortune-son-moreland-850", permanent: true },
+      { source: "/weapons/sniper-rifle", destination: "/weapons", permanent: true },
+      { source: "/weapons/rocket-launcher", destination: "/weapons/hauners-h-at", permanent: true },
       {
         source: "/index.html",
         destination: "/",

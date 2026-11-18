@@ -21,6 +21,7 @@ import { trophies } from "@/src/data/trophies";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
 import { mapLocations } from "@/src/data/launch/map-locations";
 import { moneyMethods } from "@/src/data/launch/money-methods";
+import { collectibleGuides } from "@/src/data/launch/collectible-guides";
 import { whereToFindTopics } from "@/src/data/launch/where-to-find";
 
 const baseUrl = SITE.url;
@@ -33,6 +34,7 @@ const launchPaths = [
   ...missions.map((entry) => `/missions/${entry.slug}`),
   ...trophies.map((entry) => `/trophies/${entry.slug}`),
   ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
+  ...collectibleGuides.map((entry) => `/collectibles/${entry.slug}`),
 ];
 
 const detailPaths = [
@@ -70,6 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/fastest-cars",
     "/map-locations",
     "/ammu-nation-locations",
+    "/shooting-ranges",
     "/where-to-find",
     "/cheats",
     "/missions",
@@ -111,9 +114,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/trophies",
     "/vehicles",
     "/ammu-nation-locations",
+    "/shooting-ranges",
     "/where-to-find",
     ...whereToFindTopics.map((entry) => `/where-to-find/${entry.slug}`),
     "/collectibles",
+    ...collectibleGuides.map((entry) => `/collectibles/${entry.slug}`),
     "/cheats",
     "/fastest-cars",
   ]);

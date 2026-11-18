@@ -1,4 +1,3 @@
-import { weaponStandIns } from "@/data/standIns";
 import {
   ingameSourceHref,
   ingameWeapons,
@@ -7,6 +6,7 @@ import {
 } from "@/lib/ingame";
 import { Weapon } from "@/types/weapon";
 import { batch1Sources as src } from "@/src/data/launch/batch1-sources";
+import { batch2Sources as src2 } from "@/src/data/launch/batch2-sources";
 import {
   launchWeapons,
   type LaunchWeapon,
@@ -60,100 +60,6 @@ const baseWeapons: Weapon[] = [
     status: "Confirmed",
     gallery: [],
     source: rockstar,
-  },
-  {
-    id: 4,
-    slug: "standard-pistol",
-    name: "Standard Pistol",
-    manufacturer: "Not named",
-    category: "Handgun",
-    image: weaponStandIns["standard-pistol"].src,
-    imageAlt: weaponStandIns["standard-pistol"].alt,
-    imageRepresentative: true,
-    description:
-      "Handguns appear in official trailers. Rockstar has not published this name or a caliber.",
-    firstAppearance: "Trailer footage",
-    ammunition: "Not published",
-    status: "Expected / unconfirmed",
-    gallery: [],
-  },
-  {
-    id: 5,
-    slug: "compact-pistol",
-    name: "Compact Pistol",
-    manufacturer: "Not named",
-    category: "Handgun",
-    image: weaponStandIns["compact-pistol"].src,
-    imageAlt: weaponStandIns["compact-pistol"].alt,
-    imageRepresentative: true,
-    description:
-      "A smaller handgun shape appears in official footage. Rockstar has not published this name or a caliber.",
-    firstAppearance: "Trailer footage",
-    ammunition: "Not published",
-    status: "Expected / unconfirmed",
-    gallery: [],
-  },
-  {
-    id: 6,
-    slug: "assault-rifle",
-    name: "Assault Rifle",
-    manufacturer: "Not named",
-    category: "Rifle",
-    image: weaponStandIns["assault-rifle"].src,
-    imageAlt: weaponStandIns["assault-rifle"].alt,
-    imageRepresentative: true,
-    description:
-      "Rifles appear in official screenshots. Rockstar has not published this name or a caliber.",
-    firstAppearance: "Official screenshots",
-    ammunition: "Not published",
-    status: "Expected / unconfirmed",
-    gallery: [],
-  },
-  {
-    id: 7,
-    slug: "pump-shotgun",
-    name: "Pump Shotgun",
-    manufacturer: "Not named",
-    category: "Shotgun",
-    image: weaponStandIns["pump-shotgun"].src,
-    imageAlt: weaponStandIns["pump-shotgun"].alt,
-    imageRepresentative: true,
-    description:
-      "Rockstar has not published this shotgun name or a gauge.",
-    firstAppearance: "Not published",
-    ammunition: "Not published",
-    status: "Expected / unconfirmed",
-    gallery: [],
-  },
-  {
-    id: 8,
-    slug: "sniper-rifle",
-    name: "Sniper Rifle",
-    manufacturer: "Not named",
-    category: "Rifle",
-    image: weaponStandIns["sniper-rifle"].src,
-    imageAlt: weaponStandIns["sniper-rifle"].alt,
-    imageRepresentative: true,
-    description:
-      "Rockstar has not published this rifle name or a caliber.",
-    firstAppearance: "Not published",
-    ammunition: "Not published",
-    status: "Expected / unconfirmed",
-    gallery: [],
-  },
-  {
-    id: 9,
-    slug: "rocket-launcher",
-    name: "Rocket Launcher",
-    manufacturer: "Not named",
-    category: "Heavy",
-    image: "",
-    description:
-      "Rockstar has not published this weapon name.",
-    firstAppearance: "Not published",
-    ammunition: "Not published",
-    status: "Expected / unconfirmed",
-    gallery: [],
   },
 ];
 
@@ -214,6 +120,17 @@ function howToGet(weapon: LaunchWeapon): {
         links: [{ href: "/where-to-find/gun-stores", label: "Gun stores" }],
         sources: [{ label: "Rockstar Games, editions", href: "https://www.rockstargames.com/VI/editions" }, src.dayOneWeapons],
       };
+    case "ammu-explosive": {
+      const isMolotov = weapon.slug === "molotov";
+      const cheat = isMolotov
+        ? "After the story, throwing 100 molotovs unlocks the Exploding Bottles cheat."
+        : "After the story, throwing 100 grenades unlocks the All Explosive Weapons cheat.";
+      return {
+        text: `PowerPyx says melee weapons and explosives can be bought at Ammu-Nation, or picked up if an enemy drops one, and that they count toward the standard-issue weapons list. A price and a specific store tier for the ${weapon.name} have not been published yet. ${cheat}`,
+        links: [GUN_STORES, CHEATS, { href: "/where-to-find/melee-and-explosives", label: "Melee and explosives" }],
+        sources: [src2.powerpyxHundred, src.powerpyxAmmuNation, src.insiderWeapons, src.powerpyxCheats, src.gamesradarCheats],
+      };
+    }
     case "jason":
     case "lucia":
       return {
@@ -235,6 +152,10 @@ function howToGet(weapon: LaunchWeapon): {
 }
 
 function describe(weapon: LaunchWeapon) {
+  if (weapon.category === "Explosives" || weapon.category === "Melee") {
+    const kind = (weapon.type ?? weapon.category).toLowerCase();
+    return `The ${weapon.name} is a ${kind} in Grand Theft Auto VI. A launch-day guide has not published a manufacturer or stat card for it yet.`;
+  }
   const kind = (weapon.type ?? weapon.category).toLowerCase();
   const fire = weapon.fireMode ? `${weapon.fireMode.toLowerCase()} ` : "";
   const cal = weapon.caliber ? `${weapon.caliber} ` : "";

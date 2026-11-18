@@ -140,6 +140,14 @@ export default function Footer() {
                 Collectibles
               </Link>
 
+              <Link href="/shooting-ranges" className="block text-zinc-400 transition hover:text-pink-400">
+                Shooting ranges
+              </Link>
+
+              <Link href="/where-to-find" className="block text-zinc-400 transition hover:text-pink-400">
+                Where to find
+              </Link>
+
               <Link href="/phone" className="block text-zinc-400 transition hover:text-pink-400">
                 Phone
               </Link>
