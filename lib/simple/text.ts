@@ -36,3 +36,10 @@ export function shortText(text: string | undefined | null, max = 2): string {
 export function oneLine(text: string | undefined | null): string {
   return shortText(text, 1);
 }
+
+/** "2026-11-17" -> "Nov 17, 2026". Leaves anything else as it is. */
+export function shortDate(date: string): string {
+  const parsed = new Date(`${date}T12:00:00`);
+  if (Number.isNaN(parsed.getTime())) return date;
+  return parsed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}

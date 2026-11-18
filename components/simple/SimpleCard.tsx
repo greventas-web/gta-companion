@@ -88,6 +88,8 @@ export type SimpleCardProps = {
   mapHref?: string | null;
   /** Item kind, used for the icon and a fitting photo. Read from href when left out. */
   kind?: string;
+  /** Small pink pill in the top-left corner, e.g. a news category. */
+  tag?: string;
 };
 
 const ICONS: Record<string, LucideIcon> = {
@@ -159,6 +161,7 @@ export default function SimpleCard({
   mapPin,
   mapHref: mapLink,
   kind: kindProp,
+  tag,
 }: SimpleCardProps) {
   const kind = kindProp ?? kindFromHref(href);
   const shortLine = oneLine(line);
@@ -191,7 +194,12 @@ export default function SimpleCard({
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       {price ? <PriceChip price={price} className="absolute right-3 top-3 z-[2] backdrop-blur" /> : null}
-      <div className={`relative z-20 flex h-full flex-col justify-end ${small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price ? "pt-12" : ""}`}>
+      {tag && !trackId ? (
+        <span className="absolute left-4 top-4 z-[2] max-w-[calc(100%-2rem)] truncate rounded-full border border-pink-500/30 bg-black/60 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-pink-300 backdrop-blur">
+          {tag}
+        </span>
+      ) : null}
+      <div className={`relative z-20 flex h-full flex-col justify-end ${small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price || tag ? "pt-12" : ""}`}>
         <KindIcon kind={kind} small={small} />
         <h3
           className={`break-words font-black leading-none tracking-[-0.03em] text-white ${

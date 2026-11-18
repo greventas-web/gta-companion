@@ -4,17 +4,12 @@ import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard
 import { news } from "@/data/news";
 import { pageMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
+import { shortDate } from "@/lib/simple/text";
 
 export const metadata = pageMetadata(
   "GTA 6 news",
   "Unofficial GTA 6 news: trailers, launch, music and site updates."
 );
-
-function shortDate(date: string) {
-  const parsed = new Date(`${date}T12:00:00`);
-  if (Number.isNaN(parsed.getTime())) return date;
-  return parsed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-}
 
 export default function NewsPage() {
   return (
@@ -35,7 +30,9 @@ export default function NewsPage() {
             title={article.title}
             image={article.image}
             imageAlt={article.imageAlt}
+            tag={article.category}
             eyebrow={shortDate(article.date)}
+            kind="news"
           />
         ))}
       </CardGrid>

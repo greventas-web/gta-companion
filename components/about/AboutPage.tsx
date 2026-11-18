@@ -4,7 +4,6 @@ import {
   Rocket,
   ShieldCheck,
   Smartphone,
-  Sparkles,
   Users,
 } from "lucide-react";
 
@@ -66,22 +65,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-24 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-[38px] border border-white/10 bg-gradient-to-br from-[#121216] to-black p-10">
-            <div className="flex items-center gap-3 text-pink-400">
-              <Sparkles size={20} />
-
-              <span className="text-xs font-black uppercase tracking-[0.35em]">
-                Coming Soon
-              </span>
-            </div>
-
-            <ul className="mt-8 space-y-5 text-lg leading-8 text-zinc-300">
-              <li>• Fan notes after launch</li>
-              <li>• Guides written for this site</li>
-            </ul>
-          </div>
-
+        <section className="mt-24">
           <div className="rounded-[38px] border border-white/10 bg-gradient-to-br from-[#121216] to-black p-10">
             <Smartphone
               size={42}

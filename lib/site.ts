@@ -27,12 +27,6 @@ export const SOCIAL_PROFILES = [
     title: "GTA Companion on TikTok",
   },
   {
-    id: "instagram",
-    label: "Instagram",
-    href: "https://www.instagram.com/gtacompanion.hq/",
-    title: "GTA Companion on Instagram",
-  },
-  {
     id: "x",
     label: "X",
     href: "https://x.com/GTACompanion",
