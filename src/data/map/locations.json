@@ -888,11 +888,16 @@
   },
   {
     "id": "jasons-place",
-    "name": "Jason's place (Brian's property)",
+    "name": "Jason's House",
     "category": "safehouse",
     "region": "Leonida Keys",
-    "area": "Leonida Keys",
-    "position": null,
+    "area": "Key Lento",
+    "position": {
+      "gtadb_landmark_id": "L266",
+      "x": -2353.531,
+      "y": -5532.255,
+      "placement": "gtadb-point"
+    },
     "linked_site_entity_slug": "properties/jasons-place",
     "confirmed_by": [
       {
@@ -904,11 +909,23 @@
         "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
       },
       {
+        "name": "GameSpot, 5 Best Things To Do First In GTA 6",
+        "url": "https://www.gamespot.com/articles/5-best-things-to-do-first-in-gta-6/"
+      },
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
         "name": "GTA Companion, Properties",
         "url": "https://www.gta-companion.com/properties"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
       }
     ],
-    "notes": "Officially, 'Brian’s letting Jason live rent-free at one of his properties' in the Keys. GTA Companion /properties also records Rob Nelson telling Famitsu that Jason's first house is in the Leonida Keys, and that hideouts change chapter by chapter. The exact building has not been officially identified. gtadb L266 ('Jason's House, Key Lento') is a community identification and is listed in unconfirmed.json. Also related: characters/cal-hampton (Cal is 'Jason's friend and a fellow associate of Brian’s' and 'feels safest hanging at home') — Cal's house is not officially placed."
+    "notes": "Jason's first hideout, a house on Key Lento in the Leonida Keys. Rockstar's Keys page says Brian is letting Jason stay at one of his properties. GameSpot's launch-day guide says the story starts in Key Lento and stays there for the first part of the game. The Big Lead refers to 'your first safehouse in Key Lento.' The pin is gtadb L266 ('Jason's House, Key Lento'), tagged #safehouse. Hideouts still change later in the story. Listed on GTA Companion /properties."
   },
   {
     "id": "southside-gang-compound-raid",
@@ -1143,5 +1160,768 @@
       }
     ],
     "notes": "Official Keys-waters activity. GTA Companion records official screenshot Leonida Keys 05 (jet skis among the boats), confirmed in the Extended Look and interviews. Also related: activities/boating. Region-level pin."
+  },
+  {
+    "id": "starlet-motel",
+    "name": "Starlet Motel",
+    "category": "safehouse",
+    "region": "Port Gellhorn",
+    "area": "Historic Route 628, Kelly County",
+    "position": {
+      "gtadb_landmark_id": "L304",
+      "x": -5354.67,
+      "y": 3461.862,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      },
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "Vice City Tracker, Starlet Motel",
+        "url": "https://www.vicecitytracker.com/landmarks/starlet-motel"
+      }
+    ],
+    "notes": "Chapter 2 motel / hideout on Historic Route 628 in Kelly County, just east of Port Gellhorn. The Big Lead's launch-day collectibles guide places a card in the laundry room of the chapter 2 motel in Port Gellhorn. gtadb L304 is named Starlet Motel and tagged #safehouse; Vice City Tracker independently lists the same spot at -5355, 3462. No dedicated property page on GTA Companion yet."
+  },
+  {
+    "id": "phils-ammu-nation",
+    "name": "Phil's Ammu-Nation",
+    "category": "weapon-shop",
+    "region": "Vice-Dale County",
+    "area": "Vice-Dale County",
+    "position": {
+      "gtadb_landmark_id": "L1074",
+      "x": -1812.013,
+      "y": -2462.556,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Ammu-Nation Gun Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-ammu-nation-gun-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game Expanded gun store, listed by PowerPyx under Vice-Dale County in the launch-day Ammu-Nation guide (24 stores on the in-game map filter). gtadb L1074 places the named shop. Phil's also appeared in official Trailer 2 coverage before launch. No dedicated store page on GTA Companion yet."
+  },
+  {
+    "id": "pawn-and-gun-port-gellhorn",
+    "name": "Pawn & Gun – Port Gellhorn",
+    "category": "weapon-shop",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": "L298",
+      "x": -6350.0,
+      "y": 3367.0,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/port-gellhorn",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Ammu-Nation Gun Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-ammu-nation-gun-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game Standard gun store. PowerPyx lists 'Pawn & Gun – Port Gellhorn' among the 24 Ammu-Nation / gun-store map icons in Kelly County. gtadb L298 is the named shop. This is a different store from Gellhorn Outfitters, which PowerPyx also lists in Port Gellhorn but which is not yet placed on gtadb."
+  },
+  {
+    "id": "uncle-jacks-liquor",
+    "name": "Uncle Jack's Liquor",
+    "category": "store",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": "L313",
+      "x": -6354.681,
+      "y": 3865.936,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/port-gellhorn",
+    "confirmed_by": [
+      {
+        "name": "GTA 6 Everything, properties (Uncle Jack's Liquor, seen in official footage)",
+        "url": "https://www.gta6everything.com/properties"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named liquor store in Port Gellhorn, previously seen in official footage and now placed at gtadb L313 with in-game coordinates (the 17 Nov dump already had the id; coordinates are present in the 17 Nov 23:56 UTC landmarks file). Official name is confirmed; the pin uses the gtadb point."
+  },
+  {
+    "id": "wonder-whale",
+    "name": "The Wonder Whale",
+    "category": "store",
+    "region": "Leonida Keys",
+    "area": "Key Lento",
+    "position": {
+      "gtadb_landmark_id": "L332",
+      "x": -2935.573,
+      "y": -6420.455,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game Souvenir & Swimwear clothing store. PowerPyx lists The Wonder Whale among 67 clothing stores, under Mariana County. gtadb L332 is the named shop on Key Lento. Linked to the clothing-stores activity page; no dedicated store page yet."
+  },
+  {
+    "id": "pay-n-spray-port-gellhorn",
+    "name": "Pay 'n' Spray – Port Gellhorn (Watkins Auto Parts)",
+    "category": "store",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": "L348",
+      "x": -6445.001,
+      "y": 3278.0,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/port-gellhorn",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "PowerPyx's launch-day guide lists a Pay 'n' Spray in Port Gellhorn (one of 19 on the in-game Vehicles filter). gtadb L348, Watkins Auto Parts in Port Gellhorn, is tagged #pay'n'spray and is the matching placed shop."
+  },
+  {
+    "id": "pay-n-spray-la-perle",
+    "name": "Pay 'n' Spray – La Perle",
+    "category": "store",
+    "region": "Vice City",
+    "area": "La Perle",
+    "position": {
+      "gtadb_landmark_id": "L415",
+      "x": -1248.962,
+      "y": 1187.452,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "PowerPyx lists a Pay 'n' Spray under Vice-Dale County named La Perle, one of 19 in-game shops. gtadb L415 is the #pay'n'spray landmark in La Perle (the building itself is unnamed in the landmarks file)."
+  },
+  {
+    "id": "the-rusty-anchor",
+    "name": "The Rusty Anchor",
+    "category": "business",
+    "region": "Leonida Keys",
+    "area": "Key Lento",
+    "position": {
+      "gtadb_landmark_id": "L325",
+      "x": -2271.57,
+      "y": -5256.913,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/nightlife",
+    "confirmed_by": [
+      {
+        "name": "GameSpot, 5 Best Things To Do First In GTA 6",
+        "url": "https://www.gamespot.com/articles/5-best-things-to-do-first-in-gta-6/"
+      },
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Enterable bar on Key Lento. GameSpot's launch-day 'things to do first' guide names The Rusty Anchor as one of the interiors to visit after the tutorial. The Big Lead uses it as a collectible landmark ('east of The Rusty Anchor', 'south of the Rusty Anchor'). gtadb L325."
+  },
+  {
+    "id": "delights",
+    "name": "Delights",
+    "category": "business",
+    "region": "Port Gellhorn",
+    "area": "Port Gellhorn",
+    "position": {
+      "gtadb_landmark_id": "L629",
+      "x": -6360.16,
+      "y": 3590.852,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/nightlife",
+    "confirmed_by": [
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Port Gellhorn strip club. GameSpot's garage guide places the Port Gellhorn Station Garage 'west of Delights Strip Club.' The Big Lead's collectibles guide puts a Delight Dancers card in a booth in the Port Gellhorn strip club during Chapter 2. gtadb L629 is named Delights on Interstate 404. Linked to the nightlife activity page."
+  },
+  {
+    "id": "y-hotel",
+    "name": "Y Hotel",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Washington Beach",
+    "position": {
+      "gtadb_landmark_id": "L16",
+      "x": 1958.13,
+      "y": 1590.778,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named hotel on the in-game map. GameSpot's garage guide says the Atlantic Court Garage in Ocean Beach is 'south of the Y Hotel and southwest of the VYB Club.' gtadb L16 is the enterable hotel 'Y Vice City' in Washington Beach (real-world counterpart: W South Beach), which matches that placement north of Ocean Beach."
+  },
+  {
+    "id": "downtown-vice-city",
+    "name": "Downtown Vice City",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Downtown",
+    "position": {
+      "gtadb_landmark_id": "L190",
+      "x": -662.0,
+      "y": -102.3,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 140,
+      "address_match": "Downtown, Vice City"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game Vice City neighborhood. PowerPyx lists Downtown clothing stores (Slinger, Alpha Sports, Endzone) and a Downtown Pay 'n' Spray on the in-game map filters. GameSpot also uses Downtown as a map area. Position is the centroid of 140 gtadb landmarks whose address includes Downtown, Vice City, and is a district reference, not a single civic building."
+  },
+  {
+    "id": "peacock-bay",
+    "name": "Peacock Bay",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Peacock Bay",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1194.9,
+      "y": -1902.6,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 86,
+      "address_match": "Peacock Bay"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game Vice City neighborhood. PowerPyx lists Slinger – Peacock Bay and Nola – Peacock Bay among clothing stores on the in-game Style filter. Position is the centroid of 86 gtadb landmarks in Peacock Bay."
+  },
+  {
+    "id": "vice-city-international-airport",
+    "name": "Vice City International Airport",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Vice City International Airport",
+    "position": {
+      "gtadb_landmark_id": "L345",
+      "x": -2296.1,
+      "y": -713.7,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 43,
+      "address_match": "Vice City International Airport"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named on the in-game map. GameSpot's garage guide places the 7th Avenue Garage 'just east of Vice City International Airport in south Vice-Dale County.' Position is the centroid of 43 gtadb landmarks at the airport; L345 (VCIA Control Tower) is the representative landmark. This is an area pin, not the tower doorway."
+  },
+  {
+    "id": "waning-sands",
+    "name": "Waning Sands",
+    "category": "landmark",
+    "region": "Leonard County",
+    "area": "Waning Sands",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -22.7,
+      "y": 3986.9,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 64,
+      "address_match": "Waning Sands"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game town in Leonard County. PowerPyx lists clothing stores (This / That, Mid, Ferruccio Tucci, Alpha Sports) and a Pay 'n' Spray here. The Big Lead also directs collectibles to Vinewood Beach in Waning Sands. Position is the centroid of 64 gtadb landmarks."
+  },
+  {
+    "id": "hamlet",
+    "name": "Hamlet",
+    "category": "landmark",
+    "region": "Vice-Dale County",
+    "area": "Hamlet",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -2691.0,
+      "y": -3193.1,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 175,
+      "address_match": "Hamlet"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Ammu-Nation Gun Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-ammu-nation-gun-stores-locations/"
+      },
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game town in Vice-Dale County. PowerPyx lists Hamlet Traders (gun store), Hamlet Thrift, and a Pay 'n' Spray in Hamlet. Position is the centroid of 175 gtadb landmarks."
+  },
+  {
+    "id": "salton",
+    "name": "Salton",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Salton",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1478.4,
+      "y": -510.3,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 153,
+      "address_match": "Salton, Vice City"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game Vice City neighborhood. PowerPyx lists a Pay 'n' Spray in Salton. GameSpot places the 7th Avenue Garage south of Salton and east of the airport. Position is the centroid of 153 gtadb landmarks. Linked to the Vice City location page."
+  },
+  {
+    "id": "balsero",
+    "name": "Balsero",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Balsero",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1854.7,
+      "y": 601.0,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 54,
+      "address_match": "Balsero"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game Vice City neighborhood. PowerPyx lists a Pay 'n' Spray in Balsero on the Vehicles filter. Position is the centroid of 54 gtadb landmarks."
+  },
+  {
+    "id": "la-perle",
+    "name": "La Perle",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "La Perle",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -970.6,
+      "y": 1433.5,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 67,
+      "address_match": "La Perle"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game Vice City neighborhood. PowerPyx lists a Pay 'n' Spray under the La Perle name. Position is the centroid of 67 gtadb landmarks. The Pay 'n' Spray itself is a separate store pin."
+  },
+  {
+    "id": "capri",
+    "name": "Capri",
+    "category": "landmark",
+    "region": "Mariana County",
+    "area": "Capri",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -6669.2,
+      "y": 17.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 74,
+      "address_match": "Capri"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game town. PowerPyx lists formal clothing stores Nola – Capri and Ferruccio Tucci – Capri. GameSpot places the Vela Rota Drive Garage 'right in the middle of Capri,' west of South Kelly County, West Vice-Dale County, and North Mariana County. Position is the centroid of 74 gtadb landmarks."
+  },
+  {
+    "id": "decor-district",
+    "name": "Decor District",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Decor District",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -206.5,
+      "y": 2162.0,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 38,
+      "address_match": "Vice Decor District, Vice City"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game Vice City neighborhood. PowerPyx lists Slinger, This / That, Nola, and Ferruccio Tucci shops in Decor District. gtadb addresses it as Vice Decor District. Position is the centroid of 38 gtadb landmarks."
+  },
+  {
+    "id": "tequesta",
+    "name": "Tequesta",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Tequesta",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -752.2,
+      "y": -1102.1,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 92,
+      "address_match": "Tequesta"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "PowerPyx, GTA 6 All Ammu-Nation Gun Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-ammu-nation-gun-stores-locations/"
+      },
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game Vice City neighborhood. PowerPyx lists Slinger – Tequesta and Tequesta Guns & Ammo. GameSpot places the 7th Avenue Garage northwest of Tequesta. Position is the centroid of 92 gtadb landmarks whose address includes Tequesta or Tequesta Retreat."
+  },
+  {
+    "id": "crosstown",
+    "name": "Crosstown",
+    "category": "landmark",
+    "region": "Vice City",
+    "area": "Crosstown",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -636.1,
+      "y": 1156.7,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 99,
+      "address_match": "Crosstown"
+    },
+    "linked_site_entity_slug": "locations/vice-city",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Ammu-Nation Gun Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-ammu-nation-gun-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game Vice City neighborhood. PowerPyx lists Pawn & Gun – Crosstown among the 24 gun stores. Position is the centroid of 99 gtadb landmarks. The Crosstown pawn-and-gun shop itself is not yet separately placed on gtadb."
+  },
+  {
+    "id": "southwind",
+    "name": "Southwind",
+    "category": "landmark",
+    "region": "Mariana County",
+    "area": "Southwind",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -6388.5,
+      "y": -6462.8,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 3,
+      "address_match": "Southwind"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game place in Mariana County. PowerPyx lists a Pay 'n' Spray in Southwind. The Big Lead mentions a tiki bar at the south of Southwind. Position is a rough centroid from only 3 gtadb landmarks, so treat it as an area hint rather than a precise downtown pin."
+  },
+  {
+    "id": "millport",
+    "name": "Millport",
+    "category": "landmark",
+    "region": "Lummox County",
+    "area": "Millport",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -885.3,
+      "y": 6565.4,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 10,
+      "address_match": "Millport"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Pay 'n' Spray Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game town in Lummox County. PowerPyx lists a Pay 'n' Spray in Millport, one of 19 on the in-game filter. Position is the centroid of 10 gtadb landmarks."
+  },
+  {
+    "id": "abismo-key",
+    "name": "Abismo Key",
+    "category": "landmark",
+    "region": "Leonida Keys",
+    "area": "Abismo Key",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -4986.2,
+      "y": -7310.1,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 9,
+      "address_match": "Abismo Key"
+    },
+    "linked_site_entity_slug": "locations/leonida-keys",
+    "confirmed_by": [
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named Key in the south of Leonida. The Big Lead's launch-day collectibles guide places cards and a flamingo on Abismo Key and mentions the lower bridge between Abismo Key and Key Lento. Position is the centroid of 9 gtadb landmarks."
+  },
+  {
+    "id": "bobcat-key",
+    "name": "Bobcat Key",
+    "category": "landmark",
+    "region": "Mariana County",
+    "area": "Bobcat Key",
+    "position": {
+      "gtadb_landmark_id": "L1068",
+      "x": -6483.84,
+      "y": -1527.603,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "The Big Lead, GTA 6 collectibles guide",
+        "url": "https://www.thebiglead.com/gta-6-collectibles-guide-cards-styles-meteorite-chunks-landmark-scans/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named Key in Mariana County. The Big Lead's collectibles guide places a Waink scan at the Experimental Dome on the south curve of Bobcat Key. This pin is gtadb L1068, the named island landmark, not the collectible itself."
+  },
+  {
+    "id": "belville",
+    "name": "Belville",
+    "category": "landmark",
+    "region": "Leonard County",
+    "area": "Belville",
+    "position": {
+      "gtadb_landmark_id": null,
+      "x": -1216.3,
+      "y": 2863.3,
+      "placement": "gtadb-region-centroid",
+      "landmark_count": 15,
+      "address_match": "Belville"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "GameSpot, All Garage Locations And Prices In GTA 6",
+        "url": "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "Named in-game town in southern Leonard County, north of Vice City. GameSpot's garage guide places Persistence Road Garage in the western part of 'Bellville' just above the 'South Leonard County' map text. gtadb spells the town Belville (15 landmarks). Position is that centroid."
   }
 ]
