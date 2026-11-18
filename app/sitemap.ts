@@ -83,7 +83,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/collectibles",
     "/phone",
     "/radio",
-    "/search",
     "/changelog",
     "/roadmap",
     ...launchPaths,
@@ -91,11 +90,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const now = new Date();
+  const highPriority = new Set([
+    "/gta-6-launch",
+    "/map",
+    "/missions",
+    "/trophies",
+    "/vehicles",
+    "/ammu-nation-locations",
+    "/collectibles",
+    "/cheats",
+    "/fastest-cars",
+  ]);
+  const lowPriority = new Set([
+    "/about",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/cookies",
+    "/partners",
+    "/changelog",
+    "/roadmap",
+  ]);
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
-    changeFrequency: "daily",
-    priority: route === "" ? 1 : route === "/gta-6-launch" ? 0.9 : 0.8,
+    changeFrequency: "daily" as const,
+    priority: route === "" ? 1 : highPriority.has(route) ? 0.9 : lowPriority.has(route) ? 0.3 : 0.8,
   }));
 }

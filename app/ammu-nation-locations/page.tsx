@@ -3,8 +3,10 @@ import Link from "next/link";
 
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import JsonLd from "@/components/JsonLd";
 import { SourceList } from "@/components/SourceLink";
 import { launchMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
   ammuNationNotes,
@@ -13,7 +15,7 @@ import {
   type AmmuNationStore,
 } from "@/src/data/launch/launch-facts";
 
-const title = "All 24 GTA 6 Ammu-Nation locations (unofficial)";
+const title = "GTA 6 Ammu-Nation Locations – All 24 Stores";
 const description = `Every Ammu-Nation gun store in GTA 6: all 24 branches by county, with each store’s stock tier (Limited, Standard, Hunting, Expanded). ${SITE.slogan}. ${UNOFFICIAL_DISCLAIMER}`;
 
 export const metadata: Metadata = {
@@ -37,6 +39,13 @@ const expanded = ammuNationStores.filter((store) => store.inventory === "Expande
 export default function AmmuNationLocationsPage() {
   return (
     <PageShell>
+      <JsonLd
+        data={itemListJsonLd(
+          "GTA 6 Ammu-Nation locations",
+          "/ammu-nation-locations",
+          ammuNationStores.map((store) => ({ name: store.name }))
+        )}
+      />
       <PageHero
         badge="Unofficial · confirmed at launch"
         title="Ammu-Nation locations"

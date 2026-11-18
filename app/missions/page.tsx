@@ -4,18 +4,21 @@ import Link from "next/link";
 import MapPinLink from "@/components/map/MapPinLink";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import JsonLd from "@/components/JsonLd";
 import { SourceList } from "@/components/SourceLink";
 import { launchMetadata } from "@/lib/launch";
+import { itemListJsonLd } from "@/lib/seo";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
   MISSION_TYPE_LABEL,
+  missions,
   otherMissions,
   STORY_LIST_NOTE,
   storyChapters,
 } from "@/src/data/missions";
 
-const title = "GTA 6 missions list (unofficial, spoiler-safe)";
-const description = `Spoiler-safe GTA 6 missions list. Story missions in Story Recap order for Chapters 1 to 3, with sources. Plot and rewards stay hidden until you reveal them. ${SITE.slogan}. ${UNOFFICIAL_DISCLAIMER}`;
+const title = "GTA 6 Missions List – Story Missions";
+const description = `Unofficial, spoiler-safe GTA 6 missions list. Story missions in Story Recap order for Chapters 1 to 3, with sources. Later chapters stay hidden for now. Plot and rewards stay hidden until you reveal them. ${UNOFFICIAL_DISCLAIMER}`;
 
 export const metadata: Metadata = {
   ...launchMetadata(title, description),
@@ -34,6 +37,16 @@ function shown(value?: string) {
 export default function MissionsPage() {
   return (
     <PageShell>
+      <JsonLd
+        data={itemListJsonLd(
+          "GTA 6 missions list",
+          "/missions",
+          missions.map((mission) => ({
+            name: mission.name,
+            url: `/missions/${mission.slug}`,
+          }))
+        )}
+      />
       <PageHero
         badge="Unofficial · spoiler-safe"
         title="Missions"
