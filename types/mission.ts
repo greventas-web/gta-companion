@@ -39,5 +39,11 @@ export type Mission = {
   rewards?: string;
   /** Official detail past a name. Hidden until the visitor reveals it. */
   spoiler?: string;
+  /** Story chapter number, for story missions in the in-game recap order. */
+  chapter?: number;
+  /** Chapter title, when a source has published it. */
+  chapterName?: string;
+  /** Position inside the chapter, as the in-game Story Recap lists it. */
+  order?: number;
   sources: MissionSource[];
 };
