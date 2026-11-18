@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
 import { launchMetadata } from "@/lib/launch";
+import { getStaticPins } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { gameplaySources } from "@/src/data/gameplay/confirmed";
@@ -34,7 +35,9 @@ export const metadata: Metadata = {
 const counties: AmmuNationStore["county"][] = [
   "Mariana County",
   "Vice-Dale County",
+  "Leonard County",
   "Kelly County",
+  "Lummox County",
 ];
 
 const expanded = ammuNationStores.filter((store) => store.inventory === "Expanded");
@@ -58,11 +61,30 @@ function pinForStore(store: AmmuNationStore) {
   return storePins[store.name] ?? areaPins[store.area];
 }
 
+/** Fails the build if a map link does not use a real /map pin id. */
+function checkAmmuPins() {
+  const known = new Set(getStaticPins().map((pin) => pin.id));
+  const ids = [...Object.values(storePins), ...Object.values(areaPins)];
+  const missing = ids.filter((id) => !id.startsWith("confirmed:") || !known.has(id));
+  if (missing.length > 0) {
+    throw new Error(`ammu-nation-locations points at unknown map pins: ${missing.join(", ")}`);
+  }
+}
+
+function countyCountSentence(list: readonly AmmuNationStore["county"][]) {
+  const parts = list.map((county) => {
+    const count = ammuNationStores.filter((store) => store.county === county).length;
+    return `${count} in ${county}`;
+  });
+  if (parts.length < 2) return parts.join("");
+  const last = parts[parts.length - 1];
+  return `${parts.slice(0, -1).join(", ")}, and ${last}`;
+}
+
 const ammuFaqs: FaqItem[] = [
   {
     question: "How many Ammu-Nation stores are in GTA 6?",
-    answer:
-      "There are 24 Ammu-Nation gun stores in Leonida, across Mariana County, Vice-Dale County, and Kelly County.",
+    answer: `There are ${ammuNationStores.length} Ammu-Nation gun stores in Leonida: ${countyCountSentence(counties)}.`,
     sources: ammuNationSources,
   },
   {
@@ -85,6 +107,8 @@ const ammuFaqs: FaqItem[] = [
 ];
 
 export default function AmmuNationLocationsPage() {
+  checkAmmuPins();
+
   return (
     <PageShell>
       <JsonLd

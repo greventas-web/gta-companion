@@ -1923,5 +1923,105 @@
       }
     ],
     "notes": "Named in-game town in southern Leonard County, north of Vice City. GameSpot's garage guide places Persistence Road Garage in the western part of 'Bellville' just above the 'South Leonard County' map text. gtadb spells the town Belville (15 landmarks). Position is that centroid."
+  },
+  {
+    "id": "kurts-barber-shop",
+    "name": "Kurt's Barber Shop",
+    "category": "store",
+    "region": "Vice-Dale County",
+    "area": "Hamlet",
+    "position": {
+      "gtadb_landmark_id": "L370",
+      "x": -2573.0,
+      "y": -3556.5,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Hair & Beauty Salon Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-hair-beauty-salon-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game barber shop. PowerPyx lists Kurt's Barber Shop as one of 4 barbers among 18 hair and beauty salons, under Vice-Dale County. gtadb L370 is the named shop on Route 61, Hamlet."
+  },
+  {
+    "id": "euroform-automotive",
+    "name": "Euroform Automotive",
+    "category": "vehicle-dealer",
+    "region": "Vice City",
+    "area": "Little Cuba",
+    "position": {
+      "gtadb_landmark_id": "L1369",
+      "x": -1155.249,
+      "y": -125.98,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Mod Shops Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-mod-shops-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game mod shop for luxury cars. PowerPyx lists Euroform Automotive among 14 mod shops, under Vice-Dale County. gtadb L1369 is the named shop in Little Cuba, Vice City."
+  },
+  {
+    "id": "vice-vinyl",
+    "name": "Vice Vinyl",
+    "category": "vehicle-dealer",
+    "region": "Vice City",
+    "area": "Stockyard",
+    "position": {
+      "gtadb_landmark_id": "L1781",
+      "x": -381.036,
+      "y": 1669.087,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": null,
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Mod Shops Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-mod-shops-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game mod shop for vinyl wraps and liveries. PowerPyx lists Vice Vinyl among 14 mod shops, under Vice-Dale County. gtadb L1781 is the named shop in Stockyard, Vice City."
+  },
+  {
+    "id": "little-cuba-souvenir-shop",
+    "name": "Little Cuba Souvenir Store",
+    "category": "store",
+    "region": "Vice City",
+    "area": "Little Cuba",
+    "position": {
+      "gtadb_landmark_id": "L3079",
+      "x": -1215.11,
+      "y": 17.185,
+      "placement": "gtadb-point"
+    },
+    "linked_site_entity_slug": "activities/clothing-stores-and-hair-salons",
+    "confirmed_by": [
+      {
+        "name": "PowerPyx, GTA 6 All Clothing Stores Locations",
+        "url": "https://www.powerpyx.com/gta-6-all-clothing-stores-locations/"
+      },
+      {
+        "name": "gtadb.org GTA VI landmarks data (CC BY 4.0)",
+        "url": "https://github.com/rolux/gtadb.org/blob/main/map/data/6/landmarks.json"
+      }
+    ],
+    "notes": "In-game Souvenir & Swimwear clothing store. PowerPyx lists Little Cuba Souvenir Store among 67 clothing stores, under Vice-Dale County. gtadb L3079 is the Little Cuba Souvenir Shop in Little Cuba, Vice City."
   }
 ]

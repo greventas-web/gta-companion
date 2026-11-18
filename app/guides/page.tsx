@@ -3,6 +3,7 @@ import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
 import PageStats from "@/components/PageStats";
+import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
 import { pageMetadata } from "@/lib/launch";
 import { SITE } from "@/lib/site";
 
@@ -45,6 +46,8 @@ export default function GuidesPage() {
           },
         ]}
       />
+
+      <WhereToFindLinks className="mb-10" />
 
       <GuideDatabase />
 

@@ -5,6 +5,7 @@ import LaunchHubCountdown from "@/components/launch/LaunchHubCountdown";
 import LaunchPhaseBanner from "@/components/launch/LaunchPhaseBanner";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
+import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
 import { pageMetadata } from "@/lib/launch";
 import { globalLaunchPhase } from "@/lib/launchState";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
@@ -343,6 +344,8 @@ export default function Gta6LaunchPage() {
           ))}
         </div>
       </section>
+
+      <WhereToFindLinks className="mt-10" title="Just started? Where to find it" />
 
       <p className="mt-10 text-sm leading-7 text-zinc-500">
         Last updated {gta6Launch.lastUpdated}. {UNOFFICIAL_DISCLAIMER}

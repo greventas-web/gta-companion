@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import MapLoader, { MapLoading } from "@/components/map/community/MapLoader";
 import { getStaticPins } from "@/lib/map/catalog";
+import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 
 const title = "GTA 6 Map – Every Location (Interactive)";
@@ -71,6 +72,8 @@ export default function MapPage() {
             <MapLoader curated={curated} />
           </Suspense>
         </div>
+
+        <WhereToFindLinks className="mt-6" title="Where to find it: quick lists with map pins" />
       </div>
     </main>
   );
