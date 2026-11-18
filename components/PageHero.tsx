@@ -29,7 +29,7 @@ export default function PageHero({
             alt={imageAlt}
             fill
             priority
-            sizes="(max-width: 1600px) 100vw, 1600px"
+            sizes="(max-width: 480px) 80vw, (max-width: 1600px) 100vw, 1600px"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/55" />

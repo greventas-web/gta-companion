@@ -40,7 +40,9 @@ export default function FeaturedMedia() {
         >
 
           <img
-            src="/images/official/news/trailer.webp"
+            src="/_v/1080/images/official/news/trailer.webp"
+            loading="lazy"
+            decoding="async"
             alt="Trailer 2"
             className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-105"
           />

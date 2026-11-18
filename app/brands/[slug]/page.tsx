@@ -88,7 +88,7 @@ export default async function BrandPage({
                 name={brand.name}
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 480px) 80vw, (max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <RepresentativeMark show={brand.imageRepresentative} />

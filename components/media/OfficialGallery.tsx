@@ -82,7 +82,7 @@ function GalleryBlock({
                       src={item.src}
                       alt={item.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 480px) 80vw, (max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>

@@ -25,7 +25,7 @@ export default function BrandCard({
             alt={brand.imageAlt || brand.name}
             name={brand.name}
             fill
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 33vw"
             className="object-cover"
           />
 

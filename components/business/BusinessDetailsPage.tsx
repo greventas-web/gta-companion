@@ -50,7 +50,7 @@ export default function BusinessDetailsPage({
                 }
                 fill
                 priority
-                sizes="(max-width: 1280px) 100vw, 60vw"
+                sizes="(max-width: 480px) 80vw, (max-width: 1280px) 100vw, 60vw"
                 className="object-cover"
               />
               {isNameCard(business.image) ? null : (
@@ -77,7 +77,7 @@ export default function BusinessDetailsPage({
                       src={shot.src}
                       alt={shot.alt}
                       fill
-                      sizes="(max-width: 1280px) 100vw, 60vw"
+                      sizes="(max-width: 480px) 80vw, (max-width: 1280px) 100vw, 60vw"
                       className="object-cover"
                     />
                   </div>

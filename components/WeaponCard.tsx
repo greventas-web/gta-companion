@@ -40,7 +40,7 @@ export default function WeaponCard({
             alt={weapon.imageAlt || weapon.name}
             name={weapon.name}
             fill
-            sizes="(max-width: 768px) 100vw, 420px"
+            sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 420px"
             className="object-cover"
           />
           <RepresentativeMark show={weapon.imageRepresentative} />

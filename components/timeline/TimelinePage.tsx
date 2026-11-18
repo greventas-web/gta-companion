@@ -42,7 +42,7 @@ export default function TimelinePage() {
                       width={event.image.width}
                       height={event.image.height}
                       className="h-auto w-full rounded-2xl"
-                      sizes="(max-width: 768px) 100vw, 896px"
+                      sizes="(max-width: 480px) 80vw, (max-width: 768px) 100vw, 896px"
                     />
                     <figcaption className="mt-2 text-xs leading-5 text-zinc-500">
                       {IMAGE_CREDIT}

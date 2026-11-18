@@ -29,7 +29,7 @@ export default function FeaturedVehicle() {
                 src="/images/original/vehicles/bravado-buffalo.jpg"
                 alt="Bravado Buffalo"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 480px) 80vw, (max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
 
