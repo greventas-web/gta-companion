@@ -1,7 +1,9 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import PageHero from "@/components/PageHero";
 import PageShell from "@/components/PageShell";
+import { SourceList } from "@/components/SourceLink";
 import { SITE, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import type { LaunchEntry } from "@/src/data/launch/types";
 
@@ -12,6 +14,8 @@ type IndexProps = {
   basePath: string;
   entries: LaunchEntry[];
   emptyBody: string;
+  /** Extra content under the list (FAQ, notes, links). */
+  children?: ReactNode;
 };
 
 export function LaunchIndex({
@@ -21,6 +25,7 @@ export function LaunchIndex({
   basePath,
   entries,
   emptyBody,
+  children,
 }: IndexProps) {
   return (
     <PageShell>
@@ -31,10 +36,10 @@ export function LaunchIndex({
       {entries.length === 0 ? (
         <section className="mt-10 rounded-[32px] border border-white/10 bg-[#0B0B0D] p-8 sm:p-10">
           <p className="text-xs font-black uppercase tracking-[0.28em] text-pink-400">
-            {SITE.launchLabel}
+            Updated as guides publish
           </p>
           <h2 className="mt-4 text-3xl font-black tracking-[-0.03em]">
-            Coming at launch
+            Not listed yet
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-400">
             {emptyBody}
@@ -66,6 +71,7 @@ export function LaunchIndex({
           ))}
         </section>
       )}
+      {children}
     </PageShell>
   );
 }
@@ -112,6 +118,34 @@ export function LaunchDetail({
           ))}
         </dl>
       )}
+
+      {entry.body && entry.body.length > 0 ? (
+        <div className="mt-10 max-w-3xl space-y-5 text-lg leading-8 text-zinc-300">
+          {entry.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      ) : null}
+
+      {entry.sources && entry.sources.length > 0 ? (
+        <SourceList className="mt-6" sources={entry.sources} />
+      ) : null}
+
+      {entry.links && entry.links.length > 0 ? (
+        <p className="mt-8 text-zinc-400">
+          {entry.links.map((link, index) => (
+            <span key={link.href}>
+              {index > 0 ? " · " : null}
+              <Link
+                href={link.href}
+                className="underline decoration-white/20 underline-offset-4 hover:text-violet-200"
+              >
+                {link.label}
+              </Link>
+            </span>
+          ))}
+        </p>
+      ) : null}
 
       <p className="mt-10 text-sm leading-7 text-zinc-500">
         {UNOFFICIAL_DISCLAIMER} {SITE.slogan}.

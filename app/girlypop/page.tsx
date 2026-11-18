@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cheatSources } from "@/src/data/launch/batch1-sources";
 
 import FaqSection, { RelatedLinks, type FaqItem } from "@/components/intent/FaqSection";
 import PageHero from "@/components/PageHero";
@@ -39,8 +40,8 @@ const faqs: FaqItem[] = [
   {
     question: "What does the Girlypop cheat filter do, and what is the code?",
     answer:
-      "Launch coverage says finding all 16 Girlypop vehicles unlocks a cheat filter. This site has not published the filter's effect or a cheat code. Cheat codes appear on the cheats page only after they have been checked in the game.",
-    sources: girlypopGroup.sources,
+      "Finding all 16 Girlypop vehicles unlocks the Neon Jungle screen filter cheat, which adds neon highlights to the world. Like every GTA 6 cheat, it works only after the story. Its button code has not been published yet; see the screen filter cheats page.",
+    sources: [...girlypopGroup.sources, ...cheatSources],
   },
   {
     question: "Where is the list of all 16 Girlypop vehicles?",
@@ -90,7 +91,7 @@ export default function GirlypopPage() {
           { href: "/vehicles", label: "Vehicle database" },
           { href: "/gta-6-apps", label: "WAiNK, Scooter Bros, and BuckMe" },
           { href: "/phone/waink", label: "WAiNK app" },
-          { href: "/cheats", label: "Cheats" },
+          { href: "/cheats/screen-filter-cheats", label: "Screen filter cheats (Neon Jungle)" },
           { href: "/trophies", label: "Trophy list" },
           { href: "/map", label: "Community map" },
         ]}

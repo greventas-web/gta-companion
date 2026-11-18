@@ -21,6 +21,11 @@ import { suvVehicles } from "./suv";
 import { truckVehicles } from "./truck";
 import { utilityVehicles } from "./utility";
 import { vanVehicles } from "./van";
+import {
+  LAUNCH_VEHICLE_SOURCE,
+  launchConfirmedExisting,
+  launchVehicles,
+} from "./launch";
 
 const baseCatalog = [
   ...aircraftVehicles,
@@ -38,7 +43,10 @@ const baseCatalog = [
   ...truckVehicles,
   ...utilityVehicles,
   ...vanVehicles,
+  ...launchVehicles,
 ];
+
+const launchSlugs = new Set(launchVehicles.map((vehicle) => vehicle.slug));
 
 const ingameBySlug = new Map(ingameVehicles.map((entry) => [entry.slug, entry]));
 
@@ -115,6 +123,34 @@ const unconfirmedNote =
 export const vehicles = catalog.map((vehicle) => {
   const fromGameplay = ingameBySlug.get(vehicle.slug);
   if (fromGameplay) return applyIngame(vehicle, fromGameplay);
+
+  if (launchSlugs.has(vehicle.slug)) return vehicle;
+
+  const launchConfirmed = launchConfirmedExisting[vehicle.slug];
+  if (launchConfirmed) {
+    return {
+      ...vehicle,
+      status: "Confirmed",
+      description: launchConfirmed.description,
+      firstAppearance: "Grand Theft Auto VI",
+      // Pre-launch art was not official Rockstar material: use the name card.
+      image: "",
+      imageRepresentative: undefined,
+      gallery: [],
+      source: LAUNCH_VEHICLE_SOURCE.href,
+      sourceLabel: LAUNCH_VEHICLE_SOURCE.label,
+      topSpeed: undefined,
+      drivetrain: undefined,
+      transmission: undefined,
+      seats: undefined,
+      class: undefined,
+      price: undefined,
+      engine: undefined,
+      fuelType: undefined,
+      weight: undefined,
+      inspiration: undefined,
+    };
+  }
 
   const source = confirmedSources[vehicle.slug];
   const gallery =

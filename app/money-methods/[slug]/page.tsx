@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const entry = findLaunchEntry(moneyMethods, slug);
 
-  return launchMetadata(entry.title, entry.summary);
+  return launchMetadata(`GTA 6: ${entry.title}`, entry.summary);
 }
 
 export default async function MoneyMethodPage({ params }: Props) {
