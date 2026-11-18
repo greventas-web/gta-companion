@@ -65,9 +65,8 @@ export type HubKey = keyof typeof hubs;
 /** Homepage order: each destination exactly once. */
 export const homeHubs: Hub[] = (
   [
-    "map", "missions", "weapons", "vehicles", "cheats", "collectibles", "money", "whereToFind", "challenges", "properties", "fences", "stores",
-    "shootingRanges", "trophies", "locations", "characters", "businesses", "manufacturers", "ammuNation", "clothing", "animals", "activities",
-    "brands", "radio",
+    "map", "missions", "weapons", "vehicles", "cheats", "collectibles", "money", "whereToFind", "stores", "shootingRanges",
+    "trophies", "locations", "characters", "businesses", "manufacturers", "ammuNation", "clothing", "animals", "activities", "brands",
   ] as HubKey[]
 ).map((key) => hubs[key]);
 

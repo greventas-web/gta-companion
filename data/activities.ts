@@ -329,7 +329,7 @@ export const activities: Activity[] = [
     imageAlt:
       "A television in an interior playing a nature program, Extended Look at 7:40",
     description:
-      "The Extended Look at 7:40 shows a television in an interior playing a nature program. TV audio also plays in Jason and Lucia's hideout, and Macca & Friends is reported to air on the in-game Weazel network. Rob Nelson says there are more radio and in-game TV ads than ever before.",
+      "Sit down in front of a TV to watch shows and ads. You can watch at Jason and Lucia's hideout.",
     firstAppearance: "Extended Look",
     gallery: [],
     sources: [extendedLook, ...famitsuSources, ignBigInterview, maccaSource],

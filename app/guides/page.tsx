@@ -18,6 +18,9 @@ const hubs = pickHubs([
   "whereToFind",
   "shootingRanges",
   "trophies",
+  "challenges",
+  "properties",
+  "fences",
   "map",
 ]);
 

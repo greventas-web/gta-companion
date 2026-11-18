@@ -510,11 +510,11 @@ export const whereToFindTopics: WhereTopic[] = [
         heading: "Garages for sale",
         places: [
           { name: "Mitchell Auto Center", area: "Central Kelly County, east of Port Gellhorn", detail: "$4,000", areaPin: pin("port-gellhorn") },
-          { name: "Persistence Road Garage", area: "Western Belville, Leonard County", detail: "$7,600–$9,500", areaPin: pin("belville") },
+          { name: "Persistence Road Garage", area: "Western Belville, Leonard County", areaPin: pin("belville") },
           { name: "7th Avenue Garage", area: "East of Vice City International Airport, northwest of Tequesta", detail: "$12,000", areaPin: pin("vice-city-international-airport") },
           { name: "Store ’N’ Bolt", area: "Northern Ambrosia", detail: "$16,800", areaPin: pin("ambrosia") },
           { name: "Wyatt Motors", area: "Central Ambrosia, near the Pay ’n’ Spray", detail: "$21,600", areaPin: pin("ambrosia") },
-          { name: "Vela Rota Drive Garage", area: "Middle of Capri", detail: "$24,000–$30,000", areaPin: pin("capri") },
+          { name: "Vela Rota Drive Garage", area: "Middle of Capri", areaPin: pin("capri") },
           { name: "Bonita Court Garage", area: "Center of Washington Island", detail: "$34,000", areaPin: pin("washington-beach") },
           { name: "Atlantic Court Garage", area: "Ocean Beach, south of the Y Hotel", detail: "$40,000", areaPin: pin("y-hotel") },
         ],

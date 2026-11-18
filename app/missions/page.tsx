@@ -53,7 +53,7 @@ export default function MissionsPage() {
 
       <CardGrid
         id="strangers"
-        heading="Strangers & Freaks"
+        heading="Side missions"
         dense
         trackIds={sideMissions.map((mission) => `mission:${mission.slug}`)}
       >

@@ -69,7 +69,7 @@ function saleGarage(
   name: string,
   area: string,
   region: string,
-  price: string,
+  price: string | undefined,
   pinId: string,
   pinLabel: string
 ): PropertyRecord {
@@ -210,11 +210,11 @@ export const properties: PropertyRecord[] = [
 /** Content batch 3: the 8 garages for sale, the first story garage, and the Chapter 2 motel. */
 properties.push(
   saleGarage("mitchell-auto-center", "Mitchell Auto Center", "central Kelly County, east of Port Gellhorn", "Kelly County", "$4,000", "confirmed:port-gellhorn", "Port Gellhorn on the map"),
-  saleGarage("persistence-road-garage", "Persistence Road Garage", "western Belville, Leonard County", "Leonard County", "$7,600–$9,500", "confirmed:belville", "Belville on the map"),
+  saleGarage("persistence-road-garage", "Persistence Road Garage", "western Belville, Leonard County", "Leonard County", undefined, "confirmed:belville", "Belville on the map"),
   saleGarage("7th-avenue-garage", "7th Avenue Garage", "Vice-Dale County, east of the airport", "Vice-Dale County", "$12,000", "confirmed:vice-city-international-airport", "The airport on the map"),
   saleGarage("store-n-bolt", "Store ’N’ Bolt", "northern Ambrosia", "Kelly County", "$16,800", "confirmed:ambrosia", "Ambrosia on the map"),
   saleGarage("wyatt-motors", "Wyatt Motors", "central Ambrosia, near the Pay ’n’ Spray", "Kelly County", "$21,600", "confirmed:ambrosia", "Ambrosia on the map"),
-  saleGarage("vela-rota-drive-garage", "Vela Rota Drive Garage", "the middle of Capri", "Mariana County", "$24,000–$30,000", "confirmed:capri", "Capri on the map"),
+  saleGarage("vela-rota-drive-garage", "Vela Rota Drive Garage", "the middle of Capri", "Mariana County", undefined, "confirmed:capri", "Capri on the map"),
   saleGarage("bonita-court-garage", "Bonita Court Garage", "the center of Washington Island", "Vice City", "$34,000", "confirmed:washington-beach", "Washington Beach on the map"),
   saleGarage("atlantic-court-garage", "Atlantic Court Garage", "Ocean Beach, south of the Y Hotel", "Vice City", "$40,000", "confirmed:y-hotel", "The Y Hotel on the map"),
   {
