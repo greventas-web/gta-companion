@@ -828,7 +828,7 @@
       "y": null,
       "placement": "gtadb-id-only"
     },
-    "linked_site_entity_slug": "properties",
+    "linked_site_entity_slug": "properties/shore-court",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -861,7 +861,7 @@
       "y": -2424.239,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": "properties",
+    "linked_site_entity_slug": "properties/paradise-garage",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -893,7 +893,7 @@
     "region": "Leonida Keys",
     "area": "Leonida Keys",
     "position": null,
-    "linked_site_entity_slug": "characters/jason-duval",
+    "linked_site_entity_slug": "properties/jasons-place",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Only in Leonida: Leonida Keys",
@@ -922,7 +922,7 @@
       "y": -1826.006,
       "placement": "gtadb-point"
     },
-    "linked_site_entity_slug": null,
+    "linked_site_entity_slug": "missions/southside-gang-compound-raid",
     "confirmed_by": [
       {
         "name": "Rockstar Games, Grand Theft Auto VI Ultimate Edition",
@@ -933,7 +933,7 @@
         "url": "https://www.rockstargames.com/VI/editions"
       }
     ],
-    "notes": "Official Ultimate Edition benefit/mission hook: 'Raid the compound of one of Southside Vice City’s loudest and most socially active gangs and escape safely to score some special items and distinct contraband.' The PTT Youngin$ Illegal Goods Store (L1491) is the officially named storefront tied to that gang and is used here as the approximate pin. The full compound footprint is not officially mapped. No missions section exists on the site yet."
+    "notes": "Ultimate Edition benefit Rockstar titles Gang Compound, at the PTT Youngin$ Illegal Goods Store in Southside. The pin is that storefront, and the full compound footprint is not officially mapped. Listed on GTA Companion at /missions/southside-gang-compound-raid. Official line, kept off this pin blurb: 'Raid the compound of one of Southside Vice City’s loudest and most socially active gangs and escape safely to score some special items and distinct contraband.'"
   },
   {
     "id": "activity-hunting-mount-kalaga",

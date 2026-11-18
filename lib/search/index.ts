@@ -9,9 +9,12 @@ import { guides } from "@/data/guides";
 import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
+import { phoneItems } from "@/data/phone";
+import { properties } from "@/data/properties";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
 import { manufacturerPortrait, vehicleImages } from "@/lib/media/catalog";
+import { missions } from "@/src/data/missions";
 
 export const searchIndex: SearchItem[] = [
   ...vehicles.map((vehicle) => ({
@@ -95,6 +98,32 @@ export const searchIndex: SearchItem[] = [
     description: activity.description,
   })),
 
+  ...missions.map((mission, index) => ({
+    id: 80000 + index,
+    title: mission.name,
+    href: `/missions/${mission.slug}`,
+    category: "Mission" as const,
+    description: mission.summary,
+  })),
+
+  {
+    id: 80050,
+    title: "GTA 6 missions list",
+    href: "/missions",
+    category: "Mission" as const,
+    description:
+      "Spoiler-safe list of Grand Theft Auto VI missions Rockstar has named.",
+  },
+
+  {
+    id: 80051,
+    title: "GTA 6 trophies list",
+    href: "/trophies",
+    category: "Trophy" as const,
+    description:
+      "PlayStation trophies and Xbox achievements. No official list has been published yet.",
+  },
+
   ...guides.filter((guide) => guide.listed !== false).map((guide) => ({
     id: guide.id,
     title: guide.title,
@@ -111,5 +140,21 @@ export const searchIndex: SearchItem[] = [
     category: "News" as const,
     image: article.image,
     description: article.summary,
+  })),
+
+  ...phoneItems.map((item, index) => ({
+    id: 8000 + index,
+    title: item.name,
+    href: `/phone/${item.slug}`,
+    category: "Phone" as const,
+    description: item.description,
+  })),
+
+  ...properties.map((place, index) => ({
+    id: 8100 + index,
+    title: place.name,
+    href: `/properties/${place.slug}`,
+    category: "Property" as const,
+    description: place.description,
   })),
 ].sort((a, b) => a.title.localeCompare(b.title));

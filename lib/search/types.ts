@@ -9,7 +9,11 @@ export type SearchCategory =
   | "Animal"
   | "Activity"
   | "Guide"
-  | "News";
+  | "News"
+  | "Mission"
+  | "Trophy"
+  | "Phone"
+  | "Property";
 
 export type SearchItem = {
   id: number;

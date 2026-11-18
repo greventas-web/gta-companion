@@ -133,6 +133,9 @@ const DETAIL_PATH: Partial<Record<MapEntityType, (slug: string) => string>> = {
   vehicle: (slug) => `/vehicles/${slug}`,
   animal: (slug) => `/animals/${slug}`,
   character: (slug) => `/characters/${slug}`,
+  mission: (slug) => `/missions/${slug}`,
+  property: (slug) => `/properties/${slug}`,
+  safehouse: (slug) => `/properties/${slug}`,
 };
 
 const INDEX_PATH: Partial<Record<MapEntityType, string>> = {
@@ -146,6 +149,7 @@ const INDEX_PATH: Partial<Record<MapEntityType, string>> = {
   collectible: "/collectibles",
   safehouse: "/properties",
   property: "/properties",
+  mission: "/missions",
 };
 
 export function categoryById(id: string): (typeof MAP_CATEGORIES)[number] | undefined {

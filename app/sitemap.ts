@@ -9,9 +9,13 @@ import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { news } from "@/data/news";
 import { vehicles } from "@/data/vehicles";
+import { phoneItems } from "@/data/phone";
+import { properties } from "@/data/properties";
 import { weapons } from "@/data/weapons";
 import { SITE } from "@/lib/site";
 import { cheats } from "@/src/data/launch/cheats";
+import { missions } from "@/src/data/missions";
+import { trophies } from "@/src/data/trophies";
 import { fastestCars } from "@/src/data/launch/fastest-cars";
 import { mapLocations } from "@/src/data/launch/map-locations";
 import { moneyMethods } from "@/src/data/launch/money-methods";
@@ -23,6 +27,8 @@ const launchPaths = [
   ...fastestCars.map((entry) => `/fastest-cars/${entry.slug}`),
   ...mapLocations.map((entry) => `/map-locations/${entry.slug}`),
   ...cheats.map((entry) => `/cheats/${entry.slug}`),
+  ...missions.map((entry) => `/missions/${entry.slug}`),
+  ...trophies.map((entry) => `/trophies/${entry.slug}`),
 ];
 
 const detailPaths = [
@@ -36,6 +42,8 @@ const detailPaths = [
   ...animals.map((entry) => `/animals/${entry.slug}`),
   ...activities.map((entry) => `/activities/${entry.slug}`),
   ...news.map((entry) => `/news/${entry.slug}`),
+  ...phoneItems.map((entry) => `/phone/${entry.slug}`),
+  ...properties.map((entry) => `/properties/${entry.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -56,8 +64,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/fastest-cars",
     "/map-locations",
     "/cheats",
+    "/missions",
+    "/trophies",
     "/launch",
     "/faq",
+    "/partners",
     "/contact",
     "/privacy",
     "/terms",
@@ -70,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/animals",
     "/properties",
     "/collectibles",
+    "/phone",
     "/radio",
     "/search",
     "/changelog",

@@ -13,6 +13,7 @@ const groups = [
       { title: "Characters", href: "/characters" },
       { title: "Locations", href: "/locations" },
       { title: "Businesses", href: "/businesses" },
+      { title: "Properties", href: "/properties" },
     ],
   },
   {
@@ -23,6 +24,8 @@ const groups = [
       { title: "Animals", href: "/animals" },
       { title: "Activities", href: "/activities" },
       { title: "Brands", href: "/brands" },
+      { title: "Collectibles", href: "/collectibles" },
+      { title: "Phone", href: "/phone" },
     ],
   },
   {
@@ -33,6 +36,7 @@ const groups = [
       { title: "News", href: "/news" },
       { title: "Media", href: "/media" },
       { title: "Timeline", href: "/timeline" },
+      { title: "Partners", href: "/partners" },
     ],
   },
   {
@@ -43,6 +47,8 @@ const groups = [
       { title: "Money", href: "/money-methods" },
       { title: "Fastest Cars", href: "/fastest-cars" },
       { title: "Map Locations", href: "/map-locations" },
+      { title: "Missions", href: "/missions" },
+      { title: "Trophies", href: "/trophies" },
       { title: "Cheats", href: "/cheats" },
     ],
   },
