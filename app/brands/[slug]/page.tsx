@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 
 import ViewOnMap from "@/components/map/ViewOnMap";
 import PageShell from "@/components/PageShell";
+import { ExtraDetail } from "@/components/simple/Extras";
+import { extraPages, findExtra } from "@/src/data/launch/expansion";
 import SimpleDetail from "@/components/simple/SimpleDetail";
 import { brands } from "@/data/brands";
 import { staticMapHref } from "@/lib/map/catalog";
@@ -14,7 +16,7 @@ type Props = { params: Promise<{ slug: string }> };
 const items = brands;
 
 export function generateStaticParams() {
-  return items.map((item) => ({ slug: item.slug }));
+  return [...items.map((item) => ({ slug: item.slug })), ...extraPages("brands").map((entry) => ({ slug: entry.slug }))];
 }
 
 export const dynamicParams = false;
@@ -22,14 +24,25 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = items.find((entry) => entry.slug === slug);
-  if (!item) return {};
+  if (!item) {
+    const extra = findExtra("brands", slug);
+    return extra ? detailMetadata(extra.name, extra.summary || extra.name) : {};
+  }
   return detailMetadata(item.name, shortText(item.description, 2) || item.name);
 }
 
 export default async function BrandsDetailPage({ params }: Props) {
   const { slug } = await params;
   const item = items.find((entry) => entry.slug === slug);
-  if (!item) notFound();
+  if (!item) {
+    const extra = findExtra("brands", slug);
+    if (!extra) notFound();
+    return (
+      <PageShell>
+        <ExtraDetail category="brands" entry={extra} />
+      </PageShell>
+    );
+  }
   
   const map = null;
   const related = items.filter((entry) => entry.slug !== item.slug && true).slice(0, 4);

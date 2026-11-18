@@ -8,14 +8,14 @@ export const metadata = pageMetadata(
 );
 
 const hubs = [
-  { href: "/missions", title: "Missions", image: "/images/official/categories/characters.webp" },
-  { href: "/money-methods", title: "Make money", image: "/images/official/frames/jewelry-robbery.webp" },
+  { href: "/missions", title: "Missions" },
+  { href: "/money-methods", title: "Make money" },
   { href: "/weapons", title: "Weapons", image: "/images/official/categories/weapons.webp" },
   { href: "/vehicles", title: "Vehicles", image: "/images/official/categories/vehicles.webp" },
   { href: "/shooting-ranges", title: "Shooting ranges", image: "/images/official/frames/shooting-range.webp" },
   { href: "/collectibles", title: "Collectibles" },
   { href: "/cheats", title: "Cheats" },
-  { href: "/where-to-find", title: "Where to find", image: "/images/official/categories/businesses.webp" },
+  { href: "/where-to-find", title: "Where to find" },
   { href: "/trophies", title: "Trophies" },
   { href: "/map", title: "Map", image: "/images/official/locations/vice-city.webp" },
 ];

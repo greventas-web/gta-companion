@@ -1,7 +1,35 @@
+import {
+  Activity,
+  Briefcase,
+  Car,
+  Crosshair,
+  DollarSign,
+  Flag,
+  Gamepad2,
+  Gem,
+  Home,
+  type LucideIcon,
+  MapPin,
+  Newspaper,
+  PawPrint,
+  PenTool,
+  Radio as RadioIcon,
+  Scissors,
+  Shirt,
+  Smartphone,
+  Store,
+  Tag,
+  Target,
+  Trophy,
+  User,
+  Warehouse,
+  Wrench,
+} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
-import ItemImage, { isNameCard } from "@/components/ItemImage";
 import { mapPinHref } from "@/components/map/MapPinLink";
+import { kindFromHref, resolveCardImage } from "@/lib/simple/cardImage";
 import { oneLine } from "@/lib/simple/text";
 
 import { TrackButton, TrackProgress } from "./Track";
@@ -44,7 +72,7 @@ export type SimpleCardProps = {
   title: string;
   image?: string;
   imageAlt?: string;
-  /** Small line above the title, e.g. the maker or the area. */
+  /** Short meta, e.g. the maker or the area. Shown in pink under the title. */
   eyebrow?: string;
   /** One short plain sentence. */
   line?: string;
@@ -58,9 +86,65 @@ export type SimpleCardProps = {
   mapPin?: string;
   /** Ready-made map link, used when there is no pin id. */
   mapHref?: string | null;
+  /** Item kind, used for the icon and a fitting photo. Read from href when left out. */
+  kind?: string;
 };
 
-/** The one card style used across list pages: picture, name, one line, price. */
+const ICONS: Record<string, LucideIcon> = {
+  weapon: Crosshair,
+  gunstore: Crosshair,
+  range: Target,
+  vehicle: Car,
+  salon: Scissors,
+  tattoo: PenTool,
+  clothing: Shirt,
+  clothingstore: Shirt,
+  mod: Wrench,
+  garage: Warehouse,
+  property: Home,
+  animal: PawPrint,
+  activity: Activity,
+  money: DollarSign,
+  brand: Tag,
+  business: Briefcase,
+  character: User,
+  phone: Smartphone,
+  radio: RadioIcon,
+  cheat: Gamepad2,
+  mission: Flag,
+  trophy: Trophy,
+  collectible: Gem,
+  news: Newspaper,
+  location: MapPin,
+  store: Store,
+};
+
+/** Plain dark card surface with a faint brand tint, used when an item has no confirmed photo yet. */
+export function BlankSurface() {
+  return (
+    <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.12] via-[#0B0B10] to-[#060608]" />
+  );
+}
+
+function KindIcon({ kind, small }: { kind?: string; small: boolean }) {
+  const props = { size: small ? 18 : 22, className: `${small ? "mb-2" : "mb-3"} text-pink-400`, "aria-hidden": true } as const;
+  const Icon = (kind && ICONS[kind]) || MapPin;
+  return <Icon {...props} />;
+}
+
+/** Joins chip values into one short line, e.g. "Unlock: 100 workouts". */
+function chipLine(chips?: readonly Chip[]) {
+  return (chips ?? [])
+    .filter((chip) => chip.value && !/^code$/i.test(chip.label ?? ""))
+    .map((chip) => (chip.label ? `${chip.label} ${chip.value}` : chip.value))
+    .join(" · ");
+}
+
+/**
+ * The one card style used across the site. Same look as the homepage Browse
+ * cards: full-bleed official photo, dark gradient, pink icon, big bold title
+ * at the bottom left and a short pink meta line.
+ */
 export default function SimpleCard({
   href,
   title,
@@ -74,38 +158,61 @@ export default function SimpleCard({
   trackId,
   mapPin,
   mapHref: mapLink,
+  kind: kindProp,
 }: SimpleCardProps) {
+  const kind = kindProp ?? kindFromHref(href);
   const shortLine = oneLine(line);
+  const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
+  const resolved = resolveCardImage({ image, title });
+  const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
+  const extra = chipLine(chips);
+  const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
+
   const body = (
-    <article className="flex h-full flex-col overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-b from-zinc-900/95 to-black transition duration-300 group-hover:-translate-y-1 group-hover:border-violet-400/50 group-hover:shadow-[0_30px_80px_rgba(139,92,246,.18)]">
-      <div className={`relative overflow-hidden ${small ? "aspect-[4/3]" : "aspect-[16/10]"}`}>
-        <ItemImage
-          src={image}
+    <article
+      data-img-source={resolved.source}
+      className={`relative h-full overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
+        small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
+      }`}
+    >
+      {resolved.src ? (
+        <Image
+          src={resolved.src}
           alt={imageAlt || title}
-          name={title}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"
-          className="object-cover"
+          sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
+          className="object-cover transition duration-500 group-hover:scale-105"
         />
-        {isNameCard(image) ? null : (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        )}
-        {price ? <PriceChip price={price} className="absolute right-3 top-3 z-[2] backdrop-blur" /> : null}
-      </div>
-      <div className={`flex flex-1 flex-col ${small ? "p-3 sm:p-4" : "p-5"}`}>
-        {eyebrow ? (
-          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-zinc-500">{eyebrow}</p>
-        ) : null}
-        <h3 className={`mt-1 break-words font-black text-white transition group-hover:text-violet-200 ${small ? "text-base sm:text-lg" : "text-xl"}`}>
+      ) : (
+        <BlankSurface />
+      )}
+      <div className="absolute inset-0 bg-black/55 transition-all duration-500 group-hover:bg-black/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      {price ? <PriceChip price={price} className="absolute right-3 top-3 z-[2] backdrop-blur" /> : null}
+      <div className={`relative z-20 flex h-full flex-col justify-end ${small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price ? "pt-12" : ""}`}>
+        <KindIcon kind={kind} small={small} />
+        <h3
+          className={`break-words font-black leading-none tracking-[-0.03em] text-white ${
+            small ? "text-lg sm:text-xl" : "text-2xl"
+          }`}
+        >
           {title}
         </h3>
-        {shortLine ? <p className="mt-2 line-clamp-2 text-sm leading-6 text-zinc-400">{shortLine}</p> : null}
-        <Chips chips={chips} className="mt-3" />
+        {code ? (
+          <p className="mt-2 font-mono text-base font-black tracking-[0.12em] text-white sm:text-lg">{code}</p>
+        ) : null}
+        {meta ? (
+          <p className={`mt-2 line-clamp-2 text-sm font-semibold text-pink-300 ${mapHref ? "pr-24" : ""}`}>{meta}</p>
+        ) : null}
+        {extra ? (
+          <p className={`mt-1 line-clamp-2 text-xs font-semibold text-zinc-300 ${mapHref ? "pr-24" : ""}`}>{extra}</p>
+        ) : null}
       </div>
     </article>
   );
 
-  const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
   const extras =
     trackId || mapHref ? (
       <>
@@ -113,7 +220,7 @@ export default function SimpleCard({
         {mapHref ? (
           <Link
             href={mapHref}
-            className="absolute bottom-3 right-3 z-[3] rounded-full border border-violet-300/40 bg-violet-600/90 px-3 py-1 text-xs font-bold text-white transition hover:bg-violet-500 active:scale-95"
+            className="absolute bottom-3 right-3 z-[30] rounded-full border border-pink-300/40 bg-pink-600/90 px-3 py-1 text-xs font-bold text-white transition hover:bg-pink-500 active:scale-95"
           >
             See on map
           </Link>
@@ -124,7 +231,10 @@ export default function SimpleCard({
   const inner = !href ? (
     <div className="group h-full">{body}</div>
   ) : (
-    <Link href={href} className="group block h-full rounded-[24px] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 active:scale-[0.99] transition">
+    <Link
+      href={href}
+      className="group block h-full rounded-[24px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 active:scale-[0.99]"
+    >
       {body}
     </Link>
   );
@@ -213,7 +323,7 @@ export function QuickFacts({
   );
 }
 
-/** Page title, with an optional big photo. No intro text. */
+/** Page title, with an optional big photo (Browse card look). No intro text. */
 export function SimpleHero({
   title,
   image,
@@ -229,16 +339,24 @@ export function SimpleHero({
   intro?: string;
   badge?: string;
 }) {
+  const resolvedHero = image ? resolveCardImage({ image, title }) : null;
+  const photo = resolvedHero?.src ? { src: resolvedHero.src } : null;
   return (
-    <header className="relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#1a0b33] via-[#0B0B0D] to-black">
-      {image ? (
-        <div className="relative aspect-[16/9] max-h-[380px] w-full sm:aspect-[24/7]">
-          <ItemImage src={image} alt={imageAlt || title} name={title} fill priority sizes="100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-black/20 to-transparent" />
-        </div>
+    <header className="relative overflow-hidden rounded-[28px] border border-white/5 bg-[#08080A]">
+      {photo ? (
+        <>
+          <Image src={photo.src} alt={imageAlt || title} fill priority sizes="100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40" />
+        </>
       ) : null}
-      <div className={`${image ? "-mt-14 sm:-mt-20" : ""} relative flex flex-wrap items-end justify-between gap-3 p-6 sm:p-8`}>
-        <h1 className="break-words text-3xl font-black tracking-[-0.03em] text-white sm:text-5xl">{title}</h1>
+      <div
+        className={`relative z-20 flex flex-wrap items-end justify-between gap-3 p-6 sm:p-8 ${
+          photo ? "min-h-[220px] sm:min-h-[300px]" : ""
+        }`}
+      >
+        <h1 className="break-words text-3xl font-black leading-none tracking-[-0.03em] text-white sm:text-5xl">{title}</h1>
         {children}
       </div>
     </header>

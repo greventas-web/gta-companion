@@ -20,7 +20,7 @@ export const activities: Activity[] = [
     category: "Entertainment",
     location: "Vice City",
     image:
-      "/images/official/media/screenshots-places-vice-city-vice-city-06.webp",
+      "/images/official/media/screenshots-places-vice-city-vice-city-13.webp",
     description:
       "Trailer 1 shows a plane towing a Nine1Nine banner over the Vice City beach. Trailer 2 shows Jason and Lucia dancing in a club. Boobie Ike's Rockstar profile names the Jack of Hearts, his strip club in Vice City.",
     firstAppearance: "Trailer 1",
@@ -56,7 +56,7 @@ export const activities: Activity[] = [
     name: "Off-Roading",
     category: "Driving",
     location: "Mount Kalaga",
-    image: "/images/official/locations/mount-kalaga.webp",
+    image: "/images/placeholder.webp",
     description:
       "Mount Kalaga, up against the state's northern border, has prime hunting, fishing, and off-road trails.",
     firstAppearance: "Rockstar Games Website",

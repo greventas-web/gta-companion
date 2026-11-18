@@ -35,8 +35,8 @@ const facts = [
 
 const next = [
   { href: "/map", title: "Map", image: "/images/official/locations/vice-city.webp" },
-  { href: "/missions", title: "Missions", image: "/images/official/categories/characters.webp" },
-  { href: "/money-methods", title: "Make money", image: "/images/official/frames/jewelry-robbery.webp" },
+  { href: "/missions", title: "Missions" },
+  { href: "/money-methods", title: "Make money" },
   { href: "/weapons", title: "Weapons", image: "/images/official/categories/weapons.webp" },
   { href: "/launch", title: "Editions" },
   { href: "/news/gta-vi-the-festival", title: "The Festival, Nov 21", image: "/images/official/gta-vi-the-festival.webp" },

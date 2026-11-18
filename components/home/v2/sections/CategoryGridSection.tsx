@@ -24,6 +24,8 @@ import { manufacturers } from "@/data/manufacturers";
 import { vehicleCounts } from "@/src/data/launch/launch-facts";
 import { weapons } from "@/data/weapons";
 
+import { extras } from "@/src/data/launch/expansion";
+
 import CategoryCard from "../cards/CategoryCard";
 
 const cards = [
@@ -45,35 +47,35 @@ const cards = [
     title: "Characters",
     href: "/characters",
     image: "/images/official/categories/characters.webp",
-    count: String(characters.length),
+    count: `${characters.length + extras.characters.length} in the game`,
     icon: User,
   },
   {
     title: "Locations",
     href: "/locations",
     image: "/images/official/locations/port-gellhorn.webp",
-    count: String(locations.length),
+    count: `${locations.length + extras.locations.length} in the game`,
     icon: MapPin,
   },
   {
     title: "Businesses",
     href: "/businesses",
     image: "/images/official/categories/businesses.webp",
-    count: String(businesses.length),
+    count: `${businesses.length + extras.businesses.length} in the game`,
     icon: Briefcase,
   },
   {
     title: "Stores",
     href: "/stores",
     image: "/images/official/editions/ultimate_edition_stock_305_01.webp",
-    count: String(stores.length),
+    count: `${stores.length + extras.stores.length} in the game`,
     icon: Store,
   },
   {
     title: "Clothing",
     href: "/clothing",
     image: "/images/official/editions/ultimate_edition_goodtime_gear_01.webp",
-    count: String(clothing.length),
+    count: `${clothing.length + extras.clothing.length} in the game`,
     icon: Shirt,
   },
   {
@@ -87,21 +89,21 @@ const cards = [
     title: "Animals",
     href: "/animals",
     image: "/images/official/categories/animals.webp",
-    count: String(animals.length),
+    count: `${animals.length + extras.animals.length} in the game`,
     icon: PawPrint,
   },
   {
     title: "Activities",
     href: "/activities",
     image: "/images/official/categories/activities.webp",
-    count: String(activities.length),
+    count: `${activities.length + extras.activities.length} in the game`,
     icon: Bike,
   },
   {
     title: "Brands",
     href: "/brands",
     image: "/images/official/editions/ultimate_edition_electric_fang_01.webp",
-    count: String(brands.length),
+    count: `${brands.length + extras.brands.length} in the game`,
     icon: Building2,
   },
 ];

@@ -1,6 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { ExtraGrids, extraHref } from "@/components/simple/Extras";
+import { extras } from "@/src/data/launch/expansion";
 import { stores } from "@/data/stores";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
@@ -12,10 +14,8 @@ export const metadata = pageMetadata(
 );
 
 const items = stores;
-const groupNames = [...new Set(stores.map((item) => item.typeLabel))];
-const groups = groupNames
-  .map((name) => ({ name, list: items.filter((item) => item.typeLabel === name) }))
-  .filter((group) => group.list.length > 0);
+/** The Rockstar-featured stores first, then every shop by type below. */
+const groups = [{ name: "Featured", list: items }];
 
 export default function StoresPage() {
   return (
@@ -24,12 +24,12 @@ export default function StoresPage() {
         data={itemListJsonLd(
           'GTA 6 stores',
           "/stores",
-          items.map((item) => ({ name: item.name, url: `/stores/${item.slug}` }))
+          [...items.map((item) => ({ name: item.name, url: `/stores/${item.slug}` })), ...extras.stores.map((entry) => ({ name: entry.name, url: extraHref("stores", entry) }))]
         )}
       />
       <SimpleHero title='Stores' />
       {groups.map((group) => (
-        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : "Featured"} count={group.list.length} dense>
           {group.list.map((item) => (
             <SimpleCard
               key={item.slug}
@@ -44,6 +44,7 @@ export default function StoresPage() {
           ))}
         </CardGrid>
       ))}
+      <ExtraGrids category="stores" />
     </PageShell>
   );
 }

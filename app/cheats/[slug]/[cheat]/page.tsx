@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import PageShell from "@/components/PageShell";
+import CheatCode from "@/components/cheats/CheatCode";
 import SimpleDetail from "@/components/simple/SimpleDetail";
 import { cheatCard, cheatImage } from "@/components/cheats/cheatCards";
 import { launchMetadata } from "@/lib/launch";
@@ -63,7 +64,9 @@ export default async function CheatPage({ params }: Props) {
         ]}
         related={others}
         relatedHeading={`More ${group.label.toLowerCase()}`}
-      />
+      >
+        <CheatCode code={cheat.code} unlock={cheat.unlock} />
+      </SimpleDetail>
     </PageShell>
   );
 }

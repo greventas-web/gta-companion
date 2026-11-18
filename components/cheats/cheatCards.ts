@@ -31,8 +31,8 @@ export function cheatCard(cheat: Cheat): SimpleCardProps {
     title: cheat.name,
     image: image.src,
     imageAlt: image.alt,
-    eyebrow: groupForCheat(cheat.category).label,
     line: cheat.effect,
+    kind: cheat.category === "combat" ? "weapon" : cheat.category === "vehicle" ? "vehicle" : "cheat",
     chips: [
       { label: "Unlock", value: cheat.unlock.replace(/\.$/, "") },
       ...(cheat.code ? [{ label: "Code", value: arrowCode(cheat.code) }] : []),

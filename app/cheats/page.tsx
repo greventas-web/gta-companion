@@ -15,6 +15,14 @@ const description =
 
 export const metadata: Metadata = launchMetadata(title, description);
 
+/** Four simple groups: weapons, player, vehicles, world (time, weather and filters). */
+const sections = [
+  { id: "weapons", heading: "Weapons", list: cheatsIn("combat") },
+  { id: "player", heading: "Player", list: cheatsIn("player") },
+  { id: "vehicles", heading: "Vehicles", list: cheatsIn("vehicle") },
+  { id: "world", heading: "World", list: [...cheatsIn("environment"), ...cheatsIn("filter")] },
+];
+
 export default function CheatsPage() {
   return (
     <PageShell>
@@ -29,16 +37,13 @@ export default function CheatsPage() {
 
       <QuickFacts facts={cheatBasics} wide />
 
-      {cheatGroups.map((group) => {
-        const list = cheatsIn(group.category);
-        return (
-          <CardGrid key={group.slug} id={group.slug} heading={group.label} count={list.length} dense>
-            {list.map((cheat) => (
-              <SimpleCard key={cheat.name} {...cheatCard(cheat)} small />
-            ))}
-          </CardGrid>
-        );
-      })}
+      {sections.map((section) => (
+        <CardGrid key={section.id} id={section.id} heading={section.heading} count={section.list.length} dense>
+          {section.list.map((cheat) => (
+            <SimpleCard key={cheat.name} {...cheatCard(cheat)} small />
+          ))}
+        </CardGrid>
+      ))}
 
     </PageShell>
   );

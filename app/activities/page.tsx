@@ -1,6 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
+import { ExtraGrids, extraHref } from "@/components/simple/Extras";
+import { extras } from "@/src/data/launch/expansion";
 import { activities } from "@/data/activities";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
@@ -24,12 +26,12 @@ export default function ActivitiesPage() {
         data={itemListJsonLd(
           'GTA 6 activities',
           "/activities",
-          items.map((item) => ({ name: item.name, url: `/activities/${item.slug}` }))
+          [...items.map((item) => ({ name: item.name, url: `/activities/${item.slug}` })), ...extras.activities.map((entry) => ({ name: entry.name, url: extraHref("activities", entry) }))]
         )}
       />
       <SimpleHero title='Activities' />
       {groups.map((group) => (
-        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
+        <CardGrid key={group.name} heading={groups.length > 1 ? group.name : "Featured"} count={group.list.length} dense>
           {group.list.map((item) => (
             <SimpleCard
               key={item.slug}
@@ -44,6 +46,7 @@ export default function ActivitiesPage() {
           ))}
         </CardGrid>
       ))}
+      <ExtraGrids category="activities" />
     </PageShell>
   );
 }

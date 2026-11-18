@@ -8,14 +8,14 @@ import FeaturedNewsV2 from "./FeaturedNewsV2";
 
 const play = [
   { href: "/map", title: "Map", image: "/images/official/locations/vice-city.webp", line: "Find anything in Leonida." },
-  { href: "/missions", title: "Missions", image: "/images/official/categories/characters.webp", line: "Tick off every story mission." },
+  { href: "/missions", title: "Missions", line: "Tick off every story mission." },
   { href: "/weapons", title: "Weapons", image: "/images/official/categories/weapons.webp", line: "Every gun and its price." },
   { href: "/vehicles", title: "Vehicles", image: "/images/official/categories/vehicles.webp", line: "Cars, bikes, boats, planes." },
-  { href: "/money-methods", title: "Make money", image: "/images/official/frames/jewelry-robbery.webp", line: "Fastest cash by chapter." },
+  { href: "/money-methods", title: "Make money", line: "Fastest cash by chapter." },
   { href: "/shooting-ranges", title: "Shooting ranges", image: "/images/official/frames/shooting-range.webp", line: "12 courses, 42 golds." },
   { href: "/collectibles", title: "Collectibles", line: "Cards, flamingos, stunts." },
   { href: "/cheats", title: "Cheats", line: "61 cheats and codes." },
-  { href: "/where-to-find", title: "Where to find", image: "/images/official/categories/businesses.webp", line: "Shops, garages, barbers." },
+  { href: "/where-to-find", title: "Where to find", line: "Shops, garages, barbers." },
   { href: "/trophies", title: "Trophies", line: "Tick off every trophy." },
   { href: "/activities", title: "Activities", image: "/images/official/categories/activities.webp", line: "Things to do." },
   { href: "/ammu-nation-locations", title: "Ammu-Nation", line: "All 24 gun stores." },
