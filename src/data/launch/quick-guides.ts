@@ -60,6 +60,11 @@ const JET_SKIS = "/images/official/activities/jet-skis.webp";
 const VICE_CITY = "/images/official/locations/vice-city.webp";
 const LEONIDA_KEYS = "/images/official/locations/leonida-keys.webp";
 const WATCHING_TV = "/images/official/frames/watching-tv.webp";
+const FLAMINGO = "/images/official/frames/flamingo.webp";
+const BASKETBALL = "/images/official/activities/basketball.webp";
+const MINI_GOLF = "/images/official/frames/mini-golf.webp";
+const SHOOTING_RANGE = "/images/official/frames/shooting-range.webp";
+const TRACK_RACING = "/images/official/frames/track-racing.webp";
 
 const L = {
   save: { href: "/guides/how-to-save", title: "How to save", kind: "mission" },
@@ -180,6 +185,43 @@ const L = {
   gta6Apps: { href: "/gta-6-apps", title: "Phone apps", image: SNAPMATIC, imageAlt: "The Snapmatic app on the in-game phone", kind: "phone" },
   boating: { href: "/activities/boating", title: "Boating", image: JET_SKIS, imageAlt: "Jet skis among boats in the Leonida Keys, official Rockstar still", kind: "activity" },
   locationsHub: { href: "/locations", title: "Locations", image: VICE_CITY, imageAlt: "Vice City, official Rockstar still", kind: "location" },
+  // Batch 4
+  streetRaces: { href: "/guides/street-races", title: "Street races", image: TRACK_RACING, imageAlt: "Track racing, official Rockstar still", kind: "activity" },
+  headlights: { href: "/guides/headlights", title: "Headlights", kind: "vehicle" },
+  autoDrive: { href: "/guides/auto-drive", title: "Auto-drive", kind: "vehicle" },
+  stuntJumps: { href: "/guides/stunt-jumps", title: "Stunt jumps", kind: "activity" },
+  collectibleCards: { href: "/guides/collectible-cards", title: "Collectible cards", kind: "activity" },
+  flamingos: { href: "/guides/flamingos", title: "Cocaine Flamingos", image: FLAMINGO, imageAlt: "A flamingo, official Rockstar still", kind: "activity" },
+  shootingRangesGuide: { href: "/guides/shooting-ranges", title: "Shooting ranges", image: SHOOTING_RANGE, imageAlt: "A shooting range, official Rockstar still", kind: "range" },
+  skipCutscenes: { href: "/guides/skip-cutscenes", title: "Skip cutscenes", kind: "mission" },
+  wastedBusted: { href: "/guides/wasted-busted", title: "Wasted and Busted", kind: "activity" },
+  photoMode: { href: "/guides/photo-mode", title: "Photo mode", image: SNAPMATIC, imageAlt: "The Snapmatic app on the in-game phone", kind: "phone" },
+  tattoos: { href: "/guides/tattoos", title: "Tattoos", kind: "clothing" },
+  basketball: { href: "/guides/basketball", title: "Basketball", image: BASKETBALL, imageAlt: "An outdoor basketball court in Vice City, official Rockstar still", kind: "activity" },
+  unwantedAttention: { href: "/guides/unwanted-attention", title: "Unwanted Attention", kind: "mission" },
+  justAScratch: { href: "/guides/just-a-scratch", title: "Just A Scratch", image: COASTAL, imageAlt: "Coastal Auto Care in Key Lento", kind: "mission" },
+  accessibility: { href: "/guides/accessibility", title: "Accessibility settings", kind: "activity" },
+  trophiesGuide: { href: "/guides/trophies", title: "Trophies and platinum", kind: "activity" },
+  miniGolf: { href: "/guides/mini-golf", title: "Mini-golf", image: MINI_GOLF, imageAlt: "Cal Hampton on an alligator-themed mini-golf course, official Rockstar still", kind: "activity" },
+  wainkScans: { href: "/guides/waink-scans", title: "WAiNK scans", kind: "phone" },
+  horn: { href: "/guides/horn", title: "Horn and nitrous", kind: "vehicle" },
+  minimap: { href: "/guides/minimap", title: "Minimap and waypoints", kind: "location" },
+  aimAssist: { href: "/guides/aim-assist", title: "Aim assist", kind: "weapon" },
+  collectiblesHub: { href: "/collectibles", title: "Collectibles", image: FLAMINGO, imageAlt: "A flamingo, official Rockstar still", kind: "activity" },
+  cardsHub: { href: "/collectibles/card-sets", title: "Card sets", kind: "activity" },
+  flamingosHub: { href: "/collectibles/cocaine-flamingos", title: "Cocaine Flamingos", image: FLAMINGO, imageAlt: "A flamingo, official Rockstar still", kind: "activity" },
+  stuntsHub: { href: "/collectibles/stunt-jumps", title: "Stunt jumps", kind: "activity" },
+  rangesHub: { href: "/shooting-ranges", title: "Shooting ranges", image: SHOOTING_RANGE, imageAlt: "A shooting range, official Rockstar still", kind: "range" },
+  trophiesHub: { href: "/trophies", title: "Trophies list", kind: "activity" },
+  basketballHub: { href: "/activities/basketball", title: "Basketball", image: BASKETBALL, imageAlt: "An outdoor basketball court in Vice City, official Rockstar still", kind: "activity" },
+  miniGolfHub: { href: "/activities/mini-golf", title: "Mini-golf", image: MINI_GOLF, imageAlt: "Cal Hampton on an alligator-themed mini-golf course, official Rockstar still", kind: "activity" },
+  racesMoney: { href: "/money-methods/street-races", title: "Win street races", image: TRACK_RACING, imageAlt: "Track racing, official Rockstar still", kind: "money" },
+  coastalShop: { href: "/where-to-find/mod-shops", title: "Mod shops", image: COASTAL, imageAlt: "Coastal Auto Care in Key Lento", kind: "mod" },
+  unwantedMission: { href: "/missions/unwanted-attention", title: "Unwanted Attention", line: "Chapter 1", kind: "mission" },
+  scratchMission: { href: "/missions/just-a-scratch", title: "Just A Scratch", line: "Chapter 1", kind: "mission" },
+  activities: { href: "/activities", title: "Activities", kind: "activity" },
+  hamlet: { href: "/locations/hamlet", title: "Hamlet", kind: "location" },
+  keyLento: { href: "/locations/key-lento", title: "Key Lento", image: KEY_LENTO, imageAlt: "Key Lento", kind: "location" },
 } satisfies Record<string, QuickGuideLink>;
 
 export const quickGuides: QuickGuide[] = [
@@ -1870,6 +1912,516 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.usePhone, L.turnSignals, L.cover, L.firstPerson],
   },
+  {
+    slug: "street-races",
+    title: "GTA 6 Street Races: How to Unlock and Win",
+    heading: "Street races",
+    description:
+      "How to unlock street races in GTA 6: there are 40 unique races in several groups. Vice City street races open in Chapter 3 after Dealer's Choice. Unofficial.",
+    keywords: ["GTA 6 street races", "GTA 6 how to unlock street races", "GTA 6 racing", "GTA 6 Hit n Run", "GTA 6 how to race"],
+    image: TRACK_RACING,
+    imageAlt: "Track racing, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "There are 40 unique races in several groups around Leonida. Find them under Activities, then Racing, on the map.",
+      "The Vice City street-race series unlocks in Chapter 3 after the mission Dealer's Choice, when you get a text about the races.",
+      "Mud-club races open in Chapter 2 from the Thrillbillies mission. Other tracks can be found as you explore. You pay an entry or rental fee, and winning pays prize money.",
+    ],
+    facts: [
+      { label: "Unique races", value: "40, in several groups" },
+      { label: "Vice City series", value: "Chapter 3, after Dealer's Choice" },
+      { label: "Mud-club races", value: "Chapter 2, Thrillbillies" },
+    ],
+    faqs: [
+      { question: "How do you unlock street races in GTA 6?", answer: "The Vice City street-race series unlocks in Chapter 3 after Dealer's Choice. Mud-club races open in Chapter 2 from Thrillbillies. Other tracks can be found around Leonida." },
+      { question: "How many races are in GTA 6?", answer: "There are 40 unique races in several groups. You pay an entry or rental fee, and winning pays prize money." },
+    ],
+    related: [L.racesMoney, L.vehiclesHub, L.register, L.money],
+  },
+  {
+    slug: "headlights",
+    title: "GTA 6 How to Turn On Headlights",
+    heading: "How to use headlights",
+    description:
+      "How to turn on headlights in GTA 6: tap Circle on PS5 or B on Xbox while driving. Hold the button to duck instead. Unofficial.",
+    keywords: ["GTA 6 headlights", "GTA 6 how to turn on headlights", "GTA 6 lights", "GTA 6 high beams", "GTA 6 car lights"],
+    kind: "vehicle",
+    answer: [
+      "While driving, tap Circle on PS5 or B on Xbox to toggle the headlights.",
+      "Don't hold the button. A hold makes you duck in the car instead.",
+      "Turn signals are a short tap of Left or Right on the D-pad.",
+    ],
+    facts: [
+      { label: "Toggle lights", value: "Tap Circle / B" },
+      { label: "Hold Circle / B", value: "Duck" },
+      { label: "Turn signals", value: "Tap D-pad Left or Right" },
+    ],
+    faqs: [
+      { question: "How do you turn on headlights in GTA 6?", answer: "Tap Circle on PS5 or B on Xbox while driving. Holding the button makes you duck instead." },
+      { question: "How do you duck in a car in GTA 6?", answer: "Hold Circle on PS5 or B on Xbox." },
+    ],
+    related: [L.turnSignals, L.controls, L.radio, L.autoDrive],
+  },
+  {
+    slug: "auto-drive",
+    title: "GTA 6 How to Auto-Drive and Use the Cinematic Camera",
+    heading: "Auto-drive",
+    description:
+      "How to auto-drive in GTA 6: set a waypoint, hold Down on the D-pad and press Options or Menu for cinematic mode, then hold Circle or B. Unofficial.",
+    keywords: ["GTA 6 auto drive", "GTA 6 cinematic camera", "GTA 6 cinematic mode", "GTA 6 how to auto drive", "GTA 6 self driving"],
+    kind: "vehicle",
+    answer: [
+      "Set a waypoint on the map first, then get in a vehicle and start moving.",
+      "Hold Down on the D-pad and press Options on PS5 or Menu on Xbox to enter cinematic mode.",
+      "When the prompt appears, hold Circle or B to turn on auto-drive. Use L2 and R2, or LT and RT, to change speed. Hold Down on the D-pad to take back control.",
+    ],
+    facts: [
+      { label: "Need", value: "A map waypoint" },
+      { label: "Cinematic", value: "Hold D-pad Down + Options / Menu" },
+      { label: "Auto-drive", value: "Hold Circle / B" },
+    ],
+    faqs: [
+      { question: "How do you auto-drive in GTA 6?", answer: "Set a waypoint, hold Down on the D-pad and press Options or Menu for cinematic mode, then hold Circle or B when the prompt appears." },
+      { question: "How do you turn on the cinematic camera in GTA 6?", answer: "In a moving vehicle, hold Down on the D-pad and press Options on PS5 or Menu on Xbox. Hold Down again to exit." },
+    ],
+    related: [L.fastTravel, L.minimap, L.mapFog, L.controls],
+  },
+  {
+    slug: "stunt-jumps",
+    title: "GTA 6 Stunt Jumps: How Many and How to Track Them",
+    heading: "Stunt jumps",
+    description:
+      "How many stunt jumps are in GTA 6? 130 jumps, plus under-the-bridge, knife-flight and base-jump stunts, for 397 in all. 250 for the trophy, 300 for 100%. Unofficial.",
+    keywords: ["GTA 6 stunt jumps", "GTA 6 how many stunt jumps", "GTA 6 under the bridge", "GTA 6 knife flights", "GTA 6 base jumps", "GTA 6 cunning stunts"],
+    kind: "activity",
+    answer: [
+      "There are 130 stunt jumps, 202 under-the-bridge stunts, 40 knife flights and 25 base jumps, for 397 stunts in all.",
+      "Do a stunt once and it counts. You need 250 for the Cunning Stunts trophy, and any 300 for 100%.",
+      "Track them under Progress, Activities, Stunts. On the map, look in Exploration, then Stunt Spots.",
+    ],
+    facts: [
+      { label: "Stunt jumps", value: "130" },
+      { label: "All stunts", value: "397" },
+      { label: "Trophy / 100%", value: "250 / any 300" },
+    ],
+    faqs: [
+      { question: "How many stunt jumps are in GTA 6?", answer: "130 stunt jumps, plus 202 under-the-bridge stunts, 40 knife flights and 25 base jumps, for 397 stunts in total." },
+      { question: "How many stunts do you need for 100% in GTA 6?", answer: "Any 300 of the 397. The Cunning Stunts trophy needs 250." },
+    ],
+    related: [L.stuntsHub, L.collectiblesHub, L.parachute, L.plane],
+  },
+  {
+    slug: "collectible-cards",
+    title: "GTA 6 Collectible Cards: How Many Sets and Where to Find Them",
+    heading: "Collectible cards",
+    description:
+      "GTA 6 collectible cards: 18 sets and 480 cards. Look on shelves and walls indoors, and in yellow phone boxes and tool boxes outside. Unofficial.",
+    keywords: ["GTA 6 collectible cards", "GTA 6 card sets", "GTA 6 trading cards", "GTA 6 Vice City Flamingos cards", "GTA 6 don't touch my deck"],
+    kind: "activity",
+    answer: [
+      "There are 18 collectible card sets and 480 cards hidden around Leonida.",
+      "Look on shelves and walls indoors, and in yellow phone boxes and tool boxes outside. You can't buy them.",
+      "Finish 3 sets for the Don't Touch My Deck trophy, and 15 sets for 100%. Track them under Progress, Collections.",
+    ],
+    facts: [
+      { label: "Sets / cards", value: "18 / 480" },
+      { label: "Trophy", value: "3 sets" },
+      { label: "For 100%", value: "15 sets" },
+    ],
+    faqs: [
+      { question: "How many collectible cards are in GTA 6?", answer: "18 sets and 480 cards. You need 3 sets for a trophy and 15 sets for 100%." },
+      { question: "Where do you find collectible cards in GTA 6?", answer: "On shelves and walls indoors, and in yellow phone boxes and tool boxes outside. You can't buy them." },
+    ],
+    related: [L.cardsHub, L.collectiblesHub, L.flamingos, L.stuntJumps],
+  },
+  {
+    slug: "flamingos",
+    title: "GTA 6 Cocaine Flamingos: How Many and How to Break Them",
+    heading: "Cocaine Flamingos",
+    description:
+      "GTA 6 Cocaine Flamingos: 125 hidden figures. Shoot a real one in the body to break it. Real ones have a black-and-white beak. Unofficial.",
+    keywords: ["GTA 6 flamingos", "GTA 6 cocaine flamingos", "GTA 6 how many flamingos", "GTA 6 pink flamingos", "GTA 6 inflatable flamingo"],
+    image: FLAMINGO,
+    imageAlt: "A flamingo, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "There are 125 Cocaine Flamingos hidden around Leonida. You need any 100 for 100%.",
+      "Real ones have a black-and-white beak. Shoot the body to break it. Yellow-and-black beaks are only decoration.",
+      "Track them under Progress, Exploration. Breaking 50 unlocks the Inflatable Flamingo cheat after you finish the story.",
+    ],
+    facts: [
+      { label: "Total", value: "125" },
+      { label: "For 100%", value: "Any 100" },
+      { label: "Real ones", value: "Black-and-white beak" },
+    ],
+    faqs: [
+      { question: "How many Cocaine Flamingos are in GTA 6?", answer: "125. You need any 100 for 100%." },
+      { question: "How do you break Cocaine Flamingos in GTA 6?", answer: "Shoot a real one in the body. Real figures have a black-and-white beak; yellow-and-black beaks can't be broken." },
+    ],
+    related: [L.flamingosHub, L.collectiblesHub, L.collectibleCards, L.cheats],
+  },
+  {
+    slug: "shooting-ranges",
+    title: "GTA 6 Shooting Ranges: Locations, Waiver Pass and Gold Medals",
+    heading: "Shooting ranges",
+    description:
+      "GTA 6 shooting ranges: Griffin in north-west Vice City and Rodgers Ranch in north-east Port Gellhorn. Buy the $5 waiver pass, then run the courses. Unofficial.",
+    keywords: ["GTA 6 shooting range", "GTA 6 shooting ranges", "GTA 6 Griffin shooting range", "GTA 6 Rodgers Ranch", "GTA 6 gold medals shooting"],
+    image: SHOOTING_RANGE,
+    imageAlt: "A shooting range, official Rockstar still",
+    kind: "weapon",
+    answer: [
+      "There are two ranges: Griffin in north-west Vice City and Rodgers Ranch in north-east Port Gellhorn.",
+      "Buy the $5 waiver pass from the clerk and the courses show up on your map. You can rent a gun for $10 if you need one.",
+      "Griffin has 18 gold medals on timed courses. Rodgers Ranch has 24 golds on score courses. That's 42 golds in all.",
+    ],
+    facts: [
+      { label: "Ranges", value: "Griffin and Rodgers Ranch" },
+      { label: "Waiver pass", value: "$5" },
+      { label: "Gold medals", value: "42 in all" },
+    ],
+    faqs: [
+      { question: "Where are the shooting ranges in GTA 6?", answer: "Griffin Shooting Range in north-west Vice City, and Rodgers Ranch in north-east Port Gellhorn." },
+      { question: "How do you unlock shooting range courses in GTA 6?", answer: "Buy the $5 waiver pass from the clerk. The courses then appear on your map." },
+    ],
+    related: [L.rangesHub, L.weapons, L.focus, L.trophiesGuide],
+  },
+
+  {
+    slug: "skip-cutscenes",
+    title: "GTA 6 How to Skip Cutscenes",
+    heading: "How to skip a cutscene",
+    description:
+      "How to skip a cutscene in GTA 6: hold Cross on PS5 or A on Xbox during the scene. You can't skip from the pause menu or the map. Unofficial.",
+    keywords: ["GTA 6 skip cutscene", "GTA 6 how to skip cutscenes", "GTA 6 skip scene", "GTA 6 skip cinematic", "GTA 6 skip intro"],
+    kind: "mission",
+    answer: [
+      "During a cutscene, hold Cross on PS5 or A on Xbox to skip it.",
+      "You can't skip from the pause menu or the map. If you need a break, pause first, then skip when you come back.",
+    ],
+    facts: [
+      { label: "Skip", value: "Hold Cross / A during the scene" },
+      { label: "Pause or map", value: "No skip button there" },
+    ],
+    faqs: [
+      { question: "How do you skip a cutscene in GTA 6?", answer: "Hold Cross on PS5 or A on Xbox during the scene." },
+      { question: "Can you skip a cutscene from the pause menu in GTA 6?", answer: "No. Skip during the scene itself. Pause if you need a break, then skip when you come back." },
+    ],
+    related: [L.replay, L.skipTime, L.controls, L.accessibility],
+  },
+  {
+    slug: "wasted-busted",
+    title: "GTA 6 What Happens When You Die or Get Arrested",
+    heading: "Wasted and Busted",
+    description:
+      "What happens when you die or get arrested in GTA 6: you lose cash on you, but money in the bank stays. After Wasted you respawn nearby. After Busted you go to your last safehouse. Unofficial.",
+    keywords: ["GTA 6 wasted", "GTA 6 busted", "GTA 6 what happens when you die", "GTA 6 arrested", "GTA 6 lose money death", "GTA 6 hospital"],
+    kind: "activity",
+    answer: [
+      "After Wasted you respawn nearby, not at a hospital. After Busted you go back to your last safehouse. Your car may be sent to the impound.",
+      "You lose cash on you either way. Money in the bank stays, so deposit what you can first.",
+      "Guns you picked up but don't own are gone after Wasted. Owned guns can be taken from your car's trunk or from your locker at Ammu-Nation.",
+    ],
+    facts: [
+      { label: "Cash on you", value: "Lost after Wasted or Busted" },
+      { label: "Banked cash", value: "Safe" },
+      { label: "Wasted / Busted", value: "Nearby / last safehouse" },
+    ],
+    faqs: [
+      { question: "What happens when you die in GTA 6?", answer: "You respawn nearby, not at a hospital. You lose cash on you, but money in the bank stays. Guns you don't own are gone; owned guns can be taken from your trunk or Ammu-Nation locker." },
+      { question: "What happens when you get arrested in GTA 6?", answer: "You go back to your last safehouse and lose cash on you. Money in the bank stays. Your car may be sent to the impound." },
+    ],
+    related: [L.wanted, L.bank, L.loseWanted, L.impound],
+  },
+  {
+    slug: "photo-mode",
+    title: "GTA 6 Photo Mode and How to Take Pictures",
+    heading: "Photo mode",
+    description:
+      "How to use photo mode in GTA 6: pause and open Photo Studio for the full tool. The Camera app on your phone is the quick way to take a picture. Unofficial.",
+    keywords: ["GTA 6 photo mode", "GTA 6 photo studio", "GTA 6 how to take pictures", "GTA 6 camera", "GTA 6 selfie", "GTA 6 Snapmatic"],
+    image: SNAPMATIC,
+    imageAlt: "The Snapmatic app on the in-game phone",
+    kind: "phone",
+    answer: [
+      "Pause the game and open Photo Studio for the full photo-mode tool.",
+      "For a quick shot, open the Camera app on your in-game phone.",
+      "Pictures you take go in your Gallery on the phone.",
+    ],
+    facts: [
+      { label: "Full tool", value: "Pause, then Photo Studio" },
+      { label: "Quick shot", value: "Camera app on the phone" },
+      { label: "Saved in", value: "Gallery" },
+    ],
+    faqs: [
+      { question: "How do you use photo mode in GTA 6?", answer: "Pause the game and open Photo Studio. For a quick shot, use the Camera app on your phone." },
+      { question: "Where do pictures go in GTA 6?", answer: "Pictures you take are saved in the Gallery on your in-game phone." },
+    ],
+    related: [L.usePhone, L.wainkScans, L.gta6Apps],
+  },
+  {
+    slug: "tattoos",
+    title: "GTA 6 How to Get a Tattoo",
+    heading: "How to get a tattoo",
+    description:
+      "How to get a tattoo in GTA 6: shops open after the Prologue. Find them on the map under Style, then Tattoos. Inked Mermaid is just east of Jason's house in Key Lento. Unofficial.",
+    keywords: ["GTA 6 tattoos", "GTA 6 how to get a tattoo", "GTA 6 tattoo shop", "GTA 6 Inked Mermaid"],
+    kind: "clothing",
+    answer: [
+      "Tattoo shops open after the Prologue. On the map, look under Style, then Tattoos. The icon is a heart with a bar through it.",
+      "Inked Mermaid is just east of Jason's house in Key Lento, on the same street as his gym. Walk in and talk to the staff.",
+      "Some designs and shops need a bank account before you can use them.",
+    ],
+    facts: [
+      { label: "Opens", value: "After the Prologue" },
+      { label: "Map", value: "Style, then Tattoos" },
+      { label: "Near Jason", value: "Inked Mermaid, east of his house" },
+    ],
+    faqs: [
+      { question: "How do you get a tattoo in GTA 6?", answer: "Find a shop on the map under Style, then Tattoos, walk in and talk to the staff. Shops open after the Prologue. Some designs need a bank account." },
+      { question: "Where is the first tattoo shop in GTA 6?", answer: "Inked Mermaid is just east of Jason's house in Key Lento, on the same street as his gym." },
+    ],
+    related: [L.clothes, L.haircut, L.bank, L.clothing],
+  },
+  {
+    slug: "basketball",
+    title: "GTA 6 How to Play Basketball",
+    heading: "Basketball",
+    description:
+      "How to play basketball in GTA 6: find a hoop and a ball around Vice City and the rest of Leonida. Games can also train Jason and Lucia's Focus. Unofficial.",
+    keywords: ["GTA 6 basketball", "GTA 6 how to play basketball", "GTA 6 hoops", "GTA 6 basketball courts"],
+    image: BASKETBALL,
+    imageAlt: "An outdoor basketball court in Vice City, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "Basketball hoops are around Vice City and the rest of Leonida. Walk up to a hoop with a ball to start.",
+      "Playing can also train Jason and Lucia's Focus.",
+    ],
+    facts: [
+      { label: "Where", value: "Hoops around Leonida" },
+      { label: "Also trains", value: "Focus" },
+    ],
+    faqs: [
+      { question: "Can you play basketball in GTA 6?", answer: "Yes. Find a hoop and a ball around Vice City and the rest of Leonida." },
+      { question: "Does basketball train Focus in GTA 6?", answer: "Yes. Games can train Jason and Lucia's Focus, the same way some other activities do." },
+    ],
+    related: [L.basketballHub, L.focus, L.activities, L.miniGolf],
+  },
+  {
+    slug: "unwanted-attention",
+    title: "GTA 6 Unwanted Attention: Where to Find the Phoenix",
+    heading: "Unwanted Attention",
+    description:
+      "GTA 6 Unwanted Attention: a Chapter 1 mission with Cal. The red Phoenix is often on a tow truck at the Hamlet impound. Repair and respray it, then take it to Brian. Unofficial.",
+    keywords: ["GTA 6 Unwanted Attention", "GTA 6 Phoenix mission", "GTA 6 Hamlet impound", "GTA 6 steal the Phoenix", "GTA 6 Cal mission"],
+    kind: "mission",
+    answer: [
+      "Unwanted Attention is a Chapter 1 mission with Cal. After you talk to him, go to the impound in Hamlet.",
+      "The red Phoenix is often already loaded on a tow truck. Steal it, leave the search area, then repair and respray the car.",
+      "Take the finished car to Brian. Change your look afterward so you are harder to recognize.",
+    ],
+    facts: [
+      { label: "Chapter", value: "1, with Cal" },
+      { label: "Car", value: "Red Phoenix, often on a tow truck" },
+      { label: "Where", value: "Hamlet impound" },
+    ],
+    faqs: [
+      { question: "Where is the Phoenix in Unwanted Attention?", answer: "At the impound in Hamlet. It is often already loaded on a tow truck." },
+      { question: "What do you do after you steal the Phoenix?", answer: "Leave the search area, repair and respray the car, then take it to Brian. Change your look afterward." },
+    ],
+    related: [L.unwantedMission, L.repairCar, L.impound, L.hamlet, L.loseWanted],
+  },
+  {
+    slug: "just-a-scratch",
+    title: "GTA 6 Just A Scratch: Take Jason's Truck to Coastal Auto Care",
+    heading: "Just A Scratch",
+    description:
+      "GTA 6 Just A Scratch: a Chapter 1 mission. Drive Jason's Vapid Ganado to Coastal Auto Care in Key Lento, talk to Joey, and get the truck repaired and resprayed. Unofficial.",
+    keywords: ["GTA 6 Just A Scratch", "GTA 6 Coastal Auto Care", "GTA 6 Jason truck", "GTA 6 Vapid Ganado", "GTA 6 Joey garage"],
+    image: COASTAL,
+    imageAlt: "Coastal Auto Care in Key Lento",
+    kind: "mission",
+    answer: [
+      "Just A Scratch is a Chapter 1 mission. Drive Jason's Vapid Ganado to Coastal Auto Care in Key Lento.",
+      "Talk to Joey inside. The shop repairs and resprays the truck.",
+      "Coastal Auto Care stays on your map as a body shop after the mission.",
+    ],
+    facts: [
+      { label: "Chapter", value: "1" },
+      { label: "Vehicle", value: "Jason's Vapid Ganado" },
+      { label: "Shop", value: "Coastal Auto Care, Key Lento" },
+    ],
+    faqs: [
+      { question: "What do you do in Just A Scratch in GTA 6?", answer: "Drive Jason's Vapid Ganado to Coastal Auto Care in Key Lento, talk to Joey, and get the truck repaired and resprayed." },
+      { question: "Where is Coastal Auto Care in GTA 6?", answer: "In Key Lento. It stays on your map as a body shop after Just A Scratch." },
+    ],
+    related: [L.scratchMission, L.coastalShop, L.repairCar, L.railing, L.keyLento],
+  },
+
+  {
+    slug: "accessibility",
+    title: "GTA 6 Accessibility Settings: Subtitles, Assist and Motion",
+    heading: "Accessibility settings",
+    description:
+      "GTA 6 accessibility settings: change subtitles and captions under Settings, then UI. Tap Assist and Hold Assist are under Gameplay. Motion blur can be turned down to zero. Unofficial.",
+    keywords: ["GTA 6 accessibility", "GTA 6 subtitles", "GTA 6 captions", "GTA 6 tap assist", "GTA 6 hold assist", "GTA 6 motion blur", "GTA 6 camera shake"],
+    kind: "activity",
+    answer: [
+      "Open Settings, then UI, for subtitles, captions, text size, speaker names and a caption background.",
+      "Under Gameplay you can turn on Tap Assist or Hold Assist if you want a lighter touch on long button holds.",
+      "Under Display you can lower Motion Blur Strength, including all the way to zero. Camera shake and camera bob also have their own sliders.",
+    ],
+    facts: [
+      { label: "Subtitles", value: "Settings, then UI" },
+      { label: "Assist", value: "Gameplay, Tap or Hold Assist" },
+      { label: "Motion blur", value: "Display, can go to 0" },
+    ],
+    faqs: [
+      { question: "Where are the subtitle settings in GTA 6?", answer: "Open Settings, then UI. You can change subtitles, captions, text size, speaker names and the caption background." },
+      { question: "Can you turn off motion blur in GTA 6?", answer: "Yes. Under Settings, then Display, lower Motion Blur Strength, including all the way to zero. Camera shake and bob have their own sliders too." },
+    ],
+    related: [L.controls, L.aimAssist, L.performance, L.firstPerson],
+  },
+  {
+    slug: "trophies",
+    title: "GTA 6 Trophies: How Many and How to Get the Platinum",
+    heading: "Trophies and platinum",
+    description:
+      "How many trophies are in GTA 6? 55 including the platinum, and 28 of them are hidden. Hidden story trophies stay hidden, so this guide does not name them. Unofficial.",
+    keywords: ["GTA 6 trophies", "GTA 6 platinum", "GTA 6 how many trophies", "GTA 6 hidden trophies", "GTA 6 achievements", "GTA 6 100 percent trophies"],
+    kind: "activity",
+    answer: [
+      "There are 55 trophies including the platinum, and 28 of them are hidden.",
+      "Hidden story trophies stay hidden here. This site does not name late-story or ending trophies.",
+      "See the full list we can show on the trophies page. Collectibles, stunts and ranges also have their own trophies.",
+    ],
+    facts: [
+      { label: "Total", value: "55, including platinum" },
+      { label: "Hidden", value: "28" },
+    ],
+    faqs: [
+      { question: "How many trophies are in GTA 6?", answer: "55 including the platinum. 28 of them are hidden." },
+      { question: "Does this site list every hidden trophy in GTA 6?", answer: "No. Hidden story trophies stay hidden. Collectible, stunt and range trophies are covered on their own pages." },
+    ],
+    related: [L.trophiesHub, L.howLong, L.collectiblesHub, L.stuntJumps],
+  },
+  {
+    slug: "mini-golf",
+    title: "GTA 6 Mini-Golf: Can You Play It?",
+    heading: "Mini-golf",
+    description:
+      "Can you play mini-golf in GTA 6? Yes. Courses are around Leonida, including an alligator-themed one. It is a side activity, not a required story mission. Unofficial.",
+    keywords: ["GTA 6 mini golf", "GTA 6 minigolf", "GTA 6 golf", "GTA 6 alligator golf", "GTA 6 putt putt"],
+    image: MINI_GOLF,
+    imageAlt: "Cal Hampton on an alligator-themed mini-golf course, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "Yes. Mini-golf courses are around Leonida, including an alligator-themed one.",
+      "It is a side activity, not a required story mission.",
+    ],
+    facts: [
+      { label: "In the game", value: "Yes" },
+      { label: "Required?", value: "No, it is a side activity" },
+    ],
+    faqs: [
+      { question: "Can you play mini-golf in GTA 6?", answer: "Yes. Courses are around Leonida, including an alligator-themed one." },
+      { question: "Is mini-golf required in GTA 6?", answer: "No. It is a side activity, not a required story mission." },
+    ],
+    related: [L.miniGolfHub, L.basketball, L.activities, L.fishing],
+  },
+  {
+    slug: "waink-scans",
+    title: "GTA 6 WAiNK Scans: How to Scan and How Many You Need",
+    heading: "WAiNK scans",
+    description:
+      "How to scan with WAiNK in GTA 6: hold Up on the D-pad to open the camera, then scan the animal, plant or object. 100 scans unlock a trophy. Unofficial.",
+    keywords: ["GTA 6 WAiNK", "GTA 6 how to scan", "GTA 6 WAiNK scans", "GTA 6 scan animals", "GTA 6 wildlife camera"],
+    kind: "phone",
+    answer: [
+      "Hold Up on the D-pad to open the WAiNK camera, then scan the animal, plant or object in front of you.",
+      "You need 100 scans for a trophy. Track them under Progress, then Exploration.",
+    ],
+    facts: [
+      { label: "Open camera", value: "Hold D-pad Up" },
+      { label: "Trophy", value: "100 scans" },
+    ],
+    faqs: [
+      { question: "How do you scan with WAiNK in GTA 6?", answer: "Hold Up on the D-pad to open the camera, then scan the animal, plant or object in front of you." },
+      { question: "How many WAiNK scans do you need in GTA 6?", answer: "100 scans unlock a trophy. Track them under Progress, then Exploration." },
+    ],
+    related: [L.waink, L.usePhone, L.collectiblesHub, L.trophiesGuide],
+  },
+  {
+    slug: "horn",
+    title: "GTA 6 How to Honk and Use Nitrous",
+    heading: "Horn and nitrous",
+    description:
+      "How to honk in GTA 6: press L3, the left stick. The same button is nitrous if the car has it. Check Control Scheme if you remapped the controls. Unofficial.",
+    keywords: ["GTA 6 horn", "GTA 6 how to honk", "GTA 6 nitrous", "GTA 6 nos", "GTA 6 how to use nitrous"],
+    kind: "vehicle",
+    answer: [
+      "Press L3, the left stick, to honk the horn.",
+      "If the car has nitrous, the same button fires it.",
+      "If that does nothing, open Settings, then Control Scheme, and check what Horn / Nitrous is bound to.",
+    ],
+    facts: [
+      { label: "Horn", value: "L3" },
+      { label: "Nitrous", value: "Same button, if the car has it" },
+    ],
+    faqs: [
+      { question: "How do you honk in GTA 6?", answer: "Press L3, the left stick. Check Control Scheme if you remapped the controls." },
+      { question: "How do you use nitrous in GTA 6?", answer: "Press L3 if the car has nitrous. The horn and nitrous share the same button." },
+    ],
+    related: [L.controls, L.headlights, L.turnSignals, L.vehiclesHub],
+  },
+  {
+    slug: "minimap",
+    title: "GTA 6 Minimap, Waypoints and Quick Navigation",
+    heading: "Minimap and waypoints",
+    description:
+      "How the minimap works in GTA 6: press Down on the D-pad to cycle the objective and the radar. Hold Down for Quick Navigation. Set a waypoint on the full map before you auto-drive. Unofficial.",
+    keywords: ["GTA 6 minimap", "GTA 6 waypoint", "GTA 6 radar", "GTA 6 quick navigation", "GTA 6 how to set waypoint", "GTA 6 GPS"],
+    kind: "location",
+    answer: [
+      "Press Down on the D-pad to cycle the objective and what the minimap shows. Hold Down to open Quick Navigation.",
+      "Open the full map with the Touchpad on PS5 or View on Xbox to set a waypoint.",
+      "Auto-drive needs a waypoint first.",
+    ],
+    facts: [
+      { label: "Cycle minimap", value: "D-pad Down" },
+      { label: "Quick Navigation", value: "Hold D-pad Down" },
+      { label: "Full map", value: "Touchpad / View" },
+    ],
+    faqs: [
+      { question: "How do you change the minimap in GTA 6?", answer: "Press Down on the D-pad to cycle the objective and the radar. Hold Down for Quick Navigation." },
+      { question: "How do you set a waypoint in GTA 6?", answer: "Open the full map with the Touchpad on PS5 or View on Xbox, then set a waypoint. Auto-drive needs one first." },
+    ],
+    related: [L.mapFog, L.autoDrive, L.fastTravel, L.controls],
+  },
+  {
+    slug: "aim-assist",
+    title: "GTA 6 Aim Assist and Targeting Settings",
+    heading: "Aim assist",
+    description:
+      "How to change aim assist in GTA 6: open Settings, then Gameplay. Targeting can be Lock-On, Partial or no lock-on. Partial is the default. Unofficial.",
+    keywords: ["GTA 6 aim assist", "GTA 6 targeting", "GTA 6 lock on", "GTA 6 shooting assist", "GTA 6 how to change aim"],
+    kind: "weapon",
+    answer: [
+      "Open Settings, then Gameplay, to change targeting and aim assist.",
+      "Targeting can be Lock-On, Partial or no lock-on. Partial is the default. There is also an Aim Assist Strength slider.",
+      "Shooting Assist and Drive-By Assist can be turned on or off in the same menu.",
+    ],
+    facts: [
+      { label: "Menu", value: "Settings, then Gameplay" },
+      { label: "Targeting", value: "Lock-On, Partial or no lock-on" },
+      { label: "Default", value: "Partial" },
+    ],
+    faqs: [
+      { question: "How do you change aim assist in GTA 6?", answer: "Open Settings, then Gameplay. You can pick Lock-On, Partial or no lock-on, and change Aim Assist Strength." },
+      { question: "What is the default targeting mode in GTA 6?", answer: "Partial. Shooting Assist and Drive-By Assist can also be turned on or off in the same menu." },
+    ],
+    related: [L.controls, L.accessibility, L.weapons, L.focus],
+  },
 ];
 
 /** Story missions that have a quick guide (Chapters 1 to 3 only). */
@@ -1884,6 +2436,8 @@ export const missionGuides: Record<string, string> = {
   "down-to-earth": "focus",
   moses: "slim-jim",
   "steal-the-zorrusso-for-randy": "key-cloner",
+  "unwanted-attention": "unwanted-attention",
+  "just-a-scratch": "just-a-scratch",
 };
 
 export function findQuickGuide(slug: string) {

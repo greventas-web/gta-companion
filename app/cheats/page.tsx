@@ -47,7 +47,7 @@ export default function CheatsPage() {
         </CardGrid>
       ))}
 
-      <QuickGuideGrid guides={quickGuideCards(["cheats-locked"])} />
+      <QuickGuideGrid guides={quickGuideCards(["cheats-locked", "flamingos"])} />
     </PageShell>
   );
 }
