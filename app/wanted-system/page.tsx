@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function WantedSystemPage() {
   return (
     <PageShell>
-      <SimpleHero title="Wanted system" />
+      <SimpleHero title="Wanted system" image="/images/footage/places/wanted-hamlet-police.webp" />
       <QuickFacts
         wide
         facts={[

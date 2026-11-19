@@ -58,6 +58,14 @@ const SNAPMATIC = "/images/footage/phone/snapmatic.webp";
 const UE_SAFEHOUSE = "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp";
 const JET_SKIS = "/images/official/activities/jet-skis.webp";
 const VICE_CITY = "/images/official/locations/vice-city.webp";
+const IMPOUND = "/images/footage/guides/police-impound-hamlet.webp";
+const KEY_CLONER = "/images/footage/guides/key-cloner-schafter.webp";
+const BUY_OUTFIT = "/images/footage/guides/big-shots-outfit.webp";
+const GAS_STATION = "/images/footage/guides/gas-station-services.webp";
+const REFUEL = "/images/footage/guides/refuel-nozzle.webp";
+const TAKE_COVER = "/images/footage/guides/take-cover.webp";
+const WANTED = "/images/footage/places/wanted-hamlet-police.webp";
+const SARAS_SALON = "/images/official/editions/ultimate_edition_saras_salon_02.webp";
 const LEONIDA_KEYS = "/images/official/locations/leonida-keys.webp";
 const WATCHING_TV = "/images/official/frames/watching-tv.webp";
 const FLAMINGO = "/images/official/frames/flamingo.webp";
@@ -70,9 +78,9 @@ const L = {
   save: { href: "/guides/how-to-save", title: "How to save", kind: "mission" },
   replay: { href: "/guides/replay-missions", title: "Replay missions?", kind: "mission" },
   register: { href: "/guides/register-car", title: "Register a car", image: PAY_N_SPRAY, imageAlt: "Pay 'n' Spray in Key Lento", kind: "vehicle" },
-  impound: { href: "/guides/impounded-car", title: "Impounded car", kind: "vehicle" },
+  impound: { href: "/guides/impounded-car", title: "Impounded car", image: IMPOUND, imageAlt: "The police impound lot in Hamlet", kind: "vehicle" },
   callCar: { href: "/guides/call-your-car", title: "Call your car", kind: "phone" },
-  keyCloner: { href: "/guides/key-cloner", title: "Key cloner", kind: "vehicle" },
+  keyCloner: { href: "/guides/key-cloner", title: "Key cloner", image: KEY_CLONER, imageAlt: "Jason cloning the key of a Benefactor Schafter V12", kind: "vehicle" },
   slimJim: { href: "/guides/slim-jim", title: "Slim jim", kind: "vehicle" },
   buyCar: { href: "/guides/buy-a-car", title: "Buy a car?", kind: "vehicle" },
   buyHouse: { href: "/guides/buy-a-house", title: "Buy a house?", image: JASONS_PLACE, imageAlt: "Jason's place in Key Lento", kind: "property" },
@@ -80,7 +88,7 @@ const L = {
   fastTravel: { href: "/guides/fast-travel", title: "Fast travel", image: RYDE_ME, imageAlt: "The RydeMe app on Jason's phone", kind: "phone" },
   railing: { href: "/guides/fix-railing", title: "Fix the railing", image: JASONS_PLACE, imageAlt: "Jason's place in Key Lento", kind: "property" },
   mask: { href: "/guides/mask", title: "Get a mask", image: CHUCKS, imageAlt: "Chuck's Tackle & Shot in Key Lento", kind: "clothing" },
-  clothes: { href: "/guides/change-clothes", title: "Change clothes", kind: "clothing" },
+  clothes: { href: "/guides/change-clothes", title: "Change clothes", image: BUY_OUTFIT, imageAlt: "Jason buying the Big Shots Tactical Gear outfit", kind: "clothing" },
   heal: { href: "/guides/how-to-heal", title: "How to heal", kind: "activity" },
   focus: { href: "/guides/focus", title: "Focus", kind: "activity" },
   switchChar: { href: "/guides/switch-characters", title: "Switch characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
@@ -89,7 +97,7 @@ const L = {
   online: { href: "/guides/online", title: "GTA 6 Online?", kind: "activity" },
   tips: { href: "/guides/beginner-tips", title: "What to do first", image: KEY_LENTO, imageAlt: "Key Lento", kind: "location" },
   // Existing site pages
-  wanted: { href: "/wanted-system", title: "Wanted system", kind: "activity" },
+  wanted: { href: "/wanted-system", title: "Wanted system", image: WANTED, imageAlt: "Jason escaping the Hamlet Police Department with a wanted level", kind: "activity" },
   payNSpray: { href: "/where-to-find/pay-n-spray", title: "Pay 'n' Spray shops", image: PAY_N_SPRAY_HAMLET, imageAlt: "Pay 'n' Spray in Hamlet", kind: "mod" },
   garages: { href: "/where-to-find/garages", title: "Garages", kind: "garage" },
   scooterBros: { href: "/phone/scooter-bros", title: "Scooter Bros", kind: "phone" },
@@ -123,8 +131,8 @@ const L = {
   islandDreams: { href: "/guides/island-dreams", title: "Island Dreams treasure", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "mission" },
   groceries: { href: "/guides/pick-up-groceries", title: "Pick up groceries", kind: "mission" },
   scuba: { href: "/guides/scuba-gear", title: "Scuba gear", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "activity" },
-  refuel: { href: "/guides/refuel", title: "Gas and refueling", kind: "vehicle" },
-  repairCar: { href: "/guides/repair-car", title: "Repair your car", kind: "vehicle" },
+  refuel: { href: "/guides/refuel", title: "Gas and refueling", image: REFUEL, imageAlt: "Jason filling up at a gas pump", kind: "vehicle" },
+  repairCar: { href: "/guides/repair-car", title: "Repair your car", image: GAS_STATION, imageAlt: "The services prompt at a gas station pump", kind: "vehicle" },
   customize: { href: "/guides/customize-car", title: "Customize your car", image: COASTAL, imageAlt: "Coastal Auto Care in Key Lento", kind: "mod" },
   headphones: { href: "/guides/headphones", title: "Headphones", kind: "radio" },
   plane: { href: "/guides/plane", title: "Get a plane", kind: "vehicle" },
@@ -136,7 +144,7 @@ const L = {
   moneyGlitch: { href: "/guides/money-glitch", title: "Money glitch?", image: JEWELRY, imageAlt: "A jewelry store robbery, official Rockstar still", kind: "money" },
   workout: { href: "/guides/workout", title: "Workouts", image: FITNESS_APP, imageAlt: "The Fitness app on the in-game phone", kind: "activity" },
   stealth: { href: "/guides/stealth-takedown", title: "Stealth takedown", kind: "weapon" },
-  cover: { href: "/guides/take-cover", title: "Take cover", kind: "weapon" },
+  cover: { href: "/guides/take-cover", title: "Take cover", image: TAKE_COVER, imageAlt: "Jason in cover behind a wall during a shootout", kind: "weapon" },
   newGame: { href: "/guides/new-game", title: "New game", kind: "mission" },
   snake: { href: "/guides/pet-snake", title: "Dolores the snake", kind: "animal" },
   robStore: { href: "/guides/rob-store", title: "Rob a store", image: ROBBERY_ART, imageAlt: "Jason and Lucia robbery, official Rockstar artwork", kind: "money" },
@@ -156,7 +164,7 @@ const L = {
   shark: { href: "/animals", title: "Sharks and sea life", image: "/images/footage/animals/shark.webp", imageAlt: "A shark near Jason underwater", kind: "animal" },
   phoneHeadphones: { href: "/phone/headphones", title: "Headphones app page", kind: "phone" },
   // Batch 3
-  loseWanted: { href: "/guides/lose-wanted", title: "Lose the cops", kind: "activity" },
+  loseWanted: { href: "/guides/lose-wanted", title: "Lose the cops", image: WANTED, imageAlt: "Jason escaping the Hamlet Police Department with a wanted level", kind: "activity" },
   helicopter: { href: "/guides/helicopter", title: "Get a helicopter", kind: "vehicle" },
   boat: { href: "/guides/boat", title: "Get a boat", image: JET_SKIS, imageAlt: "Jet skis among boats in the Leonida Keys, official Rockstar still", kind: "vehicle" },
   parachute: { href: "/guides/parachute", title: "Get a parachute", image: PARACHUTE, imageAlt: "A parachute jump, official Rockstar still", kind: "activity" },
@@ -164,7 +172,7 @@ const L = {
   usePhone: { href: "/guides/use-phone", title: "Use the phone", image: SNAPMATIC, imageAlt: "The Snapmatic app on the in-game phone", kind: "phone" },
   turnSignals: { href: "/guides/turn-signals", title: "Turn signals", kind: "vehicle" },
   ultimateEdition: { href: "/guides/ultimate-edition", title: "Ultimate Edition bonuses", image: UE_SAFEHOUSE, imageAlt: "Jason's Ultimate Edition safehouse vehicles, official Rockstar still", kind: "vehicle" },
-  haircut: { href: "/guides/haircut", title: "Haircut and appearance", kind: "clothing" },
+  haircut: { href: "/guides/haircut", title: "Haircut and appearance", image: SARAS_SALON, imageAlt: "Jason at Sara's Unisex Salon (official Rockstar image)", kind: "clothing" },
   skipTime: { href: "/guides/skip-time", title: "Skip time", image: WATCHING_TV, imageAlt: "Watching TV, official Rockstar still", kind: "activity" },
   swimming: { href: "/guides/swimming", title: "Swimming and diving", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "activity" },
   fileSize: { href: "/guides/file-size", title: "How many GB?", kind: "activity" },
@@ -314,6 +322,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to get the key cloner in GTA 6: it comes in the Chapter 3 mission Steal The Zorrusso For Randy and opens and starts keyless cars. Unofficial guide.",
     keywords: ["GTA 6 key cloner", "GTA 6 how to get key cloner", "GTA 6 how to unlock key cloner", "GTA 6 clone key", "GTA 6 keyless cars"],
+    image: KEY_CLONER,
+    imageAlt: "Jason cloning the key of a Benefactor Schafter V12",
     kind: "vehicle",
     answer: [
       "You get the key cloner in the Chapter 3 story mission Steal The Zorrusso For Randy.",
@@ -389,6 +399,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "GTA 6 car impounded? Request it in the Scooter Bros app for a fee, or find the impound lot in the map's Personal tab and take it back. Unofficial guide.",
     keywords: ["GTA 6 impound", "GTA 6 how to get car out of impound", "GTA 6 how to get my car back", "GTA 6 impound lot location", "GTA 6 where is my car", "GTA 6 car impounded"],
+    image: IMPOUND,
+    imageAlt: "The police impound lot in Hamlet",
     kind: "vehicle",
     answer: [
       "Police impound your registered car if you're Wasted or Busted in it, or ditch it during a chase.",
@@ -591,6 +603,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to change clothes in GTA 6: use the wardrobe at your safehouse, or save outfits to your car's trunk and change there. It also lowers Heat. Unofficial.",
     keywords: ["GTA 6 how to change clothes", "GTA 6 change outfit", "GTA 6 save outfits", "GTA 6 wardrobe", "GTA 6 how to change appearance"],
+    image: BUY_OUTFIT,
+    imageAlt: "Jason buying the Big Shots Tactical Gear outfit",
     kind: "clothing",
     answer: [
       "Your safehouse wardrobe holds every piece of clothing you own.",
@@ -945,6 +959,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "Do cars need gas in GTA 6? Yes. Press Down on the D-pad to check fuel, then pull up to a pump at any gas station to refuel. Unofficial guide.",
     keywords: ["GTA 6 gas", "GTA 6 gas stations", "GTA 6 gas station locations", "GTA 6 where to get gas", "GTA 6 gas gauge", "GTA 6 refuel"],
+    image: REFUEL,
+    imageAlt: "Jason filling up at a gas pump",
     kind: "vehicle",
     answer: [
       "Yes, cars use fuel in GTA 6. Press Down on the D-pad to see the pump icon: green is fine, yellow is low, red is empty.",
@@ -969,6 +985,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to repair your car in GTA 6: use the repair option at a gas station pump. In Chapter 1, call Joey. Later, Scooter Bros brings back wrecked cars. Unofficial.",
     keywords: ["GTA 6 how to repair car", "GTA 6 repair car", "GTA 6 fix car", "GTA 6 car damage"],
+    image: GAS_STATION,
+    imageAlt: "The services prompt at a gas station pump",
     kind: "vehicle",
     answer: [
       "Pull up to a pump at any gas station and pick the repair option for a fee.",
@@ -1271,6 +1289,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to take cover in GTA 6: stand next to a wall or car and press R1 or RB. Hold L2 to peek and aim. In fist fights, X or A blocks and dodges. Unofficial.",
     keywords: ["GTA 6 how to take cover", "GTA 6 cover", "GTA 6 how to dodge", "GTA 6 how to block", "GTA 6 controls"],
+    image: TAKE_COVER,
+    imageAlt: "Jason in cover behind a wall during a shootout",
     kind: "weapon",
     answer: [
       "Move next to a wall, car or tree and press R1 (RB on Xbox) to take cover.",
@@ -1371,6 +1391,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to lose the cops in GTA 6: break line of sight, leave the marked heat area, then change your outfit, look or car so the police description no longer matches. Unofficial.",
     keywords: ["GTA 6 how to lose wanted level", "GTA 6 how to lose cops", "GTA 6 how to lose 6 stars", "GTA 6 how to lose red stars", "GTA 6 heat system", "GTA 6 wanted level"],
+    image: WANTED,
+    imageAlt: "Jason escaping the Hamlet Police Department with a wanted level",
     kind: "activity",
     answer: [
       "Break the cops' line of sight, then leave the marked heat area on the map. Wanted status is tied to that area, not the whole map, until the stars get very high.",
@@ -1573,6 +1595,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to get a haircut in GTA 6: visit a hair and beauty salon on the map. You can change hair, Jason's facial hair and Lucia's makeup. Unofficial.",
     keywords: ["GTA 6 how to get a haircut", "GTA 6 how to change appearance", "GTA 6 barber", "GTA 6 hair salon", "GTA 6 facial hair", "GTA 6 tattoos"],
+    image: SARAS_SALON,
+    imageAlt: "Jason with a new mullet at Sara's Unisex Salon (official Rockstar image)",
     kind: "clothing",
     answer: [
       "Open the map, go to the Style legend and pick Hair and Beauty. Salons use an orange scissors icon. There are 18, including 4 barber shops.",

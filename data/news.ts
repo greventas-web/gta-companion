@@ -267,6 +267,8 @@ export const news: NewsArticle[] = [
     id: 8,
     slug: "gta-vi-edition-vehicles",
     title: "Rockstar Names the Edition Vehicles",
+    image: "/images/official/editions/ultimate_edition_grotti_cheetah_01.webp",
+    imageAlt: "The '95 Grotti Cheetah from the Ultimate Edition (official Rockstar image)",
     summary:
       "The Ultimate Edition names the '95 Grotti Cheetah, Vapid Ganado, Dinka Enduro, Crest Kayak, Shitzu Squalo, and '67 Vapid Dominator Buggy. The Vintage Vice City Pack adds the '55 Vapid Stanier.",
     date: "2026-06-25",
