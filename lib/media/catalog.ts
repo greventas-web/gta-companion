@@ -65,6 +65,10 @@ const officialMakerPhoto: Record<string, { src: string; alt: string }> = {
     src: "/images/footage/manufacturers/declasse-86-rancher.webp",
     alt: "Declasse '86 Rancher",
   },
+  benefactor: {
+    src: "/images/footage/vehicles/benefactor-schafter-v12.webp",
+    alt: "Benefactor Schafter V12",
+  },
   crest: {
     src: "/images/official/vehicles/crest-kayak.webp",
     alt: "Crest Kayak",
