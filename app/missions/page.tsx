@@ -7,6 +7,8 @@ import { launchMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { MISSION_TYPE_LABEL, missions, otherMissions, storyChapters } from "@/src/data/missions";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "GTA 6 Missions List – Story Missions";
 const description = `Unofficial, spoiler-safe GTA 6 missions list. Story missions in order for Chapters 1 to 3. Later chapters stay hidden, and plot and rewards stay hidden until you tap to reveal. ${UNOFFICIAL_DISCLAIMER}`;
@@ -66,6 +68,7 @@ export default function MissionsPage() {
       </CardGrid>
 
       <p className="mt-10 text-sm text-zinc-500">Chapters 4 and 5 stay hidden so nothing gets spoiled.</p>
+      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "replay-missions", "switch-characters", "fix-railing", "beginner-tips"])} />
     </PageShell>
   );
 }

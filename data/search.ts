@@ -4,6 +4,7 @@ import { phoneItems } from "@/data/phone";
 import { properties } from "@/data/properties";
 import { stores } from "@/data/stores";
 import { vehicles } from "@/data/vehicles";
+import { quickGuides } from "@/src/data/launch/quick-guides";
 
 export type SearchItem = {
   id: string;
@@ -14,6 +15,14 @@ export type SearchItem = {
 };
 
 export const searchIndex: SearchItem[] = [
+  ...quickGuides.map((guide) => ({
+    id: `guide-${guide.slug}`,
+    title: guide.heading,
+    description: guide.answer[0],
+    category: "Guides",
+    href: `/guides/${guide.slug}`,
+  })),
+
   ...vehicles.map((vehicle) => ({
     id: `vehicle-${vehicle.id}`,
     title: vehicle.name,

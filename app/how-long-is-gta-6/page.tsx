@@ -5,6 +5,8 @@ import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simpl
 import { launchMetadata } from "@/lib/launch";
 import { storyLength } from "@/src/data/launch/launch-facts";
 import { storyChapters } from "@/src/data/missions";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "How Long Is GTA 6? 93 Missions and Story Length";
 const description = `How long is GTA 6? About ${storyLength.pcGamerMissions} to ${storyLength.pressStartMissions} story missions over ${storyLength.chapters} chapters, and roughly 50 to 80 hours for the story. Unofficial fan site.`;
@@ -42,6 +44,7 @@ export default function HowLongIsGta6Page() {
         <SimpleCard href="/trophies" title="Trophies" />
         <SimpleCard href="/collectibles" title="Collectibles" />
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["replay-missions", "how-to-save", "online", "beginner-tips"])} />
     </PageShell>
   );
 }
