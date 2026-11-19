@@ -73,6 +73,9 @@ const BASKETBALL = "/images/official/activities/basketball.webp";
 const MINI_GOLF = "/images/official/frames/mini-golf.webp";
 const SHOOTING_RANGE = "/images/official/frames/shooting-range.webp";
 const TRACK_RACING = "/images/official/frames/track-racing.webp";
+const GYM = "/images/official/frames/gym-workout.webp";
+const STORE_ROBBERY = "/images/official/frames/store-robbery.webp";
+const GRASSRIVERS = "/images/official/locations/grassrivers.webp";
 
 const L = {
   save: { href: "/guides/how-to-save", title: "How to save", kind: "mission" },
@@ -230,6 +233,31 @@ const L = {
   activities: { href: "/activities", title: "Activities", kind: "activity" },
   hamlet: { href: "/locations/hamlet", title: "Hamlet", kind: "location" },
   keyLento: { href: "/locations/key-lento", title: "Key Lento", image: KEY_LENTO, imageAlt: "Key Lento", kind: "location" },
+  // Batch 5
+  partnerDrive: { href: "/guides/partner-drive", title: "Partner drive", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
+  bigfoot: { href: "/guides/bigfoot", title: "Bigfoot", image: GRASSRIVERS, imageAlt: "Grassrivers, official Rockstar still", kind: "activity" },
+  weather: { href: "/guides/weather", title: "Weather", kind: "location" },
+  policeScanner: { href: "/guides/police-scanner", title: "Police scanner", kind: "phone" },
+  bankJobs: { href: "/guides/bank-jobs", title: "Bank jobs", image: STORE_ROBBERY, imageAlt: "A store robbery, official Rockstar still", kind: "money" },
+  relationship: { href: "/guides/relationship", title: "Relationship status", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
+  callPartner: { href: "/guides/call-partner", title: "Call your partner", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "phone" },
+  characterStats: { href: "/guides/character-stats", title: "Health, stamina and Focus", image: GYM, imageAlt: "A gym workout, official Rockstar still", kind: "activity" },
+  climbing: { href: "/guides/climbing", title: "Climbing", kind: "activity" },
+  scanCar: { href: "/guides/scan-car", title: "Scan a car with WAiNK", kind: "vehicle" },
+  whatup: { href: "/guides/whatup", title: "WhatUp", kind: "phone" },
+  meditation: { href: "/guides/meditation", title: "Meditation", kind: "activity" },
+  handbrake: { href: "/guides/handbrake", title: "Handbrake and U-turn", kind: "vehicle" },
+  loadout: { href: "/guides/loadout", title: "Loadout", kind: "weapon" },
+  hotwire: { href: "/guides/hotwire", title: "Hotwire a car", kind: "vehicle" },
+  carjack: { href: "/guides/carjack", title: "Carjack", kind: "vehicle" },
+  criminalProfile: { href: "/guides/criminal-profile", title: "Criminal profile", kind: "activity" },
+  publicTransport: { href: "/guides/public-transport", title: "Buses and trains", kind: "location" },
+  driveBy: { href: "/guides/drive-by", title: "Drive-by shooting", kind: "weapon" },
+  crouch: { href: "/guides/crouch", title: "Crouch", kind: "activity" },
+  meditationHub: { href: "/activities/meditation", title: "Meditation spots", kind: "activity" },
+  grassrivers: { href: "/locations/grassrivers", title: "Grassrivers", image: GRASSRIVERS, imageAlt: "Grassrivers, official Rockstar still", kind: "location" },
+  creditCheck: { href: "/missions/credit-check", title: "Credit Check", line: "Chapter 3", kind: "mission" },
+  charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
 export const quickGuides: QuickGuide[] = [
@@ -2446,6 +2474,486 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.controls, L.accessibility, L.weapons, L.focus],
   },
+  {
+    slug: "partner-drive",
+    title: "GTA 6 How to Let Your Partner Drive",
+    heading: "Partner drive",
+    description:
+      "How to let your partner drive in GTA 6: when Jason and Lucia are together, hold Right on the D-pad to ask them to take the wheel, then set a waypoint. Unofficial.",
+    keywords: ["GTA 6 partner drive", "GTA 6 let Lucia drive", "GTA 6 switch seats", "GTA 6 passenger shoot", "GTA 6 AI drive"],
+    image: JASON_AND_LUCIA,
+    imageAlt: "Jason and Lucia, official Rockstar artwork",
+    kind: "character",
+    answer: [
+      "When Jason and Lucia are together, hold Right on the D-pad to open partner commands and ask them to drive. Set a waypoint so they have a destination.",
+      "You can also hold Right and press R1 on PS5 or RB on Xbox to switch characters in the car, so the other one is at the wheel.",
+      "While they drive, hold Right again to change speed or to split up. You can shoot from the passenger seat.",
+    ],
+    facts: [
+      { label: "Partner commands", value: "Hold D-pad Right" },
+      { label: "Switch in the car", value: "Hold Right + R1 / RB" },
+      { label: "Need", value: "A waypoint helps" },
+    ],
+    faqs: [
+      { question: "How do you let your partner drive in GTA 6?", answer: "When you are together, hold Right on the D-pad to ask them to take the wheel, and set a waypoint. You can also switch characters in the car with hold Right and R1 or RB." },
+      { question: "Can you shoot while your partner drives in GTA 6?", answer: "Yes. Sit in the passenger seat and shoot while they drive. Hold Right on the D-pad for speed commands or to split up." },
+    ],
+    related: [L.switchChar, L.callPartner, L.autoDrive, L.relationship],
+  },
+  {
+    slug: "bigfoot",
+    title: "GTA 6 Bigfoot: Where to Find the Easter Egg",
+    heading: "Where to find Bigfoot",
+    description:
+      "Where to find Bigfoot in GTA 6: drive to Cottonmouth Lake, just south of Hamlet. You will hear a growl, then see the creature by an animal carcass. Unofficial.",
+    keywords: ["GTA 6 Bigfoot", "GTA 6 where to find Bigfoot", "GTA 6 sasquatch", "GTA 6 Cottonmouth Lake", "GTA 6 easter egg Bigfoot", "GTA 6 skunk ape"],
+    image: GRASSRIVERS,
+    imageAlt: "Grassrivers, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "Drive to Cottonmouth Lake, just south of Hamlet. You can go there early, once you can drive around.",
+      "Listen for a deep growl. Bigfoot is often standing over an animal carcass on a dirt road, then runs into the swamp.",
+      "If you follow it you may find a strange effigy on a tree. Stay there and a short scene plays, then you wake up nearby.",
+    ],
+    facts: [
+      { label: "Where", value: "Cottonmouth Lake, south of Hamlet" },
+      { label: "When", value: "Available early, once you can drive around" },
+      { label: "Clue", value: "A deep growl" },
+    ],
+    faqs: [
+      { question: "Is there Bigfoot in GTA 6?", answer: "Yes. There is a Bigfoot easter egg at Cottonmouth Lake, just south of Hamlet." },
+      { question: "How do you find Bigfoot in GTA 6?", answer: "Go to Cottonmouth Lake south of Hamlet, listen for a growl, and look for the creature by an animal carcass. Following it into the swamp triggers a short scene." },
+    ],
+    related: [L.hamlet, L.grassrivers, L.hunting, L.animals],
+  },
+  {
+    slug: "weather",
+    title: "GTA 6 Weather: Rain, Storms and the Weather App",
+    heading: "Weather",
+    description:
+      "GTA 6 weather: Leonida has changing, local weather, including rain and storms. Check the Weather app on your phone for the conditions around you. Unofficial.",
+    keywords: ["GTA 6 weather", "GTA 6 rain", "GTA 6 storms", "GTA 6 weather app", "GTA 6 rainstorm"],
+    image: VICE_CITY,
+    imageAlt: "Vice City, official Rockstar still",
+    kind: "location",
+    answer: [
+      "Weather in Leonida changes as you play, and it can differ from one area to another. Rain and storms are part of that system.",
+      "Open the Weather app on your in-game phone to check the conditions around you.",
+    ],
+    facts: [
+      { label: "System", value: "Changing, and local" },
+      { label: "Includes", value: "Rain and storms" },
+      { label: "Check", value: "Weather app on the phone" },
+    ],
+    faqs: [
+      { question: "Does GTA 6 have dynamic weather?", answer: "Yes. Weather changes as you play and can differ from place to place, including rain and storms." },
+      { question: "How do you check the weather in GTA 6?", answer: "Open the Weather app on your in-game phone." },
+    ],
+    related: [L.usePhone, L.skipTime, L.locationsHub, L.whatup],
+  },
+  {
+    slug: "police-scanner",
+    title: "GTA 6 Police Scanner: How You Hear Dispatch",
+    heading: "Police scanner",
+    description:
+      "GTA 6 police scanner: Cal installs a cop scanner on Jason's phone during the Chapter 1 mission Unwanted Attention. It runs in the background and lets you hear dispatch. Unofficial.",
+    keywords: ["GTA 6 police scanner", "GTA 6 cop scanner", "GTA 6 police radio", "GTA 6 dispatch", "GTA 6 police chatter"],
+    kind: "phone",
+    answer: [
+      "During the Chapter 1 mission Unwanted Attention, Cal installs a cop scanner on Jason's phone.",
+      "You don't have to turn it on. After that, you can hear police dispatch during crimes and chases, including when they call out your car or clothes.",
+    ],
+    facts: [
+      { label: "Unlock", value: "Unwanted Attention, Chapter 1" },
+      { label: "Where", value: "On Jason's phone" },
+      { label: "Activate", value: "It runs in the background" },
+    ],
+    faqs: [
+      { question: "Why can you hear police radio in GTA 6?", answer: "Cal installs a cop scanner on Jason's phone during Unwanted Attention in Chapter 1. It runs in the background." },
+      { question: "Do you have to turn on the police scanner in GTA 6?", answer: "No. Once it is installed, you hear dispatch during crimes and chases without opening an app." },
+    ],
+    related: [L.unwantedAttention, L.loseWanted, L.wanted, L.usePhone],
+  },
+  {
+    slug: "bank-jobs",
+    title: "GTA 6 Bank Jobs: Dye Pack Jammer and Chapter 3 Unlocks",
+    heading: "Bank jobs",
+    description:
+      "How to unlock bank jobs in GTA 6: they open in Chapter 3 after the mission Credit Check, when you get the Dye Pack Jammer you need to fence marked bills. Unofficial.",
+    keywords: ["GTA 6 bank heist", "GTA 6 rob a bank", "GTA 6 bank jobs", "GTA 6 Dye Pack Jammer", "GTA 6 payday loans", "GTA 6 Credit Check"],
+    image: STORE_ROBBERY,
+    imageAlt: "A store robbery, official Rockstar still",
+    kind: "money",
+    answer: [
+      "Bank jobs and payday loan robberies open in Chapter 3 after Credit Check, when you meet Raul's crew.",
+      "That mission also gives you the Dye Pack Jammer, which you need to fence marked bills from banks and payday loan shops.",
+      "The jobs then show up on the map. A typical job means threatening the teller, taking the counter cash and robbing the back-room safe, then losing the cops.",
+    ],
+    facts: [
+      { label: "Unlocks", value: "Credit Check, Chapter 3" },
+      { label: "Need", value: "Dye Pack Jammer, for marked bills" },
+      { label: "On the map", value: "Banks and payday loan shops" },
+    ],
+    faqs: [
+      { question: "How do you unlock bank jobs in GTA 6?", answer: "They open in Chapter 3 after the mission Credit Check, when you meet Raul's crew and get the Dye Pack Jammer." },
+      { question: "What is the Dye Pack Jammer in GTA 6?", answer: "It is the tool you need to fence marked bills taken from banks and payday loan shops. You get it in Credit Check." },
+    ],
+    related: [L.creditCheck, L.robStore, L.jewelryGuide, L.money],
+  },
+  {
+    slug: "relationship",
+    title: "GTA 6 Relationship Status: How to Raise or Ruin It",
+    heading: "Relationship status",
+    description:
+      "How Jason and Lucia's relationship works in GTA 6: there are four statuses, from Running on Empty to Hot Together. Spend time together to raise it. You can't romance anyone else. Unofficial.",
+    keywords: ["GTA 6 relationship", "GTA 6 romance", "GTA 6 relationship status", "GTA 6 Hot Together", "GTA 6 can you romance Mandy", "GTA 6 hold hands"],
+    image: JASON_AND_LUCIA,
+    imageAlt: "Jason and Lucia, official Rockstar artwork",
+    kind: "character",
+    answer: [
+      "Jason and Lucia have four relationship statuses: Running on Empty, Partners in Crime, Crazy in Love and Hot Together. Check them in the Jason & Lucia menu, or hold Right on the D-pad.",
+      "Spend time together, do jobs and activities as a pair, and show affection — hold hands, talk, and offer food or a drink. A heart icon appears when something helps.",
+      "Ignoring calls and messages, or leaving one of them out of the story, will lower the status. You can't romance other characters.",
+    ],
+    facts: [
+      { label: "Statuses", value: "Four, from Running on Empty to Hot Together" },
+      { label: "Check", value: "Jason & Lucia menu, or hold D-pad Right" },
+      { label: "Other romances", value: "No" },
+    ],
+    faqs: [
+      { question: "How do you improve Jason and Lucia's relationship in GTA 6?", answer: "Spend time together, do activities and jobs as a pair, and show affection. Check the status in the Jason & Lucia menu." },
+      { question: "Can you romance other characters in GTA 6?", answer: "No. You can raise or neglect the relationship between Jason and Lucia, but you can't romance anyone else." },
+    ],
+    related: [L.callPartner, L.switchChar, L.charactersHub, L.criminalProfile],
+  },
+  {
+    slug: "call-partner",
+    title: "GTA 6 How to Call Jason or Lucia",
+    heading: "Call your partner",
+    description:
+      "How to call your partner in GTA 6: open Contacts on the phone, or hold Right on the D-pad and ask them to meet up. They will come to you. Unofficial.",
+    keywords: ["GTA 6 how to call Lucia", "GTA 6 how to call Jason", "GTA 6 meet up", "GTA 6 summon partner", "GTA 6 Contacts app"],
+    image: JASON_AND_LUCIA,
+    imageAlt: "Jason and Lucia, official Rockstar artwork",
+    kind: "phone",
+    answer: [
+      "Open the Contacts app on your phone and call your partner, or hold Right on the D-pad and ask them to meet up.",
+      "They will come to your location. If you have a waypoint set, they can meet you there instead.",
+      "You can also message them on WhatUp. Answering their messages helps the relationship.",
+    ],
+    facts: [
+      { label: "Call", value: "Contacts app, or hold D-pad Right" },
+      { label: "They go to", value: "You, or your waypoint" },
+      { label: "Message", value: "WhatUp" },
+    ],
+    faqs: [
+      { question: "How do you call your partner in GTA 6?", answer: "Open Contacts on the phone and call them, or hold Right on the D-pad and ask them to meet up. They will come to you." },
+      { question: "How do you get Jason or Lucia to come to you?", answer: "Call them or use the partner menu to meet up. If a waypoint is set, they can meet you there." },
+    ],
+    related: [L.switchChar, L.whatup, L.relationship, L.partnerDrive],
+  },
+  {
+    slug: "character-stats",
+    title: "GTA 6 Stats: Health, Stamina and Focus",
+    heading: "Health, stamina and Focus",
+    description:
+      "GTA 6 character stats: health, stamina and Focus are tracked in the Fitness app. Jason and Lucia each have their own levels. Train to raise them for good. Unofficial.",
+    keywords: ["GTA 6 stats", "GTA 6 health bar", "GTA 6 stamina", "GTA 6 how to increase health", "GTA 6 fitness app", "GTA 6 gym"],
+    image: GYM,
+    imageAlt: "A gym workout, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "There are three main stats: health, stamina and Focus. The Fitness app on your phone tracks them. Jason and Lucia do not share levels.",
+      "Food and drinks can give a short boost. Lasting upgrades come from training: strength work for health, cardio for stamina, and Focus activities for Focus.",
+      "Find gyms on the map under Activities, then Fitness. At the start, Jason's balcony already has gear. See the workout and Focus guides for the details.",
+    ],
+    facts: [
+      { label: "Stats", value: "Health, stamina and Focus" },
+      { label: "Check", value: "Fitness app" },
+      { label: "Shared?", value: "No, each character has their own" },
+    ],
+    faqs: [
+      { question: "What stats are in GTA 6?", answer: "Health, stamina and Focus. Check them in the Fitness app. Jason and Lucia each have their own levels." },
+      { question: "How do you increase health and stamina in GTA 6?", answer: "Train. Strength work raises health, and cardio raises stamina. Food and drinks only help for a short time. The Fitness app and the workout guide cover the windows." },
+    ],
+    related: [L.workout, L.focus, L.heal, L.basketball],
+  },
+
+  {
+    slug: "climbing",
+    title: "GTA 6 How to Climb and Vault",
+    heading: "How to climb",
+    description:
+      "How to climb in GTA 6: walk up to a fence, wall or ledge and press Cross on PS5 or A on Xbox. That button is jump and climb on the default scheme. Unofficial.",
+    keywords: ["GTA 6 how to climb", "GTA 6 climb", "GTA 6 vault", "GTA 6 jump fence", "GTA 6 clamber"],
+    kind: "activity",
+    answer: [
+      "Walk up to a fence, wall or ledge and press Cross on PS5 or A on Xbox to climb or vault it.",
+      "On the default scheme, that button is jump and climb. If you switched to Classic, jump and climb moves to Square or X.",
+    ],
+    facts: [
+      { label: "Default", value: "Cross / A" },
+      { label: "Classic scheme", value: "Square / X" },
+    ],
+    faqs: [
+      { question: "How do you climb in GTA 6?", answer: "Walk up to a fence, wall or ledge and press Cross on PS5 or A on Xbox." },
+      { question: "Why can't I climb in GTA 6?", answer: "On the default scheme, climb is Cross or A, the same as jump. If you turned on Classic controls, it is Square or X instead." },
+    ],
+    related: [L.controls, L.cover, L.stealth, L.crouch],
+  },
+  {
+    slug: "scan-car",
+    title: "GTA 6 How to Scan a Car with WAiNK",
+    heading: "Scan a car with WAiNK",
+    description:
+      "How to scan a car in GTA 6: use the WAiNK app on your phone. It shows if the car is locked, alarmed or keyless, whether it has a tracker, its value and the registration fee. Unofficial.",
+    keywords: ["GTA 6 scan car", "GTA 6 WAiNK car", "GTA 6 vehicle scanner", "GTA 6 how to scan a vehicle", "GTA 6 car tracker", "GTA 6 Waink It"],
+    kind: "vehicle",
+    answer: [
+      "Open the WAiNK app and scan the car in front of you. Cal adds it to Jason's phone during the Chapter 1 mission Unwanted Attention.",
+      "The scan shows the make, whether it is locked, alarmed or keyless, if it has a tracker, what it can sell for and what it costs to register.",
+    ],
+    facts: [
+      { label: "App", value: "WAiNK" },
+      { label: "Unlock", value: "Unwanted Attention, Chapter 1" },
+      { label: "Shows", value: "Locks, trackers, value and registration fee" },
+    ],
+    faqs: [
+      { question: "How do you scan a car in GTA 6?", answer: "Use the WAiNK app on your phone. It is added during Unwanted Attention in Chapter 1." },
+      { question: "What does a WAiNK car scan show in GTA 6?", answer: "Whether the car is locked, alarmed or keyless, if it has a tracker, its value and the cost to register it." },
+    ],
+    related: [L.waink, L.wainkScans, L.register, L.sellCars, L.slimJim],
+  },
+  {
+    slug: "whatup",
+    title: "GTA 6 WhatUp: The Messaging App",
+    heading: "WhatUp",
+    description:
+      "WhatUp in GTA 6 is the phone messaging app. Use it for texts from characters, new missions, side-activity tips and to check in with your partner. Unofficial.",
+    keywords: ["GTA 6 WhatUp", "GTA 6 What Up", "GTA 6 messaging app", "GTA 6 texts", "GTA 6 how to text"],
+    kind: "phone",
+    answer: [
+      "WhatUp is the instant messaging app on your in-game phone. Open the phone with Up on the D-pad and tap it.",
+      "Characters text you there with missions, tips and side activities. You can also message your partner to check in.",
+    ],
+    facts: [
+      { label: "What it is", value: "The phone messaging app" },
+      { label: "Open", value: "D-pad Up, then WhatUp" },
+    ],
+    faqs: [
+      { question: "What is WhatUp in GTA 6?", answer: "It is the messaging app on your phone. Characters use it to send missions, tips and side-activity leads." },
+      { question: "Can you text your partner in GTA 6?", answer: "Yes. Message them on WhatUp to check in. That also helps the relationship." },
+    ],
+    related: [L.usePhone, L.callPartner, L.gta6Apps, L.relationship],
+  },
+  {
+    slug: "meditation",
+    title: "GTA 6 Meditation: How It Works and Why to Do It",
+    heading: "Meditation",
+    description:
+      "GTA 6 meditation: find meditation spots around Leonida and complete a session to raise Focus. Jason and Lucia can both use the spots. Unofficial.",
+    keywords: ["GTA 6 meditation", "GTA 6 meditation spots", "GTA 6 how to meditate", "GTA 6 Positive Mental Attitude"],
+    kind: "activity",
+    answer: [
+      "Meditation spots are around Leonida. Walk up, start a session and finish it to raise Focus.",
+      "Jason and Lucia can both meditate. There is a trophy for meditating at every spot.",
+    ],
+    facts: [
+      { label: "Raises", value: "Focus" },
+      { label: "Who", value: "Jason and Lucia can both use the spots" },
+      { label: "Trophy", value: "Meditate at every spot" },
+    ],
+    faqs: [
+      { question: "Does meditation do anything in GTA 6?", answer: "Yes. Completing a session at a meditation spot raises Focus." },
+      { question: "Can both characters meditate in GTA 6?", answer: "Yes. Jason and Lucia can both use the spots. There is a trophy for meditating at every one." },
+    ],
+    related: [L.meditationHub, L.focus, L.characterStats, L.collectiblesHub],
+  },
+  {
+    slug: "handbrake",
+    title: "GTA 6 How to Handbrake and Make a U-Turn",
+    heading: "Handbrake and U-turn",
+    description:
+      "How to handbrake in GTA 6: hold Cross on PS5 or A on Xbox while driving. Add a hard steer to make a quick U-turn when you are losing the cops. Unofficial.",
+    keywords: ["GTA 6 handbrake", "GTA 6 emergency brake", "GTA 6 U-turn", "GTA 6 how to drift", "GTA 6 e-brake"],
+    kind: "vehicle",
+    answer: [
+      "Hold Cross on PS5 or A on Xbox to pull the handbrake.",
+      "Steer hard left or right at the same time to make a sharp U-turn. That is a useful way to create space in a chase.",
+    ],
+    facts: [
+      { label: "Handbrake", value: "Hold Cross / A" },
+      { label: "U-turn", value: "Handbrake and a hard steer" },
+    ],
+    faqs: [
+      { question: "How do you handbrake in GTA 6?", answer: "Hold Cross on PS5 or A on Xbox while driving." },
+      { question: "How do you make a U-turn in GTA 6?", answer: "Hold the handbrake and steer hard left or right. It helps you create space when the cops are behind you." },
+    ],
+    related: [L.loseWanted, L.controls, L.headlights, L.horn],
+  },
+  {
+    slug: "loadout",
+    title: "GTA 6 How to Open Your Loadout and Item Wheel",
+    heading: "Loadout",
+    description:
+      "How to open your loadout in GTA 6: hold L1 on PS5 or LB on Xbox. Tap the button to holster. Use the loadout for weapons, items, hats and Zombix. Unofficial.",
+    keywords: ["GTA 6 loadout", "GTA 6 weapon wheel", "GTA 6 item wheel", "GTA 6 inventory", "GTA 6 how to holster", "GTA 6 how to use items"],
+    kind: "weapon",
+    answer: [
+      "Hold L1 on PS5 or LB on Xbox to open your loadout. Tap L1 or LB to holster your weapon.",
+      "Press R1 or RB to move to the items tab for things like Zombix, hats and glasses.",
+    ],
+    facts: [
+      { label: "Open loadout", value: "Hold L1 / LB" },
+      { label: "Holster", value: "Tap L1 / LB" },
+      { label: "Items tab", value: "R1 / RB" },
+    ],
+    faqs: [
+      { question: "How do you open the weapon wheel in GTA 6?", answer: "Hold L1 on PS5 or LB on Xbox to open your loadout. Tap the same button to holster." },
+      { question: "How do you use items in GTA 6?", answer: "Open the loadout, then press R1 or RB to reach the items tab. That is where Zombix, hats and glasses sit." },
+    ],
+    related: [L.controls, L.heal, L.armor, L.clothes, L.mask],
+  },
+
+  {
+    slug: "hotwire",
+    title: "GTA 6 How to Hotwire a Car",
+    heading: "How to hotwire a car",
+    description:
+      "How to hotwire a car in GTA 6: after you break in, use both sticks to find the sweet spots and start the engine. Keyless cars cannot be hotwired. Unofficial.",
+    keywords: ["GTA 6 hotwire", "GTA 6 how to hotwire", "GTA 6 start stolen car", "GTA 6 keyless car", "GTA 6 break into car"],
+    kind: "vehicle",
+    answer: [
+      "If the car is locked, smash a window or use a slim jim, then climb in. Use both sticks to find the sweet spots and fill the bars to start the engine.",
+      "Keyless cars cannot be hotwired. Those need the key cloner from Chapter 3. Smashing a window on an alarmed car will set the alarm off.",
+    ],
+    facts: [
+      { label: "How", value: "Both sticks, find the sweet spots" },
+      { label: "Keyless cars", value: "Need the key cloner, Chapter 3" },
+    ],
+    faqs: [
+      { question: "How do you hotwire a car in GTA 6?", answer: "Get in, then use both sticks to find the sweet spots and start the engine." },
+      { question: "Why can't I hotwire a car in GTA 6?", answer: "Keyless cars cannot be hotwired. You need the key cloner, which you get in Chapter 3." },
+    ],
+    related: [L.slimJim, L.keyCloner, L.scanCar, L.carjack],
+  },
+  {
+    slug: "carjack",
+    title: "GTA 6 How to Carjack and Pull a Driver Out",
+    heading: "How to carjack",
+    description:
+      "How to carjack in GTA 6: walk up to a moving or stopped car and pull the driver out. Many drivers will fight back, and some are armed. Unofficial.",
+    keywords: ["GTA 6 carjack", "GTA 6 hijack", "GTA 6 pull driver out", "GTA 6 steal a car from driver", "GTA 6 carjacking"],
+    kind: "vehicle",
+    answer: [
+      "Walk up to an occupied car and pull the driver out. In a chase, this is often faster than breaking into a parked car.",
+      "Many drivers fight back, so be ready to win that struggle. Some are armed. You can't use a slim jim on a car someone is already sitting in.",
+    ],
+    facts: [
+      { label: "How", value: "Pull the driver out" },
+      { label: "Watch for", value: "Drivers who fight back, and some who are armed" },
+    ],
+    faqs: [
+      { question: "How do you carjack in GTA 6?", answer: "Walk up to an occupied car and pull the driver out. It is often faster than breaking into a parked car." },
+      { question: "Do drivers fight back in GTA 6?", answer: "Yes. Many will struggle with you, and some are armed. You can't slim jim a car while someone is in it." },
+    ],
+    related: [L.hotwire, L.slimJim, L.loseWanted, L.scanCar],
+  },
+  {
+    slug: "criminal-profile",
+    title: "GTA 6 Criminal Profile: The Five Tiers Explained",
+    heading: "Criminal profile",
+    description:
+      "GTA 6 criminal profile: Jason and Lucia each have a reputation with five tiers, from Professional to Irredeemable. The first four can change. Irredeemable stays. Unofficial.",
+    keywords: ["GTA 6 criminal profile", "GTA 6 honor system", "GTA 6 reputation", "GTA 6 Irredeemable", "GTA 6 Professional profile", "GTA 6 how to change criminal profile"],
+    kind: "activity",
+    answer: [
+      "Jason and Lucia each have a criminal profile. The five tiers are Professional, Hardened, Violent, Psycho and Irredeemable. Check them in the Jason & Lucia menu, or hold Right on the D-pad.",
+      "You can move between the first four. Less violence and cleaner jobs push you toward Professional. More cruelty pushes you toward Psycho.",
+      "Irredeemable is permanent. It can hurt your relationship, change how civilians and cops treat you, and block surrender.",
+    ],
+    facts: [
+      { label: "Tiers", value: "Professional, Hardened, Violent, Psycho, Irredeemable" },
+      { label: "Check", value: "Jason & Lucia menu, or hold D-pad Right" },
+      { label: "Irredeemable", value: "Permanent" },
+    ],
+    faqs: [
+      { question: "How do you check your criminal profile in GTA 6?", answer: "Open the Jason & Lucia menu, or hold Right on the D-pad. Jason and Lucia each have their own profile." },
+      { question: "Can you change an Irredeemable criminal profile in GTA 6?", answer: "No. You can move between Professional, Hardened, Violent and Psycho, but Irredeemable stays." },
+    ],
+    related: [L.relationship, L.wanted, L.loseWanted, L.stealth],
+  },
+  {
+    slug: "public-transport",
+    title: "GTA 6 Buses and Trains: How to Ride and Skip the Trip",
+    heading: "Buses and trains",
+    description:
+      "How to ride buses and trains in GTA 6: find a stop or station on the map, wait for the service, board and sit down. You can pay to skip the journey. Unofficial.",
+    keywords: ["GTA 6 trains", "GTA 6 bus", "GTA 6 public transport", "GTA 6 metro", "GTA 6 how to ride the train", "GTA 6 skip bus"],
+    image: VICE_CITY,
+    imageAlt: "Vice City, official Rockstar still",
+    kind: "location",
+    answer: [
+      "Leonida has buses and trains, but they are not on demand. Find a stop or station on the map under Vehicles, then Buses or Trains. Hold Down on the D-pad to see nearby stops.",
+      "Wait for the service, hop on and sit down. Set a destination on the route, then hold Triangle or Y to skip the journey for a fee. Longer trips cost more, but they are cheaper than a RydeMe skip.",
+    ],
+    facts: [
+      { label: "Find stops", value: "Map, Vehicles, then Buses or Trains" },
+      { label: "Nearby", value: "Hold D-pad Down" },
+      { label: "Skip", value: "Hold Triangle / Y, for a fee" },
+    ],
+    faqs: [
+      { question: "Can you ride buses and trains in GTA 6?", answer: "Yes. Find a stop or station, wait for the service, board and sit down. They are not on demand like a taxi." },
+      { question: "Can you skip a bus or train ride in GTA 6?", answer: "Yes. Once you are on board, set a destination and hold Triangle or Y to skip the journey for a fee. Longer trips cost more." },
+    ],
+    related: [L.fastTravel, L.minimap, L.mapFog, L.rydeMe],
+  },
+  {
+    slug: "drive-by",
+    title: "GTA 6 How to Shoot from a Car",
+    heading: "Drive-by shooting",
+    description:
+      "How to shoot from a car in GTA 6: press R1 on PS5 or RB on Xbox while driving. Hold L1 or LB if you need to aim. You can also shoot from the passenger seat. Unofficial.",
+    keywords: ["GTA 6 drive by", "GTA 6 shoot from car", "GTA 6 passenger shooting", "GTA 6 how to shoot while driving"],
+    kind: "weapon",
+    answer: [
+      "While driving, press R1 on PS5 or RB on Xbox to shoot. Hold L1 or LB if you need to aim first.",
+      "You can also sit in the passenger seat and shoot while your partner drives. Hold Circle or B to duck if someone is shooting back.",
+    ],
+    facts: [
+      { label: "Shoot", value: "R1 / RB" },
+      { label: "Aim", value: "Hold L1 / LB" },
+      { label: "Duck", value: "Hold Circle / B" },
+    ],
+    faqs: [
+      { question: "How do you shoot from a car in GTA 6?", answer: "Press R1 on PS5 or RB on Xbox while driving. Hold L1 or LB to aim." },
+      { question: "Can the passenger shoot in GTA 6?", answer: "Yes. Let your partner drive and shoot from the passenger seat." },
+    ],
+    related: [L.partnerDrive, L.aimAssist, L.controls, L.headlights],
+  },
+  {
+    slug: "crouch",
+    title: "GTA 6 How to Crouch",
+    heading: "How to crouch",
+    description:
+      "How to crouch in GTA 6: press Circle on PS5 or B on Xbox. Holding the button makes you rest on foot, or duck if you are in a car. Unofficial.",
+    keywords: ["GTA 6 crouch", "GTA 6 how to crouch", "GTA 6 sneak", "GTA 6 duck", "GTA 6 stealth walk"],
+    kind: "activity",
+    answer: [
+      "Press Circle on PS5 or B on Xbox to crouch.",
+      "Hold the button to rest when you are on foot. In a car, a hold makes you duck.",
+    ],
+    facts: [
+      { label: "Crouch", value: "Circle / B" },
+      { label: "Hold, on foot", value: "Rest" },
+      { label: "Hold, in a car", value: "Duck" },
+    ],
+    faqs: [
+      { question: "How do you crouch in GTA 6?", answer: "Press Circle on PS5 or B on Xbox." },
+      { question: "How do you duck in a car in GTA 6?", answer: "Hold Circle on PS5 or B on Xbox. A short tap of the same button toggles the headlights." },
+    ],
+    related: [L.stealth, L.cover, L.headlights, L.controls],
+  },
 ];
 
 /** Story missions that have a quick guide (Chapters 1 to 3 only). */
@@ -2462,6 +2970,7 @@ export const missionGuides: Record<string, string> = {
   "steal-the-zorrusso-for-randy": "key-cloner",
   "unwanted-attention": "unwanted-attention",
   "just-a-scratch": "just-a-scratch",
+  "credit-check": "bank-jobs",
 };
 
 export function findQuickGuide(slug: string) {

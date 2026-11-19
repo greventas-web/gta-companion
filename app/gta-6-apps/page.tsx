@@ -49,7 +49,7 @@ export default function Gta6AppsPage() {
         ))}
         <SimpleCard href="/phone" title="All phone apps" image="/images/footage/phone/ryde-me.webp" imageAlt="The Ryde Me app on Jason's phone" />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["bank-account-atm", "fast-travel", "call-your-car", "use-phone", "photo-mode", "waink-scans"])} />
+      <QuickGuideGrid guides={quickGuideCards(["bank-account-atm", "fast-travel", "call-your-car", "use-phone", "photo-mode", "waink-scans", "whatup", "scan-car", "police-scanner", "call-partner", "character-stats"])} />
     </PageShell>
   );
 }

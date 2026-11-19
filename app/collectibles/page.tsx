@@ -71,7 +71,7 @@ export default function Page() {
       <CardGrid heading="More">
         <SimpleCard href="/shooting-ranges" title="Shooting ranges" image="/images/official/frames/shooting-range.webp" chips={[{ value: "42 golds" }]} />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["flamingos", "collectible-cards", "stunt-jumps", "waink-scans", "shooting-ranges"])} />
+      <QuickGuideGrid guides={quickGuideCards(["flamingos", "collectible-cards", "stunt-jumps", "waink-scans", "shooting-ranges", "meditation"])} />
     </PageShell>
   );
 }
