@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import AdSlot from "@/components/ads/AdSlot";
 import Breadcrumb from "@/components/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
@@ -70,8 +71,10 @@ export default async function WhereToFindTopicPage({ params }: Props) {
         <SimpleHero title={topic.label} />
       </div>
 
-      {groups.map((group) => (
-        <CardGrid key={group} heading={group} dense>
+      {groups.map((group, index) => (
+        <div key={group}>
+        {index === 1 ? <AdSlot name="list" /> : null}
+        <CardGrid heading={group} dense>
           {places
             .filter((place) => place.group === group)
             .map((place) => {
@@ -90,6 +93,7 @@ export default async function WhereToFindTopicPage({ params }: Props) {
               );
             })}
         </CardGrid>
+        </div>
       ))}
 
       <p className="mt-12 text-xs leading-5 text-zinc-500">
