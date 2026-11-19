@@ -35,7 +35,7 @@ export default function PhonePage() {
               key={item.slug}
               href={`/phone/${item.slug}`}
               title={item.name}
-              image={undefined}
+              image={item.image}
               eyebrow={item.kind}
               line={undefined}
               mapHref={undefined}

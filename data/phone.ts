@@ -19,6 +19,8 @@ export type PhoneItem = {
   details: readonly string[];
   sources: readonly CitedSource[];
   links: readonly { href: string; label: string }[];
+  /** Real in-game still of this app, from our own footage. */
+  image?: string;
 };
 
 const famitsuAndTranslation = famitsuSources;
@@ -48,6 +50,7 @@ export const phoneItems: PhoneItem[] = [
   {
     slug: "ryde-me",
     name: "Ryde Me",
+    image: "/images/footage/phone/ryde-me.webp",
     group: "App",
     kind: "Ride-share app",
     origin: "Interview",
