@@ -40,8 +40,8 @@ export default async function PhoneDetailPage({ params }: Props) {
         crumbs={[{ label: "Home", href: "/" }, { label: 'Phone', href: "/phone" }, { label: item.name }]}
         eyebrow={item.kind}
         title={item.name}
-        image={undefined}
-        imageAlt={undefined}
+        image={item.image}
+        imageAlt={item.image ? item.name : undefined}
         summary={item.description}
         facts={[{ label: "Type", value: item.kind }]}
         mapHref={map}
@@ -49,7 +49,7 @@ export default async function PhoneDetailPage({ params }: Props) {
         related={related.map((entry) => ({
           href: `/phone/${entry.slug}`,
           title: entry.name,
-          image: undefined,
+          image: entry.image,
           small: true,
         }))}
       >

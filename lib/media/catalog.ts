@@ -53,6 +53,10 @@ const officialMakerPhoto: Record<string, { src: string; alt: string }> = {
     src: "/images/official/vehicles/shitzu-squalo.webp",
     alt: "Shitzu Squalo",
   },
+  declasse: {
+    src: "/images/footage/manufacturers/declasse-86-rancher.webp",
+    alt: "Declasse '86 Rancher",
+  },
   crest: {
     src: "/images/official/vehicles/crest-kayak.webp",
     alt: "Crest Kayak",

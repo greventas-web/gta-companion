@@ -61,7 +61,7 @@ const locations: ExtraEntry[] = [
   { slug: "ocean-view-hotel", name: "Ocean View Hotel", group: "Vice-Dale County", meta: "Ocean Beach", pin: p("ocean-view-hotel"), summary: "An art deco hotel on Shore Drive in Ocean Beach." },
   // Mariana County
   { slug: "capri", name: "Capri", group: "Mariana County", meta: "Mariana County", pin: p("capri"), summary: "A rich town with Nola and Ferruccio Tucci formal wear and the Vela Rota Drive Garage." },
-  { slug: "key-lento", name: "Key Lento", group: "Mariana County", meta: "Leonida Keys", pin: p("jasons-place"), summary: "The Leonida Keys town where Jason lives. It has The Rusty Anchor bar and Kenton's dive business." },
+  { slug: "key-lento", name: "Key Lento", group: "Mariana County", meta: "Leonida Keys", image: "/images/footage/locations/key-lento.webp", pin: p("jasons-place"), summary: "The Leonida Keys town where Jason lives. It has The Rusty Anchor bar and Kenton's dive business." },
   { slug: "southwind", name: "Southwind", group: "Mariana County", meta: "Mariana County", pin: p("southwind"), summary: "A place in Mariana County with a Pay 'n' Spray." },
   { slug: "watson-bay", name: "Watson Bay", group: "Mariana County", meta: "Mariana County", pin: p("watson-bay"), summary: "Home of the Paradise Garage, where the Ultimate Edition '67 Vapid Dominator Buggy is kept." },
   { slug: "abismo-key", name: "Abismo Key", group: "Mariana County", meta: "Leonida Keys", pin: p("abismo-key"), summary: "A small key at the southern end of the Leonida Keys." },
@@ -75,7 +75,7 @@ const locations: ExtraEntry[] = [
   { slug: "millport", name: "Millport", group: "Lummox County", meta: "Lummox County", pin: p("millport"), summary: "A Lummox County town with a Pay 'n' Spray." },
   // Waters and landmarks
   { slug: "gambit-bay", name: "Gambit Bay", group: "Waters and landmarks", meta: "Fishing", pin: p("gambit-bay"), summary: "A bay known for fishing. The Ultimate Edition Shitzu Squalo is built for it." },
-  { slug: "leonida-penitentiary", name: "Leonida Penitentiary", group: "Waters and landmarks", meta: "Prison", summary: "The state prison where Lucia served time before the story begins." },
+  { slug: "leonida-penitentiary", name: "Leonida Penitentiary", group: "Waters and landmarks", meta: "Prison", image: "/images/footage/locations/leonida-penitentiary.webp", summary: "The state prison where Lucia served time before the story begins." },
   { slug: "vercetti-estate", name: "The Vercetti Estate", group: "Waters and landmarks", meta: "Estate", summary: "A Vice City estate. The Ultimate Edition Hawk & Little Morgan revolvers come from it." },
   // Counties
   { slug: "vice-dale-county", name: "Vice-Dale County", group: "Counties", meta: "County", summary: "The county around Vice City, from Downtown and Ocean Beach out to Hamlet." },
@@ -217,7 +217,7 @@ const brands: ExtraEntry[] = [
   chain("Drip Drops", "Streetwear", "Vice-Dale County"),
   chain("Alpha Sports", "Sportswear", "Downtown, Ocean Beach and Waning Sands"),
   chain("Endzone", "Sportswear", "Downtown, Ocean Beach and Washington Beach"),
-  chain("Eris", "Sportswear", "Vice-Dale County"),
+  { ...chain("Eris", "Sportswear", "Vice-Dale County"), image: "/images/footage/brands/eris.webp" },
   chain("Nola", "Formal", "Capri, Peacock Bay, Ocean Beach and Decor District"),
   chain("Ferruccio Tucci", "Formal", "Capri, Ocean Beach, Decor District and Waning Sands"),
   { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
