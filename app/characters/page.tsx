@@ -1,3 +1,4 @@
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
@@ -7,6 +8,7 @@ import { characters } from "@/data/characters";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 characters',
@@ -47,6 +49,7 @@ export default function CharactersPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="characters" />
+      <QuickGuideGrid guides={quickGuideCards(["switch-characters", "relationship", "call-partner", "partner-drive", "criminal-profile", "character-stats"])} />
     </PageShell>
   );
 }

@@ -21,7 +21,7 @@ export default function MoneyMethodsPage() {
       entries={moneyMethods}
       emptyBody="No money methods are listed yet."
     >
-      <QuickGuideGrid guides={quickGuideCards(["money-glitch", "sell-cars", "rob-store", "bank-account-atm", "sell-guns", "hunting", "jewelry-robbery", "gang-hideouts", "street-races"])} />
+      <QuickGuideGrid guides={quickGuideCards(["money-glitch", "sell-cars", "rob-store", "bank-account-atm", "sell-guns", "hunting", "jewelry-robbery", "gang-hideouts", "street-races", "bank-jobs"])} />
     </LaunchIndex>
   );
 }

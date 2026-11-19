@@ -75,7 +75,7 @@ export default function TrophiesPage() {
           ))}
         </CardGrid>
       ))}
-      <QuickGuideGrid guides={quickGuideCards(["trophies", "stunt-jumps", "flamingos", "shooting-ranges", "collectible-cards", "waink-scans"])} />
+      <QuickGuideGrid guides={quickGuideCards(["trophies", "stunt-jumps", "flamingos", "shooting-ranges", "collectible-cards", "waink-scans", "meditation"])} />
     </PageShell>
   );
 }
