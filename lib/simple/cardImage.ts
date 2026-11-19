@@ -1,15 +1,18 @@
 import { isPlaceholderSrc } from "@/lib/media/catalog";
 
+import artManifest from "./artManifest.json";
+
 /**
  * Card and detail images: only confirmed, item-specific official images.
  * 1. the item's own photo (from its data entry),
  * 2. an official Rockstar file that shows this exact item, matched by exact name.
- * Anything else gets no image: the card renders as a blank Browse-style card
- * and the detail page shows a compact header. Adding a photo later is a
- * single `image` change in the item's data.
+ * 3. otherwise a designed GTA Companion artwork (scripts/images/card-art.mjs):
+ *    a made-up Vice City style poster with the item's icon or monogram. It is
+ *    artwork, never presented as a screenshot, and any real photo replaces it.
+ * Adding a photo later is a single `image` change in the item's data.
  */
-export type CardImageSource = "own" | "none";
-export type CardImage = { src?: string; source: CardImageSource };
+export type CardImageSource = "own" | "art" | "none";
+export type CardImage = { src?: string; source: CardImageSource; imageKind?: "photo" | "art"; artKey?: string };
 
 const O = "/images/official";
 const E = `${O}/editions`;
@@ -57,14 +60,64 @@ function pick(list: string[], seed: string) {
   return list[h % list.length];
 }
 
-export function resolveCardImage({ image, title }: { image?: string; title: string; text?: string; kind?: string }): CardImage {
-  if (image && !isPlaceholderSrc(image)) return { src: image, source: "own" };
+const ART_ITEMS = new Set<string>(artManifest.items);
+const ART_KINDS = new Set<string>(artManifest.kinds);
+/** Card kinds whose art falls back to another kind's look. */
+const ART_ALIAS: Record<string, string> = { manufacturer: "vehicle", area: "location", landmark: "location", outfit: "clothing", hairstyle: "salon" };
+
+/** Same slug rule as scripts/images/card-art.mjs. */
+export function artSlug(title: string) {
+  return (
+    title
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/['’`]/g, "")
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 80) || "item"
+  );
+}
+
+/** The art theme for a card kind. Unknown kinds use the map-pin look, like the card icon. */
+export function artKind(kind?: string) {
+  const k = kind ? ART_ALIAS[kind] ?? kind : "";
+  return ART_KINDS.has(k) ? k : "location";
+}
+
+/** Designed artwork for an item with no real image: its own file, or one from its kind's pool. */
+export function cardArt(title: string, kind?: string): CardImage {
+  const theme = artKind(kind);
+  const key = `${theme}/${artSlug(title)}`;
+  const file = ART_ITEMS.has(key) ? key : `${theme}/_pool-${(seedOf(title) % artManifest.pool) + 1}`;
+  return { src: `/images/art/${file}.webp`, source: "art", imageKind: "art", artKey: key };
+}
+
+function seedOf(seed: string) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+/** Real image when there is one; never designed art. */
+export function resolveRealImage({ image, title }: { image?: string; title: string }): CardImage {
+  if (image && !isPlaceholderSrc(image)) return { src: image, source: "own", imageKind: "photo" };
   const specific = SPECIFIC.find(([re]) => re.test(title.trim()));
-  if (specific) return { src: pick(specific[1], title), source: "own" };
+  if (specific) return { src: pick(specific[1], title), source: "own", imageKind: "photo" };
   return { source: "none" };
 }
 
+/** Real image first, then designed artwork, so no card is ever blank. */
+export function resolveCardImage({ image, title, kind }: { image?: string; title: string; text?: string; kind?: string }): CardImage {
+  const real = resolveRealImage({ image, title });
+  if (real.src) return real;
+  return cardArt(title, kind);
+}
+
 const PREFIX: [string, string][] = [
+  ["/guides", "guide"],
+  ["/challenges", "challenge"],
   ["/where-to-find/hair-salons", "salon"],
   ["/where-to-find/tattoo", "tattoo"],
   ["/where-to-find/clothing", "clothingstore"],
