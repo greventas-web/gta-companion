@@ -32,6 +32,13 @@ html {
   scroll-behavior: auto;
 }
 
+/* GTA Companion Pro: no ads once Pro is confirmed on this device. */
+html[data-pro="1"] ins.adsbygoogle,
+html[data-pro="1"] .google-auto-placed,
+html[data-pro="1"] aside[aria-label="Advertisement"] {
+  display: none !important;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

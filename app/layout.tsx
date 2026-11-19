@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import AdsLoader from "@/components/pro/AdsLoader";
+import ProRuntime from "@/components/pro/ProRuntime";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
@@ -179,6 +181,9 @@ export default function RootLayout({
         <Script id="pwa-install-capture" strategy="beforeInteractive">
           {`window.addEventListener("beforeinstallprompt",function(event){event.preventDefault();window.__gtaInstallPrompt=event;window.dispatchEvent(new Event("gta-install-prompt"));});`}
         </Script>
+        <Script id="pro-flag" strategy="beforeInteractive">
+          {`try{if(localStorage.getItem("gta-companion-pro")==="1")document.documentElement.dataset.pro="1";}catch(e){}`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -192,6 +197,7 @@ export default function RootLayout({
           }}
         />
         <AuthProvider>
+          <ProRuntime />
           <SearchProvider>
             <Navbar />
 
@@ -207,12 +213,7 @@ export default function RootLayout({
         {googleAnalyticsId ? (
           <GoogleAnalytics gaId={googleAnalyticsId} />
         ) : null}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1639723880207640"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
+        <AdsLoader />
       </body>
     </html>
   );

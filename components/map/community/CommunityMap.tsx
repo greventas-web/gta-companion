@@ -18,6 +18,8 @@ import {
   type LandmarkRecord,
   type MapCategoryId,
 } from "@/lib/map/model";
+import { NEAR_ME_RADIUS_M, PRO_PRICE_LABEL } from "@/lib/pro/config";
+import { useProHint, useTracked } from "@/lib/pro/tracker";
 
 type Selection =
   | { kind: "companion"; pin: CompanionPin }
@@ -29,6 +31,12 @@ type Props = {
   focusEntity: string;
   focusSlug: string;
 };
+
+/** Tracked id for a pin: the mission's own id when it has one, else the pin id. */
+function pinTrackId(pin: CompanionPin): string {
+  if (pin.entityType === "mission" && pin.entitySlug) return `mission:${pin.entitySlug}`;
+  return `pin:${pin.id}`;
+}
 
 const gameCrs = L.extend({}, L.CRS.Simple, {
   transformation: new L.Transformation(1 / 32, 512, -1 / 32, 512),
@@ -50,6 +58,12 @@ export default function CommunityMap({
   const highlightMarker = useRef<CircleMarker | null>(null);
   const suggestingRef = useRef(false);
   const onDraftRef = useRef<(x: number, y: number) => void>(() => undefined);
+  const onMoveRef = useRef<(x: number, y: number) => void>(() => undefined);
+  const nearMeCircle = useRef<L.Circle | null>(null);
+  const { set: tracked, toggle: toggleTracked } = useTracked();
+  const pro = useProHint();
+  const [nearMe, setNearMe] = useState(false);
+  const [center, setCenter] = useState<{ x: number; y: number } | null>(null);
   const [ready, setReady] = useState(false);
   const [landmarks, setLandmarks] = useState<LandmarkRecord[]>([]);
   const [approved, setApproved] = useState<CompanionPin[]>([]);
@@ -108,6 +122,7 @@ export default function CommunityMap({
 
   useEffect(() => {
     onDraftRef.current = (x, y) => setDraft({ x, y });
+    onMoveRef.current = (x, y) => setCenter({ x, y });
   });
 
   useEffect(() => {
@@ -186,6 +201,10 @@ export default function CommunityMap({
       if (!suggestingRef.current) return;
       onDraftRef.current(event.latlng.lng, event.latlng.lat);
     });
+    map.on("moveend", () => {
+      const point = map?.getCenter();
+      if (point) onMoveRef.current(point.lng, point.lat);
+    });
     mapRef.current = map;
     requestAnimationFrame(() => map?.invalidateSize());
     setReady(true);
@@ -197,14 +216,46 @@ export default function CommunityMap({
       companionLayer.current = null;
       draftMarker.current = null;
       highlightMarker.current = null;
+      nearMeCircle.current = null;
       setReady(false);
     };
   }, []);
 
-  const companionPins = useMemo(
-    () => [...curated, ...approved].filter((pin) => enabled.includes(pin.category)),
-    [approved, curated, enabled]
-  );
+  const nearMeOn = nearMe && pro && center !== null;
+
+  const companionPins = useMemo(() => {
+    const visible = [...curated, ...approved].filter((pin) => enabled.includes(pin.category));
+    if (!nearMeOn || !center) return visible;
+    return visible.filter(
+      (pin) =>
+        !tracked.has(pinTrackId(pin)) &&
+        Math.hypot(pin.x - center.x, pin.y - center.y) <= NEAR_ME_RADIUS_M
+    );
+  }, [approved, center, curated, enabled, nearMeOn, tracked]);
+
+  const nearestLeft = useMemo(() => {
+    if (!nearMeOn || !center) return [];
+    return companionPins
+      .map((pin) => ({ pin, distance: Math.hypot(pin.x - center.x, pin.y - center.y) }))
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 6);
+  }, [center, companionPins, nearMeOn]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    nearMeCircle.current?.remove();
+    nearMeCircle.current = null;
+    if (!nearMeOn || !center) return;
+    nearMeCircle.current = L.circle([center.y, center.x], {
+      radius: NEAR_ME_RADIUS_M,
+      weight: 1.5,
+      color: "#34d399",
+      fillColor: "#34d399",
+      fillOpacity: 0.06,
+      interactive: false,
+    }).addTo(map);
+  }, [center, nearMeOn, ready]);
 
   useEffect(() => {
     const layer = landmarkLayer.current;
@@ -437,6 +488,10 @@ export default function CommunityMap({
         {selected ? (
           <SelectionCard
             selection={selected}
+            done={selected.kind === "companion" ? tracked.has(pinTrackId(selected.pin)) : false}
+            onToggleDone={
+              selected.kind === "companion" ? () => toggleTracked(pinTrackId(selected.pin)) : undefined
+            }
             onClose={() => {
               setPicked(null);
               setDismissedFocus(true);
@@ -536,6 +591,68 @@ export default function CommunityMap({
         ) : formMessage ? (
           <p className="text-xs leading-5 text-emerald-300">{formMessage}</p>
         ) : null}
+
+        <section className="rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-3">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
+              What&apos;s left near me
+            </h2>
+            {pro ? (
+              <button
+                type="button"
+                aria-pressed={nearMe}
+                onClick={() => {
+                  const map = mapRef.current;
+                  if (map && !center) {
+                    const point = map.getCenter();
+                    setCenter({ x: point.lng, y: point.lat });
+                  }
+                  setNearMe((value) => !value);
+                }}
+                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                  nearMe ? "bg-emerald-400 text-black" : "border border-emerald-300/40 text-emerald-100"
+                }`}
+              >
+                {nearMe ? "On" : "Off"}
+              </button>
+            ) : (
+              <Link
+                href="/pro"
+                className="rounded-full border border-emerald-300/40 px-3 py-1 text-xs font-semibold text-emerald-100"
+              >
+                Pro · {PRO_PRICE_LABEL}
+              </Link>
+            )}
+          </div>
+          {nearMeOn ? (
+            <>
+              <p className="mt-1 text-[11px] text-zinc-400">
+                Map center · {(NEAR_ME_RADIUS_M / 1000).toFixed(1)} km · {companionPins.length} left
+              </p>
+              <ul className="mt-2 space-y-1">
+                {nearestLeft.map(({ pin, distance }) => (
+                  <li key={pin.id}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        flyTo(pin.x, pin.y);
+                        setPicked({ kind: "companion", pin });
+                        setDismissedFocus(false);
+                      }}
+                      className="flex w-full items-center justify-between gap-2 rounded-xl px-2 py-1.5 text-left text-xs hover:bg-white/5"
+                    >
+                      <span className="min-w-0 truncate">{pin.title}</span>
+                      <span className="shrink-0 text-zinc-500">{Math.round(distance)} m</span>
+                    </button>
+                  </li>
+                ))}
+                {nearestLeft.length === 0 ? (
+                  <li className="px-2 py-1 text-xs text-zinc-500">All done here.</li>
+                ) : null}
+              </ul>
+            </>
+          ) : null}
+        </section>
 
         <fieldset>
           <legend className="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-200">
@@ -696,9 +813,13 @@ function Field({
 function SelectionCard({
   selection,
   onClose,
+  done = false,
+  onToggleDone,
 }: {
   selection: Selection;
   onClose: () => void;
+  done?: boolean;
+  onToggleDone?: () => void;
 }) {
   if (selection.kind === "landmark") {
     const { title, area } = landmarkTitle(selection.landmark.name);
@@ -738,6 +859,18 @@ function SelectionCard({
         </button>
       </div>
       {pin.description ? <p className="mt-2 text-xs leading-5 text-zinc-300">{pin.description}</p> : null}
+      {onToggleDone ? (
+        <button
+          type="button"
+          aria-pressed={done}
+          onClick={onToggleDone}
+          className={`mr-3 mt-2 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${
+            done ? "bg-emerald-400 text-black" : "border border-white/20 text-zinc-200"
+          }`}
+        >
+          {done ? "✓ Done" : "Mark done"}
+        </button>
+      ) : null}
       {pin.href ? (
         <Link href={pin.href} className="mt-2 inline-flex text-sm font-semibold text-violet-200 underline">
           Open in the database

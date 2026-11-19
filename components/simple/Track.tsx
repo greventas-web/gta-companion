@@ -1,49 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useProHint, useTracked } from "@/lib/pro/tracker";
 
-/** Tap-to-check tracking for collectibles and missions, saved on this device. */
-const KEY = "gta-companion-tracked";
-const EVENT = "gta-companion-tracked-change";
-
-function read(): Set<string> {
-  try {
-    const raw = localStorage.getItem(KEY);
-    return new Set(raw ? (JSON.parse(raw) as string[]) : []);
-  } catch {
-    return new Set();
-  }
-}
-
-function write(set: Set<string>) {
-  try {
-    localStorage.setItem(KEY, JSON.stringify([...set]));
-  } catch {
-    /* storage full or blocked */
-  }
-  window.dispatchEvent(new Event(EVENT));
-}
-
-function useTracked() {
-  const [set, setSet] = useState<Set<string>>(() => new Set());
-  useEffect(() => {
-    const sync = () => setSet(read());
-    sync();
-    window.addEventListener(EVENT, sync);
-    window.addEventListener("storage", sync);
-    return () => {
-      window.removeEventListener(EVENT, sync);
-      window.removeEventListener("storage", sync);
-    };
-  }, []);
-  const toggle = useCallback((id: string) => {
-    const next = read();
-    if (next.has(id)) next.delete(id);
-    else next.add(id);
-    write(next);
-  }, []);
-  return { set, toggle };
-}
+/**
+ * Tap-to-check tracking for collectibles and missions, saved on this device.
+ * Storage, the mark limit and Pro sync live in lib/pro/tracker.ts.
+ */
 
 export function TrackButton({ id, label }: { id: string; label: string }) {
   const { set, toggle } = useTracked();
@@ -67,11 +29,13 @@ export function TrackButton({ id, label }: { id: string; label: string }) {
 
 export function TrackProgress({ ids, label = "done" }: { ids: readonly string[]; label?: string }) {
   const { set } = useTracked();
+  const pro = useProHint();
   const count = ids.filter((id) => set.has(id)).length;
   const pct = ids.length ? Math.round((count / ids.length) * 100) : 0;
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-sm font-black text-emerald-200">
       {count}/{ids.length} {label}
+      {pro ? <span className="text-emerald-100/80">· {pct}%</span> : null}
       <span className="hidden h-1.5 w-16 overflow-hidden rounded-full bg-white/10 sm:inline-block">
         <span className="block h-full bg-emerald-400 transition-all" style={{ width: `${pct}%` }} />
       </span>

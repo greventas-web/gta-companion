@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { registerUser } from "@/lib/auth";
+import { nextPathAfterAuth } from "@/lib/next-path";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -69,7 +70,7 @@ export default function RegisterPage() {
         password
       );
 
-      router.push("/dashboard");
+      router.push(nextPathAfterAuth());
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Could not create the account.";
       setError(message.replace("Firebase: ", ""));
