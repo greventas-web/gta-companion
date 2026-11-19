@@ -69,6 +69,10 @@ const officialMakerPhoto: Record<string, { src: string; alt: string }> = {
     src: "/images/footage/vehicles/benefactor-schafter-v12.webp",
     alt: "Benefactor Schafter V12",
   },
+  gallivanter: {
+    src: "/images/footage/manufacturers/gallivanter-baller-st-d.webp",
+    alt: "Gallivanter Baller ST-D",
+  },
   crest: {
     src: "/images/official/vehicles/crest-kayak.webp",
     alt: "Crest Kayak",

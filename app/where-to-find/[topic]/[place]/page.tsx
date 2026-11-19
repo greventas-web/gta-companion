@@ -5,6 +5,7 @@ import PageShell from "@/components/PageShell";
 import SimpleDetail from "@/components/simple/SimpleDetail";
 import { pageMetadata } from "@/lib/launch";
 import { imageForPin } from "@/lib/simple/pinImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 import { findWherePlace, whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
 
 type Props = { params: Promise<{ topic: string; place: string }> };
@@ -32,13 +33,13 @@ export default async function WherePlacePage({ params }: Props) {
   const entry = findWherePlace(topicSlug, placeSlug);
   if (!entry) notFound();
   const { topic, place } = entry;
-  const image = imageForPin(place.pin);
+  const image = imageForPath(`/where-to-find/${topic.slug}/${place.slug}`) ?? imageForPin(place.pin);
 
   const others = wherePlaces(topic)
     .filter((other) => other.slug !== place.slug)
     .slice(0, 6)
     .map((other) => {
-      const otherImage = imageForPin(other.pin);
+      const otherImage = imageForPath(`/where-to-find/${topic.slug}/${other.slug}`) ?? imageForPin(other.pin);
       return {
         href: `/where-to-find/${topic.slug}/${other.slug}`,
         title: other.name,

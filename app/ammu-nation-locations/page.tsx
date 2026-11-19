@@ -8,6 +8,7 @@ import { getStaticPins } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { AMMU_COUNTIES, ammuPinIds, ammuStores } from "@/lib/simple/ammu";
 import { imageForPin } from "@/lib/simple/pinImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 
 const title = "GTA 6 Ammu-Nation Locations – All 24 Stores";
 const description =
@@ -49,7 +50,7 @@ export default function AmmuNationLocationsPage() {
                 key={store.slug}
                 href={`/ammu-nation-locations/${store.slug}`}
                 title={store.name}
-                image={store.exactPin ? imageForPin(store.pin).src : undefined}
+                image={imageForPath(`/ammu-nation-locations/${store.slug}`)?.src ?? (store.exactPin ? imageForPin(store.pin).src : undefined)}
                 eyebrow={store.area}
                 chips={[{ value: store.inventory }]}
                 mapPin={store.pin}

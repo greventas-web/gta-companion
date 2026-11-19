@@ -29,7 +29,7 @@ export default function FAQPage() {
         <SimpleCard href="/characters" title="Characters" image="/images/official/categories/characters.webp" />
         <SimpleCard href="/launch" title="Editions" image="/images/official/editions/ultimate_edition_rideout_customs_01.webp" />
         <SimpleCard href="/wanted-system" title="Wanted system" />
-        <SimpleCard href="/gta-6-apps" title="Phone apps" />
+        <SimpleCard href="/gta-6-apps" title="Phone apps" image="/images/footage/phone/snapmatic.webp" imageAlt="The Snapmatic app on the in-game phone" />
       </CardGrid>
     </PageShell>
   );

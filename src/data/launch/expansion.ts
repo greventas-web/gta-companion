@@ -189,7 +189,7 @@ const stores: ExtraEntry[] = [
 ];
 
 const characters: ExtraEntry[] = [
-  { slug: "lori", name: "Lori", group: "Story characters", meta: "Leonida Keys", summary: "Brian Heder's third wife. She helps run his boat yard in the Keys and is known for her sangria.", links: [{ href: "/characters/brian-heder", label: "Brian Heder" }] },
+  { slug: "lori", name: "Lori", group: "Story characters", meta: "Leonida Keys", image: "/images/footage/characters/lori.webp", summary: "Brian Heder's third wife. She helps run his boat yard in the Keys and is known for her sangria.", links: [{ href: "/characters/brian-heder", label: "Brian Heder" }] },
   { slug: "kenton-rees", name: "Kenton Rees", group: "Story characters", meta: "Treasure diving", image: "/images/footage/characters/kenton-rees.webp", summary: "An old friend of Brian who runs a scuba boat business in Key Lento. He sends Jason on treasure dives.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
   { slug: "moses-watkins", name: "Moses Watkins", group: "Story characters", meta: "Car fence · Port Gellhorn", summary: "A Port Gellhorn car fence you meet in Chapter 2. He gives you the tools to steal mid-range cars and buys them.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
   { slug: "dunk-porter", name: "Dunk Porter", group: "Story characters", meta: "Fence", summary: "A Chapter 2 contact who buys drugs, jewelry and marked bills." },
@@ -256,7 +256,7 @@ const animals: ExtraEntry[] = [
   animal("Snake", "Land", "/images/official/media/screenshots-places-grassrivers-grassrivers-07.webp"),
   animal("Cow", "Land"),
   animal("Frog", "Land"),
-  animal("Shark", "Sea"),
+  animal("Shark", "Sea", "/images/footage/animals/shark.webp"),
   animal("Whale", "Sea"),
   animal("Manta ray", "Sea"),
   animal("Jellyfish", "Sea"),

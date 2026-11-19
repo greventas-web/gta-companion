@@ -9,6 +9,7 @@ import { pageMetadata } from "@/lib/launch";
 import { getStaticPins } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { imageForPin } from "@/lib/simple/pinImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 import { findWhereTopic, whereToFindTopics, wherePlaces, type WhereTopic } from "@/src/data/launch/where-to-find";
 
 type Props = {
@@ -74,7 +75,7 @@ export default async function WhereToFindTopicPage({ params }: Props) {
           {places
             .filter((place) => place.group === group)
             .map((place) => {
-              const image = imageForPin(place.pin);
+              const image = imageForPath(`/where-to-find/${topic.slug}/${place.slug}`) ?? imageForPin(place.pin);
               return (
                 <SimpleCard
                   key={place.slug}
