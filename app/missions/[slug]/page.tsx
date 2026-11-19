@@ -5,6 +5,7 @@ import PageShell from "@/components/PageShell";
 import SimpleDetail from "@/components/simple/SimpleDetail";
 import SpoilerReveal from "@/components/SpoilerReveal";
 import { detailMetadata } from "@/lib/pages";
+import { findQuickGuide, missionGuides } from "@/src/data/launch/quick-guides";
 import { findMission, MISSION_TYPE_LABEL, missions } from "@/src/data/missions";
 
 type Props = {
@@ -29,6 +30,7 @@ export default async function MissionPage({ params }: Props) {
   const mission = findMission(slug);
   if (!mission) notFound();
 
+  const guide = missionGuides[mission.slug] ? findQuickGuide(missionGuides[mission.slug]) : undefined;
   const hasSpoiler = Boolean(mission.spoiler || mission.rewards);
   const next = mission.chapter
     ? missions
@@ -59,6 +61,7 @@ export default async function MissionPage({ params }: Props) {
         ]}
         mapPin={mission.mapPinId}
         links={[
+          ...(guide ? [{ href: `/guides/${guide.slug}`, label: guide.heading }] : []),
           ...(mission.characterSlug ? [{ href: `/characters/${mission.characterSlug}`, label: mission.character ?? "Character" }] : []),
           ...(mission.regionSlug ? [{ href: `/locations/${mission.regionSlug}`, label: mission.region }] : []),
           ...(mission.edition ? [{ href: "/launch", label: "Editions" }] : []),
