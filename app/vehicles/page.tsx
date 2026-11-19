@@ -7,6 +7,8 @@ import { vehicleImages } from "@/lib/media/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { vehicleCounts } from "@/src/data/launch/launch-facts";
 import type { Vehicle } from "@/types/vehicle";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 Cars List",
@@ -96,6 +98,7 @@ export default function VehiclesPage() {
           {expected.map(card)}
         </CardGrid>
       ) : null}
+      <QuickGuideGrid guides={quickGuideCards(["register-car", "buy-a-car", "impounded-car", "call-your-car", "slim-jim", "key-cloner"])} />
     </PageShell>
   );
 }

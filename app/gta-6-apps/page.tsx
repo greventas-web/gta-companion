@@ -7,6 +7,8 @@ import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { findPhoneItem } from "@/data/phone";
 import { launchMetadata } from "@/lib/launch";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const scooter = findPhoneItem("scooter-bros");
 const buckme = findPhoneItem("banking-app");
@@ -47,6 +49,7 @@ export default function Gta6AppsPage() {
         ))}
         <SimpleCard href="/phone" title="All phone apps" image="/images/footage/phone/ryde-me.webp" imageAlt="The Ryde Me app on Jason's phone" />
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["bank-account-atm", "fast-travel", "call-your-car"])} />
     </PageShell>
   );
 }

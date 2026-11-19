@@ -4,6 +4,8 @@ import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard
 import { weaponLine, weapons } from "@/data/weapons";
 import { pageMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 Weapons List: All Guns and Prices",
@@ -87,6 +89,7 @@ export default function WeaponsPage() {
         </CardGrid>
       ))}
 
+      <QuickGuideGrid guides={quickGuideCards(["mask", "how-to-heal", "focus"])} />
     </PageShell>
   );
 }
