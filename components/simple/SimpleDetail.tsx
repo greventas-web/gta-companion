@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import ItemImage from "@/components/ItemImage";
-import { resolveCardImage } from "@/lib/simple/cardImage";
+import { kindFromHref, resolveCardImage } from "@/lib/simple/cardImage";
 import { mapPinHref } from "@/components/map/MapPinLink";
 import { shortText } from "@/lib/simple/text";
 import { IMAGE_CREDIT } from "@/lib/site";
@@ -34,6 +34,8 @@ export type SimpleDetailProps = {
   /** Tap-to-check id for this item. */
   trackId?: string;
   relatedHeading?: string;
+  /** Item kind for the designed artwork. Read from the breadcrumb link when left out. */
+  kind?: string;
   children?: React.ReactNode;
 };
 
@@ -56,10 +58,15 @@ export default function SimpleDetail({
   relatedHeading = "More like this",
   children,
   trackId,
+  kind: kindProp,
 }: SimpleDetailProps) {
   const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
   const text = shortText(summary, 2);
-  const hasImage = Boolean(resolveCardImage({ image, title }).src);
+  const crumbHref = [...crumbs].reverse().find((crumb) => crumb.href && crumb.href !== "/")?.href;
+  const kind = kindProp ?? kindFromHref(crumbHref);
+  const resolved = resolveCardImage({ image, title, kind });
+  const hasImage = Boolean(resolved.src);
+  const isArt = resolved.source === "art";
   const factList = (facts ?? []).filter((fact) => fact.value && !/^\s*not (yet )?(published|shown|announced)/i.test(fact.value));
 
   return (
@@ -68,12 +75,14 @@ export default function SimpleDetail({
 
       <div className={hasImage ? "mt-8 grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12" : "mt-6 max-w-3xl"}>
         {hasImage ? (
-          <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black">
+          <div className="self-start overflow-hidden rounded-[28px] border border-white/10 bg-black">
             <div className="relative aspect-[16/10]">
-              <ItemImage src={image} alt={imageAlt || title} name={title} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
+              <ItemImage src={image} alt={isArt ? `${title} artwork` : imageAlt || title} name={title} kind={kind} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               {trackId ? <TrackButton id={trackId} label={title} /> : null}
             </div>
-            <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">{IMAGE_CREDIT}</p>
+            <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+              {isArt ? "GTA Companion artwork" : IMAGE_CREDIT}
+            </p>
           </div>
         ) : null}
 
