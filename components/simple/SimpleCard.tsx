@@ -32,6 +32,7 @@ import Link from "next/link";
 
 import { mapPinHref } from "@/components/map/MapPinLink";
 import { kindFromHref, resolveCardImage, resolveRealImage } from "@/lib/simple/cardImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 import { oneLine } from "@/lib/simple/text";
 
 import { TrackButton, TrackProgress } from "./Track";
@@ -170,7 +171,8 @@ export default function SimpleCard({
   const kind = kindProp ?? kindFromHref(href);
   const shortLine = oneLine(line);
   const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
-  const resolved = resolveCardImage({ image, title, kind });
+  const placeImage = href ? imageForPath(href.split("#")[0])?.src : undefined;
+  const resolved = resolveCardImage({ image: image ?? placeImage, title, kind });
   const isArt = resolved.source === "art";
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);

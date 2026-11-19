@@ -44,7 +44,7 @@ const locations: ExtraEntry[] = [
   { slug: "little-cuba", name: "Little Cuba", group: "Vice-Dale County", meta: "Vice City", pin: p("little-cuba"), summary: "A Vice City neighborhood known for its busy panaderías. It has a souvenir store and the Euroform Automotive mod shop." },
   { slug: "stockyard", name: "Stockyard", group: "Vice-Dale County", meta: "Vice City", pin: p("stockyard"), summary: "A Vice City district home to Stock 305, Electric Fang Tattoo, Vice Vinyl and Stockyard Speedshop." },
   { slug: "downtown-vice-city", name: "Downtown Vice City", group: "Vice-Dale County", meta: "Vice City", pin: p("downtown-vice-city"), summary: "The center of Vice City, with Slinger, Alpha Sports and Endzone clothing stores and a Pay 'n' Spray." },
-  { slug: "hamlet", name: "Hamlet", group: "Vice-Dale County", meta: "Vice-Dale County", pin: p("hamlet"), summary: "A town in Vice-Dale County with Sara's Unisex Salon, Kurt's Barber Shop, Hamlet Thrift and a Pay 'n' Spray." },
+  { slug: "hamlet", name: "Hamlet", group: "Vice-Dale County", meta: "Vice-Dale County", image: "/images/footage/locations/hamlet.webp", pin: p("hamlet"), summary: "A town in Vice-Dale County with Sara's Unisex Salon, Kurt's Barber Shop, Hamlet Thrift and a Pay 'n' Spray." },
   { slug: "tequesta", name: "Tequesta", group: "Vice-Dale County", meta: "Vice City", pin: p("tequesta"), summary: "A Vice City neighborhood with a Slinger clothing store. The 7th Avenue Garage is just to its northwest." },
   { slug: "peacock-bay", name: "Peacock Bay", group: "Vice-Dale County", meta: "Vice City", pin: p("peacock-bay"), summary: "A Vice City neighborhood with Slinger and Nola clothing stores." },
   { slug: "decor-district", name: "Decor District", group: "Vice-Dale County", meta: "Vice City", pin: p("decor-district"), summary: "A Vice City neighborhood with Slinger, This / That, Nola and Ferruccio Tucci shops." },
@@ -58,7 +58,7 @@ const locations: ExtraEntry[] = [
   { slug: "shore-drive", name: "Shore Drive", group: "Vice-Dale County", meta: "Ocean Beach", pin: p("shore-drive"), summary: "The waterfront road through Ocean Beach, lined with art deco hotels." },
   { slug: "vice-city-international-airport", name: "Vice City International Airport", group: "Vice-Dale County", meta: "Vice City", pin: p("vice-city-international-airport"), summary: "Vice City's airport in south Vice-Dale County. The 7th Avenue Garage is just east of it." },
   { slug: "y-hotel", name: "Y Hotel", group: "Vice-Dale County", meta: "Washington Beach", pin: p("y-hotel"), summary: "A hotel in Washington Beach, just north of Ocean Beach." },
-  { slug: "ocean-view-hotel", name: "Ocean View Hotel", group: "Vice-Dale County", meta: "Ocean Beach", pin: p("ocean-view-hotel"), summary: "An art deco hotel on Shore Drive in Ocean Beach." },
+  { slug: "ocean-view-hotel", name: "Ocean View Hotel", group: "Vice-Dale County", meta: "Ocean Beach", image: "/images/official/editions/vintage_vice_city_pack_01.webp", pin: p("ocean-view-hotel"), summary: "An art deco hotel on Shore Drive in Ocean Beach." },
   // Mariana County
   { slug: "capri", name: "Capri", group: "Mariana County", meta: "Mariana County", pin: p("capri"), summary: "A rich town with Nola and Ferruccio Tucci formal wear and the Vela Rota Drive Garage." },
   { slug: "key-lento", name: "Key Lento", group: "Mariana County", meta: "Leonida Keys", image: "/images/footage/locations/key-lento.webp", pin: p("jasons-place"), summary: "The Leonida Keys town where Jason lives. It has The Rusty Anchor bar and Kenton's dive business." },
@@ -231,8 +231,8 @@ const clothing: ExtraEntry[] = [
   { slug: "formal-wear", name: "Formal wear", group: "Styles", meta: "Nola, Ferruccio Tucci", summary: "Suits and dresses from Nola and Ferruccio Tucci.", links: [{ href: "/where-to-find/clothing-stores", label: "Where to buy" }] },
   { slug: "souvenirs-and-swimwear", name: "Souvenirs and swimwear", group: "Styles", meta: "Beach shops", summary: "Tourist tees and swimwear from 14 beach and gift shops, such as The Wonder Whale and De'luge Swimwear.", links: [{ href: "/where-to-find/clothing-stores", label: "Where to buy" }] },
   { slug: "thrift-clothes", name: "Thrift clothes", group: "Styles", meta: "5 thrift stores", summary: "Second-hand clothes from Hamlet Thrift, Dr Froogal, Bargain World and two more.", links: [{ href: "/where-to-find/clothing-stores", label: "Where to buy" }] },
-  { slug: "haircuts", name: "Haircuts", group: "Styles", meta: "18 salons", summary: "Change your hair at 18 salons and barbers across Leonida.", links: [{ href: "/where-to-find/hair-salons", label: "All salons" }] },
-  { slug: "tattoos", name: "Tattoos", group: "Styles", meta: "11 studios", summary: "Eleven tattoo studios, each with its own style, from American Traditional to Anime.", links: [{ href: "/stores#tattoo-studios", label: "All tattoo studios" }] },
+  { slug: "haircuts", name: "Haircuts", group: "Styles", meta: "18 salons", image: "/images/official/editions/ultimate_edition_saras_salon_02.webp", summary: "Change your hair at 18 salons and barbers across Leonida.", links: [{ href: "/where-to-find/hair-salons", label: "All salons" }] },
+  { slug: "tattoos", name: "Tattoos", group: "Styles", meta: "11 studios", image: "/images/official/editions/ultimate_edition_electric_fang_01.webp", summary: "Eleven tattoo studios, each with its own style, from American Traditional to Anime.", links: [{ href: "/stores#tattoo-studios", label: "All tattoo studios" }] },
 ];
 
 const animal = (name: string, group: "Land" | "Sea" | "Birds", image?: string): ExtraEntry => ({
