@@ -35,7 +35,7 @@ export const muscleVehicles: Vehicle[] = [
     name: "Imponte Phoenix",
     manufacturer: "Imponte",
     category: "Muscle",
-    image: "/images/original/vehicles/imponte-phoenix.jpg",
+    image: "/images/footage/vehicles/imponte-phoenix.webp",
     description:
       "A legendary rear-wheel-drive muscle car combining classic looks with powerful V8 performance.",
     firstAppearance: "GTA San Andreas",

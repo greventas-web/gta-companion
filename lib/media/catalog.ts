@@ -53,6 +53,14 @@ const officialMakerPhoto: Record<string, { src: string; alt: string }> = {
     src: "/images/official/vehicles/shitzu-squalo.webp",
     alt: "Shitzu Squalo",
   },
+  imponte: {
+    src: "/images/footage/vehicles/imponte-phoenix.webp",
+    alt: "Imponte '77 Phoenix",
+  },
+  bravado: {
+    src: "/images/footage/manufacturers/bravado-bison-1800.webp",
+    alt: "Bravado Bison 1800",
+  },
   declasse: {
     src: "/images/footage/manufacturers/declasse-86-rancher.webp",
     alt: "Declasse '86 Rancher",

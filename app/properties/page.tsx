@@ -35,7 +35,7 @@ export default function PropertiesPage() {
               key={item.slug}
               href={`/properties/${item.slug}`}
               title={item.name}
-              image={undefined}
+              image={item.image}
               eyebrow={item.type}
               line={item.area}
               mapHref={staticMapHref("property", item.slug) ?? undefined}
