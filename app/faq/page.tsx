@@ -33,7 +33,7 @@ export default function FAQPage() {
         <SimpleCard href="/wanted-system" title="Wanted system" />
         <SimpleCard href="/gta-6-apps" title="Phone apps" image="/images/footage/phone/snapmatic.webp" imageAlt="The Snapmatic app on the in-game phone" />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "online", "first-person", "replay-missions", "switch-characters", "buy-a-house", "buy-a-car", "fast-travel"])} />
+      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "online", "first-person", "replay-missions", "switch-characters", "buy-a-house", "buy-a-car", "fast-travel", "money-glitch", "unlock-map", "new-game"])} />
     </PageShell>
   );
 }
