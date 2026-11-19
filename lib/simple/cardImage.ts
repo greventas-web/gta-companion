@@ -28,7 +28,7 @@ const SPECIFIC: [RegExp, string[]][] = [
   [/^goodtime gear$/i, [`${E}/ultimate_edition_goodtime_gear_01.webp`]],
   [/^(the )?classic car collection$/i, [1, 2, 3, 4, 5, 6].map((n) => `${E}/ultimate_edition_wyman_car_collection_0${n}.webp`)],
   [/^afrobank fm$/i, [`${R}/afrobank-background.webp`]],
-  [/^the chamber( 106)?$/i, [`${R}/chamber-background.webp`]],
+  [/^the chamber( 106(\.6)?)?$/i, [`${R}/chamber-background.webp`]],
   [/^cocoteo fm$/i, [`${R}/cocoteo-background.webp`]],
   [/^back country radio$/i, [`${R}/country-background.webp`]],
   [/^dirty south classics$/i, [`${R}/dirty-south-background.webp`]],

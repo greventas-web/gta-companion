@@ -119,7 +119,7 @@ export const sportsVehicles: Vehicle[] = [
     name: "Benefactor Schafter V12",
     manufacturer: "Benefactor",
     category: "Sports",
-    image: "/images/original/vehicles/benefactor-schafter-v12.jpg",
+    image: "/images/footage/vehicles/benefactor-schafter-v12.webp",
     description:
       "Executive sports sedan delivering refined luxury with powerful twin-turbo performance.",
     firstAppearance: "GTA Online",

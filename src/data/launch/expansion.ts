@@ -189,8 +189,8 @@ const stores: ExtraEntry[] = [
 ];
 
 const characters: ExtraEntry[] = [
-  { slug: "lori", name: "Lori", group: "Story characters", meta: "Leonida Keys", summary: "Brian Heder's third wife. She helps run his boat yard in the Keys and is known for her sangria.", links: [{ href: "/characters/brian-heder", label: "Brian Heder" }] },
-  { slug: "kenton-rees", name: "Kenton Rees", group: "Story characters", meta: "Treasure diving", summary: "An old friend of Brian who runs a scuba boat business in Key Lento. He sends Jason on treasure dives.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
+  { slug: "lori", name: "Lori", group: "Story characters", meta: "Leonida Keys", image: "/images/footage/characters/lori.webp", summary: "Brian Heder's third wife. She helps run his boat yard in the Keys and is known for her sangria.", links: [{ href: "/characters/brian-heder", label: "Brian Heder" }] },
+  { slug: "kenton-rees", name: "Kenton Rees", group: "Story characters", meta: "Treasure diving", image: "/images/footage/characters/kenton-rees.webp", summary: "An old friend of Brian who runs a scuba boat business in Key Lento. He sends Jason on treasure dives.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
   { slug: "moses-watkins", name: "Moses Watkins", group: "Story characters", meta: "Car fence · Port Gellhorn", summary: "A Port Gellhorn car fence you meet in Chapter 2. He gives you the tools to steal mid-range cars and buys them.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
   { slug: "dunk-porter", name: "Dunk Porter", group: "Story characters", meta: "Fence", summary: "A Chapter 2 contact who buys drugs, jewelry and marked bills." },
   { slug: "yasmani-cabrera", name: "Yasmani Cabrera", group: "Story characters", meta: "Fence · Jewelry", summary: "Your jewelry buyer from early Chapter 3. He sends tips on stores to rob.", links: [{ href: "/money-methods/jewelry-store-robberies", label: "Rob jewelry stores" }] },
@@ -220,7 +220,7 @@ const brands: ExtraEntry[] = [
   { ...chain("Eris", "Sportswear", "Vice-Dale County"), image: "/images/footage/brands/eris.webp" },
   chain("Nola", "Formal", "Capri, Peacock Bay, Ocean Beach and Decor District"),
   chain("Ferruccio Tucci", "Formal", "Capri, Ocean Beach, Decor District and Waning Sands"),
-  { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
+  { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", image: "/images/footage/brands/ammu-nation.webp", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
   { slug: "pay-n-spray", name: "Pay 'n' Spray", group: "Store chains", meta: "19 shops", summary: "The repaint chain. Lose the cops or sell older cars.", links: [{ href: "/where-to-find/pay-n-spray", label: "All 19 shops" }] },
   { slug: "fleeca", name: "Fleeca", group: "Store chains", meta: "Bank", summary: "Leonida's bank chain." },
 ];
@@ -256,7 +256,7 @@ const animals: ExtraEntry[] = [
   animal("Snake", "Land", "/images/official/media/screenshots-places-grassrivers-grassrivers-07.webp"),
   animal("Cow", "Land"),
   animal("Frog", "Land"),
-  animal("Shark", "Sea"),
+  animal("Shark", "Sea", "/images/footage/animals/shark.webp"),
   animal("Whale", "Sea"),
   animal("Manta ray", "Sea"),
   animal("Jellyfish", "Sea"),
@@ -270,7 +270,7 @@ const animals: ExtraEntry[] = [
 
 const activities: ExtraEntry[] = [
   { slug: "street-races", name: "Street races", group: "More things to do", meta: "40 races", summary: "There are 40 races in 6 groups, open from Chapter 1. Win for prize money.", links: [{ href: "/money-methods/street-races", label: "Race prize money" }] },
-  { slug: "treasure-diving", name: "Treasure diving", group: "More things to do", meta: "Key Lento", pin: p("activity-scuba-leonida-keys"), summary: "Dive at shipwrecks off Key Lento for Kenton and sell what you find.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
+  { slug: "treasure-diving", name: "Treasure diving", group: "More things to do", meta: "Key Lento", image: "/images/footage/activities/treasure-diving.webp", pin: p("activity-scuba-leonida-keys"), summary: "Dive at shipwrecks off Key Lento for Kenton and sell what you find.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
   { slug: "dates", name: "Dates", group: "More things to do", meta: "With your partner", summary: "Take your partner to bars, diners, coffee shops and rooftop restaurants." },
   { slug: "stealing-cars-to-sell", name: "Stealing cars to sell", group: "More things to do", meta: "Moses and Randy", summary: "Steal cars on order and sell them to Moses or Randy, or sell older cars at a Pay 'n' Spray.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
 ];

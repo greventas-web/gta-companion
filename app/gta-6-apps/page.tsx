@@ -45,7 +45,7 @@ export default function Gta6AppsPage() {
         {apps.map(({ item, href, heading, line }) => (
           <SimpleCard key={item.slug} href={href} title={heading} eyebrow={item.kind} line={line} />
         ))}
-        <SimpleCard href="/phone" title="All phone apps" />
+        <SimpleCard href="/phone" title="All phone apps" image="/images/footage/phone/ryde-me.webp" imageAlt="The Ryde Me app on Jason's phone" />
       </CardGrid>
     </PageShell>
   );

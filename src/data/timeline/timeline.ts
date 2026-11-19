@@ -32,6 +32,12 @@ export const timeline: TimelineEvent[] = [
         href: "https://www.gamesradar.com/games/grand-theft-auto/gta-6s-lucia-and-jason-get-full-names-and-backstories-as-trailer-2-drops-and-rockstar-shares-loads-more-details-about-its-protagonists/",
       },
     ],
+    image: {
+      src: "/images/official/videos/QdBZY2fkU-0.webp",
+      alt: "The official thumbnail of Grand Theft Auto VI Trailer 1.",
+      width: 1280,
+      height: 720,
+    },
   },
   {
     date: "May 2, 2025",
@@ -48,6 +54,12 @@ export const timeline: TimelineEvent[] = [
       "Trailer 2 arrives with the official synopsis and a large set of screenshots and character profiles on the Grand Theft Auto VI site.",
     sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
+    image: {
+      src: "/images/official/videos/VQRLujxTm3c.webp",
+      alt: "The official thumbnail of Grand Theft Auto VI Trailer 2.",
+      width: 1280,
+      height: 720,
+    },
   },
   {
     date: "November 6, 2025",
@@ -57,6 +69,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+    image: {
+      src: "/images/official/news/launch-date-november-19.webp",
+      alt: "The Grand Theft Auto VI logo from Rockstar's launch date announcement.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "June 24, 2026",
@@ -65,6 +83,12 @@ export const timeline: TimelineEvent[] = [
       "Rockstar and Take-Two announce Standard and Ultimate Edition pre-orders, the Vintage Vice City Pack, and a later pre-load window.",
     sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
+    image: {
+      src: "/images/official/news/announcement.webp",
+      alt: "Official Grand Theft Auto VI key art.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "August 27, 2026",
@@ -73,6 +97,12 @@ export const timeline: TimelineEvent[] = [
       "Rockstar releases a long in-game look at Grand Theft Auto VI.",
     sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
+    image: {
+      src: "/images/official/videos/tJbzMqJGH4k.webp",
+      alt: "The official thumbnail of Grand Theft Auto VI: An Extended Look.",
+      width: 1280,
+      height: 720,
+    },
   },
   {
     date: "September 17, 2026",
@@ -82,6 +112,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/7599a881942544/announcing-grand-theft-auto-vi-the-album-coming-november-19",
+    image: {
+      src: "/images/official/news/the-album.webp",
+      alt: "Official artwork for Grand Theft Auto VI: The Album.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "September 24, 2026",
@@ -91,6 +127,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/9k2a49ook82o57/pre-order-the-goodtime-state-vice-city-collection-now-while-supplies-l",
+    image: {
+      src: "/images/official/news/goodtime-state-box.webp",
+      alt: "Official artwork for The Goodtime State – Vice City Collection.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "October 8, 2026",
@@ -100,6 +142,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/o3982oa93a23k4/the-music-of-grand-theft-auto-vi-in-game-radio-stations",
+    image: {
+      src: "/images/official/news/radio-stations.webp",
+      alt: "Official Rockstar image from the radio stations announcement.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "October 8, 2026",
@@ -109,6 +157,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/759875393o5253/grand-theft-auto-vi-collection-now-at-the-rockstar-store",
+    image: {
+      src: "/images/official/news/rockstar-store.webp",
+      alt: "The Grand Theft Auto VI Collection at the Rockstar Store.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "October 15, 2026",
@@ -117,6 +171,12 @@ export const timeline: TimelineEvent[] = [
       "The launch trailer debuts 'Flower in a Hurricane' by Justice (composers of the original score) feat. Tame Impala, SZA, and King Gizzard & The Lizard Wizard.",
     sourceLabel: "Launch trailer",
     sourceHref: "https://www.rockstargames.com/VI/launch-trailer",
+    image: {
+      src: "/images/official/videos/rz1B4B2yBZY.webp",
+      alt: "The official thumbnail of the Grand Theft Auto VI Launch Trailer.",
+      width: 1280,
+      height: 720,
+    },
   },
   {
     date: "October 29, 2026",
@@ -126,6 +186,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/39ak8a12395591/grand-theft-auto-vi-original-score-by-justice",
+    image: {
+      src: "/images/official/news/original-score-justice.webp",
+      alt: "Official artwork for the Grand Theft Auto VI original score by Justice.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "November 3, 2026",
@@ -135,6 +201,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire (Nov 3)",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+    image: {
+      src: "/images/official/news/preload-november-10.webp",
+      alt: "Official Rockstar image from the pre-load announcement.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "November 3, 2026",
@@ -152,6 +224,12 @@ export const timeline: TimelineEvent[] = [
       "Rockstar publishes the Launch Gallery, a set of screenshots on the Grand Theft Auto VI site.",
     sourceLabel: "Rockstar Games",
     sourceHref: "https://www.rockstargames.com/VI",
+    image: {
+      src: "/images/official/news/launch-gallery.webp",
+      alt: "Official Rockstar image from the Launch Gallery.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "November 9, 2026",
@@ -182,6 +260,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire (Nov 10)",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
+    image: {
+      src: "/images/official/news/preload-now.webp",
+      alt: "Official Grand Theft Auto VI pre-load artwork.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "November 10, 2026",
@@ -196,6 +280,12 @@ export const timeline: TimelineEvent[] = [
         href: "https://www.youtube.com/watch?v=TIPlpDAsfWo",
       },
     ],
+    image: {
+      src: "/images/official/videos/TIPlpDAsfWo.webp",
+      alt: "The official thumbnail of Grand Theft Auto VI: Pre-Load Now.",
+      width: 1280,
+      height: 720,
+    },
   },
   {
     date: "November 13, 2026",
@@ -266,6 +356,12 @@ export const timeline: TimelineEvent[] = [
     sourceLabel: "Rockstar Newswire",
     sourceHref:
       "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+    image: {
+      src: "/images/official/media/artwork-official-cover-art-official-cover-art-landscape.webp",
+      alt: "The official Grand Theft Auto VI cover art.",
+      width: 1600,
+      height: 900,
+    },
   },
   {
     date: "November 21, 2026",
@@ -281,5 +377,11 @@ export const timeline: TimelineEvent[] = [
         href: "https://www.rockstargames.com/VI/gtavi-thefestival",
       },
     ],
+    image: {
+      src: "/images/official/gta-vi-the-festival.webp",
+      alt: "Official poster for Grand Theft Auto VI: The Festival.",
+      width: 1600,
+      height: 900,
+    },
   },
 ];

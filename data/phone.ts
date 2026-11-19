@@ -32,6 +32,7 @@ export const phoneItems: PhoneItem[] = [
   {
     slug: "snapmatic",
     name: "Snapmatic",
+    image: "/images/footage/phone/snapmatic.webp",
     group: "App",
     kind: "Social app",
     origin: "Interview",
@@ -145,6 +146,7 @@ export const phoneItems: PhoneItem[] = [
   {
     slug: "fitness-app",
     name: "Fitness app",
+    image: "/images/footage/phone/fitness-app.webp",
     group: "App",
     kind: "Fitness app",
     origin: "Interview",

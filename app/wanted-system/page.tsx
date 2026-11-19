@@ -29,7 +29,7 @@ export default function WantedSystemPage() {
         ]}
       />
       <CardGrid heading="Related">
-        <SimpleCard href="/ammu-nation-locations" title="Ammu-Nation" line="Lockers for long guns." />
+        <SimpleCard href="/ammu-nation-locations" title="Ammu-Nation" line="Lockers for long guns." image="/images/footage/brands/ammu-nation.webp" />
         <SimpleCard href="/phone/scooter-bros" title="Scooter Bros" line="Brings your car and its trunk." />
         <SimpleCard href="/phone/banking-app" title="BuckMe" line="Bank your cash." />
         <SimpleCard href="/map" title="Map" image="/images/official/locations/vice-city.webp" />

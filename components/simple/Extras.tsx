@@ -1,5 +1,6 @@
 import SimpleCard, { CardGrid } from "@/components/simple/SimpleCard";
 import SimpleDetail from "@/components/simple/SimpleDetail";
+import { imageForPath } from "@/lib/simple/placeImages";
 import { extraGroups, extraPages, type ExtraCategory, type ExtraEntry } from "@/src/data/launch/expansion";
 
 const LABEL: Record<ExtraCategory, string> = {
@@ -32,7 +33,7 @@ export function ExtraGrids({ category }: { category: ExtraCategory }) {
               key={entry.slug}
               href={extraHref(category, entry)}
               title={entry.name}
-              image={entry.image}
+              image={entry.image ?? imageForPath(extraHref(category, entry))?.src}
               eyebrow={entry.meta}
               price={entry.price}
               mapPin={entry.pin}

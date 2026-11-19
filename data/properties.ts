@@ -32,6 +32,8 @@ export type PropertyRecord = {
   links: readonly PropertyLink[];
   sources: readonly CitedSource[];
   map: PropertyMapLink;
+  /** Real in-game still of this property, from our own footage. */
+  image?: string;
 };
 
 export const rockstarEditions = {
@@ -119,6 +121,7 @@ export const properties: PropertyRecord[] = [
   {
     slug: "jasons-place",
     name: "Jason's place in the Keys",
+    image: "/images/footage/properties/jasons-place.webp",
     type: "Hideout",
     region: "Leonida Keys",
     area: "Leonida Keys",
