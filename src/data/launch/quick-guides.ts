@@ -53,6 +53,13 @@ const FITNESS_APP = "/images/footage/phone/fitness-app.webp";
 const HUNTING = "/images/official/frames/hunting.webp";
 const JEWELRY = "/images/official/frames/jewelry-robbery.webp";
 const ROBBERY_ART = "/images/official/media/artwork-jason-and-lucia-robbery-jason-and-lucia-robbery-landscape.webp";
+const PARACHUTE = "/images/official/frames/parachuting.webp";
+const SNAPMATIC = "/images/footage/phone/snapmatic.webp";
+const UE_SAFEHOUSE = "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp";
+const JET_SKIS = "/images/official/activities/jet-skis.webp";
+const VICE_CITY = "/images/official/locations/vice-city.webp";
+const LEONIDA_KEYS = "/images/official/locations/leonida-keys.webp";
+const WATCHING_TV = "/images/official/frames/watching-tv.webp";
 
 const L = {
   save: { href: "/guides/how-to-save", title: "How to save", kind: "mission" },
@@ -143,6 +150,36 @@ const L = {
   animals: { href: "/animals", title: "Animals", kind: "animal" },
   shark: { href: "/animals", title: "Sharks and sea life", image: "/images/footage/animals/shark.webp", imageAlt: "A shark near Jason underwater", kind: "animal" },
   phoneHeadphones: { href: "/phone/headphones", title: "Headphones app page", kind: "phone" },
+  // Batch 3
+  loseWanted: { href: "/guides/lose-wanted", title: "Lose the cops", kind: "activity" },
+  helicopter: { href: "/guides/helicopter", title: "Get a helicopter", kind: "vehicle" },
+  boat: { href: "/guides/boat", title: "Get a boat", image: JET_SKIS, imageAlt: "Jet skis among boats in the Leonida Keys, official Rockstar still", kind: "vehicle" },
+  parachute: { href: "/guides/parachute", title: "Get a parachute", image: PARACHUTE, imageAlt: "A parachute jump, official Rockstar still", kind: "activity" },
+  armor: { href: "/guides/body-armor", title: "Body armor", image: CHUCKS, imageAlt: "Ammu-Nation sign at Chuck's Tackle & Shot", kind: "weapon" },
+  usePhone: { href: "/guides/use-phone", title: "Use the phone", image: SNAPMATIC, imageAlt: "The Snapmatic app on the in-game phone", kind: "phone" },
+  turnSignals: { href: "/guides/turn-signals", title: "Turn signals", kind: "vehicle" },
+  ultimateEdition: { href: "/guides/ultimate-edition", title: "Ultimate Edition bonuses", image: UE_SAFEHOUSE, imageAlt: "Jason's Ultimate Edition safehouse vehicles, official Rockstar still", kind: "vehicle" },
+  haircut: { href: "/guides/haircut", title: "Haircut and appearance", kind: "clothing" },
+  skipTime: { href: "/guides/skip-time", title: "Skip time", image: WATCHING_TV, imageAlt: "Watching TV, official Rockstar still", kind: "activity" },
+  swimming: { href: "/guides/swimming", title: "Swimming and diving", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "activity" },
+  fileSize: { href: "/guides/file-size", title: "How many GB?", kind: "activity" },
+  platforms: { href: "/guides/platforms", title: "What can you play it on?", kind: "activity" },
+  physicalCopy: { href: "/guides/physical-copy", title: "Is there a disc?", kind: "activity" },
+  performance: { href: "/guides/performance-mode", title: "30 fps and performance", kind: "activity" },
+  ps5Pro: { href: "/guides/ps5-pro", title: "Do you need a PS5 Pro?", kind: "activity" },
+  chapters: { href: "/guides/how-many-chapters", title: "How many chapters?", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "mission" },
+  jewelryGuide: { href: "/guides/jewelry-robbery", title: "Rob a jewelry store", image: JEWELRY, imageAlt: "A jewelry store robbery, official Rockstar still", kind: "money" },
+  whereBased: { href: "/guides/where-is-it-based", title: "Where is GTA 6 based?", image: VICE_CITY, imageAlt: "Vice City, official Rockstar still", kind: "location" },
+  cheatsLocked: { href: "/guides/cheats-locked", title: "Cheats locked?", kind: "cheat" },
+  gangHideouts: { href: "/guides/gang-hideouts", title: "Raid gang hideouts", kind: "money" },
+  controls: { href: "/guides/controls", title: "PS5 and Xbox controls", kind: "activity" },
+  launchPage: { href: "/gta-6-launch", title: "Launch facts", image: LEONIDA_KEYS, imageAlt: "Leonida Keys, official Rockstar still", kind: "location" },
+  editions: { href: "/launch", title: "Editions", image: UE_SAFEHOUSE, imageAlt: "Jason's Ultimate Edition safehouse vehicles, official Rockstar still", kind: "vehicle" },
+  hairSalons: { href: "/where-to-find/hair-salons", title: "Hair salons", kind: "clothingstore" },
+  gangOps: { href: "/money-methods/gang-operations", title: "Gang operations", kind: "money" },
+  gta6Apps: { href: "/gta-6-apps", title: "Phone apps", image: SNAPMATIC, imageAlt: "The Snapmatic app on the in-game phone", kind: "phone" },
+  boating: { href: "/activities/boating", title: "Boating", image: JET_SKIS, imageAlt: "Jet skis among boats in the Leonida Keys, official Rockstar still", kind: "activity" },
+  locationsHub: { href: "/locations", title: "Locations", image: VICE_CITY, imageAlt: "Vice City, official Rockstar still", kind: "location" },
 } satisfies Record<string, QuickGuideLink>;
 
 export const quickGuides: QuickGuide[] = [
@@ -1284,6 +1321,554 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where are safe codes in GTA 6?", answer: "Each store's code is on a note or screen nearby, or an employee gives it up when threatened." },
     ],
     related: [L.storeRobberies, L.mask, L.wanted, L.moneyGlitch],
+  },
+  {
+    slug: "lose-wanted",
+    title: "GTA 6 How to Lose the Cops and Wanted Level",
+    heading: "How to lose the cops",
+    description:
+      "How to lose the cops in GTA 6: break line of sight, leave the marked heat area, then change your outfit, look or car so the police description no longer matches. Unofficial.",
+    keywords: ["GTA 6 how to lose wanted level", "GTA 6 how to lose cops", "GTA 6 how to lose 6 stars", "GTA 6 how to lose red stars", "GTA 6 heat system", "GTA 6 wanted level"],
+    kind: "activity",
+    answer: [
+      "Break the cops' line of sight, then leave the marked heat area on the map. Wanted status is tied to that area, not the whole map, until the stars get very high.",
+      "Icons under your stars show what the police have on you. Change your whole outfit, get a new haircut, switch or respray the car, hide the weapon, or split up if they have you as a pair.",
+      "Red stars mean the chase has stopped but you are still inside the search area. Stay out, or go back only after you no longer match the description. Don't kill cops: that raises the level. There are up to six stars.",
+    ],
+    facts: [
+      { label: "Stars", value: "Up to 6" },
+      { label: "Leave", value: "The marked heat area" },
+      { label: "Red stars", value: "Chase over, still in the search area" },
+    ],
+    faqs: [
+      { question: "How do you lose the cops in GTA 6?", answer: "Break line of sight, leave the marked heat area, then change whatever the icons under your stars show: outfit, look, car or weapon." },
+      { question: "What do red stars mean in GTA 6?", answer: "The chase has stopped, but you are still inside the area the police are searching. Leave that area or change your description before you go back." },
+    ],
+    related: [L.wanted, L.clothes, L.mask, L.haircut],
+  },
+  {
+    slug: "helicopter",
+    title: "GTA 6 How to Get a Helicopter Early",
+    heading: "Get a helicopter",
+    description:
+      "How to get a helicopter in GTA 6: a Buckingham Maverick sits on the Southwind dock by Sherwin Boatworks, southwest of Key Lento. Rooftop helipads have more. Unofficial.",
+    keywords: ["GTA 6 helicopter", "GTA 6 helicopter location", "GTA 6 how to get a helicopter", "GTA 6 helicopter spawn", "GTA 6 chopper"],
+    kind: "vehicle",
+    answer: [
+      "An early Buckingham Maverick sits on a dock in Southwind, southwest of Key Lento along Sunbelt Highway (Route 1).",
+      "Turn into the parking lot by the Sherwin Boatworks and Chicki's Tiki Bar signs, then go east through the open gate onto the dock.",
+      "Helicopters also sit on some rooftop helipads, including in Vice City. Fly with R2 or RT for throttle, like a plane.",
+    ],
+    facts: [
+      { label: "Early chopper", value: "Buckingham Maverick" },
+      { label: "Where", value: "Southwind dock, by Sherwin Boatworks" },
+      { label: "Throttle", value: "R2 / RT" },
+    ],
+    faqs: [
+      { question: "Where can you find a helicopter in GTA 6?", answer: "A Buckingham Maverick is on the Southwind dock east of the Sherwin Boatworks parking lot, southwest of Key Lento. Some rooftop helipads have one too." },
+      { question: "How do you fly a helicopter in GTA 6?", answer: "Hold R2 on PS5 or RT on Xbox to add throttle, and use the left stick to tilt. Same idea as the plane controls." },
+    ],
+    related: [L.plane, L.parachute, L.vehiclesHub, L.mapFog],
+  },
+  {
+    slug: "boat",
+    title: "GTA 6 How to Get a Boat and Drive It",
+    heading: "Get a boat",
+    description:
+      "How to get a boat in GTA 6: take small boats from docks and marinas around Leonida. A fishing boat sits behind Jason's house in Key Lento. You can't register boats. Unofficial.",
+    keywords: ["GTA 6 boats", "GTA 6 how to get a boat", "GTA 6 boat controls", "GTA 6 boat location", "GTA 6 can you own a boat"],
+    image: JET_SKIS,
+    imageAlt: "Jet skis among boats in the Leonida Keys, official Rockstar still",
+    kind: "vehicle",
+    answer: [
+      "Take a small boat from a dock or marina. There is one on the dock behind Jason's house in Key Lento from the start.",
+      "You can't register a boat as a personal vehicle the way you can with cars.",
+      "On the water, use the same vehicle controls: R2 or RT to accelerate, L2 or LT to brake.",
+    ],
+    facts: [
+      { label: "Early boat", value: "Dock behind Jason's house" },
+      { label: "Register?", value: "No, boats can't be personal vehicles" },
+      { label: "Throttle", value: "R2 / RT" },
+    ],
+    faqs: [
+      { question: "How do you get a boat in GTA 6?", answer: "Steal a small boat from a dock or marina. A fishing boat sits behind Jason's house in Key Lento early on." },
+      { question: "Can you own a boat in GTA 6?", answer: "You can use boats you find, but you can't register one as a personal vehicle." },
+    ],
+    related: [L.boating, L.fishing, L.jasonsPlace, L.scuba],
+  },
+  {
+    slug: "parachute",
+    title: "GTA 6 How to Get a Parachute and Use It",
+    heading: "Get a parachute",
+    description:
+      "How to get a parachute in GTA 6: pick one up at Ammu-Nation or from a box on a base-jump rooftop. Press Cross or A to open it in freefall. Unofficial.",
+    keywords: ["GTA 6 parachute", "GTA 6 how to get a parachute", "GTA 6 parachute jump", "GTA 6 where to buy parachute", "GTA 6 base jump"],
+    image: PARACHUTE,
+    imageAlt: "A parachute jump, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "Pick up a parachute at an Ammu-Nation, from the rack, often near the body armor.",
+      "Base-jump rooftops and the peak in Mount Kalaga also have a pack you can take.",
+      "In freefall, press Cross or A to open it. After you land, get another pack at a gun store or rooftop before you jump again.",
+    ],
+    facts: [
+      { label: "Buy", value: "Ammu-Nation rack" },
+      { label: "Also", value: "Base-jump rooftops, Mount Kalaga" },
+      { label: "Open", value: "Cross / A in freefall" },
+    ],
+    faqs: [
+      { question: "Where do you get a parachute in GTA 6?", answer: "At Ammu-Nation stores, or from a supply box on a base-jump rooftop. There is also one on the peak in Mount Kalaga National Park." },
+      { question: "How do you use a parachute in GTA 6?", answer: "Jump from a plane or a high roof, then press Cross on PS5 or A on Xbox in freefall to open it. Steer with the left stick." },
+    ],
+    related: [L.gunStores, L.plane, L.helicopter, L.armor],
+  },
+  {
+    slug: "body-armor",
+    title: "GTA 6 How to Get and Equip Body Armor",
+    heading: "Body armor",
+    description:
+      "How to get body armor in GTA 6: buy a vest at Ammu-Nation, including Chuck's Tackle & Shot in Key Lento, then turn it on from the item wheel. Unofficial.",
+    keywords: ["GTA 6 body armor", "GTA 6 armor", "GTA 6 how to get armor", "GTA 6 bulletproof vest", "GTA 6 how to equip armor"],
+    image: CHUCKS,
+    imageAlt: "Ammu-Nation sign at Chuck's Tackle & Shot",
+    kind: "weapon",
+    answer: [
+      "Buy body armor at Ammu-Nation. Chuck's Tackle & Shot in Key Lento keeps vests on the right wall, and clerks also sell them under Equipment.",
+      "Hold L1 or LB, open the item wheel and switch the vest on. A blue bar appears above your health.",
+      "The vest soaks up bullets until it is used up. Then you need another one.",
+    ],
+    facts: [
+      { label: "Where", value: "Ammu-Nation" },
+      { label: "Early shop", value: "Chuck's Tackle & Shot, Key Lento" },
+      { label: "Equip", value: "Item wheel, switch on" },
+    ],
+    faqs: [
+      { question: "Where do you buy body armor in GTA 6?", answer: "At Ammu-Nation stores. Chuck's Tackle & Shot in Key Lento has vests on the right wall, and clerks sell them under Equipment." },
+      { question: "How do you equip body armor in GTA 6?", answer: "Open the item wheel with L1 or LB, select the vest and switch it on. A blue bar appears above your health until the vest is spent." },
+    ],
+    related: [L.gunStores, L.heal, L.parachute, L.wanted],
+  },
+  {
+    slug: "use-phone",
+    title: "GTA 6 How to Use and Open the Phone",
+    heading: "How to use the phone",
+    description:
+      "How to use the phone in GTA 6: press Up on the D-pad to open it, pick an app, and press Circle or B to put it away. Hold Up for WAiNK. Unofficial.",
+    keywords: ["GTA 6 how to use phone", "GTA 6 how to open phone", "GTA 6 phone", "GTA 6 phone apps", "GTA 6 cellphone"],
+    image: SNAPMATIC,
+    imageAlt: "The Snapmatic app on the in-game phone",
+    kind: "phone",
+    answer: [
+      "Press Up on the D-pad to open the phone, even in a vehicle. The world does not pause.",
+      "Move to an app and press X or A to open it. Press Circle or B to put the phone away.",
+      "Hold Up to jump into the WAiNK scanner. More apps, like BuckMe and RydeMe, unlock as you play.",
+    ],
+    facts: [
+      { label: "Open", value: "D-pad Up" },
+      { label: "WAiNK", value: "Hold D-pad Up" },
+      { label: "Close", value: "Circle / B" },
+    ],
+    faqs: [
+      { question: "How do you open the phone in GTA 6?", answer: "Press Up on the D-pad. Hold Up to open the WAiNK scanner. Press Circle on PS5 or B on Xbox to put it away." },
+      { question: "Does opening the phone pause GTA 6?", answer: "No. The game keeps running, so don't open it in the middle of a fight." },
+    ],
+    related: [L.gta6Apps, L.waink, L.bank, L.fastTravel],
+  },
+  {
+    slug: "turn-signals",
+    title: "GTA 6 How to Use Turn Signals and Blinkers",
+    heading: "Turn signals",
+    description:
+      "How to use turn signals in GTA 6: tap Left or Right on the D-pad while driving. A short tap is enough; holding Left opens the vehicle menu. Unofficial.",
+    keywords: ["GTA 6 how to use turn signals", "GTA 6 blinkers", "GTA 6 indicators", "GTA 6 turn signals", "GTA 6 car blinkers"],
+    kind: "vehicle",
+    answer: [
+      "While driving, tap Left on the D-pad for the left signal and Right for the right signal.",
+      "Keep the tap short. Holding Left opens the radio and vehicle menu instead.",
+      "The signal turns off after you turn that way, or tap the same side again to cancel it.",
+    ],
+    facts: [
+      { label: "Left signal", value: "Tap D-pad Left" },
+      { label: "Right signal", value: "Tap D-pad Right" },
+      { label: "Hold Left", value: "Opens the vehicle menu" },
+    ],
+    faqs: [
+      { question: "How do you use turn signals in GTA 6?", answer: "Tap Left or Right on the D-pad while driving. Don't hold the button, or you will open the vehicle menu." },
+      { question: "How do you turn off blinkers in GTA 6?", answer: "They switch off after you turn that way. You can also tap the same D-pad direction again to cancel them." },
+    ],
+    related: [L.radio, L.controls, L.register, L.repairCar],
+  },
+  {
+    slug: "ultimate-edition",
+    title: "GTA 6 Where to Get Ultimate Edition Items and Guns",
+    heading: "Ultimate Edition bonuses",
+    description:
+      "Where to get GTA 6 Ultimate Edition items: the Dinka Enduro and Crest Kayak are at Jason's house in Chapter 1. Personalized pistols and Chapter 2 revolvers are in the Ammu-Nation locker. Unofficial.",
+    keywords: ["GTA 6 where to get ultimate edition items", "GTA 6 how to get ultimate edition guns", "GTA 6 ultimate edition bonuses", "GTA 6 ultimate edition weapons", "GTA 6 ultimate edition vehicles"],
+    image: UE_SAFEHOUSE,
+    imageAlt: "Jason's Ultimate Edition safehouse vehicles, official Rockstar still",
+    kind: "vehicle",
+    answer: [
+      "If you have the Ultimate Edition, a Dinka Enduro motorcycle and a Crest Kayak are at Jason's house from Chapter 1.",
+      "Personalized pistols are in the weapon locker at any Ammu-Nation: Jason's Girardi ES9 from Chapter 1, Lucia's Klose K17 from Chapter 2.",
+      "Hawk & Little Morgan revolvers for both characters are in that same locker from Chapter 2. Other bonuses unlock later in the story.",
+    ],
+    facts: [
+      { label: "Chapter 1", value: "Enduro, kayak, Jason's pistol" },
+      { label: "Chapter 2", value: "Morgan revolvers, Lucia's pistol" },
+      { label: "Where", value: "Jason's house and Ammu-Nation lockers" },
+    ],
+    faqs: [
+      { question: "Where are the Ultimate Edition guns in GTA 6?", answer: "In the weapon locker at any Ammu-Nation. Jason's personalized pistol is there in Chapter 1. Lucia's pistol and the Morgan revolvers unlock in Chapter 2." },
+      { question: "Where are the Ultimate Edition vehicles at the start of GTA 6?", answer: "The Dinka Enduro and Crest Kayak are at Jason's house in Key Lento from Chapter 1. More vehicles unlock later in the story." },
+    ],
+    related: [L.editions, L.jasonsPlace, L.gunStores, L.launchPage],
+  },
+  {
+    slug: "haircut",
+    title: "GTA 6 How to Get a Haircut and Change Appearance",
+    heading: "Haircut and appearance",
+    description:
+      "How to get a haircut in GTA 6: visit a hair and beauty salon on the map. You can change hair, Jason's facial hair and Lucia's makeup. Unofficial.",
+    keywords: ["GTA 6 how to get a haircut", "GTA 6 how to change appearance", "GTA 6 barber", "GTA 6 hair salon", "GTA 6 facial hair", "GTA 6 tattoos"],
+    kind: "clothing",
+    answer: [
+      "Open the map, go to the Style legend and pick Hair and Beauty. Salons use an orange scissors icon. There are 18, including 4 barber shops.",
+      "Any of those shops can change your hairstyle. Jason can change facial hair, and Lucia can change makeup.",
+      "A new haircut can help clear a police description, but a hat, glasses or a mask is faster mid-chase. Tattoo shops are listed under Style too.",
+    ],
+    facts: [
+      { label: "Salons", value: "18, including 4 barbers" },
+      { label: "Map", value: "Style > Hair and Beauty" },
+      { label: "Also", value: "Tattoos under Style" },
+    ],
+    faqs: [
+      { question: "Where do you get a haircut in GTA 6?", answer: "At any of the 18 hair and beauty salons, marked with a scissors icon. Open the map, go to Style, and pick Hair and Beauty." },
+      { question: "Does a haircut help you lose the cops in GTA 6?", answer: "Yes, a new hairstyle can clear a physical description, but changing a hat, glasses or outfit is faster if you are still in a chase." },
+    ],
+    related: [L.hairSalons, L.clothes, L.mask, L.loseWanted],
+  },
+  {
+    slug: "skip-time",
+    title: "GTA 6 How to Skip Time and Sleep",
+    heading: "How to skip time",
+    description:
+      "How to skip time in GTA 6: sleep in the bed at your safehouse and pick the time of day you want. You can only do this at an unlocked safehouse. Unofficial.",
+    keywords: ["GTA 6 how to skip time", "GTA 6 how to sleep", "GTA 6 change time of day", "GTA 6 rest", "GTA 6 wait"],
+    image: WATCHING_TV,
+    imageAlt: "Watching TV, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "Go to the bed in your current safehouse, interact with it, then choose to sleep.",
+      "Pick the time of day you want the clock to jump to.",
+      "You can only do this at an unlocked safehouse, not in a random bed out in the world.",
+    ],
+    facts: [
+      { label: "Where", value: "Safehouse bed" },
+      { label: "Does", value: "Jumps to the time of day you pick" },
+      { label: "Not at", value: "Random beds in the world" },
+    ],
+    faqs: [
+      { question: "How do you skip time in GTA 6?", answer: "Sleep in the bed at your safehouse and pick the time of day you want." },
+      { question: "Can you sleep anywhere in GTA 6?", answer: "No. You can only sleep at an unlocked safehouse." },
+    ],
+    related: [L.jasonsPlace, L.buyHouse, L.save, L.fastTravel],
+  },
+  {
+    slug: "swimming",
+    title: "GTA 6 How to Swim and Dive Underwater",
+    heading: "Swimming and diving",
+    description:
+      "How to swim in GTA 6: enter the water, click L3 to swim faster, hold R1 or RB to dive, and press Cross or A to surface. Unofficial.",
+    keywords: ["GTA 6 swimming", "GTA 6 how to swim", "GTA 6 how to dive", "GTA 6 underwater", "GTA 6 dive controls"],
+    image: TREASURE,
+    imageAlt: "Jason diving for treasure at a shipwreck",
+    kind: "activity",
+    answer: [
+      "Walk or jump into deep water to start swimming. Move with the left stick.",
+      "Click L3 to swim faster. Hold R1 on PS5 or RB on Xbox to dive.",
+      "Press Cross or A to surface. For longer dives, put on scuba gear first.",
+    ],
+    facts: [
+      { label: "Faster", value: "Click L3" },
+      { label: "Dive", value: "Hold R1 / RB" },
+      { label: "Surface", value: "Cross / A" },
+    ],
+    faqs: [
+      { question: "How do you swim in GTA 6?", answer: "Enter deep water and move with the left stick. Click L3 to swim faster." },
+      { question: "How do you dive underwater in GTA 6?", answer: "Hold R1 on PS5 or RB on Xbox to dive, and press Cross or A to surface." },
+    ],
+    related: [L.scuba, L.treasureDiving, L.fishing, L.boat],
+  },
+  {
+    slug: "file-size",
+    title: "GTA 6 File Size: How Many GB Do You Need?",
+    heading: "How many GB is GTA 6?",
+    description:
+      "How many GB is GTA 6? Rockstar says the pre-load needs up to 212 GB of storage, depending on the device. PlayStation uses the same 212 GB figure for PS5. Unofficial.",
+    keywords: ["GTA 6 how many GB", "GTA 6 file size", "GTA 6 how much space", "GTA 6 storage", "GTA 6 download size"],
+    kind: "activity",
+    answer: [
+      "Rockstar says the pre-load needs up to 212 GB of storage, depending on the device.",
+      "PlayStation also tells PS5 players to clear at least 212 GB before downloading.",
+      "Keep a little extra room for updates after that.",
+    ],
+    facts: [
+      { label: "Storage", value: "Up to 212 GB" },
+      { label: "Applies to", value: "PS5 and Xbox Series X|S" },
+      { label: "Updates", value: "Leave extra room" },
+    ],
+    faqs: [
+      { question: "How many GB is GTA 6?", answer: "Rockstar says the pre-load needs up to 212 GB of storage, depending on the device. PlayStation uses the same 212 GB figure on PS5." },
+      { question: "Does GTA 6 fit on a standard PS5?", answer: "Yes, if you have at least 212 GB of storage clear. The 825 GB PS5 model has about 667 GB usable after system software." },
+    ],
+    related: [L.launchPage, L.platforms, L.physicalCopy, L.performance],
+  },
+  {
+    slug: "platforms",
+    title: "GTA 6 Platforms: PC, PS4, Xbox One and Switch",
+    heading: "What can you play GTA 6 on?",
+    description:
+      "Can you play GTA 6 on PC, PS4 or Xbox One? It is on PS5 and Xbox Series X|S. Not on PS4. Xbox One can stream it with Xbox Cloud Gaming. No PC date yet. Unofficial.",
+    keywords: ["GTA 6 can I play on PC", "GTA 6 can I play on PS4", "GTA 6 can I play on xbox one", "GTA 6 what consoles", "GTA 6 release date PC", "GTA 6 Switch 2"],
+    kind: "activity",
+    answer: [
+      "GTA 6 is out on PlayStation 5 and Xbox Series X|S.",
+      "It is not on PS4. Xbox One can stream it through Xbox Cloud Gaming; it does not run natively on that console.",
+      "A PC release date has not been announced, and there is no Switch or Switch 2 version.",
+    ],
+    facts: [
+      { label: "At launch", value: "PS5 and Xbox Series X|S" },
+      { label: "PS4", value: "No" },
+      { label: "PC", value: "No date announced" },
+    ],
+    faqs: [
+      { question: "Can you play GTA 6 on PC?", answer: "Not at launch. Rockstar has not announced a PC release date." },
+      { question: "Can you play GTA 6 on PS4 or Xbox One?", answer: "It is not on PS4. Xbox One can stream it with Xbox Cloud Gaming, but there is no native Xbox One version." },
+    ],
+    related: [L.launchPage, L.ps5Pro, L.physicalCopy, L.online],
+  },
+  {
+    slug: "physical-copy",
+    title: "Does GTA 6 Have a Disc? Physical Copy Explained",
+    heading: "Is there a disc?",
+    description:
+      "Does GTA 6 have a disc? No. The boxed copy is a download code, not a disc. Activate the code on PS5 or Xbox Series X|S to install the game. Unofficial.",
+    keywords: ["GTA 6 is there a disc", "GTA 6 physical copy", "GTA 6 boxed copy", "GTA 6 is there a physical copy", "GTA 6 download code"],
+    kind: "activity",
+    answer: [
+      "The boxed copy has a download code, not a disc.",
+      "Activate the code on a PlayStation 5 or Xbox Series X|S to install the game.",
+      "Once the code is active, you can also pre-load it the same way as a digital purchase.",
+    ],
+    facts: [
+      { label: "In the box", value: "Download code, no disc" },
+      { label: "Works on", value: "PS5 and Xbox Series X|S" },
+      { label: "Pre-load", value: "After the code is activated" },
+    ],
+    faqs: [
+      { question: "Does GTA 6 have a disc?", answer: "No. Rockstar says the boxed copy contains a download code and does not include a disc." },
+      { question: "Can you pre-load a physical copy of GTA 6?", answer: "Yes, after you activate the download code on your console." },
+    ],
+    related: [L.launchPage, L.fileSize, L.platforms, L.editions],
+  },
+  {
+    slug: "performance-mode",
+    title: "GTA 6 Performance Mode and 30 FPS, Explained",
+    heading: "Is there a performance mode?",
+    description:
+      "Does GTA 6 have a performance mode? No. The game targets 30 frames per second on PS5 and Xbox Series X|S, including PS5 Pro. There is no 60 fps option. Unofficial.",
+    keywords: ["GTA 6 best settings", "GTA 6 best settings PS5", "GTA 6 performance mode", "GTA 6 30 fps", "GTA 6 locked on 30 fps", "GTA 6 60 fps"],
+    kind: "activity",
+    answer: [
+      "GTA 6 targets 30 frames per second on PlayStation 5 and Xbox Series X|S.",
+      "There is no 60 fps performance mode, and Rockstar has said one is not planned, even on PS5 Pro.",
+      "The Pro improves how the game looks with PSSR and ray-traced shadows, not the frame rate.",
+    ],
+    facts: [
+      { label: "Frame rate", value: "30 fps target" },
+      { label: "Performance mode", value: "None" },
+      { label: "PS5 Pro", value: "Still 30 fps; sharper picture" },
+    ],
+    faqs: [
+      { question: "Does GTA 6 have a performance mode?", answer: "No. The game targets 30 frames per second on PS5 and Xbox Series X|S, and there is no 60 fps option." },
+      { question: "Is GTA 6 60 fps on PS5 Pro?", answer: "No. The Pro still targets 30 fps. It adds PSSR and ray-traced shadows for a sharper picture." },
+    ],
+    related: [L.ps5Pro, L.launchPage, L.platforms, L.fileSize],
+  },
+  {
+    slug: "ps5-pro",
+    title: "Do You Need a PS5 Pro to Play GTA 6?",
+    heading: "Do you need a PS5 Pro?",
+    description:
+      "Do you need a PS5 Pro for GTA 6? No. A standard PS5 plays the game. The Pro adds PSSR and ray-traced shadows, and still targets 30 fps. Unofficial.",
+    keywords: ["GTA 6 do you need PS5 Pro", "GTA 6 PS5 Pro", "GTA 6 standard PS5", "GTA 6 PS5 Pro features", "will GTA 6 play on PS5"],
+    kind: "activity",
+    answer: [
+      "You don't need a PS5 Pro. A standard PlayStation 5 plays GTA 6.",
+      "The Pro adds PlayStation Spectral Super Resolution (PSSR) and ray-traced shadows.",
+      "Those extras improve the picture. The frame rate still targets 30 fps.",
+    ],
+    facts: [
+      { label: "Required?", value: "No, standard PS5 is enough" },
+      { label: "Pro adds", value: "PSSR and ray-traced shadows" },
+      { label: "Frame rate", value: "30 fps on both" },
+    ],
+    faqs: [
+      { question: "Do you need a PS5 Pro to play GTA 6?", answer: "No. A standard PS5 plays the game. The Pro is optional." },
+      { question: "What does PS5 Pro add in GTA 6?", answer: "PSSR for a sharper picture and ray-traced shadows. It still targets 30 frames per second." },
+    ],
+    related: [L.performance, L.platforms, L.launchPage, L.fileSize],
+  },
+  {
+    slug: "how-many-chapters",
+    title: "GTA 6 How Many Chapters and How Long to Beat",
+    heading: "How many chapters?",
+    description:
+      "How many chapters are in GTA 6? Five, with about 91 to 93 story missions. The story takes roughly 50 to 80 hours. Unofficial.",
+    keywords: ["GTA 6 how many chapters", "GTA 6 how many missions", "GTA 6 how long to complete", "GTA 6 how long to beat", "GTA 6 hours to complete story"],
+    image: JASON_AND_LUCIA,
+    imageAlt: "Jason and Lucia, official Rockstar artwork",
+    kind: "mission",
+    answer: [
+      "The story has a short prologue and five chapters.",
+      "Guides count about 91 to 93 story missions in all.",
+      "A story playthrough takes roughly 50 to 80 hours, depending on how much else you do.",
+    ],
+    facts: [
+      { label: "Chapters", value: "5" },
+      { label: "Story missions", value: "About 91 to 93" },
+      { label: "Story time", value: "About 50 to 80 hours" },
+    ],
+    faqs: [
+      { question: "How many chapters are in GTA 6?", answer: "Five, plus a short prologue." },
+      { question: "How long does it take to beat GTA 6?", answer: "The story takes roughly 50 to 80 hours, with about 91 to 93 story missions." },
+    ],
+    related: [L.howLong, L.missions, L.save, L.newGame],
+  },
+  {
+    slug: "jewelry-robbery",
+    title: "GTA 6 How to Rob a Jewelry Store",
+    heading: "Rob a jewelry store",
+    description:
+      "How to rob a jewelry store in GTA 6: these jobs open in early Chapter 3. Sell the loot to Yasmani for $10,000 to $25,000, and crack the back-room safe if you can. Unofficial.",
+    keywords: ["GTA 6 jewelry store", "GTA 6 jewelry robbery", "GTA 6 rob jewelry store", "GTA 6 Yasmani", "GTA 6 jewelry store locations"],
+    image: JEWELRY,
+    imageAlt: "A jewelry store robbery, official Rockstar still",
+    kind: "money",
+    answer: [
+      "Jewelry store jobs open in early Chapter 3. Wear a mask, go in and grab the goods.",
+      "Crack the back-room safe if you can, then get out and lose the cops.",
+      "Sell the loot to Yasmani for $10,000 to $25,000 a store. Capri, Ocean Beach and downtown Vice City pay well.",
+    ],
+    facts: [
+      { label: "Unlocks", value: "Early Chapter 3" },
+      { label: "Pays", value: "$10,000 to $25,000" },
+      { label: "Buyer", value: "Yasmani" },
+    ],
+    faqs: [
+      { question: "When can you rob jewelry stores in GTA 6?", answer: "From early Chapter 3. Sell the loot to Yasmani." },
+      { question: "How much do jewelry store robberies pay in GTA 6?", answer: "About $10,000 to $25,000 per store, more if you open the back-room safe." },
+    ],
+    related: [L.jewelry, L.robStore, L.mask, L.loseWanted],
+  },
+  {
+    slug: "where-is-it-based",
+    title: "Where Is GTA 6 Based? Leonida and Vice City",
+    heading: "Where is GTA 6 based?",
+    description:
+      "Where is GTA 6 based? In Leonida, a fictional US state inspired by Florida. Vice City is its main city, inspired by Miami. Unofficial.",
+    keywords: ["GTA 6 where is it based", "GTA 6 where does it take place", "GTA 6 what city", "GTA 6 where is it located", "GTA 6 Leonida", "GTA 6 Vice City"],
+    image: VICE_CITY,
+    imageAlt: "Vice City, official Rockstar still",
+    kind: "location",
+    answer: [
+      "GTA 6 takes place in Leonida, a fictional US state inspired by Florida.",
+      "Vice City is the main city, inspired by Miami.",
+      "The map also covers the Leonida Keys, the Grassrivers, Port Gellhorn and more.",
+    ],
+    facts: [
+      { label: "State", value: "Leonida (inspired by Florida)" },
+      { label: "Main city", value: "Vice City (inspired by Miami)" },
+      { label: "Also", value: "Keys, Grassrivers, Port Gellhorn" },
+    ],
+    faqs: [
+      { question: "Where is GTA 6 based?", answer: "In Leonida, a fictional state inspired by Florida. Its main city, Vice City, is inspired by Miami." },
+      { question: "Is GTA 6 set in Vice City?", answer: "Yes. Vice City is the main city in Leonida, alongside the Keys, the Grassrivers and other regions." },
+    ],
+    related: [L.mapHub, L.locationsHub, L.mapFog, L.launchPage],
+  },
+  {
+    slug: "cheats-locked",
+    title: "GTA 6 Cheats Locked? How to Enter Cheat Codes",
+    heading: "Why are cheats locked?",
+    description:
+      "Why are GTA 6 cheats locked? They unlock after you finish the story. Enter a code on the phone by holding L1 and R1, then the inputs. Saving and trophies turn off for that session. Unofficial.",
+    keywords: ["GTA 6 cheats locked", "GTA 6 how to use cheat codes", "GTA 6 cheats", "GTA 6 cheats PS5", "GTA 6 cheat codes", "GTA 6 cheats xbox"],
+    kind: "cheat",
+    answer: [
+      "Cheats unlock after you finish the story. Until then the Cheats menu does not appear, and codes do nothing.",
+      "To enter a code, open the phone, hold L1 and R1 (or LB and RB), then put in the inputs.",
+      "Using a cheat turns off trophies, achievements and saving for the rest of that session.",
+    ],
+    facts: [
+      { label: "Unlocks", value: "After you finish the story" },
+      { label: "Enter", value: "Phone, hold L1/LB + R1/RB" },
+      { label: "Catch", value: "No trophies or saving that session" },
+    ],
+    faqs: [
+      { question: "Why are cheats locked in GTA 6?", answer: "They stay locked until you finish the story. Before that, the Cheats menu does not appear and codes do nothing." },
+      { question: "How do you enter cheat codes in GTA 6?", answer: "Open the phone, hold L1 and R1 on PS5 or LB and RB on Xbox, then enter the code. Trophies and saving turn off for that session." },
+    ],
+    related: [L.cheats, L.save, L.moneyGlitch, L.newGame],
+  },
+  {
+    slug: "gang-hideouts",
+    title: "GTA 6 How to Raid Gang Hideouts for Money",
+    heading: "Raid gang hideouts",
+    description:
+      "How to raid gang hideouts in GTA 6: yellow map icons mark 39 operations, open from Chapter 1. Clear the place, take the cash and goods, and sell the goods to a dealer. Unofficial.",
+    keywords: ["GTA 6 gang hideouts", "GTA 6 gang operations", "GTA 6 yellow icons", "GTA 6 raid hideout", "GTA 6 early money"],
+    kind: "money",
+    answer: [
+      "Yellow icons on the map mark 39 gang hideouts. They are open from Chapter 1.",
+      "Clear the place, then grab the cash and any goods you can carry.",
+      "Sell those goods to a dealer. Some hideouts also have guns or a vehicle you can take.",
+    ],
+    facts: [
+      { label: "Unlocks", value: "Chapter 1" },
+      { label: "How many", value: "39 hideouts" },
+      { label: "Map", value: "Yellow icons" },
+    ],
+    faqs: [
+      { question: "How do you raid gang hideouts in GTA 6?", answer: "Find a yellow icon on the map, clear the hideout, take the cash and goods, and sell the goods to a dealer." },
+      { question: "When can you raid gang operations in GTA 6?", answer: "From Chapter 1. There are 39 of them on the map." },
+    ],
+    related: [L.gangOps, L.money, L.loseWanted, L.robStore],
+  },
+  {
+    slug: "controls",
+    title: "GTA 6 Controls: Sprint, Phone and Classic Layout",
+    heading: "PS5 and Xbox controls",
+    description:
+      "GTA 6 controls on PS5 and Xbox: default sprint is L3, jump is Cross or A, and the phone is Up on the D-pad. Switch to Classic in settings if you want the old layout. Unofficial.",
+    keywords: ["GTA 6 controls", "GTA 6 controls PS5", "GTA 6 controller settings", "GTA 6 how to sprint", "GTA 6 classic controls"],
+    kind: "activity",
+    answer: [
+      "On the default layout, click L3 to run and sprint. Cross on PS5 or A on Xbox is jump and climb, not sprint.",
+      "Press Up on the D-pad to open the phone. A Classic control scheme in Settings puts sprint back on Cross or A if you want the older feel.",
+      "In a car, tap Left or Right on the D-pad for turn signals, and hold Left for the radio and vehicle menu.",
+    ],
+    facts: [
+      { label: "Sprint (default)", value: "L3" },
+      { label: "Jump / climb", value: "Cross / A" },
+      { label: "Phone", value: "D-pad Up" },
+    ],
+    faqs: [
+      { question: "How do you sprint in GTA 6?", answer: "On the default layout, click L3 (the left stick). Cross or A is jump and climb. Switch to Classic in Settings if you want sprint on that button instead." },
+      { question: "Can you change GTA 6 to the old controls?", answer: "Yes. Open Settings, go to Control Scheme and pick Classic." },
+    ],
+    related: [L.usePhone, L.turnSignals, L.cover, L.firstPerson],
   },
 ];
 

@@ -3,8 +3,10 @@ import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simpl
 import { paradiseGarageStandIn } from "@/data/standIns";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { pageMetadata } from "@/lib/launch";
 import { vehicleImages } from "@/lib/media/catalog";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const launchTitle = "Editions";
 const launchDescription =
@@ -156,6 +158,7 @@ export default function LaunchPage() {
           <SimpleCard key={item.href} href={item.href} title={item.title} line={item.line} />
         ))}
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["ultimate-edition", "platforms", "physical-copy"])} />
     </PageShell>
   );
 }

@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simple/SimpleCard";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { pageMetadata } from "@/lib/launch";
 import { pickHubs } from "@/lib/simple/hubs";
 import { gta6Launch } from "@/src/data/launch/gta6-launch";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 // Re-render every 5 minutes so the launch-state copy flips on its own.
 export const revalidate = 300;
@@ -50,6 +52,7 @@ export default function Gta6LaunchPage() {
           <SimpleCard key={item.href} href={item.href} title={item.title} image={item.image} line={item.line} kind={item.kind} />
         ))}
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "where-is-it-based", "how-many-chapters", "ultimate-edition"])} />
     </PageShell>
   );
 }

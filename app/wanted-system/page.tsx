@@ -36,7 +36,7 @@ export default function WantedSystemPage() {
         <SimpleCard href="/phone/banking-app" title="BuckMe" line="Bank your cash." />
         <SimpleCard href="/map" title="Map" image="/images/official/locations/vice-city.webp" />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["mask", "change-clothes", "how-to-heal", "impounded-car", "rob-store", "stealth-takedown"])} />
+      <QuickGuideGrid guides={quickGuideCards(["lose-wanted", "mask", "change-clothes", "how-to-heal", "impounded-car", "rob-store", "stealth-takedown", "haircut", "gang-hideouts"])} />
     </PageShell>
   );
 }

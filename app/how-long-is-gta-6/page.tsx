@@ -44,7 +44,7 @@ export default function HowLongIsGta6Page() {
         <SimpleCard href="/trophies" title="Trophies" />
         <SimpleCard href="/collectibles" title="Collectibles" />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["replay-missions", "how-to-save", "online", "beginner-tips"])} />
+      <QuickGuideGrid guides={quickGuideCards(["how-many-chapters", "replay-missions", "how-to-save", "online", "beginner-tips"])} />
     </PageShell>
   );
 }
