@@ -98,7 +98,7 @@ export default function VehiclesPage() {
           {expected.map(card)}
         </CardGrid>
       ) : null}
-      <QuickGuideGrid guides={quickGuideCards(["register-car", "buy-a-car", "impounded-car", "call-your-car", "slim-jim", "key-cloner"])} />
+      <QuickGuideGrid guides={quickGuideCards(["register-car", "buy-a-car", "impounded-car", "call-your-car", "slim-jim", "key-cloner", "refuel", "repair-car", "customize-car", "plane", "sell-cars"])} />
     </PageShell>
   );
 }

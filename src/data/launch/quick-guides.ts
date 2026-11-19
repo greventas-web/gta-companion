@@ -47,6 +47,12 @@ const KEY_LENTO = "/images/footage/locations/key-lento.webp";
 const CHUCKS = "/images/footage/brands/ammu-nation.webp";
 const JASON_AND_LUCIA = "/images/official/media/artwork-jason-and-lucia-01-jason-and-lucia-01-landscape.webp";
 const FLASH_FM = "/images/official/radio/flash-background.webp";
+const TREASURE = "/images/footage/activities/treasure-diving.webp";
+const COASTAL = "/images/footage/places/coastal-auto-care.webp";
+const FITNESS_APP = "/images/footage/phone/fitness-app.webp";
+const HUNTING = "/images/official/frames/hunting.webp";
+const JEWELRY = "/images/official/frames/jewelry-robbery.webp";
+const ROBBERY_ART = "/images/official/media/artwork-jason-and-lucia-robbery-jason-and-lucia-robbery-landscape.webp";
 
 const L = {
   save: { href: "/guides/how-to-save", title: "How to save", kind: "mission" },
@@ -95,6 +101,48 @@ const L = {
   howLong: { href: "/how-long-is-gta-6", title: "How long is GTA 6?", kind: "mission" },
   weapons: { href: "/weapons", title: "Weapons", kind: "weapon" },
   fastestCars: { href: "/fastest-cars", title: "Fastest cars", kind: "vehicle" },
+  // Batch 2
+  vehiclesHub: { href: "/vehicles", title: "Vehicles", kind: "vehicle" },
+  mapHub: { href: "/map", title: "Map", kind: "location" },
+  labFees: { href: "/guides/lab-fees-codes", title: "Lab Fees codes", kind: "mission" },
+  pipework: { href: "/guides/pipework", title: "Pipework", kind: "mission" },
+  heyArnold: { href: "/guides/hey-arnold", title: "Kill or spare Arnold?", kind: "mission" },
+  fengShui: { href: "/guides/feng-shui", title: "Feng Shui puzzle", image: JASONS_PLACE, imageAlt: "Jason's place in Key Lento", kind: "mission" },
+  islandDreams: { href: "/guides/island-dreams", title: "Island Dreams treasure", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "mission" },
+  groceries: { href: "/guides/pick-up-groceries", title: "Pick up groceries", kind: "mission" },
+  scuba: { href: "/guides/scuba-gear", title: "Scuba gear", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "activity" },
+  refuel: { href: "/guides/refuel", title: "Gas and refueling", kind: "vehicle" },
+  repairCar: { href: "/guides/repair-car", title: "Repair your car", kind: "vehicle" },
+  customize: { href: "/guides/customize-car", title: "Customize your car", image: COASTAL, imageAlt: "Coastal Auto Care in Key Lento", kind: "mod" },
+  headphones: { href: "/guides/headphones", title: "Headphones", kind: "radio" },
+  plane: { href: "/guides/plane", title: "Get a plane", kind: "vehicle" },
+  mapFog: { href: "/guides/unlock-map", title: "Unlock the map", kind: "location" },
+  fishing: { href: "/guides/fishing", title: "Fishing", kind: "activity" },
+  hunting: { href: "/guides/hunting", title: "Hunting", image: HUNTING, imageAlt: "Hunting in Leonida, official Rockstar still", kind: "activity" },
+  sellGuns: { href: "/guides/sell-guns", title: "Sell guns?", kind: "weapon" },
+  sellCars: { href: "/guides/sell-cars", title: "Sell cars", image: PAY_N_SPRAY, imageAlt: "Pay 'n' Spray in Key Lento", kind: "money" },
+  moneyGlitch: { href: "/guides/money-glitch", title: "Money glitch?", image: JEWELRY, imageAlt: "A jewelry store robbery, official Rockstar still", kind: "money" },
+  workout: { href: "/guides/workout", title: "Workouts", image: FITNESS_APP, imageAlt: "The Fitness app on the in-game phone", kind: "activity" },
+  stealth: { href: "/guides/stealth-takedown", title: "Stealth takedown", kind: "weapon" },
+  cover: { href: "/guides/take-cover", title: "Take cover", kind: "weapon" },
+  newGame: { href: "/guides/new-game", title: "New game", kind: "mission" },
+  snake: { href: "/guides/pet-snake", title: "Dolores the snake", kind: "animal" },
+  robStore: { href: "/guides/rob-store", title: "Rob a store", image: ROBBERY_ART, imageAlt: "Jason and Lucia robbery, official Rockstar artwork", kind: "money" },
+  kenton: { href: "/characters/kenton-rees", title: "Kenton Rees", image: "/images/footage/characters/kenton-rees.webp", imageAlt: "Kenton Rees", kind: "character" },
+  treasureDiving: { href: "/money-methods/kenton-treasure-diving", title: "Treasure diving", image: "/images/footage/money-methods/kenton-treasure-diving.webp", imageAlt: "Jason pulling a treasure chest out of a shipwreck", kind: "money" },
+  modShops: { href: "/where-to-find/mod-shops", title: "Mod shops", image: COASTAL, imageAlt: "Coastal Auto Care in Key Lento", kind: "mod" },
+  storeRobberies: { href: "/money-methods/store-robberies", title: "Store robberies", kind: "money" },
+  jewelry: { href: "/money-methods/jewelry-store-robberies", title: "Jewelry stores", image: JEWELRY, imageAlt: "A jewelry store robbery, official Rockstar still", kind: "money" },
+  sellPayNSpray: { href: "/money-methods/sell-cars-at-pay-n-spray", title: "Sell at Pay 'n' Spray", kind: "money" },
+  labFeesMission: { href: "/missions/lab-fees", title: "Lab Fees", line: "Chapter 1", kind: "mission" },
+  pipeworkMission: { href: "/missions/pipework", title: "Pipework", line: "Chapter 1", kind: "mission" },
+  arnoldMission: { href: "/missions/hey-arnold", title: "Hey Arnold!", line: "Chapter 1", kind: "mission" },
+  fengShuiMission: { href: "/missions/feng-shui", title: "Feng Shui", line: "Chapter 1", kind: "mission" },
+  islandMission: { href: "/missions/island-dreams", title: "Island Dreams", line: "Chapter 1", kind: "mission" },
+  shootingRanges: { href: "/shooting-ranges", title: "Shooting ranges", kind: "range" },
+  animals: { href: "/animals", title: "Animals", kind: "animal" },
+  shark: { href: "/animals", title: "Sharks and sea life", image: "/images/footage/animals/shark.webp", imageAlt: "A shark near Jason underwater", kind: "animal" },
+  phoneHeadphones: { href: "/phone/headphones", title: "Headphones app page", kind: "phone" },
 } satisfies Record<string, QuickGuideLink>;
 
 export const quickGuides: QuickGuide[] = [
@@ -635,7 +683,623 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.save, L.bank, L.railing, L.focus, L.register, L.money],
   },
+  // Batch 2 (November 19, 2026)
+  {
+    slug: "lab-fees-codes",
+    title: "GTA 6 Lab Fees Codes: Lab Door 0420 and Brian's Lockup 7700",
+    heading: "Lab Fees door codes",
+    description:
+      "GTA 6 Lab Fees codes: the gift shop lab door is 0420 and Brian's lockup is 7700. Where to use each code in the Chapter 1 rent mission. Unofficial guide.",
+    keywords: ["GTA 6 lab fees code", "GTA 6 brian rent code", "GTA 6 brian rent door code", "GTA 6 lab fees door code", "GTA 6 lab code", "GTA 6 brian lockup code"],
+    kind: "mission",
+    price: "Pays $600",
+    answer: [
+      "The lab door in the gift shop is 0420. The clerk tells you, and it's also on the back of a notepad in the shop.",
+      "Brian's lockup is 7700. Brian gives it to you on the phone after you grab the acid.",
+      "Your $600 lands in the mailbox outside Jason's house, since you don't have a bank account yet.",
+    ],
+    facts: [
+      { label: "Lab door", value: "0420" },
+      { label: "Brian's lockup", value: "7700" },
+      { label: "Pay", value: "$600, in Jason's mailbox" },
+    ],
+    faqs: [
+      { question: "What is the lab code in GTA 6 Lab Fees?", answer: "The lab door code is 0420. The clerk gives it to you, and it's also written on the back of a notepad in the shop." },
+      { question: "What is Brian's lockup code in GTA 6?", answer: "Brian's lockup code is 7700. He tells you on the phone during Lab Fees." },
+    ],
+    related: [L.labFeesMission, L.pipework, L.robStore, L.missions],
+  },
+  {
+    slug: "pipework",
+    title: "GTA 6 Pipework: Mandy's Sink, Plunger and House Location",
+    heading: "Pipework (Mandy's rent)",
+    description:
+      "GTA 6 Pipework walkthrough: Mandy's house is a short drive from Jason's place. Take the plunger from her bathroom, then fix the kitchen sink. Unofficial guide.",
+    keywords: ["GTA 6 pipework", "GTA 6 pipework mission", "GTA 6 mandy house location", "GTA 6 mandy sink", "GTA 6 what was in mandy's sink", "GTA 6 can you romance mandy"],
+    kind: "mission",
+    answer: [
+      "Mandy's house is a short drive from Jason's place in Key Lento. Follow the Collect Mandy's Rent marker.",
+      "The plunger is on the bathroom floor next to the toilet. Take it to the kitchen sink and click the right stick to plunge.",
+      "When Jason gets under the sink, hold R2 or RT to use the wrench. You can't romance Mandy, whatever you say.",
+    ],
+    facts: [
+      { label: "Chapter", value: "1" },
+      { label: "Plunger", value: "Bathroom, next to the toilet" },
+      { label: "Wrench", value: "Hold R2 / RT" },
+    ],
+    faqs: [
+      { question: "Where is the plunger in GTA 6 Pipework?", answer: "On the bathroom floor next to the toilet, across the hall from Mandy's bedroom." },
+      { question: "Can you romance Mandy in GTA 6?", answer: "No. Mandy flirts with Jason during Pipework, but no dialogue choice leads to a romance." },
+    ],
+    related: [L.pipeworkMission, L.labFees, L.heyArnold, L.missions],
+  },
+  {
+    slug: "hey-arnold",
+    title: "GTA 6 Hey Arnold: Should You Kill or Spare Arnold?",
+    heading: "Kill or spare Arnold?",
+    description:
+      "GTA 6 Arnold decision: the story goes on the same either way. Sparing him points you toward a Restrained profile and pays off later. Unofficial guide.",
+    keywords: ["GTA 6 arnold decision", "GTA 6 kill or spare arnold", "GTA 6 what to do with arnold", "GTA 6 hey arnold", "GTA 6 arnold spare"],
+    kind: "mission",
+    answer: [
+      "It's your call. The story carries on the same way whether you kill or spare Arnold.",
+      "Sparing him counts toward a Restrained criminal profile. Killing him counts toward Hardened.",
+      "If you spare him, Arnold sends Jason $10,000 as a thank-you later in the game.",
+    ],
+    facts: [
+      { label: "Chapter", value: "1" },
+      { label: "Spare", value: "Restrained, $10,000 later" },
+      { label: "Kill", value: "Hardened" },
+    ],
+    faqs: [
+      { question: "Should you kill or spare Arnold in GTA 6?", answer: "Sparing him is the better pick. The story is the same either way, but Arnold later sends Jason $10,000 as a thank-you." },
+      { question: "Does killing Arnold matter in GTA 6?", answer: "Only a little. It counts toward a Hardened criminal profile, while sparing him counts toward Restrained." },
+    ],
+    related: [L.arnoldMission, L.islandDreams, L.wanted, L.missions],
+  },
+  {
+    slug: "feng-shui",
+    title: "GTA 6 Feng Shui: Tenebrae Lux Puzzle Solution in 3 Moves",
+    heading: "Feng Shui puzzle",
+    description:
+      "GTA 6 Feng Shui puzzle solution: in Tenebrae Lux, move the bottom-left tower up, the middle tower down, then the top-right tower down. Unofficial guide.",
+    keywords: ["GTA 6 feng shui puzzle", "GTA 6 feng shui mission", "GTA 6 tenebrae lux", "GTA 6 tenebrae lux puzzle", "GTA 6 feng shui game"],
+    image: JASONS_PLACE,
+    imageAlt: "Jason's place in Key Lento",
+    kind: "mission",
+    answer: [
+      "In Tenebrae Lux, walk to the hut and use the board inside. Start from a fresh board with all six pieces.",
+      "Move the bottom-left tower up, then the middle tower down, then the top-right tower down.",
+      "Towers clear the pieces they pass. Clear the board, then Cal switches to Street Trash III.",
+    ],
+    facts: [
+      { label: "Move 1", value: "Bottom-left tower up" },
+      { label: "Move 2", value: "Middle tower down" },
+      { label: "Move 3", value: "Top-right tower down" },
+    ],
+    faqs: [
+      { question: "How do you solve the Feng Shui puzzle in GTA 6?", answer: "On a fresh Tenebrae Lux board, move the bottom-left tower up, the middle tower down, then the top-right tower down." },
+      { question: "Can you play Tenebrae Lux again in GTA 6?", answer: "Yes. After Feng Shui you can play the console games on the TV at Jason's place." },
+    ],
+    related: [L.fengShuiMission, L.jasonsPlace, L.railing, L.missions],
+  },
+  {
+    slug: "island-dreams",
+    title: "GTA 6 Island Dreams: Where to Find All 3 Treasures",
+    heading: "Island Dreams treasure",
+    description:
+      "GTA 6 Island Dreams treasure locations: use the metal detector outside the wreck. One by the flat wreck plates, one at the rock wall, one by a crate. Unofficial.",
+    keywords: ["GTA 6 island dreams", "GTA 6 island dreams treasure", "GTA 6 island dreams where is the treasure", "GTA 6 island dreams walkthrough", "GTA 6 scuba diving mission"],
+    image: TREASURE,
+    imageAlt: "Jason diving for treasure at a shipwreck",
+    kind: "mission",
+    answer: [
+      "Equip the metal detector and search the pink area outside the wreck. The light turns green when you're close.",
+      "One treasure is by the flat wreck plates, one at the foot of the rock wall, and one by a crate on the sandy floor.",
+      "A shark shows up after you pull Dobbs out of the grate. Switch to the harpoon gun and shoot it.",
+    ],
+    facts: [
+      { label: "Treasure 1", value: "Flat wreck plates" },
+      { label: "Treasure 2", value: "Base of the rock wall" },
+      { label: "Treasure 3", value: "Crate on the sandy floor" },
+    ],
+    faqs: [
+      { question: "Where are the treasures in GTA 6 Island Dreams?", answer: "Outside the wreck, not inside. One is by the flat wreck plates, one at the base of the rock wall and one by a crate on the sandy floor." },
+      { question: "How do you find treasure in GTA 6?", answer: "Equip the metal detector and sweep the seabed. When its light turns green, swim closer until the gold chest prompt appears." },
+    ],
+    related: [L.islandMission, L.kenton, L.treasureDiving, L.shark, L.scuba],
+  },
+  {
+    slug: "pick-up-groceries",
+    title: "GTA 6 How to Buy Groceries (Pick Up Groceries)",
+    heading: "How to buy groceries",
+    description:
+      "How to buy groceries in GTA 6: take any three marked items off the shelf, put the bags in your trunk and carry them into Jason's house. Unofficial guide.",
+    keywords: ["GTA 6 how to buy groceries", "GTA 6 groceries", "GTA 6 pick up groceries", "GTA 6 grocery store", "GTA 6 buying groceries"],
+    kind: "mission",
+    answer: [
+      "Go to the marked grocery store in Key Lento and take any three items with pink markers.",
+      "Each item is paid for when you take it off the shelf. You don't need the register.",
+      "Put the bags in your car's trunk, drive home and carry them into Jason's house.",
+    ],
+    facts: [
+      { label: "Items", value: "Any 3 with pink markers" },
+      { label: "Pay", value: "Automatic, off the shelf" },
+      { label: "Drop off", value: "Jason's house" },
+    ],
+    faqs: [
+      { question: "How do you buy groceries in GTA 6?", answer: "Take any three items with pink markers off the shelf. Each one is paid for automatically, so you don't need the register." },
+      { question: "Where do you drop off the groceries in GTA 6?", answer: "Put them in your trunk, drive back to Jason's house and carry the bags inside." },
+    ],
+    related: [L.railing, L.jasonsPlace, L.tips, L.missions],
+  },
+  {
+    slug: "scuba-gear",
+    title: "GTA 6 Where to Get Scuba Gear for Treasure Diving",
+    heading: "Where to get scuba gear",
+    description:
+      "Where to get scuba gear in GTA 6: on Kenton's charter boat at Island Dreams in Key Lento, or the spare set on the dock. It adds a metal detector. Unofficial.",
+    keywords: ["GTA 6 scuba gear", "GTA 6 where to get scuba gear", "GTA 6 scuba gear location", "GTA 6 scuba diving", "GTA 6 how to dive underwater"],
+    image: TREASURE,
+    imageAlt: "Jason diving for treasure at a shipwreck",
+    kind: "activity",
+    answer: [
+      "Go to Kenton's Island Dreams boat charters in Key Lento after the Island Dreams mission.",
+      "Use the Scuba Gear prompt by the yellow tanks at the back of the charter boat. There's also a spare set on the dock.",
+      "The gear adds a metal detector and a speargun. Hold R1 or RB to dive.",
+    ],
+    facts: [
+      { label: "Where", value: "Island Dreams dock, Key Lento" },
+      { label: "Adds", value: "Metal detector and speargun" },
+      { label: "Dive", value: "Hold R1 / RB" },
+    ],
+    faqs: [
+      { question: "Where do you get scuba gear in GTA 6?", answer: "At Kenton's Island Dreams dock in Key Lento. Use the prompt by the yellow tanks on the charter boat, or the spare set on the dock." },
+      { question: "How do you dive underwater in GTA 6?", answer: "Put on the scuba gear, get in the water and hold R1 on PS5 or RB on Xbox." },
+    ],
+    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark],
+  },
+  {
+    slug: "refuel",
+    title: "GTA 6 Gas: How to Refuel and Find Gas Stations",
+    heading: "Gas and refueling",
+    description:
+      "Do cars need gas in GTA 6? Yes. Press Down on the D-pad to check fuel, then pull up to a pump at any gas station to refuel. Unofficial guide.",
+    keywords: ["GTA 6 gas", "GTA 6 gas stations", "GTA 6 gas station locations", "GTA 6 where to get gas", "GTA 6 gas gauge", "GTA 6 refuel"],
+    kind: "vehicle",
+    answer: [
+      "Yes, cars use fuel in GTA 6. Press Down on the D-pad to see the pump icon: green is fine, yellow is low, red is empty.",
+      "Pull up to a pump at a gas station and press X or A to refuel for a small fee.",
+      "Find stations in the map's Vehicles tab. Electric cars use chargers instead.",
+    ],
+    facts: [
+      { label: "Check fuel", value: "Down on the D-pad" },
+      { label: "Refuel", value: "X / A at a pump" },
+      { label: "Find one", value: "Map > Vehicles > Gas Stations" },
+    ],
+    faqs: [
+      { question: "Do cars run out of gas in GTA 6?", answer: "Yes. Gas cars need fuel. The pump icon turns yellow when you're low and red when the tank is empty." },
+      { question: "How do you refuel in GTA 6?", answer: "Drive up to a pump at a gas station and press X on PS5 or A on Xbox, then pick refuel." },
+    ],
+    related: [L.repairCar, L.customize, L.callCar, L.register],
+  },
+  {
+    slug: "repair-car",
+    title: "GTA 6 How to Repair Your Car",
+    heading: "How to repair your car",
+    description:
+      "How to repair your car in GTA 6: use the repair option at a gas station pump. In Chapter 1, call Joey. Later, Scooter Bros brings back wrecked cars. Unofficial.",
+    keywords: ["GTA 6 how to repair car", "GTA 6 repair car", "GTA 6 fix car", "GTA 6 car damage"],
+    kind: "vehicle",
+    answer: [
+      "Pull up to a pump at any gas station and pick the repair option for a fee.",
+      "In Chapter 1, call Joey from your contacts. He fixes your car and brings it to you.",
+      "From Chapter 2, Scooter Bros brings back a wrecked personal car for a fee. A wrecked stolen car is gone for good.",
+    ],
+    facts: [
+      { label: "Anytime", value: "Gas station pump" },
+      { label: "Chapter 1", value: "Call Joey" },
+      { label: "Wrecked", value: "Scooter Bros, owned cars only" },
+    ],
+    faqs: [
+      { question: "How do you repair your car in GTA 6?", answer: "Drive up to a pump at a gas station and choose repair. In Chapter 1 you can also call Joey." },
+      { question: "What happens if your car is destroyed in GTA 6?", answer: "A registered car comes back through Scooter Bros for a fee. A stolen car you haven't registered is lost, with anything in its trunk." },
+    ],
+    related: [L.refuel, L.callCar, L.register, L.customize],
+  },
+  {
+    slug: "customize-car",
+    title: "GTA 6 How to Customize Your Car at a Mod Shop",
+    heading: "Customize your car",
+    description:
+      "How to customize cars in GTA 6: drive to a mod shop that fits your vehicle type. A tracked car must be registered before you can mod it. Unofficial guide.",
+    keywords: ["GTA 6 customize car", "GTA 6 car customization", "GTA 6 mod shop", "GTA 6 how to customize car", "GTA 6 tuning"],
+    image: COASTAL,
+    imageAlt: "Coastal Auto Care in Key Lento",
+    kind: "mod",
+    answer: [
+      "Drive to a mod shop. There are 14, and each one works on a type of vehicle. Coastal Auto Care is the one in Key Lento.",
+      "A car with a tracker can't be modded until you register it, which turns the tracker off.",
+      "Repair the car first if it's damaged.",
+    ],
+    facts: [
+      { label: "Mod shops", value: "14" },
+      { label: "Key Lento", value: "Coastal Auto Care" },
+      { label: "Tracked car", value: "Register it first" },
+    ],
+    faqs: [
+      { question: "How do you customize cars in GTA 6?", answer: "Take the car to a mod shop that works on that type of vehicle and pick parts, paint and wheels from the menu." },
+      { question: "Why can't I mod my car in GTA 6?", answer: "Cars with a tracker can't be modded until you register them, and some shops only work on certain vehicle types." },
+    ],
+    related: [L.modShops, L.register, L.repairCar, L.fastestCars],
+  },
+  {
+    slug: "headphones",
+    title: "GTA 6 Where to Get Headphones and Listen to Music",
+    heading: "Where to get headphones",
+    description:
+      "Where to get headphones in GTA 6: electronics stores sell them. Zeke's Gadgets in Hamlet has them for $119. Hold Left on the D-pad to play music. Unofficial.",
+    keywords: ["GTA 6 headphones", "GTA 6 where to get headphones", "GTA 6 earphones", "GTA 6 listen to music walking", "GTA 6 headphones in game"],
+    kind: "radio",
+    price: "$119",
+    answer: [
+      "Buy headphones at an electronics store. One of the first is Zeke's Gadgets in Hamlet, at $119.",
+      "With them on, hold Left on the D-pad and press X or A to turn music on or off.",
+      "You can then listen to radio stations and podcasts on foot.",
+    ],
+    facts: [
+      { label: "Where", value: "Electronics stores" },
+      { label: "First shop", value: "Zeke's Gadgets, Hamlet" },
+      { label: "Price", value: "$119" },
+    ],
+    faqs: [
+      { question: "Where do you get headphones in GTA 6?", answer: "At electronics stores. Zeke's Gadgets in Hamlet sells them for $119." },
+      { question: "How do you listen to music on foot in GTA 6?", answer: "Wear headphones, then hold Left on the D-pad and press X or A to turn the music on." },
+    ],
+    related: [L.phoneHeadphones, L.radio, L.radioHub, L.fastTravel],
+  },
+  {
+    slug: "plane",
+    title: "GTA 6 How to Get a Plane Early and Fly It",
+    heading: "Get a plane",
+    description:
+      "How to get a plane in GTA 6: a Bottcher Duster sits at a small airstrip off Boundary Road, near Key Lento, from Chapter 1. Flying controls inside. Unofficial.",
+    keywords: ["GTA 6 where to find planes", "GTA 6 how to fly the plane", "GTA 6 plane locations", "GTA 6 how to get a plane", "GTA 6 planes"],
+    kind: "vehicle",
+    answer: [
+      "A Bottcher Duster crop plane sits at a small airstrip off Boundary Road in Mariana County, about 1.4 km from Jason's house.",
+      "You can take it as soon as you're in the open world as Jason.",
+      "Hold R2 or RT to speed up and pull back on the left stick to lift off. L3 raises the landing gear.",
+    ],
+    facts: [
+      { label: "Early plane", value: "Bottcher Duster" },
+      { label: "Where", value: "Airstrip off Boundary Road" },
+      { label: "Throttle", value: "R2 / RT" },
+    ],
+    faqs: [
+      { question: "Where can you find a plane in GTA 6?", answer: "A Bottcher Duster is parked at a small airstrip off Boundary Road in Mariana County, about 1.4 km from Jason's house." },
+      { question: "How do you fly a plane in GTA 6?", answer: "Hold R2 or RT to build speed on the runway, then pull back on the left stick to take off. Use the left stick to pitch and roll." },
+    ],
+    related: [L.mapFog, L.fastTravel, L.vehiclesHub, L.wanted],
+  },
+  {
+    slug: "unlock-map",
+    title: "GTA 6 How to Unlock the Whole Map (Remove Map Fog)",
+    heading: "Unlock the map",
+    description:
+      "How to unlock the map in GTA 6: the fog clears as you visit each area. The fastest way is flying a plane over the dark parts. No cheat does it. Unofficial.",
+    keywords: ["GTA 6 how to unlock map", "GTA 6 map unlocked", "GTA 6 map fog", "GTA 6 unfog map", "GTA 6 reveal map"],
+    kind: "location",
+    answer: [
+      "The map is covered in fog until you visit each area yourself. No cheat clears it.",
+      "The fastest way is to fly a plane over the dark parts of the map.",
+      "Take the Bottcher Duster near Key Lento and land for a new plane when the fuel gets low.",
+    ],
+    facts: [
+      { label: "Clears by", value: "Visiting each area" },
+      { label: "Fastest", value: "Fly a plane" },
+      { label: "Cheat", value: "None" },
+    ],
+    faqs: [
+      { question: "How do you unlock the whole map in GTA 6?", answer: "Visit every area. Flying a plane over the fogged parts is the quickest way." },
+      { question: "Is there a cheat to reveal the map in GTA 6?", answer: "No. You have to clear the fog by going there." },
+    ],
+    related: [L.plane, L.mapHub, L.fastTravel, L.tips],
+  },
+  {
+    slug: "fishing",
+    title: "GTA 6 How to Fish: Rod, Casting and Reeling",
+    heading: "How to fish",
+    description:
+      "How to fish in GTA 6: fishing is open from the start. Pick the rod in your loadout near water, cast with L2 and R2, then reel with the right stick. Unofficial.",
+    keywords: ["GTA 6 how to fish", "GTA 6 fishing", "GTA 6 fishing rod", "GTA 6 fishing guide", "GTA 6 fishing mechanic"],
+    kind: "activity",
+    answer: [
+      "Fishing is open as soon as you're in the open world as Jason. The dock at his house works.",
+      "Near water, hold L1 or LB, pick the fishing rod from Equipment, then hold L2 and press R2 to cast.",
+      "Press R2 when a fish bites, pull the left stick against it, and turn the right stick to reel when it rests.",
+      "Chuck's Tackle & Shot in Key Lento sells better lures.",
+    ],
+    facts: [
+      { label: "Unlock", value: "From the start" },
+      { label: "Cast", value: "Hold L2, press R2" },
+      { label: "Lures", value: "Chuck's Tackle & Shot" },
+    ],
+    faqs: [
+      { question: "When can you fish in GTA 6?", answer: "Right away. As soon as you're in the open world as Jason, walk to a dock and pick the rod from your loadout." },
+      { question: "Does fishing help in GTA 6?", answer: "Yes. Catching fish raises your Focus." },
+    ],
+    related: [L.focus, L.hunting, L.mask, L.animals],
+  },
+  {
+    slug: "hunting",
+    title: "GTA 6 Hunting: How to Unlock It and Sell Animals",
+    heading: "Hunting",
+    description:
+      "How to hunt in GTA 6: meet Bret in Chapter 2. Use a scoped rifle for one clean shot, then sell animals in good shape to Bret. Unofficial guide.",
+    keywords: ["GTA 6 hunting", "GTA 6 how to hunt", "GTA 6 hunting animals", "GTA 6 sell animals", "GTA 6 hunting system"],
+    image: HUNTING,
+    imageAlt: "Hunting in Leonida, official Rockstar still",
+    kind: "activity",
+    answer: [
+      "Hunting opens when you meet Bret in Chapter 2.",
+      "Use a scoped hunting rifle and take one clean shot. Extra shots lower the animal's quality.",
+      "Bret only buys animals in good or pristine shape. Carry small ones yourself and let his truck pick up big ones.",
+    ],
+    facts: [
+      { label: "Unlock", value: "Meet Bret, Chapter 2" },
+      { label: "Weapon", value: "Scoped hunting rifle" },
+      { label: "Sell to", value: "Bret" },
+    ],
+    faqs: [
+      { question: "How do you unlock hunting in GTA 6?", answer: "Meet Bret during Chapter 2. He buys the animals you hunt." },
+      { question: "Why won't Bret buy my animal in GTA 6?", answer: "He only takes animals in good or pristine condition. Use one clean shot with a scoped rifle." },
+    ],
+    related: [L.animals, L.fishing, L.gunStores, L.money],
+  },
+  {
+    slug: "sell-guns",
+    title: "Can You Sell Guns in GTA 6?",
+    heading: "Can you sell guns?",
+    description:
+      "Can you sell guns in GTA 6? No. Ammu-Nation and fences don't buy weapons. Store long guns in your car's trunk or a locker instead. Unofficial guide.",
+    keywords: ["GTA 6 can i sell guns", "GTA 6 sell guns", "GTA 6 sell weapons", "GTA 6 where to sell guns"],
+    image: CHUCKS,
+    imageAlt: "Ammu-Nation sign at Chuck's Tackle & Shot",
+    kind: "weapon",
+    answer: [
+      "No. You can't sell guns in GTA 6, at Ammu-Nation or anywhere else.",
+      "Keep spare long guns in your personal car's trunk or an Ammu-Nation locker.",
+      "For cash, sell stolen cars or rob stores instead.",
+    ],
+    facts: [
+      { label: "Sell guns", value: "No" },
+      { label: "Store them", value: "Car trunk or locker" },
+    ],
+    faqs: [
+      { question: "Can you sell guns in GTA 6?", answer: "No. Neither Ammu-Nation nor fences buy weapons." },
+      { question: "Where do you keep guns in GTA 6?", answer: "In your personal car's trunk or in an Ammu-Nation locker." },
+    ],
+    related: [L.gunStores, L.weapons, L.sellCars, L.moneyGlitch],
+  },
+  {
+    slug: "sell-cars",
+    title: "GTA 6 How to Sell Cars and Where to Sell Stolen Cars",
+    heading: "How to sell cars",
+    description:
+      "Where to sell cars in GTA 6: Moses buys cars with no tracker from Chapter 2, any Pay 'n' Spray from Chapter 3, and Randy buys high-end cars. Unofficial.",
+    keywords: ["GTA 6 how to sell cars", "GTA 6 where to sell cars", "GTA 6 can i sell stolen cars", "GTA 6 sell stolen cars", "GTA 6 selling cars"],
+    image: PAY_N_SPRAY,
+    imageAlt: "Pay 'n' Spray in Key Lento",
+    kind: "money",
+    answer: [
+      "From Chapter 2, sell cars with no tracker to Moses in Port Gellhorn.",
+      "From early Chapter 3, any of the 19 Pay 'n' Sprays buys stolen cars. Newer cars pay more.",
+      "Mid Chapter 3, Randy buys high-end cars from his wish list. Scan cars with WAiNK to see their value.",
+    ],
+    facts: [
+      { label: "Moses", value: "$1,000 to $10,000+" },
+      { label: "Pay 'n' Spray", value: "$4,000+" },
+      { label: "Randy", value: "$30,000+" },
+    ],
+    faqs: [
+      { question: "Where do you sell cars in GTA 6?", answer: "Moses buys cars with no tracker from Chapter 2, any Pay 'n' Spray buys stolen cars from Chapter 3, and Randy buys high-end cars." },
+      { question: "How do you know what a car is worth in GTA 6?", answer: "Scan it with the WAiNK app. It shows the sell value and the tracker." },
+    ],
+    related: [L.sellMoses, L.sellPayNSpray, L.randy, L.waink, L.register],
+  },
+  {
+    slug: "money-glitch",
+    title: "GTA 6 Money Glitch? Best Legit Ways to Make Money Fast",
+    heading: "Is there a money glitch?",
+    description:
+      "Is there a GTA 6 money glitch? No working one. The fastest legit money: sell cars, rob jewelry stores, raid gang hideouts and dive for treasure. Unofficial.",
+    keywords: ["GTA 6 money glitch", "GTA 6 best way to make money", "GTA 6 fastest way to make money", "GTA 6 money cheat code", "GTA 6 how to make money fast"],
+    image: JEWELRY,
+    imageAlt: "A jewelry store robbery, official Rockstar still",
+    kind: "money",
+    answer: [
+      "There's no working money glitch, and there's no money cheat. Skip tools or tricks that risk your save.",
+      "Early on, rob stores and dive for treasure. From Chapter 2, sell stolen cars.",
+      "From Chapter 3, rob jewelry stores for $10,000 to $25,000 and sell high-end cars to Randy for $30,000+.",
+    ],
+    facts: [
+      { label: "Money glitch", value: "None" },
+      { label: "Jewelry stores", value: "$10,000 to $25,000" },
+      { label: "Randy's cars", value: "$30,000+" },
+    ],
+    faqs: [
+      { question: "Is there a money glitch in GTA 6?", answer: "No working money glitch has been found, and there is no money cheat. Stick to legit methods so you don't risk your save." },
+      { question: "What is the fastest way to make money in GTA 6?", answer: "From Chapter 3, jewelry store robberies and Randy's high-end cars pay the most. Earlier, sell stolen cars and dive for treasure." },
+    ],
+    related: [L.money, L.jewelry, L.sellCars, L.treasureDiving, L.robStore],
+  },
+  {
+    slug: "workout",
+    title: "GTA 6 Workout Window: How to Complete Workouts",
+    heading: "Workouts",
+    description:
+      "GTA 6 workout window explained: finish three strength or cardio exercises before the timer ends to level up. A protein bar speeds up recovery. Unofficial.",
+    keywords: ["GTA 6 workout window", "GTA 6 workout", "GTA 6 how to complete workout", "GTA 6 how to increase cardio", "GTA 6 how to do bench press", "GTA 6 workout not working"],
+    image: FITNESS_APP,
+    imageAlt: "The Fitness app on the in-game phone",
+    kind: "activity",
+    answer: [
+      "Open the Fitness app to see your workout windows. Each exercise adds about 11%, up to 33% a day.",
+      "Finish the full workout before the timer runs out, or you lose the gains.",
+      "Cardio is running, cycling, swimming or the treadmill. Strength is weights like the bench press. Jason's balcony has gear at the start.",
+      "A protein bar or shake halves the wait for the next window.",
+    ],
+    facts: [
+      { label: "Per exercise", value: "About 11%" },
+      { label: "Daily cap", value: "33%" },
+      { label: "Max level", value: "4" },
+    ],
+    faqs: [
+      { question: "How does the workout window work in GTA 6?", answer: "Each exercise in the window adds about 11%, up to 33% a day. Finish the workout before the timer ends or you lose the gains." },
+      { question: "How do you increase cardio in GTA 6?", answer: "Run, cycle, swim, kayak or use the treadmill, bike or punching bag at a gym during a cardio workout window." },
+    ],
+    related: [L.focus, L.snake, L.jasonsPlace, L.heal],
+  },
+  {
+    slug: "stealth-takedown",
+    title: "GTA 6 How to Stealth Kill (Stealth Takedown)",
+    heading: "Stealth takedown",
+    description:
+      "How to stealth kill in GTA 6: crouch with Circle or B, sneak up behind the enemy, grab with R2 or RT and press Square or X for the takedown. Unofficial.",
+    keywords: ["GTA 6 stealth kill", "GTA 6 how to stealth kill", "GTA 6 stealth takedown", "GTA 6 stealth", "GTA 6 how to crouch"],
+    kind: "weapon",
+    answer: [
+      "Press Circle (B on Xbox) to crouch and sneak up behind the enemy.",
+      "Hold R2 (RT) to grab them, then press Square (X) to take them down.",
+      "Stay out of sight while you move in. A guard who turns around breaks the takedown.",
+    ],
+    facts: [
+      { label: "Crouch", value: "Circle / B" },
+      { label: "Grab", value: "Hold R2 / RT" },
+      { label: "Takedown", value: "Square / X" },
+    ],
+    faqs: [
+      { question: "How do you stealth kill in GTA 6?", answer: "Crouch, sneak up behind the enemy, hold R2 or RT to grab them, then press Square or X." },
+      { question: "How do you crouch in GTA 6?", answer: "Press Circle on PS5 or B on Xbox." },
+    ],
+    related: [L.cover, L.focus, L.weapons, L.wanted],
+  },
+  {
+    slug: "take-cover",
+    title: "GTA 6 How to Take Cover, Dodge and Block",
+    heading: "Take cover",
+    description:
+      "How to take cover in GTA 6: stand next to a wall or car and press R1 or RB. Hold L2 to peek and aim. In fist fights, X or A blocks and dodges. Unofficial.",
+    keywords: ["GTA 6 how to take cover", "GTA 6 cover", "GTA 6 how to dodge", "GTA 6 how to block", "GTA 6 controls"],
+    kind: "weapon",
+    answer: [
+      "Move next to a wall, car or tree and press R1 (RB on Xbox) to take cover.",
+      "Hold L2 (LT) to peek out and aim, then shoot with R2 (RT).",
+      "In a fist fight, press X (A on Xbox) to block or dodge.",
+    ],
+    facts: [
+      { label: "Cover", value: "R1 / RB" },
+      { label: "Aim", value: "Hold L2 / LT" },
+      { label: "Block or dodge", value: "X / A in melee" },
+    ],
+    faqs: [
+      { question: "How do you take cover in GTA 6?", answer: "Stand next to cover and press R1 on PS5 or RB on Xbox. Hold L2 or LT to peek out and aim." },
+      { question: "How do you dodge in GTA 6?", answer: "In a fist fight, press X on PS5 or A on Xbox to block or dodge." },
+    ],
+    related: [L.stealth, L.heal, L.focus, L.weapons],
+  },
+  {
+    slug: "new-game",
+    title: "GTA 6 New Game Plus? How to Start a New Game",
+    heading: "New game and New Game Plus",
+    description:
+      "Does GTA 6 have New Game Plus? No. A new game starts again from the Prologue without your upgrades. Keep your old run in another save slot. Unofficial.",
+    keywords: ["GTA 6 new game plus", "GTA 6 how to start new game", "GTA 6 new game", "GTA 6 restart story"],
+    kind: "mission",
+    answer: [
+      "GTA 6 has no New Game Plus at launch.",
+      "A new game starts again from the Prologue, without your money, upgrades or cars.",
+      "Keep your old run safe in one of the 15 save slots before you start over.",
+    ],
+    facts: [
+      { label: "New Game Plus", value: "No" },
+      { label: "New game", value: "Starts at the Prologue" },
+      { label: "Save slots", value: "15" },
+    ],
+    faqs: [
+      { question: "Does GTA 6 have New Game Plus?", answer: "No. There is no New Game Plus at launch, so a new game starts from the beginning without your upgrades." },
+      { question: "Can you keep playing after finishing GTA 6?", answer: "Yes. You can keep playing the open world after the story." },
+    ],
+    related: [L.save, L.replay, L.howLong, L.tips],
+  },
+  {
+    slug: "pet-snake",
+    title: "GTA 6 Snake: Jason's Pet Dolores and the Focus Boost",
+    heading: "Jason's snake",
+    description:
+      "GTA 6 pet snake: Jason's snake Dolores lives in a terrarium by his kitchen. Feed her once a day for a 3% Focus boost. Unofficial guide.",
+    keywords: ["GTA 6 snake", "GTA 6 snake name", "GTA 6 pet snake", "GTA 6 feed snake", "GTA 6 Dolores"],
+    image: JASONS_PLACE,
+    imageAlt: "Jason's place in Key Lento",
+    kind: "animal",
+    answer: [
+      "Jason's pet snake is Dolores. Her terrarium is near the kitchen in his house in Key Lento.",
+      "Feed her once a day for a 3% boost to Focus.",
+      "Shooting hoops below the house also raises Focus early on.",
+    ],
+    facts: [
+      { label: "Name", value: "Dolores" },
+      { label: "Where", value: "Jason's place, by the kitchen" },
+      { label: "Feed her", value: "+3% Focus, once a day" },
+    ],
+    faqs: [
+      { question: "What is the snake's name in GTA 6?", answer: "Jason's pet snake is called Dolores." },
+      { question: "Why feed the snake in GTA 6?", answer: "Feeding Dolores once a day gives Jason a 3% Focus boost." },
+    ],
+    related: [L.focus, L.jasonsPlace, L.workout, L.tips],
+  },
+  {
+    slug: "rob-store",
+    title: "GTA 6 How to Rob a Store and Open the Safe",
+    heading: "How to rob a store",
+    description:
+      "How to rob a store in GTA 6: aim at the clerk so he empties the register, turn off the alarm, find the safe code and wipe the camera footage. Unofficial.",
+    keywords: ["GTA 6 how to rob", "GTA 6 how to rob a store", "GTA 6 cash register", "GTA 6 how to open cash register", "GTA 6 safe codes", "GTA 6 store robbery"],
+    image: ROBBERY_ART,
+    imageAlt: "Jason and Lucia robbery, official Rockstar artwork",
+    kind: "money",
+    answer: [
+      "Store robberies are open from Chapter 1. Wear a mask, walk in and aim at the clerk so he empties the register.",
+      "For the back-room safe, turn off the alarm panel first. The code is on a note or screen nearby, or the staff will tell you.",
+      "Destroy the camera recording before you leave, then lose the cops.",
+    ],
+    facts: [
+      { label: "Unlock", value: "Chapter 1" },
+      { label: "Register", value: "Aim at the clerk" },
+      { label: "Safe code", value: "Note, screen or staff" },
+    ],
+    faqs: [
+      { question: "How do you rob a store in GTA 6?", answer: "Aim your gun at the clerk and he empties the register. For more cash, turn off the alarm and open the back-room safe." },
+      { question: "Where are safe codes in GTA 6?", answer: "Each store's code is on a note or screen nearby, or an employee gives it up when threatened." },
+    ],
+    related: [L.storeRobberies, L.mask, L.wanted, L.moneyGlitch],
+  },
 ];
+
+/** Story missions that have a quick guide (Chapters 1 to 3 only). */
+export const missionGuides: Record<string, string> = {
+  "lab-fees": "lab-fees-codes",
+  pipework: "pipework",
+  "hey-arnold": "hey-arnold",
+  "feng-shui": "feng-shui",
+  "island-dreams": "island-dreams",
+  "coming-home": "fix-railing",
+  "buck-me": "bank-account-atm",
+  "down-to-earth": "focus",
+  moses: "slim-jim",
+  "steal-the-zorrusso-for-randy": "key-cloner",
+};
 
 export function findQuickGuide(slug: string) {
   return quickGuides.find((guide) => guide.slug === slug);
