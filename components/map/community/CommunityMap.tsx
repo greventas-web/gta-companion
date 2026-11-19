@@ -400,7 +400,7 @@ export default function CommunityMap({
   }, [approved, curated]);
 
   return (
-    <div className="companion-map relative h-full w-full overflow-hidden bg-[#123a5c]">
+    <div className="companion-map relative isolate z-0 h-full w-full overflow-hidden bg-[#123a5c]">
       <div ref={frameRef} className="absolute inset-0" aria-label="Leonida map" role="application" />
 
       <div className="pointer-events-none absolute left-2 right-16 top-2 z-[400]">
