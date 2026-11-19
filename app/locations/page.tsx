@@ -4,9 +4,11 @@ import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard
 import { ExtraGrids, extraHref } from "@/components/simple/Extras";
 import { extras } from "@/src/data/launch/expansion";
 import { locations } from "@/data/locations";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 locations',
@@ -47,6 +49,7 @@ export default function LocationsPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="locations" />
+      <QuickGuideGrid guides={quickGuideCards(["where-is-it-based", "unlock-map"])} />
     </PageShell>
   );
 }

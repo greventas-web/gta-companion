@@ -46,7 +46,7 @@ export default function PropertiesPage() {
           ))}
         </CardGrid>
       ))}
-      <QuickGuideGrid guides={quickGuideCards(["buy-a-house", "fix-railing", "register-car", "feng-shui", "pet-snake"])} />
+      <QuickGuideGrid guides={quickGuideCards(["buy-a-house", "fix-railing", "register-car", "feng-shui", "pet-snake", "skip-time"])} />
     </PageShell>
   );
 }
