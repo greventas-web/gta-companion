@@ -46,7 +46,7 @@ export default function PhonePage() {
           ))}
         </CardGrid>
       ))}
-      <QuickGuideGrid guides={quickGuideCards(["bank-account-atm", "fast-travel", "call-your-car", "key-cloner", "impounded-car", "headphones", "use-phone"])} />
+      <QuickGuideGrid guides={quickGuideCards(["bank-account-atm", "fast-travel", "call-your-car", "key-cloner", "impounded-car", "headphones", "use-phone", "photo-mode", "waink-scans"])} />
     </PageShell>
   );
 }

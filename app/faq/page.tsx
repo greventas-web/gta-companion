@@ -19,7 +19,7 @@ export default function FAQPage() {
         <SimpleCard href="/wanted-system" title="Wanted system" />
         <SimpleCard href="/gta-6-apps" title="Phone apps" image="/images/footage/phone/snapmatic.webp" imageAlt="The Snapmatic app on the in-game phone" />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "online", "first-person", "replay-missions", "switch-characters", "buy-a-house", "buy-a-car", "fast-travel", "money-glitch", "unlock-map", "new-game", "platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "how-many-chapters", "where-is-it-based", "cheats-locked"])} />
+      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "online", "first-person", "replay-missions", "switch-characters", "buy-a-house", "buy-a-car", "fast-travel", "money-glitch", "unlock-map", "new-game", "platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "how-many-chapters", "where-is-it-based", "cheats-locked", "skip-cutscenes", "accessibility", "trophies", "wasted-busted"])} />
     </PageShell>
   );
 }

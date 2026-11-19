@@ -49,7 +49,7 @@ export default function ClothingPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="clothing" />
-      <QuickGuideGrid guides={quickGuideCards(["change-clothes", "mask", "haircut"])} />
+      <QuickGuideGrid guides={quickGuideCards(["change-clothes", "mask", "haircut", "tattoos"])} />
     </PageShell>
   );
 }

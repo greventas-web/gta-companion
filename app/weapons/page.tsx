@@ -89,7 +89,7 @@ export default function WeaponsPage() {
         </CardGrid>
       ))}
 
-      <QuickGuideGrid guides={quickGuideCards(["mask", "how-to-heal", "focus", "sell-guns", "stealth-takedown", "take-cover", "body-armor", "parachute"])} />
+      <QuickGuideGrid guides={quickGuideCards(["mask", "how-to-heal", "focus", "sell-guns", "stealth-takedown", "take-cover", "body-armor", "parachute", "shooting-ranges", "aim-assist"])} />
     </PageShell>
   );
 }
