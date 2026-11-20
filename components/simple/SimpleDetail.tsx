@@ -9,6 +9,7 @@ import { IMAGE_CREDIT } from "@/lib/site";
 
 import SimpleCard, { CardGrid, PriceChip, type SimpleCardProps } from "./SimpleCard";
 import { TrackButton } from "./Track";
+import AdSlot from "@/components/ads/AdSlot";
 
 export type Fact = { label: string; value: string };
 
@@ -155,6 +156,8 @@ export default function SimpleDetail({
       </div>
 
       {children}
+
+      <AdSlot name="detail" />
 
       {related && related.length > 0 ? (
         <CardGrid heading={relatedHeading}>

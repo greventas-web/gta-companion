@@ -73,3 +73,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-kenburns { animation: none; }
 }
+
+/* Keep the install prompt from stacking on the consent banner. */
+html[data-gta-consent-banner="1"] [data-testid="install-prompt"] {
+  display: none;
+}

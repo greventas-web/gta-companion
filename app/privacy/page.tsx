@@ -73,7 +73,8 @@ export default function PrivacyPage() {
                   third-party ads on this site, and Google&apos;s advertising
                   partners may also set cookies to deliver and measure ads,
                   including ads based on your visits to this site and others.
-                  You can turn off personalized ads in{" "}
+                  Google Analytics (GA4) may set cookies to measure how the
+                  site is used. You can turn off personalized ads in{" "}
                   <a
                     href="https://adssettings.google.com"
                     className="text-pink-400 hover:text-pink-300"
@@ -82,7 +83,11 @@ export default function PrivacyPage() {
                   >
                     Google Ads Settings
                   </a>
-                  .
+                  . A more detailed list is on the{" "}
+                  <a href="/cookies" className="text-pink-400 hover:text-pink-300">
+                    Cookie Policy
+                  </a>{" "}
+                  page.
                 </p>
               </div>
 
@@ -108,6 +113,43 @@ export default function PrivacyPage() {
                     /ads.txt
                   </a>
                   .
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-black">
+                  Google Analytics
+                </h2>
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
+                  We use Google Analytics 4 to understand visits to this
+                  unofficial fan site, such as which pages are opened and
+                  where traffic comes from. Google may set cookies for this
+                  measurement. Google describes this in its{" "}
+                  <a
+                    href="https://policies.google.com/privacy"
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-black">
+                  Cookie choices
+                </h2>
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
+                  Visitors in the European Economic Area, the United Kingdom,
+                  and Switzerland are asked to accept, reject, or manage
+                  analytics and advertising cookies before those cookies are
+                  used. Your choice is stored in a first-party cookie on this
+                  site so we can remember it. You can open Cookie settings in
+                  the footer at any time, including to change a previous
+                  choice. Essential cookies, such as sign-in and the stored
+                  choice itself, stay on so the site can work.
                 </p>
               </div>
 

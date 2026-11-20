@@ -4,6 +4,7 @@ import SiteLogo from "@/components/SiteLogo";
 import SocialLinks from "@/components/SocialLinks";
 import SubscribeForm from "@/components/SubscribeForm";
 import SupportLink from "@/components/SupportLink";
+import CookieSettingsButton from "@/components/consent/CookieSettingsButton";
 import { IMAGE_CREDIT, SITE } from "@/lib/site";
 
 export default function Footer() {
@@ -192,6 +193,8 @@ export default function Footer() {
             <Link href="/cookies" className="transition hover:text-white">
               Cookie Policy
             </Link>
+
+            <CookieSettingsButton />
 
             <Link href="/terms" className="transition hover:text-white">
               Terms of Use

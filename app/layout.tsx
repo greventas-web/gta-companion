@@ -12,10 +12,12 @@ import Footer from "@/components/Footer";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import InstallPrompt from "@/components/pwa/InstallPrompt";
 import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
+import ConsentBanner from "@/components/consent/ConsentBanner";
 import { SearchProvider } from "@/components/search/SearchProvider";
 import { PWA_THEME_COLOR } from "@/lib/pwa";
 import { websiteJsonLd } from "@/lib/seo";
 import { SITE, SOCIAL_PROFILES } from "@/lib/site";
+import { CONSENT_DEFAULTS_SCRIPT } from "@/lib/consent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -176,6 +178,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-[#040404] text-white antialiased">
+        <Script id="gta-consent-defaults" strategy="beforeInteractive">
+          {CONSENT_DEFAULTS_SCRIPT}
+        </Script>
         <Script id="pwa-install-capture" strategy="beforeInteractive">
           {`window.addEventListener("beforeinstallprompt",function(event){event.preventDefault();window.__gtaInstallPrompt=event;window.dispatchEvent(new Event("gta-install-prompt"));});`}
         </Script>
@@ -198,6 +203,7 @@ export default function RootLayout({
             {children}
 
             <Footer />
+            <ConsentBanner />
             <InstallPrompt />
             <ServiceWorkerRegister />
           </SearchProvider>
