@@ -182,6 +182,7 @@ export default function SimpleCard({
     <article
       data-img-source={resolved.source}
       data-art-key={isArt ? resolved.artKey : undefined}
+      data-artwork={resolved.isArtwork ? "painted" : undefined}
       className={`relative h-full overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
         small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
       }`}
@@ -189,7 +190,7 @@ export default function SimpleCard({
       {resolved.src ? (
         <Image
           src={resolved.src}
-          alt={isArt ? `${title} artwork` : imageAlt || title}
+          alt={isArt ? `Artwork: ${title}` : imageAlt || title}
           fill
           sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
           className="object-cover transition duration-500 group-hover:scale-105"
@@ -206,6 +207,7 @@ export default function SimpleCard({
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       {price ? <PriceChip price={price} className="absolute right-3 top-3 z-[2] backdrop-blur" /> : null}
+      {resolved.isArtwork && !price ? <ArtworkTag className="absolute right-3 top-3 z-[2]" /> : null}
       {tag && !trackId ? (
         <span className="absolute left-4 top-4 z-[2] max-w-[calc(100%-2rem)] truncate rounded-full border border-pink-500/30 bg-black/60 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-pink-300 backdrop-blur">
           {tag}
@@ -268,6 +270,18 @@ export default function SimpleCard({
 }
 
 export { TrackProgress };
+
+/** Small label on painted artwork so it is never mistaken for a game screenshot. */
+export function ArtworkTag({ className = "" }: { className?: string }) {
+  return (
+    <span
+      title="GTA Companion artwork, not a game screenshot"
+      className={`pointer-events-none rounded-full border border-white/15 bg-black/55 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] text-white/75 backdrop-blur ${className}`}
+    >
+      Artwork
+    </span>
+  );
+}
 
 export function CardGrid({
   heading,

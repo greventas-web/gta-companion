@@ -50,6 +50,7 @@ export default async function MissionPage({ params }: Props) {
         ]}
         eyebrow={`${MISSION_TYPE_LABEL[mission.type]}${mission.edition ? ` · ${mission.edition}` : ""}`}
         title={mission.name}
+        image={mission.image}
         summary={mission.type === "story" ? undefined : mission.summary}
         trackId={`mission:${mission.slug}`}
         facts={[
@@ -71,6 +72,7 @@ export default async function MissionPage({ params }: Props) {
         related={next.map((other) => ({
           href: `/missions/${other.slug}`,
           title: other.name,
+          image: other.image,
           eyebrow: other.order ? `Mission ${other.order}` : other.chapter ? `Chapter ${other.chapter}` : MISSION_TYPE_LABEL[other.type],
           trackId: `mission:${other.slug}`,
           small: true,

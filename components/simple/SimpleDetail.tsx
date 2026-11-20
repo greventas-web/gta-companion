@@ -7,7 +7,7 @@ import { mapPinHref } from "@/components/map/MapPinLink";
 import { shortText } from "@/lib/simple/text";
 import { IMAGE_CREDIT } from "@/lib/site";
 
-import SimpleCard, { CardGrid, PriceChip, type SimpleCardProps } from "./SimpleCard";
+import SimpleCard, { ArtworkTag, CardGrid, PriceChip, type SimpleCardProps } from "./SimpleCard";
 import { TrackButton } from "./Track";
 import AdSlot from "@/components/ads/AdSlot";
 
@@ -78,11 +78,12 @@ export default function SimpleDetail({
         {hasImage ? (
           <div className="self-start overflow-hidden rounded-[28px] border border-white/10 bg-black">
             <div className="relative aspect-[16/10]">
-              <ItemImage src={image} alt={isArt ? `${title} artwork` : imageAlt || title} name={title} kind={kind} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
+              <ItemImage src={image} alt={isArt ? `Artwork: ${title}` : imageAlt || title} name={title} kind={kind} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
+              {resolved.isArtwork ? <ArtworkTag className="absolute right-3 top-3 z-[2]" /> : null}
               {trackId ? <TrackButton id={trackId} label={title} /> : null}
             </div>
             <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-              {isArt ? "GTA Companion artwork" : IMAGE_CREDIT}
+              {resolved.isArtwork ? "GTA Companion artwork, not a game screenshot" : isArt ? "GTA Companion artwork" : IMAGE_CREDIT}
             </p>
           </div>
         ) : null}

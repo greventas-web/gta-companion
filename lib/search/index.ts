@@ -123,6 +123,7 @@ export const searchIndex: SearchItem[] = [
     title: mission.name,
     href: `/missions/${mission.slug}`,
     category: "Mission" as const,
+    image: mission.image,
     description: mission.summary,
   })),
 

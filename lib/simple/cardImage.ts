@@ -1,18 +1,29 @@
 import { isPlaceholderSrc } from "@/lib/media/catalog";
 
 import artManifest from "./artManifest.json";
+import paintedArtManifest from "./paintedArtManifest.json";
 
 /**
  * Card and detail images: only confirmed, item-specific official images.
  * 1. the item's own photo (from its data entry),
  * 2. an official Rockstar file that shows this exact item, matched by exact name.
- * 3. otherwise a designed GTA Companion artwork (scripts/images/card-art.mjs):
- *    a made-up Vice City style poster with the item's icon or monogram. It is
- *    artwork, never presented as a screenshot, and any real photo replaces it.
+ * 3. otherwise a painted GTA Companion artwork scene made for this exact item
+ *    (public/images/art/ai/<kind>/<slug>.webp, listed in paintedArtManifest.json),
+ * 4. otherwise a designed GTA Companion artwork (scripts/images/card-art.mjs):
+ *    a made-up Vice City style poster with the item's icon or monogram.
+ * Art is never presented as a screenshot: painted scenes carry `isArtwork`,
+ * which shows a small "Artwork" tag, and any real photo replaces them.
  * Adding a photo later is a single `image` change in the item's data.
  */
 export type CardImageSource = "own" | "art" | "none";
-export type CardImage = { src?: string; source: CardImageSource; imageKind?: "photo" | "art"; artKey?: string };
+export type CardImage = {
+  src?: string;
+  source: CardImageSource;
+  imageKind?: "photo" | "art";
+  artKey?: string;
+  /** Painted, made-up scene for this item. Cards and heroes show an "Artwork" tag. */
+  isArtwork?: boolean;
+};
 
 const O = "/images/official";
 const E = `${O}/editions`;
@@ -62,6 +73,7 @@ function pick(list: string[], seed: string) {
 
 const ART_ITEMS = new Set<string>(artManifest.items);
 const ART_KINDS = new Set<string>(artManifest.kinds);
+const PAINTED_ITEMS = new Set<string>(paintedArtManifest.items);
 /** Card kinds whose art falls back to another kind's look. */
 const ART_ALIAS: Record<string, string> = { manufacturer: "vehicle", area: "location", landmark: "location", outfit: "clothing", hairstyle: "salon" };
 
@@ -86,10 +98,11 @@ export function artKind(kind?: string) {
   return ART_KINDS.has(k) ? k : "location";
 }
 
-/** Designed artwork for an item with no real image: its own file, or one from its kind's pool. */
+/** Artwork for an item with no real image: its painted scene, its own poster, or one from its kind's pool. */
 export function cardArt(title: string, kind?: string): CardImage {
   const theme = artKind(kind);
   const key = `${theme}/${artSlug(title)}`;
+  if (PAINTED_ITEMS.has(key)) return { src: `/images/art/ai/${key}.webp`, source: "art", imageKind: "art", artKey: key, isArtwork: true };
   const file = ART_ITEMS.has(key) ? key : `${theme}/_pool-${(seedOf(title) % artManifest.pool) + 1}`;
   return { src: `/images/art/${file}.webp`, source: "art", imageKind: "art", artKey: key };
 }
