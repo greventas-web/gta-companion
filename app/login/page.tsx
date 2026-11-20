@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { loginUser } from "@/lib/auth";
+import { nextPathAfterAuth } from "@/lib/next-path";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default function LoginPage() {
 
       await loginUser(email, password);
 
-      router.push("/dashboard");
+      router.push(nextPathAfterAuth());
     } catch (err: unknown) {
       const code =
         typeof err === "object" && err !== null && "code" in err
