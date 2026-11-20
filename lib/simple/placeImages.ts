@@ -50,6 +50,11 @@ const PLACE_IMAGES: Record<string, PlaceImage> = {
     src: `${O}/frames/jewelry-robbery.webp`,
     alt: "A jewelry store robbery (official Rockstar still)",
   },
+  // Content batch 5: a real gas station screenshot (247 Gas pump, Services prompt).
+  "/where-to-find/gas-stations": {
+    src: "/images/footage/guides/gas-station-services.webp",
+    alt: "The Services prompt at a 247 gas station pump",
+  },
   "/where-to-find/gyms": {
     src: `${O}/frames/gym-workout.webp`,
     alt: "Lucia working out in a gym (official Rockstar still)",

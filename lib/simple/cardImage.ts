@@ -131,6 +131,8 @@ const PREFIX: [string, string][] = [
   ["/where-to-find/payday-loans", "money"],
   ["/where-to-find/gyms", "activity"],
   ["/where-to-find/clubs", "business"],
+  ["/where-to-find/car-washes", "mod"],
+  ["/where-to-find/gas-stations", "mod"],
   ["/challenges", "trophy"],
   ["/ammu-nation", "gunstore"],
   ["/shooting-ranges", "range"],

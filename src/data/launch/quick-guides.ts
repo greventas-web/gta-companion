@@ -261,6 +261,12 @@ const L = {
   paydayLoans: { href: "/where-to-find/payday-loans", title: "All 7 Payday Loans", kind: "money" },
   gyms: { href: "/where-to-find/gyms", title: "All 9 gyms", image: GYM, imageAlt: "A gym workout, official Rockstar still", kind: "activity" },
   hundred: { href: "/guides/100-percent-completion", title: "100% checklist", kind: "trophy" },
+  ufo: { href: "/guides/ufo", title: "UFO easter egg", kind: "activity" },
+  wainkLocations: { href: "/collectibles/waink-locations", title: "WAiNK locations", line: "Landmarks, sculptures, curiosities", kind: "collectible" },
+  magazines: { href: "/collectibles/magazines-books-comics", title: "Magazines, books and comics", line: "27 to read", kind: "collectible" },
+  uniqueRaces: { href: "/collectibles/unique-races", title: "All 40 unique races", image: TRACK_RACING, imageAlt: "Track racing, official Rockstar still", kind: "activity" },
+  gasStations: { href: "/where-to-find/gas-stations", title: "All 57 gas stations", image: GAS_STATION, imageAlt: "The services prompt at a gas station pump", kind: "vehicle" },
+  carWashes: { href: "/where-to-find/car-washes", title: "All 6 car washes", kind: "vehicle" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -1008,7 +1014,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Do cars run out of gas in GTA 6?", answer: "Yes. Gas cars need fuel. The pump icon turns yellow when you're low and red when the tank is empty." },
       { question: "How do you refuel in GTA 6?", answer: "Drive up to a pump at a gas station and press X on PS5 or A on Xbox, then pick refuel." },
     ],
-    related: [L.repairCar, L.customize, L.callCar, L.register],
+    related: [L.gasStations, L.repairCar, L.customize, L.callCar, L.register],
   },
   {
     slug: "repair-car",
@@ -1034,7 +1040,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you repair your car in GTA 6?", answer: "Drive up to a pump at a gas station and choose repair. In Chapter 1 you can also call Joey." },
       { question: "What happens if your car is destroyed in GTA 6?", answer: "A registered car comes back through Scooter Bros for a fee. A stolen car you haven't registered is lost, with anything in its trunk." },
     ],
-    related: [L.refuel, L.callCar, L.register, L.customize],
+    related: [L.refuel, L.carWashes, L.callCar, L.register, L.customize],
   },
   {
     slug: "customize-car",
@@ -1992,7 +1998,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you unlock street races in GTA 6?", answer: "The Vice City street-race series unlocks in Chapter 3 after Dealer's Choice. Mud-club races open in Chapter 2 from Thrillbillies. Other tracks can be found around Leonida." },
       { question: "How many races are in GTA 6?", answer: "There are 40 unique races in several groups. You pay an entry or rental fee, and winning pays prize money." },
     ],
-    related: [L.racesMoney, L.vehiclesHub, L.register, L.money],
+    related: [L.uniqueRaces, L.racesMoney, L.vehiclesHub, L.register, L.money],
   },
   {
     slug: "headlights",
@@ -2395,7 +2401,7 @@ export const quickGuides: QuickGuide[] = [
     kind: "phone",
     answer: [
       "Hold Up on the D-pad to open the WAiNK camera, then scan the animal, plant or object in front of you.",
-      "You need 100 scans for a trophy. Track them under Progress, then Exploration.",
+      "You need 100 WAiNK locations for a trophy: landmarks, sculptures, curiosities and No Flusher tags. Track them under Progress > Collections > WAiNK Locations.",
     ],
     facts: [
       { label: "Open camera", value: "Hold D-pad Up" },
@@ -2403,9 +2409,9 @@ export const quickGuides: QuickGuide[] = [
     ],
     faqs: [
       { question: "How do you scan with WAiNK in GTA 6?", answer: "Hold Up on the D-pad to open the camera, then scan the animal, plant or object in front of you." },
-      { question: "How many WAiNK scans do you need in GTA 6?", answer: "100 scans unlock a trophy. Track them under Progress, then Exploration." },
+      { question: "How many WAiNK scans do you need in GTA 6?", answer: "100 WAiNK locations unlock a trophy. Track them under Progress > Collections > WAiNK Locations." },
     ],
-    related: [L.waink, L.usePhone, L.collectiblesHub, L.trophiesGuide],
+    related: [L.wainkLocations, L.waink, L.usePhone, L.collectiblesHub, L.trophiesGuide],
   },
   {
     slug: "horn",
@@ -2528,7 +2534,33 @@ export const quickGuides: QuickGuide[] = [
       { question: "Is there Bigfoot in GTA 6?", answer: "Yes. There is a Bigfoot easter egg at Cottonmouth Lake, just south of Hamlet." },
       { question: "How do you find Bigfoot in GTA 6?", answer: "Go to Cottonmouth Lake south of Hamlet, listen for a growl, and look for the creature by an animal carcass. Following it into the swamp triggers a short scene." },
     ],
-    related: [L.hamlet, L.grassrivers, L.hunting, L.animals],
+    related: [L.hamlet, L.grassrivers, L.hunting, L.animals, L.ufo],
+  },
+  {
+    slug: "ufo",
+    title: "GTA 6 UFO Location: How to Find the Aliens",
+    heading: "Where to find the UFO",
+    description:
+      "Where to find the UFO in GTA 6: the road northwest of the Starlet Motel in Kelly County, after 2 AM, alone. Look for a car with flashing lights. Unofficial.",
+    keywords: ["GTA 6 UFO", "GTA 6 UFO location", "GTA 6 aliens", "GTA 6 alien abduction", "GTA 6 easter egg UFO", "GTA 6 Starlet Motel UFO"],
+    kind: "activity",
+    answer: [
+      "Once Chapter 1 is done, go to the road northwest of the Starlet Motel in Kelly County after 2:00 AM. Go alone.",
+      "Look for a stranded car with flashing lights by the road. If it isn't there, drive away and come back later. It doesn't show up every time.",
+      "Follow the trail next to the car into the woods toward a blue light. The UFO drops a woman it was abducting. Offer to help and go back to her car, and the aliens take you instead.",
+    ],
+    facts: [
+      { label: "Where", value: "Road northwest of the Starlet Motel, Kelly County" },
+      { label: "When", value: "After 2:00 AM, after Chapter 1" },
+      { label: "Clue", value: "A stranded car with flashing lights" },
+      { label: "Go", value: "Alone" },
+    ],
+    faqs: [
+      { question: "Are there UFOs in GTA 6?", answer: "Yes. There is a UFO encounter on the road northwest of the Starlet Motel in Kelly County, at night after 2:00 AM." },
+      { question: "How do you find the UFO in GTA 6?", answer: "Go alone after 2:00 AM and look for a stranded car with flashing lights. Follow the trail into the woods toward the blue light, help the woman, then go back to her car." },
+      { question: "Why can't I find the UFO in GTA 6?", answer: "It doesn't spawn every time. If the car with flashing lights isn't there, drive away and come back later. Make sure it's after 2:00 AM and you're alone." },
+    ],
+    related: [L.bigfoot, L.wainkLocations, L.grassrivers, L.hundred],
   },
   {
     slug: "weather",
@@ -3037,6 +3069,9 @@ export const quickGuides: QuickGuide[] = [
       { href: "/collectibles/video-games", title: "Video games", line: "4 of 4", kind: "collectible" },
       { href: "/collectibles/book-swaps", title: "Book Swaps", line: "Count with magazines", kind: "collectible" },
       { href: "/collectibles/unique-playlists", title: "Unique playlists", line: "2 of 2", kind: "collectible" },
+      { href: "/collectibles/waink-locations", title: "WAiNK locations", line: "100", kind: "collectible" },
+      { href: "/collectibles/magazines-books-comics", title: "Magazines, books and comics", line: "30 of 34 with Book Swaps", kind: "collectible" },
+      { href: "/collectibles/unique-races", title: "Unique races", line: "30 of 40", kind: "collectible" },
       { href: "/challenges", title: "Challenges", line: "70 of 80", kind: "challenge" },
       { href: "/collectibles", title: "Collectibles", kind: "collectible" },
       { href: "/pro", title: "Completion tracker", kind: "trophy" },

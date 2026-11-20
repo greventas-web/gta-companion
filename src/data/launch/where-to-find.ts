@@ -7,6 +7,8 @@
  * The topic page fails the build if a pin id does not exist, so a typo cannot
  * ship a dead map link.
  */
+import { carWashSources, gasSources } from "./batch5-sources";
+
 export type WhereSource = { label: string; href: string };
 
 export type WherePlace = {
@@ -1109,6 +1111,195 @@ export const whereToFindTopics: WhereTopic[] = [
       { href: "/businesses/the-rusty-anchor", label: "The Rusty Anchor" },
       { href: "/collectibles/unique-playlists", label: "Unique playlists" },
       { href: "/activities/nightlife", label: "Nightlife" },
+    ],
+  },
+  {
+    slug: "car-washes",
+    heading: "GTA 6 car wash locations",
+    label: "Car washes",
+    metaTitle: "GTA 6 Car Wash Locations – All 6 Car Washes",
+    metaDescription:
+      "All 6 GTA 6 car wash locations in Vice City: RON, Xero and Park N Glow. How to find them on the map, plus the other way to clean your car. Unofficial.",
+    keywords: [
+      "GTA 6 car wash",
+      "GTA 6 car wash locations",
+      "GTA 6 how to wash car",
+      "GTA 6 clean car",
+      "GTA 6 where is the car wash",
+    ],
+    answer:
+      "There are 6 car washes, all in Vice City. Drive through one to clean your car. Repairing your car cleans it too, so a car wash is optional.",
+    facts: [
+      "Car washes show as a blue car icon once you uncover that part of the map.",
+      "Filter with Map > Vehicles > Car Washes. A counter shows how many you've found.",
+      "Washing your car isn't part of the 100% checklist.",
+    ],
+    groups: [
+      {
+        heading: "Vice City car washes (6)",
+        places: [
+          { name: "RON Car Wash – Salton", area: "Salton, Vice City", areaPin: pin("salton") },
+          { name: "Park N Glow", area: "Vice City" },
+          { name: "RON Car Wash – Balsero", area: "Balsero, Vice City", areaPin: pin("balsero") },
+          { name: "Xero Car Wash – Southside", area: "Southside, Vice City", areaPin: pin("southside-vice-city") },
+          { name: "Xero Car Wash – La Perle", area: "La Perle, Vice City", areaPin: pin("la-perle") },
+          { name: "RON Car Wash – Bayside", area: "Bayside, Vice City" },
+        ],
+      },
+    ],
+    mapPin: pin("salton"),
+    mapPinLabel: "Salton",
+    faqs: [
+      {
+        question: "Is there a car wash in GTA 6?",
+        answer: "Yes, 6 of them, all in Vice City: RON Car Wash in Salton, Balsero and Bayside, Xero Car Wash in Southside and La Perle, and Park N Glow.",
+      },
+      {
+        question: "How do you clean your car in GTA 6?",
+        answer: "Drive through a car wash, or repair the car, for example at a gas station pump. Repairing it cleans it too.",
+      },
+      {
+        question: "How do you find car washes on the map?",
+        answer: "Open the map and filter Vehicles > Car Washes. They show as a blue car icon once you've uncovered the area.",
+      },
+    ],
+    sources: carWashSources,
+    related: [
+      { href: "/guides/repair-car", label: "Repair your car" },
+      { href: "/where-to-find/pay-n-spray", label: "Pay 'n' Spray" },
+      { href: "/where-to-find/mod-shops", label: "Mod shops" },
+      { href: "/where-to-find/gas-stations", label: "Gas stations" },
+      { href: "/guides/customize-car", label: "Customize your car" },
+    ],
+  },
+  {
+    slug: "gas-stations",
+    heading: "GTA 6 gas station locations",
+    label: "Gas stations",
+    metaTitle: "GTA 6 Gas Station Locations – All 57 Gas Stations",
+    metaDescription:
+      "All 57 GTA 6 gas stations by county, how to check your fuel, and what happens when you run out of gas. With map links. Unofficial.",
+    keywords: [
+      "GTA 6 gas station",
+      "GTA 6 gas station locations",
+      "GTA 6 where to get gas",
+      "GTA 6 fuel",
+      "GTA 6 run out of gas",
+    ],
+    answer:
+      "There are 57 gas stations across Leonida, 26 of them in Vice-Dale County. Every vehicle uses gas, and a car that runs dry stops. When you're low, the gauge turns yellow and nearby stations get marked for you.",
+    facts: [
+      "Gas stations show as a blue pump icon. Filter with Map > Vehicles > Gas Stations.",
+      "Check fuel with D-pad Down, if the gauge is turned on in the UI settings.",
+      "Pull up to a pump to refuel. See the refuel guide for the buttons.",
+    ],
+    groups: [
+      {
+        heading: "Mariana County (7)",
+        places: [
+          { name: "Xero Gas – Southwind", areaPin: pin("southwind") },
+          { name: "247 Gas – Key Lento", areaPin: pin("leonida-keys") },
+          { name: "Globe Oil Gas – Watson Bay", areaPin: pin("watson-bay") },
+          { name: "Xero Gas – Grassrivers", areaPin: pin("grassrivers") },
+          { name: "Xero Gas – Grassrivers 2", areaPin: pin("grassrivers") },
+          { name: "Xero Gas – Capri", areaPin: pin("capri") },
+          { name: "LTD Gas – Capri", areaPin: pin("capri") },
+        ],
+      },
+      {
+        heading: "Vice-Dale County (26)",
+        places: [
+          { name: "Xero Gas – Hamlet", areaPin: pin("hamlet") },
+          { name: "Globe Oil Gas – Hamlet", areaPin: pin("hamlet") },
+          { name: "LTD Gas – Hamlet", areaPin: pin("hamlet") },
+          { name: "Arrow Gas – Hamlet", areaPin: pin("hamlet") },
+          { name: "Xero Gas – Southside", areaPin: pin("southside-vice-city") },
+          { name: "Ron Gas – Southside", areaPin: pin("southside-vice-city") },
+          { name: "Xero Gas – Tequesta", areaPin: pin("tequesta") },
+          { name: "Arrow Gas – VCIA", areaPin: pin("vice-city-international-airport") },
+          { name: "Xero Gas – Salton", areaPin: pin("salton") },
+          { name: "Ron Gas – Salton", areaPin: pin("salton") },
+          { name: "247 Gas – West Vice-Dale County" },
+          { name: "Ron Gas – Balsero 1" },
+          { name: "Ron Gas – Balsero 2" },
+          { name: "Ron Gas – Little Cuba", areaPin: pin("little-cuba") },
+          { name: "Emilio's Auto Center Gas" },
+          { name: "Globe Oil Gas – Crosstown", areaPin: pin("crosstown") },
+          { name: "Xero Gas – Rockridge" },
+          { name: "Vargo's Gas" },
+          { name: "Xero Gas – Crosstown", areaPin: pin("crosstown") },
+          { name: "Arrow Gas – La Perle", areaPin: pin("la-perle") },
+          { name: "Xero Gas – La Perle", areaPin: pin("la-perle") },
+          { name: "Ron Gas – Bayside" },
+          { name: "Arrow Gas – Decor District", areaPin: pin("decor-district") },
+          { name: "Xero Gas – Washington Beach", areaPin: pin("washington-beach") },
+          { name: "Ron Gas – Washington Beach", areaPin: pin("washington-beach") },
+          { name: "LTD Gas – Ocean Beach", areaPin: pin("ocean-beach") },
+        ],
+      },
+      {
+        heading: "Kelly County (12)",
+        places: [
+          { name: "Xero Gas – Buckskin Swamp 1" },
+          { name: "Xero Gas – Buckskin Swamp 2" },
+          { name: "Xero Gas – South Kelly County" },
+          { name: "Emerald Springs Country Store Gas" },
+          { name: "247 Gas – Emerald Springs" },
+          { name: "Alpha Gas – Gellhorn" },
+          { name: "Eager Beaver Gas" },
+          { name: "Oyster Point Gas Stop" },
+          { name: "Arrow Gas – Port Gellhorn", areaPin: pin("port-gellhorn") },
+          { name: "Vortex & Percy's General Store" },
+          { name: "Jackson's Tire Co." },
+          { name: "Xero Gas – Ambrosia", areaPin: pin("ambrosia") },
+        ],
+      },
+      {
+        heading: "Leonard County (6)",
+        places: [
+          { name: "Xero Gas – Belville", areaPin: pin("belville") },
+          { name: "247 Gas – Belville", areaPin: pin("belville") },
+          { name: "Arrow Gas – Belville", areaPin: pin("belville") },
+          { name: "Alpha Gas – Belville", areaPin: pin("belville") },
+          { name: "Xero Gas – Waning Sands", areaPin: pin("waning-sands") },
+          { name: "Arrow Gas – Waning Sands", areaPin: pin("waning-sands") },
+        ],
+      },
+      {
+        heading: "Lummox County (6)",
+        places: [
+          { name: "Globe Oil Gas – Grayson" },
+          { name: "247 Gas – West Kalaga" },
+          { name: "Buck Creek Country Store" },
+          { name: "Redshaw's Gasoline" },
+          { name: "247 Gas – Millport", areaPin: pin("millport") },
+          { name: "Xero Gas – Millport", areaPin: pin("millport") },
+        ],
+      },
+    ],
+    mapPin: pin("hamlet"),
+    mapPinLabel: "Hamlet",
+    faqs: [
+      {
+        question: "How many gas stations are in GTA 6?",
+        answer: "57: 7 in Mariana County, 26 in Vice-Dale County, 12 in Kelly County, 6 in Leonard County and 6 in Lummox County.",
+      },
+      {
+        question: "What happens if you run out of gas in GTA 6?",
+        answer: "The vehicle stops and you can't drive it any further. When fuel is low the gauge turns yellow and nearby gas stations get marked.",
+      },
+      {
+        question: "How do you find gas stations in GTA 6?",
+        answer: "Open the map and filter Vehicles > Gas Stations. They show as a blue pump icon.",
+      },
+    ],
+    sources: gasSources,
+    related: [
+      { href: "/guides/refuel", label: "How to refuel" },
+      { href: "/where-to-find/car-washes", label: "Car washes" },
+      { href: "/guides/repair-car", label: "Repair your car" },
+      { href: "/where-to-find/pay-n-spray", label: "Pay 'n' Spray" },
+      { href: "/where-to-find/mod-shops", label: "Mod shops" },
     ],
   },
 ];

@@ -15,6 +15,8 @@ const TROPHY_GUIDES: Record<string, { href: string; label: string }[]> = {
   "one-last-thing": [{ href: "/challenges", label: "All 80 challenges" }],
   "a-long-road": [{ href: "/guides/100-percent-completion", label: "Full 100% checklist" }],
   "stick-fiddler": [{ href: "/collectibles/video-games", label: "All 4 video games" }],
+  "you-wainker": [{ href: "/collectibles/waink-locations", label: "WAiNK locations: landmarks, sculptures, curiosities" }, { href: "/guides/waink-scans", label: "How to scan" }],
+  "earn-cash-not-kudos": [{ href: "/collectibles/unique-races", label: "All 40 unique races" }],
   "little-boxes": [{ href: "/where-to-find/garages", label: "All 8 garages for sale" }, { href: "/properties", label: "Properties" }],
   "positive-mental-attitude": [{ href: "/collectibles/meditation-spots", label: "All 10 meditation spots" }],
   "top-fun": [{ href: "/collectibles/top-fun-drone-races", label: "All 14 drone race spots" }],
