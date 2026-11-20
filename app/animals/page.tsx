@@ -7,6 +7,8 @@ import { animals } from "@/data/animals";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 animals',
@@ -47,6 +49,7 @@ export default function AnimalsPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="animals" />
+      <QuickGuideGrid guides={quickGuideCards(["hunting", "fishing", "pet-snake", "island-dreams", "swimming", "waink-scans", "bigfoot"])} />
     </PageShell>
   );
 }

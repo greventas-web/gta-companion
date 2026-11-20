@@ -1,6 +1,10 @@
+import { Newspaper } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
+import { BlankSurface } from "@/components/simple/SimpleCard";
 import PageContainer from "@/components/shared/PageContainer";
+import { resolveCardImage } from "@/lib/simple/cardImage";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SITE, SOCIAL_PROFILES, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
@@ -76,7 +80,7 @@ export default function PartnersPage() {
                   >
                     {group.category}
                   </h2>
-                  <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <ul className="mt-5 grid gap-5 sm:grid-cols-2">
                     {group.entries.map((partner) => (
                       <li key={partner.url}>
                         <PartnerCard partner={partner} />
@@ -137,50 +141,88 @@ function categoryHeadingId(category: string) {
 
 function PartnerCard({ partner }: { partner: Partner }) {
   const href = partnerHref(partner.url);
-  const name = href ? (
-    <a
-      href={href}
-      target="_blank"
-      rel={partnerRel(partner.rel)}
-      className="text-xl font-black tracking-[-0.02em] text-white underline-offset-4 hover:text-violet-200 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-200"
+  const resolved = resolveCardImage({ title: partner.name, kind: "news" });
+  const isArt = resolved.source === "art";
+  const rel = partnerRel(partner.rel);
+
+  const body = (
+    <article
+      data-img-source={resolved.source}
+      data-art-key={isArt ? resolved.artKey : undefined}
+      className="relative h-full min-h-[184px] overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 sm:min-h-[200px]"
     >
-      {partner.name}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
-  ) : (
-    <span className="text-xl font-black tracking-[-0.02em]">{partner.name}</span>
+      {resolved.src ? (
+        <Image
+          src={resolved.src}
+          alt={isArt ? `${partner.name} artwork` : partner.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
+      ) : (
+        <BlankSurface />
+      )}
+      <div
+        className={`absolute inset-0 transition-all duration-500 ${
+          isArt ? "bg-black/25 group-hover:bg-black/10" : "bg-black/55 group-hover:bg-black/35"
+        }`}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="relative z-20 flex h-full flex-col justify-end p-5">
+        <Newspaper size={22} className="mb-3 text-pink-400" aria-hidden />
+        <h3 className="break-words text-2xl font-black leading-none tracking-[-0.03em] text-white">
+          {partner.name}
+        </h3>
+        <p className="mt-2 line-clamp-2 text-sm font-semibold text-pink-300">{partner.description}</p>
+      </div>
+    </article>
   );
 
   return (
-    <article className="flex h-full gap-4 rounded-[28px] border border-violet-400/15 bg-[#120e1c] p-6">
-      {partner.logo ? (
-        // Partner logos are served as provided. Do not run them through
-        // image optimization or the build-time variant pipeline.
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={partner.logo}
-          alt=""
-          width={48}
-          height={48}
-          loading="lazy"
-          decoding="async"
-          className="h-12 w-12 shrink-0 rounded-2xl bg-white/5 object-contain"
-        />
-      ) : (
-        <span
-          aria-hidden="true"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-violet-500/15 text-lg font-black text-violet-200"
+    <div className="flex h-full flex-col">
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel={rel}
+          className="group block rounded-[24px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 active:scale-[0.99]"
         >
-          {partner.name.slice(0, 1)}
-        </span>
+          {body}
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      ) : (
+        <div className="group">{body}</div>
       )}
-      <div>
-        <p className="text-[11px] font-black uppercase tracking-[0.18em] text-violet-300">
-          {partner.category}
-        </p>
-        <h3 className="mt-2">{name}</h3>
-        <p className="mt-2 leading-7 text-zinc-400">{partner.description}</p>
-      </div>
-    </article>
+      <PartnerLinks partner={partner} rel={rel} />
+    </div>
+  );
+}
+
+function PartnerLinks({ partner, rel }: { partner: Partner; rel: string }) {
+  const links = (partner.links ?? []).flatMap((link) => {
+    const href = partnerHref(link.url);
+    return href ? [{ label: link.label, href }] : [];
+  });
+
+  if (links.length === 0) return null;
+
+  return (
+    <ul className="mt-3 flex flex-wrap gap-2">
+      {links.map((link) => (
+        <li key={link.href}>
+          <a
+            href={link.href}
+            target="_blank"
+            rel={rel}
+            className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-zinc-200 transition hover:border-pink-400/40 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-300"
+          >
+            {link.label}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }

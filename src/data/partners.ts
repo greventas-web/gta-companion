@@ -2,10 +2,14 @@ export const partnerCategories = ["Fan site", "Creator", "Discord"] as const;
 
 export type PartnerCategory = (typeof partnerCategories)[number];
 
+export type PartnerLink = {
+  label: string;
+  url: string;
+};
+
 export type Partner = {
   name: string;
   url: string;
-  logo?: string;
   description: string;
   category: PartnerCategory;
   /**
@@ -13,21 +17,37 @@ export type Partner = {
    * Do not use "nofollow" — partner links are followed.
    */
   rel: readonly string[];
+  /** Extra followed links shown under the card. */
+  links?: readonly PartnerLink[];
 };
 
 /**
  * Live link-swap partners. Add one object to publish a partner.
+ * Cards use the site's Browse artwork. Do not hotlink a remote logo.
  *
  * {
  *   name: "Example Fan Site",
  *   url: "https://example.com",
- *   logo: "https://example.com/logo.png",
  *   description: "Short description of the site or channel.",
  *   category: "Fan site",
  *   rel: ["noopener"],
+ *   links: [{ label: "Guides", url: "https://example.com/guides" }],
  * }
  */
-export const partners: readonly Partner[] = [];
+export const partners: readonly Partner[] = [
+  {
+    name: "GTA6 Times",
+    url: "https://gta6times.com",
+    description: "Unlock times, prices worldwide and guides for GTA 6.",
+    category: "Fan site",
+    rel: ["noopener"],
+    links: [
+      { label: "Unlock times by country", url: "https://gta6times.com/gta-6/release-time" },
+      { label: "Price in every country", url: "https://gta6times.com/gta-6/price-worldwide" },
+      { label: "All guides", url: "https://gta6times.com/gta-6/guides" },
+    ],
+  },
+];
 
 export function partnerHref(url: string): string | null {
   try {

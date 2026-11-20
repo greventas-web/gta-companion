@@ -5,6 +5,8 @@ import { properties } from "@/data/properties";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 properties',
@@ -44,6 +46,7 @@ export default function PropertiesPage() {
           ))}
         </CardGrid>
       ))}
+      <QuickGuideGrid guides={quickGuideCards(["buy-a-house", "fix-railing", "register-car", "feng-shui", "pet-snake", "skip-time", "just-a-scratch"])} />
     </PageShell>
   );
 }
