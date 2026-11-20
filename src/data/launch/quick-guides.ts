@@ -267,6 +267,12 @@ const L = {
   uniqueRaces: { href: "/collectibles/unique-races", title: "All 40 unique races", image: TRACK_RACING, imageAlt: "Track racing, official Rockstar still", kind: "activity" },
   gasStations: { href: "/where-to-find/gas-stations", title: "All 57 gas stations", image: GAS_STATION, imageAlt: "The services prompt at a gas station pump", kind: "vehicle" },
   carWashes: { href: "/where-to-find/car-washes", title: "All 6 car washes", kind: "vehicle" },
+  shipwrecks: { href: "/guides/shipwrecks", title: "Kenton's shipwrecks", image: TREASURE, imageAlt: "Jason diving for treasure at a shipwreck", kind: "activity" },
+  bars: { href: "/where-to-find/bars", title: "All bars", kind: "business" },
+  convenienceStores: { href: "/where-to-find/convenience-stores", title: "All 72 convenience stores", kind: "store" },
+  streetFood: { href: "/where-to-find/street-food", title: "All street food vendors", kind: "store" },
+  liquorStores: { href: "/where-to-find/liquor-stores", title: "All 14 liquor stores", kind: "store" },
+  fastFood: { href: "/where-to-find/fast-food", title: "All 21 fast food stores", kind: "store" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -632,7 +638,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you heal in GTA 6?", answer: "Take Zombix from your loadout, or eat and drink items with a heart icon. Out of combat, health slowly refills part of the way on its own." },
       { question: "Where do you get Zombix in GTA 6?", answer: "Buy it from the clerk at convenience stores." },
     ],
-    related: [L.focus, L.weapons, L.wanted, L.tips],
+    related: [L.focus, L.weapons, L.wanted, L.tips, L.convenienceStores, L.streetFood],
   },
   {
     slug: "change-clothes",
@@ -938,7 +944,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where are the treasures in GTA 6 Island Dreams?", answer: "Outside the wreck, not inside. One is by the flat wreck plates, one at the base of the rock wall and one by a crate on the sandy floor." },
       { question: "How do you find treasure in GTA 6?", answer: "Equip the metal detector and sweep the seabed. When its light turns green, swim closer until the gold chest prompt appears." },
     ],
-    related: [L.islandMission, L.kenton, L.treasureDiving, L.shark, L.scuba],
+    related: [L.islandMission, L.kenton, L.treasureDiving, L.shark, L.scuba, L.shipwrecks],
   },
   {
     slug: "pick-up-groceries",
@@ -988,7 +994,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you get scuba gear in GTA 6?", answer: "At Kenton's Island Dreams dock in Key Lento. Use the prompt by the yellow tanks on the charter boat, or the spare set on the dock." },
       { question: "How do you dive underwater in GTA 6?", answer: "Put on the scuba gear, get in the water and hold R1 on PS5 or RB on Xbox." },
     ],
-    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark],
+    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark, L.shipwrecks],
   },
   {
     slug: "refuel",
@@ -1420,7 +1426,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you rob a store in GTA 6?", answer: "Aim your gun at the clerk and he empties the register. For more cash, turn off the alarm and open the back-room safe." },
       { question: "Where are safe codes in GTA 6?", answer: "Each store's code is on a note or screen nearby, or an employee gives it up when threatened." },
     ],
-    related: [L.storeRobberies, L.mask, L.wanted, L.moneyGlitch],
+    related: [L.storeRobberies, L.mask, L.wanted, L.moneyGlitch, L.liquorStores],
   },
   {
     slug: "lose-wanted",
@@ -2561,6 +2567,35 @@ export const quickGuides: QuickGuide[] = [
       { question: "Why can't I find the UFO in GTA 6?", answer: "It doesn't spawn every time. If the car with flashing lights isn't there, drive away and come back later. Make sure it's after 2:00 AM and you're alone." },
     ],
     related: [L.bigfoot, L.wainkLocations, L.grassrivers, L.hundred],
+  },
+  {
+    slug: "shipwrecks",
+    title: "GTA 6 Shipwreck Locations: Kenton's Treasures",
+    heading: "Kenton's shipwrecks",
+    description:
+      "GTA 6 shipwreck locations: six wrecks off Key Lento for Kenton's Treasures, what to bring, and how the metal detector works. Unofficial.",
+    keywords: ["GTA 6 shipwreck locations", "GTA 6 Kenton's Treasures", "GTA 6 underwater discoveries", "GTA 6 treasure hunting", "GTA 6 metal detector", "GTA 6 doubloons"],
+    image: TREASURE,
+    imageAlt: "Jason diving for treasure at a shipwreck",
+    kind: "activity",
+    answer: [
+      "Kenton's Treasures start in Chapter 1 with the mission Island Dreams. Kenton marks a shipwreck, you dive down, collect what's there, and bring it back to him for cash. Later he offers new wrecks.",
+      "The first six wrecks are all off Key Lento in Mariana County: Nuestra Señora de la Noche, Nuestra Señora de la Ética Laxa, Nuestra Señora Lujuriosa, Urca de Cinco Torres, Urca de Santa Sierra, and the wreck you visit in Island Dreams. They sit south and east of Key Lento.",
+      "Island Dreams gives you scuba gear, the Arras Bullhead (a harpoon gun for sharks) and a metal detector. Pan the detector until you see a green flash, head that way as the pings speed up, then grab the treasure when the prompt shows.",
+    ],
+    facts: [
+      { label: "Starts", value: "Island Dreams, Chapter 1" },
+      { label: "First six wrecks", value: "Off Key Lento, Mariana County" },
+      { label: "You get", value: "Scuba gear, Arras Bullhead, metal detector" },
+      { label: "Track it", value: "Progress > Collections > Kenton's Treasures" },
+    ],
+    faqs: [
+      { question: "Where are the shipwrecks in GTA 6?", answer: "The first six are off Key Lento in Mariana County, to the south and east of the island. You visit the first one during the Chapter 1 mission Island Dreams." },
+      { question: "How do you find treasure in GTA 6?", answer: "Take out the metal detector at a wreck and pan it around. A green flash shows the direction, and the pings get faster as you get close. Grab the treasure when the prompt appears." },
+      { question: "What do you need for Kenton's Treasures in GTA 6?", answer: "Scuba gear, a metal detector and the Arras Bullhead harpoon gun for sharks. Island Dreams gives you all three. If you use another boat, Kenton has them delivered to it." },
+      { question: "What do you do with the treasure in GTA 6?", answer: "Bring it back to Kenton in exchange for cash. Once you've found everything at a wreck, that wreck counts as complete." },
+    ],
+    related: [L.islandMission, L.islandDreams, L.treasureDiving, L.scuba, L.kenton, L.shark],
   },
   {
     slug: "weather",
