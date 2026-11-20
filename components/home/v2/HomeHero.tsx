@@ -1,10 +1,10 @@
-import { Gamepad2, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const HERO_IMAGE = "/images/official/media/artwork-jason-and-lucia-beach-jason-and-lucia-beach-landscape.webp";
 
-/** Homepage hero: Jason and Lucia sunset key art, big glowing title, two buttons. */
+/** Homepage hero: Jason and Lucia sunset key art, big glowing title, map button. */
 export default function HomeHero() {
   return (
     <section className="mx-auto max-w-[1600px] px-6 pt-24 sm:px-10 sm:pt-28 lg:px-14">
@@ -57,13 +57,6 @@ export default function HomeHero() {
               >
                 <MapPin size={18} aria-hidden />
                 Open the map
-              </Link>
-              <Link
-                href="/cheats"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-3 text-[15px] sm:px-7 sm:py-3.5 sm:text-base font-black text-white backdrop-blur-md transition hover:border-pink-300/60 hover:bg-white/15 active:scale-[0.97]"
-              >
-                <Gamepad2 size={18} aria-hidden />
-                Cheats
               </Link>
             </div>
           </div>
