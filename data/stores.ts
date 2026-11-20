@@ -340,6 +340,8 @@ export const stores: Store[] = [
     area: "Not published",
     editionRequirement: "none",
     editionLabel: "Not an edition bonus",
+    image: "/images/footage/brands/ammu-nation.webp",
+    imageAlt: "An Ammu-Nation sign at Chuck's Tackle & Shot in Key Lento",
     summary:
       "Named in sourced interviews as locker storage for long guns. No branch list has been published, so this page has no map pins.",
     hasPin: false,

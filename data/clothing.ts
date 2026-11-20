@@ -98,6 +98,9 @@ export const clothing: ClothingItem[] = [
     id: 3,
     slug: "vintage-vice-city-looks",
     name: "Vintage Vice City outfits and hairstyles",
+    image: "/images/official/editions/vintage_vice_city_pack_exclusive_looks_01.webp",
+    imageAlt:
+      "Jason and Lucia in their Vintage Vice City Pack looks (official Rockstar image)",
     kind: "pack",
     kindLabel: "Pack",
     group: "Packs",
@@ -141,6 +144,9 @@ export const clothing: ClothingItem[] = [
     id: 4,
     slug: "jason-pastel-linen-suit",
     name: "Jason's pastel linen suit",
+    image: "/images/official/editions/vintage_vice_city_pack_02.webp",
+    imageAlt:
+      "Jason in the pastel linen suit next to Lucia and the '55 Vapid Stanier (official Rockstar image)",
     kind: "outfit",
     kindLabel: "Outfit",
     group: "Named pieces",
@@ -160,7 +166,6 @@ export const clothing: ClothingItem[] = [
       },
     ],
     unpublished: [
-      "A still of this suit in the image set",
       "A separate name for the haircut",
       "Price",
       "Story unlock timing",
@@ -172,6 +177,9 @@ export const clothing: ClothingItem[] = [
     id: 5,
     slug: "lucia-red-sequin-mini-dress",
     name: "Lucia's red sequin mini dress",
+    image: "/images/official/editions/vintage_vice_city_pack_01.webp",
+    imageAlt:
+      "Lucia in the red sequin mini dress outside the Ocean View Hotel (official Rockstar image)",
     kind: "outfit",
     kindLabel: "Outfit",
     group: "Named pieces",
@@ -191,7 +199,6 @@ export const clothing: ClothingItem[] = [
       },
     ],
     unpublished: [
-      "A still of this dress in the image set",
       "A separate name for the curls",
       "Price",
       "Story unlock timing",
@@ -278,6 +285,9 @@ export const clothing: ClothingItem[] = [
     id: 8,
     slug: "jason-mullet",
     name: "Jason's mullet",
+    image: "/images/official/editions/ultimate_edition_saras_salon_02.webp",
+    imageAlt:
+      "Jason looking over his shoulder with his mullet from Sara's Unisex Salon (official Rockstar image)",
     kind: "hairstyle",
     kindLabel: "Hairstyle",
     group: "Named pieces",
@@ -298,7 +308,6 @@ export const clothing: ClothingItem[] = [
       },
     ],
     unpublished: [
-      "That labeled still in this image set",
       "Whether every player can select it on day one",
       "Price",
       "Other named cuts",

@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simple/SimpleCard";
 import { launchMetadata } from "@/lib/launch";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "GTA 6 Wanted System: Heat, Heat Area, and Six Stars";
 const description =
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
 export default function WantedSystemPage() {
   return (
     <PageShell>
-      <SimpleHero title="Wanted system" />
+      <SimpleHero title="Wanted system" image="/images/footage/places/wanted-hamlet-police.webp" />
       <QuickFacts
         wide
         facts={[
@@ -29,11 +31,12 @@ export default function WantedSystemPage() {
         ]}
       />
       <CardGrid heading="Related">
-        <SimpleCard href="/ammu-nation-locations" title="Ammu-Nation" line="Lockers for long guns." />
+        <SimpleCard href="/ammu-nation-locations" title="Ammu-Nation" line="Lockers for long guns." image="/images/footage/brands/ammu-nation.webp" />
         <SimpleCard href="/phone/scooter-bros" title="Scooter Bros" line="Brings your car and its trunk." />
         <SimpleCard href="/phone/banking-app" title="BuckMe" line="Bank your cash." />
         <SimpleCard href="/map" title="Map" image="/images/official/locations/vice-city.webp" />
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["lose-wanted", "mask", "change-clothes", "how-to-heal", "impounded-car", "rob-store", "stealth-takedown", "haircut", "gang-hideouts", "wasted-busted", "police-scanner", "criminal-profile", "crouch", "drive-by"])} />
     </PageShell>
   );
 }

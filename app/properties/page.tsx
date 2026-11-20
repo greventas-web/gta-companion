@@ -5,6 +5,8 @@ import { properties } from "@/data/properties";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 properties – garages, prices and hideouts",
@@ -39,8 +41,9 @@ export default function PropertiesPage() {
               key={item.slug}
               href={`/properties/${item.slug}`}
               title={item.name}
-              image={undefined}
-              line={item.region}
+              image={item.image}
+              eyebrow={item.type}
+              line={item.area.toLowerCase().includes(item.region.toLowerCase()) ? item.area : `${item.area} · ${item.region}`}
               price={item.price}
               mapHref={staticMapHref("property", item.slug) ?? (item.map.kind === "area" ? `/map?pin=${encodeURIComponent(item.map.pinId)}` : undefined)}
               small
@@ -48,6 +51,7 @@ export default function PropertiesPage() {
           ))}
         </CardGrid>
       ))}
+      <QuickGuideGrid guides={quickGuideCards(["buy-a-house", "fix-railing", "register-car", "feng-shui", "pet-snake", "skip-time", "just-a-scratch"])} />
     </PageShell>
   );
 }

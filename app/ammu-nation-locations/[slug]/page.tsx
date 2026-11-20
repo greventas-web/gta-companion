@@ -6,6 +6,7 @@ import SimpleDetail from "@/components/simple/SimpleDetail";
 import { detailMetadata } from "@/lib/pages";
 import { ammuStores, findAmmuStore } from "@/lib/simple/ammu";
 import { imageForPin } from "@/lib/simple/pinImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,7 +35,7 @@ export default async function AmmuStorePage({ params }: Props) {
         crumbs={[{ label: "Home", href: "/" }, { label: "Ammu-Nation", href: "/ammu-nation-locations" }, { label: store.name }]}
         eyebrow="Gun store"
         title={store.name}
-        image={store.exactPin ? imageForPin(store.pin).src : undefined}
+        image={imageForPath(`/ammu-nation-locations/${store.slug}`)?.src ?? (store.exactPin ? imageForPin(store.pin).src : undefined)}
         summary={`In ${store.area}.`}
         facts={[
           { label: "Stock", value: store.inventory },
@@ -47,6 +48,7 @@ export default async function AmmuStorePage({ params }: Props) {
           href: `/ammu-nation-locations/${item.slug}`,
           title: item.name,
           eyebrow: item.area,
+          image: imageForPath(`/ammu-nation-locations/${item.slug}`)?.src,
           chips: [{ value: item.inventory }],
           small: true,
         }))}

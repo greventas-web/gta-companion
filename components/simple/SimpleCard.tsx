@@ -1,5 +1,7 @@
 import {
   Activity,
+  Award,
+  BookOpen,
   Briefcase,
   Car,
   Crosshair,
@@ -29,7 +31,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { mapPinHref } from "@/components/map/MapPinLink";
-import { kindFromHref, resolveCardImage } from "@/lib/simple/cardImage";
+import { kindFromHref, resolveCardImage, resolveRealImage } from "@/lib/simple/cardImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 import { oneLine } from "@/lib/simple/text";
 
 import { TrackButton, TrackProgress } from "./Track";
@@ -93,6 +96,8 @@ export type SimpleCardProps = {
 };
 
 const ICONS: Record<string, LucideIcon> = {
+  guide: BookOpen,
+  challenge: Award,
   weapon: Crosshair,
   gunstore: Crosshair,
   range: Target,
@@ -166,7 +171,9 @@ export default function SimpleCard({
   const kind = kindProp ?? kindFromHref(href);
   const shortLine = oneLine(line);
   const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
-  const resolved = resolveCardImage({ image, title });
+  const placeImage = href ? imageForPath(href.split("#")[0])?.src : undefined;
+  const resolved = resolveCardImage({ image: image ?? placeImage, title, kind });
+  const isArt = resolved.source === "art";
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);
   const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
@@ -174,6 +181,7 @@ export default function SimpleCard({
   const body = (
     <article
       data-img-source={resolved.source}
+      data-art-key={isArt ? resolved.artKey : undefined}
       className={`relative h-full overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
         small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
       }`}
@@ -181,7 +189,7 @@ export default function SimpleCard({
       {resolved.src ? (
         <Image
           src={resolved.src}
-          alt={imageAlt || title}
+          alt={isArt ? `${title} artwork` : imageAlt || title}
           fill
           sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
           className="object-cover transition duration-500 group-hover:scale-105"
@@ -189,7 +197,11 @@ export default function SimpleCard({
       ) : (
         <BlankSurface />
       )}
-      <div className="absolute inset-0 bg-black/55 transition-all duration-500 group-hover:bg-black/35" />
+      <div
+        className={`absolute inset-0 transition-all duration-500 ${
+          isArt ? "bg-black/25 group-hover:bg-black/10" : "bg-black/55 group-hover:bg-black/35"
+        }`}
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -347,7 +359,7 @@ export function SimpleHero({
   intro?: string;
   badge?: string;
 }) {
-  const resolvedHero = image ? resolveCardImage({ image, title }) : null;
+  const resolvedHero = image ? resolveRealImage({ image, title }) : null;
   const photo = resolvedHero?.src ? { src: resolvedHero.src } : null;
   return (
     <header className="relative overflow-hidden rounded-[28px] border border-white/5 bg-[#08080A]">

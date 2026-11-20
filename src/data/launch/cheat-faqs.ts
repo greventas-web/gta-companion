@@ -3,7 +3,7 @@ import { cheatSources } from "./batch1-sources";
 /** Short "how cheats work" rows. */
 export const cheatBasics = [
   { label: "When", value: "After the story" },
-  { label: "Enter a code", value: "Phone, hold L1/LB, press R1/RB, then the code" },
+  { label: "Enter a code", value: "Phone, hold L1/LB and R1/RB, then the code" },
   { label: "Catch", value: "No trophies or saving that session" },
 ] as const;
 

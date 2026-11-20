@@ -27,11 +27,15 @@ import { whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find"
 import { shootingRanges } from "@/src/data/launch/shooting-ranges";
 import { challenges } from "@/src/data/launch/challenges";
 import { ammuStores } from "@/lib/simple/ammu";
+import { quickGuides } from "@/src/data/launch/quick-guides";
 import { stationPages } from "@/lib/simple/radio";
 
 const baseUrl = SITE.url;
 
+const quickGuidePaths = quickGuides.map((guide) => `/guides/${guide.slug}`);
+
 const launchPaths = [
+  ...quickGuidePaths,
   ...moneyMethods.map((entry) => `/money-methods/${entry.slug}`),
   ...fastestCars.map((entry) => `/fastest-cars/${entry.slug}`),
   ...mapLocations.map((entry) => `/map-locations/${entry.slug}`),
@@ -139,6 +143,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/properties",
     "/cheats",
     "/fastest-cars",
+    ...quickGuidePaths,
   ]);
   const lowPriority = new Set([
     "/about",

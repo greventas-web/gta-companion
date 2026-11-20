@@ -44,7 +44,7 @@ const locations: ExtraEntry[] = [
   { slug: "little-cuba", name: "Little Cuba", group: "Vice-Dale County", meta: "Vice City", pin: p("little-cuba"), summary: "A Vice City neighborhood known for its busy panaderías. It has a souvenir store and the Euroform Automotive mod shop." },
   { slug: "stockyard", name: "Stockyard", group: "Vice-Dale County", meta: "Vice City", pin: p("stockyard"), summary: "A Vice City district home to Stock 305, Electric Fang Tattoo, Vice Vinyl and Stockyard Speedshop." },
   { slug: "downtown-vice-city", name: "Downtown Vice City", group: "Vice-Dale County", meta: "Vice City", pin: p("downtown-vice-city"), summary: "The center of Vice City, with Slinger, Alpha Sports and Endzone clothing stores and a Pay 'n' Spray." },
-  { slug: "hamlet", name: "Hamlet", group: "Vice-Dale County", meta: "Vice-Dale County", pin: p("hamlet"), summary: "A town in Vice-Dale County with Sara's Unisex Salon, Kurt's Barber Shop, Hamlet Thrift and a Pay 'n' Spray." },
+  { slug: "hamlet", name: "Hamlet", group: "Vice-Dale County", meta: "Vice-Dale County", image: "/images/footage/locations/hamlet.webp", pin: p("hamlet"), summary: "A town in Vice-Dale County with Sara's Unisex Salon, Kurt's Barber Shop, Hamlet Thrift and a Pay 'n' Spray." },
   { slug: "tequesta", name: "Tequesta", group: "Vice-Dale County", meta: "Vice City", pin: p("tequesta"), summary: "A Vice City neighborhood with a Slinger clothing store. The 7th Avenue Garage is just to its northwest." },
   { slug: "peacock-bay", name: "Peacock Bay", group: "Vice-Dale County", meta: "Vice City", pin: p("peacock-bay"), summary: "A Vice City neighborhood with Slinger and Nola clothing stores." },
   { slug: "decor-district", name: "Decor District", group: "Vice-Dale County", meta: "Vice City", pin: p("decor-district"), summary: "A Vice City neighborhood with Slinger, This / That, Nola and Ferruccio Tucci shops." },
@@ -58,10 +58,10 @@ const locations: ExtraEntry[] = [
   { slug: "shore-drive", name: "Shore Drive", group: "Vice-Dale County", meta: "Ocean Beach", pin: p("shore-drive"), summary: "The waterfront road through Ocean Beach, lined with art deco hotels." },
   { slug: "vice-city-international-airport", name: "Vice City International Airport", group: "Vice-Dale County", meta: "Vice City", pin: p("vice-city-international-airport"), summary: "Vice City's airport in south Vice-Dale County. The 7th Avenue Garage is just east of it." },
   { slug: "y-hotel", name: "Y Hotel", group: "Vice-Dale County", meta: "Washington Beach", pin: p("y-hotel"), summary: "A hotel in Washington Beach, just north of Ocean Beach." },
-  { slug: "ocean-view-hotel", name: "Ocean View Hotel", group: "Vice-Dale County", meta: "Ocean Beach", pin: p("ocean-view-hotel"), summary: "An art deco hotel on Shore Drive in Ocean Beach." },
+  { slug: "ocean-view-hotel", name: "Ocean View Hotel", group: "Vice-Dale County", meta: "Ocean Beach", image: "/images/official/editions/vintage_vice_city_pack_01.webp", pin: p("ocean-view-hotel"), summary: "An art deco hotel on Shore Drive in Ocean Beach." },
   // Mariana County
   { slug: "capri", name: "Capri", group: "Mariana County", meta: "Mariana County", pin: p("capri"), summary: "A rich town with Nola and Ferruccio Tucci formal wear and the Vela Rota Drive Garage." },
-  { slug: "key-lento", name: "Key Lento", group: "Mariana County", meta: "Leonida Keys", pin: p("jasons-place"), summary: "The Leonida Keys town where Jason lives. It has The Rusty Anchor bar and Kenton's dive business." },
+  { slug: "key-lento", name: "Key Lento", group: "Mariana County", meta: "Leonida Keys", image: "/images/footage/locations/key-lento.webp", pin: p("jasons-place"), summary: "The Leonida Keys town where Jason lives. It has The Rusty Anchor bar and Kenton's dive business." },
   { slug: "southwind", name: "Southwind", group: "Mariana County", meta: "Mariana County", pin: p("southwind"), summary: "A place in Mariana County with a Pay 'n' Spray." },
   { slug: "watson-bay", name: "Watson Bay", group: "Mariana County", meta: "Mariana County", pin: p("watson-bay"), summary: "Home of the Paradise Garage, where the Ultimate Edition '67 Vapid Dominator Buggy is kept." },
   { slug: "abismo-key", name: "Abismo Key", group: "Mariana County", meta: "Leonida Keys", pin: p("abismo-key"), summary: "A small key at the southern end of the Leonida Keys." },
@@ -75,7 +75,7 @@ const locations: ExtraEntry[] = [
   { slug: "millport", name: "Millport", group: "Lummox County", meta: "Lummox County", pin: p("millport"), summary: "A Lummox County town with a Pay 'n' Spray." },
   // Waters and landmarks
   { slug: "gambit-bay", name: "Gambit Bay", group: "Waters and landmarks", meta: "Fishing", pin: p("gambit-bay"), summary: "A bay known for fishing. The Ultimate Edition Shitzu Squalo is built for it." },
-  { slug: "leonida-penitentiary", name: "Leonida Penitentiary", group: "Waters and landmarks", meta: "Prison", summary: "The state prison where Lucia served time before the story begins." },
+  { slug: "leonida-penitentiary", name: "Leonida Penitentiary", group: "Waters and landmarks", meta: "Prison", image: "/images/footage/locations/leonida-penitentiary.webp", summary: "The state prison where Lucia served time before the story begins." },
   { slug: "vercetti-estate", name: "The Vercetti Estate", group: "Waters and landmarks", meta: "Estate", summary: "A Vice City estate. The Ultimate Edition Hawk & Little Morgan revolvers come from it." },
   // Counties
   { slug: "vice-dale-county", name: "Vice-Dale County", group: "Counties", meta: "County", summary: "The county around Vice City, from Downtown and Ocean Beach out to Hamlet." },
@@ -189,8 +189,8 @@ const stores: ExtraEntry[] = [
 ];
 
 const characters: ExtraEntry[] = [
-  { slug: "lori", name: "Lori", group: "Story characters", meta: "Leonida Keys", summary: "Brian Heder's third wife. She helps run his boat yard in the Keys and is known for her sangria.", links: [{ href: "/characters/brian-heder", label: "Brian Heder" }] },
-  { slug: "kenton-rees", name: "Kenton Rees", group: "Story characters", meta: "Treasure diving", summary: "An old friend of Brian who runs a scuba boat business in Key Lento. He sends Jason on treasure dives.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
+  { slug: "lori", name: "Lori", group: "Story characters", meta: "Leonida Keys", image: "/images/footage/characters/lori.webp", summary: "Brian Heder's third wife. She helps run his boat yard in the Keys and is known for her sangria.", links: [{ href: "/characters/brian-heder", label: "Brian Heder" }] },
+  { slug: "kenton-rees", name: "Kenton Rees", group: "Story characters", meta: "Treasure diving", image: "/images/footage/characters/kenton-rees.webp", summary: "An old friend of Brian who runs a scuba boat business in Key Lento. He sends Jason on treasure dives.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
   { slug: "moses-watkins", name: "Moses Watkins", group: "Story characters", meta: "Car fence · Port Gellhorn", summary: "A Port Gellhorn car fence you meet in Chapter 2. He gives you the tools to steal mid-range cars and buys them.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
   { slug: "dunk-porter", name: "Dunk Porter", group: "Story characters", meta: "Fence", summary: "A Chapter 2 contact who buys drugs, jewelry and marked bills." },
   { slug: "yasmani-cabrera", name: "Yasmani Cabrera", group: "Story characters", meta: "Fence · Jewelry", summary: "Your jewelry buyer from early Chapter 3. He sends tips on stores to rob.", links: [{ href: "/money-methods/jewelry-store-robberies", label: "Rob jewelry stores" }] },
@@ -217,10 +217,10 @@ const brands: ExtraEntry[] = [
   chain("Drip Drops", "Streetwear", "Vice-Dale County"),
   chain("Alpha Sports", "Sportswear", "Downtown, Ocean Beach and Waning Sands"),
   chain("Endzone", "Sportswear", "Downtown, Ocean Beach and Washington Beach"),
-  chain("Eris", "Sportswear", "Vice-Dale County"),
+  { ...chain("Eris", "Sportswear", "Vice-Dale County"), image: "/images/footage/brands/eris.webp" },
   chain("Nola", "Formal", "Capri, Peacock Bay, Ocean Beach and Decor District"),
   chain("Ferruccio Tucci", "Formal", "Capri, Ocean Beach, Decor District and Waning Sands"),
-  { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
+  { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", image: "/images/footage/brands/ammu-nation.webp", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
   { slug: "pay-n-spray", name: "Pay 'n' Spray", group: "Store chains", meta: "19 shops", summary: "The repaint chain. Lose the cops or sell older cars.", links: [{ href: "/where-to-find/pay-n-spray", label: "All 19 shops" }] },
   { slug: "fleeca", name: "Fleeca", group: "Store chains", meta: "Bank", summary: "Leonida's bank chain." },
 ];
@@ -231,8 +231,8 @@ const clothing: ExtraEntry[] = [
   { slug: "formal-wear", name: "Formal wear", group: "Styles", meta: "Nola, Ferruccio Tucci", summary: "Suits and dresses from Nola and Ferruccio Tucci.", links: [{ href: "/where-to-find/clothing-stores", label: "Where to buy" }] },
   { slug: "souvenirs-and-swimwear", name: "Souvenirs and swimwear", group: "Styles", meta: "Beach shops", summary: "Tourist tees and swimwear from 14 beach and gift shops, such as The Wonder Whale and De'luge Swimwear.", links: [{ href: "/where-to-find/clothing-stores", label: "Where to buy" }] },
   { slug: "thrift-clothes", name: "Thrift clothes", group: "Styles", meta: "5 thrift stores", summary: "Second-hand clothes from Hamlet Thrift, Dr Froogal, Bargain World and two more.", links: [{ href: "/where-to-find/clothing-stores", label: "Where to buy" }] },
-  { slug: "haircuts", name: "Haircuts", group: "Styles", meta: "18 salons", summary: "Change your hair at 18 salons and barbers across Leonida.", links: [{ href: "/where-to-find/hair-salons", label: "All salons" }] },
-  { slug: "tattoos", name: "Tattoos", group: "Styles", meta: "11 studios", summary: "Eleven tattoo studios, each with its own style, from American Traditional to Anime.", links: [{ href: "/stores#tattoo-studios", label: "All tattoo studios" }] },
+  { slug: "haircuts", name: "Haircuts", group: "Styles", meta: "18 salons", image: "/images/official/editions/ultimate_edition_saras_salon_02.webp", summary: "Change your hair at 18 salons and barbers across Leonida.", links: [{ href: "/where-to-find/hair-salons", label: "All salons" }] },
+  { slug: "tattoos", name: "Tattoos", group: "Styles", meta: "11 studios", image: "/images/official/editions/ultimate_edition_electric_fang_01.webp", summary: "Eleven tattoo studios, each with its own style, from American Traditional to Anime.", links: [{ href: "/stores#tattoo-studios", label: "All tattoo studios" }] },
 ];
 
 const animal = (name: string, group: "Land" | "Sea" | "Birds", image?: string): ExtraEntry => ({
@@ -256,7 +256,7 @@ const animals: ExtraEntry[] = [
   animal("Snake", "Land", "/images/official/media/screenshots-places-grassrivers-grassrivers-07.webp"),
   animal("Cow", "Land"),
   animal("Frog", "Land"),
-  animal("Shark", "Sea"),
+  animal("Shark", "Sea", "/images/footage/animals/shark.webp"),
   animal("Whale", "Sea"),
   animal("Manta ray", "Sea"),
   animal("Jellyfish", "Sea"),
@@ -270,7 +270,7 @@ const animals: ExtraEntry[] = [
 
 const activities: ExtraEntry[] = [
   { slug: "street-races", name: "Street races", group: "More things to do", meta: "40 races", summary: "There are 40 races in 6 groups, open from Chapter 1. Win for prize money.", links: [{ href: "/money-methods/street-races", label: "Race prize money" }] },
-  { slug: "treasure-diving", name: "Treasure diving", group: "More things to do", meta: "Key Lento", pin: p("activity-scuba-leonida-keys"), summary: "Dive at shipwrecks off Key Lento for Kenton and sell what you find.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
+  { slug: "treasure-diving", name: "Treasure diving", group: "More things to do", meta: "Key Lento", image: "/images/footage/activities/treasure-diving.webp", pin: p("activity-scuba-leonida-keys"), summary: "Dive at shipwrecks off Key Lento for Kenton and sell what you find.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
   { slug: "dates", name: "Dates", group: "More things to do", meta: "With your partner", summary: "Take your partner to bars, diners, coffee shops and rooftop restaurants." },
   { slug: "stealing-cars-to-sell", name: "Stealing cars to sell", group: "More things to do", meta: "Moses and Randy", summary: "Steal cars on order and sell them to Moses or Randy, or sell older cars at a Pay 'n' Spray.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
 ];

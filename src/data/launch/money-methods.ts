@@ -97,6 +97,8 @@ export const moneyMethods: LaunchEntry[] = [
   {
     slug: "kenton-treasure-diving",
     title: "Treasure diving for Kenton",
+    image: "/images/footage/money-methods/kenton-treasure-diving.webp",
+    imageAlt: "Jason pulling a treasure chest out of a shipwreck",
     price: "Tens of thousands",
     summary:
       "Kenton in Key Lento sends you to dive spots off the Keys. Search the sea floor for treasure.",

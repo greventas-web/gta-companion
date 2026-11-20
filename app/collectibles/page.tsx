@@ -3,7 +3,9 @@ import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { pageMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { collectibleGuides } from "@/src/data/launch/collectible-guides";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 collectibles",
@@ -17,7 +19,12 @@ const otherTypes = [
     line: "Scan landmarks with your phone.",
     chips: [{ label: "Trophy", value: "100 scans" }],
   },
-
+  {
+    href: "/activities/meditation",
+    title: "Meditation spots",
+    line: "Meditate at every spot.",
+    chips: [{ value: "18 spots" }, { label: "100%", value: "15" }],
+  },
   {
     href: "/clothing",
     title: "Styles",
@@ -64,6 +71,7 @@ export default function Page() {
       <CardGrid heading="More">
         <SimpleCard href="/shooting-ranges" title="Shooting ranges" image="/images/official/frames/shooting-range.webp" chips={[{ value: "42 golds" }]} />
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["flamingos", "collectible-cards", "stunt-jumps", "waink-scans", "shooting-ranges", "meditation"])} />
     </PageShell>
   );
 }

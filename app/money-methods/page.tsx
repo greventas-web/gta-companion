@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { LaunchIndex } from "@/components/launch/LaunchSection";
 import { launchMetadata } from "@/lib/launch";
 import { moneyMethods } from "@/src/data/launch/money-methods";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "How to Make Money Fast in GTA 6 (Spoiler-Safe)";
 const description =
@@ -19,6 +21,7 @@ export default function MoneyMethodsPage() {
       entries={moneyMethods}
       emptyBody="No money methods are listed yet."
     >
+      <QuickGuideGrid guides={quickGuideCards(["money-glitch", "sell-cars", "rob-store", "bank-account-atm", "sell-guns", "hunting", "jewelry-robbery", "gang-hideouts", "street-races", "bank-jobs"])} />
     </LaunchIndex>
   );
 }

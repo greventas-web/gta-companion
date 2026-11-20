@@ -7,7 +7,7 @@ type Props = Omit<ImageProps, "alt" | "src"> & {
   src?: string;
   alt: string;
   name?: string;
-  /** Kept for callers; images are never picked by kind. */
+  /** Item kind, used only for the designed artwork when there is no photo. */
   kind?: string;
   text?: string;
 };
@@ -17,9 +17,9 @@ export function isNameCard(src?: string) {
   return isPlaceholderSrc(src);
 }
 
-/** Item photo, or a plain dark surface when there is no confirmed photo. */
-export default function ItemImage({ src, alt, name, fill, className, sizes, priority }: Props) {
-  const resolved = resolveCardImage({ image: src, title: name || alt });
+/** Item photo, or designed GTA Companion artwork when there is no confirmed photo. */
+export default function ItemImage({ src, alt, name, kind, fill, className, sizes, priority }: Props) {
+  const resolved = resolveCardImage({ image: src, title: name || alt, kind });
   if (!resolved.src) {
     return (
       <div
@@ -39,6 +39,7 @@ export default function ItemImage({ src, alt, name, fill, className, sizes, prio
       sizes={sizes}
       priority={priority}
       data-img-source={resolved.source}
+      data-art-key={resolved.source === "art" ? resolved.artKey : undefined}
       className={className || "object-cover"}
     />
   );

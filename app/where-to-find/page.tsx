@@ -7,6 +7,7 @@ import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard
 import { pageMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
 import { imageForPin } from "@/lib/simple/pinImage";
+import { imageForPath } from "@/lib/simple/placeImages";
 import { whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
 
 const title = "GTA 6 Where to Find – Stores, Garages, Mod Shops (Map)";
@@ -43,7 +44,7 @@ export default function WhereToFindHubPage() {
       <CardGrid>
         {whereToFindTopics.map((topic) => {
           const places = wherePlaces(topic);
-          const image = imageForPin(topic.mapPin);
+          const image = imageForPath(`/where-to-find/${topic.slug}`) ?? imageForPin(topic.mapPin);
           return (
             <SimpleCard
               key={topic.slug}
@@ -56,7 +57,7 @@ export default function WhereToFindHubPage() {
           );
         })}
         {more.map((link) => (
-          <SimpleCard key={link.href} href={link.href} title={link.label} image={link.image} />
+          <SimpleCard key={link.href} href={link.href} title={link.label} image={link.image ?? imageForPath(link.href)?.src} />
         ))}
       </CardGrid>
     </PageShell>

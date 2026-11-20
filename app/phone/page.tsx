@@ -5,6 +5,8 @@ import { phoneItems } from "@/data/phone";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 phone apps',
@@ -35,7 +37,7 @@ export default function PhonePage() {
               key={item.slug}
               href={`/phone/${item.slug}`}
               title={item.name}
-              image={undefined}
+              image={item.image}
               eyebrow={item.kind}
               line={undefined}
               mapHref={undefined}
@@ -44,6 +46,7 @@ export default function PhonePage() {
           ))}
         </CardGrid>
       ))}
+      <QuickGuideGrid guides={quickGuideCards(["bank-account-atm", "fast-travel", "call-your-car", "key-cloner", "impounded-car", "headphones", "use-phone", "photo-mode", "waink-scans", "whatup", "scan-car", "police-scanner", "call-partner"])} />
     </PageShell>
   );
 }
