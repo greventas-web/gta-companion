@@ -186,6 +186,29 @@ export const phoneItems: PhoneItem[] = [
     links: [{ href: "/money-methods", label: "Money" }],
   },
   {
+    slug: "vice-city-real-estate",
+    name: "Vice City Real Estate",
+    group: "App",
+    kind: "Property app",
+    origin: "Launch",
+    related: "Garages",
+    summary: "The app you buy garages with. It shows up on your phone in Chapter 2, after the mission Daily Driver.",
+    description:
+      "Vice City Real Estate is the phone app for buying garages. It shows up in Chapter 2, shortly after the mission Daily Driver, and lists all 8 garages for sale.",
+    details: [
+      "Confirmed at launch: the app arrives shortly after the Chapter 2 mission Daily Driver. All 8 garages for sale can be bought there, or at the garage itself.",
+    ],
+    sources: [
+      { label: "PowerPyx, all garage locations", href: "https://www.powerpyx.com/gta-6-all-garage-locations/" },
+      { label: "GameSpot, all garage locations and prices", href: "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/" },
+    ],
+    links: [
+      { href: "/where-to-find/garages", label: "All garages" },
+      { href: "/properties", label: "Properties" },
+      { href: "/trophies/little-boxes", label: "Little Boxes trophy" },
+    ],
+  },
+  {
     slug: "podcasts",
     name: "On-demand podcasts",
     group: "Listening",

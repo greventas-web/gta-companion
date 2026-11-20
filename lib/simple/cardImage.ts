@@ -126,6 +126,8 @@ const PREFIX: [string, string][] = [
   ["/where-to-find/mod-shops", "mod"],
   ["/where-to-find/pay-n-spray", "mod"],
   ["/where-to-find/garages", "garage"],
+  ["/where-to-find/fences", "money"],
+  ["/challenges", "trophy"],
   ["/ammu-nation", "gunstore"],
   ["/shooting-ranges", "range"],
   ["/weapons", "weapon"],

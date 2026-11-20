@@ -58,7 +58,7 @@ export default async function ActivitiesDetailPage({ params }: Props) {
         summary={item.description}
         facts={[{ label: "Type", value: item.category }, { label: "Where", value: (item.location && !/not published/i.test(item.location) ? item.location : undefined) ?? "" }]}
         mapHref={map}
-        
+        links={item.related?.map((link) => ({ href: link.href, label: link.title }))}
         related={related.map((entry) => ({
           href: `/activities/${entry.slug}`,
           title: entry.name,

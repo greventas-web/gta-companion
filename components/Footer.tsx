@@ -129,6 +129,10 @@ export default function Footer() {
                 Trophies
               </Link>
 
+              <Link href="/challenges" className="block text-zinc-400 transition hover:text-pink-400">
+                Challenges
+              </Link>
+
               <Link href="/cheats" className="block text-zinc-400 transition hover:text-pink-400">
                 Cheats
               </Link>

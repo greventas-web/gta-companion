@@ -51,6 +51,7 @@ const groups = [
       { title: "Fastest Cars", href: "/fastest-cars" },
       { title: "Map Locations", href: "/map-locations" },
       { title: "Missions", href: "/missions" },
+      { title: "Challenges", href: "/challenges" },
       { title: "Trophies", href: "/trophies" },
       { title: "Cheats", href: "/cheats" },
       { title: "Where to find", href: "/where-to-find" },

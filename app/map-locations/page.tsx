@@ -13,8 +13,7 @@ const description =
 export const metadata: Metadata = launchMetadata(title, description);
 
 const hubs: { href: string; title: string; image?: string; line?: string; kind?: string }[] = [
-  ...pickHubs(["map", "ammuNation", "whereToFind", "locations", "stores"]),
-  { href: "/properties", title: "Garages and hideouts", image: "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp", kind: "garage" },
+  ...pickHubs(["map", "ammuNation", "whereToFind", "locations", "stores", "properties"]),
 ];
 
 export default function MapLocationsPage() {

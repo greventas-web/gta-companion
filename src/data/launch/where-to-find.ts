@@ -75,6 +75,18 @@ const src = {
     label: "GameSpot, all garage locations and prices",
     href: "https://www.gamespot.com/articles/all-garage-locations-and-prices-in-gta-6/",
   },
+  powerpyxGarages: {
+    label: "PowerPyx, all garage locations",
+    href: "https://www.powerpyx.com/gta-6-all-garage-locations/",
+  },
+  pcgamerFences: {
+    label: "PC Gamer, fence locations",
+    href: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-fence-locations/",
+  },
+  powerpyxFences: {
+    label: "PowerPyx, all fence locations",
+    href: "https://www.powerpyx.com/gta-6-all-fence-locations-how-to-fence-stolen-goods/",
+  },
   powerpyxSpray: {
     label: "PowerPyx, all Pay ’n’ Spray locations",
     href: "https://www.powerpyx.com/gta-6-all-pay-n-spray-locations/",
@@ -474,7 +486,7 @@ export const whereToFindTopics: WhereTopic[] = [
     slug: "garages",
     heading: "GTA 6 garage locations and prices",
     label: "Garages and safehouses",
-    metaTitle: "GTA 6 Garage Locations and Prices – All 10 Garages",
+    metaTitle: "GTA 6 Garage Locations and Prices – All 8 Garages for Sale",
     metaDescription:
       "Every GTA 6 garage with its price and where to find it, when you can buy one, and where the safehouses are. With map pins.",
     keywords: [
@@ -485,7 +497,7 @@ export const whereToFindTopics: WhereTopic[] = [
       "GTA 6 safehouse",
     ],
     answer:
-      "There are 10 garages in GTA 6. Eight are for sale, from $4,000 (Mitchel Auto Center) to $40,000 (Atlantic Court), and two come with the story. You can buy one after Jason and Lucia leave Key Lento, in the Vice City Real Estate phone app or at the garage.",
+      "Eight garages are for sale in GTA 6, from $4,000 (Mitchell Auto Center) to $40,000 (Atlantic Court). Each one holds one more vehicle. You can buy them in Chapter 2, after the mission Daily Driver, in the Vice City Real Estate phone app or at the garage. The story gives you more garages as you go.",
     facts: [
       "A garage keeps any vehicle you park there, stolen or owned.",
       "You can open your weapon loadout in a garage and leave illegal goods there for NPCs to sell.",
@@ -497,12 +509,12 @@ export const whereToFindTopics: WhereTopic[] = [
       {
         heading: "Garages for sale",
         places: [
-          { name: "Mitchel Auto Center", area: "Central Kelly County, east of Port Gellhorn", detail: "$4,000", areaPin: pin("port-gellhorn") },
-          { name: "Persistence Road Garage", area: "Western Belville, Leonard County", detail: "$9,500", areaPin: pin("belville") },
+          { name: "Mitchell Auto Center", area: "Central Kelly County, east of Port Gellhorn", detail: "$4,000", areaPin: pin("port-gellhorn") },
+          { name: "Persistence Road Garage", area: "Western Belville, Leonard County", areaPin: pin("belville") },
           { name: "7th Avenue Garage", area: "East of Vice City International Airport, northwest of Tequesta", detail: "$12,000", areaPin: pin("vice-city-international-airport") },
           { name: "Store ’N’ Bolt", area: "Northern Ambrosia", detail: "$16,800", areaPin: pin("ambrosia") },
           { name: "Wyatt Motors", area: "Central Ambrosia, near the Pay ’n’ Spray", detail: "$21,600", areaPin: pin("ambrosia") },
-          { name: "Vela Rota Drive Garage", area: "Middle of Capri", detail: "$30,000", areaPin: pin("capri") },
+          { name: "Vela Rota Drive Garage", area: "Middle of Capri", areaPin: pin("capri") },
           { name: "Bonita Court Garage", area: "Center of Washington Island", detail: "$34,000", areaPin: pin("washington-beach") },
           { name: "Atlantic Court Garage", area: "Ocean Beach, south of the Y Hotel", detail: "$40,000", areaPin: pin("y-hotel") },
         ],
@@ -527,27 +539,103 @@ export const whereToFindTopics: WhereTopic[] = [
     faqs: [
       {
         question: "How many garages are in GTA 6?",
-        answer: "There are 10 garages: 8 you can buy and 2 you get during the story.",
+        answer: "8 garages are for sale. The story gives you more as you go, the Ultimate Edition adds Paradise Garage, and the Vintage Vice City Pack adds Shore Court.",
       },
       {
         question: "When can you buy a garage in GTA 6?",
         answer:
-          "After Jason and Lucia leave Key Lento. You can buy one in the Vice City Real Estate phone app or by visiting it.",
+          "In Chapter 2, shortly after the mission Daily Driver. That's when the Vice City Real Estate app shows up on your phone. You can also buy one at the garage.",
       },
       {
         question: "What is the cheapest garage in GTA 6?",
-        answer: "Mitchel Auto Center in central Kelly County, for $4,000.",
+        answer: "Mitchell Auto Center in central Kelly County, for $4,000.",
       },
       {
         question: "What is the most expensive garage in GTA 6?",
         answer: "Atlantic Court Garage in Ocean Beach, for $40,000.",
       },
+      {
+        question: "How do you get the Little Boxes trophy in GTA 6?",
+        answer: "Buy all 8 garages that are for sale. Garages the story gives you don't count.",
+      },
     ],
-    sources: [src.gamespotGarages, src.gamespotFirst, src.rockstarKeys, src.bigLead, src.gtadb],
+    sources: [src.gamespotGarages, src.powerpyxGarages, src.gamespotFirst, src.rockstarKeys, src.bigLead, src.gtadb],
     related: [
       { href: "/properties", label: "Properties" },
+      { href: "/where-to-find/fences", label: "Fences" },
       { href: "/where-to-find/mod-shops", label: "Mod shops" },
       { href: "/vehicles", label: "Vehicles database" },
+    ],
+  },
+  {
+    slug: "fences",
+    heading: "GTA 6 fence locations",
+    label: "Fences",
+    metaTitle: "GTA 6 Fence Locations – Where to Sell Stolen Goods",
+    metaDescription:
+      "Where to sell stolen goods in GTA 6: every fence up to Chapter 3, where they are, when they unlock, and who pays best for narcotics, jewelry, and marked bills. With map links.",
+    keywords: [
+      "GTA 6 fence",
+      "GTA 6 fence locations",
+      "GTA 6 where to sell stolen goods",
+      "GTA 6 how to sell jewelry",
+      "GTA 6 sell stolen cars",
+    ],
+    answer:
+      "Fences buy the narcotics, jewelry, and marked bills you steal. They show on the map as a green icon with their initials. New fences open as the story goes on, and early ones close.",
+    facts: [
+      "Drop your bag in the fence's container. Some pay right away, others pay later.",
+      "In Chapter 3, after jobs for Yasmani, you can leave goods in a garage for pickup, for a fee.",
+      "Your partner can fence the goods for you, for a bit less money.",
+      "Moses and Randy buy stolen cars, not goods.",
+    ],
+    groups: [
+      {
+        heading: "Fences for goods",
+        places: [
+          { name: "Brian", area: "Key Lento", detail: "Chapter 1, after Lab Fees", areaPin: pin("leonida-keys") },
+          { name: "Donnie", area: "Key Lento", detail: "Chapter 1 only", areaPin: pin("leonida-keys") },
+          { name: "Dunk", area: "Port Gellhorn, Kelly County", detail: "Chapter 2, after Slam Dunk", areaPin: pin("port-gellhorn") },
+          { name: "Tyrone", area: "La Perle, Vice City", detail: "Chapter 3. Best for narcotics", areaPin: pin("la-perle") },
+          { name: "Yasmani", area: "Little Cuba, Vice City", detail: "Chapter 3. Best for jewelry and marked bills", areaPin: pin("little-cuba") },
+        ],
+      },
+      {
+        heading: "Stolen car buyers",
+        places: [
+          { name: "Moses", area: "Port Gellhorn, Kelly County", detail: "Chapter 2. Cars with no tracker", areaPin: pin("port-gellhorn") },
+          { name: "Randy", area: "Balsero, Vice City", detail: "Chapter 3. High-end cars", areaPin: pin("balsero") },
+        ],
+      },
+    ],
+    mapPin: pin("little-cuba"),
+    mapPinLabel: "Yasmani, Little Cuba",
+    faqs: [
+      {
+        question: "Where do you sell stolen goods in GTA 6?",
+        answer: "At a fence. Brian and Donnie in Key Lento, Dunk in Port Gellhorn, Tyrone in La Perle, and Yasmani in Little Cuba. Look for the green icon with their initials.",
+      },
+      {
+        question: "Which fence pays the most in GTA 6?",
+        answer: "Tyrone pays best for narcotics. Yasmani pays best for jewelry and marked bills. The early fences pay little.",
+      },
+      {
+        question: "Where do you sell stolen cars in GTA 6?",
+        answer: "Moses in Port Gellhorn buys cars with no tracker. Randy in Balsero buys high-end cars from Chapter 3. You can also sell stolen cars at a Pay 'n' Spray.",
+      },
+      {
+        question: "Can you fence goods without driving to the fence?",
+        answer: "Yes. Your partner can take the bag and sell it for you for a bit less. From Chapter 3 you can also leave goods in a garage for pickup, for a fee.",
+      },
+    ],
+    sources: [src.pcgamerFences, src.powerpyxFences],
+    related: [
+      { href: "/money-methods", label: "Make money" },
+      { href: "/where-to-find/garages", label: "Garages" },
+      { href: "/where-to-find/pay-n-spray", label: "Pay 'n' Spray" },
+      { href: "/characters/yasmani-cabrera", label: "Yasmani" },
+      { href: "/characters/moses-watkins", label: "Moses" },
+      { href: "/characters/randy-kozlov", label: "Randy" },
     ],
   },
   {

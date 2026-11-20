@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import AdSlot from "@/components/ads/AdSlot";
 import Breadcrumb from "@/components/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
+import { faqPageJsonLd } from "@/components/intent/FaqSection";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
 import { pageMetadata } from "@/lib/launch";
@@ -66,6 +67,7 @@ export default async function WhereToFindTopicPage({ params }: Props) {
           places.map((place) => ({ name: place.name, url: `/where-to-find/${topic.slug}/${place.slug}` }))
         )}
       />
+      {topic.faqs.length ? <JsonLd data={faqPageJsonLd(topic.faqs)} /> : null}
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Where to find", href: "/where-to-find" }, { label: topic.label }]} />
       <div className="mt-6">
         <SimpleHero title={topic.label} />

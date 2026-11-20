@@ -48,6 +48,7 @@ export default async function CollectibleItemPage({ params }: Props) {
         summary={thing.line}
         trackId={`${guide.slug}:${thing.slug}`}
         facts={thing.facts?.filter((fact) => fact.label !== "Track it")}
+        mapPin={thing.pin}
         related={siblings.map((other) => ({
           href: `/collectibles/${guide.slug}/${other.item.slug}`,
           title: other.item.name,
@@ -56,7 +57,7 @@ export default async function CollectibleItemPage({ params }: Props) {
           trackId: `${guide.slug}:${other.item.slug}`,
           small: true,
         }))}
-        relatedHeading="Other sets"
+        relatedHeading={guide.itemsLabel ?? "Other sets"}
       />
     </PageShell>
   );

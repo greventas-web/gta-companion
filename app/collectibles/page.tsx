@@ -9,7 +9,7 @@ import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 collectibles",
-  "GTA 6 collectibles: card sets, Cocaine Flamingos, stunt jumps, WAiNK It scans, meditation spots, styles, and vehicle discovery, with counts and trophies. Unofficial fan site."
+  "GTA 6 collectibles: card sets, Cocaine Flamingos, stunt jumps, meditation spots, drone races, race challenges, golf courses, WAiNK It scans, styles, and vehicle discovery, with counts and trophies. Unofficial fan site."
 );
 
 const otherTypes = [

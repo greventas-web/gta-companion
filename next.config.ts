@@ -56,6 +56,8 @@ const nextConfig: NextConfig = {
       { source: "/weapons/pump-shotgun", destination: "/weapons/fortune-son-moreland-850", permanent: true },
       { source: "/weapons/sniper-rifle", destination: "/weapons", permanent: true },
       { source: "/weapons/rocket-launcher", destination: "/weapons/hauners-h-at", permanent: true },
+      // Batch 3: garage name spelling fix (Mitchel -> Mitchell).
+      { source: "/where-to-find/garages/mitchel-auto-center", destination: "/where-to-find/garages/mitchell-auto-center", permanent: true },
       {
         source: "/index.html",
         destination: "/",

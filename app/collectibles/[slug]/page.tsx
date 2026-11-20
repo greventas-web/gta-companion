@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import { faqPageJsonLd, RelatedLinks } from "@/components/intent/FaqSection";
+import JsonLd from "@/components/JsonLd";
 import { mapPinHref } from "@/components/map/MapPinLink";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simple/SimpleCard";
@@ -40,10 +42,14 @@ export default async function CollectibleGuidePage({ params }: Props) {
   const guide = findCollectibleGuide(slug);
   if (!guide) notFound();
 
-  checkPins(guide.mapLinks.map((link) => link.pin));
+  checkPins([
+    ...guide.mapLinks.map((link) => link.pin),
+    ...(guide.groups ?? []).flatMap((group) => group.items.map((item) => item.pin).filter((pin): pin is string => Boolean(pin))),
+  ]);
 
   return (
     <PageShell>
+      {guide.faqs.length > 0 ? <JsonLd data={faqPageJsonLd(guide.faqs)} /> : null}
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -100,6 +106,7 @@ export default async function CollectibleGuidePage({ params }: Props) {
         </section>
       ) : null}
 
+      <RelatedLinks links={guide.related} />
     </PageShell>
   );
 }

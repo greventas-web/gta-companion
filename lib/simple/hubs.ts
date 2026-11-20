@@ -8,7 +8,10 @@ import { locations } from "@/data/locations";
 import { manufacturers } from "@/data/manufacturers";
 import { stores } from "@/data/stores";
 import { weapons } from "@/data/weapons";
+import { properties } from "@/data/properties";
 import { cheatList } from "@/src/data/launch/cheat-list";
+import { challenges } from "@/src/data/launch/challenges";
+import { stationPages } from "@/lib/simple/radio";
 import { extras } from "@/src/data/launch/expansion";
 import { ammuNationStores, vehicleCounts } from "@/src/data/launch/launch-facts";
 
@@ -41,6 +44,10 @@ export const hubs = {
   whereToFind: { href: "/where-to-find", title: "Where to find", image: `${O}/editions/ultimate_edition_saras_salon_01.webp`, line: "Shops, garages, barbers", kind: "store" },
   stores: { href: "/stores", title: "Stores", image: `${O}/editions/ultimate_edition_stock_305_01.webp`, line: `${stores.length + extras.stores.length} in the game`, kind: "store" },
   shootingRanges: { href: "/shooting-ranges", title: "Shooting ranges", image: `${O}/frames/shooting-range.webp`, line: "12 courses, 42 golds", kind: "range" },
+  challenges: { href: "/challenges", title: "Challenges", image: `${O}/frames/gym-workout.webp`, line: `All ${challenges.length} challenges`, kind: "trophy" },
+  properties: { href: "/properties", title: "Garages", image: `${O}/editions/ultimate_edition_safehouse_vehicles_01.webp`, line: `${properties.length} garages and hideouts`, kind: "garage" },
+  fences: { href: "/where-to-find/fences", title: "Fences", image: `${O}/frames/store-robbery.webp`, line: "Where to sell stolen goods", kind: "money" },
+  radio: { href: "/radio", title: "Radio", image: `${O}/radio/flash-background.webp`, line: `${stationPages.length} stations`, kind: "radio" },
   trophies: { href: "/trophies", title: "Trophies", image: `${O}/frames/track-racing.webp`, line: "Tick off every trophy", kind: "trophy" },
   locations: { href: "/locations", title: "Locations", image: `${O}/locations/port-gellhorn.webp`, line: `${locations.length + extras.locations.length} in the game`, kind: "location" },
   characters: { href: "/characters", title: "Characters", image: `${O}/categories/characters.webp`, line: `${characters.length + extras.characters.length} in the game`, kind: "character" },
