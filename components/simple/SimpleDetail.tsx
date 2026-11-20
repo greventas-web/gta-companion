@@ -68,7 +68,11 @@ export default function SimpleDetail({
   const resolved = resolveCardImage({ image, title, kind });
   const hasImage = Boolean(resolved.src);
   const isArt = resolved.source === "art";
-  const factList = (facts ?? []).filter((fact) => fact.value && !/^\s*not (yet )?(published|shown|announced)/i.test(fact.value));
+  const factList = (facts ?? []).filter(
+    (fact) =>
+      fact.value &&
+      !/^\s*(not (yet )?(published|shown|announced|confirmed)|unknown|tba|tbd|n\/a)\b/i.test(fact.value)
+  );
 
   return (
     <section className="mx-auto max-w-[1400px]">

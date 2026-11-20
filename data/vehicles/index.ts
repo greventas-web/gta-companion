@@ -27,6 +27,7 @@ import {
   launchConfirmedExisting,
   launchVehicles,
 } from "./launch";
+import { fillConfirmed, vehicleFill } from "./fill";
 
 const baseCatalog = [
   ...aircraftVehicles,
@@ -130,7 +131,7 @@ const confirmedSources: Record<string, { label: string; href: string }> = {
 const unconfirmedNote =
   "This name is carried over from an earlier Grand Theft Auto game. Rockstar has not confirmed it for Grand Theft Auto VI, and no performance figures on this page should be treated as official.";
 
-export const vehicles = catalog.map((vehicle) => {
+const baseVehicles = catalog.map((vehicle) => {
   const fromGameplay = ingameBySlug.get(vehicle.slug);
   if (fromGameplay) return applyIngame(vehicle, fromGameplay);
 
@@ -195,6 +196,23 @@ export const vehicles = catalog.map((vehicle) => {
     topSpeed: undefined,
     price: undefined,
     engine: undefined,
+  };
+});
+
+/** Launch-week facts (stats, where to find, sale values) on top of the catalog. */
+export const vehicles: Vehicle[] = baseVehicles.map((vehicle) => {
+  const fill = vehicleFill[vehicle.slug];
+  if (!fill) return vehicle;
+  const confirmedNow = fillConfirmed.has(vehicle.slug) && vehicle.status !== "Confirmed";
+  return {
+    ...vehicle,
+    ...fill,
+    ...(confirmedNow
+      ? { status: "Confirmed", firstAppearance: "Grand Theft Auto VI", image: "", gallery: [] }
+      : {}),
+    sources: [...(vehicle.sources ?? []), ...(fill.sources ?? [])].filter(
+      (source, index, all) => all.findIndex((item) => item.href === source.href) === index
+    ),
   };
 });
 

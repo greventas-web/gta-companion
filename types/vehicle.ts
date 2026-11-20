@@ -55,4 +55,13 @@ export interface Vehicle {
   sourceLabel?: string;
 
   relatedVehicles?: string[];
+
+  /** In-game stat panel bars, out of 10 (launch-week guides, not measured speeds). */
+  stats?: { speed?: number; acceleration?: number; handling?: number };
+
+  /** Plain-language "where to find it" answer. */
+  whereToFind?: string;
+
+  /** Every source behind the filled facts. */
+  sources?: { label: string; href: string }[];
 }

@@ -1,4 +1,6 @@
 import type { Store } from "@/types/store";
+import { fillSources as fill } from "@/src/data/launch/fill-sources";
+import { batch1Sources } from "@/src/data/launch/batch1-sources";
 import {
   edgeViaVice,
   famitsuSources,
@@ -18,11 +20,11 @@ const salonImage = "/images/official/editions/ultimate_edition_saras_salon_01.we
 const pttImage = "/images/official/editions/ultimate_edition_ptt_store_01.webp";
 
 const shopGaps = [
-  "Hours",
   "Prices",
   "A full shelf or service list",
-  "A street address in Rockstar's prose",
 ];
+
+const UE = [fill.powerpyxUltimate, fill.pushSquareUltimate];
 
 export const stores: Store[] = [
   {
@@ -62,6 +64,24 @@ export const stores: Store[] = [
         sources: [rockstarUltimate, gtadb],
       },
     ],
+    details: [
+      {
+        label: "Address",
+        value: "NE 15th St, Stockyard, Vice City (Vice-Dale County).",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "When it opens",
+        value: "From Chapter 1, for Ultimate Edition owners. On the map: Style, then Casual & Street.",
+        sources: UE,
+      },
+      {
+        label: "One of 67",
+        value:
+          "Stock 305 is one of 17 casual and street clothing stores, out of 67 clothing stores in Leonida.",
+        sources: [fill.powerpyxClothingStores],
+      },
+    ],
     unpublished: shopGaps,
     linkedClothing: ["stock-305-looks"],
     sources: editionSources,
@@ -72,19 +92,18 @@ export const stores: Store[] = [
     name: "Sara's Unisex Salon",
     type: "salon",
     typeLabel: "Salon",
-    region: "Not published",
-    area: "Not published",
+    region: "Vice-Dale County",
+    area: "Hamlet",
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition only",
     summary:
-      "Ultimate Edition salon for signature styles on Jason and Lucia, including facial hair, makeup, and nails.",
+      "Ultimate Edition salon on Cicada Ave in Hamlet, for signature styles on Jason and Lucia, including facial hair, makeup, and nails.",
     image: salonImage,
     imageAlt: "Jason and Lucia pose at the entrance to Sara's Unisex Salon.",
     imageCaption:
       "Official Ultimate Edition still of the entrance. A different salon still, not in this image set, shows Jason in a mullet from the salon.",
     hasPin: true,
-    mapNote:
-      "Rockstar has not named the town. The pin is a gtadb.org landmark. A community area name on that landmark is not repeated here.",
+    mapNote: "The pin is a gtadb.org landmark for the salon on Cicada Ave in Hamlet.",
     facts: [
       {
         label: "What Rockstar says",
@@ -108,6 +127,24 @@ export const stores: Store[] = [
         value:
           "Town and street are not in official prose. The map pin is a gtadb.org landmark for this salon.",
         sources: [rockstarUltimate, gtadb],
+      },
+    ],
+    details: [
+      {
+        label: "Address",
+        value: "Cicada Ave, Hamlet, South Vice-Dale County. On the map: Style, then Hair & Beauty.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "When it opens",
+        value: "You can walk in from Chapter 1. The signature styles unlock in Chapter 2.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "What a salon visit costs",
+        value:
+          "Rockstar has not priced Sara's menu yet. For comparison, cuts at Pearl House in Port Gellhorn cost $52 to $95.",
+        sources: [fill.viceGuidesHowDoILook],
       },
     ],
     unpublished: [...shopGaps, "A full menu of haircuts, colors, and nail styles"],
@@ -151,6 +188,18 @@ export const stores: Store[] = [
         sources: [rockstarUltimate, gtadb],
       },
     ],
+    details: [
+      {
+        label: "Address",
+        value: "Coral Ave, Stockyard, Vice City. On the map: Style, then Tattoos.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "When it opens",
+        value: "From Chapter 1, for Ultimate Edition owners. Exclusive designs carry a blue tag.",
+        sources: UE,
+      },
+    ],
     unpublished: [...shopGaps, "The names of the individual tattoos"],
     linkedClothing: ["electric-fang-tattoos"],
     sources: editionSources,
@@ -161,15 +210,15 @@ export const stores: Store[] = [
     name: "Rideout Customs",
     type: "mod-shop",
     typeLabel: "Mod shop",
-    region: "Not published",
-    area: "Not published",
+    region: "Vice City",
+    area: "Crosstown",
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition only",
     summary:
-      "Ultimate Edition mod shop for interiors, rims, and donk styling. Rockstar has not named the district.",
+      "Ultimate Edition mod shop in Crosstown, Vice City, for interiors, rims, and donk styling.",
     hasPin: true,
     mapNote:
-      "The pin is a gtadb.org landmark. Rockstar has not published a district, so a community area name on that landmark is not repeated here. The still in the editions set is a customized car, not the shop, so it is not used on this page.",
+      "The pin is a gtadb.org landmark for the shop in Crosstown. The still in the editions set is a customized car, not the shop, so it is not used on this page.",
     facts: [
       {
         label: "What Rockstar says",
@@ -189,10 +238,21 @@ export const stores: Store[] = [
         sources: [rockstarUltimate, gtadb],
       },
     ],
+    details: [
+      {
+        label: "Where",
+        value: "Crosstown, Vice City (Vice-Dale County). On the map: Vehicles, then Mod Shops, marked with the Ultimate Edition symbol.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "When it opens",
+        value: "From Chapter 1, for Ultimate Edition owners. Its exclusive rims and interiors are marked in the menu.",
+        sources: UE,
+      },
+    ],
     unpublished: [
       ...shopGaps,
       "Which vehicles can be modified here",
-      "A shop photo in this image set",
     ],
     linkedClothing: [],
     sources: editionSources,
@@ -236,11 +296,22 @@ export const stores: Store[] = [
         sources: [rockstarUltimate, gtadb],
       },
     ],
+    details: [
+      {
+        label: "Where",
+        value: "Just off SR-27 in North Leonard County, by Lake Leonida. On the map: Vehicles, then Mod Shops.",
+        sources: [fill.pushSquareUltimate, fill.powerpyxUltimate],
+      },
+      {
+        label: "When it opens",
+        value: "From Chapter 1, for Ultimate Edition owners. Many of its paint jobs and body parts are Ultimate Edition only.",
+        sources: [fill.pushSquareUltimate],
+      },
+    ],
     unpublished: [
       ...shopGaps,
       "A confirmed shop pin",
       "Which vehicles can be modified here",
-      "A shop photo in this image set",
     ],
     linkedClothing: [],
     sources: editionSources,
@@ -283,11 +354,28 @@ export const stores: Store[] = [
         sources: [rockstarUltimate, gtadb],
       },
     ],
+    details: [
+      {
+        label: "Where",
+        value:
+          "Two robbery spots around SW 13th St and El Joven Blvd in Southside. On the map: Robberies, then Illegal Operations.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "How it works",
+        value:
+          "It is a robbery, not a shop: clear out the gang inside, grab the jewelry and drugs, get away before the police arrive, then sell the goods to a fence.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "When it unlocks",
+        value:
+          "Guides differ. PowerPyx marks it after the Chapter 3 mission Boobie Time; Push Square had it once they had visited South Vice-Dale County.",
+        sources: UE,
+      },
+    ],
     unpublished: [
-      "Hours",
-      "Prices",
       "A list of the special items or contraband",
-      "Whether the store can be shopped outside the raid",
     ],
     linkedClothing: [],
     sources: editionSources,
@@ -336,17 +424,21 @@ export const stores: Store[] = [
     name: "Ammu-Nation",
     type: "weapons",
     typeLabel: "Weapons chain",
-    region: "Not published",
-    area: "Not published",
+    region: "Leonida",
+    area: "24 stores across Leonida",
     editionRequirement: "none",
     editionLabel: "Not an edition bonus",
     image: "/images/footage/brands/ammu-nation.webp",
     imageAlt: "An Ammu-Nation sign at Chuck's Tackle & Shot in Key Lento",
     summary:
-      "Named in sourced interviews as locker storage for long guns. No branch list has been published, so this page has no map pins.",
+      "Leonida's gun store chain: 24 stores, six of them Expanded stores that also sell machine guns, sniper rifles and launchers. Guns cost from $550 to $16,000.",
     hasPin: false,
-    mapNote:
-      "No confirmed Ammu-Nation pin. A branch list would be invented, so it is left empty.",
+    mapNote: "Every branch is on the Ammu-Nation locations page.",
+    mapLink: {
+      href: "/ammu-nation-locations",
+      title: "All 24 Ammu-Nation stores",
+      meta: "Map and list",
+    },
     facts: [
       {
         label: "What the interviews describe",
@@ -355,13 +447,26 @@ export const stores: Store[] = [
         sources: [...famitsuSources, ignBigInterview, edgeViaVice],
       },
     ],
-    unpublished: [
-      "Branch names and addresses",
-      "Hours",
-      "Prices",
-      "The weapon catalog at a counter",
-      "A map pin",
+    details: [
+      {
+        label: "Stores",
+        value: "24 in total. Six are Expanded stores, the only ones that stock machine guns, sniper rifles and launchers.",
+        sources: [batch1Sources.powerpyxAmmuNation, fill.gameChecklistsWeapons],
+      },
+      {
+        label: "Prices",
+        value:
+          "The Scorpio Nipper .38 is the cheapest gun at $550. Most pistols and SMGs cost $600 to $3,350, shotguns and rifles $700 to $3,975, and the H-AT rocket launcher tops the list at $16,000.",
+        sources: [fill.gameChecklistsWeapons, fill.clutchbaseWeapons],
+      },
+      {
+        label: "Cash or bank",
+        value:
+          "In launch footage, guns under $1,000 could be paid in cash and pricier ones needed money in the bank.",
+        sources: [fill.clutchbaseWeapons],
+      },
     ],
+    unpublished: [],
     linkedClothing: [],
     sources: [...famitsuSources, ignBigInterview, edgeViaVice],
   },

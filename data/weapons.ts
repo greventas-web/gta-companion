@@ -9,8 +9,12 @@ import { batch1Sources as src } from "@/src/data/launch/batch1-sources";
 import { batch2Sources as src2 } from "@/src/data/launch/batch2-sources";
 import {
   launchWeapons,
+  PRICE_CHECKED,
   type LaunchWeapon,
 } from "@/src/data/weapons/launch-weapons";
+import { fillSources } from "@/src/data/launch/fill-sources";
+
+const PRICE_SOURCES = [fillSources.gameChecklistsWeapons, fillSources.clutchbaseWeapons];
 
 const rockstar =
   "https://www.rockstargames.com/VI";
@@ -171,6 +175,7 @@ function toWeapon(weapon: LaunchWeapon, id: number, base?: Weapon): Weapon {
   const sources = [
     ...(weapon.stats ? [src.dayOneWeapons] : []),
     ...get.sources,
+    ...(PRICE_CHECKED.has(weapon.slug) ? PRICE_SOURCES : []),
   ].filter((source, index, all) => all.findIndex((item) => item.href === source.href) === index);
 
   return {

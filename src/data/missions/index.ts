@@ -1,4 +1,5 @@
 import type { Mission, MissionType } from "@/types/mission";
+import { withMissionFill } from "./fill";
 
 /**
  * Confirmed Grand Theft Auto VI missions.
@@ -20,7 +21,7 @@ import type { Mission, MissionType } from "@/types/mission";
  * and order only: no plot in public fields. A name that is itself a story
  * spoiler is hidden and kept in `spoiler`.
  */
-const storyMissions: Mission[] = [
+const baseStoryMissions: Mission[] = [
   {
     "slug": "prologue",
     "name": "Prologue",
@@ -1276,6 +1277,9 @@ const storyMissions: Mission[] = [
     ]
   }
 ];
+
+/** Story rows with the content-fill givers, start areas and rewards merged in. */
+const storyMissions: Mission[] = baseStoryMissions.map(withMissionFill);
 
 export const missions: Mission[] = [
   ...storyMissions,

@@ -1,4 +1,5 @@
 import type { ClothingItem } from "@/types/clothing";
+import { fillSources as fill } from "@/src/data/launch/fill-sources";
 import {
   famitsuSources,
   playstationGame,
@@ -19,7 +20,6 @@ const viceStyleImage = "/images/official/editions/ultimate_edition_vice_city_sty
 const packGaps = [
   "A full itemized catalog",
   "Prices",
-  "When in the story each piece unlocks",
 ];
 
 export const clothing: ClothingItem[] = [
@@ -33,7 +33,20 @@ export const clothing: ClothingItem[] = [
     appliesTo: "Both",
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition",
-    howToGet: "Included with the Ultimate Edition. Rockstar lists it apart from the Stock 305, Sara's, and Electric Fang shops.",
+    howToGet: "Included with the Ultimate Edition. The items appear in your wardrobe and in the Special tab at most salons and tattoo parlors later in the story.",
+    details: [
+      {
+        label: "When it unlocks",
+        value:
+          "Not at the start. Push Square saw the items arrive partway through Chapter 4, and PowerPyx lists the wardrobe pieces from Chapter 5. Either way they land on their own, with nothing to pick up.",
+        sources: [fill.powerpyxUltimate, fill.pushSquareUltimate],
+      },
+      {
+        label: "Where to find it",
+        value: "Check your wardrobe at home, and the Special tab at most hair salons and tattoo parlors.",
+        sources: [fill.pushSquareUltimate],
+      },
+    ],
     summary:
       "Ultimate Edition looks for Jason and Lucia: exclusive outfits and tattoos, and hairstyles on the PlayStation listing.",
     image: viceStyleImage,
@@ -69,7 +82,21 @@ export const clothing: ClothingItem[] = [
     appliesTo: "Both",
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition",
-    howToGet: "Included with the Ultimate Edition as a capsule collection, not as a mapped shop.",
+    howToGet: "Sold from Chapter 1 at The Wonder Whale, a gift shop on Sunbelt Hwy in Key Lento. The Ultimate Edition pieces hang on the mannequins left of the entrance.",
+    details: [
+      {
+        label: "Where to buy it",
+        value:
+          "The Wonder Whale on Sunbelt Hwy, Key Lento (Mariana County), from Chapter 1. On the map it is under Style, then Souvenir & Swimwear. Ultimate Edition items carry a blue tag in the corner.",
+        sources: [fill.pushSquareUltimate, fill.powerpyxClothingStores],
+      },
+      {
+        label: "Outfits in your wardrobe",
+        value:
+          "Jason gets a Hawaiian shirt, tank and pants, and Lucia gets a denim co-ord, bikini and boots. PowerPyx says these show up in the wardrobe from Chapter 4.",
+        sources: [fill.powerpyxUltimate],
+      },
+    ],
     summary:
       "Ultimate Edition apparel and accessories inspired by Macca the Gator. The official still shows Jason and Lucia wearing it.",
     image: goodtimeImage,
@@ -90,7 +117,7 @@ export const clothing: ClothingItem[] = [
         sources: [rockstarUltimate],
       },
     ],
-    unpublished: [...packGaps, "A product-by-product list beyond the still"],
+    unpublished: [...packGaps],
     relatedSlugs: [],
     sources: editionSources,
   },
@@ -108,7 +135,21 @@ export const clothing: ClothingItem[] = [
     editionRequirement: "pre-order",
     editionLabel: "Vintage Vice City Pack",
     howToGet:
-      "Part of the Vintage Vice City Pack, Rockstar's pre-order bonus for either edition. Rockstar Support says purchases before November 20, 2026 include the pack.",
+      "Part of the Vintage Vice City Pack, Rockstar's pre-order bonus for either edition. Soon after you reach Vice City, a marker sends you to the Ocean View Hotel in Vice Beach, and getting into the '55 Vapid Stanier there adds the clothes to your wardrobe.",
+    details: [
+      {
+        label: "How to unlock it",
+        value:
+          "Shortly after you arrive in Vice City (Chapter 3), a marker points to the Ocean View Hotel in Vice Beach. Get into the '55 Vapid Stanier parked there: the clothes go to your wardrobe and you also get the Shore Court garage.",
+        sources: [fill.powerpyxUltimate, fill.pushSquareUltimate],
+      },
+      {
+        label: "Hair and gun patterns",
+        value:
+          "The pack's hairstyles sit in the Special tab at salons, and its weapon liveries are at Ammu-Nation, marked with the Vintage Vice City Pack label.",
+        sources: [fill.pushSquareUltimate],
+      },
+    ],
     summary:
       "Pre-order outfits and hairstyles for Jason and Lucia, including a pastel linen suit and a red sequin mini dress.",
     facts: [
@@ -135,7 +176,6 @@ export const clothing: ClothingItem[] = [
       "Hairstyle names beyond the cut, coif, and curls in that sentence",
       "More outfit names",
       "Prices",
-      "A map pin for the clothes themselves",
     ],
     relatedSlugs: ["jason-pastel-linen-suit", "lucia-red-sequin-mini-dress"],
     sources: packSources,
@@ -216,7 +256,20 @@ export const clothing: ClothingItem[] = [
     appliesTo: "Both",
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition, at Stock 305",
-    howToGet: "Styled at Stock 305, which is only open with the Ultimate Edition.",
+    howToGet: "Bought at Stock 305 on NE 15th St in Stockyard, Vice City. The shop is open from Chapter 1, but only with the Ultimate Edition.",
+    details: [
+      {
+        label: "Where",
+        value:
+          "NE 15th St, Stockyard, Vice City (Vice-Dale County). On the map it is under Style, then Casual & Street. Exclusive pieces carry a blue tag.",
+        sources: [fill.pushSquareUltimate, fill.powerpyxClothingStores],
+      },
+      {
+        label: "When",
+        value: "Open from Chapter 1 for Ultimate Edition owners.",
+        sources: [fill.pushSquareUltimate],
+      },
+    ],
     summary:
       "The unique looks Rockstar says Jason and Lucia can style at Stock 305. Individual names have not been published.",
     storeSlug: "stock-305",
@@ -251,7 +304,20 @@ export const clothing: ClothingItem[] = [
     appliesTo: "Both",
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition, at Sara's Unisex Salon",
-    howToGet: "Applied at Sara's Unisex Salon, which is only open with the Ultimate Edition.",
+    howToGet: "Applied at Sara's Unisex Salon on Cicada Ave in Hamlet. You can walk in from Chapter 1, but the signature styles unlock in Chapter 2.",
+    details: [
+      {
+        label: "Where",
+        value:
+          "Cicada Ave, Hamlet, in South Vice-Dale County. On the map it is under Style, then Hair & Beauty.",
+        sources: [fill.pushSquareUltimate],
+      },
+      {
+        label: "When",
+        value: "The salon opens in Chapter 1. Its signature styles unlock in Chapter 2.",
+        sources: [fill.pushSquareUltimate],
+      },
+    ],
     summary:
       "Signature salon styles for Jason and Lucia, including facial hair, makeup, and nails. The menu itself is not published.",
     storeSlug: "saras-unisex-salon",
@@ -274,9 +340,8 @@ export const clothing: ClothingItem[] = [
       },
     ],
     unpublished: [
-      "The style menu",
+      "The full style menu",
       "Prices",
-      "Which hideout options exist",
     ],
     relatedSlugs: ["jason-mullet"],
     sources: [...editionSources, ...famitsuSources],
@@ -326,7 +391,15 @@ export const clothing: ClothingItem[] = [
     editionRequirement: "ultimate",
     editionLabel: "Ultimate Edition, at Electric Fang Tattoo",
     howToGet:
-      "Chosen at Electric Fang Tattoo in Stockyard, only open with the Ultimate Edition.",
+      "Chosen at Electric Fang Tattoo on Coral Ave in Stockyard, open from Chapter 1 with the Ultimate Edition.",
+    details: [
+      {
+        label: "Where",
+        value:
+          "Coral Ave, Stockyard, Vice City. On the map it is under Style, then Tattoos. Ultimate Edition designs carry a blue tag.",
+        sources: [fill.pushSquareUltimate],
+      },
+    ],
     summary:
       "Over 50 signature tattoos for Jason and Lucia, designed by FAILE. Rockstar has not published the individual names.",
     storeSlug: "electric-fang-tattoo",
@@ -350,6 +423,89 @@ export const clothing: ClothingItem[] = [
     ],
     relatedSlugs: ["vice-city-style"],
     sources: editionSources,
+  },
+  {
+    id: 10,
+    slug: "bargain-world-thrift-clothes",
+    name: "Bargain World thrift clothes",
+    kind: "outfit",
+    kindLabel: "Shop catalog",
+    group: "Shop catalogs",
+    appliesTo: "Both",
+    editionRequirement: "none",
+    editionLabel: "Every edition",
+    howToGet:
+      "Bargain World is a thrift store in Port Gellhorn, Kelly County, near the Eager Beaver gas station. Lucia's Chapter 2 task How Do I Look? sends you there.",
+    summary:
+      "The cheapest clothes found so far: single pieces cost about $7 to $35, and a whole outfit off the Bargains rack can cost $9.",
+    details: [
+      {
+        label: "Prices seen",
+        value:
+          "Caps and visors $7 to $8, a cheap T-shirt $9, cutoffs $9 to $13 (the color changes the price), cropped tanks $15 to $35, jeans $9 to $20. The mannequin's Bargain World Ensemble is $46.",
+        sources: [fill.viceGuidesHowDoILook, fill.gta6ActivitiesClothes, fill.gta6LifeCustomization],
+      },
+      {
+        label: "Cheapest full outfit",
+        value: "About $9, from the Bargains rack at the back by the rear door.",
+        sources: [fill.gta6LifeCustomization],
+      },
+      {
+        label: "How buying works",
+        value:
+          "Walk up to a rack to preview an item with its price and colors, then pick Buy or Buy & Wear. There is a changing room at the back to mix pieces you already own.",
+        sources: [fill.viceGuidesHowDoILook, fill.gta6ActivitiesClothes],
+      },
+      {
+        label: "Why it matters",
+        value:
+          "When the police have your outfit, a full change of clothes clears it. A new cap alone does not.",
+        sources: [fill.gta6ActivitiesClothes, fill.gta6LifeCustomization],
+      },
+    ],
+    facts: [],
+    unpublished: [],
+    relatedSlugs: ["pearl-house-hairstyles"],
+    sources: [fill.viceGuidesHowDoILook, fill.gta6ActivitiesClothes, fill.gta6LifeCustomization, fill.powerpyxClothingStores],
+  },
+  {
+    id: 11,
+    slug: "pearl-house-hairstyles",
+    name: "Pearl House salon hairstyles",
+    kind: "hairstyle",
+    kindLabel: "Shop catalog",
+    group: "Shop catalogs",
+    appliesTo: "Both",
+    editionRequirement: "none",
+    editionLabel: "Every edition",
+    howToGet:
+      "Pearl House Hair Salon is in a row of shops in Port Gellhorn. Lucia's Chapter 2 task New Look sends you there.",
+    summary:
+      "The first salon in the story. Haircuts seen so far cost $52 to $95, and you can preview every style before you pay.",
+    details: [
+      {
+        label: "Prices seen",
+        value:
+          "Wavy Ponytail $52, Straight Classic $69, Short Straight Ponytail $72, Straight Bob $75, Braided Cornrows $95.",
+        sources: [fill.viceGuidesHowDoILook],
+      },
+      {
+        label: "What the chair offers",
+        value:
+          "Three tabs: Hairstyle, Hair Color and Makeup. IGN counted nine standard styles and six colors that every salon stocks; some salons add their own colors and nails.",
+        sources: [fill.viceGuidesHowDoILook, fill.gta6LifeCustomization],
+      },
+      {
+        label: "At home",
+        value:
+          "Lucia has three basic makeup looks at her bathroom mirror, and a safehouse trim has fewer options than a salon.",
+        sources: [fill.gta6LifeCustomization, ...famitsuSources],
+      },
+    ],
+    facts: [],
+    unpublished: [],
+    relatedSlugs: ["bargain-world-thrift-clothes", "saras-salon-styles"],
+    sources: [fill.viceGuidesHowDoILook, fill.gta6LifeCustomization],
   },
 ];
 
