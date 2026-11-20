@@ -8,7 +8,8 @@ import paintedArtManifest from "./paintedArtManifest.json";
  * 1. the item's own photo (from its data entry),
  * 2. an official Rockstar file that shows this exact item, matched by exact name.
  * 3. otherwise a painted GTA Companion artwork scene made for this exact item
- *    (public/images/art/ai/<kind>/<slug>.webp, listed in paintedArtManifest.json),
+ *    (public/images/art/painted-v2/<kind>/<slug>.webp, listed in paintedArtManifest.json;
+ *    the folder name is versioned so browsers drop older cached versions),
  * 4. otherwise a designed GTA Companion artwork (scripts/images/card-art.mjs):
  *    a made-up Vice City style poster with the item's icon or monogram.
  * Art is never presented as a screenshot: painted scenes carry `isArtwork`,
@@ -102,7 +103,7 @@ export function artKind(kind?: string) {
 export function cardArt(title: string, kind?: string): CardImage {
   const theme = artKind(kind);
   const key = `${theme}/${artSlug(title)}`;
-  if (PAINTED_ITEMS.has(key)) return { src: `/images/art/ai/${key}.webp`, source: "art", imageKind: "art", artKey: key, isArtwork: true };
+  if (PAINTED_ITEMS.has(key)) return { src: `/images/art/painted-v2/${key}.webp`, source: "art", imageKind: "art", artKey: key, isArtwork: true };
   const file = ART_ITEMS.has(key) ? key : `${theme}/_pool-${(seedOf(title) % artManifest.pool) + 1}`;
   return { src: `/images/art/${file}.webp`, source: "art", imageKind: "art", artKey: key };
 }
