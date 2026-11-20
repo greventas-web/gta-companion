@@ -1,6 +1,7 @@
 import {
   ingameSourceHref,
   ingameVehicles,
+  INGAME_SOURCE_FALLBACK,
   INGAME_SOURCE_LABEL,
   type IngameEntry,
 } from "@/lib/ingame";
@@ -115,6 +116,15 @@ const confirmedSources: Record<string, { label: string; href: string }> = {
     label: "Rockstar Games",
     href: "https://www.rockstargames.com/VI",
   },
+  // Seen with its in-game name in our own gameplay (stills-inventory.md, batch 2 and 3).
+  "imponte-phoenix": {
+    label: INGAME_SOURCE_LABEL,
+    href: "https://youtu.be/2451A4i7Yj8",
+  },
+  "benefactor-schafter-v12": {
+    label: INGAME_SOURCE_LABEL,
+    href: INGAME_SOURCE_FALLBACK,
+  },
 };
 
 const unconfirmedNote =
@@ -180,6 +190,7 @@ export const vehicles = catalog.map((vehicle) => {
     ...vehicle,
     status: "Confirmed",
     source: source.href,
+    ...(source.label === INGAME_SOURCE_LABEL ? { sourceLabel: source.label } : {}),
     gallery,
     topSpeed: undefined,
     price: undefined,

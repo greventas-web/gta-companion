@@ -1,0 +1,4154 @@
+[
+ {
+  "key": "activity/arcade-games",
+  "kind": "activity",
+  "title": "Arcade games",
+  "hint": "/activities/arcade-games | Leonida /activities/arcade-games"
+ },
+ {
+  "key": "activity/bank-vaults-and-armored-trucks",
+  "kind": "activity",
+  "title": "Bank vaults and armored trucks",
+  "hint": "/activities/bank-vaults-and-armored-trucks | Leonida /activities/bank-vaults-and-armored-trucks"
+ },
+ {
+  "key": "activity/dates",
+  "kind": "activity",
+  "title": "Dates",
+  "hint": "With your partner /activities/dates"
+ },
+ {
+  "key": "activity/does-gta-6-have-online",
+  "kind": "activity",
+  "title": "Does GTA 6 have online?",
+  "hint": "/guides/online"
+ },
+ {
+  "key": "activity/first-person",
+  "kind": "activity",
+  "title": "First person?",
+  "hint": "/guides/first-person"
+ },
+ {
+  "key": "activity/first-person-in-gta-6",
+  "kind": "activity",
+  "title": "First person in GTA 6",
+  "hint": "/guides/first-person"
+ },
+ {
+  "key": "activity/fishing",
+  "kind": "activity",
+  "title": "Fishing",
+  "hint": "/guides/fishing"
+ },
+ {
+  "key": "activity/focus",
+  "kind": "activity",
+  "title": "Focus",
+  "hint": "/guides/focus"
+ },
+ {
+  "key": "activity/gang-illegal-operations",
+  "kind": "activity",
+  "title": "Gang illegal operations",
+  "hint": "/activities/gang-illegal-operations | Leonida /activities/gang-illegal-operations"
+ },
+ {
+  "key": "activity/how-to-fish",
+  "kind": "activity",
+  "title": "How to fish",
+  "hint": "/guides/fishing"
+ },
+ {
+  "key": "activity/how-to-heal",
+  "kind": "activity",
+  "title": "How to heal",
+  "hint": "/guides/how-to-heal"
+ },
+ {
+  "key": "activity/laundering-marked-bills",
+  "kind": "activity",
+  "title": "Laundering marked bills",
+  "hint": "/activities/laundering-marked-bills | Leonida /activities/laundering-marked-bills"
+ },
+ {
+  "key": "activity/meditation",
+  "kind": "activity",
+  "title": "Meditation",
+  "hint": "/activities/meditation | Leonida /activities/meditation"
+ },
+ {
+  "key": "activity/meditation-spots",
+  "kind": "activity",
+  "title": "Meditation spots",
+  "hint": "Meditate at every spot. 18 spots · 100% 15 /activities/meditation"
+ },
+ {
+  "key": "activity/off-roading",
+  "kind": "activity",
+  "title": "Off-Roading",
+  "hint": "/activities/off-roading | Mount Kalaga /activities/off-roading"
+ },
+ {
+  "key": "activity/pool-billiards",
+  "kind": "activity",
+  "title": "Pool (billiards)",
+  "hint": "/activities/pool | Leonida /activities/pool"
+ },
+ {
+  "key": "activity/robbing-with-your-partner",
+  "kind": "activity",
+  "title": "Robbing with your partner",
+  "hint": "/activities/partner-robberies | Leonida /activities/partner-robberies"
+ },
+ {
+  "key": "activity/stealing-cars-to-sell",
+  "kind": "activity",
+  "title": "Stealing cars to sell",
+  "hint": "Moses and Randy /activities/stealing-cars-to-sell"
+ },
+ {
+  "key": "activity/strangers",
+  "kind": "activity",
+  "title": "Strangers",
+  "hint": "/activities/strangers | Leonida /activities/strangers"
+ },
+ {
+  "key": "activity/street-races",
+  "kind": "activity",
+  "title": "Street races",
+  "hint": "40 races /activities/street-races"
+ },
+ {
+  "key": "activity/studying-animals",
+  "kind": "activity",
+  "title": "Studying animals",
+  "hint": "/activities/studying-animals | Leonida /activities/studying-animals"
+ },
+ {
+  "key": "activity/stunts",
+  "kind": "activity",
+  "title": "Stunts",
+  "hint": "/activities/stunts | Leonida /activities/stunts"
+ },
+ {
+  "key": "activity/top-fun-drone-races",
+  "kind": "activity",
+  "title": "Top Fun drone races",
+  "hint": "/activities/top-fun-drone-races | Leonida /activities/top-fun-drone-races"
+ },
+ {
+  "key": "activity/wanted-system",
+  "kind": "activity",
+  "title": "Wanted system",
+  "hint": "/wanted-system"
+ },
+ {
+  "key": "activity/zoo-visits",
+  "kind": "activity",
+  "title": "Zoo visits",
+  "hint": "/activities/zoo-visits | Leonida /activities/zoo-visits"
+ },
+ {
+  "key": "animal/animals",
+  "kind": "animal",
+  "title": "Animals",
+  "hint": "/animals"
+ },
+ {
+  "key": "animal/black-bear",
+  "kind": "animal",
+  "title": "Black bear",
+  "hint": "Land /animals/black-bear"
+ },
+ {
+  "key": "animal/cane-toad",
+  "kind": "animal",
+  "title": "Cane toad",
+  "hint": "Wildlife /animals/cane-toad | Wildlife · Leonida /animals/cane-toad"
+ },
+ {
+  "key": "animal/cow",
+  "kind": "animal",
+  "title": "Cow",
+  "hint": "Land /animals/cow"
+ },
+ {
+  "key": "animal/dolores-the-snake",
+  "kind": "animal",
+  "title": "Dolores the snake",
+  "hint": "/guides/pet-snake"
+ },
+ {
+  "key": "animal/duck",
+  "kind": "animal",
+  "title": "Duck",
+  "hint": "Bird /animals/duck"
+ },
+ {
+  "key": "animal/frog",
+  "kind": "animal",
+  "title": "Frog",
+  "hint": "Land /animals/frog"
+ },
+ {
+  "key": "animal/jellyfish",
+  "kind": "animal",
+  "title": "Jellyfish",
+  "hint": "Sea /animals/jellyfish"
+ },
+ {
+  "key": "animal/manatee",
+  "kind": "animal",
+  "title": "Manatee",
+  "hint": "Wildlife /animals/manatee | Wildlife · Leonida /animals/manatee"
+ },
+ {
+  "key": "animal/manta-ray",
+  "kind": "animal",
+  "title": "Manta ray",
+  "hint": "Sea /animals/manta-ray"
+ },
+ {
+  "key": "animal/nine-banded-armadillo",
+  "kind": "animal",
+  "title": "Nine-banded armadillo",
+  "hint": "Land /animals/nine-banded-armadillo"
+ },
+ {
+  "key": "animal/peacock",
+  "kind": "animal",
+  "title": "Peacock",
+  "hint": "Wildlife /animals/peacock"
+ },
+ {
+  "key": "animal/pigeon",
+  "kind": "animal",
+  "title": "Pigeon",
+  "hint": "Bird /animals/pigeon"
+ },
+ {
+  "key": "animal/raccoon",
+  "kind": "animal",
+  "title": "Raccoon",
+  "hint": "Land /animals/raccoon"
+ },
+ {
+  "key": "animal/rhesus-macaque",
+  "kind": "animal",
+  "title": "Rhesus macaque",
+  "hint": "Wildlife /animals/rhesus-macaque | Wildlife · Leonida /animals/rhesus-macaque"
+ },
+ {
+  "key": "animal/seagull",
+  "kind": "animal",
+  "title": "Seagull",
+  "hint": "Bird /animals/seagull"
+ },
+ {
+  "key": "animal/whale",
+  "kind": "animal",
+  "title": "Whale",
+  "hint": "Sea /animals/whale"
+ },
+ {
+  "key": "animal/whooping-crane",
+  "kind": "animal",
+  "title": "Whooping crane",
+  "hint": "Bird /animals/whooping-crane"
+ },
+ {
+  "key": "brand/alpha-sports",
+  "kind": "brand",
+  "title": "Alpha Sports",
+  "hint": "Sportswear /brands/alpha-sports"
+ },
+ {
+  "key": "brand/burger-shot",
+  "kind": "brand",
+  "title": "Burger Shot",
+  "hint": "/brands/burger-shot | Restaurant /brands/burger-shot"
+ },
+ {
+  "key": "brand/drip-drops",
+  "kind": "brand",
+  "title": "Drip Drops",
+  "hint": "Streetwear /brands/drip-drops"
+ },
+ {
+  "key": "brand/endzone",
+  "kind": "brand",
+  "title": "Endzone",
+  "hint": "Sportswear /brands/endzone"
+ },
+ {
+  "key": "brand/ferruccio-tucci",
+  "kind": "brand",
+  "title": "Ferruccio Tucci",
+  "hint": "Formal /brands/ferruccio-tucci"
+ },
+ {
+  "key": "brand/fleeca",
+  "kind": "brand",
+  "title": "Fleeca",
+  "hint": "Bank /brands/fleeca"
+ },
+ {
+  "key": "brand/mid",
+  "kind": "brand",
+  "title": "Mid",
+  "hint": "Streetwear /brands/mid"
+ },
+ {
+  "key": "brand/nola",
+  "kind": "brand",
+  "title": "Nola",
+  "hint": "Formal /brands/nola"
+ },
+ {
+  "key": "brand/pay-n-spray",
+  "kind": "brand",
+  "title": "Pay 'n' Spray",
+  "hint": "19 shops /brands/pay-n-spray"
+ },
+ {
+  "key": "brand/slinger",
+  "kind": "brand",
+  "title": "Slinger",
+  "hint": "Streetwear /brands/slinger"
+ },
+ {
+  "key": "brand/suburban",
+  "kind": "brand",
+  "title": "Suburban",
+  "hint": "Streetwear /brands/suburban"
+ },
+ {
+  "key": "brand/this-that",
+  "kind": "brand",
+  "title": "This / That",
+  "hint": "Streetwear /brands/this-that"
+ },
+ {
+  "key": "brand/urban-legendz",
+  "kind": "brand",
+  "title": "Urban Legendz",
+  "hint": "Streetwear /brands/urban-legendz"
+ },
+ {
+  "key": "business/allied-crystal-sugar-refinery",
+  "kind": "business",
+  "title": "Allied Crystal sugar refinery",
+  "hint": "Ambrosia /businesses/allied-crystal-sugar-refinery"
+ },
+ {
+  "key": "business/boone-speedway",
+  "kind": "business",
+  "title": "Boone Speedway",
+  "hint": "Racing /businesses/boone-speedway"
+ },
+ {
+  "key": "business/delights",
+  "kind": "business",
+  "title": "Delights",
+  "hint": "Port Gellhorn /businesses/delights"
+ },
+ {
+  "key": "business/fleeca",
+  "kind": "business",
+  "title": "Fleeca",
+  "hint": "Bank /businesses/fleeca"
+ },
+ {
+  "key": "business/gellhorn-raceway",
+  "kind": "business",
+  "title": "Gellhorn Raceway",
+  "hint": "Racing /businesses/gellhorn-raceway"
+ },
+ {
+  "key": "business/pay-n-spray",
+  "kind": "business",
+  "title": "Pay 'n' Spray",
+  "hint": "19 shops /businesses/pay-n-spray"
+ },
+ {
+  "key": "business/starlet-motel",
+  "kind": "business",
+  "title": "Starlet Motel",
+  "hint": "Kelly County /businesses/starlet-motel"
+ },
+ {
+  "key": "business/the-rusty-anchor",
+  "kind": "business",
+  "title": "The Rusty Anchor",
+  "hint": "Key Lento /businesses/the-rusty-anchor"
+ },
+ {
+  "key": "business/thrillbilly-mud-club",
+  "kind": "business",
+  "title": "Thrillbilly Mud Club",
+  "hint": "Mud racing /businesses/thrillbilly-mud-club"
+ },
+ {
+  "key": "business/vyb-club",
+  "kind": "business",
+  "title": "VYB Club",
+  "hint": "Ocean Beach /businesses/vyb-club"
+ },
+ {
+  "key": "business/watkins-auto-parts",
+  "kind": "business",
+  "title": "Watkins Auto Parts",
+  "hint": "Port Gellhorn /businesses/watkins-auto-parts"
+ },
+ {
+  "key": "character/characters",
+  "kind": "character",
+  "title": "Characters",
+  "hint": "/characters"
+ },
+ {
+  "key": "character/dunk-porter",
+  "kind": "character",
+  "title": "Dunk Porter",
+  "hint": "Fence /characters/dunk-porter"
+ },
+ {
+  "key": "character/moses-watkins",
+  "kind": "character",
+  "title": "Moses Watkins",
+  "hint": "Car fence · Port Gellhorn /characters/moses-watkins"
+ },
+ {
+  "key": "character/randy-kozlov",
+  "kind": "character",
+  "title": "Randy Kozlov",
+  "hint": "Car fence · Vice City /characters/randy-kozlov"
+ },
+ {
+  "key": "character/wyman",
+  "kind": "character",
+  "title": "Wyman",
+  "hint": "Car collector /characters/wyman"
+ },
+ {
+  "key": "character/yasmani-cabrera",
+  "kind": "character",
+  "title": "Yasmani Cabrera",
+  "hint": "Fence · Jewelry /characters/yasmani-cabrera"
+ },
+ {
+  "key": "cheat/250-000",
+  "kind": "cheat",
+  "title": "$250,000",
+  "hint": "Player cheats /cheats/player-cheats/money-250000 | Instantly gives you $250,000. Unlock Finish the story /cheats/player-cheats/money-250000"
+ },
+ {
+  "key": "cheat/65-vapid-dominator",
+  "kind": "cheat",
+  "title": "'65 Vapid Dominator",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/65-vapid-dominator"
+ },
+ {
+  "key": "cheat/airboat-09",
+  "kind": "cheat",
+  "title": "Airboat 09",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/airboat-09"
+ },
+ {
+  "key": "cheat/all-explosive-weapons",
+  "kind": "cheat",
+  "title": "All Explosive Weapons",
+  "hint": "Weapon cheats /cheats/combat-cheats/all-explosive-weapons"
+ },
+ {
+  "key": "cheat/attack-force",
+  "kind": "cheat",
+  "title": "Attack Force",
+  "hint": "Weapon cheats /cheats/combat-cheats/attack-force"
+ },
+ {
+  "key": "cheat/body-armor",
+  "kind": "cheat",
+  "title": "Body Armor",
+  "hint": "Player cheats /cheats/player-cheats/body-armor | Adds body armor to your loadout. Unlock Complete 100 workouts /cheats/player-cheats/body-armor"
+ },
+ {
+  "key": "cheat/bravado-banshee",
+  "kind": "cheat",
+  "title": "Bravado Banshee",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/bravado-banshee"
+ },
+ {
+  "key": "cheat/brimstone-golfer",
+  "kind": "cheat",
+  "title": "Brimstone Golfer",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/brimstone-golfer"
+ },
+ {
+  "key": "cheat/bubblegum",
+  "kind": "cheat",
+  "title": "Bubblegum",
+  "hint": "Screen filter cheats /cheats/screen-filter-cheats/bubblegum | Turns the world purple and yellow with sparkling highlights. Unlock Find all 24 collectible cards for the Vice City Flamingos /cheats/scre"
+ },
+ {
+  "key": "cheat/cataclysm",
+  "kind": "cheat",
+  "title": "Cataclysm",
+  "hint": "Screen filter cheats /cheats/screen-filter-cheats/cataclysm | Fills the world with murky smoke. Unlock Discover Martha's Vamos in the Progress menu /cheats/screen-filter-cheats/cataclysm"
+ },
+ {
+  "key": "cheat/cheats",
+  "kind": "cheat",
+  "title": "Cheats",
+  "hint": "/cheats"
+ },
+ {
+  "key": "cheat/cycle-weather",
+  "kind": "cheat",
+  "title": "Cycle Weather",
+  "hint": "World cheats /cheats/environment-cheats/cycle-weather | Changes the weather. Unlock Finish the story /cheats/environment-cheats/cycle-weather"
+ },
+ {
+  "key": "cheat/dark-mirror",
+  "kind": "cheat",
+  "title": "Dark Mirror",
+  "hint": "Flips the world upside down and turns it black. Unlock Make $500,000 selling vehicles /cheats/screen-filter-cheats/dark-mirror | Screen filter cheats /cheats/screen-filter-cheats/dark-mirror"
+ },
+ {
+  "key": "cheat/dollhouse",
+  "kind": "cheat",
+  "title": "Dollhouse",
+  "hint": "Screen filter cheats /cheats/screen-filter-cheats/dollhouse | Applies a vivid filter with a narrow aspect ratio. Unlock Spend 8 hours with your partner /cheats/screen-filter-cheats/dollhouse"
+ },
+ {
+  "key": "cheat/drunk",
+  "kind": "cheat",
+  "title": "Drunk",
+  "hint": "Instantly makes you and your partner drunk. Unlock Spend $2,500 on alcohol /cheats/player-cheats/drunk | Player cheats /cheats/player-cheats/drunk"
+ },
+ {
+  "key": "cheat/exploding-balls",
+  "kind": "cheat",
+  "title": "Exploding Balls",
+  "hint": "Weapon cheats /cheats/combat-cheats/exploding-balls"
+ },
+ {
+  "key": "cheat/exploding-bottles",
+  "kind": "cheat",
+  "title": "Exploding Bottles",
+  "hint": "Weapon cheats /cheats/combat-cheats/exploding-bottles"
+ },
+ {
+  "key": "cheat/explosive-shotgun",
+  "kind": "cheat",
+  "title": "Explosive Shotgun",
+  "hint": "Weapon cheats /cheats/combat-cheats/explosive-shotgun"
+ },
+ {
+  "key": "cheat/faded-glory",
+  "kind": "cheat",
+  "title": "Faded Glory",
+  "hint": "Screen filter cheats /cheats/screen-filter-cheats/faded-glory | Applies a color CRT TV filter. Unlock Rob 50 stores with your partner /cheats/screen-filter-cheats/faded-glory"
+ },
+ {
+  "key": "cheat/fast-forward",
+  "kind": "cheat",
+  "title": "Fast Forward",
+  "hint": "Applies a motion blur and accelerates cloud movements. Unlock Complete 50 meditations /cheats/screen-filter-cheats/fast-forward | Screen filter cheats /cheats/screen-filter-cheats/fast-forward"
+ },
+ {
+  "key": "cheat/fisheye",
+  "kind": "cheat",
+  "title": "Fisheye",
+  "hint": "Applies a fisheye filter. Unlock Catch 100 fish /cheats/screen-filter-cheats/fisheye | Screen filter cheats /cheats/screen-filter-cheats/fisheye"
+ },
+ {
+  "key": "cheat/golden-hour",
+  "kind": "cheat",
+  "title": "Golden Hour",
+  "hint": "Applies a golden filter with a widescreen aspect ratio. Unlock Spend 4 hours holding hands /cheats/screen-filter-cheats/golden-hour | Screen filter cheats /cheats/screen-filter-cheats/golden-hour"
+ },
+ {
+  "key": "cheat/hauners-h-at",
+  "kind": "cheat",
+  "title": "Hauners H-AT",
+  "hint": "Weapon cheats /cheats/combat-cheats/hauners-h-at"
+ },
+ {
+  "key": "cheat/hauners-p-996-lazer",
+  "kind": "cheat",
+  "title": "Hauners P-996 Lazer",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/hauners-p-996-lazer"
+ },
+ {
+  "key": "cheat/hauners-rhino-tank",
+  "kind": "cheat",
+  "title": "Hauners Rhino Tank",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/hauners-rhino-tank"
+ },
+ {
+  "key": "cheat/hellscape",
+  "kind": "cheat",
+  "title": "Hellscape",
+  "hint": "Screen filter cheats /cheats/screen-filter-cheats/hellscape | Turns the world red and orange with a heat haze. Unlock Steal 100 cop vehicles /cheats/screen-filter-cheats/hellscape"
+ },
+ {
+  "key": "cheat/hvy-bulldozer",
+  "kind": "cheat",
+  "title": "HVY Bulldozer",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/hvy-bulldozer"
+ },
+ {
+  "key": "cheat/incendiary-ammo",
+  "kind": "cheat",
+  "title": "Incendiary Ammo",
+  "hint": "Weapon cheats /cheats/combat-cheats/incendiary-ammo"
+ },
+ {
+  "key": "cheat/infinite-ammo",
+  "kind": "cheat",
+  "title": "Infinite Ammo",
+  "hint": "Weapon cheats /cheats/combat-cheats/infinite-ammo"
+ },
+ {
+  "key": "cheat/inflatable-flamingo",
+  "kind": "cheat",
+  "title": "Inflatable Flamingo",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/inflatable-flamingo"
+ },
+ {
+  "key": "cheat/interstate-ambulance",
+  "kind": "cheat",
+  "title": "Interstate Ambulance",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/interstate-ambulance"
+ },
+ {
+  "key": "cheat/lapwing-mallard",
+  "kind": "cheat",
+  "title": "Lapwing Mallard",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/lapwing-mallard"
+ },
+ {
+  "key": "cheat/maibatsu-boomazoom",
+  "kind": "cheat",
+  "title": "Maibatsu Boomazoom",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/maibatsu-boomazoom"
+ },
+ {
+  "key": "cheat/maibatsu-sanchez",
+  "kind": "cheat",
+  "title": "Maibatsu Sanchez",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/maibatsu-sanchez"
+ },
+ {
+  "key": "cheat/max-ammo",
+  "kind": "cheat",
+  "title": "Max Ammo",
+  "hint": "Weapon cheats /cheats/combat-cheats/max-ammo"
+ },
+ {
+  "key": "cheat/migraine",
+  "kind": "cheat",
+  "title": "Migraine",
+  "hint": "Applies a blurred, distorted filter. Unlock Survive 6 minutes with a 6-star wanted level /cheats/screen-filter-cheats/migraine | Screen filter cheats /cheats/screen-filter-cheats/migraine"
+ },
+ {
+  "key": "cheat/move-time-forward",
+  "kind": "cheat",
+  "title": "Move Time Forward",
+  "hint": "Moves the time of day forward. Unlock Find 10 collectible watches /cheats/environment-cheats/move-time-forward | World cheats /cheats/environment-cheats/move-time-forward"
+ },
+ {
+  "key": "cheat/mtl-pumper",
+  "kind": "cheat",
+  "title": "MTL Pumper",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/mtl-pumper"
+ },
+ {
+  "key": "cheat/nagasaki-carbon-rs",
+  "kind": "cheat",
+  "title": "Nagasaki Carbon RS",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/nagasaki-carbon-rs"
+ },
+ {
+  "key": "cheat/nagasaki-sea-sparrow",
+  "kind": "cheat",
+  "title": "Nagasaki Sea Sparrow",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/nagasaki-sea-sparrow"
+ },
+ {
+  "key": "cheat/neon-jungle",
+  "kind": "cheat",
+  "title": "Neon Jungle",
+  "hint": "Applies neon highlights to the world. Unlock Discover all 16 Girlypop Vehicles /cheats/screen-filter-cheats/neon-jungle | Screen filter cheats /cheats/screen-filter-cheats/neon-jungle"
+ },
+ {
+  "key": "cheat/no-fall-damage",
+  "kind": "cheat",
+  "title": "No Fall Damage",
+  "hint": "Player cheats /cheats/player-cheats/no-fall-damage | You are immune to fall damage. Unlock Survive a freefall from 40 feet 20 times /cheats/player-cheats/no-fall-damage"
+ },
+ {
+  "key": "cheat/no-reload",
+  "kind": "cheat",
+  "title": "No Reload",
+  "hint": "Weapon cheats /cheats/combat-cheats/no-reload"
+ },
+ {
+  "key": "cheat/parachute",
+  "kind": "cheat",
+  "title": "Parachute",
+  "hint": "Adds a parachute to your loadout. Unlock Complete 50 skydives or base jumps from 300 feet or higher /cheats/player-cheats/parachute | Player cheats /cheats/player-cheats/parachute"
+ },
+ {
+  "key": "cheat/pause-time-of-day",
+  "kind": "cheat",
+  "title": "Pause Time of Day",
+  "hint": "Pauses the current time of day. Unlock Find 20 collectible watches /cheats/environment-cheats/pause-time-of-day | World cheats /cheats/environment-cheats/pause-time-of-day"
+ },
+ {
+  "key": "cheat/pinhole",
+  "kind": "cheat",
+  "title": "Pinhole",
+  "hint": "Applies a pinhole camera filter. Unlock Clear 25 gang operations with your partner /cheats/screen-filter-cheats/pinhole | Screen filter cheats /cheats/screen-filter-cheats/pinhole"
+ },
+ {
+  "key": "cheat/pixel-art",
+  "kind": "cheat",
+  "title": "Pixel Art",
+  "hint": "Applies a pixelated filter. Unlock Make $250,000 selling collectibles /cheats/screen-filter-cheats/pixel-art | Screen filter cheats /cheats/screen-filter-cheats/pixel-art"
+ },
+ {
+  "key": "cheat/player-cheats",
+  "kind": "cheat",
+  "title": "Player cheats",
+  "hint": "10 cheats /cheats/player-cheats"
+ },
+ {
+  "key": "cheat/powdered-sugar",
+  "kind": "cheat",
+  "title": "Powdered Sugar",
+  "hint": "Screen filter cheats /cheats/screen-filter-cheats/powdered-sugar | Turns the world white with sparkling highlights. Unlock Scan all space debris with WAiNK /cheats/screen-filter-cheats/powdered-sugar"
+ },
+ {
+  "key": "cheat/progen-emerus",
+  "kind": "cheat",
+  "title": "Progen Emerus",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/progen-emerus"
+ },
+ {
+  "key": "cheat/raise-heat-level",
+  "kind": "cheat",
+  "title": "Raise Heat Level",
+  "hint": "Player cheats /cheats/player-cheats/raise-heat-level | Raises your level of heat across the map. Unlock Lose a 3-star wanted level 25 times /cheats/player-cheats/raise-heat-level"
+ },
+ {
+  "key": "cheat/raise-wanted-level",
+  "kind": "cheat",
+  "title": "Raise Wanted Level",
+  "hint": "Player cheats /cheats/player-cheats/raise-wanted-level | Raises your wanted level across the map. Unlock Lose a 3-star wanted level 50 times /cheats/player-cheats/raise-wanted-level"
+ },
+ {
+  "key": "cheat/repair-vehicle",
+  "kind": "cheat",
+  "title": "Repair Vehicle",
+  "hint": "Fully repairs your current vehicle. Unlock Get 1st place in 10 races at Gellhorn Raceway, Thrillbilly Mud Club, and Boone Speedway /cheats/player-cheats/repair-vehicle | Player cheats /cheats/player-c"
+ },
+ {
+  "key": "cheat/screen-filter-cheats",
+  "kind": "cheat",
+  "title": "Screen filter cheats",
+  "hint": "/cheats/screen-filter-cheats | 16 cheats /cheats/screen-filter-cheats"
+ },
+ {
+  "key": "cheat/speeder-700-gt",
+  "kind": "cheat",
+  "title": "Speeder 700 GT",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/speeder-700-gt"
+ },
+ {
+  "key": "cheat/truffade-thrax",
+  "kind": "cheat",
+  "title": "Truffade Thrax",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/truffade-thrax"
+ },
+ {
+  "key": "cheat/tuff-bmx",
+  "kind": "cheat",
+  "title": "Tuff BMX",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/tuff-bmx"
+ },
+ {
+  "key": "cheat/unlimited-focus",
+  "kind": "cheat",
+  "title": "Unlimited Focus",
+  "hint": "Player cheats /cheats/player-cheats/unlimited-focus | Focus never runs out. Unlock Finish the story /cheats/player-cheats/unlimited-focus"
+ },
+ {
+  "key": "cheat/unlimited-nitrous",
+  "kind": "cheat",
+  "title": "Unlimited Nitrous",
+  "hint": "Nitrous and fuel never runs out on vehicles. Unlock Complete 50 stunt jumps /cheats/player-cheats/unlimited-nitrous | Player cheats /cheats/player-cheats/unlimited-nitrous"
+ },
+ {
+  "key": "cheat/vapid-stanier-g2-taxi",
+  "kind": "cheat",
+  "title": "Vapid Stanier G2 Taxi",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/vapid-stanier-g2-taxi"
+ },
+ {
+  "key": "cheat/vehicle-cheats",
+  "kind": "cheat",
+  "title": "Vehicle cheats",
+  "hint": "/cheats/vehicle-cheats | 21 cheats /cheats/vehicle-cheats"
+ },
+ {
+  "key": "cheat/vehicle-force",
+  "kind": "cheat",
+  "title": "Vehicle Force",
+  "hint": "Weapon cheats /cheats/combat-cheats/vehicle-force"
+ },
+ {
+  "key": "cheat/videotape",
+  "kind": "cheat",
+  "title": "Videotape",
+  "hint": "Applies a videotape-style filter. Unlock Complete 50 activities with your partner /cheats/screen-filter-cheats/videotape | Screen filter cheats /cheats/screen-filter-cheats/videotape"
+ },
+ {
+  "key": "cheat/weapon-cheats",
+  "kind": "cheat",
+  "title": "Weapon cheats",
+  "hint": "11 cheats /cheats/combat-cheats"
+ },
+ {
+  "key": "cheat/western-zombie-bobber",
+  "kind": "cheat",
+  "title": "Western Zombie Bobber",
+  "hint": "Vehicle cheats /cheats/vehicle-cheats/western-zombie-bobber"
+ },
+ {
+  "key": "cheat/world-cheats",
+  "kind": "cheat",
+  "title": "World cheats",
+  "hint": "3 cheats /cheats/environment-cheats"
+ },
+ {
+  "key": "cheat/yesteryear",
+  "kind": "cheat",
+  "title": "Yesteryear",
+  "hint": "Applies a black and white CRT TV filter. Unlock Discover the Ridgeway /cheats/screen-filter-cheats/yesteryear | Screen filter cheats /cheats/screen-filter-cheats/yesteryear"
+ },
+ {
+  "key": "clothing/change-clothes",
+  "kind": "clothing",
+  "title": "Change clothes",
+  "hint": "/guides/change-clothes"
+ },
+ {
+  "key": "clothing/formal-wear",
+  "kind": "clothing",
+  "title": "Formal wear",
+  "hint": "Nola, Ferruccio Tucci /clothing/formal-wear"
+ },
+ {
+  "key": "clothing/haircuts",
+  "kind": "clothing",
+  "title": "Haircuts",
+  "hint": "18 salons /clothing/haircuts"
+ },
+ {
+  "key": "clothing/how-to-change-clothes",
+  "kind": "clothing",
+  "title": "How to change clothes",
+  "hint": "/guides/change-clothes"
+ },
+ {
+  "key": "clothing/jasons-mullet",
+  "kind": "clothing",
+  "title": "Jason's mullet",
+  "hint": "/clothing/jason-mullet | Hairstyle /clothing/jason-mullet | Hairstyle · Jason /clothing/jason-mullet"
+ },
+ {
+  "key": "clothing/jasons-pastel-linen-suit",
+  "kind": "clothing",
+  "title": "Jason's pastel linen suit",
+  "hint": "/clothing/jason-pastel-linen-suit | Outfit /clothing/jason-pastel-linen-suit | Outfit · Jason /clothing/jason-pastel-linen-suit"
+ },
+ {
+  "key": "clothing/lucias-red-sequin-dress",
+  "kind": "clothing",
+  "title": "Lucia's red sequin dress",
+  "hint": "/clothing/lucia-red-sequin-mini-dress"
+ },
+ {
+  "key": "clothing/lucias-red-sequin-mini-dress",
+  "kind": "clothing",
+  "title": "Lucia's red sequin mini dress",
+  "hint": "/clothing/lucia-red-sequin-mini-dress | Outfit /clothing/lucia-red-sequin-mini-dress | Outfit · Lucia /clothing/lucia-red-sequin-mini-dress"
+ },
+ {
+  "key": "clothing/souvenirs-and-swimwear",
+  "kind": "clothing",
+  "title": "Souvenirs and swimwear",
+  "hint": "Beach shops /clothing/souvenirs-and-swimwear"
+ },
+ {
+  "key": "clothing/sportswear",
+  "kind": "clothing",
+  "title": "Sportswear",
+  "hint": "Alpha Sports, Endzone, Eris /clothing/sportswear"
+ },
+ {
+  "key": "clothing/streetwear",
+  "kind": "clothing",
+  "title": "Streetwear",
+  "hint": "Slinger, This / That, Mid /clothing/streetwear"
+ },
+ {
+  "key": "clothing/styles",
+  "kind": "clothing",
+  "title": "Styles",
+  "hint": "Hair, makeup, and outfits you find. /clothing"
+ },
+ {
+  "key": "clothing/tattoos",
+  "kind": "clothing",
+  "title": "Tattoos",
+  "hint": "11 studios /clothing/tattoos"
+ },
+ {
+  "key": "clothing/thrift-clothes",
+  "kind": "clothing",
+  "title": "Thrift clothes",
+  "hint": "5 thrift stores /clothing/thrift-clothes"
+ },
+ {
+  "key": "clothing/vintage-looks",
+  "kind": "clothing",
+  "title": "Vintage looks",
+  "hint": "Outfits and hairstyles. /clothing/vintage-vice-city-looks"
+ },
+ {
+  "key": "clothing/vintage-vice-city-outfits-and-hairstyles",
+  "kind": "clothing",
+  "title": "Vintage Vice City outfits and hairstyles",
+  "hint": "/clothing/vintage-vice-city-looks | Pack /clothing/vintage-vice-city-looks | Pack · Both /clothing/vintage-vice-city-looks"
+ },
+ {
+  "key": "clothingstore/alines-thrift-store",
+  "kind": "clothingstore",
+  "title": "Aline’s Thrift Store",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/alines-thrift-store | Thrift /where-to-find/clothing-stores/alines-thrift-store | Vice-Dale County /where-to-find/clothing-stores/alines-thrif"
+ },
+ {
+  "key": "clothingstore/alpha-sports",
+  "kind": "clothingstore",
+  "title": "Alpha Sports",
+  "hint": "Clothes · Downtown, Ocean Beach (4), Waning Sands /where-to-find/clothing-stores/alpha-sports | Downtown, Ocean Beach (4), Waning Sands /where-to-find/clothing-stores/alpha-sports | Sportswear /where-"
+ },
+ {
+  "key": "clothingstore/bargain-world",
+  "kind": "clothingstore",
+  "title": "Bargain World",
+  "hint": "Clothes · Kelly County /where-to-find/clothing-stores/bargain-world | Kelly County /where-to-find/clothing-stores/bargain-world | Thrift /where-to-find/clothing-stores/bargain-world"
+ },
+ {
+  "key": "clothingstore/beach-please",
+  "kind": "clothingstore",
+  "title": "Beach Please",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/beach-please | Souvenir & Swimwear /where-to-find/clothing-stores/beach-please | Vice-Dale County /where-to-find/clothing-stores/beach-please"
+ },
+ {
+  "key": "clothingstore/billies-key-lento-gift-shop",
+  "kind": "clothingstore",
+  "title": "Billie’s Key Lento Gift Shop",
+  "hint": "Clothes · Mariana County /where-to-find/clothing-stores/billies-key-lento-gift-shop | Mariana County /where-to-find/clothing-stores/billies-key-lento-gift-shop | Souvenir & Swimwear /where-to-find/clo"
+ },
+ {
+  "key": "clothingstore/clothing-stores",
+  "kind": "clothingstore",
+  "title": "Clothing stores",
+  "hint": "/where-to-find/clothing-stores"
+ },
+ {
+  "key": "clothingstore/deluge-swimwear",
+  "kind": "clothingstore",
+  "title": "De’luge Swimwear",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/deluge-swimwear | Souvenir & Swimwear /where-to-find/clothing-stores/deluge-swimwear | Vice-Dale County /where-to-find/clothing-stores/deluge-"
+ },
+ {
+  "key": "clothingstore/dollar-domain",
+  "kind": "clothingstore",
+  "title": "Dollar Domain",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/dollar-domain | Souvenir & Swimwear /where-to-find/clothing-stores/dollar-domain | Vice-Dale County /where-to-find/clothing-stores/dollar-doma"
+ },
+ {
+  "key": "clothingstore/dr-froogal",
+  "kind": "clothingstore",
+  "title": "Dr Froogal",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/dr-froogal | Thrift /where-to-find/clothing-stores/dr-froogal | Vice-Dale County /where-to-find/clothing-stores/dr-froogal"
+ },
+ {
+  "key": "clothingstore/drip-drops",
+  "kind": "clothingstore",
+  "title": "Drip Drops",
+  "hint": "Casual & Street /where-to-find/clothing-stores/drip-drops | Clothes · Vice-Dale County /where-to-find/clothing-stores/drip-drops | Vice-Dale County /where-to-find/clothing-stores/drip-drops"
+ },
+ {
+  "key": "clothingstore/endzone",
+  "kind": "clothingstore",
+  "title": "Endzone",
+  "hint": "Clothes · Downtown, Ocean Beach (2), Washington Beach /where-to-find/clothing-stores/endzone | Downtown, Ocean Beach (2), Washington Beach /where-to-find/clothing-stores/endzone | Sportswear /where-to"
+ },
+ {
+  "key": "clothingstore/eris",
+  "kind": "clothingstore",
+  "title": "Eris",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/eris | Sportswear /where-to-find/clothing-stores/eris | Vice-Dale County /where-to-find/clothing-stores/eris"
+ },
+ {
+  "key": "clothingstore/ferruccio-tucci",
+  "kind": "clothingstore",
+  "title": "Ferruccio Tucci",
+  "hint": "Capri, Ocean Beach (2), Decor District, Waning Sands /where-to-find/clothing-stores/ferruccio-tucci | Clothes · Capri, Ocean Beach (2), Decor District, Waning Sands /where-to-find/clothing-stores/ferr"
+ },
+ {
+  "key": "clothingstore/gifts-a-gogo",
+  "kind": "clothingstore",
+  "title": "Gifts A GoGo",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/gifts-a-gogo | Souvenir & Swimwear /where-to-find/clothing-stores/gifts-a-gogo | Vice-Dale County /where-to-find/clothing-stores/gifts-a-gogo"
+ },
+ {
+  "key": "clothingstore/hamlet-thrift",
+  "kind": "clothingstore",
+  "title": "Hamlet Thrift",
+  "hint": "Clothes · Hamlet /where-to-find/clothing-stores/hamlet-thrift | Hamlet /where-to-find/clothing-stores/hamlet-thrift | Thrift /where-to-find/clothing-stores/hamlet-thrift"
+ },
+ {
+  "key": "clothingstore/key-lento-kahuna",
+  "kind": "clothingstore",
+  "title": "Key Lento Kahuna",
+  "hint": "Clothes · Mariana County /where-to-find/clothing-stores/key-lento-kahuna | Mariana County /where-to-find/clothing-stores/key-lento-kahuna | Souvenir & Swimwear /where-to-find/clothing-stores/key-lento"
+ },
+ {
+  "key": "clothingstore/leroys",
+  "kind": "clothingstore",
+  "title": "Leroy’s",
+  "hint": "Clothes · Mariana County /where-to-find/clothing-stores/leroys | Mariana County /where-to-find/clothing-stores/leroys | Souvenir & Swimwear /where-to-find/clothing-stores/leroys"
+ },
+ {
+  "key": "clothingstore/little-cuba-souvenir-store",
+  "kind": "clothingstore",
+  "title": "Little Cuba Souvenir Store",
+  "hint": "Clothes · Little Cuba, Vice City /where-to-find/clothing-stores/little-cuba-souvenir-store | Little Cuba, Vice City /where-to-find/clothing-stores/little-cuba-souvenir-store | Souvenir & Swimwear /whe"
+ },
+ {
+  "key": "clothingstore/lost-mines-souvenirs",
+  "kind": "clothingstore",
+  "title": "Lost Mines Souvenirs",
+  "hint": "Clothes · Mariana County /where-to-find/clothing-stores/lost-mines-souvenirs | Mariana County /where-to-find/clothing-stores/lost-mines-souvenirs | Souvenir & Swimwear /where-to-find/clothing-stores/l"
+ },
+ {
+  "key": "clothingstore/mid",
+  "kind": "clothingstore",
+  "title": "Mid",
+  "hint": "Casual & Street /where-to-find/clothing-stores/mid | Clothes · Ocean Beach (2), Waning Sands /where-to-find/clothing-stores/mid | Ocean Beach (2), Waning Sands /where-to-find/clothing-stores/mid"
+ },
+ {
+  "key": "clothingstore/nifty-threads-island-wear",
+  "kind": "clothingstore",
+  "title": "Nifty Threads Island Wear",
+  "hint": "Clothes · Mariana County /where-to-find/clothing-stores/nifty-threads-island-wear | Mariana County /where-to-find/clothing-stores/nifty-threads-island-wear | Thrift /where-to-find/clothing-stores/nift"
+ },
+ {
+  "key": "clothingstore/nola",
+  "kind": "clothingstore",
+  "title": "Nola",
+  "hint": "Capri, Peacock Bay, Ocean Beach (2), Decor District /where-to-find/clothing-stores/nola | Clothes · Capri, Peacock Bay, Ocean Beach (2), Decor District /where-to-find/clothing-stores/nola | Formal /wh"
+ },
+ {
+  "key": "clothingstore/sea-swell-gifts",
+  "kind": "clothingstore",
+  "title": "Sea Swell Gifts",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/sea-swell-gifts | Souvenir & Swimwear /where-to-find/clothing-stores/sea-swell-gifts | Vice-Dale County /where-to-find/clothing-stores/sea-swe"
+ },
+ {
+  "key": "clothingstore/slinger",
+  "kind": "clothingstore",
+  "title": "Slinger",
+  "hint": "Casual & Street /where-to-find/clothing-stores/slinger | Clothes · Southside, Peacock Bay, Tequesta, Downtown, Decor District, Ocean Beach /where-to-find/clothing-stores/slinger | Southside, Peacock B"
+ },
+ {
+  "key": "clothingstore/suburban",
+  "kind": "clothingstore",
+  "title": "Suburban",
+  "hint": "Casual & Street /where-to-find/clothing-stores/suburban | Clothes · Vice-Dale County /where-to-find/clothing-stores/suburban | Vice-Dale County /where-to-find/clothing-stores/suburban"
+ },
+ {
+  "key": "clothingstore/sunshine-sallys",
+  "kind": "clothingstore",
+  "title": "Sunshine Sally’s",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/sunshine-sallys | Souvenir & Swimwear /where-to-find/clothing-stores/sunshine-sallys | Vice-Dale County /where-to-find/clothing-stores/sunshin"
+ },
+ {
+  "key": "clothingstore/telegraphe",
+  "kind": "clothingstore",
+  "title": "Telegraphe",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/telegraphe | Souvenir & Swimwear /where-to-find/clothing-stores/telegraphe | Vice-Dale County /where-to-find/clothing-stores/telegraphe"
+ },
+ {
+  "key": "clothingstore/the-wonder-whale",
+  "kind": "clothingstore",
+  "title": "The Wonder Whale",
+  "hint": "Clothes · Key Lento /where-to-find/clothing-stores/the-wonder-whale | Key Lento /where-to-find/clothing-stores/the-wonder-whale | Souvenir & Swimwear /where-to-find/clothing-stores/the-wonder-whale"
+ },
+ {
+  "key": "clothingstore/this-that",
+  "kind": "clothingstore",
+  "title": "This / That",
+  "hint": "Casual & Street /where-to-find/clothing-stores/this-that | Clothes · Decor District, Ocean Beach (2), Waning Sands /where-to-find/clothing-stores/this-that | Decor District, Ocean Beach (2), Waning Sa"
+ },
+ {
+  "key": "clothingstore/urban-legendz",
+  "kind": "clothingstore",
+  "title": "Urban Legendz",
+  "hint": "Casual & Street /where-to-find/clothing-stores/urban-legendz | Clothes · Vice-Dale County /where-to-find/clothing-stores/urban-legendz | Vice-Dale County /where-to-find/clothing-stores/urban-legendz"
+ },
+ {
+  "key": "clothingstore/vice-style",
+  "kind": "clothingstore",
+  "title": "Vice Style",
+  "hint": "Clothes · Vice-Dale County /where-to-find/clothing-stores/vice-style | Souvenir & Swimwear /where-to-find/clothing-stores/vice-style | Vice-Dale County /where-to-find/clothing-stores/vice-style"
+ },
+ {
+  "key": "collectible/americas-next-top-hooker",
+  "kind": "collectible",
+  "title": "America’s Next Top Hooker",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/americas-next-top-hooker | Collectible card sets /collectibles/card-sets/americas-next-top-hooker"
+ },
+ {
+  "key": "collectible/backyard-wrestling",
+  "kind": "collectible",
+  "title": "Backyard Wrestling",
+  "hint": "A set of 12 cards hidden around Leonida. 12 cards /collectibles/card-sets/backyard-wrestling | Collectible card sets /collectibles/card-sets/backyard-wrestling"
+ },
+ {
+  "key": "collectible/cocaine-flamingos",
+  "kind": "collectible",
+  "title": "Cocaine Flamingos",
+  "hint": "125 hidden flamingos. Total 125 · For 100% Any 100 /collectibles/cocaine-flamingos"
+ },
+ {
+  "key": "collectible/collectible-card-sets",
+  "kind": "collectible",
+  "title": "Collectible card sets",
+  "hint": "18 sets, 480 cards. Sets 18 · Cards 480 /collectibles/card-sets"
+ },
+ {
+  "key": "collectible/collectibles",
+  "kind": "collectible",
+  "title": "Collectibles",
+  "hint": "/collectibles"
+ },
+ {
+  "key": "collectible/delights-dancers",
+  "kind": "collectible",
+  "title": "Delights Dancers",
+  "hint": "A set of 18 cards hidden around Leonida. 18 cards /collectibles/card-sets/delights-dancers | Collectible card sets /collectibles/card-sets/delights-dancers"
+ },
+ {
+  "key": "collectible/ed-comics-universe",
+  "kind": "collectible",
+  "title": "Ed Comics Universe",
+  "hint": "A set of 36 cards hidden around Leonida. 36 cards /collectibles/card-sets/ed-comics-universe | Collectible card sets /collectibles/card-sets/ed-comics-universe"
+ },
+ {
+  "key": "collectible/jack-of-hearts-dancers",
+  "kind": "collectible",
+  "title": "Jack of Hearts Dancers",
+  "hint": "A set of 36 cards hidden around Leonida. 36 cards /collectibles/card-sets/jack-of-hearts-dancers | Collectible card sets /collectibles/card-sets/jack-of-hearts-dancers"
+ },
+ {
+  "key": "collectible/liberty-city-penetrators",
+  "kind": "collectible",
+  "title": "Liberty City Penetrators",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/liberty-city-penetrators | Collectible card sets /collectibles/card-sets/liberty-city-penetrators"
+ },
+ {
+  "key": "collectible/liberty-city-swingers",
+  "kind": "collectible",
+  "title": "Liberty City Swingers",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/liberty-city-swingers | Collectible card sets /collectibles/card-sets/liberty-city-swingers"
+ },
+ {
+  "key": "collectible/liberty-city-wrath",
+  "kind": "collectible",
+  "title": "Liberty City Wrath",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/liberty-city-wrath | Collectible card sets /collectibles/card-sets/liberty-city-wrath"
+ },
+ {
+  "key": "collectible/los-santos-corkers",
+  "kind": "collectible",
+  "title": "Los Santos Corkers",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/los-santos-corkers | Collectible card sets /collectibles/card-sets/los-santos-corkers"
+ },
+ {
+  "key": "collectible/los-santos-panic",
+  "kind": "collectible",
+  "title": "Los Santos Panic",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/los-santos-panic | Collectible card sets /collectibles/card-sets/los-santos-panic"
+ },
+ {
+  "key": "collectible/los-santos-pounders",
+  "kind": "collectible",
+  "title": "Los Santos Pounders",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/los-santos-pounders | Collectible card sets /collectibles/card-sets/los-santos-pounders"
+ },
+ {
+  "key": "collectible/nine1nine-dancers",
+  "kind": "collectible",
+  "title": "Nine1Nine Dancers",
+  "hint": "A set of 36 cards hidden around Leonida. 36 cards /collectibles/card-sets/nine1nine-dancers | Collectible card sets /collectibles/card-sets/nine1nine-dancers"
+ },
+ {
+  "key": "collectible/right-wing-americas-hero",
+  "kind": "collectible",
+  "title": "Right Wing: America’s Hero",
+  "hint": "A set of 36 cards hidden around Leonida. 36 cards /collectibles/card-sets/right-wing-americas-hero | Collectible card sets /collectibles/card-sets/right-wing-americas-hero"
+ },
+ {
+  "key": "collectible/stunt-jumps",
+  "kind": "collectible",
+  "title": "Stunt jumps",
+  "hint": "397 stunts in 4 types. Total stunts 397 · Trophy Cunning Stunts (250) /collectibles/stunt-jumps"
+ },
+ {
+  "key": "collectible/the-legends-of-ratface",
+  "kind": "collectible",
+  "title": "The Legends of Ratface",
+  "hint": "A set of 36 cards hidden around Leonida. 36 cards /collectibles/card-sets/the-legends-of-ratface | Collectible card sets /collectibles/card-sets/the-legends-of-ratface"
+ },
+ {
+  "key": "collectible/vice-city-club-de-futbol",
+  "kind": "collectible",
+  "title": "Vice City Club De Fútbol",
+  "hint": "A set of 30 cards hidden around Leonida. 30 cards /collectibles/card-sets/vice-city-club-de-futbol | Collectible card sets /collectibles/card-sets/vice-city-club-de-futbol"
+ },
+ {
+  "key": "collectible/vice-city-flamingos",
+  "kind": "collectible",
+  "title": "Vice City Flamingos",
+  "hint": "Collectible card sets /collectibles/card-sets/vice-city-flamingos | Find all 24 to unlock the Bubblegum filter cheat. 24 cards /collectibles/card-sets/vice-city-flamingos"
+ },
+ {
+  "key": "collectible/vice-city-manatees",
+  "kind": "collectible",
+  "title": "Vice City Manatees",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/vice-city-manatees | Collectible card sets /collectibles/card-sets/vice-city-manatees"
+ },
+ {
+  "key": "collectible/vice-city-narcos",
+  "kind": "collectible",
+  "title": "Vice City Narcos",
+  "hint": "A set of 24 cards hidden around Leonida. 24 cards /collectibles/card-sets/vice-city-narcos | Collectible card sets /collectibles/card-sets/vice-city-narcos"
+ },
+ {
+  "key": "garage/7th-avenue-garage",
+  "kind": "garage",
+  "title": "7th Avenue Garage",
+  "hint": "East of Vice City International Airport, northwest of Tequesta /where-to-find/garages/7th-avenue-garage | Garages for sale /where-to-find/garages/7th-avenue-garage"
+ },
+ {
+  "key": "garage/atlantic-court-garage",
+  "kind": "garage",
+  "title": "Atlantic Court Garage",
+  "hint": "Garages for sale /where-to-find/garages/atlantic-court-garage | Ocean Beach, south of the Y Hotel /where-to-find/garages/atlantic-court-garage"
+ },
+ {
+  "key": "garage/bonita-court-garage",
+  "kind": "garage",
+  "title": "Bonita Court Garage",
+  "hint": "Center of Washington Island /where-to-find/garages/bonita-court-garage | Garages for sale /where-to-find/garages/bonita-court-garage"
+ },
+ {
+  "key": "garage/garages",
+  "kind": "garage",
+  "title": "Garages",
+  "hint": "/where-to-find/garages"
+ },
+ {
+  "key": "garage/garages-and-safehouses",
+  "kind": "garage",
+  "title": "Garages and safehouses",
+  "hint": "12 places /where-to-find/garages"
+ },
+ {
+  "key": "garage/mitchel-auto-center",
+  "kind": "garage",
+  "title": "Mitchel Auto Center",
+  "hint": "Central Kelly County, east of Port Gellhorn /where-to-find/garages/mitchel-auto-center | Garages for sale /where-to-find/garages/mitchel-auto-center"
+ },
+ {
+  "key": "garage/paradise-garage",
+  "kind": "garage",
+  "title": "Paradise Garage",
+  "hint": "Garages from the story /where-to-find/garages/paradise-garage | Northeastern Watson Bay /where-to-find/garages/paradise-garage"
+ },
+ {
+  "key": "garage/persistence-road-garage",
+  "kind": "garage",
+  "title": "Persistence Road Garage",
+  "hint": "Garages for sale /where-to-find/garages/persistence-road-garage | Western Belville, Leonard County /where-to-find/garages/persistence-road-garage"
+ },
+ {
+  "key": "garage/port-gellhorn-station-garage",
+  "kind": "garage",
+  "title": "Port Gellhorn Station Garage",
+  "hint": "Garages from the story /where-to-find/garages/port-gellhorn-station-garage | Port Gellhorn, west of Delights /where-to-find/garages/port-gellhorn-station-garage"
+ },
+ {
+  "key": "garage/starlet-motel",
+  "kind": "garage",
+  "title": "Starlet Motel",
+  "hint": "Historic Route 628, Kelly County /where-to-find/garages/starlet-motel | Safehouses /where-to-find/garages/starlet-motel"
+ },
+ {
+  "key": "garage/store-n-bolt",
+  "kind": "garage",
+  "title": "Store ’N’ Bolt",
+  "hint": "Garages for sale /where-to-find/garages/store-n-bolt | Northern Ambrosia /where-to-find/garages/store-n-bolt"
+ },
+ {
+  "key": "garage/vela-rota-drive-garage",
+  "kind": "garage",
+  "title": "Vela Rota Drive Garage",
+  "hint": "Garages for sale /where-to-find/garages/vela-rota-drive-garage | Middle of Capri /where-to-find/garages/vela-rota-drive-garage"
+ },
+ {
+  "key": "garage/wyatt-motors",
+  "kind": "garage",
+  "title": "Wyatt Motors",
+  "hint": "Central Ambrosia, near the Pay ’n’ Spray /where-to-find/garages/wyatt-motors | Garages for sale /where-to-find/garages/wyatt-motors"
+ },
+ {
+  "key": "gunstore/barrage-gun-supply",
+  "kind": "gunstore",
+  "title": "Barrage Gun Supply",
+  "hint": "Gun store /ammu-nation-locations/barrage-gun-supply | Keys, near Mile Zero Air Station Standard /ammu-nation-locations/barrage-gun-supply | Standard · Keys, near Mile Zero Air Station /ammu-nation-loc"
+ },
+ {
+  "key": "gunstore/biffs-gun-supply",
+  "kind": "gunstore",
+  "title": "Biff’s Gun Supply",
+  "hint": "Ambrosia /where-to-find/gun-stores/biffs-gun-supply | Ambrosia Standard /ammu-nation-locations/biffs-gun-supply | Gun store /ammu-nation-locations/biffs-gun-supply | Outside Vice City /where-to-find/g"
+ },
+ {
+  "key": "gunstore/black-eagle",
+  "kind": "gunstore",
+  "title": "Black Eagle",
+  "hint": "Expanded stores (widest range) /where-to-find/gun-stores/black-eagle | Expanded · Northwest Vice City /ammu-nation-locations/black-eagle | Gun store /ammu-nation-locations/black-eagle | Northwest Vice"
+ },
+ {
+  "key": "gunstore/gellhorn-outfitters",
+  "kind": "gunstore",
+  "title": "Gellhorn Outfitters",
+  "hint": "Gun store /ammu-nation-locations/gellhorn-outfitters | Port Gellhorn Standard /ammu-nation-locations/gellhorn-outfitters | Standard · Port Gellhorn /ammu-nation-locations/gellhorn-outfitters"
+ },
+ {
+  "key": "gunstore/guns-aplenty",
+  "kind": "gunstore",
+  "title": "Guns Aplenty!",
+  "hint": "Gun store /ammu-nation-locations/guns-aplenty | Hunting · Watson /ammu-nation-locations/guns-aplenty | Watson Hunting /ammu-nation-locations/guns-aplenty"
+ },
+ {
+  "key": "gunstore/hamlet-traders",
+  "kind": "gunstore",
+  "title": "Hamlet Traders",
+  "hint": "Gun store /ammu-nation-locations/hamlet-traders | Hamlet Standard /ammu-nation-locations/hamlet-traders | Standard · Hamlet /ammu-nation-locations/hamlet-traders"
+ },
+ {
+  "key": "gunstore/iron-and-oak",
+  "kind": "gunstore",
+  "title": "Iron & Oak",
+  "hint": "Expanded stores (widest range) /where-to-find/gun-stores/iron-and-oak | Expanded · North Vice City /ammu-nation-locations/iron-and-oak | Gun store /ammu-nation-locations/iron-and-oak | North Vice City"
+ },
+ {
+  "key": "gunstore/jackson-firearms",
+  "kind": "gunstore",
+  "title": "Jackson Firearms",
+  "hint": "Central Vice City Standard /ammu-nation-locations/jackson-firearms | Gun store /ammu-nation-locations/jackson-firearms | Standard · Central Vice City /ammu-nation-locations/jackson-firearms"
+ },
+ {
+  "key": "gunstore/martez-empenos",
+  "kind": "gunstore",
+  "title": "Martez Empenos",
+  "hint": "Central Vice City Standard /ammu-nation-locations/martez-empenos | Gun store /ammu-nation-locations/martez-empenos | Standard · Central Vice City /ammu-nation-locations/martez-empenos"
+ },
+ {
+  "key": "gunstore/pawn-and-gun-crosstown",
+  "kind": "gunstore",
+  "title": "Pawn & Gun – Crosstown",
+  "hint": "Central Vice City Standard /ammu-nation-locations/pawn-and-gun-crosstown | Gun store /ammu-nation-locations/pawn-and-gun-crosstown | Standard · Central Vice City /ammu-nation-locations/pawn-and-gun-cr"
+ },
+ {
+  "key": "gunstore/pawn-and-gun-port-gellhorn",
+  "kind": "gunstore",
+  "title": "Pawn & Gun – Port Gellhorn",
+  "hint": "Gun store /ammu-nation-locations/pawn-and-gun-port-gellhorn | Outside Vice City /where-to-find/gun-stores/pawn-and-gun-port-gellhorn | Port Gellhorn /where-to-find/gun-stores/pawn-and-gun-port-gellhor"
+ },
+ {
+  "key": "gunstore/phils-ammu-nation",
+  "kind": "gunstore",
+  "title": "Phil’s Ammu-Nation",
+  "hint": "Expanded stores (widest range) /where-to-find/gun-stores/phils-ammu-nation | Expanded · South Vice City /ammu-nation-locations/phils-ammu-nation | Gun store /ammu-nation-locations/phils-ammu-nation | "
+ },
+ {
+  "key": "gunstore/prestige-firearms",
+  "kind": "gunstore",
+  "title": "Prestige Firearms",
+  "hint": "Expanded stores (widest range) /where-to-find/gun-stores/prestige-firearms | Expanded · Ocean Beach, Vice City /ammu-nation-locations/prestige-firearms | Gun store /ammu-nation-locations/prestige-fire"
+ },
+ {
+  "key": "gunstore/quickscope",
+  "kind": "gunstore",
+  "title": "Quickscope",
+  "hint": "Central Vice City Standard /ammu-nation-locations/quickscope | Gun store /ammu-nation-locations/quickscope | Standard · Central Vice City /ammu-nation-locations/quickscope"
+ },
+ {
+  "key": "gunstore/richardson-hunting-supplies",
+  "kind": "gunstore",
+  "title": "Richardson Hunting Supplies",
+  "hint": "Gun store /ammu-nation-locations/richardson-hunting-supplies | North Mariana County Standard /ammu-nation-locations/richardson-hunting-supplies | Standard · North Mariana County /ammu-nation-locations"
+ },
+ {
+  "key": "gunstore/rusty-willis-jr-hunting-supplies",
+  "kind": "gunstore",
+  "title": "Rusty Willis Jr. Hunting Supplies",
+  "hint": "Gun store /ammu-nation-locations/rusty-willis-jr-hunting-supplies | Hunting · Mount Kalaga National Park /ammu-nation-locations/rusty-willis-jr-hunting-supplies | Mount Kalaga National Park /where-to-"
+ },
+ {
+  "key": "gunstore/tactical-outlet-guns",
+  "kind": "gunstore",
+  "title": "Tactical Outlet Guns",
+  "hint": "Belville /where-to-find/gun-stores/tactical-outlet-guns | Belville Standard /ammu-nation-locations/tactical-outlet-guns | Gun store /ammu-nation-locations/tactical-outlet-guns | Outside Vice City /whe"
+ },
+ {
+  "key": "gunstore/tequesta-guns-and-ammo",
+  "kind": "gunstore",
+  "title": "Tequesta Guns & Ammo",
+  "hint": "Central Vice City Standard /ammu-nation-locations/tequesta-guns-and-ammo | Gun store /ammu-nation-locations/tequesta-guns-and-ammo | Standard · Central Vice City /ammu-nation-locations/tequesta-guns-a"
+ },
+ {
+  "key": "gunstore/vice-city-firearms",
+  "kind": "gunstore",
+  "title": "Vice City Firearms",
+  "hint": "Gun store /ammu-nation-locations/vice-city-firearms | South Central Vice City Standard /ammu-nation-locations/vice-city-firearms | Standard · South Central Vice City /ammu-nation-locations/vice-city-f"
+ },
+ {
+  "key": "gunstore/vice-city-gun-and-pawn",
+  "kind": "gunstore",
+  "title": "Vice City Gun & Pawn",
+  "hint": "Central Vice City Standard /ammu-nation-locations/vice-city-gun-and-pawn | Gun store /ammu-nation-locations/vice-city-gun-and-pawn | Standard · Central Vice City /ammu-nation-locations/vice-city-gun-a"
+ },
+ {
+  "key": "gunstore/woodhatch",
+  "kind": "gunstore",
+  "title": "Woodhatch",
+  "hint": "Capri /where-to-find/gun-stores/woodhatch | Capri Expanded /ammu-nation-locations/woodhatch | Expanded stores (widest range) /where-to-find/gun-stores/woodhatch | Expanded · Capri /ammu-nation-locatio"
+ },
+ {
+  "key": "gunstore/zenons-pawn-shop",
+  "kind": "gunstore",
+  "title": "Zenon’s Pawn Shop",
+  "hint": "Gun store /ammu-nation-locations/zenons-pawn-shop | North Vice City Standard /ammu-nation-locations/zenons-pawn-shop | Standard · North Vice City /ammu-nation-locations/zenons-pawn-shop"
+ },
+ {
+  "key": "location/3-point-range",
+  "kind": "location",
+  "title": "3-Point Range",
+  "hint": "Griffin Shooting Range 3 golds"
+ },
+ {
+  "key": "location/a-night-in-vice-city",
+  "kind": "location",
+  "title": "A Night in Vice City",
+  "hint": "November 18, 2026 · The Miami Heat host the Milwaukee Bucks at Kaseya Center in an official Rockstar Games collaboration, on ESPN at 7 PM ET / 6 PM CT / 4 PM PT."
+ },
+ {
+  "key": "location/abismo-key",
+  "kind": "location",
+  "title": "Abismo Key",
+  "hint": "Leonida Keys /locations/abismo-key"
+ },
+ {
+  "key": "location/alien-range",
+  "kind": "location",
+  "title": "Alien Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds"
+ },
+ {
+  "key": "location/balsero",
+  "kind": "location",
+  "title": "Balsero",
+  "hint": "Vice City /locations/balsero"
+ },
+ {
+  "key": "location/base-jumps",
+  "kind": "location",
+  "title": "Base jumps",
+  "hint": "Jump off and land your parachute. 25"
+ },
+ {
+  "key": "location/belville",
+  "kind": "location",
+  "title": "Belville",
+  "hint": "Leonard County /locations/belville"
+ },
+ {
+  "key": "location/bobcat-key",
+  "kind": "location",
+  "title": "Bobcat Key",
+  "hint": "Leonida Keys /locations/bobcat-key"
+ },
+ {
+  "key": "location/capri",
+  "kind": "location",
+  "title": "Capri",
+  "hint": "Mariana County /locations/capri"
+ },
+ {
+  "key": "location/compound-range",
+  "kind": "location",
+  "title": "Compound Range",
+  "hint": "Griffin Shooting Range 3 golds"
+ },
+ {
+  "key": "location/cops-and-robbers-range",
+  "kind": "location",
+  "title": "Cops & Robbers Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds"
+ },
+ {
+  "key": "location/crosstown",
+  "kind": "location",
+  "title": "Crosstown",
+  "hint": "Vice City /locations/crosstown"
+ },
+ {
+  "key": "location/decor-district",
+  "kind": "location",
+  "title": "Decor District",
+  "hint": "Vice City /locations/decor-district"
+ },
+ {
+  "key": "location/downtown-vice-city",
+  "kind": "location",
+  "title": "Downtown Vice City",
+  "hint": "Vice City /locations/downtown-vice-city"
+ },
+ {
+  "key": "location/gambit-bay",
+  "kind": "location",
+  "title": "Gambit Bay",
+  "hint": "Fishing /locations/gambit-bay"
+ },
+ {
+  "key": "location/grayson",
+  "kind": "location",
+  "title": "Grayson",
+  "hint": "Lummox County /locations/grayson"
+ },
+ {
+  "key": "location/hamlet",
+  "kind": "location",
+  "title": "Hamlet",
+  "hint": "Vice-Dale County /locations/hamlet"
+ },
+ {
+  "key": "location/hook-range",
+  "kind": "location",
+  "title": "Hook Range",
+  "hint": "Griffin Shooting Range 3 golds"
+ },
+ {
+  "key": "location/hunting-range",
+  "kind": "location",
+  "title": "Hunting Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds"
+ },
+ {
+  "key": "location/kelly-county",
+  "kind": "location",
+  "title": "Kelly County",
+  "hint": "29 jumps | 51 bridges | County /locations/kelly-county"
+ },
+ {
+  "key": "location/knife-flights",
+  "kind": "location",
+  "title": "Knife flights",
+  "hint": "Fly through a tight gap. 40"
+ },
+ {
+  "key": "location/la-perle",
+  "kind": "location",
+  "title": "La Perle",
+  "hint": "Vice City /locations/la-perle"
+ },
+ {
+  "key": "location/lake-leonida",
+  "kind": "location",
+  "title": "Lake Leonida",
+  "hint": "Leonard County /locations/lake-leonida"
+ },
+ {
+  "key": "location/leonard-county",
+  "kind": "location",
+  "title": "Leonard County",
+  "hint": "13 jumps | 32 bridges | County /locations/leonard-county"
+ },
+ {
+  "key": "location/little-cuba",
+  "kind": "location",
+  "title": "Little Cuba",
+  "hint": "Vice City /locations/little-cuba"
+ },
+ {
+  "key": "location/loop-range",
+  "kind": "location",
+  "title": "Loop Range",
+  "hint": "Griffin Shooting Range 3 golds"
+ },
+ {
+  "key": "location/lummox-county",
+  "kind": "location",
+  "title": "Lummox County",
+  "hint": "16 jumps | 17 bridges | County /locations/lummox-county"
+ },
+ {
+  "key": "location/macca-and-friends-teaser",
+  "kind": "location",
+  "title": "Macca & Friends teaser",
+  "hint": "November 13, 2026 · Rockstar Games released a teaser trailer for Macca & Friends, an animated series inside Grand Theft Auto VI."
+ },
+ {
+  "key": "location/map",
+  "kind": "location",
+  "title": "Map",
+  "hint": "/map"
+ },
+ {
+  "key": "location/mariana-county",
+  "kind": "location",
+  "title": "Mariana County",
+  "hint": "17 jumps | 35 bridges | County /locations/mariana-county"
+ },
+ {
+  "key": "location/market-range",
+  "kind": "location",
+  "title": "Market Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds"
+ },
+ {
+  "key": "location/maze-range",
+  "kind": "location",
+  "title": "Maze Range",
+  "hint": "Griffin Shooting Range 3 golds"
+ },
+ {
+  "key": "location/millport",
+  "kind": "location",
+  "title": "Millport",
+  "hint": "Lummox County /locations/millport"
+ },
+ {
+  "key": "location/ocean-beach",
+  "kind": "location",
+  "title": "Ocean Beach",
+  "hint": "Vice City /locations/ocean-beach"
+ },
+ {
+  "key": "location/ocean-view-hotel",
+  "kind": "location",
+  "title": "Ocean View Hotel",
+  "hint": "Ocean Beach /locations/ocean-view-hotel"
+ },
+ {
+  "key": "location/peacock-bay",
+  "kind": "location",
+  "title": "Peacock Bay",
+  "hint": "Vice City /locations/peacock-bay"
+ },
+ {
+  "key": "location/release-moves-to-may-26-2026",
+  "kind": "location",
+  "title": "Release moves to May 26, 2026",
+  "hint": "May 2, 2025 · Rockstar moves the release from 2025 to May 26, 2026."
+ },
+ {
+  "key": "location/release-time-confirmed",
+  "kind": "location",
+  "title": "Release time confirmed",
+  "hint": "November 3, 2026 · Rockstar Support says Grand Theft Auto VI releases at midnight local time on November 19, 2026, in all regions, on both PlayStation 5 and Xbox Series X|S."
+ },
+ {
+  "key": "location/saloon-range",
+  "kind": "location",
+  "title": "Saloon Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds"
+ },
+ {
+  "key": "location/salton",
+  "kind": "location",
+  "title": "Salton",
+  "hint": "Vice City /locations/salton"
+ },
+ {
+  "key": "location/shore-drive",
+  "kind": "location",
+  "title": "Shore Drive",
+  "hint": "Ocean Beach /locations/shore-drive"
+ },
+ {
+  "key": "location/southside",
+  "kind": "location",
+  "title": "Southside",
+  "hint": "Vice City /locations/southside-vice-city"
+ },
+ {
+  "key": "location/southwind",
+  "kind": "location",
+  "title": "Southwind",
+  "hint": "Mariana County /locations/southwind"
+ },
+ {
+  "key": "location/stockyard",
+  "kind": "location",
+  "title": "Stockyard",
+  "hint": "Vice City /locations/stockyard"
+ },
+ {
+  "key": "location/stunt-jumps",
+  "kind": "location",
+  "title": "Stunt jumps",
+  "hint": "Hit a ramp and land the jump. 130"
+ },
+ {
+  "key": "location/tequesta",
+  "kind": "location",
+  "title": "Tequesta",
+  "hint": "Vice City /locations/tequesta"
+ },
+ {
+  "key": "location/the-vercetti-estate",
+  "kind": "location",
+  "title": "The Vercetti Estate",
+  "hint": "Estate /locations/vercetti-estate"
+ },
+ {
+  "key": "location/under-the-bridges",
+  "kind": "location",
+  "title": "Under the bridges",
+  "hint": "Fly under a bridge. 202"
+ },
+ {
+  "key": "location/unlock-the-map",
+  "kind": "location",
+  "title": "Unlock the map",
+  "hint": "/guides/unlock-map"
+ },
+ {
+  "key": "location/vc-port",
+  "kind": "location",
+  "title": "VC Port",
+  "hint": "Vice City /locations/vc-port"
+ },
+ {
+  "key": "location/vice-city-international-airport",
+  "kind": "location",
+  "title": "Vice City International Airport",
+  "hint": "Vice City /locations/vice-city-international-airport"
+ },
+ {
+  "key": "location/vice-dale-county",
+  "kind": "location",
+  "title": "Vice-Dale County",
+  "hint": "67 bridges | County /locations/vice-dale-county | Most jumps, around Vice City. 55 jumps"
+ },
+ {
+  "key": "location/villa-range",
+  "kind": "location",
+  "title": "Villa Range",
+  "hint": "Griffin Shooting Range 3 golds"
+ },
+ {
+  "key": "location/waning-sands",
+  "kind": "location",
+  "title": "Waning Sands",
+  "hint": "Leonard County /locations/waning-sands"
+ },
+ {
+  "key": "location/wanted-system",
+  "kind": "location",
+  "title": "Wanted system",
+  "hint": "/wanted-system"
+ },
+ {
+  "key": "location/washington-beach",
+  "kind": "location",
+  "title": "Washington Beach",
+  "hint": "Vice City /locations/washington-beach"
+ },
+ {
+  "key": "location/watson-bay",
+  "kind": "location",
+  "title": "Watson Bay",
+  "hint": "Mariana County /locations/watson-bay"
+ },
+ {
+  "key": "location/waxman-island",
+  "kind": "location",
+  "title": "Waxman Island",
+  "hint": "Vice-Dale County /locations/waxman-island"
+ },
+ {
+  "key": "location/y-hotel",
+  "kind": "location",
+  "title": "Y Hotel",
+  "hint": "Washington Beach /locations/y-hotel"
+ },
+ {
+  "key": "location/youtube-24-hour-launch-livestream",
+  "kind": "location",
+  "title": "YouTube 24-hour launch livestream",
+  "hint": "November 18, 2026 · YouTube and Rockstar Games partner on a 24-hour Grand Theft Auto VI launch livestream."
+ },
+ {
+  "key": "location/zombie-range",
+  "kind": "location",
+  "title": "Zombie Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds"
+ },
+ {
+  "key": "mission/afternoon-delight",
+  "kind": "mission",
+  "title": "Afternoon Delight",
+  "hint": "Mission 10 /missions/afternoon-delight | Story /missions/afternoon-delight"
+ },
+ {
+  "key": "mission/ambulance-chaser",
+  "kind": "mission",
+  "title": "Ambulance Chaser",
+  "hint": "Mission 2 /missions/ambulance-chaser | Story /missions/ambulance-chaser"
+ },
+ {
+  "key": "mission/boobie-time",
+  "kind": "mission",
+  "title": "Boobie Time",
+  "hint": "Mission 12 /missions/boobie-time | Story /missions/boobie-time"
+ },
+ {
+  "key": "mission/breakfast-run",
+  "kind": "mission",
+  "title": "Breakfast Run",
+  "hint": "Mission 8 /missions/breakfast-run | Story /missions/breakfast-run"
+ },
+ {
+  "key": "mission/bricked-up",
+  "kind": "mission",
+  "title": "Bricked Up",
+  "hint": "Mission 24 /missions/bricked-up | Story /missions/bricked-up"
+ },
+ {
+  "key": "mission/buck-me",
+  "kind": "mission",
+  "title": "Buck Me",
+  "hint": "Chapter 1 /missions/buck-me | Mission 12 /missions/buck-me | Story /missions/buck-me"
+ },
+ {
+  "key": "mission/can-you-replay-missions",
+  "kind": "mission",
+  "title": "Can you replay missions?",
+  "hint": "/guides/replay-missions"
+ },
+ {
+  "key": "mission/car-service",
+  "kind": "mission",
+  "title": "Car Service",
+  "hint": "Mission 10 /missions/car-service | Story /missions/car-service"
+ },
+ {
+  "key": "mission/chapter-1-mission-18-name-hidden",
+  "kind": "mission",
+  "title": "Chapter 1, mission 18 (name hidden)",
+  "hint": "Mission 18 /missions/chapter-1-mission-18 | Story /missions/chapter-1-mission-18"
+ },
+ {
+  "key": "mission/chapter-2",
+  "kind": "mission",
+  "title": "Chapter 2",
+  "hint": "Chapter 2 13 missions /missions#chapter-2"
+ },
+ {
+  "key": "mission/chapter-3",
+  "kind": "mission",
+  "title": "Chapter 3",
+  "hint": "Chapter 3 26 missions /missions#chapter-3"
+ },
+ {
+  "key": "mission/checking-out",
+  "kind": "mission",
+  "title": "Checking Out",
+  "hint": "Mission 13 /missions/checking-out | Story /missions/checking-out"
+ },
+ {
+  "key": "mission/clean-up-after-donnie",
+  "kind": "mission",
+  "title": "Clean Up After Donnie",
+  "hint": "Mission 13 /missions/clean-up-after-donnie | Story /missions/clean-up-after-donnie"
+ },
+ {
+  "key": "mission/clear-skies",
+  "kind": "mission",
+  "title": "Clear Skies",
+  "hint": "Mission 15 /missions/clear-skies | Story /missions/clear-skies"
+ },
+ {
+  "key": "mission/coffee-break",
+  "kind": "mission",
+  "title": "Coffee Break",
+  "hint": "Mission 9 /missions/coffee-break | Story /missions/coffee-break"
+ },
+ {
+  "key": "mission/coming-home",
+  "kind": "mission",
+  "title": "Coming Home",
+  "hint": "Mission 11 /missions/coming-home | Story /missions/coming-home"
+ },
+ {
+  "key": "mission/company-property",
+  "kind": "mission",
+  "title": "Company Property",
+  "hint": "Mission 20 /missions/company-property | Story /missions/company-property"
+ },
+ {
+  "key": "mission/cooties",
+  "kind": "mission",
+  "title": "Cooties",
+  "hint": "Mission 23 /missions/cooties | Story /missions/cooties"
+ },
+ {
+  "key": "mission/credit-check",
+  "kind": "mission",
+  "title": "Credit Check",
+  "hint": "Mission 15 /missions/credit-check | Story /missions/credit-check"
+ },
+ {
+  "key": "mission/crosstown-traffic",
+  "kind": "mission",
+  "title": "Crosstown Traffic",
+  "hint": "Mission 14 /missions/crosstown-traffic | Story /missions/crosstown-traffic"
+ },
+ {
+  "key": "mission/daily-driver",
+  "kind": "mission",
+  "title": "Daily Driver",
+  "hint": "Mission 6 /missions/daily-driver | Story /missions/daily-driver"
+ },
+ {
+  "key": "mission/day-release",
+  "kind": "mission",
+  "title": "Day Release",
+  "hint": "Mission 16 /missions/day-release | Story /missions/day-release"
+ },
+ {
+  "key": "mission/dealers-choice",
+  "kind": "mission",
+  "title": "Dealer’s Choice",
+  "hint": "Mission 2 /missions/dealers-choice | Story /missions/dealers-choice"
+ },
+ {
+  "key": "mission/discharge-time",
+  "kind": "mission",
+  "title": "Discharge Time",
+  "hint": "Mission 22 /missions/discharge-time | Story /missions/discharge-time"
+ },
+ {
+  "key": "mission/down-to-earth",
+  "kind": "mission",
+  "title": "Down To Earth",
+  "hint": "Chapter 1 /missions/down-to-earth | Mission 14 /missions/down-to-earth | Story /missions/down-to-earth"
+ },
+ {
+  "key": "mission/dubious-provenance",
+  "kind": "mission",
+  "title": "Dubious Provenance",
+  "hint": "Mission 4 /missions/dubious-provenance | Story /missions/dubious-provenance"
+ },
+ {
+  "key": "mission/feng-shui",
+  "kind": "mission",
+  "title": "Feng Shui",
+  "hint": "Chapter 1 /missions/feng-shui | Mission 10 /missions/feng-shui | Story /missions/feng-shui"
+ },
+ {
+  "key": "mission/first-impressions",
+  "kind": "mission",
+  "title": "First Impressions",
+  "hint": "Mission 13 /missions/first-impressions | Story /missions/first-impressions"
+ },
+ {
+  "key": "mission/gear-up",
+  "kind": "mission",
+  "title": "Gear Up",
+  "hint": "Mission 3 /missions/gear-up | Story /missions/gear-up"
+ },
+ {
+  "key": "mission/girls-trip",
+  "kind": "mission",
+  "title": "Girls’ Trip",
+  "hint": "Mission 4 /missions/girls-trip | Story /missions/girls-trip"
+ },
+ {
+  "key": "mission/gone-fishing",
+  "kind": "mission",
+  "title": "Gone Fishing",
+  "hint": "Mission 2 /missions/gone-fishing | Story /missions/gone-fishing"
+ },
+ {
+  "key": "mission/here-kitty-kitty",
+  "kind": "mission",
+  "title": "Here, Kitty Kitty",
+  "hint": "Mission 8 /missions/here-kitty-kitty | Story /missions/here-kitty-kitty"
+ },
+ {
+  "key": "mission/hey-arnold",
+  "kind": "mission",
+  "title": "Hey Arnold!",
+  "hint": "Chapter 1 /missions/hey-arnold | Mission 8 /missions/hey-arnold | Story /missions/hey-arnold"
+ },
+ {
+  "key": "mission/hidden-charges",
+  "kind": "mission",
+  "title": "Hidden Charges",
+  "hint": "Mission 25 /missions/hidden-charges | Story /missions/hidden-charges"
+ },
+ {
+  "key": "mission/home-sweet-home",
+  "kind": "mission",
+  "title": "Home Sweet Home",
+  "hint": "Mission 21 /missions/home-sweet-home | Story /missions/home-sweet-home"
+ },
+ {
+  "key": "mission/how-long-is-gta-6",
+  "kind": "mission",
+  "title": "How long is GTA 6?",
+  "hint": "/how-long-is-gta-6"
+ },
+ {
+  "key": "mission/how-to-buy-groceries",
+  "kind": "mission",
+  "title": "How to buy groceries",
+  "hint": "/guides/pick-up-groceries"
+ },
+ {
+  "key": "mission/how-to-save",
+  "kind": "mission",
+  "title": "How to save",
+  "hint": "/guides/how-to-save"
+ },
+ {
+  "key": "mission/how-to-save-in-gta-6",
+  "kind": "mission",
+  "title": "How to save in GTA 6",
+  "hint": "/guides/how-to-save"
+ },
+ {
+  "key": "mission/island-dreams",
+  "kind": "mission",
+  "title": "Island Dreams",
+  "hint": "Chapter 1 /missions/island-dreams | Mission 9 /missions/island-dreams | Story /missions/island-dreams"
+ },
+ {
+  "key": "mission/just-a-scratch",
+  "kind": "mission",
+  "title": "Just A Scratch",
+  "hint": "Mission 4 /missions/just-a-scratch | Story /missions/just-a-scratch"
+ },
+ {
+  "key": "mission/just-like-paradise",
+  "kind": "mission",
+  "title": "Just Like Paradise",
+  "hint": "Chapter 1 22 missions /missions#chapter-1"
+ },
+ {
+  "key": "mission/just-moved-in",
+  "kind": "mission",
+  "title": "Just Moved In",
+  "hint": "Mission 3 /missions/just-moved-in | Story /missions/just-moved-in"
+ },
+ {
+  "key": "mission/kill-or-spare-arnold",
+  "kind": "mission",
+  "title": "Kill or spare Arnold?",
+  "hint": "/guides/hey-arnold"
+ },
+ {
+  "key": "mission/kitter-litter-labs",
+  "kind": "mission",
+  "title": "Kitter Litter Labs",
+  "hint": "Mission 9 /missions/kitter-litter-labs | Story /missions/kitter-litter-labs"
+ },
+ {
+  "key": "mission/lab-fees",
+  "kind": "mission",
+  "title": "Lab Fees",
+  "hint": "Chapter 1 /missions/lab-fees | Mission 5 /missions/lab-fees | Story /missions/lab-fees"
+ },
+ {
+  "key": "mission/lab-fees-codes",
+  "kind": "mission",
+  "title": "Lab Fees codes",
+  "hint": "/guides/lab-fees-codes"
+ },
+ {
+  "key": "mission/lab-fees-door-codes",
+  "kind": "mission",
+  "title": "Lab Fees door codes",
+  "hint": "/guides/lab-fees-codes"
+ },
+ {
+  "key": "mission/mami-knows-best",
+  "kind": "mission",
+  "title": "Mami Knows Best",
+  "hint": "Mission 5 /missions/mami-knows-best | Story /missions/mami-knows-best"
+ },
+ {
+  "key": "mission/meet-the-heders",
+  "kind": "mission",
+  "title": "Meet The Heders",
+  "hint": "Mission 3 /missions/meet-the-heders | Story /missions/meet-the-heders"
+ },
+ {
+  "key": "mission/missions",
+  "kind": "mission",
+  "title": "Missions",
+  "hint": "/missions"
+ },
+ {
+  "key": "mission/moses",
+  "kind": "mission",
+  "title": "Moses",
+  "hint": "Chapter 2 /missions/moses | Mission 5 /missions/moses | Story /missions/moses"
+ },
+ {
+  "key": "mission/new-game-and-new-game-plus",
+  "kind": "mission",
+  "title": "New game and New Game Plus",
+  "hint": "/guides/new-game"
+ },
+ {
+  "key": "mission/pipework",
+  "kind": "mission",
+  "title": "Pipework",
+  "hint": "/guides/pipework | Chapter 1 /missions/pipework | Mission 7 /missions/pipework | Story /missions/pipework"
+ },
+ {
+  "key": "mission/pipework-mandys-rent",
+  "kind": "mission",
+  "title": "Pipework (Mandy's rent)",
+  "hint": "/guides/pipework"
+ },
+ {
+  "key": "mission/prologue",
+  "kind": "mission",
+  "title": "Prologue",
+  "hint": "Mission 1 /missions/prologue | Story /missions/prologue"
+ },
+ {
+  "key": "mission/recalibration",
+  "kind": "mission",
+  "title": "Recalibration",
+  "hint": "Mission 19 /missions/recalibration | Story /missions/recalibration"
+ },
+ {
+  "key": "mission/replay-missions",
+  "kind": "mission",
+  "title": "Replay missions?",
+  "hint": "/guides/replay-missions"
+ },
+ {
+  "key": "mission/ride-or-die",
+  "kind": "mission",
+  "title": "Ride Or Die",
+  "hint": "Mission 19 /missions/ride-or-die | Story /missions/ride-or-die"
+ },
+ {
+  "key": "mission/safe-word",
+  "kind": "mission",
+  "title": "Safe Word",
+  "hint": "Mission 22 /missions/safe-word | Story /missions/safe-word"
+ },
+ {
+  "key": "mission/security-expert",
+  "kind": "mission",
+  "title": "Security Expert",
+  "hint": "Mission 18 /missions/security-expert | Story /missions/security-expert"
+ },
+ {
+  "key": "mission/sinfrontera-national-bank",
+  "kind": "mission",
+  "title": "Sinfrontera National Bank",
+  "hint": "Mission 17 /missions/sinfrontera-national-bank | Story /missions/sinfrontera-national-bank"
+ },
+ {
+  "key": "mission/slam-dunk",
+  "kind": "mission",
+  "title": "Slam Dunk",
+  "hint": "Mission 7 /missions/slam-dunk | Story /missions/slam-dunk"
+ },
+ {
+  "key": "mission/south-leonida-real-estate",
+  "kind": "mission",
+  "title": "South Leonida Real Estate",
+  "hint": "Mission 6 /missions/south-leonida-real-estate | Story /missions/south-leonida-real-estate"
+ },
+ {
+  "key": "mission/southside-vice-city-gang-compound-raid",
+  "kind": "mission",
+  "title": "Southside Vice City gang compound raid",
+  "hint": "Edition hook · Ultimate Edition /missions/southside-gang-compound-raid | Edition hook · Ultimate Edition Southside · Vice City /missions/southside-gang-compound-raid"
+ },
+ {
+  "key": "mission/steal-the-zorrusso-for-randy",
+  "kind": "mission",
+  "title": "Steal The Zorrusso For Randy",
+  "hint": "Chapter 3 /missions/steal-the-zorrusso-for-randy | Mission 16 /missions/steal-the-zorrusso-for-randy | Story /missions/steal-the-zorrusso-for-randy"
+ },
+ {
+  "key": "mission/swamped",
+  "kind": "mission",
+  "title": "Swamped",
+  "hint": "Mission 17 /missions/swamped | Story /missions/swamped"
+ },
+ {
+  "key": "mission/the-cartel-heist",
+  "kind": "mission",
+  "title": "The Cartel Heist",
+  "hint": "Mission 26 /missions/the-cartel-heist | Story /missions/the-cartel-heist"
+ },
+ {
+  "key": "mission/the-missing-link",
+  "kind": "mission",
+  "title": "The Missing Link",
+  "hint": "Mission 21 /missions/the-missing-link | Story /missions/the-missing-link"
+ },
+ {
+  "key": "mission/thrillbillies",
+  "kind": "mission",
+  "title": "Thrillbillies",
+  "hint": "Mission 11 /missions/thrillbillies | Story /missions/thrillbillies"
+ },
+ {
+  "key": "mission/top-billing",
+  "kind": "mission",
+  "title": "Top Billing",
+  "hint": "Mission 11 /missions/top-billing | Story /missions/top-billing"
+ },
+ {
+  "key": "mission/tourist-trap",
+  "kind": "mission",
+  "title": "Tourist Trap",
+  "hint": "Mission 20 /missions/tourist-trap | Story /missions/tourist-trap"
+ },
+ {
+  "key": "mission/twist-wrist-smash-grab",
+  "kind": "mission",
+  "title": "Twist Wrist, Smash, Grab",
+  "hint": "Mission 12 /missions/twist-wrist-smash-grab | Story /missions/twist-wrist-smash-grab"
+ },
+ {
+  "key": "mission/tyrone",
+  "kind": "mission",
+  "title": "Tyrone",
+  "hint": "Mission 7 /missions/tyrone | Story /missions/tyrone"
+ },
+ {
+  "key": "mission/unwanted-attention",
+  "kind": "mission",
+  "title": "Unwanted Attention",
+  "hint": "Mission 6 /missions/unwanted-attention | Story /missions/unwanted-attention"
+ },
+ {
+  "key": "mission/welcome-to-vice-city",
+  "kind": "mission",
+  "title": "Welcome To Vice City",
+  "hint": "Mission 1 /missions/welcome-to-vice-city | Story /missions/welcome-to-vice-city"
+ },
+ {
+  "key": "mission/whats-in-the-bag",
+  "kind": "mission",
+  "title": "What’s In The Bag?",
+  "hint": "Mission 1 /missions/whats-in-the-bag | Story /missions/whats-in-the-bag"
+ },
+ {
+  "key": "mod/ambrosia",
+  "kind": "mod",
+  "title": "Ambrosia",
+  "hint": "Kelly County /where-to-find/pay-n-spray/ambrosia"
+ },
+ {
+  "key": "mod/balsero",
+  "kind": "mod",
+  "title": "Balsero",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/balsero"
+ },
+ {
+  "key": "mod/capri-classic",
+  "kind": "mod",
+  "title": "Capri Classic",
+  "hint": "Capri /where-to-find/mod-shops/capri-classic | Mariana County /where-to-find/mod-shops/capri-classic | Mods · Capri /where-to-find/mod-shops/capri-classic"
+ },
+ {
+  "key": "mod/dirt-merchants",
+  "kind": "mod",
+  "title": "Dirt Merchants",
+  "hint": "Kelly County /where-to-find/mod-shops/dirt-merchants | Mods · Port Gellhorn /where-to-find/mod-shops/dirt-merchants | Port Gellhorn /where-to-find/mod-shops/dirt-merchants"
+ },
+ {
+  "key": "mod/downtown",
+  "kind": "mod",
+  "title": "Downtown",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/downtown"
+ },
+ {
+  "key": "mod/euroform-automotive",
+  "kind": "mod",
+  "title": "Euroform Automotive",
+  "hint": "Little Cuba /where-to-find/mod-shops/euroform-automotive | Mods · Little Cuba /where-to-find/mod-shops/euroform-automotive | Vice-Dale County /where-to-find/mod-shops/euroform-automotive"
+ },
+ {
+  "key": "mod/grassrivers",
+  "kind": "mod",
+  "title": "Grassrivers",
+  "hint": "Mariana County /where-to-find/pay-n-spray/grassrivers"
+ },
+ {
+  "key": "mod/grayson",
+  "kind": "mod",
+  "title": "Grayson",
+  "hint": "Lummox County /where-to-find/pay-n-spray/grayson"
+ },
+ {
+  "key": "mod/la-perle",
+  "kind": "mod",
+  "title": "La Perle",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/la-perle"
+ },
+ {
+  "key": "mod/ledford-motorcycle-workshop",
+  "kind": "mod",
+  "title": "Ledford Motorcycle Workshop",
+  "hint": "Lummox County /where-to-find/mod-shops/ledford-motorcycle-workshop | Mods · Lummox County /where-to-find/mod-shops/ledford-motorcycle-workshop"
+ },
+ {
+  "key": "mod/lowballers-customs",
+  "kind": "mod",
+  "title": "Lowballers Customs",
+  "hint": "Mods · Vice-Dale County /where-to-find/mod-shops/lowballers-customs | Vice-Dale County /where-to-find/mod-shops/lowballers-customs"
+ },
+ {
+  "key": "mod/millport",
+  "kind": "mod",
+  "title": "Millport",
+  "hint": "Lummox County /where-to-find/pay-n-spray/millport"
+ },
+ {
+  "key": "mod/ocean-beach",
+  "kind": "mod",
+  "title": "Ocean Beach",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/ocean-beach"
+ },
+ {
+  "key": "mod/pay-n-spray",
+  "kind": "mod",
+  "title": "Pay ’n’ Spray",
+  "hint": "19 places /where-to-find/pay-n-spray"
+ },
+ {
+  "key": "mod/pay-n-spray-ambrosia",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Ambrosia",
+  "hint": "Repaint · Kelly County /where-to-find/pay-n-spray/ambrosia"
+ },
+ {
+  "key": "mod/pay-n-spray-balsero",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Balsero",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/balsero"
+ },
+ {
+  "key": "mod/pay-n-spray-downtown",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Downtown",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/downtown"
+ },
+ {
+  "key": "mod/pay-n-spray-grassrivers",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Grassrivers",
+  "hint": "Repaint · Mariana County /where-to-find/pay-n-spray/grassrivers"
+ },
+ {
+  "key": "mod/pay-n-spray-grayson",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Grayson",
+  "hint": "Repaint · Lummox County /where-to-find/pay-n-spray/grayson"
+ },
+ {
+  "key": "mod/pay-n-spray-la-perle",
+  "kind": "mod",
+  "title": "Pay 'n' Spray La Perle",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/la-perle"
+ },
+ {
+  "key": "mod/pay-n-spray-millport",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Millport",
+  "hint": "Repaint · Lummox County /where-to-find/pay-n-spray/millport"
+ },
+ {
+  "key": "mod/pay-n-spray-ocean-beach",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Ocean Beach",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/ocean-beach"
+ },
+ {
+  "key": "mod/pay-n-spray-port-gellhorn",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Port Gellhorn",
+  "hint": "Repaint · Kelly County /where-to-find/pay-n-spray/port-gellhorn"
+ },
+ {
+  "key": "mod/pay-n-spray-salton",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Salton",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/salton"
+ },
+ {
+  "key": "mod/pay-n-spray-southwind",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Southwind",
+  "hint": "Repaint · Mariana County /where-to-find/pay-n-spray/southwind"
+ },
+ {
+  "key": "mod/pay-n-spray-stockyard",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Stockyard",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/stockyard"
+ },
+ {
+  "key": "mod/pay-n-spray-waning-sands",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Waning Sands",
+  "hint": "Repaint · Leonard County /where-to-find/pay-n-spray/waning-sands"
+ },
+ {
+  "key": "mod/pay-n-spray-washington-beach",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Washington Beach",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/washington-beach"
+ },
+ {
+  "key": "mod/pay-n-spray-watson-bay",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Watson Bay",
+  "hint": "Repaint · Mariana County /where-to-find/pay-n-spray/watson-bay"
+ },
+ {
+  "key": "mod/pay-n-spray-waxman-island",
+  "kind": "mod",
+  "title": "Pay 'n' Spray Waxman Island",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/waxman-island"
+ },
+ {
+  "key": "mod/pay-n-spray-west-vice-dale-county",
+  "kind": "mod",
+  "title": "Pay 'n' Spray West Vice-Dale County",
+  "hint": "Repaint · Vice-Dale County /where-to-find/pay-n-spray/west-vice-dale-county"
+ },
+ {
+  "key": "mod/port-gellhorn",
+  "kind": "mod",
+  "title": "Port Gellhorn",
+  "hint": "Kelly County /where-to-find/pay-n-spray/port-gellhorn"
+ },
+ {
+  "key": "mod/salton",
+  "kind": "mod",
+  "title": "Salton",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/salton"
+ },
+ {
+  "key": "mod/southwind",
+  "kind": "mod",
+  "title": "Southwind",
+  "hint": "Mariana County /where-to-find/pay-n-spray/southwind"
+ },
+ {
+  "key": "mod/stockyard",
+  "kind": "mod",
+  "title": "Stockyard",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/stockyard"
+ },
+ {
+  "key": "mod/stockyard-speedshop",
+  "kind": "mod",
+  "title": "Stockyard Speedshop",
+  "hint": "Mods · Stockyard /where-to-find/mod-shops/stockyard-speedshop | Stockyard /where-to-find/mod-shops/stockyard-speedshop | Vice-Dale County /where-to-find/mod-shops/stockyard-speedshop"
+ },
+ {
+  "key": "mod/two-wheel-fury-motorsport",
+  "kind": "mod",
+  "title": "Two Wheel Fury Motorsport",
+  "hint": "Mods · Vice-Dale County /where-to-find/mod-shops/two-wheel-fury-motorsport | Vice-Dale County /where-to-find/mod-shops/two-wheel-fury-motorsport"
+ },
+ {
+  "key": "mod/vice-auto-customs",
+  "kind": "mod",
+  "title": "Vice Auto Customs",
+  "hint": "Mods · Vice-Dale County /where-to-find/mod-shops/vice-auto-customs | Vice-Dale County /where-to-find/mod-shops/vice-auto-customs"
+ },
+ {
+  "key": "mod/vice-vinyl",
+  "kind": "mod",
+  "title": "Vice Vinyl",
+  "hint": "Mods · Stockyard /where-to-find/mod-shops/vice-vinyl | Stockyard /where-to-find/mod-shops/vice-vinyl | Vice-Dale County /where-to-find/mod-shops/vice-vinyl"
+ },
+ {
+  "key": "mod/waning-sands",
+  "kind": "mod",
+  "title": "Waning Sands",
+  "hint": "Leonard County /where-to-find/pay-n-spray/waning-sands"
+ },
+ {
+  "key": "mod/washington-beach",
+  "kind": "mod",
+  "title": "Washington Beach",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/washington-beach"
+ },
+ {
+  "key": "mod/wasteland-off-road",
+  "kind": "mod",
+  "title": "Wasteland Off-Road",
+  "hint": "Kelly County /where-to-find/mod-shops/wasteland-off-road | Mods · Kelly County /where-to-find/mod-shops/wasteland-off-road"
+ },
+ {
+  "key": "mod/watson-bay",
+  "kind": "mod",
+  "title": "Watson Bay",
+  "hint": "Mariana County /where-to-find/pay-n-spray/watson-bay"
+ },
+ {
+  "key": "mod/waxman-island",
+  "kind": "mod",
+  "title": "Waxman Island",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/waxman-island"
+ },
+ {
+  "key": "mod/west-vice-dale-county",
+  "kind": "mod",
+  "title": "West Vice-Dale County",
+  "hint": "Vice-Dale County /where-to-find/pay-n-spray/west-vice-dale-county"
+ },
+ {
+  "key": "mod/whisler-motorsport",
+  "kind": "mod",
+  "title": "Whisler Motorsport",
+  "hint": "Kelly County /where-to-find/mod-shops/whisler-motorsport | Mods · Kelly County /where-to-find/mod-shops/whisler-motorsport"
+ },
+ {
+  "key": "money/bank-account-and-atms",
+  "kind": "money",
+  "title": "Bank account and ATMs",
+  "hint": "/guides/bank-account-atm"
+ },
+ {
+  "key": "money/make-money",
+  "kind": "money",
+  "title": "Make money",
+  "hint": "/money-methods"
+ },
+ {
+  "key": "money/raid-gang-operations",
+  "kind": "money",
+  "title": "Raid gang operations",
+  "hint": "Money methods /money-methods/gang-operations | Yellow map icons mark 39 gang hideouts. /money-methods/gang-operations | Yellow map icons mark 39 gang hideouts. Chapter 1 /money-methods/gang-operations"
+ },
+ {
+  "key": "money/randys-wish-list",
+  "kind": "money",
+  "title": "Randy's wish list",
+  "hint": "/money-methods/randy-wish-list"
+ },
+ {
+  "key": "money/randys-wish-list-high-end-cars",
+  "kind": "money",
+  "title": "Randy's wish list (high-end cars)",
+  "hint": "Mid Chapter 3 you get the key cloner for modern cars. /money-methods/randy-wish-list | Mid Chapter 3 you get the key cloner for modern cars. Mid Chapter 3 (mission Clonin' Keys, Makin' GS) /money-meth"
+ },
+ {
+  "key": "money/rob-convenience-stores",
+  "kind": "money",
+  "title": "Rob convenience stores",
+  "hint": "From Chapter 1, point a gun at the clerk and empty the register. Chapter 1 /money-methods/store-robberies | Money methods /money-methods/store-robberies"
+ },
+ {
+  "key": "money/rob-jewelry-stores",
+  "kind": "money",
+  "title": "Rob jewelry stores",
+  "hint": "From early Chapter 3, rob jewelry stores and sell the loot to Yasmani. /money-methods/jewelry-store-robberies | From early Chapter 3, rob jewelry stores and sell the loot to Yasmani. Early Chapter 3 ("
+ },
+ {
+  "key": "money/sell-at-pay-n-spray",
+  "kind": "money",
+  "title": "Sell at Pay 'n' Spray",
+  "hint": "/money-methods/sell-cars-at-pay-n-spray"
+ },
+ {
+  "key": "money/sell-cars-at-any-pay-n-spray",
+  "kind": "money",
+  "title": "Sell cars at any Pay 'n' Spray",
+  "hint": "From early Chapter 3, sell stolen cars at any of the 19 Pay 'n' Sprays. /money-methods/sell-cars-at-pay-n-spray | From early Chapter 3, sell stolen cars at any of the 19 Pay 'n' Sprays. Early Chapter "
+ },
+ {
+  "key": "money/sell-cars-to-moses",
+  "kind": "money",
+  "title": "Sell cars to Moses",
+  "hint": "/money-methods/sell-cars-to-moses"
+ },
+ {
+  "key": "money/sell-stolen-cars-to-moses",
+  "kind": "money",
+  "title": "Sell stolen cars to Moses",
+  "hint": "From Chapter 2, steal a car with no tracker and sell it to Moses in Port Gellhorn. /money-methods/sell-cars-to-moses | From Chapter 2, steal a car with no tracker and sell it to Moses in Port Gellhorn"
+ },
+ {
+  "key": "money/store-robberies",
+  "kind": "money",
+  "title": "Store robberies",
+  "hint": "/money-methods/store-robberies"
+ },
+ {
+  "key": "money/win-street-races",
+  "kind": "money",
+  "title": "Win street races",
+  "hint": "Money methods /money-methods/street-races | There are 40 races in 6 groups, open from Chapter 1. Chapter 1 /money-methods/street-races"
+ },
+ {
+  "key": "news/a-night-in-vice-city-and-the-youtube-launch-livestream",
+  "kind": "news",
+  "title": "A Night in Vice City and the YouTube launch livestream",
+  "hint": "Nov 17, 2026 /news/gta-vi-launch-eve-events | November 17, 2026 /news/gta-vi-launch-eve-events"
+ },
+ {
+  "key": "news/rockstar-names-the-edition-vehicles",
+  "kind": "news",
+  "title": "Rockstar Names the Edition Vehicles",
+  "hint": "Jun 25, 2026 /news/gta-vi-edition-vehicles | June 25, 2026 /news/gta-vi-edition-vehicles"
+ },
+ {
+  "key": "news/the-gta-companion-interactive-map-is-live",
+  "kind": "news",
+  "title": "The GTA Companion interactive map is live",
+  "hint": "Nov 17, 2026 /news/gta-companion-interactive-map-live | November 17, 2026 /news/gta-companion-interactive-map-live"
+ },
+ {
+  "key": "phone/buckme",
+  "kind": "phone",
+  "title": "BuckMe",
+  "hint": "/phone/banking-app | Bank your cash. /phone/banking-app | Banking app /phone/banking-app | Banking app · Your bank. /phone/banking-app"
+ },
+ {
+  "key": "phone/call-your-car",
+  "kind": "phone",
+  "title": "Call your car",
+  "hint": "/guides/call-your-car"
+ },
+ {
+  "key": "phone/headphones",
+  "kind": "phone",
+  "title": "Headphones",
+  "hint": "/phone/headphones"
+ },
+ {
+  "key": "phone/headphones-and-earbuds",
+  "kind": "phone",
+  "title": "Headphones and earbuds",
+  "hint": "Phone audio /phone/headphones"
+ },
+ {
+  "key": "phone/headphones-app-page",
+  "kind": "phone",
+  "title": "Headphones app page",
+  "hint": "/phone/headphones"
+ },
+ {
+  "key": "phone/how-to-call-your-car",
+  "kind": "phone",
+  "title": "How to call your car",
+  "hint": "/guides/call-your-car"
+ },
+ {
+  "key": "phone/on-demand-podcasts",
+  "kind": "phone",
+  "title": "On-demand podcasts",
+  "hint": "Audio /phone/podcasts"
+ },
+ {
+  "key": "phone/podcasts",
+  "kind": "phone",
+  "title": "Podcasts",
+  "hint": "/phone/podcasts"
+ },
+ {
+  "key": "phone/scooter-bros",
+  "kind": "phone",
+  "title": "Scooter Bros",
+  "hint": "/phone/scooter-bros | Brings your car and its trunk. /phone/scooter-bros | Vehicle app /phone/scooter-bros | Vehicle app · Delivers your car, guns in the trunk. /phone/scooter-bros"
+ },
+ {
+  "key": "phone/video-app",
+  "kind": "phone",
+  "title": "Video app",
+  "hint": "/phone/video-app | Video app /phone/video-app"
+ },
+ {
+  "key": "phone/waink",
+  "kind": "phone",
+  "title": "WAiNK",
+  "hint": "/phone/waink | Scan vehicles to log them. /phone/waink | Vehicle app /phone/waink | Vehicle app · Scan vehicles to log them. /phone/waink"
+ },
+ {
+  "key": "phone/waink-it-scans",
+  "kind": "phone",
+  "title": "WAiNK It scans",
+  "hint": "Scan landmarks with your phone. Trophy 100 scans /phone/waink"
+ },
+ {
+  "key": "property/paradise-garage",
+  "kind": "property",
+  "title": "Paradise Garage",
+  "hint": "/properties/paradise-garage | Garage /properties/paradise-garage | Garage · Watson Bay /properties/paradise-garage"
+ },
+ {
+  "key": "property/shore-court",
+  "kind": "property",
+  "title": "Shore Court",
+  "hint": "/properties/shore-court | Garage /properties/shore-court | Garage · Ocean Beach /properties/shore-court"
+ },
+ {
+  "key": "property/shore-court-garage",
+  "kind": "property",
+  "title": "Shore Court garage",
+  "hint": "Near Ocean Beach. /properties/shore-court"
+ },
+ {
+  "key": "radio/where-to-get-headphones",
+  "kind": "radio",
+  "title": "Where to get headphones",
+  "hint": "/guides/headphones"
+ },
+ {
+  "key": "range/3-point-range",
+  "kind": "range",
+  "title": "3-Point Range",
+  "hint": "Griffin Shooting Range 3 golds /shooting-ranges/griffin-shooting-range"
+ },
+ {
+  "key": "range/alien-range",
+  "kind": "range",
+  "title": "Alien Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "range/compound-range",
+  "kind": "range",
+  "title": "Compound Range",
+  "hint": "Griffin Shooting Range 3 golds /shooting-ranges/griffin-shooting-range"
+ },
+ {
+  "key": "range/cops-and-robbers-range",
+  "kind": "range",
+  "title": "Cops & Robbers Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "range/griffin-shooting-range",
+  "kind": "range",
+  "title": "Griffin Shooting Range",
+  "hint": "North-west Vice City · Timed courses on the move. /shooting-ranges/griffin-shooting-range | North-west Vice City · Timed courses on the move. 6 courses · 18 golds /shooting-ranges/griffin-shooting-ran"
+ },
+ {
+  "key": "range/hook-range",
+  "kind": "range",
+  "title": "Hook Range",
+  "hint": "Griffin Shooting Range 3 golds /shooting-ranges/griffin-shooting-range"
+ },
+ {
+  "key": "range/hunting-range",
+  "kind": "range",
+  "title": "Hunting Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "range/loop-range",
+  "kind": "range",
+  "title": "Loop Range",
+  "hint": "Griffin Shooting Range 3 golds /shooting-ranges/griffin-shooting-range"
+ },
+ {
+  "key": "range/market-range",
+  "kind": "range",
+  "title": "Market Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "range/maze-range",
+  "kind": "range",
+  "title": "Maze Range",
+  "hint": "Griffin Shooting Range 3 golds /shooting-ranges/griffin-shooting-range"
+ },
+ {
+  "key": "range/rodgers-ranch-and-shooting-range",
+  "kind": "range",
+  "title": "Rodgers Ranch & Shooting Range",
+  "hint": "North-east Port Gellhorn · Score courses, standing still. /shooting-ranges/rodgers-ranch | North-east Port Gellhorn · Score courses, standing still. 6 courses · 24 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "range/saloon-range",
+  "kind": "range",
+  "title": "Saloon Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "range/villa-range",
+  "kind": "range",
+  "title": "Villa Range",
+  "hint": "Griffin Shooting Range 3 golds /shooting-ranges/griffin-shooting-range"
+ },
+ {
+  "key": "range/zombie-range",
+  "kind": "range",
+  "title": "Zombie Range",
+  "hint": "Rodgers Ranch & Shooting Range 4 golds /shooting-ranges/rodgers-ranch"
+ },
+ {
+  "key": "salon/a-better-you",
+  "kind": "salon",
+  "title": "A Better You",
+  "hint": "Hair · Leonard County /where-to-find/hair-salons/a-better-you | Leonard County /where-to-find/hair-salons/a-better-you | Leonard and Kelly County /where-to-find/hair-salons/a-better-you"
+ },
+ {
+  "key": "salon/au-courant",
+  "kind": "salon",
+  "title": "AU Courant",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/au-courant | Vice-Dale County /where-to-find/hair-salons/au-courant | Vice-Dale County salons /where-to-find/hair-salons/au-courant"
+ },
+ {
+  "key": "salon/barbers-and-salons",
+  "kind": "salon",
+  "title": "Barbers and salons",
+  "hint": "18 places /where-to-find/hair-salons"
+ },
+ {
+  "key": "salon/barnacle-beauties",
+  "kind": "salon",
+  "title": "Barnacle Beauties",
+  "hint": "Hair · Mariana County /where-to-find/hair-salons/barnacle-beauties | Mariana County /where-to-find/hair-salons/barnacle-beauties"
+ },
+ {
+  "key": "salon/bellissima-hair-salon",
+  "kind": "salon",
+  "title": "Bellissima Hair Salon",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/bellissima-hair-salon | Vice-Dale County /where-to-find/hair-salons/bellissima-hair-salon | Vice-Dale County salons /where-to-find/hair-salons/bellis"
+ },
+ {
+  "key": "salon/captain-starlings-barber-shop",
+  "kind": "salon",
+  "title": "Captain Starlings Barber Shop",
+  "hint": "Hair · Kelly County /where-to-find/hair-salons/captain-starlings-barber-shop | Kelly County /where-to-find/hair-salons/captain-starlings-barber-shop | Leonard and Kelly County /where-to-find/hair-salo"
+ },
+ {
+  "key": "salon/clip-and-fade",
+  "kind": "salon",
+  "title": "Clip & Fade",
+  "hint": "Barber shops (Vice-Dale County) /where-to-find/hair-salons/clip-and-fade | Barber shops /where-to-find/hair-salons/clip-and-fade | Hair · Barber shops /where-to-find/hair-salons/clip-and-fade"
+ },
+ {
+  "key": "salon/crosstown-cutz",
+  "kind": "salon",
+  "title": "Crosstown Cutz",
+  "hint": "Barber shops (Vice-Dale County) /where-to-find/hair-salons/crosstown-cutz | Barber shops /where-to-find/hair-salons/crosstown-cutz | Hair · Barber shops /where-to-find/hair-salons/crosstown-cutz"
+ },
+ {
+  "key": "salon/fabiolas-unisex-salon",
+  "kind": "salon",
+  "title": "Fabiola’s Unisex Salon",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/fabiolas-unisex-salon | Vice-Dale County /where-to-find/hair-salons/fabiolas-unisex-salon | Vice-Dale County salons /where-to-find/hair-salons/fabiol"
+ },
+ {
+  "key": "salon/gabriel-wexler",
+  "kind": "salon",
+  "title": "Gabriel Wexler",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/gabriel-wexler | Vice-Dale County /where-to-find/hair-salons/gabriel-wexler | Vice-Dale County salons /where-to-find/hair-salons/gabriel-wexler"
+ },
+ {
+  "key": "salon/hair-by-clair",
+  "kind": "salon",
+  "title": "Hair By Clair",
+  "hint": "Hair · Mariana County /where-to-find/hair-salons/hair-by-clair | Mariana County /where-to-find/hair-salons/hair-by-clair"
+ },
+ {
+  "key": "salon/kurts-barber-shop",
+  "kind": "salon",
+  "title": "Kurt’s Barber Shop",
+  "hint": "Barber shops (Vice-Dale County) /where-to-find/hair-salons/kurts-barber-shop | Hair · Route 61, Hamlet /where-to-find/hair-salons/kurts-barber-shop | Route 61, Hamlet /where-to-find/hair-salons/kurts-"
+ },
+ {
+  "key": "salon/lori-scott-hair-and-beauty",
+  "kind": "salon",
+  "title": "Lori Scott Hair & Beauty",
+  "hint": "Hair · Mariana County /where-to-find/hair-salons/lori-scott-hair-and-beauty | Mariana County /where-to-find/hair-salons/lori-scott-hair-and-beauty"
+ },
+ {
+  "key": "salon/onyx-salon",
+  "kind": "salon",
+  "title": "Onyx Salon",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/onyx-salon | Vice-Dale County /where-to-find/hair-salons/onyx-salon | Vice-Dale County salons /where-to-find/hair-salons/onyx-salon"
+ },
+ {
+  "key": "salon/oomph",
+  "kind": "salon",
+  "title": "Oomph!",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/oomph | Vice-Dale County /where-to-find/hair-salons/oomph | Vice-Dale County salons /where-to-find/hair-salons/oomph"
+ },
+ {
+  "key": "salon/pearl-house-hair-salon",
+  "kind": "salon",
+  "title": "Pearl House Hair Salon",
+  "hint": "Hair · Kelly County /where-to-find/hair-salons/pearl-house-hair-salon | Kelly County /where-to-find/hair-salons/pearl-house-hair-salon | Leonard and Kelly County /where-to-find/hair-salons/pearl-house"
+ },
+ {
+  "key": "salon/salon-belle",
+  "kind": "salon",
+  "title": "Salon Belle",
+  "hint": "Hair · Vice-Dale County /where-to-find/hair-salons/salon-belle | Vice-Dale County /where-to-find/hair-salons/salon-belle | Vice-Dale County salons /where-to-find/hair-salons/salon-belle"
+ },
+ {
+  "key": "salon/salon-perez",
+  "kind": "salon",
+  "title": "Salon Pérez",
+  "hint": "Barber shops (Vice-Dale County) /where-to-find/hair-salons/salon-perez | Barber shops /where-to-find/hair-salons/salon-perez | Hair · Barber shops /where-to-find/hair-salons/salon-perez"
+ },
+ {
+  "key": "store/black-spot-tattoo",
+  "kind": "store",
+  "title": "Black Spot Tattoo",
+  "hint": "Geometric & Blackwork · Vice Beach /stores/black-spot-tattoo"
+ },
+ {
+  "key": "store/blood-sugar-tattoo",
+  "kind": "store",
+  "title": "Blood Sugar Tattoo",
+  "hint": "Lettering · Ambrosia /stores/blood-sugar-tattoo"
+ },
+ {
+  "key": "store/cross-my-heart",
+  "kind": "store",
+  "title": "Cross My Heart",
+  "hint": "New School · Vice City /stores/cross-my-heart"
+ },
+ {
+  "key": "store/dominion-ink",
+  "kind": "store",
+  "title": "Dominion Ink",
+  "hint": "Anime · Vice City /stores/dominion-ink"
+ },
+ {
+  "key": "store/freedom-tattoo",
+  "kind": "store",
+  "title": "Freedom Tattoo",
+  "hint": "Stick & Poke · Port Gellhorn /stores/freedom-tattoo"
+ },
+ {
+  "key": "store/hyper-ink",
+  "kind": "store",
+  "title": "Hyper Ink",
+  "hint": "Illustrative · Vice City /stores/hyper-ink"
+ },
+ {
+  "key": "store/inkomplete-tattoo-co",
+  "kind": "store",
+  "title": "Inkomplete Tattoo Co.",
+  "hint": "Old School · Vice City /stores/inkomplete-tattoo-co"
+ },
+ {
+  "key": "store/layin-ink",
+  "kind": "store",
+  "title": "Layin' Ink",
+  "hint": "Black & Gray · Hamlet /stores/layin-ink"
+ },
+ {
+  "key": "store/the-inked-mermaid",
+  "kind": "store",
+  "title": "The Inked Mermaid",
+  "hint": "American Traditional · Key Lento /stores/the-inked-mermaid"
+ },
+ {
+  "key": "store/tisha-wocka-flea-market",
+  "kind": "store",
+  "title": "Tisha-Wocka flea market",
+  "hint": "Flea market /stores/tisha-wocka-flea-market | Flea market · Tisha-Wocka /stores/tisha-wocka-flea-market"
+ },
+ {
+  "key": "store/twa-ponya-tattoo",
+  "kind": "store",
+  "title": "Twa Ponya Tattoo",
+  "hint": "Neo-Traditional · Vice City /stores/twa-ponya-tattoo"
+ },
+ {
+  "key": "store/uncle-jacks-liquor",
+  "kind": "store",
+  "title": "Uncle Jack's Liquor",
+  "hint": "Port Gellhorn /stores/uncle-jacks-liquor"
+ },
+ {
+  "key": "tattoo/black-spot-tattoo",
+  "kind": "tattoo",
+  "title": "Black Spot Tattoo",
+  "hint": "Geometric & Blackwork · Vice Beach /stores/black-spot-tattoo"
+ },
+ {
+  "key": "tattoo/blood-sugar-tattoo",
+  "kind": "tattoo",
+  "title": "Blood Sugar Tattoo",
+  "hint": "Lettering · Ambrosia /stores/blood-sugar-tattoo"
+ },
+ {
+  "key": "tattoo/cross-my-heart",
+  "kind": "tattoo",
+  "title": "Cross My Heart",
+  "hint": "New School · Vice City /stores/cross-my-heart"
+ },
+ {
+  "key": "tattoo/dominion-ink",
+  "kind": "tattoo",
+  "title": "Dominion Ink",
+  "hint": "Anime · Vice City /stores/dominion-ink"
+ },
+ {
+  "key": "tattoo/freedom-tattoo",
+  "kind": "tattoo",
+  "title": "Freedom Tattoo",
+  "hint": "Stick & Poke · Port Gellhorn /stores/freedom-tattoo"
+ },
+ {
+  "key": "tattoo/hyper-ink",
+  "kind": "tattoo",
+  "title": "Hyper Ink",
+  "hint": "Illustrative · Vice City /stores/hyper-ink"
+ },
+ {
+  "key": "tattoo/inkomplete-tattoo-co",
+  "kind": "tattoo",
+  "title": "Inkomplete Tattoo Co.",
+  "hint": "Old School · Vice City /stores/inkomplete-tattoo-co"
+ },
+ {
+  "key": "tattoo/layin-ink",
+  "kind": "tattoo",
+  "title": "Layin' Ink",
+  "hint": "Black & Gray · Hamlet /stores/layin-ink"
+ },
+ {
+  "key": "tattoo/the-inked-mermaid",
+  "kind": "tattoo",
+  "title": "The Inked Mermaid",
+  "hint": "American Traditional · Key Lento /stores/the-inked-mermaid"
+ },
+ {
+  "key": "tattoo/twa-ponya-tattoo",
+  "kind": "tattoo",
+  "title": "Twa Ponya Tattoo",
+  "hint": "Neo-Traditional · Vice City /stores/twa-ponya-tattoo"
+ },
+ {
+  "key": "trophy/a-classic-blitz-play",
+  "kind": "trophy",
+  "title": "A Classic Blitz Play",
+  "hint": "Rob an Armored Truck and escape. /trophies/a-classic-blitz-play | bronze trophy /trophies/a-classic-blitz-play"
+ },
+ {
+  "key": "trophy/a-long-road",
+  "kind": "trophy",
+  "title": "A Long Road",
+  "hint": "Attain 100% Completion. /trophies/a-long-road | gold trophy /trophies/a-long-road"
+ },
+ {
+  "key": "trophy/baited-my-tackle",
+  "kind": "trophy",
+  "title": "Baited My Tackle",
+  "hint": "/trophies/baited-my-tackle | Beat Cal in a fishing challenge. /trophies/baited-my-tackle | bronze trophy /trophies/baited-my-tackle"
+ },
+ {
+  "key": "trophy/cunning-stunts",
+  "kind": "trophy",
+  "title": "Cunning Stunts",
+  "hint": "/trophies/cunning-stunts | Complete 250 Stunts. /trophies/cunning-stunts | silver trophy /trophies/cunning-stunts"
+ },
+ {
+  "key": "trophy/dime-on-the-dollar",
+  "kind": "trophy",
+  "title": "Dime on the Dollar",
+  "hint": "Earn $250,000 laundering Marked Bills through your contacts. /trophies/dime-on-the-dollar | bronze trophy /trophies/dime-on-the-dollar"
+ },
+ {
+  "key": "trophy/dont-touch-my-deck",
+  "kind": "trophy",
+  "title": "Don’t Touch My Deck",
+  "hint": "/trophies/dont-touch-my-deck | Complete 3 Collectible Card sets. /trophies/dont-touch-my-deck | silver trophy /trophies/dont-touch-my-deck"
+ },
+ {
+  "key": "trophy/earn-cash-not-kudos",
+  "kind": "trophy",
+  "title": "Earn Cash, Not Kudos",
+  "hint": "/trophies/earn-cash-not-kudos | Win 20 different races. /trophies/earn-cash-not-kudos | bronze trophy /trophies/earn-cash-not-kudos"
+ },
+ {
+  "key": "trophy/gunslinger",
+  "kind": "trophy",
+  "title": "Gunslinger",
+  "hint": "Take down 5 enemies in a single use of Combat Focus. /trophies/gunslinger | bronze trophy /trophies/gunslinger"
+ },
+ {
+  "key": "trophy/hot-together",
+  "kind": "trophy",
+  "title": "Hot Together",
+  "hint": "Lose a 4 star Wanted Level with your partner and escape the heat. /trophies/hot-together | bronze trophy /trophies/hot-together"
+ },
+ {
+  "key": "trophy/little-boxes",
+  "kind": "trophy",
+  "title": "Little Boxes",
+  "hint": "Purchase all garage properties. /trophies/little-boxes | bronze trophy /trophies/little-boxes"
+ },
+ {
+  "key": "trophy/master-of-none",
+  "kind": "trophy",
+  "title": "Master of None",
+  "hint": "/trophies/master-of-none | Try each type of activity once. /trophies/master-of-none | bronze trophy /trophies/master-of-none"
+ },
+ {
+  "key": "trophy/maximum-withdrawal",
+  "kind": "trophy",
+  "title": "Maximum Withdrawal",
+  "hint": "Rob 5 Bank Vaults and escape. /trophies/maximum-withdrawal | silver trophy /trophies/maximum-withdrawal"
+ },
+ {
+  "key": "trophy/on-the-spot",
+  "kind": "trophy",
+  "title": "On the Spot",
+  "hint": "Register 10 vehicles to the Scooter Bros app. /trophies/on-the-spot | bronze trophy /trophies/on-the-spot"
+ },
+ {
+  "key": "trophy/one-last-thing",
+  "kind": "trophy",
+  "title": "One Last Thing",
+  "hint": "Complete 50 Challenges. /trophies/one-last-thing | bronze trophy /trophies/one-last-thing"
+ },
+ {
+  "key": "trophy/pest-control",
+  "kind": "trophy",
+  "title": "Pest Control",
+  "hint": "Rob an Illegal Operation belonging to each gang. /trophies/pest-control | bronze trophy /trophies/pest-control"
+ },
+ {
+  "key": "trophy/positive-mental-attitude",
+  "kind": "trophy",
+  "title": "Positive Mental Attitude",
+  "hint": "Meditate at every spot across Leonida. /trophies/positive-mental-attitude | bronze trophy /trophies/positive-mental-attitude"
+ },
+ {
+  "key": "trophy/retail-therapy",
+  "kind": "trophy",
+  "title": "Retail Therapy",
+  "hint": "Rob 3 shops back-to-back with your partner without losing your Wanted Level. /trophies/retail-therapy | bronze trophy /trophies/retail-therapy"
+ },
+ {
+  "key": "trophy/sneakthief",
+  "kind": "trophy",
+  "title": "Sneakthief",
+  "hint": "Rob a jewelry store without being detected. /trophies/sneakthief | bronze trophy /trophies/sneakthief"
+ },
+ {
+  "key": "trophy/stick-fiddler",
+  "kind": "trophy",
+  "title": "Stick Fiddler",
+  "hint": "/trophies/stick-fiddler | Complete an arcade game. /trophies/stick-fiddler | bronze trophy /trophies/stick-fiddler"
+ },
+ {
+  "key": "trophy/strangers-and-freaks",
+  "kind": "trophy",
+  "title": "Strangers & Freaks",
+  "hint": "/trophies/strangers-freaks | Complete 8 mission strands for strangers across the state of Leonida. /trophies/strangers-freaks | silver trophy /trophies/strangers-freaks"
+ },
+ {
+  "key": "trophy/the-goodtime-state",
+  "kind": "trophy",
+  "title": "The Goodtime State",
+  "hint": "Explore all of Leonida. /trophies/the-goodtime-state | bronze trophy /trophies/the-goodtime-state"
+ },
+ {
+  "key": "trophy/the-shootist",
+  "kind": "trophy",
+  "title": "The Shootist",
+  "hint": "/trophies/the-shootist | Earn a gold medal in all Shooting Range challenges. /trophies/the-shootist | silver trophy /trophies/the-shootist"
+ },
+ {
+  "key": "trophy/top-fun",
+  "kind": "trophy",
+  "title": "Top Fun",
+  "hint": "/trophies/top-fun | Win a Top Fun Drone Race at every location. /trophies/top-fun | bronze trophy /trophies/top-fun"
+ },
+ {
+  "key": "trophy/treat-yo-self",
+  "kind": "trophy",
+  "title": "Treat Yo Self",
+  "hint": "Spend $100,000 across all shops. /trophies/treat-yo-self | bronze trophy /trophies/treat-yo-self"
+ },
+ {
+  "key": "trophy/trophies",
+  "kind": "trophy",
+  "title": "Trophies",
+  "hint": "/trophies"
+ },
+ {
+  "key": "trophy/vice-got-a-price",
+  "kind": "trophy",
+  "title": "Vice Got a Price!",
+  "hint": "Congratulations! /trophies/vice-got-a-price | platinum trophy /trophies/vice-got-a-price"
+ },
+ {
+  "key": "trophy/whip-it-good",
+  "kind": "trophy",
+  "title": "Whip It Good",
+  "hint": "Discover 100 vehicles. /trophies/whip-it-good | bronze trophy /trophies/whip-it-good"
+ },
+ {
+  "key": "trophy/you-wainker",
+  "kind": "trophy",
+  "title": "You WAiNKer!",
+  "hint": "/trophies/you-wainker | WAiNK It at 100 locations. /trophies/you-wainker | silver trophy /trophies/you-wainker"
+ },
+ {
+  "key": "vehicle/55-vapid-stanier",
+  "kind": "vehicle",
+  "title": "'55 Vapid Stanier",
+  "hint": "Classic sedan. /vehicles/vapid-stanier-1955"
+ },
+ {
+  "key": "vehicle/65-vapid-dominator",
+  "kind": "vehicle",
+  "title": "'65 Vapid Dominator",
+  "hint": "Other /vehicles/vapid-dominator-65 | Spawns a '65 Vapid Dominator. Unlock Complete all fitness challenges /cheats/vehicle-cheats/65-vapid-dominator | Vapid /vehicles/vapid-dominator-65"
+ },
+ {
+  "key": "vehicle/airboat-09",
+  "kind": "vehicle",
+  "title": "Airboat 09",
+  "hint": "/vehicles/airboat-09 | Boat /vehicles/airboat-09 | Spawns an Airboat 09. Unlock Complete 5 survival challenges /cheats/vehicle-cheats/airboat-09"
+ },
+ {
+  "key": "vehicle/albany",
+  "kind": "vehicle",
+  "title": "Albany",
+  "hint": "United States /manufacturers/albany"
+ },
+ {
+  "key": "vehicle/albany-cavalcade",
+  "kind": "vehicle",
+  "title": "Albany Cavalcade",
+  "hint": "Albany /vehicles/albany-cavalcade | SUV /vehicles/albany-cavalcade"
+ },
+ {
+  "key": "vehicle/albany-washington",
+  "kind": "vehicle",
+  "title": "Albany Washington",
+  "hint": "Albany /vehicles/albany-washington | Sedan /vehicles/albany-washington"
+ },
+ {
+  "key": "vehicle/annis",
+  "kind": "vehicle",
+  "title": "Annis",
+  "hint": "Japan /manufacturers/annis"
+ },
+ {
+  "key": "vehicle/annis-euros",
+  "kind": "vehicle",
+  "title": "Annis Euros",
+  "hint": "Annis /vehicles/annis-euros | Sports /vehicles/annis-euros"
+ },
+ {
+  "key": "vehicle/benefactor-schafter",
+  "kind": "vehicle",
+  "title": "Benefactor Schafter",
+  "hint": "Benefactor /vehicles/benefactor-schafter | Sedan /vehicles/benefactor-schafter"
+ },
+ {
+  "key": "vehicle/benefactor-schafter-v12",
+  "kind": "vehicle",
+  "title": "Benefactor Schafter V12",
+  "hint": "Benefactor /vehicles/benefactor-schafter-v12 | Sports /vehicles/benefactor-schafter-v12"
+ },
+ {
+  "key": "vehicle/benefactor-xls",
+  "kind": "vehicle",
+  "title": "Benefactor XLS",
+  "hint": "Benefactor /vehicles/benefactor-xls | SUV /vehicles/benefactor-xls"
+ },
+ {
+  "key": "vehicle/bravado-banshee",
+  "kind": "vehicle",
+  "title": "Bravado Banshee",
+  "hint": "Bravado /vehicles/bravado-banshee | Spawns a Bravado Banshee. Unlock Complete all combat challenges /cheats/vehicle-cheats/bravado-banshee | Sports /vehicles/bravado-banshee"
+ },
+ {
+  "key": "vehicle/bravado-buffalo",
+  "kind": "vehicle",
+  "title": "Bravado Buffalo",
+  "hint": "Bravado /vehicles/bravado-buffalo | Sports /vehicles/bravado-buffalo"
+ },
+ {
+  "key": "vehicle/bravado-gauntlet-hellfire",
+  "kind": "vehicle",
+  "title": "Bravado Gauntlet Hellfire",
+  "hint": "Bravado /vehicles/bravado-gauntlet-hellfire | Muscle /vehicles/bravado-gauntlet-hellfire"
+ },
+ {
+  "key": "vehicle/bravado-gresley",
+  "kind": "vehicle",
+  "title": "Bravado Gresley",
+  "hint": "Bravado /vehicles/bravado-gresley | SUV /vehicles/bravado-gresley"
+ },
+ {
+  "key": "vehicle/brimstone-golfer",
+  "kind": "vehicle",
+  "title": "Brimstone Golfer",
+  "hint": "Brimstone /vehicles/brimstone-golfer | Other /vehicles/brimstone-golfer | Spawns a Brimstone Golfer. Unlock Complete all sports challenges /cheats/vehicle-cheats/brimstone-golfer"
+ },
+ {
+  "key": "vehicle/buckingham",
+  "kind": "vehicle",
+  "title": "Buckingham",
+  "hint": "United Kingdom /manufacturers/buckingham"
+ },
+ {
+  "key": "vehicle/buckingham-maverick",
+  "kind": "vehicle",
+  "title": "Buckingham Maverick",
+  "hint": "Aircraft /vehicles/buckingham-maverick | Buckingham /vehicles/buckingham-maverick"
+ },
+ {
+  "key": "vehicle/buckingham-swift",
+  "kind": "vehicle",
+  "title": "Buckingham Swift",
+  "hint": "Aircraft /vehicles/buckingham-swift | Buckingham /vehicles/buckingham-swift"
+ },
+ {
+  "key": "vehicle/buy-a-car",
+  "kind": "vehicle",
+  "title": "Buy a car?",
+  "hint": "/guides/buy-a-car"
+ },
+ {
+  "key": "vehicle/canis",
+  "kind": "vehicle",
+  "title": "Canis",
+  "hint": "United States /manufacturers/canis"
+ },
+ {
+  "key": "vehicle/canis-mesa",
+  "kind": "vehicle",
+  "title": "Canis Mesa",
+  "hint": "Canis /vehicles/canis-mesa | SUV /vehicles/canis-mesa"
+ },
+ {
+  "key": "vehicle/cheval",
+  "kind": "vehicle",
+  "title": "Cheval",
+  "hint": "United States /manufacturers/cheval"
+ },
+ {
+  "key": "vehicle/cheval-fugitive",
+  "kind": "vehicle",
+  "title": "Cheval Fugitive",
+  "hint": "Cheval /vehicles/cheval-fugitive | Sedan /vehicles/cheval-fugitive"
+ },
+ {
+  "key": "vehicle/declasse-sabre-turbo",
+  "kind": "vehicle",
+  "title": "Declasse Sabre Turbo",
+  "hint": "Declasse /vehicles/declasse-sabre-turbo | Muscle /vehicles/declasse-sabre-turbo"
+ },
+ {
+  "key": "vehicle/dewbauchee",
+  "kind": "vehicle",
+  "title": "Dewbauchee",
+  "hint": "United Kingdom /manufacturers/dewbauchee"
+ },
+ {
+  "key": "vehicle/dewbauchee-massacro",
+  "kind": "vehicle",
+  "title": "Dewbauchee Massacro",
+  "hint": "Dewbauchee /vehicles/dewbauchee-massacro | Sports /vehicles/dewbauchee-massacro"
+ },
+ {
+  "key": "vehicle/dinka-akuma",
+  "kind": "vehicle",
+  "title": "Dinka Akuma",
+  "hint": "Bike /vehicles/dinka-akuma | Dinka /vehicles/dinka-akuma"
+ },
+ {
+  "key": "vehicle/docktease",
+  "kind": "vehicle",
+  "title": "DockTease",
+  "hint": "United States /manufacturers/docktease"
+ },
+ {
+  "key": "vehicle/docktease-marquis",
+  "kind": "vehicle",
+  "title": "DockTease Marquis",
+  "hint": "Boat /vehicles/docktease-marquis | DockTease /vehicles/docktease-marquis"
+ },
+ {
+  "key": "vehicle/fastest-cars",
+  "kind": "vehicle",
+  "title": "Fastest cars",
+  "hint": "/fastest-cars"
+ },
+ {
+  "key": "vehicle/gallivanter-baller",
+  "kind": "vehicle",
+  "title": "Gallivanter Baller",
+  "hint": "Gallivanter /vehicles/gallivanter-baller | SUV /vehicles/gallivanter-baller"
+ },
+ {
+  "key": "vehicle/gas-and-refueling",
+  "kind": "vehicle",
+  "title": "Gas and refueling",
+  "hint": "/guides/refuel"
+ },
+ {
+  "key": "vehicle/get-a-plane",
+  "kind": "vehicle",
+  "title": "Get a plane",
+  "hint": "/guides/plane"
+ },
+ {
+  "key": "vehicle/get-your-car-back",
+  "kind": "vehicle",
+  "title": "Get your car back",
+  "hint": "/guides/impounded-car"
+ },
+ {
+  "key": "vehicle/grotti-cheetah",
+  "kind": "vehicle",
+  "title": "Grotti Cheetah",
+  "hint": "Grotti /vehicles/grotti-cheetah | Sports /vehicles/grotti-cheetah"
+ },
+ {
+  "key": "vehicle/grotti-itali-gto",
+  "kind": "vehicle",
+  "title": "Grotti Itali GTO",
+  "hint": "Grotti /vehicles/grotti-itali-gto | Sports /vehicles/grotti-itali-gto"
+ },
+ {
+  "key": "vehicle/grotti-turismo-r",
+  "kind": "vehicle",
+  "title": "Grotti Turismo R",
+  "hint": "Grotti /vehicles/grotti-turismo-r | Super /vehicles/grotti-turismo-r"
+ },
+ {
+  "key": "vehicle/hauners-p-996-lazer",
+  "kind": "vehicle",
+  "title": "Hauners P-996 Lazer",
+  "hint": "Hauners /vehicles/hauners-p-996-lazer | Other /vehicles/hauners-p-996-lazer | Spawns a Hauners P-996 Lazer. Unlock Complete all challenges /cheats/vehicle-cheats/hauners-p-996-lazer"
+ },
+ {
+  "key": "vehicle/hauners-rhino-tank",
+  "kind": "vehicle",
+  "title": "Hauners Rhino Tank",
+  "hint": "Hauners /vehicles/hauners-rhino-tank | Military /vehicles/hauners-rhino-tank | Spawns a Hauners Rhino Tank. Unlock Complete all survival challenges /cheats/vehicle-cheats/hauners-rhino-tank"
+ },
+ {
+  "key": "vehicle/how-to-repair-your-car",
+  "kind": "vehicle",
+  "title": "How to repair your car",
+  "hint": "/guides/repair-car"
+ },
+ {
+  "key": "vehicle/hvy-bulldozer",
+  "kind": "vehicle",
+  "title": "HVY Bulldozer",
+  "hint": "HVY /vehicles/hvy-bulldozer | Industrial /vehicles/hvy-bulldozer | Spawns an HVY Bulldozer. Unlock Discover the HVY Bulldozer in the Progress menu /cheats/vehicle-cheats/hvy-bulldozer"
+ },
+ {
+  "key": "vehicle/imponte-phoenix",
+  "kind": "vehicle",
+  "title": "Imponte Phoenix",
+  "hint": "Imponte /vehicles/imponte-phoenix | Muscle /vehicles/imponte-phoenix"
+ },
+ {
+  "key": "vehicle/impounded-car",
+  "kind": "vehicle",
+  "title": "Impounded car",
+  "hint": "/guides/impounded-car"
+ },
+ {
+  "key": "vehicle/inflatable-flamingo",
+  "kind": "vehicle",
+  "title": "Inflatable Flamingo",
+  "hint": "/vehicles/inflatable-flamingo | Other /vehicles/inflatable-flamingo | Spawns an Inflatable Flamingo. Unlock Destroy 50 cocaine flamingos /cheats/vehicle-cheats/inflatable-flamingo"
+ },
+ {
+  "key": "vehicle/interstate-ambulance",
+  "kind": "vehicle",
+  "title": "Interstate Ambulance",
+  "hint": "Emergency /vehicles/interstate-ambulance | Interstate /vehicles/interstate-ambulance | Spawns an Interstate Ambulance. Unlock Discover the Interstate Ambulance in the Progress menu /cheats/vehicle-che"
+ },
+ {
+  "key": "vehicle/karin",
+  "kind": "vehicle",
+  "title": "Karin",
+  "hint": "Japan /manufacturers/karin"
+ },
+ {
+  "key": "vehicle/karin-intruder",
+  "kind": "vehicle",
+  "title": "Karin Intruder",
+  "hint": "Karin /vehicles/karin-intruder | Sedan /vehicles/karin-intruder"
+ },
+ {
+  "key": "vehicle/karin-sultan-rs",
+  "kind": "vehicle",
+  "title": "Karin Sultan RS",
+  "hint": "Karin /vehicles/karin-sultan-rs | Sports /vehicles/karin-sultan-rs"
+ },
+ {
+  "key": "vehicle/key-cloner",
+  "kind": "vehicle",
+  "title": "Key cloner",
+  "hint": "/guides/key-cloner"
+ },
+ {
+  "key": "vehicle/lapwing-mallard",
+  "kind": "vehicle",
+  "title": "Lapwing Mallard",
+  "hint": "Lapwing /vehicles/lapwing-mallard | Other /vehicles/lapwing-mallard | Spawns a Lapwing Mallard. Unlock Complete 5 vehicle challenges /cheats/vehicle-cheats/lapwing-mallard"
+ },
+ {
+  "key": "vehicle/maibatsu-boomazoom",
+  "kind": "vehicle",
+  "title": "Maibatsu Boomazoom",
+  "hint": "Maibatsu /vehicles/maibatsu-boomazoom | Other /vehicles/maibatsu-boomazoom | Spawns a Maibatsu Boomazoom. Unlock Complete 5 shopping challenges /cheats/vehicle-cheats/maibatsu-boomazoom"
+ },
+ {
+  "key": "vehicle/maibatsu-sanchez",
+  "kind": "vehicle",
+  "title": "Maibatsu Sanchez",
+  "hint": "Maibatsu /vehicles/maibatsu-sanchez | Other /vehicles/maibatsu-sanchez | Spawns a Maibatsu Sanchez. Unlock Complete 5 criminal challenges /cheats/vehicle-cheats/maibatsu-sanchez"
+ },
+ {
+  "key": "vehicle/mtl-pumper",
+  "kind": "vehicle",
+  "title": "MTL Pumper",
+  "hint": "MTL /vehicles/mtl-pumper | Other /vehicles/mtl-pumper | Spawns an MTL Pumper. Unlock Discover the MTL Pumper in the Progress menu /cheats/vehicle-cheats/mtl-pumper"
+ },
+ {
+  "key": "vehicle/nagasaki",
+  "kind": "vehicle",
+  "title": "Nagasaki",
+  "hint": "Japan /manufacturers/nagasaki"
+ },
+ {
+  "key": "vehicle/nagasaki-carbon-rs",
+  "kind": "vehicle",
+  "title": "Nagasaki Carbon RS",
+  "hint": "Bike /vehicles/nagasaki-carbon-rs | Nagasaki /vehicles/nagasaki-carbon-rs | Spawns a Nagasaki Carbon RS. Unlock Complete all exploration challenges /cheats/vehicle-cheats/nagasaki-carbon-rs"
+ },
+ {
+  "key": "vehicle/nagasaki-sea-sparrow",
+  "kind": "vehicle",
+  "title": "Nagasaki Sea Sparrow",
+  "hint": "Nagasaki /vehicles/nagasaki-sea-sparrow | Other /vehicles/nagasaki-sea-sparrow | Spawns a Nagasaki Sea Sparrow. Unlock Complete 5 exploration challenges /cheats/vehicle-cheats/nagasaki-sea-sparrow"
+ },
+ {
+  "key": "vehicle/obey",
+  "kind": "vehicle",
+  "title": "Obey",
+  "hint": "Germany /manufacturers/obey"
+ },
+ {
+  "key": "vehicle/obey-9f",
+  "kind": "vehicle",
+  "title": "Obey 9F",
+  "hint": "Obey /vehicles/obey-9f | Sports /vehicles/obey-9f"
+ },
+ {
+  "key": "vehicle/obey-tailgater",
+  "kind": "vehicle",
+  "title": "Obey Tailgater",
+  "hint": "Obey /vehicles/obey-tailgater | Sedan /vehicles/obey-tailgater"
+ },
+ {
+  "key": "vehicle/overflod",
+  "kind": "vehicle",
+  "title": "Overflod",
+  "hint": "Sweden /manufacturers/overflod"
+ },
+ {
+  "key": "vehicle/overflod-autarch",
+  "kind": "vehicle",
+  "title": "Overflod Autarch",
+  "hint": "Overflod /vehicles/overflod-autarch | Super /vehicles/overflod-autarch"
+ },
+ {
+  "key": "vehicle/overflod-entity-xf",
+  "kind": "vehicle",
+  "title": "Overflod Entity XF",
+  "hint": "Overflod /vehicles/overflod-entity-xf | Super /vehicles/overflod-entity-xf"
+ },
+ {
+  "key": "vehicle/pegassi",
+  "kind": "vehicle",
+  "title": "Pegassi",
+  "hint": "Italy /manufacturers/pegassi"
+ },
+ {
+  "key": "vehicle/pegassi-bati-801",
+  "kind": "vehicle",
+  "title": "Pegassi Bati 801",
+  "hint": "Bike /vehicles/pegassi-bati-801 | Pegassi /vehicles/pegassi-bati-801"
+ },
+ {
+  "key": "vehicle/pegassi-ignus",
+  "kind": "vehicle",
+  "title": "Pegassi Ignus",
+  "hint": "Pegassi /vehicles/pegassi-ignus | Super /vehicles/pegassi-ignus"
+ },
+ {
+  "key": "vehicle/pegassi-tempesta",
+  "kind": "vehicle",
+  "title": "Pegassi Tempesta",
+  "hint": "Pegassi /vehicles/pegassi-tempesta | Super /vehicles/pegassi-tempesta"
+ },
+ {
+  "key": "vehicle/pegassi-zentorno",
+  "kind": "vehicle",
+  "title": "Pegassi Zentorno",
+  "hint": "Pegassi /vehicles/pegassi-zentorno | Super /vehicles/pegassi-zentorno"
+ },
+ {
+  "key": "vehicle/pegassi-zorrusso",
+  "kind": "vehicle",
+  "title": "Pegassi Zorrusso",
+  "hint": "Pegassi /vehicles/pegassi-zorrusso | Pegassi · A supercar. /vehicles/pegassi-zorrusso | Super /vehicles/pegassi-zorrusso"
+ },
+ {
+  "key": "vehicle/pfister",
+  "kind": "vehicle",
+  "title": "Pfister",
+  "hint": "Germany /manufacturers/pfister"
+ },
+ {
+  "key": "vehicle/progen-emerus",
+  "kind": "vehicle",
+  "title": "Progen Emerus",
+  "hint": "Progen /vehicles/progen-emerus | Progen · A supercar. /vehicles/progen-emerus | Spawns a Progen Emerus. Unlock Complete all vehicle challenges /cheats/vehicle-cheats/progen-emerus | Super /vehicles/pr"
+ },
+ {
+  "key": "vehicle/repair-your-car",
+  "kind": "vehicle",
+  "title": "Repair your car",
+  "hint": "/guides/repair-car"
+ },
+ {
+  "key": "vehicle/shitzu-hakuchou",
+  "kind": "vehicle",
+  "title": "Shitzu Hakuchou",
+  "hint": "Bike /vehicles/shitzu-hakuchou | Shitzu /vehicles/shitzu-hakuchou"
+ },
+ {
+  "key": "vehicle/shitzu-tropic",
+  "kind": "vehicle",
+  "title": "Shitzu Tropic",
+  "hint": "Boat /vehicles/shitzu-tropic | Shitzu /vehicles/shitzu-tropic"
+ },
+ {
+  "key": "vehicle/slim-jim",
+  "kind": "vehicle",
+  "title": "Slim jim",
+  "hint": "/guides/slim-jim"
+ },
+ {
+  "key": "vehicle/speeder-700-gt",
+  "kind": "vehicle",
+  "title": "Speeder 700 GT",
+  "hint": "/vehicles/speeder-700-gt | Other /vehicles/speeder-700-gt | Spawns a Speeder 700 GT. Unlock Complete 5 combat challenges /cheats/vehicle-cheats/speeder-700-gt"
+ },
+ {
+  "key": "vehicle/speedophile",
+  "kind": "vehicle",
+  "title": "Speedophile",
+  "hint": "United States /manufacturers/speedophile"
+ },
+ {
+  "key": "vehicle/speedophile-speeder",
+  "kind": "vehicle",
+  "title": "Speedophile Speeder",
+  "hint": "Boat /vehicles/speedophile-speeder | Speedophile /vehicles/speedophile-speeder"
+ },
+ {
+  "key": "vehicle/truffade",
+  "kind": "vehicle",
+  "title": "Truffade",
+  "hint": "France /manufacturers/truffade"
+ },
+ {
+  "key": "vehicle/truffade-adder",
+  "kind": "vehicle",
+  "title": "Truffade Adder",
+  "hint": "Super /vehicles/truffade-adder | Truffade /vehicles/truffade-adder"
+ },
+ {
+  "key": "vehicle/truffade-thrax",
+  "kind": "vehicle",
+  "title": "Truffade Thrax",
+  "hint": "Spawns a Truffade Thrax. Unlock Complete all shopping challenges /cheats/vehicle-cheats/truffade-thrax | Super /vehicles/truffade-thrax | Truffade /vehicles/truffade-thrax | Truffade · A supercar. /ve"
+ },
+ {
+  "key": "vehicle/tuff-bmx",
+  "kind": "vehicle",
+  "title": "Tuff BMX",
+  "hint": "Bike /vehicles/tuff-bmx | Spawns a Tuff BMX. Unlock Complete 5 fitness challenges /cheats/vehicle-cheats/tuff-bmx | Tuff /vehicles/tuff-bmx"
+ },
+ {
+  "key": "vehicle/vapid-dominator",
+  "kind": "vehicle",
+  "title": "Vapid Dominator",
+  "hint": "Muscle /vehicles/vapid-dominator | Vapid /vehicles/vapid-dominator"
+ },
+ {
+  "key": "vehicle/vapid-stanier-g2-taxi",
+  "kind": "vehicle",
+  "title": "Vapid Stanier G2 Taxi",
+  "hint": "Service /vehicles/vapid-stanier-g2-taxi | Spawns a Vapid Stanier G2 Taxi. Unlock Complete 5 sports challenges /cheats/vehicle-cheats/vapid-stanier-g2-taxi | Vapid /vehicles/vapid-stanier-g2-taxi"
+ },
+ {
+  "key": "vehicle/vehicle-discovery",
+  "kind": "vehicle",
+  "title": "Vehicle discovery",
+  "hint": "Log every new ride you find. Trophy 100 vehicles /vehicles"
+ },
+ {
+  "key": "vehicle/vehicles",
+  "kind": "vehicle",
+  "title": "Vehicles",
+  "hint": "/vehicles"
+ },
+ {
+  "key": "vehicle/western",
+  "kind": "vehicle",
+  "title": "Western",
+  "hint": "United States /manufacturers/western"
+ },
+ {
+  "key": "vehicle/western-reever",
+  "kind": "vehicle",
+  "title": "Western Reever",
+  "hint": "Bike /vehicles/western-reever | Western /vehicles/western-reever"
+ },
+ {
+  "key": "vehicle/western-zombie-bobber",
+  "kind": "vehicle",
+  "title": "Western Zombie Bobber",
+  "hint": "Other /vehicles/western-zombie-bobber | Spawns a Western Zombie Bobber. Unlock Complete all criminal challenges /cheats/vehicle-cheats/western-zombie-bobber | Western /vehicles/western-zombie-bobber"
+ },
+ {
+  "key": "weapon/adb-fra",
+  "kind": "weapon",
+  "title": "AdB FRA",
+  "hint": "Armurerie de Belgique · 7.62x51mm assault rifle · 20-round mag · fully automatic /weapons/adb-fra | Assault Rifle /weapons/adb-fra"
+ },
+ {
+  "key": "weapon/adb-m350",
+  "kind": "weapon",
+  "title": "AdB M350",
+  "hint": "Armurerie de Belgique · 5.56x45mm lmg · 100-round mag · fully automatic /weapons/adb-m350 | LMG /weapons/adb-m350"
+ },
+ {
+  "key": "weapon/adb-pd-80",
+  "kind": "weapon",
+  "title": "AdB PD-80",
+  "hint": "Armurerie de Belgique · 5.7x28mm smg · 30-round mag · fully automatic /weapons/adb-pd-80 | SMG /weapons/adb-pd-80"
+ },
+ {
+  "key": "weapon/all-explosive-weapons",
+  "kind": "weapon",
+  "title": "All Explosive Weapons",
+  "hint": "Adds all explosive weapons to your loadout with full ammo. Unlock Throw 100 grenades /cheats/combat-cheats/all-explosive-weapons"
+ },
+ {
+  "key": "weapon/attack-force",
+  "kind": "weapon",
+  "title": "Attack Force",
+  "hint": "Bullets and melee attacks launch targets on impact. Unlock Finish the story /cheats/combat-cheats/attack-force"
+ },
+ {
+  "key": "weapon/bzi-vatra",
+  "kind": "weapon",
+  "title": "BZI Vatra",
+  "hint": "Bohemia Zbran Industries · 9mm smg · 20-round mag · fully automatic /weapons/bzi-vatra | SMG /weapons/bzi-vatra"
+ },
+ {
+  "key": "weapon/deever-tech-dsg",
+  "kind": "weapon",
+  "title": "Deever Tech DSG",
+  "hint": "Deever Tech · 9mm smg · 30-round mag · 3-round burst /weapons/deever-tech-dsg | SMG /weapons/deever-tech-dsg"
+ },
+ {
+  "key": "weapon/deever-tech-glr40",
+  "kind": "weapon",
+  "title": "Deever Tech GLR40",
+  "hint": "Deever Tech · 40mm grenade launcher · 6-round mag · semi-automatic /weapons/deever-tech-glr40 | Launcher /weapons/deever-tech-glr40"
+ },
+ {
+  "key": "weapon/duke-1922",
+  "kind": "weapon",
+  "title": "Duke 1922",
+  "hint": "Duke · .45 handgun · 8-round mag · semi-automatic /weapons/duke-1922 | Handgun /weapons/duke-1922"
+ },
+ {
+  "key": "weapon/duke-mustang-357",
+  "kind": "weapon",
+  "title": "Duke Mustang .357",
+  "hint": "Duke · .357 Magnum revolver · 6-round mag · semi-automatic /weapons/duke-mustang-357 | Handgun · Revolver /weapons/duke-mustang-357"
+ },
+ {
+  "key": "weapon/exploding-balls",
+  "kind": "weapon",
+  "title": "Exploding Balls",
+  "hint": "Sports balls explode on impact. Unlock Hit 20 enemies with explosive damage /cheats/combat-cheats/exploding-balls"
+ },
+ {
+  "key": "weapon/exploding-bottles",
+  "kind": "weapon",
+  "title": "Exploding Bottles",
+  "hint": "All bottles explode when damaged. Unlock Throw 100 molotovs /cheats/combat-cheats/exploding-bottles"
+ },
+ {
+  "key": "weapon/explosive-shotgun",
+  "kind": "weapon",
+  "title": "Explosive Shotgun",
+  "hint": "Adds a Mason & Keen Shortstraw to your loadout that fires explosive shells. Unlock Hit 100 enemies with explosive damage /cheats/combat-cheats/explosive-shotgun"
+ },
+ {
+  "key": "weapon/fairview-ff-50",
+  "kind": "weapon",
+  "title": "Fairview FF-50",
+  "hint": "Fairview Firearms · .50 BFG sniper rifle · 5-round mag · bolt action /weapons/fairview-ff-50 | Sniper Rifle /weapons/fairview-ff-50"
+ },
+ {
+  "key": "weapon/fairview-ff-sr",
+  "kind": "weapon",
+  "title": "Fairview FF-SR",
+  "hint": "Fairview Firearms · .338 Magnum sniper rifle · 10-round mag · bolt action /weapons/fairview-ff-sr | Sniper Rifle /weapons/fairview-ff-sr"
+ },
+ {
+  "key": "weapon/fairview-kalinga-50",
+  "kind": "weapon",
+  "title": "Fairview Kalinga .50",
+  "hint": "Fairview Firearms · .50 Magnum handgun · 7-round mag · semi-automatic /weapons/fairview-kalinga-50 | Handgun /weapons/fairview-kalinga-50"
+ },
+ {
+  "key": "weapon/fortune-and-son-laird-350",
+  "kind": "weapon",
+  "title": "Fortune & Son Laird 350",
+  "hint": "Fortune & Son · 6.5mm sniper rifle · 5-round mag · bolt action /weapons/fortune-son-laird-350 | Sniper Rifle /weapons/fortune-son-laird-350"
+ },
+ {
+  "key": "weapon/girardi-az1200",
+  "kind": "weapon",
+  "title": "Girardi AZ1200",
+  "hint": "Girardi · 12-gauge shotgun · 5-round mag · semi-automatic /weapons/girardi-az1200 | Shotgun /weapons/girardi-az1200"
+ },
+ {
+  "key": "weapon/girardi-es18",
+  "kind": "weapon",
+  "title": "Girardi ES18",
+  "hint": "Girardi · 9mm handgun · 30-round mag · 3-round burst /weapons/girardi-es18 | Handgun /weapons/girardi-es18"
+ },
+ {
+  "key": "weapon/girardi-super400",
+  "kind": "weapon",
+  "title": "Girardi Super400",
+  "hint": "Girardi · 12-gauge shotgun · 7-round mag · semi-automatic /weapons/girardi-super400 | Shotgun /weapons/girardi-super400"
+ },
+ {
+  "key": "weapon/girardi-verro",
+  "kind": "weapon",
+  "title": "Girardi Verro",
+  "hint": "Girardi · 12-gauge shotgun · 5-round mag · semi-automatic /weapons/girardi-verro | Shotgun /weapons/girardi-verro"
+ },
+ {
+  "key": "weapon/goodwin-comshot-12",
+  "kind": "weapon",
+  "title": "Goodwin Comshot 12",
+  "hint": "Goodwin · 12-gauge shotgun · 7-round mag · semi-automatic /weapons/goodwin-comshot-12 | Shotgun /weapons/goodwin-comshot-12"
+ },
+ {
+  "key": "weapon/goodwin-lmg-6",
+  "kind": "weapon",
+  "title": "Goodwin LMG 6",
+  "hint": "Goodwin · 7.62x51mm lmg · 100-round mag · fully automatic /weapons/goodwin-lmg-6 | LMG /weapons/goodwin-lmg-6"
+ },
+ {
+  "key": "weapon/grenade",
+  "kind": "weapon",
+  "title": "Grenade",
+  "hint": "Explosives · Thrown /weapons/grenade | Not named · Thrown /weapons/grenade"
+ },
+ {
+  "key": "weapon/hauners-h-at",
+  "kind": "weapon",
+  "title": "Hauners H-AT",
+  "hint": "Adds a Hauners H-AT to your loadout. Unlock Blow up 100 vehicles /cheats/combat-cheats/hauners-h-at | Hauners · 66mm rocket launcher · 1-round mag · single shot /weapons/hauners-h-at | Launcher /weapo"
+ },
+ {
+  "key": "weapon/hawk-and-little-38",
+  "kind": "weapon",
+  "title": "Hawk & Little .38",
+  "hint": "Handgun · Revolver /weapons/hawk-little-38 | Hawk & Little · .38 Special revolver · 6-round mag · semi-automatic /weapons/hawk-little-38"
+ },
+ {
+  "key": "weapon/hillinger-boomer",
+  "kind": "weapon",
+  "title": "Hillinger Boomer",
+  "hint": "Hillinger · 40mm grenade launcher · 1-round mag · single shot /weapons/hillinger-boomer | Launcher /weapons/hillinger-boomer"
+ },
+ {
+  "key": "weapon/hillinger-heathen",
+  "kind": "weapon",
+  "title": "Hillinger Heathen",
+  "hint": "Assault Rifle /weapons/hillinger-heathen | Hillinger · 5.56x45mm assault rifle · 3-round burst /weapons/hillinger-heathen"
+ },
+ {
+  "key": "weapon/hillinger-m306",
+  "kind": "weapon",
+  "title": "Hillinger M306",
+  "hint": "Hillinger · 7.62x51mm tactical rifle · 20-round mag · semi-automatic /weapons/hillinger-m306 | Tactical Rifle /weapons/hillinger-m306"
+ },
+ {
+  "key": "weapon/hillinger-m306-tmr",
+  "kind": "weapon",
+  "title": "Hillinger M306 TMR",
+  "hint": "Hillinger · 7.62x51mm tactical rifle · 20-round mag · semi-automatic /weapons/hillinger-m306-tmr | Tactical Rifle /weapons/hillinger-m306-tmr"
+ },
+ {
+  "key": "weapon/incendiary-ammo",
+  "kind": "weapon",
+  "title": "Incendiary Ammo",
+  "hint": "All ammo is incendiary. Unlock Burn 100 enemies with fire damage /cheats/combat-cheats/incendiary-ammo"
+ },
+ {
+  "key": "weapon/infinite-ammo",
+  "kind": "weapon",
+  "title": "Infinite Ammo",
+  "hint": "Ammo never runs out. Unlock Win 25 silver medals or higher at shooting ranges /cheats/combat-cheats/infinite-ammo"
+ },
+ {
+  "key": "weapon/klose-k17-mcd",
+  "kind": "weapon",
+  "title": "Klose K17 MCD",
+  "hint": "Handgun /weapons/klose-k17-mcd | Klose · 9mm handgun · 24-round mag · fully automatic /weapons/klose-k17-mcd"
+ },
+ {
+  "key": "weapon/kozlov-hind",
+  "kind": "weapon",
+  "title": "Kozlov Hind",
+  "hint": "Assault Rifle /weapons/kozlov-hind | Kozlov · 7.62x39mm assault rifle · 30-round mag · fully automatic /weapons/kozlov-hind"
+ },
+ {
+  "key": "weapon/kozlov-kvga-12",
+  "kind": "weapon",
+  "title": "Kozlov KVGA-12",
+  "hint": "Kozlov · 12-gauge shotgun · 8-round mag · fully automatic /weapons/kozlov-kvga-12 | Shotgun /weapons/kozlov-kvga-12"
+ },
+ {
+  "key": "weapon/kozlov-kz-59",
+  "kind": "weapon",
+  "title": "Kozlov KZ-59",
+  "hint": "Assault Rifle /weapons/kozlov-kz-59 | Kozlov · 7.62x39mm assault rifle · 30-round mag · fully automatic /weapons/kozlov-kz-59"
+ },
+ {
+  "key": "weapon/mason-and-keen-longshot",
+  "kind": "weapon",
+  "title": "Mason & Keen Longshot",
+  "hint": "Mason & Keen · 12-gauge shotgun · 2-round mag · break action /weapons/mason-keen-longshot | Shotgun /weapons/mason-keen-longshot"
+ },
+ {
+  "key": "weapon/mason-and-keen-shortstraw",
+  "kind": "weapon",
+  "title": "Mason & Keen Shortstraw",
+  "hint": "Mason & Keen · 12-gauge shotgun · 2-round mag · break action /weapons/mason-keen-shortstraw | Shotgun /weapons/mason-keen-shortstraw"
+ },
+ {
+  "key": "weapon/max-ammo",
+  "kind": "weapon",
+  "title": "Max Ammo",
+  "hint": "Fills all ammo to maximum. Unlock Win 25 bronze medals or higher at shooting ranges /cheats/combat-cheats/max-ammo"
+ },
+ {
+  "key": "weapon/melee-and-explosives",
+  "kind": "weapon",
+  "title": "Melee and explosives",
+  "hint": "3 places /where-to-find/melee-and-explosives"
+ },
+ {
+  "key": "weapon/molotov",
+  "kind": "weapon",
+  "title": "Molotov",
+  "hint": "Explosives · Thrown /weapons/molotov | Not named · Thrown /weapons/molotov"
+ },
+ {
+  "key": "weapon/no-reload",
+  "kind": "weapon",
+  "title": "No Reload",
+  "hint": "Ammo never runs out with no need to reload. Unlock Win 25 gold medals at shooting ranges /cheats/combat-cheats/no-reload"
+ },
+ {
+  "key": "weapon/pawn-and-gun-port-gellhorn",
+  "kind": "weapon",
+  "title": "Pawn & Gun – Port Gellhorn",
+  "hint": "Port Gellhorn /where-to-find/melee-and-explosives/pawn-and-gun-port-gellhorn | Where to buy them /where-to-find/melee-and-explosives/pawn-and-gun-port-gellhorn"
+ },
+ {
+  "key": "weapon/phils-ammu-nation",
+  "kind": "weapon",
+  "title": "Phil’s Ammu-Nation",
+  "hint": "South Vice City /where-to-find/melee-and-explosives/phils-ammu-nation | Where to buy them /where-to-find/melee-and-explosives/phils-ammu-nation"
+ },
+ {
+  "key": "weapon/schlamm-dw-9",
+  "kind": "weapon",
+  "title": "Schlamm DW-9",
+  "hint": "SMG /weapons/schlamm-dw-9 | Schlamm · 9mm smg · 30-round mag · fully automatic /weapons/schlamm-dw-9"
+ },
+ {
+  "key": "weapon/scorpio-akulus",
+  "kind": "weapon",
+  "title": "Scorpio Akulus",
+  "hint": "Handgun · Revolver /weapons/scorpio-akulus | Scorpio · .44 Magnum revolver · 6-round mag · semi-automatic /weapons/scorpio-akulus"
+ },
+ {
+  "key": "weapon/scorpio-nipper-38",
+  "kind": "weapon",
+  "title": "Scorpio Nipper .38",
+  "hint": "Handgun /weapons/scorpio-nipper-38 | Scorpio · .380 handgun · 8-round mag · semi-automatic /weapons/scorpio-nipper-38"
+ },
+ {
+  "key": "weapon/shrewsbury-hobo",
+  "kind": "weapon",
+  "title": "Shrewsbury Hobo",
+  "hint": "Shotgun /weapons/shrewsbury-hobo | Shrewsbury · 12-gauge shotgun · 2-round mag · break action /weapons/shrewsbury-hobo"
+ },
+ {
+  "key": "weapon/shrewsbury-sm-69",
+  "kind": "weapon",
+  "title": "Shrewsbury SM-69",
+  "hint": "Shrewsbury · 7.62x51mm sniper rifle · 5-round mag · bolt action /weapons/shrewsbury-sm-69 | Sniper Rifle /weapons/shrewsbury-sm-69"
+ },
+ {
+  "key": "weapon/shrewsbury-sms-01",
+  "kind": "weapon",
+  "title": "Shrewsbury SMS-01",
+  "hint": "Shrewsbury · Sniper Rifle /weapons/shrewsbury-sms-01 | Sniper Rifle /weapons/shrewsbury-sms-01"
+ },
+ {
+  "key": "weapon/stealth-takedown",
+  "kind": "weapon",
+  "title": "Stealth takedown",
+  "hint": "/guides/stealth-takedown"
+ },
+ {
+  "key": "weapon/take-cover",
+  "kind": "weapon",
+  "title": "Take cover",
+  "hint": "/guides/take-cover"
+ },
+ {
+  "key": "weapon/vehicle-force",
+  "kind": "weapon",
+  "title": "Vehicle Force",
+  "hint": "Vehicle collisions launch targets. Unlock Kill 25 enemies with a vehicle (civilians count too) /cheats/combat-cheats/vehicle-force"
+ },
+ {
+  "key": "weapon/vom-feuer-vf-g1",
+  "kind": "weapon",
+  "title": "Vom Feuer VF-G1",
+  "hint": "Assault Rifle /weapons/vom-feuer-vf-g1 | Vom Feuer · 5.56x45mm assault rifle · 30-round mag · fully automatic /weapons/vom-feuer-vf-g1"
+ },
+ {
+  "key": "weapon/vom-feuer-vf5",
+  "kind": "weapon",
+  "title": "Vom Feuer VF5",
+  "hint": "SMG /weapons/vom-feuer-vf5 | Vom Feuer · 9mm smg · 30-round mag · fully automatic /weapons/vom-feuer-vf5"
+ },
+ {
+  "key": "weapon/vom-feuer-vf5c",
+  "kind": "weapon",
+  "title": "Vom Feuer VF5C",
+  "hint": "SMG /weapons/vom-feuer-vf5c | Vom Feuer · 9mm smg · 30-round mag · fully automatic /weapons/vom-feuer-vf5c"
+ },
+ {
+  "key": "weapon/weapons",
+  "kind": "weapon",
+  "title": "Weapons",
+  "hint": "/weapons"
+ },
+ {
+  "key": "weapon/wortham-w-10",
+  "kind": "weapon",
+  "title": "Wortham W-10",
+  "hint": "SMG /weapons/wortham-w-10 | Wortham · 9mm smg · 20-round mag · fully automatic /weapons/wortham-w-10"
+ },
+ {
+  "key": "weapon/wortham-w-22",
+  "kind": "weapon",
+  "title": "Wortham W-22",
+  "hint": "Tactical Rifle /weapons/wortham-w-22 | Wortham · .22 LR tactical rifle · 15-round mag · semi-automatic /weapons/wortham-w-22"
+ },
+ {
+  "key": "weapon/wortham-wcr1",
+  "kind": "weapon",
+  "title": "Wortham WCR1",
+  "hint": "Handgun · Revolver /weapons/wortham-wcr1 | Wortham · .38 Special revolver · 5-round mag · semi-automatic /weapons/wortham-wcr1"
+ },
+ {
+  "key": "weapon/zhang-wu-type-9",
+  "kind": "weapon",
+  "title": "Zhang Wu Type 9",
+  "hint": "SMG /weapons/zhang-wu-type-9 | Zhang Wu · 9mm smg · 10-round mag · fully automatic /weapons/zhang-wu-type-9"
+ }
+]

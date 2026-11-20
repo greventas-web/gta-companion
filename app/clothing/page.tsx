@@ -7,6 +7,8 @@ import { clothing } from "@/data/clothing";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 clothing',
@@ -47,6 +49,7 @@ export default function ClothingPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="clothing" />
+      <QuickGuideGrid guides={quickGuideCards(["change-clothes", "mask", "haircut", "tattoos"])} />
     </PageShell>
   );
 }

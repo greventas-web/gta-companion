@@ -7,6 +7,8 @@ import { activities } from "@/data/activities";
 import { pageMetadata } from "@/lib/launch";
 import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 activities',
@@ -47,6 +49,7 @@ export default function ActivitiesPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="activities" />
+      <QuickGuideGrid guides={quickGuideCards(["workout", "fishing", "hunting", "scuba-gear", "plane", "parachute", "swimming", "skip-time", "controls", "helicopter", "boat", "stunt-jumps", "basketball", "mini-golf", "shooting-ranges", "auto-drive", "meditation", "climbing", "crouch", "character-stats", "public-transport"])} />
     </PageShell>
   );
 }

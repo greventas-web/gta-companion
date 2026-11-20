@@ -3,8 +3,10 @@ import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simpl
 import { paradiseGarageStandIn } from "@/data/standIns";
 import { vehicles } from "@/data/vehicles";
 import { weapons } from "@/data/weapons";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { pageMetadata } from "@/lib/launch";
 import { vehicleImages } from "@/lib/media/catalog";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const launchTitle = "Editions";
 const launchDescription =
@@ -90,11 +92,11 @@ const editionPlaces = [
 ];
 
 const vintage = [
-  { href: "/vehicles/vapid-stanier-1955", title: "'55 Vapid Stanier", line: "Classic sedan." },
+  { href: "/vehicles/vapid-stanier-1955", title: "'55 Vapid Stanier", line: "Classic sedan.", image: "/images/official/vehicles/vapid-stanier-1955.webp" },
   { href: "/properties/shore-court", title: "Shore Court garage", line: "Near Ocean Beach." },
-  { href: "/clothing/vintage-vice-city-looks", title: "Vintage looks", line: "Outfits and hairstyles." },
-  { href: "/clothing/jason-pastel-linen-suit", title: "Jason's pastel linen suit" },
-  { href: "/clothing/lucia-red-sequin-mini-dress", title: "Lucia's red sequin dress" },
+  { href: "/clothing/vintage-vice-city-looks", title: "Vintage looks", line: "Outfits and hairstyles.", image: "/images/official/editions/vintage_vice_city_pack_exclusive_looks_01.webp" },
+  { href: "/clothing/jason-pastel-linen-suit", title: "Jason's pastel linen suit", image: "/images/official/editions/vintage_vice_city_pack_02.webp" },
+  { href: "/clothing/lucia-red-sequin-mini-dress", title: "Lucia's red sequin dress", image: "/images/official/editions/vintage_vice_city_pack_01.webp" },
 ];
 
 function vehicleCard(slug: string) {
@@ -153,9 +155,10 @@ export default function LaunchPage() {
 
       <CardGrid heading="Vintage Vice City Pack (bought before Nov 20)" count={vintage.length}>
         {vintage.map((item) => (
-          <SimpleCard key={item.href} href={item.href} title={item.title} line={item.line} />
+          <SimpleCard key={item.href} href={item.href} title={item.title} line={item.line} image={"image" in item ? item.image : undefined} />
         ))}
       </CardGrid>
+      <QuickGuideGrid guides={quickGuideCards(["ultimate-edition", "platforms", "physical-copy"])} />
     </PageShell>
   );
 }

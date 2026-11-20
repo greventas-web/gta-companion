@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simple/SimpleCard";
@@ -7,6 +8,7 @@ import { pageMetadata } from "@/lib/launch";
 import { getStaticPins } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { courseTrackId, rangePrices, shootingRanges } from "@/src/data/launch/shooting-ranges";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "GTA 6 Shooting Ranges – Griffin and Rodgers Ranch";
 const description =
@@ -90,7 +92,7 @@ export default function ShootingRangesPage() {
           ))}
         </CardGrid>
       ))}
-
+      <QuickGuideGrid guides={quickGuideCards(["shooting-ranges", "aim-assist", "focus", "trophies"])} />
     </PageShell>
   );
 }

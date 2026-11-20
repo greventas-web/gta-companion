@@ -6,8 +6,10 @@ import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simpl
 import { cheatCard } from "@/components/cheats/cheatCards";
 import { launchMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { cheatBasics } from "@/src/data/launch/cheat-faqs";
 import { cheatGroups, cheatsIn } from "@/src/data/launch/cheats";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "GTA 6 Cheats: All 61 Cheat Codes and How to Unlock Them";
 const description =
@@ -45,6 +47,7 @@ export default function CheatsPage() {
         </CardGrid>
       ))}
 
+      <QuickGuideGrid guides={quickGuideCards(["cheats-locked", "flamingos"])} />
     </PageShell>
   );
 }

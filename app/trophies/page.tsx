@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
+import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, QuickFacts, SimpleHero, TrackProgress } from "@/components/simple/SimpleCard";
 import { launchMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
+import { quickGuideCards } from "@/src/data/launch/quick-guides";
 import { TROPHY_COUNTS, trophies } from "@/src/data/trophies";
 import type { TrophyGrade } from "@/types/trophy";
 
@@ -73,6 +75,7 @@ export default function TrophiesPage() {
           ))}
         </CardGrid>
       ))}
+      <QuickGuideGrid guides={quickGuideCards(["trophies", "stunt-jumps", "flamingos", "shooting-ranges", "collectible-cards", "waink-scans", "meditation"])} />
     </PageShell>
   );
 }
