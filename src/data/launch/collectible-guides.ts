@@ -16,6 +16,7 @@ import {
   raceChallengeSources,
 } from "./batch3-sources";
 import { bookSwapSources, playlistSources, poolSources, videoGameSources } from "./batch4-sources";
+import { magazineSources, raceSources, wainkSources } from "./batch5-sources";
 
 export type CollectibleSet = {
   name: string;
@@ -910,6 +911,7 @@ export const collectibleGuides: CollectibleGuide[] = [
       { pin: "confirmed:capri", label: "Capri" },
     ],
     related: [
+      { href: "/collectibles/magazines-books-comics", label: "Magazines, books and comics" },
       { href: "/guides/waink-scans", label: "WAiNK scans" },
       { href: "/collectibles/card-sets", label: "Card sets" },
       { href: "/guides/100-percent-completion", label: "100% checklist" },
@@ -990,6 +992,320 @@ export const collectibleGuides: CollectibleGuide[] = [
       },
     ],
     sources: playlistSources,
+  },
+  {
+    slug: "waink-locations",
+    title: "WAiNK locations",
+    heading: "WAiNK scan locations",
+    metaTitle: "GTA 6 WAiNK Locations – Landmarks, Sculptures and Curiosities",
+    metaDescription:
+      "GTA 6 WAiNK scan locations: the 5 sets, how many you need for You WAiNKer! and 100%, and known landmarks, sculptures and curiosities by area. Unofficial.",
+    line: "Scan 100 WAiNK locations for the trophy and 100%.",
+    intro:
+      "WAiNK locations are landmarks, sculptures, curiosities and No Flusher tags you scan with the WAiNK app on your phone. You need 100 for the You WAiNKer! trophy and for 100%.",
+    quick: [
+      { label: "Needed", value: "100 scans" },
+      { label: "Sets", value: "5" },
+      { label: "Landmarks", value: "31" },
+      { label: "Curiosities", value: "35" },
+      { label: "Sculptures", value: "23" },
+      { label: "Track them", value: "Progress > Collections > WAiNK Locations" },
+    ],
+    tips: [
+      { label: "Nearby", value: "The controller buzzes, a sound plays and a note shows bottom right" },
+      { label: "Doesn't count", value: "AHOL Street Art and 1010 Murals have their own lists" },
+    ],
+    groups: [
+      {
+        heading: "Landmarks (known so far)",
+        itemPages: true,
+        items: [
+          { slug: "badger-rd-tower", name: "Badger R&D Tower", value: "Key Lento", line: "A big radio tower on the main road, south of Brian's marina in Key Lento.", facts: [{ label: "Where", value: "Key Lento, Mariana County" }], pin: "confirmed:brians-boat-works" },
+          { slug: "thicc-herbie", name: "Thicc Herbie", value: "Maroon Key", line: "The big blimp at Maroon Key. It may not scan up close; scan it from Abismo Key State Park across the water to the south.", facts: [{ label: "Where", value: "Maroon Key, scan from Abismo Key" }], pin: "confirmed:abismo-key" },
+          { slug: "riquezas-key-radome", name: "Riquezas Key Radome", value: "Riquezas Keys", line: "Head south-southwest past Mile Zero Air Station. The radome is at the south tip of Riquezas Keys.", facts: [{ label: "Where", value: "Riquezas Keys, Mariana County" }], pin: "confirmed:leonida-keys" },
+          { slug: "belpoint-lighthouse", name: "Belpoint Lighthouse", value: "Belpoint", line: "The lighthouse at Belpoint, Mariana County.", facts: [{ label: "Where", value: "Belpoint, Mariana County" }] },
+          { slug: "gellhorn-fun-fair", name: "Gellhorn Fun Fair", value: "Port Gellhorn", line: "The fun fair in Port Gellhorn, Kelly County.", facts: [{ label: "Where", value: "Port Gellhorn, Kelly County" }], pin: "confirmed:port-gellhorn" },
+          { slug: "farmer-scrumpys-apple-orchard", name: "Farmer Scrumpy's Apple Orchard", value: "Manifest Canyon", line: "An apple orchard in Manifest Canyon, Kelly County.", facts: [{ label: "Where", value: "Manifest Canyon, Kelly County" }] },
+          { slug: "lawton-co-paper-mill", name: "Lawton Co. Paper Mill", value: "Moreau", line: "The paper mill in Moreau, Lummox County.", facts: [{ label: "Where", value: "Moreau, Lummox County" }] },
+          { slug: "grayson-assembly", name: "Grayson Assembly", value: "Grayson", line: "In Grayson, Lummox County.", facts: [{ label: "Where", value: "Grayson, Lummox County" }] },
+          { slug: "kalaga-lookout", name: "Kalaga Lookout", value: "Mount Kalaga", line: "A lookout in Mount Kalaga National Park, Lummox County.", facts: [{ label: "Where", value: "Mount Kalaga National Park" }], pin: "confirmed:mount-kalaga-national-park" },
+          { slug: "dock-ring", name: "Dock Ring", value: "Downtown", line: "In Downtown Vice City.", facts: [{ label: "Where", value: "Downtown, Vice City" }], pin: "confirmed:downtown-vice-city" },
+        ],
+      },
+      {
+        heading: "Sculptures (known so far)",
+        itemPages: true,
+        items: [
+          { slug: "the-wonder-whale", name: "The Wonder Whale", value: "Key Lento", line: "A colorful whale statue at the main junction in Key Lento, near where you collect rent early on.", facts: [{ label: "Where", value: "Key Lento, Mariana County" }], pin: "confirmed:wonder-whale" },
+          { slug: "fatal-incursion-plaque", name: "Fatal Incursion Plaque", value: "Key Lento", line: "A memorial in the beachside park at the southwest tip of Key Lento, past the barber and clothing store.", facts: [{ label: "Where", value: "Southwest Key Lento" }], pin: "confirmed:leonida-keys" },
+          { slug: "triangler-sculpture", name: "Triangler Sculpture", value: "Corsair Key", line: "A sculpture in the water by Cal's place, just northeast of Jason's house.", facts: [{ label: "Where", value: "Corsair Key, Mariana County" }], pin: "confirmed:jasons-place" },
+          { slug: "grassrivers-visitor-center-statue", name: "Grassrivers Visitor Center Statue", value: "Grassrivers", line: "The statue outside the Grassrivers Visitor Center.", facts: [{ label: "Where", value: "Grassrivers, Mariana County" }], pin: "confirmed:grassrivers" },
+          { slug: "pixel-fountain", name: "Pixel Fountain", value: "Tequesta", line: "A fountain in Tequesta, Vice City.", facts: [{ label: "Where", value: "Tequesta, Vice City" }], pin: "confirmed:tequesta" },
+          { slug: "neptune-rises", name: "Neptune Rises", value: "Washington Beach", line: "A sculpture in Washington Beach, Vice Beach.", facts: [{ label: "Where", value: "Washington Beach, Vice Beach" }], pin: "confirmed:washington-beach" },
+          { slug: "vice-museum-of-art-sculpture", name: "Vice Museum of Art Sculpture", value: "Washington Beach", line: "Outside the Vice Museum of Art in Washington Beach.", facts: [{ label: "Where", value: "Washington Beach, Vice Beach" }], pin: "confirmed:washington-beach" },
+          { slug: "princes-robot-bubblegum-statue", name: "Princes Robot Bubblegum Statue", value: "Washington Beach", line: "A statue in Washington Beach, Vice Beach.", facts: [{ label: "Where", value: "Washington Beach, Vice Beach" }], pin: "confirmed:washington-beach" },
+          { slug: "monument-of-leonidan-supremacy", name: "Monument of Leonidan Supremacy", value: "Manifest Canyon", line: "A monument in Manifest Canyon, Kelly County.", facts: [{ label: "Where", value: "Manifest Canyon, Kelly County" }] },
+        ],
+      },
+      {
+        heading: "Curiosities (known so far)",
+        itemPages: true,
+        items: [
+          { slug: "christmas-house", name: "Christmas House", value: "Key Lento", line: "A house decorated for Christmas on the westernmost street in Key Lento.", facts: [{ label: "Where", value: "West Key Lento" }], pin: "confirmed:leonida-keys" },
+          { slug: "plunge-masters-deep-sea-chalet", name: "Plunge Masters Deep Sea Chalet", value: "Key Lento", line: "Further along the same street, at the Plunge Masters sign. Scan the mural behind the shed.", facts: [{ label: "Where", value: "West Key Lento" }], pin: "confirmed:leonida-keys" },
+          { slug: "abismo-key-carcass", name: "Abismo Key Carcass", value: "Abismo Key", line: "Walk south through the mangroves on Abismo Key to the beach. It looks like the bones of an alien.", facts: [{ label: "Where", value: "South beach, Abismo Key" }], pin: "confirmed:abismo-key" },
+          { slug: "derelict-spy-vessel", name: "Derelict Spy Vessel", value: "Permit Keys", line: "Take a boat to the southeastern island in the Permit Keys. The wreck is grounded at its tip.", facts: [{ label: "Where", value: "Permit Keys, by boat" }] },
+          { slug: "beach-party-site", name: "Beach Party Site", value: "Permit Keys", line: "An abandoned beach party at the north edge of the central island chain in the Permit Keys.", facts: [{ label: "Where", value: "Permit Keys, by boat" }] },
+          { slug: "fingerpost", name: "Fingerpost", value: "Permit Keys", line: "Right by the Beach Party Site, hidden behind trees and mangroves.", facts: [{ label: "Where", value: "Permit Keys, by boat" }] },
+          { slug: "goose-key-carcass", name: "Goose Key Carcass", value: "Goose Key", line: "Follow the coast northeast around Mile Zero Air Station. It's a restricted area, so don't get spotted.", facts: [{ label: "Where", value: "Near Mile Zero Air Station" }] },
+          { slug: "desert-island-piano", name: "Desert Island Piano", value: "Islands", line: "On a small island in the chain south of Cottonmouth Lake and Gambit Bay.", facts: [{ label: "Where", value: "South of Gambit Bay, by boat" }] },
+          { slug: "vibrant-pond", name: "Vibrant Pond", value: "Swamp", line: "In the swamp to the north. Look for a warning sign before a big pool of muck.", facts: [{ label: "Where", value: "Swamp, Mariana County" }] },
+          { slug: "dead-sharks", name: "Dead Sharks", value: "Wetman Bay", line: "A beach covered in dead sharks on the southern islands in Wetman Bay.", facts: [{ label: "Where", value: "Wetman Bay, by boat" }] },
+          { slug: "wetman-bay-carcass", name: "Wetman Bay Carcass", value: "Wetman Bay", line: "Another alien-looking carcass on the island just north of Dead Sharks.", facts: [{ label: "Where", value: "Wetman Bay, by boat" }] },
+          { slug: "noflusher-homestead", name: "NoFlusher Homestead", value: "Swamp", line: "West of the Kingfisher swamp base. Not for weak stomachs.", facts: [{ label: "Where", value: "West of Kingfisher" }] },
+          { slug: "imperial-spanish-ruins", name: "Imperial Spanish Ruins", value: "Moreau", line: "Ruins in Moreau, Lummox County.", facts: [{ label: "Where", value: "Moreau, Lummox County" }] },
+          { slug: "big-entrance", name: "Big Entrance", value: "Dalton Island", line: "On Dalton Island, Vice Beach.", facts: [{ label: "Where", value: "Dalton Island, Vice Beach" }] },
+        ],
+      },
+      {
+        heading: "No Flusher tags",
+        items: [
+          { slug: "no-flusher-tags", name: "No Flusher tags", value: "City streets", line: "Colorful spray markings on the ground in city areas. One is just east of The Banana Hole main bar in Ocean Beach. The menu counts them but doesn't list each one.", pin: "confirmed:ocean-beach" },
+        ],
+      },
+    ],
+    itemsLabel: "Other WAiNK locations",
+    mapLinks: [
+      { pin: "confirmed:wonder-whale", label: "Wonder Whale" },
+      { pin: "confirmed:abismo-key", label: "Abismo Key" },
+      { pin: "confirmed:grassrivers", label: "Grassrivers" },
+      { pin: "confirmed:port-gellhorn", label: "Port Gellhorn" },
+      { pin: "confirmed:washington-beach", label: "Washington Beach" },
+      { pin: "confirmed:tequesta", label: "Tequesta" },
+      { pin: "confirmed:downtown-vice-city", label: "Downtown" },
+      { pin: "confirmed:mount-kalaga-national-park", label: "Mount Kalaga" },
+    ],
+    related: [
+      { href: "/guides/waink-scans", label: "How to scan" },
+      { href: "/phone/waink", label: "WAiNK app" },
+      { href: "/trophies/you-wainker", label: "You WAiNKer! trophy" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+      { href: "/guides/ufo", label: "UFO easter egg" },
+      { href: "/collectibles/magazines-books-comics", label: "Magazines, books and comics" },
+    ],
+    faqs: [
+      {
+        question: "How many WAiNK locations do you need in GTA 6?",
+        answer: "100. That unlocks You WAiNKer! and covers the WAiNK part of 100%.",
+        sources: wainkSources,
+      },
+      {
+        question: "How many WAiNK landmarks are in GTA 6?",
+        answer: "31 landmarks. There are also 35 curiosities and 23 sculptures, plus No Flusher tags.",
+        sources: wainkSources,
+      },
+      {
+        question: "Do street art and murals count as WAiNK locations?",
+        answer: "No. AHOL Street Art and 1010 Murals are scanned the same way but have their own lists and don't count toward the 100.",
+        sources: wainkSources,
+      },
+      {
+        question: "How do you know a WAiNK location is nearby?",
+        answer: "The controller buzzes, a sound plays and a note shows in the bottom right. Open the WAiNK camera and look for the WAiNK icon on the object.",
+        sources: wainkSources,
+      },
+    ],
+    sources: wainkSources,
+  },
+  {
+    slug: "magazines-books-comics",
+    title: "Magazines, books and comics",
+    heading: "Magazines, books and comics",
+    metaTitle: "GTA 6 Magazine, Book and Comic Locations – All 27 and Missables",
+    metaDescription:
+      "GTA 6 magazines, books and comics: where to find them, which ones are missable, and how they count with Book Swaps toward 100% (30 of 34). Unofficial.",
+    line: "27 to read. 30 of 34 with Book Swaps for 100%.",
+    intro:
+      "There are 27 magazines, books and comics to read. With the 7 Book Swaps that makes 34, and you need 30 for 100%. Most titles have more than one copy, so a missed spot is rarely the end.",
+    quick: [
+      { label: "Items", value: "27" },
+      { label: "With Book Swaps", value: "34" },
+      { label: "For 100%", value: "30 of 34" },
+      { label: "Track them", value: "Progress > Collections > Exploration" },
+    ],
+    tips: [
+      { label: "Missable spots", value: "Jason's house (Chapter 1), Starlet Motel (Chapter 2), Bayside apartment (Chapter 3)" },
+      { label: "Heads up", value: "The game doesn't show which ones you've read, so note them as you go" },
+    ],
+    groups: [
+      {
+        heading: "Jason's house (read before Chapter 1 ends)",
+        itemPages: true,
+        items: [
+          { slug: "ashes-of-glory", name: "Ashes of Glory", value: "Key Lento", line: "On the bedside table in Jason's house. Read it during Chapter 1.", facts: [{ label: "Where", value: "Jason's house, Key Lento" }, { label: "Missable spot", value: "Chapter 1" }], pin: "confirmed:jasons-place" },
+          { slug: "lethal-by-design", name: "Lethal By Design", value: "Key Lento", line: "On the living room table in Jason's house. Read it during Chapter 1.", facts: [{ label: "Where", value: "Jason's house, Key Lento" }, { label: "Missable spot", value: "Chapter 1" }], pin: "confirmed:jasons-place" },
+          { slug: "orca-a-whole-different-animal", name: "Orca: A Whole Different Animal", value: "Key Lento", line: "In Jason's living room, by the east window next to the radio. Read it during Chapter 1.", facts: [{ label: "Where", value: "Jason's house, Key Lento" }, { label: "Missable spot", value: "Chapter 1" }], pin: "confirmed:jasons-place" },
+          { slug: "body-copy", name: "Body Copy", value: "Key Lento", line: "On the back deck of Jason's house, by the weights. Read it during Chapter 1. There is one more magazine in the shed under the house.", facts: [{ label: "Where", value: "Jason's house, Key Lento" }, { label: "Missable spot", value: "Chapter 1" }], pin: "confirmed:jasons-place" },
+        ],
+      },
+      {
+        heading: "Mariana and Kelly County",
+        itemPages: true,
+        items: [
+          { slug: "rx-men", name: "RX Men", value: "Key Lento", line: "On the magazine rack in the 247 store in Key Lento.", facts: [{ label: "Where", value: "247 store, Key Lento" }], pin: "confirmed:leonida-keys" },
+          { slug: "help-me-help-you-help-me", name: "Help Me Help You Help Me", value: "Starlet Motel", line: "On a table in the Starlet Motel reception. This spot is gone after Chapter 2.", facts: [{ label: "Where", value: "Starlet Motel, Gellhorn" }, { label: "Missable spot", value: "Chapter 2" }], pin: "confirmed:starlet-motel" },
+          { slug: "wizard-wang", name: "Wizard Wang", value: "Starlet Motel", line: "On a table in the Starlet Motel cafeteria. This spot is gone after Chapter 2.", facts: [{ label: "Where", value: "Starlet Motel, Gellhorn" }, { label: "Missable spot", value: "Chapter 2" }], pin: "confirmed:starlet-motel" },
+          { slug: "the-johnsons", name: "The Johnsons (Issue 1)", value: "Gellhorn", line: "Inside Alpha Gas in Gellhorn, northeast of the Starlet Motel.", facts: [{ label: "Where", value: "Alpha Gas, Gellhorn" }], pin: "confirmed:starlet-motel" },
+          { slug: "dicked-down-deep-in-space", name: "Dicked Down Deep in Space", value: "Port Gellhorn", line: "Inside a trailer in Lost Vista, northwest of the Port Gellhorn Station Garage.", facts: [{ label: "Where", value: "Lost Vista, Port Gellhorn" }], pin: "confirmed:port-gellhorn" },
+        ],
+      },
+      {
+        heading: "Vice City and beyond",
+        itemPages: true,
+        items: [
+          { slug: "passion-bc", name: "Passion B.C.", value: "Bayside", line: "Next to the bathtub in the Bayside apartment. This spot is gone after Chapter 3.", facts: [{ label: "Where", value: "Bayside apartment, Vice City" }, { label: "Missable spot", value: "Chapter 3" }] },
+          { slug: "two-pricks-in-the-bush", name: "Two Pricks in the Bush", value: "Bayside", line: "On the table in front of the TV in the Bayside apartment. This spot is gone after Chapter 3.", facts: [{ label: "Where", value: "Bayside apartment, Vice City" }, { label: "Missable spot", value: "Chapter 3" }] },
+          { slug: "ratface-issue-1", name: "Ratface (Issue 1)", value: "La Perle", line: "On the magazine rack in Xero Food Mart, La Perle.", facts: [{ label: "Where", value: "Xero Food Mart, La Perle" }], pin: "confirmed:la-perle" },
+          { slug: "special-friends-force", name: "Special Friends Force (Issue 1)", value: "La Perle", line: "On the same rack in Xero Food Mart, La Perle.", facts: [{ label: "Where", value: "Xero Food Mart, La Perle" }], pin: "confirmed:la-perle" },
+          { slug: "high-rollerz-issue-37", name: "High Rollerz – Issue 37", value: "Crosstown", line: "In the Jack of Hearts, second floor, in the hallway west of the recording booths.", facts: [{ label: "Where", value: "Jack of Hearts, Crosstown" }], pin: "confirmed:jack-of-hearts" },
+          { slug: "bombazo-issue-2342", name: "¡BOMBAZO! – Issue 2342", value: "Washington Beach", line: "On the magazine rack in Ron Stop'n'Snack, Washington Beach.", facts: [{ label: "Where", value: "Ron Stop'n'Snack, Washington Beach" }], pin: "confirmed:washington-beach" },
+          { slug: "foiled", name: "Foiled", value: "Belville", line: "On a bed inside a garage you can break into, on the northern row of houses in Belville.", facts: [{ label: "Where", value: "Belville, Leonard County" }], pin: "confirmed:belville" },
+          { slug: "the-cowboys-prayer-is-to-die-young", name: "The Cowboy's Prayer is to Die Young", value: "Moreau", line: "On a table in an unmarked building just north of Taco Bomb, West Kalaga.", facts: [{ label: "Where", value: "Moreau, Lummox County" }] },
+        ],
+      },
+    ],
+    itemsLabel: "Other magazines, books and comics",
+    mapLinks: [
+      { pin: "confirmed:jasons-place", label: "Jason's place" },
+      { pin: "confirmed:starlet-motel", label: "Starlet Motel" },
+      { pin: "confirmed:port-gellhorn", label: "Port Gellhorn" },
+      { pin: "confirmed:la-perle", label: "La Perle" },
+      { pin: "confirmed:jack-of-hearts", label: "Jack of Hearts" },
+      { pin: "confirmed:belville", label: "Belville" },
+    ],
+    related: [
+      { href: "/collectibles/book-swaps", label: "Book Swaps" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+      { href: "/properties/jasons-place", label: "Jason's place" },
+      { href: "/collectibles/waink-locations", label: "WAiNK locations" },
+      { href: "/collectibles/card-sets", label: "Card sets" },
+    ],
+    faqs: [
+      {
+        question: "How many magazines are in GTA 6?",
+        answer: "27 magazines, books and comics. With the 7 Book Swaps that's 34, and you need 30 for 100%.",
+        sources: magazineSources,
+      },
+      {
+        question: "Are GTA 6 magazines missable?",
+        answer: "Some spots are. Read everything in Jason's house during Chapter 1, at the Starlet Motel during Chapter 2 and in the Bayside apartment during Chapter 3. Most titles also have other copies.",
+        sources: magazineSources,
+      },
+      {
+        question: "Where do you track magazines in GTA 6?",
+        answer: "Progress > Collections > Exploration > Magazines, Books & Comics. It shows the count but not which ones you've read.",
+        sources: magazineSources,
+      },
+    ],
+    sources: magazineSources,
+  },
+  {
+    slug: "unique-races",
+    title: "Unique races",
+    heading: "All 40 unique races",
+    metaTitle: "GTA 6 Race Locations – All 40 Unique Races",
+    metaDescription:
+      "All 40 GTA 6 unique races: Hit 'N Run VC, Animal Crackers, Gellhorn Raceway, Boone Speedway, Ambrosia Raceway and the Thrillbilly Mud Club. How to unlock each. Unofficial.",
+    image: "/images/official/frames/track-racing.webp",
+    line: "40 races. Win 20 for the trophy, 30 for 100%.",
+    intro:
+      "There are 40 unique races in 6 groups. Win 20 different races for Earn Cash, Not Kudos and any 30 for 100%. Each spot has 2 or more races, and winning one opens the next.",
+    quick: [
+      { label: "Races", value: "40" },
+      { label: "Trophy", value: "Win 20" },
+      { label: "For 100%", value: "Win any 30" },
+      { label: "Find them", value: "Map > Activities > Racing" },
+      { label: "Track them", value: "Progress > Activities > Racing" },
+    ],
+    tips: [
+      { label: "Cost", value: "Entry fee plus car rental, but a win pays more" },
+      { label: "On the map", value: "A blue icon shows when you're within about 100 meters" },
+      { label: "Not the same", value: "Race Challenges are a separate list of 13" },
+    ],
+    groups: [
+      {
+        heading: "Hit 'N Run VC street races (9)",
+        itemPages: true,
+        items: [
+          { slug: "hit-n-run-salton", name: "Hit 'N Run VC – Salton", value: "3 races", line: "Vice City street races. They open in Chapter 3 after Dealer's Choice, through the Join a Street Race job.", facts: [{ label: "Where", value: "Salton, Vice City" }, { label: "Unlock", value: "Chapter 3, after Dealer's Choice" }], pin: "confirmed:salton" },
+          { slug: "hit-n-run-la-perle", name: "Hit 'N Run VC – La Perle", value: "2 races", line: "More Hit 'N Run VC street races, in La Perle.", facts: [{ label: "Where", value: "La Perle, Vice City" }], pin: "confirmed:la-perle" },
+          { slug: "hit-n-run-ocean-beach", name: "Hit 'N Run VC – Ocean Beach", value: "2 races", line: "More Hit 'N Run VC street races, in Ocean Beach.", facts: [{ label: "Where", value: "Ocean Beach, Vice Beach" }], pin: "confirmed:ocean-beach" },
+          { slug: "hit-n-run-gloriana-key", name: "Hit 'N Run VC – Gloriana Key", value: "2 races", line: "More Hit 'N Run VC street races, on Gloriana Key.", facts: [{ label: "Where", value: "Gloriana Key, Vice City" }] },
+        ],
+      },
+      {
+        heading: "Animal Crackers (8)",
+        itemPages: true,
+        items: [
+          { slug: "animal-crackers-grayson", name: "Animal Crackers – Grayson", value: "2 races", line: "Countryside races in Grayson, Lummox County. Found by exploring.", facts: [{ label: "Where", value: "Grayson, Lummox County" }] },
+          { slug: "animal-crackers-redshaws", name: "Animal Crackers – Redshaw's", value: "2 races", line: "Animal Crackers races at Redshaw's.", facts: [{ label: "Where", value: "Redshaw's" }] },
+          { slug: "animal-crackers-ranchers", name: "Animal Crackers – Ranchers", value: "2 races", line: "Animal Crackers races at Ranchers.", facts: [{ label: "Where", value: "Ranchers" }] },
+          { slug: "animal-crackers-big-pine", name: "Animal Crackers – Big Pine", value: "2 races", line: "Animal Crackers races at Big Pine.", facts: [{ label: "Where", value: "Big Pine" }] },
+        ],
+      },
+      {
+        heading: "Tracks (24)",
+        itemPages: true,
+        items: [
+          { slug: "gellhorn-international-raceway", name: "Gellhorn International Raceway", value: "11 races", line: "South of Port Gellhorn. Play the Introduction first, then the 5-race Keep it PG series to open the rest.", facts: [{ label: "Where", value: "South of Port Gellhorn, Kelly County" }, { label: "Unlock", value: "Gellhorn Raceway – Introduction" }], pin: "confirmed:port-gellhorn" },
+          { slug: "thrillbilly-mud-club", name: "Thrillbilly Mud Club", value: "8 races", line: "6 dirt track and 2 oval races in North Kelly County. Billy's Thrillbillies job brings you here in Chapter 2.", facts: [{ label: "Where", value: "North Kelly County" }, { label: "Unlock", value: "Chapter 2, Thrillbillies" }] },
+          { slug: "boone-speedway", name: "Boone Speedway", value: "2 races", line: "Two elimination races in the southwest corner of Hamlet.", facts: [{ label: "Where", value: "Southwest Hamlet" }], pin: "confirmed:hamlet" },
+          { slug: "ambrosia-raceway", name: "Ambrosia Raceway", value: "2 races", line: "Two demolition races in the north of Ambrosia. It shows on the map when you get close.", facts: [{ label: "Where", value: "North Ambrosia, Kelly County" }], pin: "confirmed:ambrosia" },
+        ],
+      },
+    ],
+    itemsLabel: "Other race spots",
+    mapLinks: [
+      { pin: "confirmed:salton", label: "Salton" },
+      { pin: "confirmed:la-perle", label: "La Perle" },
+      { pin: "confirmed:ocean-beach", label: "Ocean Beach" },
+      { pin: "confirmed:port-gellhorn", label: "Port Gellhorn" },
+      { pin: "confirmed:hamlet", label: "Hamlet" },
+      { pin: "confirmed:ambrosia", label: "Ambrosia" },
+    ],
+    related: [
+      { href: "/guides/street-races", label: "How to unlock street races" },
+      { href: "/collectibles/race-challenges", label: "Race challenges" },
+      { href: "/activities/street-races", label: "Street races" },
+      { href: "/activities/track-racing", label: "Track racing" },
+      { href: "/trophies/earn-cash-not-kudos", label: "Earn Cash, Not Kudos" },
+      { href: "/missions/thrillbillies", label: "Thrillbillies" },
+      { href: "/missions/dealers-choice", label: "Dealer's Choice" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+    ],
+    faqs: [
+      {
+        question: "How many races are in GTA 6?",
+        answer: "40 unique races in 6 groups: Hit 'N Run VC (9), Animal Crackers (8), Gellhorn International Raceway (11), Thrillbilly Mud Club (8), Boone Speedway (2) and Ambrosia Raceway (2).",
+        sources: raceSources,
+      },
+      {
+        question: "How many races do you need to win in GTA 6?",
+        answer: "Win 20 different races for Earn Cash, Not Kudos, and any 30 of the 40 for 100%.",
+        sources: raceSources,
+      },
+      {
+        question: "How do you unlock the Gellhorn Raceway races?",
+        answer: "Play Gellhorn Raceway – Introduction, then the 5-race Keep it PG amateur series. Placing in those opens more races.",
+        sources: raceSources,
+      },
+      {
+        question: "Do Race Challenges count as unique races?",
+        answer: "No. The 13 Race Challenges are a separate list with their own medals.",
+        sources: raceSources,
+      },
+    ],
+    sources: raceSources,
   },
 ];
 

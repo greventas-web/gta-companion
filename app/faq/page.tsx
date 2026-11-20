@@ -47,7 +47,7 @@ export default function FAQPage() {
         <SimpleCard href="/challenges" title="Challenges" />
         <SimpleCard href="/where-to-find/fences" title="Fences" />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "online", "first-person", "replay-missions", "switch-characters", "buy-a-house", "buy-a-car", "fast-travel", "money-glitch", "unlock-map", "new-game", "platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "how-many-chapters", "where-is-it-based", "cheats-locked", "skip-cutscenes", "accessibility", "trophies", "wasted-busted", "relationship", "criminal-profile", "weather", "bigfoot", "character-stats", "climbing", "public-transport"])} />
+      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "online", "first-person", "replay-missions", "switch-characters", "buy-a-house", "buy-a-car", "fast-travel", "money-glitch", "unlock-map", "new-game", "platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "how-many-chapters", "where-is-it-based", "cheats-locked", "skip-cutscenes", "accessibility", "trophies", "wasted-busted", "relationship", "criminal-profile", "weather", "bigfoot", "ufo", "character-stats", "climbing", "public-transport"])} />
     </PageShell>
   );
 }
