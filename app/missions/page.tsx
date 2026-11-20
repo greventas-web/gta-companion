@@ -45,6 +45,7 @@ export default function MissionsPage() {
               key={mission.slug}
               href={`/missions/${mission.slug}`}
               title={mission.name}
+              image={mission.image}
               eyebrow={`Mission ${mission.order}`}
               small
               trackId={`mission:${mission.slug}`}
@@ -64,6 +65,7 @@ export default function MissionsPage() {
             key={mission.slug}
             href={`/missions/${mission.slug}`}
             title={mission.name}
+            image={mission.image}
             eyebrow={`Chapter ${mission.chapter}`}
             small
             trackId={`mission:${mission.slug}`}
@@ -77,6 +79,7 @@ export default function MissionsPage() {
             key={mission.slug}
             href={`/missions/${mission.slug}`}
             title={mission.name}
+            image={mission.image}
             eyebrow={`${MISSION_TYPE_LABEL[mission.type]}${mission.edition ? ` · ${mission.edition}` : ""}`}
             chips={[mission.startArea, mission.region].filter(Boolean).map((value) => ({ value: value as string }))}
             trackId={`mission:${mission.slug}`}

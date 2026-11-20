@@ -45,5 +45,10 @@ export type Mission = {
   chapterName?: string;
   /** Position inside the chapter, as the in-game Story Recap lists it. */
   order?: number;
+  /**
+   * Real screenshot or official still for this mission. When set it replaces
+   * the painted GTA Companion artwork (and its "Artwork" tag) everywhere.
+   */
+  image?: string;
   sources: MissionSource[];
 };
