@@ -15,6 +15,7 @@ import {
   meditationSources,
   raceChallengeSources,
 } from "./batch3-sources";
+import { bookSwapSources, playlistSources, poolSources, videoGameSources } from "./batch4-sources";
 
 export type CollectibleSet = {
   name: string;
@@ -682,6 +683,313 @@ export const collectibleGuides: CollectibleGuide[] = [
       },
     ],
     sources: golfSources,
+  },
+  {
+    slug: "pool-opponents",
+    title: "Pool opponents",
+    heading: "Pool opponents",
+    metaTitle: "GTA 6 Pool Locations – All Pool Opponents",
+    metaDescription:
+      "Where to play pool in GTA 6: the bars with a pool opponent, where the table is in each one, and how many wins you need for 100%. Unofficial.",
+    line: "7 opponents. Beat 5 for 100%.",
+    intro:
+      "There are 17 pool tables, but only 7 have an opponent you can challenge. Beat any 5 different opponents for 100%. Six are known so far.",
+    quick: [
+      { label: "Opponents", value: "7" },
+      { label: "Pool tables", value: "17" },
+      { label: "For 100%", value: "Beat any 5" },
+      { label: "Track them", value: "Progress > Activities > Sports > Pool" },
+    ],
+    groups: [
+      {
+        heading: "Pool opponents",
+        itemPages: true,
+        items: [
+          {
+            slug: "skeeters",
+            name: "Skeeter's",
+            value: "Hamlet",
+            line: "Skeeter's bar on the south edge of Hamlet. The table is on the south side of the building.",
+            facts: [{ label: "Where", value: "Hamlet" }],
+            pin: "confirmed:hamlet",
+          },
+          {
+            slug: "zoticos",
+            name: "Zotico's",
+            value: "Balsero",
+            line: "Zotico's bar on the west edge of Balsero, Vice City. The table is on the east side of the bar.",
+            facts: [{ label: "Where", value: "Balsero, Vice City" }],
+            pin: "confirmed:balsero",
+          },
+          {
+            slug: "the-thirsty-wolf",
+            name: "The Thirsty Wolf",
+            value: "Belville",
+            line: "The Thirsty Wolf bar on the northwest edge of Belville. The table is on the north side of the building.",
+            facts: [{ label: "Where", value: "Belville, Leonard County" }],
+            pin: "confirmed:belville",
+          },
+          {
+            slug: "jacobs-tavern",
+            name: "Jacob's Tavern",
+            value: "Millport",
+            line: "Jacob's Tavern on the east side of Millport, next to the Pay 'n' Spray. The table is on the north side.",
+            facts: [{ label: "Where", value: "Millport, Lummox County" }],
+            pin: "confirmed:millport",
+          },
+          {
+            slug: "delights-cabaret",
+            name: "Delights Cabaret",
+            value: "Port Gellhorn",
+            line: "Delights in Port Gellhorn. The table is in the middle of the club.",
+            facts: [{ label: "Where", value: "Port Gellhorn, Kelly County" }],
+            pin: "confirmed:delights",
+          },
+          {
+            slug: "kowaachobee-cafe-and-bar",
+            name: "Kowaachobee Cafe & Bar",
+            value: "Buckskin Swamp",
+            line: "Kowaachobee Cafe & Bar just off the highway through Buckskin Swamp. The table is on the west side.",
+            facts: [{ label: "Where", value: "Buckskin Swamp" }],
+          },
+        ],
+      },
+    ],
+    itemsLabel: "Other pool opponents",
+    mapLinks: [
+      { pin: "confirmed:hamlet", label: "Hamlet" },
+      { pin: "confirmed:balsero", label: "Balsero" },
+      { pin: "confirmed:belville", label: "Belville" },
+      { pin: "confirmed:millport", label: "Millport" },
+      { pin: "confirmed:delights", label: "Delights" },
+    ],
+    related: [
+      { href: "/activities/pool", label: "Pool" },
+      { href: "/where-to-find/clubs", label: "Clubs" },
+      { href: "/guides/relationship", label: "Relationship" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+    ],
+    faqs: [
+      {
+        question: "Where can you play pool in GTA 6?",
+        answer: "At bars with a pool opponent: Skeeter's in Hamlet, Zotico's in Balsero, The Thirsty Wolf in Belville, Jacob's Tavern in Millport, Delights in Port Gellhorn and Kowaachobee Cafe & Bar in Buckskin Swamp.",
+        sources: poolSources,
+      },
+      {
+        question: "How many pool opponents do you need for 100% in GTA 6?",
+        answer: "Beat any 5 of the 7 opponents.",
+        sources: poolSources,
+      },
+    ],
+    sources: poolSources,
+  },
+  {
+    slug: "video-games",
+    title: "Video games",
+    heading: "Video games and arcade games",
+    metaTitle: "GTA 6 Arcade and Video Game Locations – All 4 Games",
+    metaDescription:
+      "All 4 playable video games in GTA 6: the 3 on your home console and the Bang For Your Buck arcade machine, what counts for 100%, and the Stick Fiddler trophy. Unofficial.",
+    line: "4 games. Play each once for 100%.",
+    intro:
+      "There are 4 video games you can play. Three are on the console by the TV at home, and Bang For Your Buck is on arcade machines out in the world. Starting each one once is enough for 100%.",
+    quick: [
+      { label: "Games", value: "4" },
+      { label: "For 100%", value: "Play all 4 once" },
+      { label: "Trophy", value: "Stick Fiddler: finish every level of one game" },
+    ],
+    groups: [
+      {
+        heading: "All video games",
+        itemPages: true,
+        items: [
+          {
+            slug: "tenebrae-lux",
+            name: "Tenebrae Lux",
+            value: "Home console",
+            line: "Use the controller at the TV in your home and pick it on the JoySystem console.",
+            facts: [{ label: "Where", value: "JoySystem console at home" }],
+            pin: "confirmed:jasons-place",
+          },
+          {
+            slug: "street-trash-iii",
+            name: "Street Trash III",
+            value: "Home console",
+            line: "Use the controller at the TV in your home and pick it on the JoySystem console.",
+            facts: [{ label: "Where", value: "JoySystem console at home" }],
+            pin: "confirmed:jasons-place",
+          },
+          {
+            slug: "time-jackers-rewind",
+            name: "Time Jackers Rewind",
+            value: "Home console",
+            line: "Use the controller at the TV in your home and pick it on the JoySystem console.",
+            facts: [{ label: "Where", value: "JoySystem console at home" }],
+            pin: "confirmed:jasons-place",
+          },
+          {
+            slug: "bang-for-your-buck",
+            name: "Bang For Your Buck",
+            value: "Arcade machines",
+            line: "The only one not on the home console. Play it at arcade machines around the map, for example outside the Bargain World clothing store in Port Gellhorn.",
+            facts: [{ label: "Where", value: "Arcade machines, e.g. outside Bargain World, Port Gellhorn" }],
+            pin: "confirmed:port-gellhorn",
+          },
+        ],
+      },
+    ],
+    itemsLabel: "Other video games",
+    mapLinks: [
+      { pin: "confirmed:jasons-place", label: "Jason's place" },
+      { pin: "confirmed:port-gellhorn", label: "Port Gellhorn" },
+    ],
+    related: [
+      { href: "/activities/arcade-games", label: "Arcade games" },
+      { href: "/trophies", label: "Trophies" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+      { href: "/activities/watching-tv", label: "Watching TV" },
+    ],
+    faqs: [
+      {
+        question: "How many video games can you play in GTA 6?",
+        answer: "Four: Tenebrae Lux, Street Trash III and Time Jackers Rewind on the home console, and Bang For Your Buck on arcade machines.",
+        sources: videoGameSources,
+      },
+      {
+        question: "How do you get Stick Fiddler in GTA 6?",
+        answer: "Finish every level of any one of the four video games.",
+        sources: videoGameSources,
+      },
+      {
+        question: "Do you have to beat the video games for 100%?",
+        answer: "No. Starting each of the four games once is enough for the 100% checklist.",
+        sources: videoGameSources,
+      },
+    ],
+    sources: videoGameSources,
+  },
+  {
+    slug: "book-swaps",
+    title: "Book Swaps",
+    heading: "Book Swaps (little libraries)",
+    metaTitle: "GTA 6 Book Swap Locations – All 7 Little Libraries",
+    metaDescription:
+      "All 7 GTA 6 Book Swap locations (little libraries), the book at each one, and how they count with magazines toward 100%. Unofficial.",
+    line: "7 books. Counts with magazines for 100%.",
+    intro:
+      "Book Swaps are little libraries where you read a book. There are 7, and they count together with the 27 magazines, books and comics. You need 30 of the 34 for 100%.",
+    quick: [
+      { label: "Book Swaps", value: "7" },
+      { label: "With magazines", value: "34" },
+      { label: "For 100%", value: "30 of 34" },
+      { label: "Track them", value: "Progress > Collections > Exploration > Book Swaps" },
+    ],
+    tips: [{ label: "Heads up", value: "The game doesn't show which ones you have read, so note them as you go" }],
+    groups: [
+      {
+        heading: "All Book Swaps",
+        itemPages: true,
+        items: [
+          { slug: "the-wizards-ruin", name: "The Wizard's Ruin: Loud Clap of the Night", value: "Watson Bay", line: "Book Swap in Watson Bay, Mariana County.", facts: [{ label: "Where", value: "Watson Bay, Mariana County" }], pin: "confirmed:watson-bay" },
+          { slug: "killer-prom", name: "Killer Prom", value: "Key Lento", line: "Book Swap in Key Lento, Mariana County.", facts: [{ label: "Where", value: "Key Lento, Mariana County" }], pin: "confirmed:leonida-keys" },
+          { slug: "thighlander", name: "Thighlander: A Tale of True Scotsmen", value: "Southside", line: "Book Swap in Southside, Vice City.", facts: [{ label: "Where", value: "Southside, Vice-Dale County" }], pin: "confirmed:southside-vice-city" },
+          { slug: "goodnight-dollface-goodnight", name: "Goodnight, Dollface, Goodnight", value: "Vespucci Island", line: "Book Swap on Vespucci Island, Vice-Dale County.", facts: [{ label: "Where", value: "Vespucci Island, Vice-Dale County" }] },
+          { slug: "outback-gas-junkie", name: "Outback Gas Junkie", value: "Waning Sands", line: "Book Swap in Waning Sands, Leonard County.", facts: [{ label: "Where", value: "Waning Sands, Leonard County" }], pin: "confirmed:waning-sands" },
+          { slug: "humanity-vs-space", name: "Humanity vs Space", value: "Ambrosia", line: "Book Swap in Ambrosia, Kelly County.", facts: [{ label: "Where", value: "Ambrosia, Kelly County" }], pin: "confirmed:ambrosia" },
+          { slug: "badlands-revenge", name: "Badlands Revenge: Ride Like Hell", value: "Capri", line: "Book Swap in Capri.", facts: [{ label: "Where", value: "Capri" }], pin: "confirmed:capri" },
+        ],
+      },
+    ],
+    itemsLabel: "Other Book Swaps",
+    mapLinks: [
+      { pin: "confirmed:watson-bay", label: "Watson Bay" },
+      { pin: "confirmed:leonida-keys", label: "Key Lento" },
+      { pin: "confirmed:southside-vice-city", label: "Southside" },
+      { pin: "confirmed:waning-sands", label: "Waning Sands" },
+      { pin: "confirmed:ambrosia", label: "Ambrosia" },
+      { pin: "confirmed:capri", label: "Capri" },
+    ],
+    related: [
+      { href: "/guides/waink-scans", label: "WAiNK scans" },
+      { href: "/collectibles/card-sets", label: "Card sets" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+    ],
+    faqs: [
+      {
+        question: "How many Book Swaps are in GTA 6?",
+        answer: "Seven. They count together with the 27 magazines, books and comics, and you need 30 of those 34 for 100%.",
+        sources: bookSwapSources,
+      },
+      {
+        question: "Where are the Book Swaps in GTA 6?",
+        answer: "Watson Bay, Key Lento, Southside, Vespucci Island, Waning Sands, Ambrosia and Capri.",
+        sources: bookSwapSources,
+      },
+    ],
+    sources: bookSwapSources,
+  },
+  {
+    slug: "unique-playlists",
+    title: "Unique playlists",
+    heading: "Unique playlists",
+    metaTitle: "GTA 6 Unique Playlists – All 5 Poster Locations",
+    metaDescription:
+      "How to unlock both GTA 6 unique playlists, The Sniper of La Perle and The Vault Radio: all 5 posters to scan, where they are, and where to listen. Unofficial.",
+    line: "2 playlists, 5 posters to scan.",
+    intro:
+      "There are 2 unique playlists. Scan posters with WAiNK to unlock them, then listen in a car or on headphones. Both count for 100%.",
+    quick: [
+      { label: "Playlists", value: "2" },
+      { label: "Posters", value: "5" },
+      { label: "For 100%", value: "Both" },
+      { label: "Track them", value: "Progress > Collections > Exploration > Unique Playlists" },
+    ],
+    tips: [{ label: "Heads up", value: "The game doesn't show which posters you have scanned, so do all of one playlist in one trip" }],
+    groups: [
+      {
+        heading: "The Sniper of La Perle (4 posters)",
+        itemPages: true,
+        items: [
+          { slug: "aunt-zolas-soul-food", name: "Aunt Zola's Soul Food poster", value: "La Perle", line: "Inside the restaurant, by the cashier.", facts: [{ label: "Where", value: "Aunt Zola's Soul Food, La Perle" }, { label: "Playlist", value: "The Sniper of La Perle" }], pin: "confirmed:la-perle" },
+          { slug: "twa-ponya-tattoo", name: "TWA Ponya Tattoo poster", value: "La Perle", line: "Inside the tattoo studio, on the table right by the entrance.", facts: [{ label: "Where", value: "TWA Ponya Tattoo, La Perle" }, { label: "Playlist", value: "The Sniper of La Perle" }], pin: "confirmed:la-perle" },
+          { slug: "drip-drops", name: "Drip Drops poster", value: "La Perle", line: "Inside the clothing store, on the counter by the clerk.", facts: [{ label: "Where", value: "Drip Drops, La Perle" }, { label: "Playlist", value: "The Sniper of La Perle" }], pin: "confirmed:la-perle" },
+          { slug: "jack-of-hearts", name: "Jack of Hearts poster", value: "Crosstown", line: "Inside the Jack of Hearts, on a crate in the east recording booth on the second floor.", facts: [{ label: "Where", value: "Jack of Hearts, Crosstown" }, { label: "Playlist", value: "The Sniper of La Perle" }], pin: "confirmed:jack-of-hearts" },
+        ],
+      },
+      {
+        heading: "The Vault Radio (1 poster)",
+        itemPages: true,
+        items: [
+          { slug: "the-vault", name: "The Vault poster", value: "Vice City", line: "Scan the red poster just inside the entrance of The Vault nightclub.", facts: [{ label: "Where", value: "The Vault nightclub, Vice City" }, { label: "Playlist", value: "The Vault Radio" }] },
+        ],
+      },
+    ],
+    itemsLabel: "Other posters",
+    mapLinks: [
+      { pin: "confirmed:la-perle", label: "La Perle" },
+      { pin: "confirmed:jack-of-hearts", label: "Jack of Hearts" },
+    ],
+    related: [
+      { href: "/radio", label: "Radio stations" },
+      { href: "/guides/waink-scans", label: "WAiNK scans" },
+      { href: "/stores/twa-ponya-tattoo", label: "TWA Ponya Tattoo" },
+      { href: "/brands/drip-drops", label: "Drip Drops" },
+      { href: "/where-to-find/clubs", label: "Clubs" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+    ],
+    faqs: [
+      {
+        question: "How do you unlock The Sniper of La Perle in GTA 6?",
+        answer: "Scan 4 posters: in Aunt Zola's Soul Food, TWA Ponya Tattoo and Drip Drops in La Perle, and on the second floor of the Jack of Hearts in Crosstown. Then find it under On Demand.",
+        sources: playlistSources,
+      },
+      {
+        question: "How do you unlock The Vault Radio in GTA 6?",
+        answer: "Scan the red poster just inside the entrance of The Vault nightclub. Then find it on the radio as The Vault.",
+        sources: playlistSources,
+      },
+    ],
+    sources: playlistSources,
   },
 ];
 

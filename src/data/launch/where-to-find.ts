@@ -799,6 +799,318 @@ export const whereToFindTopics: WhereTopic[] = [
       { href: "/cheats/combat-cheats", label: "Combat cheats" },
     ],
   },
+  {
+    slug: "jewelry-stores-and-pawn-shops",
+    heading: "GTA 6 jewelry store and pawn shop locations",
+    label: "Jewelry stores and pawn shops",
+    metaTitle: "GTA 6 Jewelry Store and Pawn Shop Locations – All 35 Smash 'n' Grabs",
+    metaDescription:
+      "All 35 GTA 6 Smash 'n' Grabs: 20 jewelry stores and 15 pawn shops by county, when they unlock, what each one holds, and how to make a robbery count for 100%. Unofficial.",
+    keywords: [
+      "GTA 6 jewelry store locations",
+      "GTA 6 pawn shop locations",
+      "GTA 6 smash and grab",
+      "GTA 6 smash n grab locations",
+      "GTA 6 all jewelry stores",
+    ],
+    answer:
+      "There are 35 Smash 'n' Grabs: 20 jewelry stores and 15 pawn shops. Pawn shops open in Chapter 2 after Coffee Break. Jewelry stores open in Chapter 3 after Yasmani's Jewelry Jobs. You need 34 of the 35 for 100%.",
+    facts: [
+      "Find them under Map > Robberies (money bag icon) > Smash 'n' Grabs. They show as green icons once you uncover the area.",
+      "Smash the cases, then go into the back room and rob the safe. A store may not count if you skip the safe.",
+      "Bright green means done. Dark green means you still need it.",
+      "Sell the jewelry at a fence. Yasmani in Little Cuba pays best for jewelry.",
+    ],
+    groups: [
+      {
+        heading: "Mariana County (3)",
+        places: [
+          { name: "The Siren’s Chest", detail: "$1k–$10k", area: "Mariana County" },
+          { name: "Timeless Peculiars", detail: "$4.5k–$12k", area: "Mariana County" },
+          { name: "Victoria Lee Jeweler", detail: "$9k–$20k", area: "Mariana County" },
+        ],
+      },
+      {
+        heading: "Vice-Dale County jewelry stores (15)",
+        places: [
+          { area: "Vice-Dale County", name: "Donovan Banks & Co.", detail: "$14k–$25k" },
+          { area: "Vice-Dale County", name: "Plush", detail: "$9k–$20k" },
+          { area: "Vice-Dale County", name: "Icegem Diamonds & Watches", detail: "$14k–$25k" },
+          { area: "Vice-Dale County", name: "Richardson Jewelry & Diamonds", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "All That Glitters", detail: "$9k–$20k" },
+          { area: "Vice-Dale County", name: "Peacock", detail: "$9k–$20k" },
+          { area: "Vice-Dale County", name: "The Jewelry Place", detail: "$1k–$10k" },
+          { area: "Vice-Dale County", name: "Crown Jewels", detail: "$1k–$10k" },
+          { area: "Vice-Dale County", name: "Blanc & Giroux", detail: "$14k+ (top tier)" },
+          { area: "Vice-Dale County", name: "Roval Jewelry", detail: "$14k+ (top tier)" },
+          { area: "Vice-Dale County", name: "Covgari", detail: "$14k+ (top tier)" },
+          { area: "Vice-Dale County", name: "Akoya Jewelers", detail: "$14k–$25k" },
+          { area: "Vice-Dale County", name: "Marshal’s", detail: "$9k–$20k" },
+          { area: "Vice-Dale County", name: "Rococo Rich", detail: "$14k–$25k" },
+          { area: "Vice-Dale County", name: "Legendary Custom Jewelry", detail: "$14k–$25k" },
+        ],
+      },
+      {
+        heading: "Vice-Dale County pawn shops (11)",
+        places: [
+          { area: "Vice-Dale County", name: "Hamlet Pawn", detail: "$4.5k–$12k", areaPin: pin("hamlet") },
+          { area: "Vice-Dale County", name: "Joyeria Empenos", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "Ernesto’s Pawn", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "Pawn City", detail: "$1k–$10k" },
+          { area: "Vice-Dale County", name: "Fast Cash", detail: "$1k–$10k" },
+          { area: "Vice-Dale County", name: "Dorado Pawn Shop", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "White Sands Jewelry Pawn", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "Down Town Pawn", detail: "$1k–$10k" },
+          { area: "Vice-Dale County", name: "Vice City Pawn", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "Pawn Stash", detail: "$4.5k–$12k" },
+          { area: "Vice-Dale County", name: "Casa De Empeno", detail: "$4.5k–$12k" },
+        ],
+      },
+      {
+        heading: "Leonard County jewelry stores (3)",
+        places: [
+          { area: "Leonard County", name: "Brilliant Cuts", detail: "$9k–$20k" },
+          { area: "Leonard County", name: "Skala", detail: "$14k–$25k" },
+          { area: "Leonard County", name: "Kowalski", detail: "$14k–$25k" },
+        ],
+      },
+      {
+        heading: "Kelly County pawn shops (3)",
+        places: [
+          { area: "Kelly County", name: "Buck’s Jewelry & Pawn", detail: "$1k–$10k" },
+          { area: "Kelly County", name: "Avery Pawn", detail: "$1k–$10k" },
+          { area: "Kelly County", name: "Florence & Co.", detail: "$4.5k–$12k" },
+        ],
+      },
+    ],
+    mapPin: pin("little-cuba"),
+    mapPinLabel: "Yasmani, Little Cuba (sell jewelry)",
+    faqs: [
+      {
+        question: "How many jewelry stores are in GTA 6?",
+        answer: "20 jewelry stores and 15 pawn shops, 35 Smash 'n' Grabs in total. You need 34 of them for 100% completion.",
+      },
+      {
+        question: "When can you rob jewelry stores in GTA 6?",
+        answer: "Pawn shops open in Chapter 2 after the mission Coffee Break. Jewelry stores open in Chapter 3 after Yasmani's Jewelry Jobs.",
+      },
+      {
+        question: "Why didn't my Smash 'n' Grab count in GTA 6?",
+        answer: "Rob the safe in the back room as well as the display cases. Check the map icon after: bright green is done, dark green is not.",
+      },
+      {
+        question: "Where do you sell stolen jewelry in GTA 6?",
+        answer: "At a fence. Yasmani in Little Cuba pays best for jewelry.",
+      },
+    ],
+    sources: [
+      { label: "PowerPyx, all Smash 'n' Grabs", href: "https://www.powerpyx.com/gta-6-all-smash-n-grabs-locations/" },
+      { label: "GAMES.GG, jewelry stores guide", href: "https://games.gg/grand-theft-auto-vi/guides/grand-theft-auto-6-jewelry-stores-guide-locations-codes/" },
+      { label: "Insider Gaming, 100% completion", href: "https://insider-gaming.com/gta-6-100-completion-a-long-road-trophy/" },
+    ],
+    related: [
+      { href: "/guides/jewelry-robbery", label: "Rob a jewelry store" },
+      { href: "/where-to-find/fences", label: "Fences" },
+      { href: "/where-to-find/payday-loans", label: "Payday Loans" },
+      { href: "/money-methods/jewelry-store-robberies", label: "Jewelry robberies for money" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+      { href: "/characters/yasmani-cabrera", label: "Yasmani" },
+    ],
+  },
+  {
+    slug: "payday-loans",
+    heading: "GTA 6 Payday Loans locations",
+    label: "Payday Loans",
+    metaTitle: "GTA 6 Payday Loans Locations – All 7 Stores and How to Rob Them",
+    metaDescription:
+      "All 7 GTA 6 Payday Loans stores, what each one holds, when they unlock in Chapter 3, and how to rob one. All 7 count for 100%. Unofficial.",
+    keywords: [
+      "GTA 6 payday loans",
+      "GTA 6 payday loans locations",
+      "GTA 6 payday loan robbery",
+      "GTA 6 Dye Pack Jammer",
+      "GTA 6 Quick Buck",
+    ],
+    answer:
+      "There are 7 Payday Loans stores: 6 in Vice-Dale County and 1 in Kelly County. They open in Chapter 3 after Credit Check, which also gives you the Dye Pack Jammer you need to sell marked bills. You need all 7 for 100%.",
+    facts: [
+      "They show as a green hand icon. Filter with Map > Robberies (money bag icon) > Payday Loans.",
+      "Aim a gun at the teller, take the cash he puts on the counter, then rob the safe in the back room.",
+      "Lose the cops, then sell the marked bills at a fence.",
+      "The Little Cuba store holds the most. Cash Flow in Kelly County holds the least.",
+    ],
+    groups: [
+      {
+        heading: "Vice-Dale County (6)",
+        places: [
+          { name: "Quick Buck – Hamlet", area: "Hamlet", detail: "$5,000–$15,000", areaPin: pin("hamlet") },
+          { name: "Payline Loans 247", area: "Vice-Dale County", detail: "$5,000–$15,000" },
+          { name: "Payday Loans Store – Southside", area: "Southside, Vice City", detail: "$5,000–$15,000", areaPin: pin("southside-vice-city") },
+          { name: "Payday Loans Store – Little Cuba", area: "Little Cuba, Vice City", detail: "$15,000–$25,000", areaPin: pin("little-cuba") },
+          { name: "Payday Loans Store – Rockridge", area: "Rockridge, Vice City", detail: "$5,000–$15,000" },
+          { name: "Quick Buck – La Perle", area: "La Perle, Vice City", detail: "$5,000–$15,000", areaPin: pin("la-perle") },
+        ],
+      },
+      {
+        heading: "Kelly County (1)",
+        places: [{ name: "Cash Flow", area: "Kelly County", detail: "$2,000–$10,000" }],
+      },
+    ],
+    mapPin: pin("little-cuba"),
+    mapPinLabel: "Little Cuba",
+    faqs: [
+      {
+        question: "How many Payday Loans are in GTA 6?",
+        answer: "Seven. Six are in Vice-Dale County and one, Cash Flow, is in Kelly County. All seven count for 100% completion.",
+      },
+      {
+        question: "How do you unlock Payday Loans in GTA 6?",
+        answer: "They open in Chapter 3 after the mission Credit Check. That mission also gives you the Dye Pack Jammer for selling marked bills.",
+      },
+      {
+        question: "Which Payday Loans store pays the most in GTA 6?",
+        answer: "The Payday Loans Store in Little Cuba, at $15,000 to $25,000. Cash Flow in Kelly County holds the least.",
+      },
+    ],
+    sources: [
+      { label: "PowerPyx, all Payday Loans jobs", href: "https://www.powerpyx.com/gta-6-all-payday-loans-jobs-locations/" },
+      { label: "Insider Gaming, 100% completion", href: "https://insider-gaming.com/gta-6-100-completion-a-long-road-trophy/" },
+    ],
+    related: [
+      { href: "/guides/bank-jobs", label: "Bank jobs" },
+      { href: "/missions/credit-check", label: "Credit Check" },
+      { href: "/where-to-find/fences", label: "Fences" },
+      { href: "/activities/laundering-marked-bills", label: "Marked bills" },
+      { href: "/where-to-find/jewelry-stores-and-pawn-shops", label: "Jewelry stores and pawn shops" },
+      { href: "/guides/100-percent-completion", label: "100% checklist" },
+    ],
+  },
+  {
+    slug: "gyms",
+    heading: "GTA 6 gym locations",
+    label: "Gyms",
+    metaTitle: "GTA 6 Gym Locations – All 9 Gyms and Membership Prices",
+    metaDescription:
+      "All 9 GTA 6 gyms (fitness centers) in Vice City with their one-time membership prices, plus what working out does for health and stamina. Unofficial.",
+    keywords: [
+      "GTA 6 gym",
+      "GTA 6 gym locations",
+      "GTA 6 where to work out",
+      "GTA 6 fitness center",
+      "GTA 6 gym membership",
+    ],
+    answer:
+      "There are 9 gyms, all in Vice City. Pay a one-time membership fee and you can use that gym whenever you like. Strength workouts raise health and cardio raises stamina.",
+    facts: [
+      "Gyms show as a blue dumbbell icon. Filter with Map > Activities > Fitness > Gyms.",
+      "Jason's house in Key Lento has basic weights, but no cardio gear. Join a gym for cardio.",
+      "Muscle Sands has no membership fee. Ajax Gym is the most expensive at $1,800.",
+      "Gyms are not part of the 100% checklist.",
+    ],
+    groups: [
+      {
+        heading: "Vice City gyms (9)",
+        places: [
+          { name: "Grand Majestic Gym", detail: "$250" },
+          { name: "Vice Seven Condominiums Gym", detail: "$450" },
+          { name: "Zenith", detail: "$750" },
+          { name: "Dynamix Fitness", detail: "$600" },
+          { name: "Venus Fitness", detail: "$600" },
+          { name: "Muscle Sands", detail: "$0 (no fee)" },
+          { name: "Y Hotel Fitness Club", detail: "$1,200", areaPin: pin("y-hotel") },
+          { name: "Ajax Gym / Lawton Theater", detail: "$1,800" },
+          { name: "Aichi Condominiums Outdoor Gym", detail: "$950" },
+        ],
+      },
+    ],
+    mapPin: pin("vice-city"),
+    mapPinLabel: "Vice City",
+    faqs: [
+      {
+        question: "How many gyms are in GTA 6?",
+        answer: "Nine, all in Vice City. Each one charges a one-time membership fee, and Muscle Sands has none.",
+      },
+      {
+        question: "What is the cheapest gym in GTA 6?",
+        answer: "Muscle Sands has no fee. The cheapest paid gym is Grand Majestic Gym at $250.",
+      },
+      {
+        question: "Can you work out at home in GTA 6?",
+        answer: "Yes, Jason's house in Key Lento has basic weights. It has no cardio gear, so join a gym for cardio.",
+      },
+    ],
+    sources: [{ label: "PowerPyx, all gym locations", href: "https://www.powerpyx.com/gta-6-all-gym-locations-fitness-centers/" }],
+    related: [
+      { href: "/guides/workout", label: "Workouts" },
+      { href: "/activities/gym-workouts", label: "Gym workouts" },
+      { href: "/guides/character-stats", label: "Health and stamina" },
+      { href: "/phone/fitness-app", label: "Fitness app" },
+      { href: "/properties/jasons-place", label: "Jason's place" },
+    ],
+  },
+  {
+    slug: "clubs",
+    heading: "GTA 6 strip club and nightclub locations",
+    label: "Clubs",
+    metaTitle: "GTA 6 Strip Club and Nightclub Locations – All 5 Clubs",
+    metaDescription:
+      "All 5 GTA 6 clubs: the 3 strip clubs (Nine1Nine, Jack of Hearts, Delights) plus The Vault nightclub and The Rusty Anchor. Where they are, with map links. Unofficial.",
+    keywords: [
+      "GTA 6 strip club",
+      "GTA 6 strip club locations",
+      "GTA 6 nightclub",
+      "GTA 6 clubs",
+      "GTA 6 Jack of Hearts location",
+    ],
+    answer:
+      "There are 3 strip clubs and 2 other clubs. Nine1Nine and Jack of Hearts are in Crosstown, Vice City, and Delights is in Port Gellhorn. The other two are The Vault nightclub in Vice City and The Rusty Anchor in Key Lento.",
+    facts: [
+      "Clubs show as a blue icon. Filter with Map > Activities > Clubs.",
+      "The Vault has its own radio playlist. Scan the red poster inside to unlock it.",
+      "The Jack of Hearts has one of the Sniper of La Perle playlist posters.",
+    ],
+    groups: [
+      {
+        heading: "Strip clubs (3)",
+        places: [
+          { name: "Nine1Nine", area: "Crosstown, Vice City", pin: pin("nine1nine") },
+          { name: "Jack of Hearts", area: "Crosstown, Vice City", pin: pin("jack-of-hearts") },
+          { name: "Delights Cabaret", area: "Port Gellhorn", pin: pin("delights") },
+        ],
+      },
+      {
+        heading: "Other clubs (2)",
+        places: [
+          { name: "The Vault", area: "Vice City", detail: "Nightclub" },
+          { name: "The Rusty Anchor", area: "Key Lento", detail: "Tavern", pin: pin("the-rusty-anchor") },
+        ],
+      },
+    ],
+    mapPin: pin("jack-of-hearts"),
+    mapPinLabel: "Jack of Hearts",
+    faqs: [
+      {
+        question: "How many strip clubs are in GTA 6?",
+        answer: "Three: Nine1Nine and Jack of Hearts in Crosstown, Vice City, and Delights in Port Gellhorn.",
+      },
+      {
+        question: "Are there nightclubs in GTA 6?",
+        answer: "Yes. The Vault is a nightclub in Vice City, and The Rusty Anchor is a tavern in Key Lento.",
+      },
+    ],
+    sources: [
+      { label: "PowerPyx, all strip club locations", href: "https://www.powerpyx.com/gta-6-all-strip-club-locations/" },
+      { label: "PowerPyx, unique playlists", href: "https://www.powerpyx.com/gta-6-all-unique-playlist-collectible-locations/" },
+    ],
+    related: [
+      { href: "/businesses/jack-of-hearts", label: "Jack of Hearts" },
+      { href: "/businesses/nine1nine", label: "Nine1Nine" },
+      { href: "/businesses/delights", label: "Delights" },
+      { href: "/businesses/the-rusty-anchor", label: "The Rusty Anchor" },
+      { href: "/collectibles/unique-playlists", label: "Unique playlists" },
+      { href: "/activities/nightlife", label: "Nightlife" },
+    ],
+  },
 ];
 
 export function findWhereTopic(slug: string) {

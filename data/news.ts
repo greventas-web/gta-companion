@@ -23,6 +23,31 @@ const keyArtAlt =
 
 export const news: NewsArticle[] = [
   {
+    id: 20,
+    slug: "gta-vi-out-now",
+    title: "Grand Theft Auto VI is out now",
+    image: "/images/official/news/launch-trailer.webp",
+    imageAlt: "Official Grand Theft Auto VI launch trailer art (Rockstar Games)",
+    summary:
+      "Rockstar Games released Grand Theft Auto VI worldwide on November 19, 2026 for PlayStation 5 and Xbox Series X|S. Grand Theft Auto VI: The Album, with 34 original tracks, arrived on streaming services at midnight.",
+    date: "2026-11-19",
+    category: "Official News",
+    paragraphs: [
+      "Grand Theft Auto VI is now available worldwide for PlayStation 5 and Xbox Series X|S. Rockstar Games marked the day with a Grand Theft Auto VI: Out Now post on its website.",
+      "In the launch announcement, Rockstar founder Sam Houser said the game \"represents everything we have been working towards since we first started making games.\" Rockstar and Take-Two call it the highest rated game in history.",
+      "Grand Theft Auto VI: The Album, the official soundtrack from Atlantic Records with 34 original tracks, arrived at midnight on the major music streaming services, with vinyl and CD at gtavi-thealbum.com.",
+      "The game is sold at the PlayStation Store, Microsoft Store, the Rockstar Games Store and other retailers. It is rated M for Mature by the ESRB.",
+      "Unofficial fan note. Grand Theft Auto VI is by Rockstar Games. GTA Companion is not affiliated with Rockstar Games or Take-Two Interactive.",
+    ],
+    sources: [
+      { label: "Rockstar Games: Grand Theft Auto VI Out Now", href: "https://www.rockstargames.com/VI/out-now" },
+      {
+        label: "Take-Two Interactive news release (Nov 19)",
+        href: "https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-grand-theft-auto-vi-now-available/",
+      },
+    ],
+  },
+  {
     id: 19,
     slug: "gta-companion-interactive-map-live",
     title: "The GTA Companion interactive map is live",

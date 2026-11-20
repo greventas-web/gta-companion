@@ -13,6 +13,8 @@ type Props = { params: Promise<{ slug: string }> };
 /** Guide pages that help with a trophy. */
 const TROPHY_GUIDES: Record<string, { href: string; label: string }[]> = {
   "one-last-thing": [{ href: "/challenges", label: "All 80 challenges" }],
+  "a-long-road": [{ href: "/guides/100-percent-completion", label: "Full 100% checklist" }],
+  "stick-fiddler": [{ href: "/collectibles/video-games", label: "All 4 video games" }],
   "little-boxes": [{ href: "/where-to-find/garages", label: "All 8 garages for sale" }, { href: "/properties", label: "Properties" }],
   "positive-mental-attitude": [{ href: "/collectibles/meditation-spots", label: "All 10 meditation spots" }],
   "top-fun": [{ href: "/collectibles/top-fun-drone-races", label: "All 14 drone race spots" }],
