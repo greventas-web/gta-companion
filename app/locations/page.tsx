@@ -49,7 +49,7 @@ export default function LocationsPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="locations" />
-      <QuickGuideGrid guides={quickGuideCards(["where-is-it-based", "unlock-map", "minimap", "weather", "bigfoot", "ufo", "public-transport", "meditation"])} />
+      <QuickGuideGrid guides={quickGuideCards(["where-is-it-based", "unlock-map", "minimap", "weather", "bigfoot", "ufo", "military-base", "public-transport", "meditation"])} />
     </PageShell>
   );
 }

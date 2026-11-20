@@ -154,6 +154,7 @@ const PREFIX: [string, string][] = [
   ["/where-to-find/fast-food", "store"],
   ["/where-to-find/electronics-stores", "store"],
   ["/where-to-find/footwear-stores", "store"],
+  ["/where-to-find/cafes", "store"],
   ["/challenges", "trophy"],
   ["/ammu-nation", "gunstore"],
   ["/shooting-ranges", "range"],
