@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import ViewOnMap from "@/components/map/ViewOnMap";
 import PageShell from "@/components/PageShell";
+import FactNotes from "@/components/simple/FactNotes";
 import { ExtraDetail } from "@/components/simple/Extras";
 import { extraPages, findExtra } from "@/src/data/launch/expansion";
 import SimpleDetail from "@/components/simple/SimpleDetail";
@@ -68,7 +69,7 @@ export default async function ClothingDetailPage({ params }: Props) {
         }))}
       >
         {map ? null : (store ? <ViewOnMap entityType="store" entitySlug={store.slug} /> : null)}
-        
+        <FactNotes facts={item.details} />
       </SimpleDetail>
     </PageShell>
   );

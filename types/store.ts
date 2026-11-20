@@ -32,6 +32,8 @@ export type Store = {
   mapNote?: string;
   mapLink?: CatalogLink;
   facts: SourcedFact[];
+  /** Launch-week details shown on the page (prices, addresses, unlock timing). */
+  details?: SourcedFact[];
   unpublished: string[];
   linkedClothing: string[];
   sources: readonly CitedSource[];

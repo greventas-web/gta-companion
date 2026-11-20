@@ -23,6 +23,8 @@ export type ClothingItem = {
   imageAlt?: string;
   imageCaption?: string;
   facts: SourcedFact[];
+  /** Launch-week details shown on the page (prices, addresses, unlock timing). */
+  details?: SourcedFact[];
   unpublished: string[];
   relatedSlugs: string[];
   sources: readonly CitedSource[];

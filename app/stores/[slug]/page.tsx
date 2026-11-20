@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import ViewOnMap from "@/components/map/ViewOnMap";
 import PageShell from "@/components/PageShell";
+import FactNotes from "@/components/simple/FactNotes";
 import { ExtraDetail } from "@/components/simple/Extras";
 import { extraPages, findExtra } from "@/src/data/launch/expansion";
 import SimpleDetail from "@/components/simple/SimpleDetail";
@@ -69,6 +70,7 @@ export default async function StoresDetailPage({ params }: Props) {
         }))}
       >
         {map ? null : <ViewOnMap entityType="store" entitySlug={item.slug} />}
+        <FactNotes facts={item.details} />
         {looks.length > 0 ? (
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {looks.map((look) => (
