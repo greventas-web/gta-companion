@@ -45,6 +45,15 @@ const PLACE_IMAGES: Record<string, PlaceImage> = {
   "/where-to-find/pay-n-spray": paynsprayKeyLento,
   "/where-to-find/garages": jasonsHouse,
   "/where-to-find/melee-and-explosives": chucks,
+  // Content batch 4: official Rockstar stills of the same kind of place.
+  "/where-to-find/jewelry-stores-and-pawn-shops": {
+    src: `${O}/frames/jewelry-robbery.webp`,
+    alt: "A jewelry store robbery (official Rockstar still)",
+  },
+  "/where-to-find/gyms": {
+    src: `${O}/frames/gym-workout.webp`,
+    alt: "Lucia working out in a gym (official Rockstar still)",
+  },
   "/where-to-find/hair-salons": {
     src: `${O}/editions/ultimate_edition_saras_salon_02.webp`,
     alt: "Jason at Sara's Unisex Salon in Hamlet (official Rockstar image)",
