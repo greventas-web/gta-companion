@@ -51,6 +51,8 @@ export const news: NewsArticle[] = [
     id: 19,
     slug: "gta-companion-interactive-map-live",
     title: "The GTA Companion interactive map is live",
+    image: "/images/official/locations/leonida-keys.webp",
+    imageAlt: "The Leonida Keys and the Vice City skyline, official Rockstar still",
     summary:
       "GTA Companion now has an interactive community map of Leonida. It opens with 35 confirmed pins from official Rockstar material, and players can suggest new locations for review.",
     date: "2026-11-17",
@@ -91,6 +93,8 @@ export const news: NewsArticle[] = [
     id: 18,
     slug: "gta-vi-launch-eve-events",
     title: "A Night in Vice City and the YouTube launch livestream",
+    image: "/images/official/media/screenshots-places-vice-city-vice-city-08.webp",
+    imageAlt: "Vice City at night, with the waterfront and a lit Ferris wheel, official Rockstar still",
     summary:
       "The Miami Heat host the Bucks on November 18 in an official Rockstar Games collaboration, and YouTube runs a 24-hour Grand Theft Auto VI launch livestream with a pre-show the same night.",
     date: "2026-11-17",

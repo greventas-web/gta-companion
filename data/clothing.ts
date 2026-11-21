@@ -16,6 +16,19 @@ const fangImage = "/images/official/editions/ultimate_edition_electric_fang_01.w
 const salonImage = "/images/official/editions/ultimate_edition_saras_salon_01.webp";
 const goodtimeImage = "/images/official/editions/ultimate_edition_goodtime_gear_01.webp";
 const viceStyleImage = "/images/official/editions/ultimate_edition_vice_city_style_01.webp";
+const viceStyleGallery = [1, 2, 3, 4, 5].map((n) => ({
+  src: `/images/official/editions/ultimate_edition_vice_city_style_0${n}.webp`,
+  alt:
+    n === 1
+      ? "Jason and Lucia seated poolside in Vice City Style looks, official Rockstar still"
+      : n === 2
+        ? "Jason in a floral shirt, seen from behind, official Rockstar still"
+        : n === 3
+          ? "Lucia in a burgundy jacket and zebra-print boots, official Rockstar still"
+          : n === 4
+            ? "Jason in a floral shirt and yellow-lens sunglasses, official Rockstar still"
+            : "Lucia in a burgundy jacket, mini skirt, and woven boots, official Rockstar still",
+}));
 
 const packGaps = [
   "A full itemized catalog",
@@ -50,6 +63,7 @@ export const clothing: ClothingItem[] = [
     summary:
       "Ultimate Edition looks for Jason and Lucia: exclusive outfits and tattoos, and hairstyles on the PlayStation listing.",
     image: viceStyleImage,
+    gallery: viceStyleGallery,
     imageAlt:
       "Jason and Lucia seated poolside, from Rockstar's Vice City Style artwork.",
     imageCaption:

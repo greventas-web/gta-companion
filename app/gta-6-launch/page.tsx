@@ -5,7 +5,8 @@ import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard
 import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { pageMetadata } from "@/lib/launch";
 import { pickHubs } from "@/lib/simple/hubs";
-import { gta6Launch } from "@/src/data/launch/gta6-launch";
+import Gta6LaunchBrief from "@/components/launch/Gta6LaunchBrief";
+import { festivalTile, gta6Launch } from "@/src/data/launch/gta6-launch";
 import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 // Re-render every 5 minutes so the launch-state copy flips on its own.
@@ -25,16 +26,27 @@ export const metadata: Metadata = {
   },
 };
 
-const next: { href: string; title: string; image?: string; line?: string; kind?: string }[] = [
-  ...pickHubs(["map", "missions", "money", "weapons"]),
-  { href: "/launch", title: "Editions", image: "/images/official/editions/ultimate_edition_01.webp" },
-  { href: "/news/gta-vi-the-festival", title: "The Festival, Nov 21", image: "/images/official/gta-vi-the-festival.webp" },
-];
-
 export default function Gta6LaunchPage() {
+  const festival = festivalTile();
+  const next: { href: string; title: string; image?: string; line?: string; kind?: string }[] = [
+    ...pickHubs(["map", "missions", "money", "weapons"]),
+    { href: "/launch", title: "Editions", image: "/images/official/editions/ultimate_edition_01.webp" },
+    {
+      href: "/news/gta-vi-the-festival",
+      title: festival.title,
+      line: festival.line,
+      image: "/images/official/gta-vi-the-festival.webp",
+    },
+  ];
+
   return (
     <PageShell>
-      <SimpleHero title="GTA 6 is out" image="/images/official/locations/leonida-keys.webp" />
+      <SimpleHero
+        title="GTA 6 is out"
+        image="/images/official/locations/leonida-keys.webp"
+        imageAlt="The Leonida Keys and the Vice City skyline, official Rockstar still"
+      />
+      <Gta6LaunchBrief />
       <CardGrid heading="Start here">
         {next.map((item) => (
           <SimpleCard key={item.href} href={item.href} title={item.title} image={item.image} line={item.line} kind={item.kind} />

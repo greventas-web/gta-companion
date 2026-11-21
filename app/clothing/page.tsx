@@ -5,7 +5,6 @@ import { ExtraGrids, extraHref } from "@/components/simple/Extras";
 import { extras } from "@/src/data/launch/expansion";
 import { clothing } from "@/data/clothing";
 import { pageMetadata } from "@/lib/launch";
-import { staticMapHref } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { quickGuideCards } from "@/src/data/launch/quick-guides";
@@ -31,7 +30,11 @@ export default function ClothingPage() {
           [...items.map((item) => ({ name: item.name, url: `/clothing/${item.slug}` })), ...extras.clothing.map((entry) => ({ name: entry.name, url: extraHref("clothing", entry) }))]
         )}
       />
-      <SimpleHero title='Clothing' />
+      <SimpleHero
+        title="Clothing"
+        image="/images/official/editions/ultimate_edition_vice_city_style_01.webp"
+        imageAlt="Jason and Lucia in Vice City Style looks, official Rockstar still"
+      />
       {groups.map((group) => (
         <CardGrid key={group.name} heading={groups.length > 1 ? group.name : "Editions and looks"} count={group.list.length} dense>
           {group.list.map((item) => (

@@ -22,6 +22,8 @@ export type ClothingItem = {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  /** Extra official stills, shown as a gallery on the detail page. */
+  gallery?: readonly { src: string; alt: string }[];
   facts: SourcedFact[];
   /** Launch-week details shown on the page (prices, addresses, unlock timing). */
   details?: SourcedFact[];

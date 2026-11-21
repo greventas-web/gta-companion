@@ -21,24 +21,6 @@ export const SOCIAL_PROFILES = [
     title: "GTA Companion on YouTube",
   },
   {
-    id: "tiktok",
-    label: "TikTok",
-    href: "https://www.tiktok.com/@gtacompanionhub",
-    title: "GTA Companion on TikTok",
-  },
-  {
-    id: "x",
-    label: "X",
-    href: "https://x.com/GTACompanion",
-    title: "GTA Companion on X",
-  },
-  {
-    id: "facebook",
-    label: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61596688830240",
-    title: "GTA Companion on Facebook",
-  },
-  {
     id: "discord",
     label: "Join our Discord",
     href: "https://discord.gg/QBbzqRR3G",

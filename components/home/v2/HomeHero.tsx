@@ -48,7 +48,9 @@ export default function HomeHero() {
               </span>
             </h1>
 
-            <p className="mt-3 text-lg font-bold text-white/90 sm:text-2xl">Map, cheats, cars. All in one.</p>
+            <p className="mt-3 max-w-xl text-lg font-bold leading-snug text-white/90 sm:text-2xl">
+              GTA Companion is the unofficial GTA 6 companion, with a live, community-edited map.
+            </p>
 
             <div className="mt-6 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
               <Link

@@ -15,10 +15,10 @@ export type LaunchStatus = "confirmed" | "live" | "pending";
 
 export const gta6Launch = {
   path: "/gta-6-launch",
-  lastUpdated: "November 17, 2026",
+  lastUpdated: "November 21, 2026",
   title: "GTA 6 Is Out: Unlock Times, File Size, and Platforms",
   description:
-    "GTA 6 is out now on PS5 and Xbox Series X|S: unlock times, file size, and platforms. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
+    "GTA 6 is out now on PS5 and Xbox Series X|S: unlock times, install size, and platforms. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
   keywords: [
     "GTA 6 unlock time",
     "GTA 6 release time",
@@ -29,8 +29,8 @@ export const gta6Launch = {
     "Grand Theft Auto VI unlock time",
     "Grand Theft Auto VI release time",
   ],
-  h1: "GTA 6 unlock time",
-  lede: "GTA 6 is out now. Here are the unlock times, file size, and pre-load details published by Rockstar, PlayStation, and Xbox. Everything you need for GTA 6 launch day, in one place.",
+  h1: "GTA 6 is out",
+  lede: "Grand Theft Auto VI is out on PlayStation 5 and Xbox Series X|S. The unlock times below are the ones Rockstar, PlayStation, and Xbox published, and they have passed. The install size is the figure Rockstar gave for the game file. Unofficial.",
   clocks: {
     ps5: {
       year: 2026,
@@ -56,44 +56,44 @@ export const gta6Launch = {
     },
   },
   stats: [
-    { label: "Launch date", value: "November 19, 2026" },
-    { label: "File size", value: "Up to 212 GB" },
-    { label: "Pre-load", value: "Live now" },
+    { label: "Out since", value: "November 19, 2026" },
+    { label: "Install size", value: "Up to 212 GB" },
+    { label: "Platforms", value: "PS5 and Xbox Series X|S" },
   ],
   unlocks: [
     {
       id: "ps5",
       platform: "PlayStation 5",
-      status: "confirmed" as LaunchStatus,
-      statusLabel: "Confirmed",
-      headline: "Midnight local time, by country",
-      body: "PlayStation says Grand Theft Auto VI uses a rolling midnight launch by country. It begins at 12:00 a.m. NZDT in New Zealand and continues as each country reaches midnight on November 19, 2026.",
+      status: "live" as LaunchStatus,
+      statusLabel: "Out",
+      headline: "Unlocked at midnight local time, by country",
+      body: "PlayStation says Grand Theft Auto VI used a rolling midnight launch by country. It began at 12:00 a.m. NZDT in New Zealand and continued as each country reached midnight on November 19, 2026.",
       sourceIds: ["ps-blog-nov-10"],
     },
     {
       id: "xbox-cloud",
       platform: "Xbox Cloud Gaming",
-      status: "confirmed" as LaunchStatus,
-      statusLabel: "Confirmed",
-      headline: "1:00 a.m. ET on November 19",
-      body: "Xbox says streaming starts at 1:00 a.m. ET on November 19, 2026, on Xbox One and Xbox Series X|S. Streamed play uses Xbox Series S graphics settings. The game must be purchased separately. Starting November 11, 2026, players in supported markets can buy cloud playtime without a Game Pass subscription. Availability can vary by market and device.",
+      status: "live" as LaunchStatus,
+      statusLabel: "Out",
+      headline: "Streaming since 1:00 a.m. ET on November 19",
+      body: "Xbox says streaming started at 1:00 a.m. ET on November 19, 2026, on Xbox One and Xbox Series X|S. Streamed play uses Xbox Series S graphics settings. The game is purchased separately. Players in supported markets can buy cloud playtime without a Game Pass subscription. Availability can vary by market and device.",
       sourceIds: ["xbox-wire"],
     },
     {
       id: "xbox-native",
       platform: "Xbox Series X|S, native",
-      status: "confirmed" as LaunchStatus,
-      statusLabel: "Confirmed",
-      headline: "Midnight local time on November 19, 2026",
-      body: "Xbox Series X|S: midnight local time on November 19, 2026. Rockstar says the game releases at midnight local time in all regions on both PlayStation 5 and Xbox Series X|S. Xbox Cloud Gaming streaming starts separately at 1:00 a.m. ET. Store listings use one timestamp per store region (for example, the US store uses midnight Eastern).",
+      status: "live" as LaunchStatus,
+      statusLabel: "Out",
+      headline: "Unlocked at midnight local time on November 19",
+      body: "Xbox Series X|S unlocked at midnight local time on November 19, 2026. Rockstar says the game released at midnight local time in all regions on both PlayStation 5 and Xbox Series X|S. Xbox Cloud Gaming streaming started separately at 1:00 a.m. ET. Store listings used one timestamp per store region (for example, the US store used midnight Eastern).",
       sourceIds: ["rockstar-support-release"],
     },
   ],
   preload: {
-    title: "Pre-load and file size",
+    title: "Install size",
     status: "live" as LaunchStatus,
-    statusLabel: "Live for digital pre-orders",
-    body: "Pre-load is live for digital pre-orders on PlayStation 5 and Xbox Series X|S. Rockstar says the pre-load file requires up to 212 GB, depending on the device. PlayStation separately asks PS5 players to clear at least 212 GB before downloading.",
+    statusLabel: "Published size",
+    body: "Rockstar says the game file needs up to 212 GB, depending on the device. That is the figure from the pre-load notice. PlayStation asks PS5 players to clear at least 212 GB. Pre-load for digital pre-orders opened on November 10, 2026, and the game unlocked on November 19.",
     windows: [
       {
         platform: "PlayStation 5",
@@ -104,7 +104,7 @@ export const gta6Launch = {
         when: "Opened November 10, 2026, at 12:00 a.m. GMT",
       },
     ],
-    note: "A code-in-box copy can start pre-loading after the code is activated. Rockstar has not published a separate file size for each console, so plan for the full 212 GB.",
+    note: "A boxed copy installs after the download code is activated. Rockstar has not published a separate file size for each console, so plan for the full 212 GB.",
     sourceIds: ["rockstar-preload", "rockstar-preload-now", "ps-blog-nov-3"],
   },
   storage: {
@@ -150,39 +150,39 @@ export const gta6Launch = {
         id: "remote-play",
         platform: "Remote Play",
         headline: "PlayStation and Xbox",
-        body: "Rockstar says Grand Theft Auto VI will fully support Remote Play on PlayStation and Xbox.",
+        body: "Rockstar says Grand Theft Auto VI fully supports Remote Play on PlayStation and Xbox.",
         sourceIds: ["rockstar-preload-now"],
       },
     ],
   },
   boxed: {
     title: "Boxed copies",
-    body: "Boxed copies contain a download code, not a disc. Rockstar says code-in-box versions for PlayStation 5 and Xbox Series X|S should be available from retailers beginning November 12, 2026. The code can be activated as soon as it arrives, including for pre-load.",
+    body: "Boxed copies contain a download code, not a disc. Rockstar said code-in-box versions for PlayStation 5 and Xbox Series X|S would be at retailers from November 12, 2026. Activate the code and the game installs.",
     sourceIds: ["rockstar-preload", "rockstar-preload-now", "rockstar-support"],
   },
   cloud: {
     title: "Cloud play",
-    body: "Xbox Cloud Gaming plays Grand Theft Auto VI on Xbox One and Xbox Series X|S. Xbox One streams it. Series X and Series S can play natively or stream. The game is bought separately from any cloud playtime. A PC release date has not been announced.",
+    body: "Xbox Cloud Gaming streams Grand Theft Auto VI on Xbox One and Xbox Series X|S. Xbox One streams it. Series X and Series S can play natively or stream. The game is bought separately from any cloud playtime. A PC release date has not been announced.",
     sourceIds: ["xbox-wire", "rockstar-date"],
   },
   festival: {
-    line: "Rockstar Games announced Grand Theft Auto VI: The Festival, a live event on November 21, 2026 at Mana Wynwood in Miami, presented in partnership with PlayStation, with two stages and artists from the game and the official soundtrack. The pre-sale lottery has closed.",
+    line: "Rockstar Games set Grand Theft Auto VI: The Festival for November 21, 2026 at Mana Wynwood in Miami, presented in partnership with PlayStation, with two stages and artists from the game and the official soundtrack. The pre-sale lottery closed at 4 p.m. ET on November 10.",
     sourceIds: ["rockstar-festival", "rockstar-festival-page"],
   },
   launchWeek: {
     title: "Launch-week events",
     intro:
-      "Unofficial notes on two confirmed events the night before the November 19, 2026 launch. Times are Eastern, Central, and Pacific.",
+      "Unofficial notes on two events from the night before the November 19, 2026 launch. Both have taken place. Times are Eastern, Central, and Pacific.",
     events: [
       {
         id: "night-in-vice-city",
         title: "A Night in Vice City",
-        status: "confirmed" as LaunchStatus,
-        statusLabel: "Confirmed",
+        status: "live" as LaunchStatus,
+        statusLabel: "Held",
         when: "Wednesday, November 18, 2026",
         time: "7 PM ET / 6 PM CT / 4 PM PT",
         place: "Kaseya Center, Miami",
-        body: "The Miami Heat host the Milwaukee Bucks in an official Rockstar Games collaboration, on ESPN. Confirmed details are a one-night Vice City court, a custom Vice City Cactus Jack Edition uniform in limited quantities at the arena, and special game-night programming.",
+        body: "The Miami Heat hosted the Milwaukee Bucks in an official Rockstar Games collaboration, on ESPN. Confirmed details were a one-night Vice City court, a custom Vice City Cactus Jack Edition uniform in limited quantities at the arena, and special game-night programming.",
         sourceIds: [
           "espn-press-nov-17",
           "heat-game",
@@ -194,13 +194,13 @@ export const gta6Launch = {
       {
         id: "youtube-livestream",
         title: "YouTube 24-hour GTA 6 launch livestream",
-        status: "confirmed" as LaunchStatus,
-        statusLabel: "Confirmed",
+        status: "live" as LaunchStatus,
+        statusLabel: "Held",
         when: "Wednesday, November 18, into Thursday, November 19, 2026",
-        time: "Pre-show hosted by RDCWorld at 11 PM ET / 10 PM CT / 8 PM PT on Wednesday, November 18. The 24-hour stream starts at 12 AM ET on Thursday, November 19 (11 PM CT / 9 PM PT on Wednesday, November 18).",
+        time: "Pre-show hosted by RDCWorld at 11 PM ET / 10 PM CT / 8 PM PT on Wednesday, November 18. The 24-hour stream started at 12 AM ET on Thursday, November 19 (11 PM CT / 9 PM PT on Wednesday, November 18).",
         place: "YouTube",
         placeHref: "https://www.youtube.com/live/KY4DWumZffg",
-        body: "YouTube and Rockstar Games are partnering on a 24-hour Grand Theft Auto VI launch livestream, with live gameplay, creator podcasts, and on-the-ground coverage from Miami.",
+        body: "YouTube and Rockstar Games ran a 24-hour Grand Theft Auto VI launch livestream, with live gameplay, creator podcasts, and on-the-ground coverage from Miami.",
         sourceIds: ["youtube-blog-nov-12", "youtube-live", "rockstar-x-youtube"],
       },
     ],
@@ -209,32 +209,32 @@ export const gta6Launch = {
     {
       question: "What time does GTA 6 unlock?",
       answer:
-        "On PlayStation 5 and Xbox Series X|S, Grand Theft Auto VI unlocks at midnight local time on November 19, 2026. Rockstar says the game releases at midnight local time in all regions on both consoles. PlayStation's launch rolls by country, starting at 12:00 a.m. NZDT in New Zealand. Xbox Cloud Gaming starts separately at 1:00 a.m. ET on November 19, 2026.",
+        "It already has. On PlayStation 5 and Xbox Series X|S, Grand Theft Auto VI unlocked at midnight local time on November 19, 2026. Rockstar says the game released at midnight local time in all regions on both consoles. PlayStation's launch rolled by country, starting at 12:00 a.m. NZDT in New Zealand. Xbox Cloud Gaming started separately at 1:00 a.m. ET on November 19, 2026.",
     },
     {
       question: "What is the GTA 6 release time?",
       answer:
-        "Rockstar set the release for November 19, 2026, on PlayStation 5 and Xbox Series X|S, at midnight local time in all regions. Xbox Cloud Gaming starts at 1:00 a.m. ET the same day. Store listings use one timestamp per store region (for example, the US store uses midnight Eastern).",
+        "Rockstar set the release for November 19, 2026, on PlayStation 5 and Xbox Series X|S, at midnight local time in all regions. That time has passed. Xbox Cloud Gaming started at 1:00 a.m. ET the same day. Store listings used one timestamp per store region (for example, the US store used midnight Eastern).",
     },
     {
       question: "What is the GTA 6 file size?",
       answer:
-        "Rockstar says the pre-load requires up to 212 GB, depending on the device. PlayStation asks players to clear at least 212 GB on PS5. The 825 GB PS5 model reserves part of the SSD for system software. Usable space on that model is about 667 GB, and Sony says the available capacity may vary.",
+        "Rockstar says the game file needs up to 212 GB, depending on the device. That figure is from the pre-load notice. PlayStation asks players to clear at least 212 GB on PS5. The 825 GB PS5 model reserves part of the SSD for system software. Usable space on that model is about 667 GB, and Sony says the available capacity may vary.",
     },
     {
       question: "Can I pre-load GTA 6?",
       answer:
-        "Yes. Pre-load is live for digital pre-orders on PlayStation 5 and Xbox Series X|S. PS5 pre-load opened at local midnight on November 10, 2026. Xbox Series X|S pre-load opened at 12:00 a.m. GMT on November 10, 2026. A boxed copy pre-loads after its download code is activated.",
+        "The game is out, so install it from the PlayStation Store or the Microsoft Store. Pre-load for digital pre-orders opened on November 10, 2026: midnight local time on PS5, and 12:00 a.m. GMT on Xbox Series X|S. A boxed copy installs after its download code is activated.",
     },
     {
       question: "Does the GTA 6 box include a disc?",
       answer:
-        "No. Rockstar says the box contains a download code and does not include a disc. Code-in-box copies should be available from retailers beginning November 12, 2026.",
+        "No. Rockstar says the box contains a download code and does not include a disc. Rockstar said code-in-box copies would be at retailers from November 12, 2026.",
     },
     {
       question: "Can I play GTA 6 on Xbox Cloud Gaming?",
       answer:
-        "Yes, on Xbox One and Xbox Series X|S, starting at 1:00 a.m. ET on November 19, 2026. The game must be purchased separately. Streamed play uses Xbox Series S graphics settings. Cloud gaming availability can vary by market and device.",
+        "Yes, on Xbox One and Xbox Series X|S. Streaming started at 1:00 a.m. ET on November 19, 2026. The game is purchased separately. Streamed play uses Xbox Series S graphics settings. Cloud gaming availability can vary by market and device.",
     },
   ],
   sources: [
@@ -389,4 +389,24 @@ export function launchSources(ids: readonly string[]) {
 
     return source;
   });
+}
+
+/** Tile title for The Festival. November 21, 2026 is the event day in Miami. */
+export function festivalTile(now = new Date()) {
+  const key = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
+
+  if (key === "2026-11-21") {
+    return { title: "The Festival is today", line: "Mana Wynwood, Miami" };
+  }
+
+  if (key > "2026-11-21") {
+    return { title: "The Festival", line: "November 21 at Mana Wynwood" };
+  }
+
+  return { title: "The Festival, Nov 21", line: "Mana Wynwood, Miami" };
 }
