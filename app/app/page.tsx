@@ -66,7 +66,7 @@ export default function AppInstallPage() {
       <PageHero
         badge="Unofficial fan app"
         title={title}
-        description="Add GTA Companion to your home screen or desktop. The database, launch page, and community map open like an app. Grand Theft Auto VI launches November 19, 2026."
+        description="Add GTA Companion to your home screen or desktop. The database, launch notes, and live community map open like an app. Grand Theft Auto VI is out on PlayStation 5 and Xbox Series X|S."
       >
         <InstallCallout />
       </PageHero>
@@ -99,10 +99,10 @@ export default function AppInstallPage() {
         <h2 className="text-xl font-black text-white">What stays on your device</h2>
         <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-300">
           After you open a page, you can read it again without a connection.
-          Home and this install page are saved with the app. The map, the
-          launch page, and vehicles are also home-screen shortcuts. New pages
-          still load from the network when you have one, so launch-day updates
-          stay current. Map submissions and admin tools are never saved for
+          Home and this install page are saved with the app. The live map, the
+          launch notes, and vehicles are also home-screen shortcuts. New pages
+          still load from the network when you have one, so the database stays
+          current. Map submissions and admin tools are never saved for
           offline use.
         </p>
       </section>

@@ -58,6 +58,9 @@ const SNAPMATIC = "/images/footage/phone/snapmatic.webp";
 const UE_SAFEHOUSE = "/images/official/editions/ultimate_edition_safehouse_vehicles_01.webp";
 const JET_SKIS = "/images/official/activities/jet-skis.webp";
 const VICE_CITY = "/images/official/locations/vice-city.webp";
+const VICE_DAY = "/images/official/media/screenshots-places-vice-city-vice-city-03.webp";
+const VICE_NIGHT = "/images/official/media/screenshots-places-vice-city-vice-city-08.webp";
+const VICE_DETAIL = "/images/official/media/screenshots-places-vice-city-vice-city-04.webp";
 const IMPOUND = "/images/footage/guides/police-impound-hamlet.webp";
 const KEY_CLONER = "/images/footage/guides/key-cloner-schafter.webp";
 const BUY_OUTFIT = "/images/footage/guides/big-shots-outfit.webp";
@@ -1735,13 +1738,13 @@ export const quickGuides: QuickGuide[] = [
     title: "GTA 6 File Size: How Many GB Do You Need?",
     heading: "How many GB is GTA 6?",
     description:
-      "How many GB is GTA 6? Rockstar says the pre-load needs up to 212 GB of storage, depending on the device. PlayStation uses the same 212 GB figure for PS5. Unofficial.",
+      "How many GB is GTA 6? Rockstar says the game needs up to 212 GB of storage, depending on the device. PlayStation uses the same 212 GB figure for PS5. Unofficial.",
     keywords: ["GTA 6 how many GB", "GTA 6 file size", "GTA 6 how much space", "GTA 6 storage", "GTA 6 download size"],
     kind: "activity",
     answer: [
-      "Rockstar says the pre-load needs up to 212 GB of storage, depending on the device.",
-      "PlayStation also tells PS5 players to clear at least 212 GB before downloading.",
-      "Keep a little extra room for updates after that.",
+      "Rockstar says the game needs up to 212 GB of storage, depending on the device. That figure is from the pre-load notice.",
+      "PlayStation also tells PS5 players to clear at least 212 GB.",
+      "Leave a little extra room for updates after that.",
     ],
     facts: [
       { label: "Storage", value: "Up to 212 GB" },
@@ -1749,7 +1752,7 @@ export const quickGuides: QuickGuide[] = [
       { label: "Updates", value: "Leave extra room" },
     ],
     faqs: [
-      { question: "How many GB is GTA 6?", answer: "Rockstar says the pre-load needs up to 212 GB of storage, depending on the device. PlayStation uses the same 212 GB figure on PS5." },
+      { question: "How many GB is GTA 6?", answer: "Rockstar says the game needs up to 212 GB of storage, depending on the device. PlayStation uses the same 212 GB figure on PS5." },
       { question: "Does GTA 6 fit on a standard PS5?", answer: "Yes, if you have at least 212 GB of storage clear. The 825 GB PS5 model has about 667 GB usable after system software." },
     ],
     related: [L.launchPage, L.platforms, L.physicalCopy, L.performance],
@@ -1761,6 +1764,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "Can you play GTA 6 on PC, PS4 or Xbox One? It is on PS5 and Xbox Series X|S. Not on PS4. Xbox One can stream it with Xbox Cloud Gaming. No PC date yet. Unofficial.",
     keywords: ["GTA 6 can I play on PC", "GTA 6 can I play on PS4", "GTA 6 can I play on xbox one", "GTA 6 what consoles", "GTA 6 release date PC", "GTA 6 Switch 2"],
+    image: VICE_DAY,
+    imageAlt: "Vice City in daylight, official Rockstar still",
     kind: "activity",
     answer: [
       "GTA 6 is out on PlayStation 5 and Xbox Series X|S.",
@@ -1773,7 +1778,7 @@ export const quickGuides: QuickGuide[] = [
       { label: "PC", value: "No date announced" },
     ],
     faqs: [
-      { question: "Can you play GTA 6 on PC?", answer: "Not at launch. Rockstar has not announced a PC release date." },
+      { question: "Can you play GTA 6 on PC?", answer: "Not yet. Rockstar has not announced a PC release date." },
       { question: "Can you play GTA 6 on PS4 or Xbox One?", answer: "It is not on PS4. Xbox One can stream it with Xbox Cloud Gaming, but there is no native Xbox One version." },
     ],
     related: [L.launchPage, L.ps5Pro, L.physicalCopy, L.online],
@@ -1789,16 +1794,16 @@ export const quickGuides: QuickGuide[] = [
     answer: [
       "The boxed copy has a download code, not a disc.",
       "Activate the code on a PlayStation 5 or Xbox Series X|S to install the game.",
-      "Once the code is active, you can also pre-load it the same way as a digital purchase.",
+      "Once the code is active, the game installs the same way as a digital purchase.",
     ],
     facts: [
       { label: "In the box", value: "Download code, no disc" },
       { label: "Works on", value: "PS5 and Xbox Series X|S" },
-      { label: "Pre-load", value: "After the code is activated" },
+      { label: "Install", value: "After the code is activated" },
     ],
     faqs: [
       { question: "Does GTA 6 have a disc?", answer: "No. Rockstar says the boxed copy contains a download code and does not include a disc." },
-      { question: "Can you pre-load a physical copy of GTA 6?", answer: "Yes, after you activate the download code on your console." },
+      { question: "Can you install a physical copy of GTA 6?", answer: "Yes, after you activate the download code on your console." },
     ],
     related: [L.launchPage, L.fileSize, L.platforms, L.editions],
   },
@@ -1809,6 +1814,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "Does GTA 6 have a performance mode? No. The game targets 30 frames per second on PS5 and Xbox Series X|S, including PS5 Pro. There is no 60 fps option. Unofficial.",
     keywords: ["GTA 6 best settings", "GTA 6 best settings PS5", "GTA 6 performance mode", "GTA 6 30 fps", "GTA 6 locked on 30 fps", "GTA 6 60 fps"],
+    image: VICE_NIGHT,
+    imageAlt: "Vice City at night, official Rockstar still",
     kind: "activity",
     answer: [
       "GTA 6 targets 30 frames per second on PlayStation 5 and Xbox Series X|S.",
@@ -1833,6 +1840,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "Do you need a PS5 Pro for GTA 6? No. A standard PS5 plays the game. The Pro adds PSSR and ray-traced shadows, and still targets 30 fps. Unofficial.",
     keywords: ["GTA 6 do you need PS5 Pro", "GTA 6 PS5 Pro", "GTA 6 standard PS5", "GTA 6 PS5 Pro features", "will GTA 6 play on PS5"],
+    image: VICE_DETAIL,
+    imageAlt: "A close Vice City street scene, official Rockstar still",
     kind: "activity",
     answer: [
       "You don't need a PS5 Pro. A standard PlayStation 5 plays GTA 6.",
@@ -2254,6 +2263,8 @@ export const quickGuides: QuickGuide[] = [
     description:
       "How to get a tattoo in GTA 6: shops open after the Prologue. Find them on the map under Style, then Tattoos. Inked Mermaid is just east of Jason's house in Key Lento. Unofficial.",
     keywords: ["GTA 6 tattoos", "GTA 6 how to get a tattoo", "GTA 6 tattoo shop", "GTA 6 Inked Mermaid"],
+    image: "/images/official/editions/ultimate_edition_electric_fang_02.webp",
+    imageAlt: "A tattoo in progress at Electric Fang, official Rockstar still",
     kind: "clothing",
     answer: [
       "Tattoo shops open after the Prologue. On the map, look under Style, then Tattoos. The icon is a heart with a bar through it.",

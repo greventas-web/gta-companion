@@ -32,7 +32,7 @@ export const PWA_SHORTCUTS = [
   {
     name: "GTA 6 launch",
     short_name: "Launch",
-    description: "Unlock times and launch details for November 19, 2026",
+    description: "Unlock times, install size, and platforms. The game is out.",
     url: "/gta-6-launch",
   },
   {

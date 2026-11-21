@@ -1,13 +1,10 @@
 import type { ComponentType } from "react";
-import { Coffee, X, type LucideProps } from "lucide-react";
+import { Coffee, type LucideProps } from "lucide-react";
 
 import { SOCIAL_PROFILES, type SocialProfileId } from "@/lib/site";
 
 const socialIcons = {
   youtube: YouTubeIcon,
-  tiktok: TikTokIcon,
-  x: X,
-  facebook: FacebookIcon,
   discord: DiscordIcon,
   kofi: Coffee,
 } satisfies Record<SocialProfileId, ComponentType<LucideProps>>;
@@ -68,23 +65,6 @@ function YouTubeIcon(props: LucideProps) {
     <BrandIcon {...props}>
       <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
       <path d="m10 15 5-3-5-3z" />
-    </BrandIcon>
-  );
-}
-
-function TikTokIcon(props: LucideProps) {
-  return (
-    <BrandIcon {...props}>
-      <path d="M9 18a4 4 0 1 0 4-4V4" />
-      <path d="M13 4a5 5 0 0 0 5 5" />
-    </BrandIcon>
-  );
-}
-
-function FacebookIcon(props: LucideProps) {
-  return (
-    <BrandIcon {...props}>
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </BrandIcon>
   );
 }

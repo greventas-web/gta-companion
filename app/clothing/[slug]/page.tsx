@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import ViewOnMap from "@/components/map/ViewOnMap";
@@ -11,6 +12,7 @@ import { clothing } from "@/data/clothing";
 import { storeBySlug } from "@/data/stores";
 import { staticMapHref } from "@/lib/map/catalog";
 import { detailMetadata } from "@/lib/pages";
+import { IMAGE_CREDIT } from "@/lib/site";
 import { shortText } from "@/lib/simple/text";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -69,6 +71,27 @@ export default async function ClothingDetailPage({ params }: Props) {
         }))}
       >
         {map ? null : (store ? <ViewOnMap entityType="store" entitySlug={store.slug} /> : null)}
+        {item.gallery && item.gallery.length > 0 ? (
+          <section className="mt-10">
+            <h2 className="text-xl font-black tracking-[-0.02em] text-white">Official stills</h2>
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              {item.gallery.map((shot) => (
+                <figure key={shot.src} className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+                  <div className="relative aspect-[16/10]">
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </figure>
+              ))}
+            </div>
+            <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">{IMAGE_CREDIT}</p>
+          </section>
+        ) : null}
         <FactNotes facts={item.details} />
       </SimpleDetail>
     </PageShell>
