@@ -89,7 +89,7 @@ export default function MissionsPage() {
       </CardGrid>
 
       <p className="mt-10 text-sm text-zinc-500">Chapters 4 and 5 stay hidden so nothing gets spoiled.</p>
-      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "replay-missions", "switch-characters", "fix-railing", "beginner-tips", "lab-fees-codes", "pipework", "hey-arnold", "feng-shui", "island-dreams", "pick-up-groceries", "new-game", "how-many-chapters", "unwanted-attention", "just-a-scratch", "bank-jobs", "relationship", "call-partner"])} />
+      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "replay-missions", "switch-characters", "fix-railing", "beginner-tips", "lab-fees-codes", "pipework", "hey-arnold", "missing-tourists", "feng-shui", "island-dreams", "pick-up-groceries", "new-game", "how-many-chapters", "unwanted-attention", "just-a-scratch", "bank-jobs", "relationship", "call-partner"])} />
     </PageShell>
   );
 }
