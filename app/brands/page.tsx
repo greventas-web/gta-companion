@@ -10,7 +10,7 @@ import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   'GTA 6 brands',
-  'Unofficial GTA 6 brands seen in Leonida, with pictures.'
+  'Unofficial GTA 6 brands seen in Leonida, with pictures. Not affiliated with Rockstar Games.'
 );
 
 const items = brands;

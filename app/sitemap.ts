@@ -29,6 +29,7 @@ import { challenges } from "@/src/data/launch/challenges";
 import { ammuStores } from "@/lib/simple/ammu";
 import { quickGuides } from "@/src/data/launch/quick-guides";
 import { stationPages } from "@/lib/simple/radio";
+import { lastModifiedFor } from "@/lib/sitemap-lastmod";
 
 const baseUrl = SITE.url;
 
@@ -126,7 +127,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...detailPaths,
   ];
 
-  const now = new Date();
   const highPriority = new Set([
     "/gta-6-launch",
     "/map",
@@ -156,10 +156,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/roadmap",
   ]);
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: now,
-    changeFrequency: "daily" as const,
-    priority: route === "" ? 1 : highPriority.has(route) ? 0.9 : lowPriority.has(route) ? 0.3 : 0.8,
-  }));
+  return routes.map((route) => {
+    const lastModified = lastModifiedFor(route);
+    return {
+      url: `${baseUrl}${route}`,
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: "daily" as const,
+      priority: route === "" ? 1 : highPriority.has(route) ? 0.9 : lowPriority.has(route) ? 0.3 : 0.8,
+    };
+  });
 }

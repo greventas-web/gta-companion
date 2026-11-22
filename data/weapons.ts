@@ -155,10 +155,19 @@ function howToGet(weapon: LaunchWeapon): {
   }
 }
 
+/** "Thrown" and "Melee" are modifiers. The sentence needs a noun after them. */
+function weaponNoun(type: string | undefined, category: string) {
+  const raw = (type ?? category).trim();
+  if (/^(thrown|melee)$/i.test(raw)) return `${raw.toLowerCase()} weapon`;
+  if (/^explosives?$/i.test(raw)) return "explosive weapon";
+  return raw.toLowerCase();
+}
+
 function describe(weapon: LaunchWeapon) {
   if (weapon.category === "Explosives" || weapon.category === "Melee") {
-    const kind = (weapon.type ?? weapon.category).toLowerCase();
-    return `A ${kind} you can buy at Ammu-Nation or take from enemies.`;
+    const noun = weaponNoun(weapon.type, weapon.category);
+    const articleWord = /^[aeiou]/i.test(noun) ? "An" : "A";
+    return `${articleWord} ${noun} you can buy at Ammu-Nation or take from enemies.`;
   }
   const kind = (weapon.type ?? weapon.category).toLowerCase();
   const fire = weapon.fireMode ? `${weapon.fireMode.toLowerCase()} ` : "";
@@ -277,7 +286,8 @@ export const unconfirmedWeapons = weapons.filter(
 
 /** One short line for weapon cards. */
 export function weaponLine(weapon: Weapon): string {
-  const kind = weapon.type ?? weapon.category;
+  const raw = weapon.type ?? weapon.category;
+  const kind = /^(thrown|melee)$/i.test(raw) ? `${raw} weapon` : raw;
   const bits = [weapon.caliber ? `${weapon.caliber} ${kind.toLowerCase()}` : kind];
   if (weapon.magazine) bits.push(`${weapon.magazine}-round mag`);
   if (weapon.fireMode) bits.push(weapon.fireMode.toLowerCase());

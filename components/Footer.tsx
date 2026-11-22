@@ -58,7 +58,7 @@ export default function Footer() {
               </Link>
 
               <Link href="/launch" className="block text-zinc-400 transition hover:text-pink-400">
-                Editions
+                GTA 6 Editions
               </Link>
 
               <Link href="/about" className="block text-zinc-400 transition hover:text-pink-400">

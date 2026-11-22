@@ -33,7 +33,7 @@ export default function FastestCarsPage() {
         facts={[
           { label: "Supercars", value: "9" },
           { label: "Sports cars", value: "13" },
-          { label: "Top speeds", value: "Not tested yet" },
+          { label: "Top speeds", value: "Taken from the in-game Speed bar, not a timed test" },
         ]}
       />
       <CardGrid heading="Supercars" count={cars.length}>

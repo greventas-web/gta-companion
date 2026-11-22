@@ -185,13 +185,13 @@ export const properties: PropertyRecord[] = [
     howToGet:
       "Brian Heder lets Jason live at one of Brian's properties in the Keys, without paying rent, if Jason helps with local shakedowns.",
     summary:
-      "Jason's first house, on one of Brian Heder's properties in the Leonida Keys. The exact building is not published.",
+      "Jason's first house in Key Lento, on one of Brian Heder's properties in the Leonida Keys.",
     description:
-      "Jason's first house is in the Leonida Keys, on one of Brian Heder's properties. Rockstar has not named the building or published a coordinate for it.",
+      "Jason's first house is in Key Lento, in the Leonida Keys, on one of Brian Heder's properties.",
     features: [
       "Rockstar's Leonida Keys page says Brian lets Jason live at one of his properties without paying rent, as long as Jason helps with local shakedowns and stops by for Lori's sangria.",
       "Rob Nelson told Famitsu the story begins in the Leonida Keys, and that Jason's first house, which appeared in a trailer, is there.",
-      "The exact building is not identified. A community pin for a specific Keys house stays off the map.",
+      "The map opens the gtadb landmark named Jason's House in Key Lento. Rockstar has not published a coordinate of its own.",
     ],
     links: [
       { href: "/characters/jason-duval", label: "Jason Duval" },
@@ -202,9 +202,9 @@ export const properties: PropertyRecord[] = [
     sources: [leonidaKeysPage, ...famitsuSources],
     map: {
       kind: "area",
-      pinId: "confirmed:leonida-keys",
-      label: "Leonida Keys on the map",
-      note: "Rockstar has not published a coordinate for the house. This opens the Leonida Keys area pin, not a building.",
+      pinId: "confirmed:jasons-place",
+      label: "Jason's house on the map",
+      note: "Opens the existing Jason's House pin. Rockstar has not published a coordinate of its own.",
     },
   },
 ];

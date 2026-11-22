@@ -9,7 +9,7 @@ import { itemListJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   'GTA 6 manufacturers',
-  'Unofficial GTA 6 vehicle makers, with their cars and pictures.'
+  'Unofficial GTA 6 vehicle makers, with their cars and pictures. Not affiliated with Rockstar Games.'
 );
 
 const items = manufacturers;
