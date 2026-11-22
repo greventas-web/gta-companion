@@ -9,6 +9,7 @@
 
 import { safeCodesSources, shotgunSources, uniqueWeaponsSources } from "@/src/data/launch/batch10-sources";
 import { cowboyHatSources, equipmentSources, finalFlushSources, meleeWeaponsSources, wymanCarsSources } from "@/src/data/launch/batch11-sources";
+import { backroomsSources, hydeIslandSources, krakenSources, radioListSources } from "@/src/data/launch/batch12-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -343,6 +344,13 @@ const L = {
   meetTheHeders: { href: "/missions/meet-the-heders", title: "Meet the Heders", line: "Chapter 3", kind: "mission" },
   boobieTime: { href: "/missions/boobie-time", title: "Boobie Time", line: "Chapter 3", kind: "mission" },
   clothingHub: { href: "/clothing", title: "Clothing", kind: "clothing" },
+  // Batch 12
+  radioList: { href: "/guides/radio-stations-list", title: "Every radio station and host", image: FLASH_FM, imageAlt: "Flash FM, official Rockstar art", kind: "radio" },
+  hydeIsland: { href: "/guides/hyde-island", title: "Hyde Island hunt", line: "Island Poacher FF-50", kind: "weapon" },
+  backrooms: { href: "/guides/backrooms", title: "The Backrooms container", kind: "location" },
+  kraken: { href: "/guides/kraken", title: "The Kraken", kind: "location" },
+  uniquePlaylists: { href: "/collectibles/unique-playlists", title: "Unique playlists", kind: "collectible" },
+  podcasts: { href: "/phone/podcasts", title: "Podcasts", kind: "radio" },
   electronics: { href: "/where-to-find/electronics-stores", title: "Electronics stores", kind: "phone" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
@@ -505,7 +513,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you change the radio station in GTA 6?", answer: "Get in a vehicle, hold Left on the D-pad and pick a station with the right stick or L1 and R1 (LB and RB on Xbox)." },
       { question: "How do you turn on the radio in GTA 6?", answer: "Hold Left on the D-pad in a vehicle and press X on PS5 or A on Xbox. You can also set Vehicle Radio to On in the Audio settings." },
     ],
-    related: [L.radioHub, L.firstPerson, L.tips, L.fastTravel],
+    related: [L.radioHub, L.radioList, L.firstPerson, L.tips, L.fastTravel],
   },
   {
     slug: "impounded-car",
@@ -1065,7 +1073,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you get scuba gear in GTA 6?", answer: "At Kenton's Island Dreams dock in Key Lento. Use the prompt by the yellow tanks on the charter boat, or the spare set on the dock." },
       { question: "How do you dive underwater in GTA 6?", answer: "Put on the scuba gear, get in the water and hold R1 on PS5 or RB on Xbox." },
     ],
-    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark, L.shipwrecks],
+    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark, L.shipwrecks, L.kraken],
   },
   {
     slug: "refuel",
@@ -1168,7 +1176,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you get headphones in GTA 6?", answer: "At electronics stores. Zeke's Gadgets in Hamlet sells them for $119." },
       { question: "How do you listen to music on foot in GTA 6?", answer: "Wear headphones, then hold Left on the D-pad and press X or A to turn the music on." },
     ],
-    related: [L.phoneHeadphones, L.radio, L.radioHub, L.fastTravel],
+    related: [L.phoneHeadphones, L.radio, L.radioHub, L.radioList, L.fastTravel],
   },
   {
     slug: "plane",
@@ -1779,7 +1787,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you swim in GTA 6?", answer: "Enter deep water and move with the left stick. Click L3 to swim faster." },
       { question: "How do you dive underwater in GTA 6?", answer: "Hold R1 on PS5 or RB on Xbox to dive, and press Cross or A to surface." },
     ],
-    related: [L.scuba, L.treasureDiving, L.fishing, L.boat],
+    related: [L.scuba, L.treasureDiving, L.fishing, L.boat, L.kraken],
   },
   {
     slug: "file-size",
@@ -2855,7 +2863,8 @@ export const quickGuides: QuickGuide[] = [
       "Paul Walker's green Fast and Furious car is hidden in a villa garage on Vespucci Island, and you can keep it. Dexter Morgan's apartment is on Washington Island in Vice City.",
       "Swim far out to sea and a dog riding a jet ski can turn up. On top of the tallest tower in Vice City there's reported to be a real Easter egg in a nest that you can pick up and throw.",
       "Books link the games: a Western about New Austin from Red Dead Redemption (one is in Jacob's Tavern in Millport) and a Liberty City crime memoir on the table by Jason's back door in Chapter 1.",
-      "The UFO house from a photo in GTA: The Trilogy – The Definitive Edition is real: a cream bungalow with two palm trees in Belville. By day, walk into the garage for a wall that reads \"IT'S A SIMULATION\". There's also a crab research outpost with codes to crack and a missing tourists mystery in Port Gellhorn. More are still being found.",
+      "The UFO house from a photo in GTA: The Trilogy – The Definitive Edition is real: a cream bungalow with two palm trees in Belville. By day, walk into the garage for a wall that reads \"IT'S A SIMULATION\". There's also a crab research outpost with codes to crack and a missing tourists mystery in Port Gellhorn.",
+      "Three hidden events: a giant Kraken wrapped around a shipwreck on the seabed south-east of Gloriana Key, a Backrooms-style trip from a container east of Lake Tallaloko, and a Saw-style hunt on Hyde Island that rewards a unique sniper rifle. More are still being found.",
     ],
     facts: [
       { label: "Monsters", value: "Bigfoot, the UFO" },
@@ -2863,15 +2872,17 @@ export const quickGuides: QuickGuide[] = [
       { label: "Animals", value: "A dog on a jet ski" },
       { label: "Series nods", value: "Red Dead and Liberty City books, the UFO house" },
       { label: "Mysteries", value: "Crab outpost, missing tourists" },
+      { label: "Hidden events", value: "The Kraken, the Backrooms, the Hyde Island hunt" },
     ],
     faqs: [
       { question: "What Easter eggs are in GTA 6?", answer: "So far: Bigfoot, a UFO, Paul Walker's Fast and Furious car on Vespucci Island, Dexter's apartment on Washington Island, a dog on a jet ski out at sea, an egg on top of Vice City's tallest tower, and books that nod to Red Dead Redemption and Liberty City." },
       { question: "Is Bigfoot in GTA 6?", answer: "Yes. Bigfoot has a full encounter in the swamps. See the Bigfoot guide for where to go." },
       { question: "Is there a Red Dead Redemption easter egg in GTA 6?", answer: "Yes. A Western novel tells the story of a cowboy in New Austin, a place from Red Dead Redemption. One copy is in Jacob's Tavern in Millport, and you can read excerpts." },
       { question: "Is there a dog on a jet ski in GTA 6?", answer: "Yes. If you swim far out to sea, a dog riding a jet ski can show up." },
+      { question: "Is there a Kraken in GTA 6?", answer: "Yes. A giant Kraken is wrapped around a sunken ship on the seabed south-east of Gloriana Key. Dive down with scuba gear to see it." },
       { question: "Where is the UFO house in GTA 6?", answer: "In Belville. It's the cream bungalow with two palm trees from the UFO photo in GTA: The Trilogy – The Definitive Edition. Its garage has a wall that reads \"IT'S A SIMULATION\"." },
     ],
-    related: [L.bigfoot, L.ufo, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
+    related: [L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
   },
   {
     slug: "rob-police-car",
@@ -3060,7 +3071,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How much is the SM-69 in GTA 6?", answer: "It costs $1,850 at an Expanded Ammu-Nation, but you can pick one up at the Key Lento radio tower in Chapter 1." },
       { question: "Is there a parachute at the Key Lento tower in GTA 6?", answer: "Yes. Climb the ladder above the balcony where the rifle is and the parachute is on the roof." },
     ],
-    related: [L.sm69, L.parachute, L.gunStores, L.loadout, L.cardsHub, L.wainkLocations, L.jasonsPlaceMap, L.silencedPistol, L.uniqueWeapons],
+    related: [L.sm69, L.parachute, L.gunStores, L.loadout, L.cardsHub, L.wainkLocations, L.jasonsPlaceMap, L.silencedPistol, L.uniqueWeapons, L.hydeIsland],
   },
   {
     slug: "missing-tourists",
@@ -3238,7 +3249,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Turnt Nipper .38 in GTA 6?", answer: "In a crashed paramotor caught in a tree at Bobcat Bight. Shoot the lines to bring it down, then search the wreck." },
       { question: "Which unique weapon can you miss in GTA 6?", answer: "Donnie's H&L .38. It's in the trunk of Donnie's car during Don Gone in Chapter 1. Take it before you get rid of the car." },
     ],
-    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
+    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
     sources: uniqueWeaponsSources,
   },
   {
@@ -3423,6 +3434,146 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.characterStats, L.workout, L.wainkLocations, L.waink, L.tequestaMap, L.viceCity, L.swimming],
     sources: finalFlushSources,
+  },
+  {
+    slug: "radio-stations-list",
+    title: "GTA 6 Radio Stations List: Every Station, DJ and Host",
+    heading: "Every radio station and host",
+    description:
+      "Every GTA 6 radio station and who hosts it: Weird Al on Vice City FM, Jeremy Irons on Kaleidoscope FM, Bad Bunny, Lana Del Rey, Keith Richards and more. Unofficial.",
+    keywords: ["GTA 6 radio stations", "GTA 6 radio stations list", "GTA 6 radio hosts", "GTA 6 radio DJs", "GTA 6 Weird Al", "GTA 6 Jeremy Irons", "GTA 6 Vice City FM", "GTA 6 celebrity voices"],
+    image: FLASH_FM,
+    imageAlt: "Flash FM, official Rockstar art",
+    kind: "radio",
+    answer: [
+      "Rockstar kept most of the radio hosts secret until launch. The game's credits name them all, and the list below gives each station's on-air DJs with the real person behind each voice.",
+      "The biggest surprises: \"Weird Al\" Yankovic hosts Vice City FM's non-stop '80s as DJ Al, with Brigitte Nielsen as Madame Brigitte, and Jeremy Irons is DJ Dicky on Kaleidoscope FM, where singers from around the world cover pop classics.",
+      "Music legends host too: Keith Richards and Buddy Guy on Gloriana Blues Radio, Lindsey Buckingham and Michael McDonald on V-Rock, Gloria and Emilio Estefan on Radio La Ola, and PinkPantheress and The Dare on Stockyard FM.",
+      "There are two talk stations. Jason Sudeikis and Stavros Halkias play hosts on WKTT, and Anitta hosts The Wipe. Kodak Black hosts the hidden playlist The Sniper of La Perle, which you unlock by scanning posters.",
+      "Listen in any vehicle, or on foot with headphones connected to Jason's or Lucia's phone.",
+    ],
+    facts: [
+      { label: "AfroBank FM", value: "Burna (Burna Boy) and Palmsy (Palms Trax). African music" },
+      { label: "Back Country Radio", value: "MW (Morgan Wallen), Delta Dawne (Lana Del Rey), Mud Dog Mike (Jeremy Dufrene). Country" },
+      { label: "The Chamber 106.6", value: "DJ Kerry (Kerry King), DJ Tom (Tom Araya), Big Fan Brian (Brian Posehn). Metal" },
+      { label: "CircoLoco Records Radio", value: "DJ Seth (Seth Troxler) and DJ Antonio (Antonio Carbonaro). Electronic" },
+      { label: "Cocoteo FM", value: "El Martillo (Bad Bunny) and La Gata (RaiNao). Modern Latin" },
+      { label: "Dirty South Classics", value: "Trick (Trick Daddy) and Trina. Southern rap" },
+      { label: "Emotion 98.3", value: "Doug Van Dyke (Doug Stanhope). Soft rock" },
+      { label: "Flash FM", value: "Robyn and Alex (Alex Consani). Pop" },
+      { label: "Gloriana Blues Radio", value: "DJ Buddy (Buddy Guy) and DJ Keith (Keith Richards). Blues" },
+      { label: "Honey FM", value: "Chilli and T-Boz of TLC. R&B. Craig Robinson hosts Honey FM: Liquid City" },
+      { label: "Kaleidoscope FM", value: "DJ Dicky (Jeremy Irons). Pop covers from around the world" },
+      { label: "Leonida Jazz Radio", value: "DJ Randy (Randy Brecker) and DJ Stanley (Stanley Clarke). Jazz" },
+      { label: "Radio La Ola", value: "Gloria and Emilio Estefan. Classic Latin" },
+      { label: "Radio On-U", value: "Adrian Sherwood. Reggae and dub" },
+      { label: "Stockyard FM", value: "Victoria (PinkPantheress) and Harrison (The Dare). Electronic and indie" },
+      { label: "Symphony FM", value: "Yuja (Yuja Wang). Classical" },
+      { label: "V-Rock", value: "The Buck (Lindsey Buckingham) and Skipper McD (Michael McDonald). Classic rock" },
+      { label: "Vice City FM", value: "DJ Al (\"Weird Al\" Yankovic) and Madame Brigitte (Brigitte Nielsen). '80s" },
+      { label: "Vice City Rap Radio", value: "DJ JT (JT) and DJ Stevie (DJ Stevie J). Hip-hop. Early AF with Charlamagne tha God and Ivy Rivera" },
+      { label: "Worldwide FM", value: "Gilles Peterson. Jazz, funk and soul" },
+      { label: "WKTT (talk)", value: "Richard Bastion (Jason Sudeikis) and Dominic \"The Brick\" Brizzolato (Stavros Halkias)" },
+      { label: "The Wipe (talk)", value: "Anitta" },
+    ],
+    faqs: [
+      { question: "What radio stations are in GTA 6?", answer: "AfroBank FM, Back Country Radio, The Chamber 106.6, CircoLoco Records Radio, Cocoteo FM, Dirty South Classics, Emotion 98.3, Flash FM, Gloriana Blues Radio, Honey FM, Kaleidoscope FM, Leonida Jazz Radio, Radio La Ola, Radio On-U, Stockyard FM, Symphony FM, V-Rock, Vice City FM, Vice City Rap Radio and Worldwide FM, plus the talk stations WKTT and The Wipe." },
+      { question: "Is Weird Al in GTA 6?", answer: "Yes. \"Weird Al\" Yankovic hosts Vice City FM, the '80s station, as DJ Al, alongside Brigitte Nielsen as Madame Brigitte." },
+      { question: "Who is DJ Dicky in GTA 6?", answer: "Jeremy Irons. He hosts Kaleidoscope FM, where singers from around the world cover pop classics." },
+      { question: "Who hosts Back Country Radio in GTA 6?", answer: "MW, voiced by Morgan Wallen, and Delta Dawne, voiced by Lana Del Rey. Her husband Jeremy Dufrene calls in as Mud Dog Mike." },
+      { question: "Who hosts V-Rock in GTA 6?", answer: "Lindsey Buckingham as The Buck and Michael McDonald as Skipper McD. It plays classic rock." },
+      { question: "Can you listen to the radio on foot in GTA 6?", answer: "Yes. Connect headphones to Jason's or Lucia's phone and the radio and podcasts play on foot." },
+    ],
+    related: [L.radioHub, L.radio, L.headphones, L.uniquePlaylists, L.podcasts, L.easterEggs],
+    sources: radioListSources,
+  },
+  {
+    slug: "hyde-island",
+    title: "GTA 6 Hyde Island Hunt: How to Get the Island Poacher FF-50 Sniper",
+    heading: "Hyde Island hunt and the Island Poacher FF-50",
+    description:
+      "How to trigger the GTA 6 Hyde Island hunt, the Saw and Hunger Games style secret, survive the hunter and take his unique Island Poacher FF-50 sniper rifle. Unofficial.",
+    keywords: ["GTA 6 Hyde Island", "GTA 6 Island Poacher FF-50", "GTA 6 Hunger Games easter egg", "GTA 6 Saw easter egg", "GTA 6 hunter island", "GTA 6 unique sniper rifle", "GTA 6 Manhunt easter egg"],
+    kind: "weapon",
+    answer: [
+      "Hyde Island is out at sea in the north of the map, with no road to it, so take a boat. Go on your own as Jason or Lucia, step ashore and walk around. After a while a tranquilizer dart hits you in the neck. There's no marker or mission to accept.",
+      "You wake up in a shipping container with your weapons gone and an explosive collar on your neck. A voice on a TV explains the game, a countdown runs, and the doors open. A hunter with night-vision goggles, a sniper rifle and a dog comes after you. Don't try to swim off while the collar is on.",
+      "Run to the lit shack ahead for a pistol with only two bullets, then on to the next lit shack for a shotgun and more ammo. Small lit stations along the way hold more. Stay in cover, let the hunter come close, then use Focus and hit him with the shotgun.",
+      "When he's down, take the Island Poacher FF-50 from his body. It's a unique version of the FF-50 sniper. Then head to the boathouse on the west side of the island: your gear is on the boat there, along with a cash prize, and the boat is your way out.",
+    ],
+    facts: [
+      { label: "Where", value: "Hyde Island, by boat" },
+      { label: "Trigger", value: "Explore alone until a dart hits you" },
+      { label: "Best weapon", value: "The shotgun in the second lit shack" },
+      { label: "Reward", value: "Island Poacher FF-50 sniper and cash" },
+      { label: "Exit", value: "Boathouse, west side" },
+    ],
+    faqs: [
+      { question: "How do you start the Hyde Island hunt in GTA 6?", answer: "Take a boat to Hyde Island, go alone as Jason or Lucia, and walk around the shore. A tranquilizer dart knocks you out and you wake up in a shipping container." },
+      { question: "Where is the Island Poacher FF-50 in GTA 6?", answer: "The hunter on Hyde Island carries it. Survive the hunt, take him down and pick the rifle up from his body." },
+      { question: "What is the Hunger Games easter egg in GTA 6?", answer: "The Hyde Island hunt. You're kidnapped, fitted with an explosive collar and hunted by a man with night-vision goggles. Players compare it to Saw, The Hunger Games and Rockstar's own Manhunt." },
+      { question: "How do you beat the Hyde Island hunter?", answer: "Grab the pistol and then the shotgun from the lit shacks, stay in cover, let him get close and use Focus to finish him with the shotgun." },
+      { question: "How do you get your weapons back on Hyde Island?", answer: "After the hunter is dead, go to the boathouse on the west side. Your gear is on the boat, and the boat takes you off the island." },
+    ],
+    related: [L.uniqueWeapons, L.sniperRifle, L.focus, L.cover, L.boat, L.easterEggs, L.backrooms, L.kraken, L.mapHub],
+    sources: hydeIslandSources,
+  },
+  {
+    slug: "backrooms",
+    title: "GTA 6 Backrooms Location: The Lake Tallaloko Container Trip",
+    heading: "The Backrooms container",
+    description:
+      "Where to find the GTA 6 Backrooms: the container at the dig site east of Lake Tallaloko, north of Millport. Use the ??? item and follow the trip to the end. Unofficial.",
+    keywords: ["GTA 6 Backrooms", "GTA 6 Backrooms location", "GTA 6 Lake Tallaloko container", "GTA 6 another dimension", "GTA 6 ??? item", "GTA 6 excavation site", "GTA 6 secret dimension"],
+    kind: "location",
+    answer: [
+      "Drive north of Millport in Lummox County to the east side of Lake Tallaloko. Take the dirt road to a dig site with shipping containers and crates. It opens up early in the story.",
+      "Walk into the open orange container. By day a few people drink outside it; ignore them. Interact with the box on the table marked \"???\" and your character is pulled into a Backrooms-style maze.",
+      "Every exit leads deeper in. Climb over the floating containers and logs to the top, keep going through the hallways, then drop into the water and swim down toward the light. Watch your air.",
+      "Keep following the light through the strange rooms that come after. When the prompt to jump down appears, take it to end the trip. Back outside, a lot of in-game time has passed.",
+    ],
+    facts: [
+      { label: "Where", value: "Dig site, east side of Lake Tallaloko" },
+      { label: "Nearest town", value: "Millport, to the south" },
+      { label: "Start", value: "The ??? box in the orange container" },
+      { label: "End", value: "Take the jump-down prompt" },
+    ],
+    faqs: [
+      { question: "Where is the Backrooms in GTA 6?", answer: "In a container at a dig site on the east side of Lake Tallaloko, north of Millport in Lummox County. Interact with the ??? box on the table inside." },
+      { question: "How do you get out of the Backrooms in GTA 6?", answer: "Keep moving forward: climb the containers to the top, swim down toward the light in the flooded part, and take the jump-down prompt at the end." },
+      { question: "What does the ??? item do in GTA 6?", answer: "It starts the Backrooms trip. Your character uses it and wakes up in a maze of containers and hallways that you have to get through." },
+      { question: "Does time pass in the Backrooms?", answer: "Yes. When you walk out of the container, a lot of in-game time has gone by." },
+    ],
+    related: [L.millportMap, L.easterEggs, L.kraken, L.hydeIsland, L.swimming, L.climbing, L.skipTime, L.ufo],
+    sources: backroomsSources,
+  },
+  {
+    slug: "kraken",
+    title: "GTA 6 Kraken Location: Where to Find the Sea Monster",
+    heading: "Where to find the Kraken",
+    description:
+      "Where to find the Kraken in GTA 6: dive into the deep water south-east of Gloriana Key and look for a sunken ship with giant tentacles wrapped around it. Unofficial.",
+    keywords: ["GTA 6 Kraken", "GTA 6 Kraken location", "GTA 6 sea monster", "GTA 6 underwater easter egg", "GTA 6 Gloriana Key", "GTA 6 sunken ship"],
+    kind: "location",
+    answer: [
+      "The Kraken is on the seabed south-east of Gloriana Key. Find Gloriana Key on your map, then take a boat out into the deep open water south-east of it.",
+      "Put on scuba gear before you jump in, because it's a long way down. Dive to the bottom and look for a large sunken ship: the Kraken's giant tentacles are wrapped around it.",
+      "It isn't marked on the map and isn't part of a mission. It's a giant figure, not a living monster, so it won't attack. Sharks swim in the area, though.",
+    ],
+    facts: [
+      { label: "Where", value: "Seabed south-east of Gloriana Key" },
+      { label: "Look for", value: "A sunken ship with tentacles around it" },
+      { label: "You need", value: "A boat and scuba gear" },
+      { label: "Marked?", value: "No" },
+    ],
+    faqs: [
+      { question: "Is there a Kraken in GTA 6?", answer: "Yes, as an underwater Easter egg. A giant Kraken is wrapped around a sunken ship on the seabed south-east of Gloriana Key." },
+      { question: "Where is the Kraken in GTA 6?", answer: "In deep water south-east of Gloriana Key. Take a boat out, dive with scuba gear and look for the shipwreck on the seabed." },
+      { question: "Can the Kraken attack you in GTA 6?", answer: "No. It's a giant figure, not a living creature. Watch out for sharks around it instead." },
+      { question: "Do you need scuba gear to see the Kraken?", answer: "Yes. The wreck sits deep below the surface, so wear scuba gear to have enough air." },
+    ],
+    related: [L.scuba, L.swimming, L.boat, L.shipwrecks, L.treasureDiving, L.shark, L.easterEggs, L.hydeIsland, L.mapHub],
+    sources: krakenSources,
   },
   {
     slug: "weather",

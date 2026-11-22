@@ -30,7 +30,7 @@ export default function RadioPage() {
         <SimpleCard href="/phone/podcasts" title="Podcasts" small />
         <SimpleCard href="/phone/headphones" title="Headphones" small />
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["change-radio-station", "headphones"])} />
+      <QuickGuideGrid guides={quickGuideCards(["radio-stations-list", "change-radio-station", "headphones"])} />
     </PageShell>
   );
 }
