@@ -4,6 +4,7 @@ import Link from "next/link";
 import { faqPageJsonLd } from "@/components/intent/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
+import { SourceList } from "@/components/SourceLink";
 import SimpleCard, { BlankSurface, CardGrid, PriceChip, QuickFacts } from "@/components/simple/SimpleCard";
 import { SITE } from "@/lib/site";
 import { type QuickGuide, quickGuides } from "@/src/data/launch/quick-guides";
@@ -65,6 +66,8 @@ export default function QuickGuidePage({ guide }: { guide: QuickGuide }) {
       </section>
 
       {guide.facts ? <QuickFacts wide facts={guide.facts} /> : null}
+
+      {guide.sources ? <SourceList sources={guide.sources} className="mt-4 max-w-3xl" /> : null}
 
       <CardGrid heading="Related">
         {guide.related.map((link) => (
