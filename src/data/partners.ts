@@ -48,13 +48,6 @@ export const partners: readonly Partner[] = [
     ],
   },
   {
-    name: "Emilio",
-    url: "https://www.youtube.com/@soyemilioooo",
-    description: "Spanish-language GTA 6 videos and gameplay.",
-    category: "Creator",
-    rel: ["noopener"],
-  },
-  {
     name: "ZoneX",
     url: "https://www.youtube.com/@ZoneXbez",
     description: "GTA 6 videos from ZoneX on YouTube.",
