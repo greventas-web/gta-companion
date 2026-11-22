@@ -47,13 +47,6 @@ export const partners: readonly Partner[] = [
       { label: "All guides", url: "https://gta6times.com/gta-6/guides" },
     ],
   },
-  {
-    name: "Emilio",
-    url: "https://www.youtube.com/@soyemilioooo",
-    description: "Spanish-language GTA 6 videos and gameplay.",
-    category: "Creator",
-    rel: ["noopener"],
-  },
 ];
 
 export function partnerHref(url: string): string | null {
