@@ -7,6 +7,8 @@
  * pages never list sources. Nothing past Chapter 3.
  */
 
+import { safeCodesSources, shotgunSources, uniqueWeaponsSources } from "@/src/data/launch/batch10-sources";
+
 export type QuickGuideLink = {
   href: string;
   title: string;
@@ -37,6 +39,8 @@ export type QuickGuide = {
   /** Questions for FAQ schema. Answers repeat the page text. */
   faqs: { question: string; answer: string }[];
   related: QuickGuideLink[];
+  /** Short source labels. Shown only when SHOW_PUBLIC_SOURCES is on. */
+  sources?: readonly { label: string; href?: string }[];
 };
 
 const JASONS_PLACE = "/images/footage/properties/jasons-place.webp";
@@ -313,6 +317,14 @@ const L = {
   starletMotelMap: { href: "/map?pin=confirmed%3Astarlet-motel", title: "Starlet Motel on the map", kind: "location" },
   payNSprayGellhornMap: { href: "/map?pin=confirmed%3Apay-n-spray-port-gellhorn", title: "Port Gellhorn Pay 'n' Spray on the map", kind: "location" },
   belvilleMap: { href: "/map?pin=confirmed%3Abelville", title: "Belville on the map", kind: "location" },
+  safeCodes: { href: "/guides/safe-codes", title: "All safe codes", kind: "money" },
+  uniqueWeapons: { href: "/guides/unique-weapons", title: "Unique weapons", kind: "weapon" },
+  shotgun: { href: "/guides/shotgun", title: "Early shotguns", kind: "weapon" },
+  gorse425: { href: "/weapons/fortune-son-gorse-425", title: "Fortune & Son Gorse 425", kind: "weapon" },
+  comshot12: { href: "/weapons/goodwin-comshot-12", title: "Goodwin Comshot 12", kind: "weapon" },
+  moreland850: { href: "/weapons/fortune-son-moreland-850", title: "Fortune & Son Moreland 850", kind: "weapon" },
+  balseroMap: { href: "/map?pin=confirmed%3Abalsero", title: "Balsero on the map", kind: "location" },
+  laPerleMap: { href: "/map?pin=confirmed%3Ala-perle", title: "La Perle on the map", kind: "location" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -884,7 +896,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "What is the lab code in GTA 6 Lab Fees?", answer: "The lab door code is 0420. The clerk gives it to you, and it's also written on the back of a notepad in the shop." },
       { question: "What is Brian's lockup code in GTA 6?", answer: "Brian's lockup code is 7700. He tells you on the phone during Lab Fees." },
     ],
-    related: [L.labFeesMission, L.pipework, L.robStore, L.missions],
+    related: [L.labFeesMission, L.pipework, L.robStore, L.missions, L.safeCodes],
   },
   {
     slug: "pipework",
@@ -1466,7 +1478,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you rob a store in GTA 6?", answer: "Aim your gun at the clerk and he empties the register. For more cash, turn off the alarm and open the back-room safe." },
       { question: "Where are safe codes in GTA 6?", answer: "Each store's code is on a note or screen nearby, or an employee gives it up when threatened." },
     ],
-    related: [L.storeRobberies, L.mask, L.wanted, L.moneyGlitch, L.liquorStores, L.robAtm, L.armoredTruck],
+    related: [L.storeRobberies, L.mask, L.wanted, L.moneyGlitch, L.liquorStores, L.robAtm, L.armoredTruck, L.safeCodes],
   },
   {
     slug: "lose-wanted",
@@ -2000,7 +2012,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you raid gang hideouts in GTA 6?", answer: "Find a yellow icon on the map, clear the hideout, take the cash and goods, and sell the goods to a dealer." },
       { question: "When can you raid gang operations in GTA 6?", answer: "From Chapter 1. There are 39 of them on the map." },
     ],
-    related: [L.gangOps, L.money, L.loseWanted, L.robStore],
+    related: [L.gangOps, L.money, L.loseWanted, L.robStore, L.safeCodes],
   },
   {
     slug: "controls",
@@ -2755,7 +2767,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you get a grenade launcher in GTA 6?", answer: "Buy the Hillinger Boomer for $12,000 or the Deever Tech GLR40 for $15,500 at an Expanded Ammu-Nation." },
       { question: "How do you get a rocket launcher early in GTA 6?", answer: "After the Chapter 1 step Building a Life, go to the impound lot south-west of the Griffin Shooting Range, enter the antenna-covered RV and drop through the hatch. The H-AT is inside with four rockets." },
     ],
-    related: [L.gunStores, L.hat, L.griffinRange, L.weapons, L.loadout, L.cheats],
+    related: [L.gunStores, L.hat, L.griffinRange, L.weapons, L.loadout, L.cheats, L.uniqueWeapons],
   },
   {
     slug: "fast-and-furious-car",
@@ -2975,7 +2987,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "What is the dock door code at the crab lab in GTA 6?", answer: "0212. It's inside the safe and opens the shack at the end of the dock, where the Crabshack VF5 SMG and $10,000 in marked bills are." },
       { question: "Where is the Crabshack VF5 in GTA 6?", answer: "In the locked shack at the end of the dock at the crab research outpost in Pelican Valley. The code is 0212." },
     ],
-    related: [L.bankJobs, L.loadout, L.weapons, L.boat, L.jetSki, L.easterEggs, L.missingTourists, L.silencedPistol],
+    related: [L.bankJobs, L.loadout, L.weapons, L.boat, L.jetSki, L.easterEggs, L.missingTourists, L.silencedPistol, L.uniqueWeapons],
   },
   {
     slug: "silenced-pistol",
@@ -3002,7 +3014,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Derelict Spy Vessel in GTA 6?", answer: "Grounded at the tip of the south-eastern island in the Permit Keys. Take a boat or the helicopter from Southwind." },
       { question: "Can you get the silenced pistol early in GTA 6?", answer: "Yes. It's there in Chapter 1, so Jason can grab it as soon as he can roam." },
     ],
-    related: [L.nipper, L.stealth, L.focus, L.helicopter, L.southwindMap, L.wainkLocations, L.loadout, L.sniperRifle],
+    related: [L.nipper, L.stealth, L.focus, L.helicopter, L.southwindMap, L.wainkLocations, L.loadout, L.sniperRifle, L.uniqueWeapons],
   },
   {
     slug: "sniper-rifle",
@@ -3029,7 +3041,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How much is the SM-69 in GTA 6?", answer: "It costs $1,850 at an Expanded Ammu-Nation, but you can pick one up at the Key Lento radio tower in Chapter 1." },
       { question: "Is there a parachute at the Key Lento tower in GTA 6?", answer: "Yes. Climb the ladder above the balcony where the rifle is and the parachute is on the roof." },
     ],
-    related: [L.sm69, L.parachute, L.gunStores, L.loadout, L.cardsHub, L.wainkLocations, L.jasonsPlaceMap, L.silencedPistol],
+    related: [L.sm69, L.parachute, L.gunStores, L.loadout, L.cardsHub, L.wainkLocations, L.jasonsPlaceMap, L.silencedPistol, L.uniqueWeapons],
   },
   {
     slug: "missing-tourists",
@@ -3137,6 +3149,105 @@ export const quickGuides: QuickGuide[] = [
       { question: "Why didn't A Classic Blitz Play unlock in GTA 6?", answer: "You have to escape too. Get out of the red search area after the robbery." },
     ],
     related: [L.blitzTrophy, L.explosives, L.loseWanted, L.focus, L.twistWrist, L.robAtm, L.bankJobs, L.viceCity],
+  },
+  {
+    slug: "safe-codes",
+    title: "GTA 6 Safe Codes: Kingpin Bowling 0300 and Every Gang Hideout Code",
+    heading: "All safe codes",
+    description:
+      "GTA 6 safe codes: Kingpin Bowling 0300, Brooks Boatworks 6823, La Cascara Motel 6969, JanJak's Garage 4444 and more, plus where the clues are. Unofficial.",
+    keywords: ["GTA 6 safe codes", "GTA 6 Kingpin Bowling safe code", "GTA 6 bowling alley safe code", "GTA 6 Brooks Boatworks code", "GTA 6 La Cascara Motel code", "GTA 6 JanJak's Garage code", "GTA 6 illegal operations safe codes"],
+    kind: "money",
+    answer: [
+      "The three Kolt & Associates hideouts in Port Gellhorn open in Chapter 2: Kingpin Bowling is 0300, Brooks Boatworks is 6823 and La Cascara Motel is 6969.",
+      "All three codes are on one map of Port Gellhorn in the Brooks Boatworks office. Slip in through the hole in the fence, climb the outside stairs of the small grey building on the east side and inspect the wall map with L2 or LT. The note by the bowling alley safe points you there.",
+      "You don't have to find a clue first. Type a code you already know and the safe opens. Once you've read a clue, the game shows the code when you're at the safe.",
+      "No code? Sticky bombs open most safes, but they bring the police. Bank vault codes are different in every game, so those come from the staff instead.",
+    ],
+    facts: [
+      { label: "Kingpin Bowling", value: "0300 (Port Gellhorn)" },
+      { label: "Brooks Boatworks", value: "6823 (Port Gellhorn)" },
+      { label: "La Cascara Motel", value: "6969 (Port Gellhorn)" },
+      { label: "JanJak's Garage", value: "4444 (note on the fridge)" },
+      { label: "Sunrise RV Park", value: "6769 (dock building)" },
+      { label: "Nova Auto Junkyard", value: "7777" },
+      { label: "Farm Fix Meth Lab", value: "2121" },
+      { label: "Illegal Sneaker Trade", value: "4124" },
+      { label: "Casa Guardia", value: "1965" },
+      { label: "Saber Shipping Yard", value: "8046" },
+      { label: "Saber Shipping Facility", value: "Sources differ" },
+      { label: "Crab outpost", value: "Safe 0072, dock 0212" },
+      { label: "Lab Fees", value: "Lab door 0420, Brian's lockup 7700" },
+    ],
+    faqs: [
+      { question: "What is the Kingpin Bowling safe code in GTA 6?", answer: "0300. The clue is on the wall map in the Brooks Boatworks office, but you can type the code straight away." },
+      { question: "Where is the bowling alley safe code in GTA 6?", answer: "On a map of Port Gellhorn on the wall of the Brooks Boatworks office, in the small grey building on the east side. Inspect it with L2 or LT." },
+      { question: "What is the Brooks Boatworks safe code in GTA 6?", answer: "6823. The same wall map also gives La Cascara Motel (6969) and Kingpin Bowling (0300)." },
+      { question: "What is the La Cascara Motel safe code in GTA 6?", answer: "6969." },
+      { question: "What is the JanJak's Garage safe code in GTA 6?", answer: "4444. It's on a note stuck to the fridge, and the safe holds around $2,200." },
+      { question: "Do you need to find the clue to open a safe in GTA 6?", answer: "No. Enter a code you already know and the safe opens. Without a code, sticky bombs work but draw the police." },
+    ],
+    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons],
+    sources: safeCodesSources,
+  },
+  {
+    slug: "unique-weapons",
+    title: "GTA 6 Unique Weapons: Where to Find the Early Gold Guns",
+    heading: "Unique weapons",
+    description:
+      "Where to find GTA 6 unique weapons early: Smuggler Gorse 425, Swamp Bait Akulus, Cruel Huntsman's SM-69, Drug Mule KZ-59, Turnt Nipper .38 and more. Unofficial.",
+    keywords: ["GTA 6 unique weapons", "GTA 6 legendary weapons", "GTA 6 gold guns", "GTA 6 unique weapon locations", "GTA 6 Swamp Bait Akulus", "GTA 6 Cruel Huntsman SM-69", "GTA 6 Drug Mule KZ-59", "GTA 6 Turnt Nipper"],
+    kind: "weapon",
+    answer: [
+      "Unique weapons are one-off versions of normal guns with their own name, look and fixed attachments. You can't modify them, but once you pick one up it's yours: if you lose it, Jason or Lucia can take it back out of a weapon locker at any Ammu-Nation.",
+      "Permit Keys: the Smuggler Gorse 425 shotgun lies on the sand by a tilted smuggler boat on the northernmost island, and the Assassin Nipper .38 is in the Derelict Spy Vessel. Off the north coast of the Riquezas Keys, dive under the sunken speedboat marked by floating drug packages for the Drug Mule KZ-59. In north-west Key Lento, the Unpacked Comshot 12 is behind an upstairs bathroom door.",
+      "Pelican Valley swamp: one ruined hunter's cabin holds two, the Swamp Bait Akulus revolver on the floor and the Cruel Huntsman's SM-69 sniper on the boardwalk. The Crabshack VF5 is at the crab outpost. In Wetman Bay, the Kingfishers Fishing Shacks hideout has the Kingfishers W-22 with a scope and suppressor, and the Manatee Motel hideout has the Kingfishers Laird 350.",
+      "Elsewhere: the Conspiracist Type 9 is in the trailer bunker in Balsero. The Turnt Nipper .38 is in a crashed paramotor stuck in a tree at Bobcat Bight; shoot it down. Near Hamlet, drive a wounded hunter to the hospital for the Hunter's Laird 350. In Chapter 1's Don Gone, open the trunk of Donnie's car for Donnie's H&L .38 before you get rid of the car, or it's gone.",
+      "Port Gellhorn (Chapter 2): the Gutterball Moreland 850 is on the pool table at Kingpin Bowling, the Scrapper VF5C on the top floor of La Cascara Motel and the Clunker 556 at Brooks Boatworks. Shoot down the couch hanging from a tree off Tanglewood Lane and sit on it for the Couch Potato Mustang .357.",
+    ],
+    facts: [
+      { label: "Keep them?", value: "Yes, back out of any weapon locker" },
+      { label: "Modify?", value: "No, attachments are fixed" },
+      { label: "Missable", value: "Donnie's H&L .38 (Don Gone)" },
+      { label: "Two in one trip", value: "Pelican Valley hunter's cabin" },
+    ],
+    faqs: [
+      { question: "Do you keep unique weapons in GTA 6?", answer: "Yes. Once picked up they stay yours. If you lose one, take it back out of a weapon locker at any Ammu-Nation." },
+      { question: "Can you modify unique weapons in GTA 6?", answer: "No. They come with fixed attachments, like the scope and suppressor on the Kingfishers W-22." },
+      { question: "Where is the Swamp Bait Akulus in GTA 6?", answer: "On the floor of a ruined hunter's cabin in the Pelican Valley swamp. The Cruel Huntsman's SM-69 is on the boardwalk of the same cabin." },
+      { question: "Where is the Drug Mule KZ-59 in GTA 6?", answer: "Underwater, under a sunken speedboat off the north coast of the Riquezas Keys. Floating drug packages mark the spot." },
+      { question: "Where is the Turnt Nipper .38 in GTA 6?", answer: "In a crashed paramotor caught in a tree at Bobcat Bight. Shoot the lines to bring it down, then search the wreck." },
+      { question: "Which unique weapon can you miss in GTA 6?", answer: "Donnie's H&L .38. It's in the trunk of Donnie's car during Don Gone in Chapter 1. Take it before you get rid of the car." },
+    ],
+    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap],
+    sources: uniqueWeaponsSources,
+  },
+  {
+    slug: "shotgun",
+    title: "GTA 6 Shotgun Location: Get One Early Without Buying It",
+    heading: "Early shotguns",
+    description:
+      "Where to get a shotgun early in GTA 6 without paying: the Smuggler Gorse 425 in the Permit Keys and the Unpacked Comshot 12 in Key Lento. Unofficial.",
+    keywords: ["GTA 6 shotgun location", "GTA 6 shotgun early", "GTA 6 Smuggler Gorse 425", "GTA 6 Unpacked Comshot 12", "GTA 6 best shotgun early", "GTA 6 where to find shotgun"],
+    kind: "weapon",
+    answer: [
+      "Take a boat from Southwind to the northernmost island of the Permit Keys, east of Mile Zero Air Station. The Smuggler Gorse 425, a unique stubby shotgun, lies on the sand next to a tilted, abandoned smuggler boat. It saves the $850 a Gorse 425 costs at Ammu-Nation.",
+      "For a semi-auto, go to a house on the north-west coast of Key Lento. The Unpacked Comshot 12 is behind the door of the upstairs en-suite bathroom; a note on the kitchen counter hints at it. The store Comshot 12 costs $3,825.",
+      "In Chapter 2, the Kingpin Bowling hideout in Port Gellhorn has the Gutterball Moreland 850 pump shotgun on its pool table.",
+      "All three are unique weapons, so you keep them. If you lose one, take it back out of a weapon locker at any Ammu-Nation.",
+    ],
+    facts: [
+      { label: "Smuggler Gorse 425", value: "Northernmost Permit Keys island" },
+      { label: "Unpacked Comshot 12", value: "North-west Key Lento house" },
+      { label: "Gutterball Moreland 850", value: "Kingpin Bowling, Chapter 2" },
+    ],
+    faqs: [
+      { question: "Where can you get a shotgun early in GTA 6?", answer: "The Smuggler Gorse 425 is on the sand by an abandoned smuggler boat on the northernmost Permit Keys island, east of Mile Zero Air Station." },
+      { question: "Where is the Unpacked Comshot 12 in GTA 6?", answer: "Behind the upstairs en-suite bathroom door of a house on the north-west coast of Key Lento." },
+      { question: "Where is the Gutterball shotgun in GTA 6?", answer: "On the pool table at the Kingpin Bowling hideout in Port Gellhorn, from Chapter 2. The safe there is 0300." },
+    ],
+    related: [L.uniqueWeapons, L.gorse425, L.comshot12, L.moreland850, L.southwindMap, L.boat, L.safeCodes, L.silencedPistol],
+    sources: shotgunSources,
   },
   {
     slug: "weather",
