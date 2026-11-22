@@ -30,7 +30,7 @@ export default function Gta6LaunchPage() {
   const festival = festivalTile();
   const next: { href: string; title: string; image?: string; line?: string; kind?: string }[] = [
     ...pickHubs(["map", "missions", "money", "weapons"]),
-    { href: "/launch", title: "Editions", image: "/images/official/editions/ultimate_edition_01.webp" },
+    { href: "/launch", title: "GTA 6 Editions", image: "/images/official/editions/ultimate_edition_01.webp" },
     {
       href: "/news/gta-vi-the-festival",
       title: festival.title,

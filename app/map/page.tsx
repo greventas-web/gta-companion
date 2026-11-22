@@ -5,9 +5,9 @@ import { getStaticPins } from "@/lib/map/catalog";
 import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
 import { SITE } from "@/lib/site";
 
-const title = "GTA 6 Map – Every Location (Interactive)";
+const title = "GTA 6 Map: Confirmed Leonida Locations";
 const description =
-  "Unofficial interactive GTA 6 map of Leonida and Vice City. Browse confirmed locations, landmarks, and in-game spots as they are added. Not affiliated with Rockstar Games.";
+  "Unofficial interactive Leonida map with confirmed locations. Unconfirmed spots stay off the map. Not affiliated with Rockstar Games.";
 
 export const metadata: Metadata = {
   title,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "/logo/og-night.jpg",
         width: 1200,
         height: 630,
-        alt: "GTA 6 Map – Every Location (Interactive), unofficial",
+        alt: "Unofficial interactive Leonida map with confirmed locations",
       },
     ],
   },
@@ -56,6 +56,9 @@ export default function MapPage() {
               Unofficial
             </p>
             <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Leonida map</h1>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-400">
+              Confirmed locations. Unconfirmed spots stay off the map until they are checked.
+            </p>
           </div>
           <p className="max-w-xl min-w-0 text-xs leading-5 text-zinc-400">
             Map tiles and landmarks by{" "}

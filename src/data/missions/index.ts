@@ -243,6 +243,7 @@ const baseStoryMissions: Mission[] = [
     "name": "Feng Shui",
     "type": "story",
     "region": "Leonida",
+    "mapPinId": "confirmed:jasons-place",
     "chapter": 1,
     "order": 10,
     "summary": "Chapter 1 (Just Like Paradise), mission 10. You can play some missions a little out of order.",

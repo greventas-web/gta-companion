@@ -42,6 +42,16 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  async rewrites() {
+    // Browsers request /favicon.ico directly. The icon already lives under
+    // /icons; this serves that file instead of a second copy.
+    return {
+      beforeFiles: [
+        { source: "/favicon.ico", destination: "/icons/favicon-night.ico" },
+      ],
+    };
+  },
+
   async redirects() {
     return [
       {

@@ -941,7 +941,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you solve the Feng Shui puzzle in GTA 6?", answer: "On a fresh Tenebrae Lux board, move the bottom-left tower up, the middle tower down, then the top-right tower down." },
       { question: "Can you play Tenebrae Lux again in GTA 6?", answer: "Yes. After Feng Shui you can play the console games on the TV at Jason's place." },
     ],
-    related: [L.fengShuiMission, L.jasonsPlace, L.railing, L.missions],
+    related: [L.fengShuiMission, L.jasonsPlace, L.jasonsPlaceMap, L.railing, L.missions],
   },
   {
     slug: "island-dreams",

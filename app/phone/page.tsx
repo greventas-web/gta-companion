@@ -10,7 +10,7 @@ import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   'GTA 6 phone apps',
-  'Unofficial GTA 6 phone apps: Snapmatic, Ryde Me, WAiNK and more.'
+  'Unofficial GTA 6 phone apps, including Snapmatic, Ryde Me and WAiNK. Not affiliated with Rockstar Games.'
 );
 
 const items = phoneItems;
