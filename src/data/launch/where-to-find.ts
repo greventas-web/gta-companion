@@ -284,6 +284,7 @@ export const whereToFindTopics: WhereTopic[] = [
         heading: "Outside Vice City",
         places: [
           { name: "Pawn & Gun – Port Gellhorn", area: "Port Gellhorn", detail: "Standard", pin: pin("pawn-and-gun-port-gellhorn") },
+          { name: "Gellhorn Outfitters", area: "Port Gellhorn", detail: "Standard", areaPin: pin("port-gellhorn") },
           { name: "Tactical Outlet Guns", area: "Belville", detail: "Standard", areaPin: pin("belville") },
           { name: "Biff’s Gun Supply", area: "Ambrosia", detail: "Standard", areaPin: pin("ambrosia") },
           { name: "Rusty Willis Jr. Hunting Supplies", area: "Mount Kalaga National Park", detail: "Hunting", areaPin: pin("mount-kalaga-national-park") },

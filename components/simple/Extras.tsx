@@ -34,6 +34,7 @@ export function ExtraGrids({ category }: { category: ExtraCategory }) {
               href={extraHref(category, entry)}
               title={entry.name}
               image={entry.image ?? imageForPath(extraHref(category, entry))?.src}
+              imageAlt={entry.imageAlt}
               eyebrow={entry.meta}
               price={entry.price}
               mapPin={entry.pin}
@@ -67,7 +68,7 @@ export function ExtraDetail({ category, entry }: { category: ExtraCategory; entr
       eyebrow={entry.meta}
       title={entry.name}
       image={entry.image}
-      imageAlt={entry.name}
+      imageAlt={entry.imageAlt ?? entry.name}
       summary={entry.summary}
       price={entry.price}
       facts={entry.facts}
@@ -77,6 +78,7 @@ export function ExtraDetail({ category, entry }: { category: ExtraCategory; entr
         href: `/${category}/${item.slug}`,
         title: item.name,
         image: item.image,
+        imageAlt: item.imageAlt,
         eyebrow: item.meta,
         small: true,
       }))}

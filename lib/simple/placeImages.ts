@@ -20,6 +20,22 @@ const paynsprayGarage: PlaceImage = {
   src: `${F}/places/pay-n-spray-hamlet-garage.webp`,
   alt: "The Imponte Phoenix inside the Pay 'n' Spray in Hamlet",
 };
+const mosesSell: PlaceImage = {
+  src: `${F}/money-methods/sell-cars-to-moses.webp`,
+  alt: "Moses standing in a garage doorway beside a prompt to sell a Shifter",
+};
+const starlet: PlaceImage = {
+  src: `${F}/properties/starlet-motel.webp`,
+  alt: "The Starlet Motel sign beside the road, with the motel office behind it",
+};
+const sarenas: PlaceImage = {
+  src: `${F}/places/sarenas-bargain-store.webp`,
+  alt: "Inside Sarena's Bargain Store, with a sale sign, clothes racks, and snack shelves",
+};
+const gellhorn: PlaceImage = {
+  src: `${F}/places/gellhorn-outfitters.webp`,
+  alt: "Inside Gellhorn Outfitters, with the shop banner behind the counter and rifles on the wall",
+};
 
 const PLACE_IMAGES: Record<string, PlaceImage> = {
   "/where-to-find/gun-stores": bigShots,
@@ -77,6 +93,28 @@ const PLACE_IMAGES: Record<string, PlaceImage> = {
   "/clothing": {
     src: `${O}/editions/ultimate_edition_vice_city_style_01.webp`,
     alt: "Vice City Style clothing (official Rockstar image)",
+  },
+  // Gameplay stills, 22 Nov 2026. Our own footage of these exact places.
+  "/businesses/watkins-auto-parts": {
+    src: `${F}/businesses/watkins-auto-parts.webp`,
+    alt: "The Watkins Auto Parts building, with a van parked at the open garage door",
+  },
+  "/money-methods/sell-cars-to-moses": mosesSell,
+  "/activities/stealing-cars-to-sell": mosesSell,
+  "/properties/starlet-motel": starlet,
+  "/businesses/starlet-motel": starlet,
+  "/phone/banking-app": {
+    src: `${F}/phone/banking-app.webp`,
+    alt: "The BuckMe logo on the in-game phone",
+  },
+  "/where-to-find/convenience-stores": sarenas,
+  "/where-to-find/convenience-stores/sarenas-bargain-store": sarenas,
+  "/money-methods/store-robberies": sarenas,
+  "/ammu-nation-locations/gellhorn-outfitters": gellhorn,
+  "/where-to-find/gun-stores/gellhorn-outfitters": gellhorn,
+  "/where-to-find/pay-n-spray/salton": {
+    src: `${F}/places/pay-n-spray-salton.webp`,
+    alt: "The Pay 'n' Spray garage in Salton, with a yellow Pegassi Charred Toros in the service bay",
   },
 };
 

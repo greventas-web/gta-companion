@@ -29,13 +29,17 @@ export default async function AmmuStorePage({ params }: Props) {
   if (!store) notFound();
   const nearby = ammuStores.filter((item) => item.county === store.county && item.slug !== store.slug).slice(0, 4);
 
+  const photo = imageForPath(`/ammu-nation-locations/${store.slug}`);
+  const pinPhoto = store.exactPin ? imageForPin(store.pin) : undefined;
+
   return (
     <PageShell>
       <SimpleDetail
         crumbs={[{ label: "Home", href: "/" }, { label: "Ammu-Nation", href: "/ammu-nation-locations" }, { label: store.name }]}
         eyebrow="Gun store"
         title={store.name}
-        image={imageForPath(`/ammu-nation-locations/${store.slug}`)?.src ?? (store.exactPin ? imageForPin(store.pin).src : undefined)}
+        image={photo?.src ?? pinPhoto?.src}
+        imageAlt={photo?.alt ?? pinPhoto?.alt}
         summary={`In ${store.area}.`}
         facts={[
           { label: "Stock", value: store.inventory },

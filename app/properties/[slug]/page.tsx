@@ -44,7 +44,7 @@ export default async function PropertiesDetailPage({ params }: Props) {
         eyebrow={item.type}
         title={item.name}
         image={item.image}
-        imageAlt={item.image ? item.name : undefined}
+        imageAlt={item.imageAlt ?? (item.image ? item.name : undefined)}
         summary={item.summary}
         price={item.price}
         facts={[{ label: "Type", value: item.type }, { label: "Where", value: item.area }, { label: "Edition", value: /not an edition/i.test(item.edition) ? "" : item.edition }, { label: "How to get", value: shortText(item.howToGet, 1) }]}

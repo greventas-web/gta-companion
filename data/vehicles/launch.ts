@@ -295,6 +295,32 @@ export const launchVehicles: Vehicle[] = [
     source: "https://www.powerpyx.com/gta-6-money-guide-how-to-get-money-fast/",
     sourceLabel: "PowerPyx, money guide",
   },
+  {
+    id: 601,
+    slug: "pegassi-charred-toros",
+    name: "Pegassi Charred Toros",
+    manufacturer: "Pegassi",
+    category: "Super",
+    image: "/images/footage/vehicles/pegassi-charred-toros.webp",
+    imageAlt: "A yellow and black Pegassi Charred Toros parked on the grass beside a street",
+    description: "A Pegassi supercar.",
+    firstAppearance: "Grand Theft Auto VI",
+    status: "Confirmed",
+    gallery: [],
+  },
+  {
+    id: 602,
+    slug: "vapid-shifter",
+    name: "Vapid Shifter",
+    manufacturer: "Vapid",
+    category: "Van",
+    image: "/images/footage/vehicles/vapid-shifter.webp",
+    imageAlt: "A light gray Vapid Shifter van on a highway with the driver door open",
+    description: "A Vapid van.",
+    firstAppearance: "Grand Theft Auto VI",
+    status: "Confirmed",
+    gallery: [],
+  },
 ];
 
 /** Existing pre-launch entries now confirmed by the launch-day cheat list. */

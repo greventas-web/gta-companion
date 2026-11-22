@@ -36,6 +36,7 @@ export type PropertyRecord = {
   map: PropertyMapLink;
   /** Real in-game still of this property, from our own footage. */
   image?: string;
+  imageAlt?: string;
 };
 
 export const rockstarEditions = {
@@ -247,6 +248,8 @@ properties.push(
   {
     slug: "starlet-motel",
     name: "Starlet Motel",
+    image: "/images/footage/properties/starlet-motel.webp",
+    imageAlt: "The Starlet Motel sign beside the road, with the motel office behind it",
     type: "Hideout",
     region: "Kelly County",
     area: "Historic Route 628, Kelly County",

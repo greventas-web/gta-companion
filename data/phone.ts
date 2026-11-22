@@ -21,6 +21,7 @@ export type PhoneItem = {
   links: readonly { href: string; label: string }[];
   /** Real in-game still of this app, from our own footage. */
   image?: string;
+  imageAlt?: string;
 };
 
 const famitsuAndTranslation = famitsuSources;
@@ -165,6 +166,8 @@ export const phoneItems: PhoneItem[] = [
   {
     slug: "banking-app",
     name: "BuckMe",
+    image: "/images/footage/phone/banking-app.webp",
+    imageAlt: "The BuckMe logo on the in-game phone",
     group: "App",
     kind: "Banking app",
     origin: "Launch",

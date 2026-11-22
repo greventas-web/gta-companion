@@ -171,8 +171,8 @@ export default function SimpleCard({
   const kind = kindProp ?? kindFromHref(href);
   const shortLine = oneLine(line);
   const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
-  const placeImage = href ? imageForPath(href.split("#")[0])?.src : undefined;
-  const resolved = resolveCardImage({ image: image ?? placeImage, title, kind });
+  const place = href ? imageForPath(href.split("#")[0]) : undefined;
+  const resolved = resolveCardImage({ image: image ?? place?.src, title, kind });
   const isArt = resolved.source === "art";
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);
@@ -190,7 +190,7 @@ export default function SimpleCard({
       {resolved.src ? (
         <Image
           src={resolved.src}
-          alt={isArt ? `Artwork: ${title}` : imageAlt || title}
+          alt={isArt ? `Artwork: ${title}` : imageAlt || place?.alt || title}
           fill
           sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
           className="object-cover transition duration-500 group-hover:scale-105"
