@@ -10,6 +10,8 @@ export const moneyMethods: LaunchEntry[] = [
   {
     slug: "sell-cars-to-moses",
     title: "Sell stolen cars to Moses",
+    image: "/images/footage/money-methods/sell-cars-to-moses.webp",
+    imageAlt: "Moses standing in a garage doorway beside a prompt to sell a Shifter",
     price: "$1,000–$10,000+",
     summary:
       "From Chapter 2, steal a car with no tracker and sell it to Moses in Port Gellhorn. Scan cars with the WAiNK app to check.",
@@ -85,6 +87,8 @@ export const moneyMethods: LaunchEntry[] = [
   {
     slug: "store-robberies",
     title: "Rob convenience stores",
+    image: "/images/footage/places/sarenas-bargain-store.webp",
+    imageAlt: "Inside Sarena's Bargain Store, with a sale sign, clothes racks, and snack shelves",
     summary:
       "From Chapter 1, point a gun at the clerk and empty the register. Some have a back-room safe too.",
     details: [

@@ -41,7 +41,7 @@ export default async function PhoneDetailPage({ params }: Props) {
         eyebrow={item.kind}
         title={item.name}
         image={item.image}
-        imageAlt={item.image ? item.name : undefined}
+        imageAlt={item.imageAlt ?? (item.image ? item.name : undefined)}
         summary={item.description}
         facts={[{ label: "Type", value: item.kind }]}
         mapHref={map}
