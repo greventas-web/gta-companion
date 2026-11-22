@@ -5,7 +5,7 @@ import ViewOnMap from "@/components/map/ViewOnMap";
 import PageShell from "@/components/PageShell";
 import SimpleDetail from "@/components/simple/SimpleDetail";
 import { properties } from "@/data/properties";
-import { staticMapHref } from "@/lib/map/catalog";
+import { getStaticPins, staticMapHref } from "@/lib/map/catalog";
 import { detailMetadata } from "@/lib/pages";
 import { shortText } from "@/lib/simple/text";
 
@@ -31,7 +31,12 @@ export default async function PropertiesDetailPage({ params }: Props) {
   const item = items.find((entry) => entry.slug === slug);
   if (!item) notFound();
   
-  const map = item.map.kind === "area" ? `/map?pin=${encodeURIComponent(item.map.pinId)}` : staticMapHref("property", item.slug);
+  const mapLink = item.map.kind === "area"
+    ? { href: `/map?pin=${encodeURIComponent(item.map.pinId)}`, area: true, pinId: item.map.pinId }
+    : { href: staticMapHref("property", item.slug), area: false, pinId: "" };
+  const pinned = mapLink.area ? getStaticPins().find((entry) => entry.id === mapLink.pinId) : undefined;
+  const opensArea = mapLink.area && (!pinned || pinned.role === "area");
+  const map = mapLink.href;
   const related = [
     ...items.filter((entry) => entry.slug !== item.slug && entry.type === item.type),
     ...items.filter((entry) => entry.slug !== item.slug && entry.type !== item.type),
@@ -44,12 +49,12 @@ export default async function PropertiesDetailPage({ params }: Props) {
         eyebrow={item.type}
         title={item.name}
         image={item.image}
-        imageAlt={item.image ? item.name : undefined}
+        imageAlt={item.imageAlt ?? (item.image ? item.name : undefined)}
         summary={item.summary}
         price={item.price}
         facts={[{ label: "Type", value: item.type }, { label: "Where", value: item.area }, { label: "Edition", value: /not an edition/i.test(item.edition) ? "" : item.edition }, { label: "How to get", value: shortText(item.howToGet, 1) }]}
         mapHref={map}
-        mapLabel={item.map.kind === "area" ? "Find the area on map" : undefined}
+        mapLabel={opensArea ? "Find the area on map" : mapLink.area ? "Find on map" : undefined}
         links={item.links}
         related={related.map((entry) => ({
           href: `/properties/${entry.slug}`,

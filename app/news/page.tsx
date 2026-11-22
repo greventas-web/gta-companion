@@ -8,7 +8,7 @@ import { shortDate } from "@/lib/simple/text";
 
 export const metadata = pageMetadata(
   "GTA 6 news",
-  "Unofficial GTA 6 news: trailers, launch, music and site updates."
+  "Unofficial GTA 6 news: Rockstar trailers, the launch, the album and site updates. Not affiliated with Rockstar Games."
 );
 
 export default function NewsPage() {

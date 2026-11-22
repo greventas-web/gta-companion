@@ -8,9 +8,9 @@ import { pageMetadata } from "@/lib/launch";
 import { vehicleImages } from "@/lib/media/catalog";
 import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
-const launchTitle = "Editions";
+const launchTitle = "GTA 6 Editions";
 const launchDescription =
-  "Unofficial GTA VI editions guide: Standard and Ultimate prices, the Vintage Vice City Pack, and every Ultimate Edition vehicle, weapon and shop. Not affiliated with Rockstar Games or Take-Two.";
+  "Unofficial GTA 6 Editions: Standard and Ultimate prices and the Vintage Vice City Pack. Not affiliated with Rockstar Games.";
 
 export const metadata = pageMetadata(launchTitle, launchDescription);
 
@@ -122,7 +122,7 @@ function weaponCard(slug: string) {
 export default function LaunchPage() {
   return (
     <PageShell>
-      <SimpleHero title="Editions" image="/images/official/editions/ultimate_edition_rideout_customs_01.webp" />
+      <SimpleHero title="GTA 6 Editions" image="/images/official/editions/ultimate_edition_rideout_customs_01.webp" />
 
       <QuickFacts
         facts={[

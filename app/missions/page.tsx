@@ -5,13 +5,13 @@ import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero, TrackProgress } from "@/components/simple/SimpleCard";
 import { launchMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
-import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import { MISSION_TYPE_LABEL, editionMissions, missions, sideMissions, storyChapters } from "@/src/data/missions";
 import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 const title = "GTA 6 Missions List – Story Missions";
-const description = `Unofficial, spoiler-safe GTA 6 missions list. Story missions in order for Chapters 1 to 3, plus Strangers & Freaks side missions. Later chapters stay hidden, and plot and rewards stay hidden until you tap to reveal. ${UNOFFICIAL_DISCLAIMER}`;
+const description =
+  "Unofficial spoiler-safe GTA 6 missions: Chapters 1 to 3 in order, plus side missions. Later chapters stay hidden. Not affiliated with Rockstar Games.";
 
 export const metadata: Metadata = {
   ...launchMetadata(title, description),
@@ -89,7 +89,7 @@ export default function MissionsPage() {
       </CardGrid>
 
       <p className="mt-10 text-sm text-zinc-500">Chapters 4 and 5 stay hidden so nothing gets spoiled.</p>
-      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "replay-missions", "switch-characters", "fix-railing", "beginner-tips", "lab-fees-codes", "pipework", "hey-arnold", "feng-shui", "island-dreams", "pick-up-groceries", "new-game", "how-many-chapters", "unwanted-attention", "just-a-scratch", "bank-jobs", "relationship", "call-partner"])} />
+      <QuickGuideGrid guides={quickGuideCards(["how-to-save", "replay-missions", "switch-characters", "fix-railing", "beginner-tips", "lab-fees-codes", "pipework", "hey-arnold", "missing-tourists", "feng-shui", "island-dreams", "pick-up-groceries", "new-game", "how-many-chapters", "unwanted-attention", "just-a-scratch", "bank-jobs", "relationship", "call-partner"])} />
     </PageShell>
   );
 }

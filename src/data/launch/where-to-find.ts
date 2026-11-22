@@ -284,6 +284,7 @@ export const whereToFindTopics: WhereTopic[] = [
         heading: "Outside Vice City",
         places: [
           { name: "Pawn & Gun – Port Gellhorn", area: "Port Gellhorn", detail: "Standard", pin: pin("pawn-and-gun-port-gellhorn") },
+          { name: "Gellhorn Outfitters", area: "Port Gellhorn", detail: "Standard", areaPin: pin("port-gellhorn") },
           { name: "Tactical Outlet Guns", area: "Belville", detail: "Standard", areaPin: pin("belville") },
           { name: "Biff’s Gun Supply", area: "Ambrosia", detail: "Standard", areaPin: pin("ambrosia") },
           { name: "Rusty Willis Jr. Hunting Supplies", area: "Mount Kalaga National Park", detail: "Hunting", areaPin: pin("mount-kalaga-national-park") },
@@ -1344,7 +1345,7 @@ export const whereToFindTopics: WhereTopic[] = [
           { name: "Tiki Touchdown" },
           { name: "Manatee's Rest" },
           { name: "The Rusty Anchor Outdoor Bar", areaPin: pin("the-rusty-anchor") },
-          { name: "The Rusty Anchor", areaPin: pin("the-rusty-anchor") },
+          { name: "The Rusty Anchor", pin: pin("the-rusty-anchor") },
           { name: "Paradise RV Park Bar" },
           { name: "Nate's Bar" },
           { name: "The Pier Hotel Poolside Bar" },
@@ -1910,7 +1911,7 @@ export const whereToFindTopics: WhereTopic[] = [
       {
         heading: "Kelly County (2)",
         places: [
-          { name: "Uncle Jack's Liquor – Port Gellhorn", area: "Port Gellhorn", areaPin: pin("port-gellhorn") },
+          { name: "Uncle Jack's Liquor – Port Gellhorn", area: "Port Gellhorn", pin: pin("uncle-jacks-liquor") },
           { name: "Ambrosia Liquors" },
         ],
       },

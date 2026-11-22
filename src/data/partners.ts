@@ -47,6 +47,20 @@ export const partners: readonly Partner[] = [
       { label: "All guides", url: "https://gta6times.com/gta-6/guides" },
     ],
   },
+  {
+    name: "ZoneX",
+    url: "https://www.youtube.com/@ZoneXbez",
+    description: "GTA 6 videos from ZoneX on YouTube.",
+    category: "Creator",
+    rel: ["noopener", "noreferrer"],
+  },
+  {
+    name: "MisterCapTV",
+    url: "https://www.youtube.com/@MistercapTV",
+    description: "Italian GTA 6 videos from MisterCapTV on YouTube.",
+    category: "Creator",
+    rel: ["noopener", "noreferrer"],
+  },
 ];
 
 export function partnerHref(url: string): string | null {

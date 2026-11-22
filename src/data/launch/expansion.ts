@@ -27,6 +27,7 @@ export type ExtraEntry = {
   meta?: string;
   price?: string;
   image?: string;
+  imageAlt?: string;
   /** confirmed:<id> map pin. */
   pin?: string;
   facts?: { label: string; value: string }[];
@@ -86,7 +87,7 @@ const locations: ExtraEntry[] = [
 ];
 
 const businesses: ExtraEntry[] = [
-  { slug: "starlet-motel", name: "Starlet Motel", group: "Motels and hotels", meta: "Kelly County", pin: p("starlet-motel"), summary: "A motel on Historic Route 628, just east of Port Gellhorn. Jason and Lucia use it as a hideout in Chapter 2." },
+  { slug: "starlet-motel", name: "Starlet Motel", group: "Motels and hotels", meta: "Kelly County", image: "/images/footage/properties/starlet-motel.webp", imageAlt: "The Starlet Motel sign beside the road, with the motel office behind it", pin: p("starlet-motel"), summary: "A motel on Historic Route 628, just east of Port Gellhorn. Jason and Lucia use it as a hideout in Chapter 2." },
   { slug: "allied-crystal-sugar-refinery", name: "Allied Crystal sugar refinery", group: "Industry", meta: "Ambrosia", pin: p("allied-crystal-sugar-refinery"), summary: "The sugar refinery that gives Ambrosia most of its jobs." },
   { slug: "delights", name: "Delights", group: "Bars and clubs", meta: "Port Gellhorn", pin: p("delights"), summary: "A strip club on Interstate 404 in Port Gellhorn." },
   { slug: "the-rusty-anchor", name: "The Rusty Anchor", group: "Bars and clubs", meta: "Key Lento", pin: p("the-rusty-anchor"), summary: "A bar in Key Lento that you can walk into." },
@@ -96,7 +97,7 @@ const businesses: ExtraEntry[] = [
   { slug: "boone-speedway", name: "Boone Speedway", group: "Race venues", meta: "Racing", summary: "A speedway. Its wins count toward the Repair Vehicle cheat.", links: [{ href: "/cheats/player-cheats/repair-vehicle", label: "Repair Vehicle cheat" }] },
   { slug: "fleeca", name: "Fleeca", group: "Chains", meta: "Bank", summary: "A bank chain. Its branches pay far more than small stores when robbed." },
   { slug: "pay-n-spray", name: "Pay 'n' Spray", group: "Chains", meta: "19 shops", summary: "Repaint your car to lose the cops, or sell older cars here.", links: [{ href: "/where-to-find/pay-n-spray", label: "All 19 Pay 'n' Spray shops" }] },
-  { slug: "watkins-auto-parts", name: "Watkins Auto Parts", group: "Chains", meta: "Port Gellhorn", pin: p("pay-n-spray-port-gellhorn"), summary: "A Port Gellhorn auto parts shop with a Pay 'n' Spray." },
+  { slug: "watkins-auto-parts", name: "Watkins Auto Parts", group: "Chains", meta: "Port Gellhorn", image: "/images/footage/businesses/watkins-auto-parts.webp", imageAlt: "The Watkins Auto Parts building, with a van parked at the open garage door", pin: p("pay-n-spray-port-gellhorn"), summary: "A Port Gellhorn auto parts shop with a Pay 'n' Spray." },
 ];
 
 /** Tattoo studios: 10 plus Electric Fang (already on /stores). */
@@ -272,7 +273,7 @@ const activities: ExtraEntry[] = [
   { slug: "street-races", name: "Street races", group: "More things to do", meta: "40 races", summary: "There are 40 races in 6 groups, open from Chapter 1. Win for prize money.", links: [{ href: "/money-methods/street-races", label: "Race prize money" }] },
   { slug: "treasure-diving", name: "Treasure diving", group: "More things to do", meta: "Key Lento", image: "/images/footage/activities/treasure-diving.webp", pin: p("activity-scuba-leonida-keys"), summary: "Dive at shipwrecks off Key Lento for Kenton and sell what you find.", links: [{ href: "/money-methods/kenton-treasure-diving", label: "Treasure diving for Kenton" }] },
   { slug: "dates", name: "Dates", group: "More things to do", meta: "With your partner", summary: "Take your partner to bars, diners, coffee shops and rooftop restaurants." },
-  { slug: "stealing-cars-to-sell", name: "Stealing cars to sell", group: "More things to do", meta: "Moses and Randy", summary: "Steal cars on order and sell them to Moses or Randy, or sell older cars at a Pay 'n' Spray.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
+  { slug: "stealing-cars-to-sell", name: "Stealing cars to sell", group: "More things to do", meta: "Moses and Randy", image: "/images/footage/money-methods/sell-cars-to-moses.webp", imageAlt: "Moses standing in a garage doorway beside a prompt to sell a Shifter", summary: "Steal cars on order and sell them to Moses or Randy, or sell older cars at a Pay 'n' Spray.", links: [{ href: "/money-methods/sell-cars-to-moses", label: "Sell cars to Moses" }] },
 ];
 
 export const extras: Record<ExtraCategory, ExtraEntry[]> = {
