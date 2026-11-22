@@ -196,7 +196,7 @@ const characters: ExtraEntry[] = [
   { slug: "dunk-porter", name: "Dunk Porter", group: "Story characters", meta: "Fence", summary: "A Chapter 2 contact who buys drugs, jewelry and marked bills." },
   { slug: "yasmani-cabrera", name: "Yasmani Cabrera", group: "Story characters", meta: "Fence · Jewelry", summary: "Your jewelry buyer from early Chapter 3. He sends tips on stores to rob.", links: [{ href: "/money-methods/jewelry-store-robberies", label: "Rob jewelry stores" }] },
   { slug: "randy-kozlov", name: "Randy Kozlov", group: "Story characters", meta: "Car fence · Vice City", summary: "A car fence in western Vice City from mid Chapter 3. He wants high-end cars and pays more for clean ones.", links: [{ href: "/money-methods/randy-wish-list", label: "Randy's wish list" }] },
-  { slug: "wyman", name: "Wyman", group: "Ultimate Edition", meta: "Car collector", summary: "A car collector who asks you to find and restore abandoned classic cars. Ultimate Edition only.", links: [{ href: "/where-to-find/garages/paradise-garage", label: "Paradise Garage" }] },
+  { slug: "wyman", name: "Wyman", group: "Ultimate Edition", meta: "Car collector", summary: "A car collector who asks you to find and restore abandoned classic cars. Ultimate Edition only.", links: [{ href: "/where-to-find/garages/paradise-garage", label: "Paradise Garage" }, { href: "/guides/wyman-cars", label: "Wyman car locations" }] },
 ];
 
 const chain = (name: string, kind: string, where: string): ExtraEntry => ({
