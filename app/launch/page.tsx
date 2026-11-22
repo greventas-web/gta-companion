@@ -158,7 +158,7 @@ export default function LaunchPage() {
           <SimpleCard key={item.href} href={item.href} title={item.title} line={item.line} image={"image" in item ? item.image : undefined} />
         ))}
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["ultimate-edition", "platforms", "physical-copy"])} />
+      <QuickGuideGrid guides={quickGuideCards(["ultimate-edition", "wyman-cars", "platforms", "physical-copy"])} />
     </PageShell>
   );
 }

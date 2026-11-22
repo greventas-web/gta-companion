@@ -8,6 +8,7 @@
  */
 
 import { safeCodesSources, shotgunSources, uniqueWeaponsSources } from "@/src/data/launch/batch10-sources";
+import { cowboyHatSources, equipmentSources, finalFlushSources, meleeWeaponsSources, wymanCarsSources } from "@/src/data/launch/batch11-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -83,6 +84,7 @@ const TRACK_RACING = "/images/official/frames/track-racing.webp";
 const GYM = "/images/official/frames/gym-workout.webp";
 const STORE_ROBBERY = "/images/official/frames/store-robbery.webp";
 const GRASSRIVERS = "/images/official/locations/grassrivers.webp";
+const WYMAN_CARS = "/images/official/editions/ultimate_edition_wyman_car_collection_01.webp";
 
 const L = {
   save: { href: "/guides/how-to-save", title: "How to save", kind: "mission" },
@@ -325,6 +327,23 @@ const L = {
   moreland850: { href: "/weapons/fortune-son-moreland-850", title: "Fortune & Son Moreland 850", kind: "weapon" },
   balseroMap: { href: "/map?pin=confirmed%3Abalsero", title: "Balsero on the map", kind: "location" },
   laPerleMap: { href: "/map?pin=confirmed%3Ala-perle", title: "La Perle on the map", kind: "location" },
+  // Batch 11
+  meleeWeapons: { href: "/guides/melee-weapons", title: "Melee weapons", kind: "weapon" },
+  equipment: { href: "/guides/equipment", title: "All 12 equipment items", kind: "activity" },
+  wymanCars: { href: "/guides/wyman-cars", title: "Wyman's classic cars", image: WYMAN_CARS, imageAlt: "Wyman's Classic Car Collection, official Rockstar image", kind: "vehicle" },
+  cowboyHat: { href: "/guides/arthur-morgan-hat", title: "Arthur Morgan hat", kind: "clothing" },
+  finalFlush: { href: "/guides/final-flush", title: "Stamina upgrade (The Final Flush)", kind: "mission" },
+  wymanChar: { href: "/characters/wyman", title: "Wyman", kind: "character" },
+  paradiseGarage: { href: "/where-to-find/garages/paradise-garage", title: "Paradise Garage", kind: "garage" },
+  paradiseGarageMap: { href: "/map?pin=confirmed%3Aparadise-garage", title: "Paradise Garage on the map", kind: "location" },
+  ambrosiaMap: { href: "/map?pin=confirmed%3Aambrosia", title: "Ambrosia on the map", kind: "location" },
+  bobcatKeyMap: { href: "/map?pin=confirmed%3Abobcat-key", title: "Bobcat Key on the map", kind: "location" },
+  tequestaMap: { href: "/map?pin=confirmed%3Atequesta", title: "Tequesta on the map", kind: "location" },
+  goneFishing: { href: "/missions/gone-fishing", title: "Gone Fishing", line: "Chapter 1", kind: "mission" },
+  meetTheHeders: { href: "/missions/meet-the-heders", title: "Meet the Heders", line: "Chapter 3", kind: "mission" },
+  boobieTime: { href: "/missions/boobie-time", title: "Boobie Time", line: "Chapter 3", kind: "mission" },
+  clothingHub: { href: "/clothing", title: "Clothing", kind: "clothing" },
+  electronics: { href: "/where-to-find/electronics-stores", title: "Electronics stores", kind: "phone" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -435,7 +454,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you get the key cloner in GTA 6?", answer: "It's a story unlock in the Chapter 3 mission Steal The Zorrusso For Randy. It installs on your phone and stays for good." },
       { question: "What does the key cloner do in GTA 6?", answer: "It opens and starts keyless cars, which you can't take any other way. The WAiNK app shows which cars need it." },
     ],
-    related: [L.zorrusso, L.randy, L.slimJim, L.waink, L.register, L.fastestCars, L.carTrackers],
+    related: [L.zorrusso, L.randy, L.slimJim, L.waink, L.register, L.fastestCars, L.carTrackers, L.equipment],
   },
   {
     slug: "first-person",
@@ -740,7 +759,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you get a slim jim in GTA 6?", answer: "Moses gives it to you in the Chapter 2 story mission Moses, which comes after Girls' Trip." },
       { question: "What does the slim jim do in GTA 6?", answer: "It opens locked cars without setting off the alarm. It can't start keyless cars." },
     ],
-    related: [L.moses, L.keyCloner, L.register, L.sellMoses, L.robCopCar, L.carTrackers],
+    related: [L.moses, L.keyCloner, L.register, L.sellMoses, L.robCopCar, L.carTrackers, L.equipment],
   },
   {
     slug: "call-your-car",
@@ -1682,7 +1701,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where are the Ultimate Edition guns in GTA 6?", answer: "In the weapon locker at any Ammu-Nation. Jason's personalized pistol is there in Chapter 1. Lucia's pistol and the Morgan revolvers unlock in Chapter 2." },
       { question: "Where are the Ultimate Edition vehicles at the start of GTA 6?", answer: "The Dinka Enduro and Crest Kayak are at Jason's house in Key Lento from Chapter 1. More vehicles unlock later in the story." },
     ],
-    related: [L.editions, L.jasonsPlace, L.gunStores, L.launchPage],
+    related: [L.editions, L.jasonsPlace, L.gunStores, L.launchPage, L.wymanCars],
   },
   {
     slug: "haircut",
@@ -2477,7 +2496,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you scan with WAiNK in GTA 6?", answer: "Hold Up on the D-pad to open the camera, then scan the animal, plant or object in front of you." },
       { question: "How many WAiNK scans do you need in GTA 6?", answer: "100 WAiNK locations unlock a trophy. Track them under Progress > Collections > WAiNK Locations." },
     ],
-    related: [L.wainkLocations, L.waink, L.usePhone, L.collectiblesHub, L.trophiesGuide],
+    related: [L.wainkLocations, L.waink, L.usePhone, L.collectiblesHub, L.trophiesGuide, L.wymanCars, L.finalFlush],
   },
   {
     slug: "horn",
@@ -2852,7 +2871,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Is there a dog on a jet ski in GTA 6?", answer: "Yes. If you swim far out to sea, a dog riding a jet ski can show up." },
       { question: "Where is the UFO house in GTA 6?", answer: "In Belville. It's the cream bungalow with two palm trees from the UFO photo in GTA: The Trilogy – The Definitive Edition. Its garage has a wall that reads \"IT'S A SIMULATION\"." },
     ],
-    related: [L.bigfoot, L.ufo, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace],
+    related: [L.bigfoot, L.ufo, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
   },
   {
     slug: "rob-police-car",
@@ -3219,7 +3238,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Turnt Nipper .38 in GTA 6?", answer: "In a crashed paramotor caught in a tree at Bobcat Bight. Shoot the lines to bring it down, then search the wreck." },
       { question: "Which unique weapon can you miss in GTA 6?", answer: "Donnie's H&L .38. It's in the trunk of Donnie's car during Don Gone in Chapter 1. Take it before you get rid of the car." },
     ],
-    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap],
+    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
     sources: uniqueWeaponsSources,
   },
   {
@@ -3248,6 +3267,162 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.uniqueWeapons, L.gorse425, L.comshot12, L.moreland850, L.southwindMap, L.boat, L.safeCodes, L.silencedPistol],
     sources: shotgunSources,
+  },
+  {
+    slug: "melee-weapons",
+    title: "GTA 6 Melee Weapons: All 9 Prices and Unique Knife Locations",
+    heading: "Melee weapons",
+    description:
+      "All 9 GTA 6 melee weapons with prices, where to buy them, and where to find the unique Shark, Tallaloko, Soldier's and Explorer's knives and the Dino Golf bat. Unofficial.",
+    keywords: ["GTA 6 melee weapons", "GTA 6 knife", "GTA 6 brass knuckles", "GTA 6 baton", "GTA 6 Shark Knife", "GTA 6 Tallaloko Knife", "GTA 6 Explorer's Knife", "GTA 6 Brontasaurus Bat", "GTA 6 baseball bat location"],
+    image: CHUCKS,
+    imageAlt: "Ammu-Nation sign at Chuck's Tackle & Shot",
+    kind: "weapon",
+    answer: [
+      "There are 9 standard melee weapons, and they count toward the weapons list like guns do. Ammu-Nation sells them: Brass Knuckles $95, Hunting Knife $125, Baton $160, Bushcraft Knife $230, EDC Knife $275, Combat Knife $285, Switchblade $290, Diving Knife $300 and Survival Knife $315.",
+      "Big Shots in Hamlet stocks all nine. Chuck's Tackle & Shot in Key Lento also sells the Hunting, Bushcraft and Diving knives.",
+      "Unique melee weapons are hidden in the world instead. The Buntosaurus Bat is in one of the batting cages on the right at Dino Golf, off SR-32 in Frogswater. The Soldier's Combat Knife is inside the hatch of a half-sunken tank on the west shore between Bobcat Bight and Bobcat Key.",
+      "The Shark Knife is stuck in the seabed beside a shark cage, in an underwater ravine north of the Saint Attaway Islands. The Tallaloko Knife is behind a locked door upstairs in the Evergreen cabin on the west side of Lake Tallaloko.",
+      "For the Explorer's Knife, go to Selkie Hole west of Emerald Springs, take the scuba gear and flashlight there, and follow the yellow guide line through the flooded cave. Unique weapons can't be modified, and you can take them back out of a weapon locker.",
+    ],
+    facts: [
+      { label: "Standard melee", value: "9, from $95 to $315" },
+      { label: "Cheapest", value: "Brass Knuckles, $95" },
+      { label: "All nine", value: "Big Shots, Hamlet" },
+      { label: "Unique", value: "Bat, Shark, Soldier's, Tallaloko and Explorer's knives" },
+    ],
+    faqs: [
+      { question: "How many melee weapons are in GTA 6?", answer: "9 standard melee weapons: Brass Knuckles, Hunting Knife, Baton, Bushcraft Knife, EDC Knife, Combat Knife, Switchblade, Diving Knife and Survival Knife. Unique knives and a bat are extra." },
+      { question: "Where do you buy knives in GTA 6?", answer: "At Ammu-Nation. Big Shots in Hamlet has all nine melee weapons, and Chuck's Tackle & Shot in Key Lento sells the Hunting, Bushcraft and Diving knives." },
+      { question: "Where is the Shark Knife in GTA 6?", answer: "On the seabed north of the Saint Attaway Islands, stuck in the ground beside a shark cage in an underwater ravine." },
+      { question: "Where is the Tallaloko Knife in GTA 6?", answer: "Behind a locked door on the upper floor of the Evergreen cabin, on the west side of Lake Tallaloko in East Lummox County." },
+      { question: "Where is the bat at Dino Golf in GTA 6?", answer: "The Buntosaurus Bat is in one of the batting cages on the right at Dino Golf, off SR-32 in Frogswater." },
+    ],
+    related: [L.uniqueWeapons, L.explosives, L.gunStores, L.weapons, L.hamlet, L.bobcatKeyMap, L.scuba, L.stealth],
+    sources: meleeWeaponsSources,
+  },
+  {
+    slug: "equipment",
+    title: "GTA 6 Equipment: All 12 Items and When You Unlock Them",
+    heading: "All 12 equipment items",
+    description:
+      "All 12 pieces of equipment in GTA 6 and when you get them, from the binoculars in Gone Fishing to the Pry Bar, Cut-Off Tool and Snap Gun in Chapter 3. Unofficial.",
+    keywords: ["GTA 6 equipment", "GTA 6 cut-off tool", "GTA 6 snap gun", "GTA 6 pry bar", "GTA 6 how to open SCOOP containers", "GTA 6 how to open locked doors", "GTA 6 how to open crates", "GTA 6 equipment list"],
+    kind: "activity",
+    answer: [
+      "There are 12 pieces of equipment, and most of them come with the story. You can see them in the Equipment tab under Progress.",
+      "Chapter 1: the Binoculars and Flashlight in Gone Fishing, the Duffel Bag for loot in Lab Fees, and the Metal Detector in Island Dreams. Headphones and masks are bought in stores once Gear Up lets you roam.",
+      "Chapter 2: Moses gives you the Slim Jim, which opens locked cars without the alarm.",
+      "Chapter 3: Meet the Heders gives you the Pry Bar for sealed wooden crates and the Cut-Off Tool for yellow SCOOP containers. Yasmani gives you the Snap Gun for his jewelry jobs after Boobie Time; it opens locked doors without the alarm. The Key Cloner comes in Steal The Zorrusso For Randy and the Dye Pack Jammer in Credit Check.",
+      "To use the Cut-Off Tool, hold R2 or RT and keep the indicator in the highlighted part until the lock breaks.",
+    ],
+    facts: [
+      { label: "Total", value: "12 items" },
+      { label: "Chapter 1", value: "Binoculars, Flashlight, Duffel Bag, Metal Detector" },
+      { label: "Buy", value: "Headphones and masks" },
+      { label: "Chapter 2", value: "Slim Jim" },
+      { label: "Chapter 3", value: "Pry Bar, Cut-Off Tool, Snap Gun, Key Cloner, Dye Pack Jammer" },
+    ],
+    faqs: [
+      { question: "How many pieces of equipment are in GTA 6?", answer: "12: Binoculars, Flashlight, Duffel Bag, Headphones, Pry Bar, Masks, Metal Detector, Slim Jim, Snap Gun, Cut-Off Tool, Key Cloner and Dye Pack Jammer." },
+      { question: "How do you get the Cut-Off Tool in GTA 6?", answer: "It comes in the Chapter 3 mission Meet the Heders. Use it on yellow SCOOP containers: hold R2 or RT and keep the indicator in the highlighted part." },
+      { question: "How do you get the Snap Gun in GTA 6?", answer: "Yasmani gives it to you for his jewelry jobs, after the Chapter 3 mission Boobie Time. It opens locked doors without setting off the alarm." },
+      { question: "How do you open wooden crates in GTA 6?", answer: "With the Pry Bar, which you get in the Chapter 3 mission Meet the Heders. It comes out by itself when you walk up to a sealed crate." },
+    ],
+    related: [L.meetTheHeders, L.boobieTime, L.slimJim, L.keyCloner, L.bankJobs, L.goneFishing, L.islandDreams, L.headphones, L.mask, L.loadout],
+    sources: equipmentSources,
+  },
+  {
+    slug: "wyman-cars",
+    title: "GTA 6 Wyman Car Locations: Transgressor, Riata and Mamba GT",
+    heading: "Wyman's classic cars",
+    description:
+      "Where to find the wrecks for Wyman's Classic Car Collection in GTA 6 (Ultimate Edition): 3 Transgressors, 3 Riatas and 4 Mamba GTs to scan with WAiNK. Unofficial.",
+    keywords: ["GTA 6 Wyman", "GTA 6 Wyman car locations", "GTA 6 Transgressor locations", "GTA 6 Riata locations", "GTA 6 Mamba GT locations", "GTA 6 classic car collection", "GTA 6 Ultimate Edition cars"],
+    image: WYMAN_CARS,
+    imageAlt: "Wyman's Classic Car Collection, official Rockstar image",
+    kind: "vehicle",
+    answer: [
+      "Wyman's Classic Car Collection is Ultimate Edition content. It starts in Chapter 2: after Thrillbillies, pick up the '67 Dominator from Paradise Garage in Watson Bay, and Wyman texts you about the first car. Track it on the map under Exploration, Find Cars for Wyman.",
+      "Scan each wreck with the WAiNK app: hold Up on the D-pad, then press R1 or RB. After the last scan, Wyman asks for $1,500 through BuckMe. Pay it, then collect the car at his scrapyard.",
+      "'67 Transgressor, all in Port Gellhorn: in the trailer park just north of Sarena's Bargain Store; in the open garage behind the blue house with a metal sunflower in the yard, opposite the Kolt & Associates stash house; and behind Dirt Merchants at the south tip of town, down the dirt track to the back fence.",
+      "'70 Riata, in the Keys: under a stilt house in Key Lento near the police; under a house at the end of a road near the Xero Gas station in Southwind; and behind the abandoned gas station just north of Grassrivers Cafe & Deli in Shoeless Keys.",
+      "'64 Mamba GT: in a farmhouse garage north of Leonida State Prison; in a garage down the alley beside the Xero Gas station in Ambrosia, next to a big blue garage door; half sunk in the pond just east of the Thrillbilly Mud Club dirt track; and under a collapsed bridge on the north coast near Bonanza and Buck Creek Country Store.",
+      "Register each car at a Pay 'n' Spray for $100 to keep it in your garage. If you don't, it goes back to Wyman's scrapyard, so you can't lose it. More cars follow after the Mamba GT.",
+    ],
+    facts: [
+      { label: "Edition", value: "Ultimate Edition" },
+      { label: "Starts", value: "Chapter 2, after the '67 Dominator" },
+      { label: "Wrecks to scan", value: "Transgressor 3, Riata 3, Mamba GT 4" },
+      { label: "Wyman's fee", value: "$1,500 per car, through BuckMe" },
+      { label: "Keep it", value: "Register at Pay 'n' Spray, $100" },
+    ],
+    faqs: [
+      { question: "How do you start Wyman's car collection in GTA 6?", answer: "You need the Ultimate Edition. In Chapter 2, after Thrillbillies, collect the '67 Dominator from Paradise Garage in Watson Bay. Wyman then texts you about the first car." },
+      { question: "Where are the Transgressor locations in GTA 6?", answer: "All three are in Port Gellhorn: the trailer park north of Sarena's Bargain Store, the garage behind the blue house with a metal sunflower opposite the Kolt & Associates stash house, and behind Dirt Merchants." },
+      { question: "Where are the Riata locations in GTA 6?", answer: "Under a stilt house in Key Lento near the police, under a house at the end of a road near the Xero Gas station in Southwind, and behind the abandoned gas station north of Grassrivers Cafe & Deli." },
+      { question: "Where are the Mamba GT locations in GTA 6?", answer: "A farmhouse garage north of Leonida State Prison, a garage in an alley by the Xero Gas station in Ambrosia, the pond east of the Thrillbilly Mud Club dirt track, and a collapsed bridge on the north coast near Bonanza." },
+      { question: "How much does Wyman charge in GTA 6?", answer: "$1,500 per car, paid through BuckMe once every wreck for that car is scanned. Registering the car at a Pay 'n' Spray costs another $100." },
+    ],
+    related: [L.ultimateEdition, L.wymanChar, L.paradiseGarage, L.wainkScans, L.buckMe, L.register, L.thrillbillies, L.portGellhornMap, L.southwindMap, L.ambrosiaMap, L.paradiseGarageMap],
+    sources: wymanCarsSources,
+  },
+  {
+    slug: "arthur-morgan-hat",
+    title: "GTA 6 Arthur Morgan Hat Location: The Cowboy Hat Yard Sale",
+    heading: "Arthur Morgan hat",
+    description:
+      "Where to find the Arthur Morgan hat in GTA 6: a yard sale in southern Port Gellhorn sells the Genuine Cowboy Hat, sitting on a guitar case by the couch. Unofficial.",
+    keywords: ["GTA 6 Arthur Morgan hat", "GTA 6 cowboy hat", "GTA 6 Genuine Cowboy Hat", "GTA 6 Red Dead hat", "GTA 6 yard sale", "GTA 6 RDR2 easter egg"],
+    kind: "clothing",
+    answer: [
+      "Drive to the south of Port Gellhorn and follow the roadside Yard Sale signs with balloons. The sale is in a small neighbourhood north-west of the Dirt Merchants shop.",
+      "Walk to the couch at the back of the driveway. The hat sits on a guitar case there. Buy it from the seller and it stays in your wardrobe.",
+      "The game calls it the Genuine Cowboy Hat, but it looks just like Arthur Morgan's hat from Red Dead Redemption 2. It's cheap, though the price can differ between games.",
+      "Port Gellhorn opens up in Chapter 2, so that's when you can grab it.",
+    ],
+    facts: [
+      { label: "In-game name", value: "Genuine Cowboy Hat" },
+      { label: "Where", value: "Yard sale, southern Port Gellhorn" },
+      { label: "Spot", value: "On a guitar case, on the couch" },
+      { label: "From", value: "Chapter 2" },
+    ],
+    faqs: [
+      { question: "Where is the Arthur Morgan hat in GTA 6?", answer: "At a yard sale in southern Port Gellhorn, north-west of Dirt Merchants. Follow the Yard Sale signs; the hat is on a guitar case on the couch at the back." },
+      { question: "Is it really Arthur Morgan's hat?", answer: "The game calls it the Genuine Cowboy Hat. It looks just like Arthur Morgan's hat from Red Dead Redemption 2, but the game doesn't say it was his." },
+      { question: "How much is the cowboy hat in GTA 6?", answer: "It's cheap, but players have seen different prices, so it may change between games." },
+    ],
+    related: [L.portGellhornMap, L.easterEggs, L.clothes, L.clothingHub, L.safeCodes, L.payNSprayGellhornMap],
+    sources: cowboyHatSources,
+  },
+  {
+    slug: "final-flush",
+    title: "GTA 6 The Final Flush: How to Get the Stamina Upgrade",
+    heading: "The Final Flush stamina upgrade",
+    description:
+      "How to get a permanent stamina upgrade in GTA 6: scan a No Flusher poster, reply TRUTH, meet Dr. Merle at Frank's Waffles and finish The Final Flush. Unofficial.",
+    keywords: ["GTA 6 stamina upgrade", "GTA 6 how to increase stamina", "GTA 6 The Final Flush", "GTA 6 No Flusher poster", "GTA 6 Dr. Merle", "GTA 6 Frank's Waffles"],
+    kind: "mission",
+    answer: [
+      "The Final Flush is a Strangers & Freaks side mission you can do from Chapter 1. It ends with a permanent boost to your maximum stamina.",
+      "Find a No Flusher poster with a QR code. They hang in and near public bathrooms, for example the men's toilet on Corsair Key, north-east of Key Lento, or the campground on the east side of Watson Bay. Scan it with the WAiNK app and reply TRUTH to the text.",
+      "Meet Dr. Merle at Frank's Waffles in Tequesta, Vice City. If he isn't there, come back at night. Drive his van where he tells you, to a sewage plant, and use Defuse on the worker who stops at the gate.",
+      "Inside, go up the stairs to the control panel, turn all three lights green and pull the lever to open the way down. Press the red button to flush Dr. Merle, then step into the chamber yourself. You wake up at home with more stamina.",
+    ],
+    facts: [
+      { label: "Start", value: "Scan a No Flusher poster, reply TRUTH" },
+      { label: "Meet", value: "Frank's Waffles, Tequesta" },
+      { label: "From", value: "Chapter 1" },
+      { label: "Reward", value: "Permanent stamina boost" },
+    ],
+    faqs: [
+      { question: "How do you increase stamina permanently in GTA 6?", answer: "Finish The Final Flush. Scan a No Flusher poster, reply TRUTH, meet Dr. Merle at Frank's Waffles and see it through. Cardio training also raises stamina." },
+      { question: "How do you start The Final Flush in GTA 6?", answer: "Scan a No Flusher poster with the WAiNK app, for example in the men's toilet on Corsair Key, then reply TRUTH to the text you get." },
+      { question: "Where is Frank's Waffles in GTA 6?", answer: "In Tequesta, Vice City. Dr. Merle waits in a booth there; if he isn't around, come back at night." },
+      { question: "Should you get in the chamber in The Final Flush?", answer: "Yes. After you flush Dr. Merle, step into the chamber yourself. You wake up at home with the stamina boost." },
+    ],
+    related: [L.characterStats, L.workout, L.wainkLocations, L.waink, L.tequestaMap, L.viceCity, L.swimming],
+    sources: finalFlushSources,
   },
   {
     slug: "weather",
@@ -3399,7 +3574,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "What stats are in GTA 6?", answer: "Health, stamina and Focus. Check them in the Fitness app. Jason and Lucia each have their own levels." },
       { question: "How do you increase health and stamina in GTA 6?", answer: "Train. Strength work raises health, and cardio raises stamina. Food and drinks only help for a short time. The Fitness app and the workout guide cover the windows." },
     ],
-    related: [L.workout, L.focus, L.heal, L.basketball],
+    related: [L.workout, L.focus, L.heal, L.basketball, L.finalFlush],
   },
 
   {
