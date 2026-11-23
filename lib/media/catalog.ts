@@ -73,6 +73,10 @@ const officialMakerPhoto: Record<string, { src: string; alt: string }> = {
     src: "/images/footage/manufacturers/gallivanter-baller-st-d.webp",
     alt: "Gallivanter Baller ST-D",
   },
+  karin: {
+    src: "/images/footage/manufacturers/karin.webp",
+    alt: "The rear of a white Karin pickup, with KARIN stamped on the tailgate",
+  },
   crest: {
     src: "/images/official/vehicles/crest-kayak.webp",
     alt: "Crest Kayak",
