@@ -1,7 +1,8 @@
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import SimpleCard, { CardGrid, SimpleHero } from "@/components/simple/SimpleCard";
-import { weaponLine, weapons } from "@/data/weapons";
+import { weapons } from "@/data/weapons";
+import { makerLabel, weaponMark } from "@/lib/simple/marks";
 import { pageMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
 import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
@@ -80,9 +81,11 @@ export default function WeaponsPage() {
               title={weapon.name}
               image={weapon.image}
               imageAlt={weapon.imageAlt}
-              eyebrow={weapon.manufacturer}
-              line={weaponLine(weapon)}
+              eyebrow={makerLabel(weapon.manufacturer)}
               price={weapon.price}
+              mark={weaponMark(weapon.category)}
+              markLabel={makerLabel(weapon.manufacturer)}
+              frame
               small
             />
           ))}

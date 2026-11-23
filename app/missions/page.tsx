@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
-import SimpleCard, { CardGrid, SimpleHero, TrackProgress } from "@/components/simple/SimpleCard";
+import MissionCard from "@/components/simple/MissionCard";
+import { CardGrid, SimpleHero, TrackProgress } from "@/components/simple/SimpleCard";
 import { launchMetadata } from "@/lib/launch";
 import { itemListJsonLd } from "@/lib/seo";
-import { MISSION_TYPE_LABEL, editionMissions, missions, sideMissions, storyChapters } from "@/src/data/missions";
+import { editionMissions, missions, sideMissions, storyChapters } from "@/src/data/missions";
 import { QuickGuideGrid } from "@/components/guides/QuickGuidePage";
 import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
@@ -41,15 +42,7 @@ export default function MissionsPage() {
           trackIds={chapter.missions.map((mission) => `mission:${mission.slug}`)}
         >
           {chapter.missions.map((mission) => (
-            <SimpleCard
-              key={mission.slug}
-              href={`/missions/${mission.slug}`}
-              title={mission.name}
-              image={mission.image}
-              eyebrow={`Mission ${mission.order}`}
-              small
-              trackId={`mission:${mission.slug}`}
-            />
+            <MissionCard key={mission.slug} mission={mission} />
           ))}
         </CardGrid>
       ))}
@@ -61,30 +54,13 @@ export default function MissionsPage() {
         trackIds={sideMissions.map((mission) => `mission:${mission.slug}`)}
       >
         {sideMissions.map((mission) => (
-          <SimpleCard
-            key={mission.slug}
-            href={`/missions/${mission.slug}`}
-            title={mission.name}
-            image={mission.image}
-            eyebrow={`Chapter ${mission.chapter}`}
-            small
-            trackId={`mission:${mission.slug}`}
-          />
+          <MissionCard key={mission.slug} mission={mission} />
         ))}
       </CardGrid>
 
       <CardGrid heading="Edition jobs">
         {editionMissions.map((mission) => (
-          <SimpleCard
-            key={mission.slug}
-            href={`/missions/${mission.slug}`}
-            title={mission.name}
-            image={mission.image}
-            eyebrow={`${MISSION_TYPE_LABEL[mission.type]}${mission.edition ? ` · ${mission.edition}` : ""}`}
-            chips={[mission.startArea, mission.region].filter(Boolean).map((value) => ({ value: value as string }))}
-            trackId={`mission:${mission.slug}`}
-            mapPin={mission.mapPinId}
-          />
+          <MissionCard key={mission.slug} mission={mission} />
         ))}
       </CardGrid>
 

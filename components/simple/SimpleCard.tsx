@@ -32,9 +32,11 @@ import Link from "next/link";
 
 import { mapPinHref } from "@/components/map/MapPinLink";
 import { kindFromHref, resolveCardImage, resolveRealImage } from "@/lib/simple/cardImage";
+import type { CatalogMark } from "@/lib/simple/marks";
 import { imageForPath } from "@/lib/simple/placeImages";
 import { oneLine } from "@/lib/simple/text";
 
+import Silhouette from "./Silhouette";
 import { TrackButton, TrackProgress } from "./Track";
 
 export type Chip = { label?: string; value: string };
@@ -93,6 +95,12 @@ export type SimpleCardProps = {
   kind?: string;
   /** Small pink pill in the top-left corner, e.g. a news category. */
   tag?: string;
+  /** Class line-drawing used when this item has no real photo. */
+  mark?: CatalogMark;
+  /** Maker name drawn large on the line-drawing. */
+  markLabel?: string;
+  /** Fixed 16:10 frame so list cards share one shape. */
+  frame?: boolean;
 };
 
 const ICONS: Record<string, LucideIcon> = {
@@ -167,27 +175,34 @@ export default function SimpleCard({
   mapHref: mapLink,
   kind: kindProp,
   tag,
+  mark,
+  markLabel,
+  frame = false,
 }: SimpleCardProps) {
   const kind = kindProp ?? kindFromHref(href);
   const shortLine = oneLine(line);
-  const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
   const place = href ? imageForPath(href.split("#")[0]) : undefined;
-  const resolved = resolveCardImage({ image: image ?? place?.src, title, kind });
+  const real = resolveRealImage({ image: image ?? place?.src, title });
+  const showMark = !real.src && Boolean(mark);
+  const resolved = showMark ? { src: undefined, source: "none" as const, isArtwork: false, artKey: undefined } : resolveCardImage({ image: image ?? place?.src, title, kind });
   const isArt = resolved.source === "art";
+  const meta = [showMark && markLabel && eyebrow === markLabel ? "" : eyebrow, shortLine].filter(Boolean).join(" · ");
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);
   const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
 
   const body = (
     <article
-      data-img-source={resolved.source}
+      data-img-source={showMark ? "mark" : resolved.source}
       data-art-key={isArt ? resolved.artKey : undefined}
       data-artwork={resolved.isArtwork ? "painted" : undefined}
       className={`relative h-full overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
-        small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
+        frame ? "aspect-[16/10]" : small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
       }`}
     >
-      {resolved.src ? (
+      {showMark && mark ? (
+        <Silhouette mark={mark} label={markLabel} compact />
+      ) : resolved.src ? (
         <Image
           src={resolved.src}
           alt={isArt ? `Artwork: ${title}` : imageAlt || place?.alt || title}
@@ -198,14 +213,20 @@ export default function SimpleCard({
       ) : (
         <BlankSurface />
       )}
-      <div
-        className={`absolute inset-0 transition-all duration-500 ${
-          isArt ? "bg-black/25 group-hover:bg-black/10" : "bg-black/55 group-hover:bg-black/35"
-        }`}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      {showMark ? (
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07070b] via-[#07070b]/80 to-transparent" />
+      ) : (
+        <>
+          <div
+            className={`absolute inset-0 transition-all duration-500 ${
+              isArt ? "bg-black/25 group-hover:bg-black/10" : "bg-black/55 group-hover:bg-black/35"
+            }`}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pink-500/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        </>
+      )}
       {price ? <PriceChip price={price} className="absolute right-3 top-3 z-[2] backdrop-blur" /> : null}
       {resolved.isArtwork && !price ? <ArtworkTag className="absolute right-3 top-3 z-[2]" /> : null}
       {tag && !trackId ? (
@@ -213,11 +234,11 @@ export default function SimpleCard({
           {tag}
         </span>
       ) : null}
-      <div className={`relative z-20 flex h-full flex-col justify-end ${small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price || tag ? "pt-12" : ""}`}>
-        <KindIcon kind={kind} small={small} />
+      <div className={`relative z-20 flex h-full flex-col justify-end ${frame || small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price || tag ? "pt-12" : ""}`}>
+        {frame || showMark ? null : <KindIcon kind={kind} small={small} />}
         <h3
           className={`break-words font-black leading-none tracking-[-0.03em] text-white ${
-            small ? "text-lg sm:text-xl" : "text-2xl"
+            frame ? "line-clamp-2 text-sm leading-snug sm:text-base" : small ? "text-lg leading-tight sm:text-xl" : "text-2xl"
           }`}
         >
           {title}
@@ -226,7 +247,7 @@ export default function SimpleCard({
           <p className="mt-2 font-mono text-base font-black tracking-[0.12em] text-white sm:text-lg">{code}</p>
         ) : null}
         {meta ? (
-          <p className={`mt-2 line-clamp-2 text-sm font-semibold text-pink-300 ${mapHref ? "pr-24" : ""}`}>{meta}</p>
+          <p className={`line-clamp-2 font-semibold text-pink-300 ${frame ? "mt-1 text-xs" : "mt-2 text-sm"} ${mapHref ? "pr-24" : ""}`}>{meta}</p>
         ) : null}
         {extra ? (
           <p className={`mt-1 line-clamp-2 text-xs font-semibold text-zinc-300 ${mapHref ? "pr-24" : ""}`}>{extra}</p>
