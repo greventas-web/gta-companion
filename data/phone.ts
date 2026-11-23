@@ -41,7 +41,7 @@ export const phoneItems: PhoneItem[] = [
     summary:
       "Follow people and browse their posts. Jason and Lucia do not post, because they are on the run.",
     description:
-      "Snapmatic is the social app Rob Nelson named in IGN's interview. Jason and Lucia can follow people and browse, and they do not post.",
+      "Snapmatic is the social app on your phone. Jason and Lucia can follow people and browse, and they do not post.",
     details: [
       "In IGN's interview, Rob Nelson said: \"We have Snapmatic. You have people that you follow and you can also just browse it.\" Asked whether you can post as Jason or Lucia, he said no, because they are a couple on the run, and that you just lurk.",
       "Famitsu's interview covers the same limit without using the name Snapmatic. Nelson said you can send photographs to your partner, and you can check other people's social media, but you cannot upload photos because Jason and Lucia are being pursued.",
@@ -60,7 +60,7 @@ export const phoneItems: PhoneItem[] = [
     summary:
       "A ride-share you can stay in for the whole trip, chat during the ride, and use to cross the map.",
     description:
-      "Ryde Me is the ride-share IGN's interview identifies on the phone. You can ride the whole way with the passenger and use the trip to cross the map.",
+      "Ryde Me is the ride-share app on your phone. You can ride the whole way with the passenger and use the trip to cross the map.",
     details: [
       "During IGN's interview, Rob Nelson and Lucia take Ryde Me to a pawn shop. Nelson said you can ride the whole way with the passenger and chat with them, and that it is a good way to do fast travel.",
       "Rockstar has not published a list of pickup points.",
@@ -76,9 +76,9 @@ export const phoneItems: PhoneItem[] = [
     origin: "Interview",
     related: "Vehicles and money",
     summary:
-      "Vice's report on the Edge interview names WAINK as the app for cars that fences want. Pay depends on the car's condition.",
+      "WAINK is the app for cars that fences want. Pay depends on the car's condition.",
     description:
-      "WAINK is the phone app the Edge interview, reported by Vice, names for finding vehicles that fences want. A separate IGN passage describes a phone scanner and does not use this name.",
+      "WAINK is the phone app for cars that fences want. Pay depends on the car's condition. The phone's vehicle scanner is separate, and it is not named WAINK.",
     details: [
       "Vice's write-up of the Edge interview says players use WAINK to locate specific vehicles that criminal fences want, and that a car's condition changes how much money you receive.",
       "In the IGN interview, Rob Nelson showed a scanner on the phone. He said it reports whether a car is locked, whether it has an alarm or a tracker, what it is worth at Pay 'n' Spray or a specialty fence, what it costs to register, and which tool it needs, such as a key cloner or a slim-jim. That passage does not call the scanner WAINK.",
@@ -105,9 +105,9 @@ export const phoneItems: PhoneItem[] = [
     origin: "Interview",
     related: "Vehicles",
     summary:
-      "Delivers your personal vehicle. The Edge interview, via Vice, says the weapons in the trunk come with it.",
+      "Delivers your personal vehicle, including the weapons stored in the trunk.",
     description:
-      "Scooter Bros is the phone app that delivers your personal vehicle. Famitsu names it, and the Edge interview adds the weapons stored in the trunk.",
+      "Scooter Bros delivers your personal vehicle, including the weapons stored in the trunk.",
     details: [
       "Rob Nelson told Famitsu the phone includes an app called Scooter Bros that delivers your car.",
       "Vice's report on the Edge interview says Scooter Bros brings your vehicles to you, including the weapons stored in the trunk.",
@@ -134,9 +134,9 @@ export const phoneItems: PhoneItem[] = [
     origin: "Interview",
     related: "Phone",
     summary:
-      "Famitsu lists a video app on the phone. Rockstar has not published its name.",
+      "A video app on your phone. Rockstar has not published its name.",
     description:
-      "Rob Nelson told Famitsu the phone includes a video app. Rockstar has not published the app's name or a feature list.",
+      "Your phone includes a video app. Rockstar has not published its name or a feature list.",
     details: [
       "In the Famitsu interview, Nelson listed a video app among the phone apps, along with a fitness app, a banking app, and Scooter Bros. He did not name the video app.",
       "Asked about social posts and messaging in missions, he said livestreaming shows up in playful ways, including when you meet someone who is livestreaming. He did not say that livestreaming is the video app.",
@@ -153,9 +153,9 @@ export const phoneItems: PhoneItem[] = [
     origin: "Interview",
     related: "Phone",
     summary:
-      "Famitsu lists a fitness app on the phone. Rockstar has not published its name or what it does.",
+      "A fitness app on your phone. Rockstar has not published its name or what it does.",
     description:
-      "Rob Nelson told Famitsu the phone includes a fitness app. Rockstar has not published the app's name or what it does.",
+      "Your phone includes a fitness app. Rockstar has not published its name or what it does.",
     details: [
       "The Famitsu interview names a fitness app as one of the phone apps and stops there.",
       "Gym workouts are a separate system in that interview: three exercises, and three days in a row levels up health and strength. Nelson did not say the fitness app runs those workouts.",
@@ -167,15 +167,15 @@ export const phoneItems: PhoneItem[] = [
     slug: "banking-app",
     name: "BuckMe",
     image: "/images/footage/phone/banking-app.webp",
-    imageAlt: "The BuckMe logo on the in-game phone",
+    imageAlt: "BuckMe",
     group: "App",
     kind: "Banking app",
     origin: "Launch",
     related: "Money",
     summary:
-      "BuckMe is the banking app. Money in your BuckMe account is safer than the cash you carry.",
+      "BuckMe is the banking app on your phone. Money in your BuckMe account is safer than the cash you carry.",
     description:
-      "Launch coverage names the banking app BuckMe. Story missions have you open an account and deposit cash at an ATM. Rob Nelson told Famitsu you lose the cash you carry when Wasted or Busted.",
+      "BuckMe is the banking app on your phone. Story missions have you open an account and deposit cash at an ATM.",
     details: [
       "Confirmed at launch: the Chapter 1 story has a mission called Buck Me, followed by the tasks Deposit Cash Into BuckMe (at any ATM) and Save for the Future.",
       "The Famitsu interview lists a banking app among the phone apps. Nelson said you have a bank account in addition to the cash you are carrying. If you are Wasted or Busted, you lose the cash you are carrying, so he said you are better off depositing it somewhere safe.",
@@ -219,7 +219,7 @@ export const phoneItems: PhoneItem[] = [
     origin: "Rockstar Newswire",
     related: "Radio",
     summary:
-      "Rockstar's October 8, 2026 newswire adds on-demand podcasts, heard through the phone in a vehicle or on foot.",
+      "On-demand podcasts, heard through the phone in a vehicle or on foot.",
     description:
       "Grand Theft Auto VI adds on-demand podcasts. Rockstar says radio and podcasts can be heard in a vehicle or on foot, through headphones or earbuds connected to the characters' phones.",
     details: [

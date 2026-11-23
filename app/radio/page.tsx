@@ -7,7 +7,7 @@ import { quickGuideCards } from "@/src/data/launch/quick-guides";
 
 export const metadata = pageMetadata(
   "GTA 6 radio stations",
-  "Unofficial GTA 6 radio stations: the six named stations and their hosts, the soundtrack album, and the score by Justice."
+  "Unofficial GTA 6 radio stations and their hosts, the soundtrack album, and the score by Justice."
 );
 
 export default function RadioPage() {
@@ -16,7 +16,15 @@ export default function RadioPage() {
       <SimpleHero title="Radio" />
       <CardGrid heading="Stations" count={stationPages.length}>
         {stationPages.map((station) => (
-          <SimpleCard key={station.slug} href={`/radio/${station.slug}`} title={station.name} eyebrow={station.hosts} line={station.summary} />
+          <SimpleCard
+            key={station.slug}
+            href={`/radio/${station.slug}`}
+            title={station.name}
+            image={station.image}
+            imageAlt={station.name}
+            eyebrow={station.genre}
+            line={station.hosts}
+          />
         ))}
       </CardGrid>
       <QuickFacts

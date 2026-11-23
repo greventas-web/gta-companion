@@ -1,7 +1,10 @@
 export type RadioStation = {
   name: string;
   hosts: string;
-  summary: string;
+  /** Genre or format already listed on the stations guide. */
+  genre: string;
+  /** Rockstar blurb, or an extra fact the stations guide already stores. */
+  summary?: string;
 };
 
 export const radioSource = {
@@ -12,40 +15,127 @@ export const radioSource = {
 
 export const radioStations: RadioStation[] = [
   {
-    name: "Cocoteo FM",
-    hosts: "El Martillo and La Gata",
-    summary:
-      "Leonida's station for modern Latin music, from bachata and merengue to dembow and reggaeton. Rockstar calls it el party que nunca se apaga.",
-  },
-  {
-    name: "Back Country Radio",
-    hosts: "MW and Delta Dawne",
-    summary:
-      "Renegade country for the Grassrivers, Port Gellhorn, and beyond. Mud Dog Mike, the roving reporter and swamp meteorologist, calls in from his airboat.",
-  },
-  {
     name: "AfroBank FM",
     hosts: "Burna and Palmsy",
+    genre: "African music",
     summary:
       "African music from 20th-century classics and lesser-known records to newer styles such as amapiano and 3-step.",
   },
   {
+    name: "Back Country Radio",
+    hosts: "MW and Delta Dawne",
+    genre: "Country",
+    summary:
+      "Renegade country for the Grassrivers, Port Gellhorn, and beyond. Mud Dog Mike, the roving reporter and swamp meteorologist, calls in from his airboat.",
+  },
+  {
     name: "The Chamber 106.6",
     hosts: "DJ Kerry and DJ Tom",
+    genre: "Metal",
     summary:
       "Metal from the 1980s onward. Rockstar describes it as crushing metal that draws on Leonida's metal roots.",
   },
   {
-    name: "Flash FM",
-    hosts: "Robyn and Alex",
+    name: "CircoLoco Records Radio",
+    hosts: "DJ Seth and DJ Antonio",
+    genre: "Electronic",
+  },
+  {
+    name: "Cocoteo FM",
+    hosts: "El Martillo and La Gata",
+    genre: "Modern Latin",
     summary:
-      "The Vice City pop station. Rockstar calls it a Vice City institution.",
+      "Leonida's station for modern Latin music, from bachata and merengue to dembow and reggaeton. Rockstar calls it el party que nunca se apaga.",
   },
   {
     name: "Dirty South Classics",
     hosts: "Trick and Trina",
+    genre: "Southern rap",
     summary:
       "Regional rap and hip-hop. Rockstar describes it as southern hospitality from the beach to the block.",
+  },
+  {
+    name: "Emotion 98.3",
+    hosts: "Doug Van Dyke",
+    genre: "Soft rock",
+  },
+  {
+    name: "Flash FM",
+    hosts: "Robyn and Alex",
+    genre: "Pop",
+    summary: "The Vice City pop station. Rockstar calls it a Vice City institution.",
+  },
+  {
+    name: "Gloriana Blues Radio",
+    hosts: "DJ Buddy and DJ Keith",
+    genre: "Blues",
+  },
+  {
+    name: "Honey FM",
+    hosts: "Chilli and T-Boz of TLC",
+    genre: "R&B",
+    summary: "Craig Robinson hosts Honey FM: Liquid City.",
+  },
+  {
+    name: "Kaleidoscope FM",
+    hosts: "DJ Dicky",
+    genre: "Pop covers from around the world",
+  },
+  {
+    name: "Leonida Jazz Radio",
+    hosts: "DJ Randy and DJ Stanley",
+    genre: "Jazz",
+  },
+  {
+    name: "Radio La Ola",
+    hosts: "Gloria and Emilio Estefan",
+    genre: "Classic Latin",
+  },
+  {
+    name: "Radio On-U",
+    hosts: "Adrian Sherwood",
+    genre: "Reggae and dub",
+  },
+  {
+    name: "Stockyard FM",
+    hosts: "Victoria and Harrison",
+    genre: "Electronic and indie",
+  },
+  {
+    name: "Symphony FM",
+    hosts: "Yuja",
+    genre: "Classical",
+  },
+  {
+    name: "V-Rock",
+    hosts: "The Buck and Skipper McD",
+    genre: "Classic rock",
+  },
+  {
+    name: "Vice City FM",
+    hosts: "DJ Al and Madame Brigitte",
+    genre: "'80s",
+  },
+  {
+    name: "Vice City Rap Radio",
+    hosts: "DJ JT and DJ Stevie",
+    genre: "Hip-hop",
+    summary: "Early AF with Charlamagne tha God and Ivy Rivera.",
+  },
+  {
+    name: "Worldwide FM",
+    hosts: "Gilles Peterson",
+    genre: "Jazz, funk and soul",
+  },
+  {
+    name: "WKTT",
+    hosts: 'Richard Bastion and Dominic "The Brick" Brizzolato',
+    genre: "Talk",
+  },
+  {
+    name: "The Wipe",
+    hosts: "Anitta",
+    genre: "Talk",
   },
 ];
 

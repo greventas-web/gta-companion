@@ -117,7 +117,7 @@ const PLACE_IMAGES: Record<string, PlaceImage> = {
   "/businesses/starlet-motel": starlet,
   "/phone/banking-app": {
     src: `${F}/phone/banking-app.webp`,
-    alt: "The BuckMe logo on the in-game phone",
+    alt: "BuckMe",
   },
   "/where-to-find/convenience-stores": sarenas,
   "/where-to-find/convenience-stores/sarenas-bargain-store": sarenas,
