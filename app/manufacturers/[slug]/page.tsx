@@ -34,6 +34,7 @@ export default async function ManufacturersDetailPage({ params }: Props) {
   const item = items.find((entry) => entry.slug === slug);
   if (!item) notFound();
   const cars = vehicles.filter((vehicle) => vehicle.manufacturer === item.name);
+  const photo = manufacturerListImage(item);
   const map = null;
   const related = items.filter((entry) => entry.slug !== item.slug && false).slice(0, 4);
 
@@ -43,8 +44,8 @@ export default async function ManufacturersDetailPage({ params }: Props) {
         crumbs={[{ label: "Home", href: "/" }, { label: 'Manufacturers', href: "/manufacturers" }, { label: item.name }]}
         eyebrow={item.country}
         title={item.name}
-        image={manufacturerListImage(item)?.src}
-        imageAlt={undefined}
+        image={photo?.src}
+        imageAlt={photo?.alt}
         summary={item.description}
         facts={[{ label: "Country", value: item.country }, { label: "Founded", value: item.founded ?? "" }, { label: "Based in", value: item.headquarters ?? "" }]}
         mapHref={map}

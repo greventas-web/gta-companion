@@ -36,6 +36,18 @@ const gellhorn: PlaceImage = {
   src: `${F}/places/gellhorn-outfitters.webp`,
   alt: "Inside Gellhorn Outfitters, with the shop banner behind the counter and rifles on the wall",
 };
+const fleeca: PlaceImage = {
+  src: `${F}/brands/fleeca.webp`,
+  alt: "A Fleeca Bank teller counter, with FLEECA BANK lettering on the green wall",
+};
+const rustyAnchor: PlaceImage = {
+  src: `${F}/businesses/the-rusty-anchor.webp`,
+  alt: "Inside The Rusty Anchor, with a band on stage and the name on the backdrop",
+};
+const delights: PlaceImage = {
+  src: `${F}/businesses/delights.webp`,
+  alt: "The Delights Cabaret sign at night, with neon Girls signs and a marquee",
+};
 
 const PLACE_IMAGES: Record<string, PlaceImage> = {
   "/where-to-find/gun-stores": bigShots,
@@ -115,6 +127,66 @@ const PLACE_IMAGES: Record<string, PlaceImage> = {
   "/where-to-find/pay-n-spray/salton": {
     src: `${F}/places/pay-n-spray-salton.webp`,
     alt: "The Pay 'n' Spray garage in Salton, with a yellow Pegassi Charred Toros in the service bay",
+  },
+  // Gameplay stills, 23 Nov 2026. Our own footage of these exact places.
+  "/brands/fleeca": fleeca,
+  "/businesses/fleeca": fleeca,
+  "/businesses/the-rusty-anchor": rustyAnchor,
+  "/where-to-find/clubs/the-rusty-anchor": rustyAnchor,
+  "/where-to-find/bars/the-rusty-anchor": rustyAnchor,
+  "/businesses/delights": delights,
+  "/where-to-find/clubs/delights-cabaret": delights,
+  "/where-to-find/cafes/key-lento-candy": {
+    src: `${F}/cafes/key-lento-candy.webp`,
+    alt: "The pink Key Lento Candy storefront, with Ice Cream, Chocolate, and Gifts signs",
+  },
+  "/where-to-find/cafes/asian-fusion": {
+    src: `${F}/cafes/asian-fusion.webp`,
+    alt: "A roadside sign for Asian Fusion, with Food Store, beer, cigarettes, and wine",
+  },
+  "/characters/moses-watkins": {
+    src: `${F}/characters/moses-watkins.webp`,
+    alt: "Moses Watkins in a garage, facing the camera, with stacked tires behind him",
+  },
+  "/where-to-find/convenience-stores/leonida-truck-stop": {
+    src: `${F}/convenience-stores/leonida-truck-stop.webp`,
+    alt: "The Leonida Truck Stop, with the store awning, a fuel canopy, and a yellow pickup in front",
+  },
+  "/where-to-find/electronics-stores/zekes-gadgets": {
+    src: `${F}/electronics-stores/zekes-gadgets.webp`,
+    alt: "The Zekes Gadgets storefront, with a We Do Repairs sign",
+  },
+  "/where-to-find/hair-salons/pearl-house-hair-salon": {
+    src: `${F}/hair-salons/pearl-house-hair-salon.webp`,
+    alt: "The Pearl House Hair Salon window, with an Open sign and a white SUV in the lot",
+  },
+  "/where-to-find/jewelry-stores-and-pawn-shops/joyeria-empenos": {
+    src: `${F}/jewelry-stores-and-pawn-shops/joyeria-empenos.webp`,
+    alt: "The Joyeria Empenos pawn shop front, with a pawn shop banner above the windows",
+  },
+  "/locations/la-perle": {
+    src: `${F}/locations/la-perle.webp`,
+    alt: "Highway signs for La Perle and Mariana County, with a red convertible in front",
+  },
+  "/locations/southside-vice-city": {
+    src: `${F}/locations/southside-vice-city.webp`,
+    alt: "A highway sign for Southside and Peacock Bay, with the Vice City skyline behind it",
+  },
+  "/locations/watson-bay": {
+    src: `${F}/locations/watson-bay.webp`,
+    alt: "An overhead sign for 82 East toward Watson Bay and Hamlet",
+  },
+  "/manufacturers/karin": {
+    src: `${F}/manufacturers/karin.webp`,
+    alt: "The rear of a white Karin pickup, with KARIN stamped on the tailgate",
+  },
+  "/where-to-find/mod-shops/whisler-motorsport": {
+    src: `${F}/mod-shops/whisler-motorsport.webp`,
+    alt: "A blue Pegassi SUV inside a lit garage",
+  },
+  "/where-to-find/payday-loans/cash-flow": {
+    src: `${F}/payday-loans/cash-flow.webp`,
+    alt: "The Cash Flow window, with Payday Loans lettering and a 100% Approval sign",
   },
 };
 

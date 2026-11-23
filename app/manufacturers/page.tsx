@@ -31,18 +31,22 @@ export default function ManufacturersPage() {
       <SimpleHero title='Manufacturers' />
       {groups.map((group) => (
         <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
-          {group.list.map((item) => (
-            <SimpleCard
-              key={item.slug}
-              href={`/manufacturers/${item.slug}`}
-              title={item.name}
-              image={manufacturerListImage(item)?.src}
-              eyebrow={item.country}
-              line={undefined}
-              mapHref={undefined}
-              small
-            />
-          ))}
+          {group.list.map((item) => {
+            const photo = manufacturerListImage(item);
+            return (
+              <SimpleCard
+                key={item.slug}
+                href={`/manufacturers/${item.slug}`}
+                title={item.name}
+                image={photo?.src}
+                imageAlt={photo?.alt}
+                eyebrow={item.country}
+                line={undefined}
+                mapHref={undefined}
+                small
+              />
+            );
+          })}
         </CardGrid>
       ))}
     </PageShell>
