@@ -34,8 +34,10 @@ import { mapPinHref } from "@/components/map/MapPinLink";
 import { kindFromHref, resolveCardImage, resolveRealImage } from "@/lib/simple/cardImage";
 import type { CatalogMark } from "@/lib/simple/marks";
 import { imageForPath } from "@/lib/simple/placeImages";
+import { isRadioLogoSrc } from "@/lib/simple/radio";
 import { oneLine } from "@/lib/simple/text";
 
+import RadioLogo from "./RadioLogo";
 import Silhouette from "./Silhouette";
 import { TrackButton, TrackProgress } from "./Track";
 
@@ -190,6 +192,8 @@ export default function SimpleCard({
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);
   const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
+  const logo = isRadioLogoSrc(resolved.src);
+  const logoAlt = imageAlt || title;
 
   const body = (
     <article
@@ -198,11 +202,19 @@ export default function SimpleCard({
       data-art-key={isArt ? resolved.artKey : undefined}
       data-artwork={resolved.isArtwork ? "painted" : undefined}
       className={`relative h-full overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
-        frame ? "aspect-[16/10]" : small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
+        logo ? (small ? "min-h-[212px]" : "min-h-[292px]") : frame ? "aspect-[16/10]" : small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
       }`}
     >
       {showMark && mark ? (
         <Silhouette mark={mark} />
+      ) : logo && resolved.src ? (
+        <div
+          className={`absolute inset-x-0 top-0 flex items-center justify-center bg-[#07070c] ${
+            small ? "bottom-[4.75rem] px-3" : "bottom-28 px-4"
+          }`}
+        >
+          <RadioLogo src={resolved.src} alt={logoAlt} compact={small} />
+        </div>
       ) : resolved.src ? (
         <Image
           src={resolved.src}
@@ -214,7 +226,9 @@ export default function SimpleCard({
       ) : (
         <BlankSurface />
       )}
-      {showMark ? (
+      {logo ? (
+        <div className={`absolute inset-x-0 bottom-0 bg-[#07070c] ${small ? "h-[4.75rem]" : "h-28"}`} />
+      ) : showMark ? (
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07070b] via-[#07070b]/80 to-transparent" />
       ) : (
         <>
@@ -238,7 +252,7 @@ export default function SimpleCard({
         </span>
       ) : null}
       <div className={`absolute inset-0 z-20 flex flex-col justify-end ${frame || small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price || tag ? "pt-12" : ""}`}>
-        {frame || showMark ? null : <KindIcon kind={kind} small={small} />}
+        {frame || showMark || logo ? null : <KindIcon kind={kind} small={small} />}
         <h3
           className={`break-words font-black leading-none tracking-[-0.03em] text-white ${
             frame ? "line-clamp-2 text-sm leading-snug sm:text-base" : small ? "text-lg leading-tight sm:text-xl" : "text-2xl"
@@ -387,6 +401,7 @@ export function SimpleHero({
   image,
   imageAlt = "",
   children,
+  aspect,
 }: {
   title: string;
   image?: string;
@@ -396,11 +411,16 @@ export function SimpleHero({
   /** Ignored. Pages carry no intro text. */
   intro?: string;
   badge?: string;
+  /** Match a 16:10 still so the banner shows the whole frame. */
+  aspect?: "16/10";
 }) {
   const resolvedHero = image ? resolveRealImage({ image, title }) : null;
   const photo = resolvedHero?.src ? { src: resolvedHero.src } : null;
+  const framed = Boolean(photo && aspect === "16/10");
   return (
-    <header className="relative overflow-hidden rounded-[28px] border border-white/5 bg-[#08080A]">
+    <header
+      className={`relative overflow-hidden rounded-[28px] border border-white/5 bg-[#08080A] ${framed ? "aspect-[16/10]" : ""}`}
+    >
       {photo ? (
         <>
           <Image src={photo.src} alt={imageAlt || title} fill priority sizes="100vw" className="object-cover" />
@@ -410,8 +430,8 @@ export function SimpleHero({
         </>
       ) : null}
       <div
-        className={`relative z-20 flex flex-wrap items-end justify-between gap-3 p-6 sm:p-8 ${
-          photo ? "min-h-[220px] sm:min-h-[300px]" : ""
+        className={`z-20 flex flex-wrap items-end justify-between gap-3 p-6 sm:p-8 ${
+          framed ? "absolute inset-0" : `relative ${photo ? "min-h-[220px] sm:min-h-[300px]" : ""}`
         }`}
       >
         <h1 className="break-words text-3xl font-black leading-none tracking-[-0.03em] text-white sm:text-5xl">{title}</h1>

@@ -16,8 +16,8 @@ export const animals: Animal[] = [
     name: "Alligator",
     category: "Wildlife",
     habitat: "Grassrivers",
-    image: "/images/official/animals/american-alligator.webp",
-    imageAlt: "An alligator on an airboat in official Grassrivers screenshot 01",
+    image: "/images/footage/animals/american-alligator.webp",
+    imageAlt: "Alligator",
     description:
       "Rockstar's Grassrivers caption features gators. Official screenshot Grassrivers 01 shows an alligator on an airboat. Rockstar has not published a species name. Game Informer's Rockstar cover story names alligators among Leonida's animals.",
     firstAppearance: "Rockstar Games Website",

@@ -167,7 +167,7 @@ export const phoneItems: PhoneItem[] = [
     slug: "banking-app",
     name: "BuckMe",
     image: "/images/footage/phone/banking-app.webp",
-    imageAlt: "The BuckMe logo on the in-game phone",
+    imageAlt: "BuckMe",
     group: "App",
     kind: "Banking app",
     origin: "Launch",

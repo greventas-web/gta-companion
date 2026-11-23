@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const station = findStation(slug);
   if (!station) return {};
-  return detailMetadata(`${station.name}: GTA 6 radio`, shortText(station.summary, 2));
+  const description = [station.summary, `${station.genre}. Hosted by ${station.hosts}.`].filter(Boolean).join(" ");
+  return detailMetadata(`${station.name}: GTA 6 radio`, shortText(description, 2));
 }
 
 export default async function StationPage({ params }: Props) {
@@ -33,11 +34,24 @@ export default async function StationPage({ params }: Props) {
         crumbs={[{ label: "Home", href: "/" }, { label: "Radio", href: "/radio" }, { label: station.name }]}
         eyebrow="Radio station"
         title={station.name}
+        image={station.image}
+        imageAlt={station.name}
         summary={station.summary}
-        facts={[{ label: "Hosts", value: station.hosts }]}
+        facts={[
+          { label: "Hosts", value: station.hosts },
+          { label: "Genre", value: station.genre },
+        ]}
         related={stationPages
           .filter((item) => item.slug !== station.slug)
-          .map((item) => ({ href: `/radio/${item.slug}`, title: item.name, eyebrow: item.hosts, small: true }))}
+          .map((item) => ({
+            href: `/radio/${item.slug}`,
+            title: item.name,
+            image: item.image,
+            imageAlt: item.name,
+            eyebrow: item.genre,
+            line: item.hosts,
+            small: true,
+          }))}
         relatedHeading="More stations"
       />
     </PageShell>

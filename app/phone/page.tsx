@@ -29,7 +29,12 @@ export default function PhonePage() {
           items.map((item) => ({ name: item.name, url: `/phone/${item.slug}` }))
         )}
       />
-      <SimpleHero title='Phone' />
+      <SimpleHero
+        title="Phone"
+        image="/images/footage/phone/phone-home.webp"
+        imageAlt="Phone"
+        aspect="16/10"
+      />
       {groups.map((group) => (
         <CardGrid key={group.name} heading={groups.length > 1 ? group.name : undefined} count={group.list.length} dense>
           {group.list.map((item) => (
@@ -38,6 +43,7 @@ export default function PhonePage() {
               href={`/phone/${item.slug}`}
               title={item.name}
               image={item.image}
+              imageAlt={item.name}
               eyebrow={item.kind}
               line={undefined}
               mapHref={undefined}

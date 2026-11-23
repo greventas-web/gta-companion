@@ -6,9 +6,11 @@ import ItemImage from "@/components/ItemImage";
 import { mapPinHref } from "@/components/map/MapPinLink";
 import { kindFromHref, resolveCardImage, resolveRealImage } from "@/lib/simple/cardImage";
 import type { CatalogMark } from "@/lib/simple/marks";
+import { isRadioLogoSrc } from "@/lib/simple/radio";
 import { shortText } from "@/lib/simple/text";
 import { IMAGE_CREDIT } from "@/lib/site";
 
+import RadioLogo from "./RadioLogo";
 import Silhouette from "./Silhouette";
 import SimpleCard, { ArtworkTag, CardGrid, PriceChip, type SimpleCardProps } from "./SimpleCard";
 import { TrackButton } from "./Track";
@@ -100,6 +102,7 @@ export default function SimpleDetail({
   const crumbHref = [...crumbs].reverse().find((crumb) => crumb.href && crumb.href !== "/")?.href;
   const kind = kindProp ?? kindFromHref(crumbHref);
   const real = resolveRealImage({ image, title });
+  const logo = isRadioLogoSrc(real.src);
   const showMark = !real.src && !visual && Boolean(mark);
   const resolved = real.src || visual || showMark ? real : resolveCardImage({ image, title, kind });
   const hasImage = Boolean(visual) || Boolean(real.src) || showMark || Boolean(resolved.src);
@@ -130,6 +133,10 @@ export default function SimpleDetail({
                 visual
               ) : showMark && mark ? (
                 <Silhouette mark={mark} label={markLabel} />
+              ) : logo && real.src ? (
+                <div className="absolute inset-0 flex items-center justify-center bg-[#07070c] px-6">
+                  <RadioLogo src={real.src} alt={imageAlt || title} priority />
+                </div>
               ) : (
                 <ItemImage src={image} alt={isArt ? `Artwork: ${title}` : imageAlt || title} name={title} kind={kind} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               )}
