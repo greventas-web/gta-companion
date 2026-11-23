@@ -81,17 +81,37 @@ export default async function WhereToFindTopicPage({ params }: Props) {
             .filter((place) => place.group === group)
             .map((place) => {
               const image = imageForPath(`/where-to-find/${topic.slug}/${place.slug}`) ?? imageForPin(place.pin);
+              if (!place.note) {
+                return (
+                  <SimpleCard
+                    key={place.slug}
+                    href={`/where-to-find/${topic.slug}/${place.slug}`}
+                    title={place.name}
+                    image={image.src}
+                    imageAlt={image.alt}
+                    eyebrow={place.area}
+                    price={place.price}
+                    small
+                  />
+                );
+              }
               return (
-                <SimpleCard
-                  key={place.slug}
-                  href={`/where-to-find/${topic.slug}/${place.slug}`}
-                  title={place.name}
-                  image={image.src}
-                  imageAlt={image.alt}
-                  eyebrow={place.area}
-                  price={place.price}
-                  small
-                />
+                <div key={place.slug} className="flex h-full flex-col">
+                  <div className="min-h-0 flex-1">
+                    <SimpleCard
+                      href={`/where-to-find/${topic.slug}/${place.slug}`}
+                      title={place.name}
+                      image={image.src}
+                      imageAlt={image.alt}
+                      eyebrow={place.area}
+                      price={place.price}
+                      small
+                    />
+                  </div>
+                  <p className="mt-2 rounded-xl border border-amber-300/35 bg-amber-400/10 px-3 py-2 text-xs font-semibold leading-5 text-amber-50">
+                    {place.note}
+                  </p>
+                </div>
               );
             })}
         </CardGrid>

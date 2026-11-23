@@ -57,6 +57,17 @@ export default function QuickGuidePage({ guide }: { guide: QuickGuide }) {
         </div>
       </header>
 
+      {guide.notice ? (
+        <aside
+          role="note"
+          aria-label="Before you finish Chapter 3"
+          className="mt-8 max-w-3xl rounded-2xl border border-amber-300/40 bg-amber-400/10 px-5 py-4"
+        >
+          <p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Before you finish Chapter 3</p>
+          <p className="mt-2 text-base font-semibold leading-7 text-amber-50 sm:text-lg">{guide.notice}</p>
+        </aside>
+      ) : null}
+
       <section className="mt-8 max-w-3xl space-y-3">
         {guide.answer.map((sentence) => (
           <p key={sentence} className="text-lg font-semibold leading-8 text-zinc-100 sm:text-xl">

@@ -25,6 +25,8 @@ export type WherePlace = {
   name: string;
   area?: string;
   detail?: string;
+  /** One-line timing note shown with this place in its group. */
+  note?: string;
   /** Exact point pin for this place. */
   pin?: string;
   /** Area pin used when the exact building is not on the map yet. */
@@ -544,7 +546,7 @@ export const whereToFindTopics: WhereTopic[] = [
       {
         heading: "Hidden garages (keypad code)",
         places: [
-          { name: "Del Rio Boulevard Garage", area: "Southern La Perle, by Auntie’s Place", detail: "Code 92665 from the Chapter 3 laptop; holds Vanessa’s Growler", areaPin: pin("la-perle") },
+          { name: "Del Rio Boulevard Garage", area: "Southern La Perle, by Auntie’s Place", detail: "Code 92665 from the Chapter 3 laptop; holds Vanessa’s Pfister Growler", note: "Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler.", areaPin: pin("la-perle") },
           { name: "Southside Storage", area: "South tip of Salton, north of Slator Towing Inc", detail: "Code 1010 after the 1010 Murals; holds the 1010 Cheetah", areaPin: pin("salton") },
         ],
       },
@@ -2368,6 +2370,8 @@ export type WherePlaceCard = {
   price?: string;
   /** Short tag such as "Expanded" or "Ultimate Edition". */
   tag?: string;
+  /** One-line timing note for this place. */
+  note?: string;
   pin?: string;
   areaPin?: string;
   group: string;
@@ -2405,6 +2409,7 @@ export function wherePlaces(topic: WhereTopic): WherePlaceCard[] {
           area: place.area ?? county,
           price: isPrice ? place.detail : undefined,
           tag: isPrice ? undefined : place.detail,
+          note: place.note,
           pin: place.pin,
           areaPin: place.areaPin,
           group: group.heading.replace(/\s*\(\d+\)$/, ""),

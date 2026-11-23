@@ -63,7 +63,7 @@ export default async function WherePlacePage({ params }: Props) {
         image={image.src}
         imageAlt={image.alt}
         price={place.price}
-        summary={place.area ? `In ${place.area}.` : undefined}
+        summary={[place.area ? `In ${place.area}.` : null, place.note].filter(Boolean).join(" ") || undefined}
         facts={[{ label: topic.slug === "fences" ? "Opens" : "Type", value: place.tag ?? "" }]}
         mapPin={place.pin ?? place.areaPin}
         mapLabel={place.pin ? "Find on map" : "Find the area on map"}
