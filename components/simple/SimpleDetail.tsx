@@ -10,7 +10,7 @@ import { isRadioLogoSrc } from "@/lib/simple/radio";
 import { shortText } from "@/lib/simple/text";
 import { IMAGE_CREDIT } from "@/lib/site";
 
-import RadioLogo from "./RadioLogo";
+import { RadioLogoPanel } from "./RadioLogo";
 import Silhouette from "./Silhouette";
 import SimpleCard, { ArtworkTag, CardGrid, PriceChip, type SimpleCardProps } from "./SimpleCard";
 import { TrackButton } from "./Track";
@@ -128,21 +128,24 @@ export default function SimpleDetail({
       <div className={hasImage ? `mt-8 grid gap-8 lg:gap-12 ${compactVisual ? "lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)]" : "lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]"}` : "mt-6 max-w-3xl"}>
         {hasImage ? (
           <div className={`self-start overflow-hidden rounded-[28px] border border-white/10 bg-black ${compactVisual ? "lg:max-w-md" : ""}`}>
+            {logo && real.src ? (
+              <div className="relative">
+                <RadioLogoPanel src={real.src} alt={imageAlt || title} priority />
+                {trackId ? <TrackButton id={trackId} label={title} /> : null}
+              </div>
+            ) : (
             <div className={compactVisual ? "relative" : "relative aspect-[16/10]"}>
               {visual ? (
                 visual
               ) : showMark && mark ? (
                 <Silhouette mark={mark} label={markLabel} />
-              ) : logo && real.src ? (
-                <div className="absolute inset-0 flex items-center justify-center bg-[#07070c] px-6">
-                  <RadioLogo src={real.src} alt={imageAlt || title} priority />
-                </div>
               ) : (
                 <ItemImage src={image} alt={isArt ? `Artwork: ${title}` : imageAlt || title} name={title} kind={kind} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               )}
               {isArt && resolved.isArtwork ? <ArtworkTag className="absolute right-3 top-3 z-[2]" /> : null}
               {trackId && !compactVisual ? <TrackButton id={trackId} label={title} /> : null}
             </div>
+            )}
             {credit ? (
               <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">{credit}</p>
             ) : null}

@@ -19,7 +19,7 @@ export const animals: Animal[] = [
     image: "/images/footage/animals/american-alligator.webp",
     imageAlt: "Alligator",
     description:
-      "Rockstar's Grassrivers caption features gators. Official screenshot Grassrivers 01 shows an alligator on an airboat. Rockstar has not published a species name. Game Informer's Rockstar cover story names alligators among Leonida's animals.",
+      "Alligators are in the Grassrivers, including one on an airboat. Alligators are among Leonida's animals. Rockstar has not published a species name.",
     firstAppearance: "Rockstar Games Website",
     status: "Shown in a Rockstar caption",
     gallery: [],
@@ -34,7 +34,7 @@ export const animals: Animal[] = [
     image: "/images/official/frames/flamingo.webp",
     imageAlt: "A flock of pink flamingos in a marsh, Trailer 1",
     description:
-      "Trailer 1 at 0:21 shows a flock of pink flamingos wading and taking off from a daytime marsh. An alligator sits in the shallows among them. Rockstar has not published a species name. Game Informer's Rockstar cover story names flamingos among Leonida's animals.",
+      "A flock of pink flamingos wades and takes off from a daytime marsh. An alligator sits in the shallows among them. Flamingos are among Leonida's animals. Rockstar has not published a species name.",
     firstAppearance: "Trailer 1",
     status: "Shown in Trailer 1",
     gallery: [],
@@ -51,7 +51,7 @@ export const animals: Animal[] = [
     imageAlt:
       "Deer at a stream in Mount Kalaga National Park, with a cougar in the foreground",
     description:
-      "Official screenshot Mount Kalaga National Park 05 shows a cougar at a stream with deer. Rockstar has not named the deer species.",
+      "Deer are at a stream in Mount Kalaga National Park, with a cougar. Rockstar has not named the deer species.",
     firstAppearance: "Rockstar Games Website",
     status: "Shown in a Rockstar caption",
     gallery: [],
@@ -65,7 +65,7 @@ export const animals: Animal[] = [
     image: "/images/official/frames/dolphin.webp",
     imageAlt: "Dolphins swimming in the wake of a white catamaran, Trailer 1",
     description:
-      "Trailer 1 at 0:11 shows a pod of dolphins in the turquoise wake of a white catamaran, with another dolphin ahead of the boat. Rockstar has not published a species name.",
+      "A pod of dolphins swims in the turquoise wake of a white catamaran, with another dolphin ahead of the boat. Rockstar has not published a species name.",
     firstAppearance: "Trailer 1",
     status: "Shown in Trailer 1",
     gallery: [],
@@ -79,7 +79,7 @@ export const animals: Animal[] = [
     image: "/images/official/frames/pelican.webp",
     imageAlt: "White pelicans taking off from a Grassrivers channel as an airboat passes, Extended Look",
     description:
-      "The Extended Look at 17:12 shows white pelicans, with large yellow-orange bills, taking off from a turquoise channel as an airboat passes. Rockstar has not published a species name. Game Informer's Rockstar cover story names pelicans among Leonida's animals.",
+      "White pelicans, with large yellow-orange bills, take off from a turquoise channel as an airboat passes. Pelicans are among Leonida's animals. Rockstar has not published a species name.",
     firstAppearance: "Extended Look",
     status: "Shown in the Extended Look",
     gallery: [],
@@ -96,7 +96,7 @@ export const animals: Animal[] = [
     imageAlt:
       "A cougar at a stream in Mount Kalaga National Park, with deer beyond it",
     description:
-      "Official screenshot Mount Kalaga National Park 05 shows a cougar at a stream with deer.",
+      "A cougar is at a stream in Mount Kalaga National Park, with deer.",
     firstAppearance: "Rockstar Games Website",
     status: "Shown in a Rockstar caption",
     gallery: [],
@@ -110,7 +110,7 @@ export const animals: Animal[] = [
     image: "/images/official/frames/wildcat.webp",
     imageAlt: "A spotted wildcat on an airboat cooler in official Grassrivers screenshot 01",
     description:
-      "Official screenshot Grassrivers 01 shows a dead spotted wildcat on a cooler aboard an airboat, with a large alligator in the foreground. The airboat is marked AIRGATOR AIRBOAT CO. Rockstar has not published a species name.",
+      "A dead spotted wildcat is on a cooler aboard an airboat, with a large alligator in the foreground. The airboat is marked AIRGATOR AIRBOAT CO. Rockstar has not published a species name.",
     firstAppearance: "Rockstar screenshot",
     status: "Shown in a Rockstar screenshot",
     gallery: [],
@@ -124,7 +124,7 @@ export const animals: Animal[] = [
     image: "/images/official/media/screenshots-places-leonida-keys-leonida-keys-06.webp",
     imageAlt: "A green iguana on a rock in official Leonida Keys screenshot 06",
     description:
-      "Official screenshot Leonida Keys 06 shows a green iguana on a shoreline rock. Rockstar has not published a species name. Game Informer's Rockstar cover story names green iguanas among Leonida's animals.",
+      "A green iguana is on a shoreline rock in the Leonida Keys. Green iguanas are among Leonida's animals. Rockstar has not published a species name.",
     firstAppearance: "Rockstar Games Website",
     status: "Shown in a Rockstar screenshot",
     gallery: [],
@@ -139,7 +139,7 @@ export const animals: Animal[] = [
     image: "/images/official/media/screenshots-places-leonida-keys-leonida-keys-04.webp",
     imageAlt: "A sea turtle swimming beside scuba divers in official Leonida Keys screenshot 04",
     description:
-      "Official screenshot Leonida Keys 04 shows a sea turtle with scuba divers. Rockstar has not published a species name.",
+      "A sea turtle swims with scuba divers in the Leonida Keys. Rockstar has not published a species name.",
     firstAppearance: "Rockstar Games Website",
     status: "Shown in a Rockstar screenshot",
     gallery: [],
@@ -152,7 +152,7 @@ export const animals: Animal[] = [
     habitat: "Leonida",
     image: "",
     description:
-      "Named in Game Informer's Rockstar cover story as one of the native Florida animals in Leonida.",
+      "Manatees are native animals in Leonida.",
     firstAppearance: "Game Informer",
     status: "Named by Rockstar (Game Informer)",
     gallery: [],
@@ -166,7 +166,7 @@ export const animals: Animal[] = [
     habitat: "Leonida",
     image: "",
     description:
-      "Named in Game Informer's cover story as an invasive species in Leonida.",
+      "Cane toads are an invasive species in Leonida.",
     firstAppearance: "Game Informer",
     status: "Named by Rockstar (Game Informer)",
     gallery: [],
@@ -180,7 +180,7 @@ export const animals: Animal[] = [
     habitat: "Leonida",
     image: "",
     description:
-      "Named in Game Informer's cover story. Leonida has rhesus macaque monkeys, like Florida.",
+      "Leonida has rhesus macaque monkeys, like Florida.",
     firstAppearance: "Game Informer",
     status: "Named by Rockstar (Game Informer)",
     gallery: [],
@@ -195,7 +195,7 @@ export const animals: Animal[] = [
     image: animalStandIns["feral-cat"].src,
     imageAlt: animalStandIns["feral-cat"].alt,
     description:
-      "Named in Game Informer's cover story as an invasive species.",
+      "Feral cats are an invasive species.",
     firstAppearance: "Game Informer",
     status: "Named by Rockstar (Game Informer)",
     gallery: [],
@@ -210,7 +210,7 @@ export const animals: Animal[] = [
     image: animalStandIns.dog.src,
     imageAlt: animalStandIns.dog.alt,
     description:
-      "Jason says, “Is it cool if I pet your dog?” The woman replies, “Course, she loves to greet her public,” and Jason stoops to give the pup a fuss. You can pet dogs, and study is an option, as Rob Nelson showed IGN. He told TGG you can also scold and inspect them. Edge reports police dogs join pursuits. Rockstar hasn't named any breeds.",
+      "Jason says, “Is it cool if I pet your dog?” The woman replies, “Course, she loves to greet her public,” and Jason stoops to give the pup a fuss. You can pet dogs, and you can study, scold, and inspect them. Police dogs join pursuits. Rockstar hasn't named any breeds.",
     firstAppearance: "IGN interview",
     status: "Described by Rockstar",
     gallery: [],
@@ -223,7 +223,7 @@ export const animals: Animal[] = [
     category: "Wildlife",
     habitat: "Not published",
     image: "",
-    description: "Rob Nelson came across a peacock during the Famitsu demo.",
+    description: "You can come across a peacock.",
     firstAppearance: "Famitsu",
     status: "Seen in the Famitsu demo",
     gallery: [],
