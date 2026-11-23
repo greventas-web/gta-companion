@@ -49,7 +49,7 @@ export default function AnimalsPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="animals" />
-      <QuickGuideGrid guides={quickGuideCards(["hunting", "fishing", "pet-snake", "pet-animals", "island-dreams", "swimming", "waink-scans", "bigfoot"])} />
+      <QuickGuideGrid guides={quickGuideCards(["hunting", "fishing", "pet-snake", "pet-animals", "jet-ski-dog", "island-dreams", "swimming", "waink-scans", "bigfoot"])} />
     </PageShell>
   );
 }

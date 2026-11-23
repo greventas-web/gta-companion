@@ -98,7 +98,7 @@ export default function VehiclesPage() {
           {expected.map(card)}
         </CardGrid>
       ) : null}
-      <QuickGuideGrid guides={quickGuideCards(["register-car", "buy-a-car", "impounded-car", "call-your-car", "slim-jim", "key-cloner", "car-trackers", "fast-and-furious-car", "wyman-cars", "motorcycle", "refuel", "repair-car", "customize-car", "plane", "sell-cars", "helicopter", "fighter-jet", "tank", "military-base", "boat", "turn-signals", "headlights", "auto-drive", "street-races", "horn", "partner-drive", "scan-car", "hotwire", "carjack", "handbrake"])} />
+      <QuickGuideGrid guides={quickGuideCards(["register-car", "buy-a-car", "impounded-car", "call-your-car", "slim-jim", "key-cloner", "car-trackers", "fast-and-furious-car", "1010-murals", "wyman-cars", "motorcycle", "refuel", "repair-car", "customize-car", "plane", "sell-cars", "helicopter", "fighter-jet", "tank", "military-base", "boat", "turn-signals", "headlights", "auto-drive", "street-races", "horn", "partner-drive", "scan-car", "hotwire", "carjack", "handbrake"])} />
     </PageShell>
   );
 }

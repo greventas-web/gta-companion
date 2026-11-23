@@ -10,6 +10,7 @@
 import { safeCodesSources, shotgunSources, uniqueWeaponsSources } from "@/src/data/launch/batch10-sources";
 import { cowboyHatSources, equipmentSources, finalFlushSources, meleeWeaponsSources, wymanCarsSources } from "@/src/data/launch/batch11-sources";
 import { backroomsSources, hydeIslandSources, krakenSources, radioListSources } from "@/src/data/launch/batch12-sources";
+import { ghostShipSources, jetSkiDogSources, marbelleHotelSources, murals1010Sources } from "@/src/data/launch/batch13-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -352,6 +353,15 @@ const L = {
   uniquePlaylists: { href: "/collectibles/unique-playlists", title: "Unique playlists", kind: "collectible" },
   podcasts: { href: "/phone/podcasts", title: "Podcasts", kind: "radio" },
   electronics: { href: "/where-to-find/electronics-stores", title: "Electronics stores", kind: "phone" },
+  // Batch 13
+  marbelleHotel: { href: "/guides/marbelle-hotel", title: "Marbelle Hotel safe code", line: "955214, the Silent Hill hotel", kind: "location" },
+  ghostShip: { href: "/guides/ghost-ship", title: "Ghost ship and Cursed Knife", kind: "weapon" },
+  murals1010: { href: "/guides/1010-murals", title: "1010 Murals", line: "Unlock the 1010 Cheetah", kind: "vehicle" },
+  jetSkiDog: { href: "/guides/jet-ski-dog", title: "Jet ski dog and Dog Island", kind: "animal" },
+  crosstownMap: { href: "/map?pin=confirmed%3Acrosstown", title: "Crosstown on the map", kind: "location" },
+  downtownMap: { href: "/map?pin=confirmed%3Adowntown-vice-city", title: "Downtown on the map", kind: "location" },
+  oceanBeachMap: { href: "/map?pin=confirmed%3Aocean-beach", title: "Ocean Beach on the map", kind: "location" },
+  saltonMap: { href: "/map?pin=confirmed%3Asalton", title: "Salton on the map", kind: "location" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -1073,7 +1083,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you get scuba gear in GTA 6?", answer: "At Kenton's Island Dreams dock in Key Lento. Use the prompt by the yellow tanks on the charter boat, or the spare set on the dock." },
       { question: "How do you dive underwater in GTA 6?", answer: "Put on the scuba gear, get in the water and hold R1 on PS5 or RB on Xbox." },
     ],
-    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark, L.shipwrecks, L.kraken],
+    related: [L.treasureDiving, L.islandDreams, L.kenton, L.shark, L.shipwrecks, L.kraken, L.ghostShip],
   },
   {
     slug: "refuel",
@@ -1787,7 +1797,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you swim in GTA 6?", answer: "Enter deep water and move with the left stick. Click L3 to swim faster." },
       { question: "How do you dive underwater in GTA 6?", answer: "Hold R1 on PS5 or RB on Xbox to dive, and press Cross or A to surface." },
     ],
-    related: [L.scuba, L.treasureDiving, L.fishing, L.boat, L.kraken],
+    related: [L.scuba, L.treasureDiving, L.fishing, L.boat, L.kraken, L.jetSkiDog, L.ghostShip],
   },
   {
     slug: "file-size",
@@ -2504,7 +2514,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you scan with WAiNK in GTA 6?", answer: "Hold Up on the D-pad to open the camera, then scan the animal, plant or object in front of you." },
       { question: "How many WAiNK scans do you need in GTA 6?", answer: "100 WAiNK locations unlock a trophy. Track them under Progress > Collections > WAiNK Locations." },
     ],
-    related: [L.wainkLocations, L.waink, L.usePhone, L.collectiblesHub, L.trophiesGuide, L.wymanCars, L.finalFlush],
+    related: [L.wainkLocations, L.waink, L.murals1010, L.usePhone, L.collectiblesHub, L.trophiesGuide, L.wymanCars, L.finalFlush],
   },
   {
     slug: "horn",
@@ -2855,16 +2865,17 @@ export const quickGuides: QuickGuide[] = [
     title: "GTA 6 Easter Eggs and Secrets: Every One Found So Far",
     heading: "Easter eggs",
     description:
-      "GTA 6 Easter eggs found so far: Bigfoot, the UFO, Paul Walker's Fast and Furious car, Dexter's apartment, a dog on a jet ski, a real egg on a Vice City tower and more. Unofficial.",
+      "GTA 6 Easter eggs found so far: Bigfoot, the UFO, a Silent Hill hotel, a ghost ship, Paul Walker's Fast and Furious car, a dog on a jet ski and more. Unofficial.",
     keywords: ["GTA 6 easter eggs", "GTA 6 secrets", "GTA 6 easter egg locations", "GTA 6 hidden secrets", "GTA 6 references", "GTA 6 Red Dead easter egg"],
     kind: "location",
     answer: [
       "Bigfoot is back, with a full encounter in the swamps, and aliens return with a UFO you can see at night. Both have their own guides.",
       "Paul Walker's green Fast and Furious car is hidden in a villa garage on Vespucci Island, and you can keep it. Dexter Morgan's apartment is on Washington Island in Vice City.",
-      "Swim far out to sea and a dog riding a jet ski can turn up. On top of the tallest tower in Vice City there's reported to be a real Easter egg in a nest that you can pick up and throw.",
+      "Swim far out to sea and Cool Dog can pick you up on a jet ski and take you to Dog Island, where he digs up a wallet of cash. On top of the tallest tower in Vice City there's reported to be a real Easter egg in a nest that you can pick up and throw.",
       "Books link the games: a Western about New Austin from Red Dead Redemption (one is in Jacob's Tavern in Millport) and a Liberty City crime memoir on the table by Jason's back door in Chapter 1.",
       "The UFO house from a photo in GTA: The Trilogy – The Definitive Edition is real: a cream bungalow with two palm trees in Belville. By day, walk into the garage for a wall that reads \"IT'S A SIMULATION\". There's also a crab research outpost with codes to crack and a missing tourists mystery in Port Gellhorn.",
       "Three hidden events: a giant Kraken wrapped around a shipwreck on the seabed south-east of Gloriana Key, a Backrooms-style trip from a container east of Lake Tallaloko, and a Saw-style hunt on Hyde Island that rewards a unique sniper rifle. More are still being found.",
+      "Two spooky ones: the Marbelle Hotel in Crosstown turns Vice City into Silent Hill, with fog, red symbols and a safe (code 955214), and at night ghosts haunt St. Lucia Lighthouse off Millport, where a ghost ship shows at 1:30 AM and a wreck hides the Cursed Knife.",
     ],
     facts: [
       { label: "Monsters", value: "Bigfoot, the UFO" },
@@ -2873,16 +2884,19 @@ export const quickGuides: QuickGuide[] = [
       { label: "Series nods", value: "Red Dead and Liberty City books, the UFO house" },
       { label: "Mysteries", value: "Crab outpost, missing tourists" },
       { label: "Hidden events", value: "The Kraken, the Backrooms, the Hyde Island hunt" },
+      { label: "Spooky", value: "Silent Hill hotel, ghost ship" },
     ],
     faqs: [
       { question: "What Easter eggs are in GTA 6?", answer: "So far: Bigfoot, a UFO, Paul Walker's Fast and Furious car on Vespucci Island, Dexter's apartment on Washington Island, a dog on a jet ski out at sea, an egg on top of Vice City's tallest tower, and books that nod to Red Dead Redemption and Liberty City." },
       { question: "Is Bigfoot in GTA 6?", answer: "Yes. Bigfoot has a full encounter in the swamps. See the Bigfoot guide for where to go." },
       { question: "Is there a Red Dead Redemption easter egg in GTA 6?", answer: "Yes. A Western novel tells the story of a cowboy in New Austin, a place from Red Dead Redemption. One copy is in Jacob's Tavern in Millport, and you can read excerpts." },
-      { question: "Is there a dog on a jet ski in GTA 6?", answer: "Yes. If you swim far out to sea, a dog riding a jet ski can show up." },
+      { question: "Is there a dog on a jet ski in GTA 6?", answer: "Yes. Swim in open water away from boats and islands and Cool Dog rides up on a jet ski. He takes you to Dog Island and digs up a wallet with $1,218." },
+      { question: "Is there a Silent Hill Easter egg in GTA 6?", answer: "Yes. Climb the stairs of the Marbelle Hotel in south Crosstown and fog and red symbols take over. The note on the roof gives the safe code, 955214." },
+      { question: "Is there a ghost ship in GTA 6?", answer: "Yes. Climb St. Lucia Lighthouse off Millport around 1:30 AM and a glowing ghost ship appears out at sea." },
       { question: "Is there a Kraken in GTA 6?", answer: "Yes. A giant Kraken is wrapped around a sunken ship on the seabed south-east of Gloriana Key. Dive down with scuba gear to see it." },
       { question: "Where is the UFO house in GTA 6?", answer: "In Belville. It's the cream bungalow with two palm trees from the UFO photo in GTA: The Trilogy – The Definitive Edition. Its garage has a wall that reads \"IT'S A SIMULATION\"." },
     ],
-    related: [L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
+    related: [L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.marbelleHotel, L.ghostShip, L.jetSkiDog, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
   },
   {
     slug: "rob-police-car",
@@ -2989,7 +3003,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Why can't I get on the jet ski in GTA 6?", answer: "It's on a trailer. Hitch the trailer to Jason's truck, back it into the water and unhook it, then swim out and climb on." },
       { question: "How do you unhook the jet ski trailer in GTA 6?", answer: "Back the trailer into the water, then press O on PS5 or B on Xbox." },
     ],
-    related: [L.boat, L.jasonsPlace, L.jasonsPlaceMap, L.swimming, L.boating, L.easterEggs, L.crabLab],
+    related: [L.boat, L.jetSkiDog, L.jasonsPlace, L.jasonsPlaceMap, L.swimming, L.boating, L.easterEggs, L.crabLab],
   },
   {
     slug: "crab-lab",
@@ -3208,6 +3222,8 @@ export const quickGuides: QuickGuide[] = [
       { label: "Saber Shipping Facility", value: "Sources differ" },
       { label: "Crab outpost", value: "Safe 0072, dock 0212" },
       { label: "Lab Fees", value: "Lab door 0420, Brian's lockup 7700" },
+      { label: "Marbelle Hotel", value: "955214 (note on the roof)" },
+      { label: "Southside Storage", value: "1010 (garage, after the 1010 Murals)" },
     ],
     faqs: [
       { question: "What is the Kingpin Bowling safe code in GTA 6?", answer: "0300. The clue is on the wall map in the Brooks Boatworks office, but you can type the code straight away." },
@@ -3215,9 +3231,10 @@ export const quickGuides: QuickGuide[] = [
       { question: "What is the Brooks Boatworks safe code in GTA 6?", answer: "6823. The same wall map also gives La Cascara Motel (6969) and Kingpin Bowling (0300)." },
       { question: "What is the La Cascara Motel safe code in GTA 6?", answer: "6969." },
       { question: "What is the JanJak's Garage safe code in GTA 6?", answer: "4444. It's on a note stuck to the fridge, and the safe holds around $2,200." },
+      { question: "What is the Marbelle Hotel safe code in GTA 6?", answer: "955214. The safe is on the ground floor of the hotel in south Crosstown, and the code is on a note on the roof." },
       { question: "Do you need to find the clue to open a safe in GTA 6?", answer: "No. Enter a code you already know and the safe opens. Without a code, sticky bombs work but draw the police." },
     ],
-    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons],
+    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.marbelleHotel, L.murals1010, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons],
     sources: safeCodesSources,
   },
   {
@@ -3249,7 +3266,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Turnt Nipper .38 in GTA 6?", answer: "In a crashed paramotor caught in a tree at Bobcat Bight. Shoot the lines to bring it down, then search the wreck." },
       { question: "Which unique weapon can you miss in GTA 6?", answer: "Donnie's H&L .38. It's in the trunk of Donnie's car during Don Gone in Chapter 1. Take it before you get rid of the car." },
     ],
-    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
+    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.ghostShip, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
     sources: uniqueWeaponsSources,
   },
   {
@@ -3300,7 +3317,7 @@ export const quickGuides: QuickGuide[] = [
       { label: "Standard melee", value: "9, from $95 to $315" },
       { label: "Cheapest", value: "Brass Knuckles, $95" },
       { label: "All nine", value: "Big Shots, Hamlet" },
-      { label: "Unique", value: "Bat, Shark, Soldier's, Tallaloko and Explorer's knives" },
+      { label: "Unique", value: "A bat, plus the Shark, Soldier's, Tallaloko, Explorer's and Cursed knives" },
     ],
     faqs: [
       { question: "How many melee weapons are in GTA 6?", answer: "9 standard melee weapons: Brass Knuckles, Hunting Knife, Baton, Bushcraft Knife, EDC Knife, Combat Knife, Switchblade, Diving Knife and Survival Knife. Unique knives and a bat are extra." },
@@ -3308,8 +3325,9 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Shark Knife in GTA 6?", answer: "On the seabed north of the Saint Attaway Islands, stuck in the ground beside a shark cage in an underwater ravine." },
       { question: "Where is the Tallaloko Knife in GTA 6?", answer: "Behind a locked door on the upper floor of the Evergreen cabin, on the west side of Lake Tallaloko in East Lummox County." },
       { question: "Where is the bat at Dino Golf in GTA 6?", answer: "The Buntosaurus Bat is in one of the batting cages on the right at Dino Golf, off SR-32 in Frogswater." },
+      { question: "Where is the Cursed Knife in GTA 6?", answer: "In a small sunken boat on the seabed off the east side of Little Hardin Island, near St. Lucia Lighthouse off Millport. Dive with scuba gear and use the metal detector." },
     ],
-    related: [L.uniqueWeapons, L.explosives, L.gunStores, L.weapons, L.hamlet, L.bobcatKeyMap, L.scuba, L.stealth],
+    related: [L.uniqueWeapons, L.ghostShip, L.explosives, L.gunStores, L.weapons, L.hamlet, L.bobcatKeyMap, L.scuba, L.stealth],
     sources: meleeWeaponsSources,
   },
   {
@@ -3574,6 +3592,126 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.scuba, L.swimming, L.boat, L.shipwrecks, L.treasureDiving, L.shark, L.easterEggs, L.hydeIsland, L.mapHub],
     sources: krakenSources,
+  },
+  {
+    slug: "marbelle-hotel",
+    title: "GTA 6 Marbelle Hotel Safe Code (955214) and Silent Hill Easter Egg",
+    heading: "Marbelle Hotel safe code",
+    description:
+      "The GTA 6 Marbelle Hotel safe code is 955214. Where the haunted Silent Hill hotel is in Crosstown, how to trigger the fog and what's in the safe. Unofficial.",
+    keywords: ["GTA 6 Marbelle Hotel safe code", "GTA 6 955214", "GTA 6 Silent Hill easter egg", "GTA 6 haunted hotel", "GTA 6 Marbelle Hotel", "GTA 6 fog easter egg", "GTA 6 Crowex Ambassador watch", "GTA 6 Crosstown safe"],
+    kind: "location",
+    answer: [
+      "The Marbelle Hotel safe code is 955214. The hotel is a rundown, boarded-up building in south Crosstown, Vice City, near the NINE1NINE club and a block east of Pawn & Gun – Crosstown. The front door is locked, so go round the back and use the unlocked door.",
+      "The safe is on the ground floor, but the code is upstairs. Climb the stairs until a door opens by itself, go through it and take the small staircase towards the roof. The lights go out, red symbols cover the walls and ceiling, whispers start and thick fog rolls over the area. Nothing attacks you.",
+      "When the roof door opens, step outside and pick up the Old Note on the ground. The code 955214 is circled on it. If the roof door stays locked, go back down and climb up again.",
+      "Head back down and open the safe for cash and the Crowex Ambassador \"Breakfast\" watch, which Jason or Lucia can wear. Opening the safe clears the fog. Before you go, take the Ratface comic card from the cabinet opposite the stairs.",
+    ],
+    facts: [
+      { label: "Safe code", value: "955214" },
+      { label: "Where", value: "South Crosstown, Vice City" },
+      { label: "Way in", value: "The back door" },
+      { label: "In the safe", value: "Cash and the Crowex Ambassador \"Breakfast\" watch" },
+      { label: "Also inside", value: "A Ratface comic card" },
+      { label: "Fog", value: "Clears when you open the safe" },
+    ],
+    faqs: [
+      { question: "What is the Marbelle Hotel safe code in GTA 6?", answer: "955214. It's circled on the Old Note on the roof, which you reach after the haunting on the stairs. You can type it straight in if you already know it." },
+      { question: "Where is the Silent Hill hotel in GTA 6?", answer: "It's the Marbelle Hotel in south Crosstown, Vice City, near NINE1NINE. The front is locked, so use the back door." },
+      { question: "What's in the Marbelle Hotel safe in GTA 6?", answer: "Cash and the Crowex Ambassador \"Breakfast\" watch, which Jason or Lucia can wear." },
+      { question: "How do you get rid of the fog in GTA 6?", answer: "Open the safe on the Marbelle Hotel's ground floor. Leaving the area, or switching to your partner somewhere else, also clears it." },
+      { question: "Is the Silent Hill hotel dangerous in GTA 6?", answer: "No. The lights go out and symbols and whispers fill the stairwell, but nothing attacks you." },
+    ],
+    related: [L.crosstownMap, L.safeCodes, L.easterEggs, L.ghostShip, L.collectibleCards, L.clothes, L.viceCity, L.ufo],
+    sources: marbelleHotelSources,
+  },
+  {
+    slug: "ghost-ship",
+    title: "GTA 6 Ghost Ship Easter Egg: Lighthouse Ghosts and the Cursed Knife",
+    heading: "Ghost ship and Cursed Knife",
+    description:
+      "How to see the GTA 6 ghost ship: the haunted St. Lucia Lighthouse off Millport, the keeper's logbook, the Cursed Knife in the wreck and the 1:30 AM ship. Unofficial.",
+    keywords: ["GTA 6 ghost ship", "GTA 6 Cursed Knife", "GTA 6 lighthouse ghost", "GTA 6 St. Lucia Lighthouse", "GTA 6 Little Hardin Island", "GTA 6 ghost easter egg", "GTA 6 haunted lighthouse", "GTA 6 1:30 AM"],
+    kind: "weapon",
+    answer: [
+      "It all happens at St. Lucia Lighthouse on Little Hardin Island, across the water from Millport on Leonida's east coast. Go at night: two ghostly keepers fight on the top balcony and one goes over the railing. Watch with binoculars, or climb up for a closer look.",
+      "Break into the keeper's house next to the lighthouse and read the Old Logbook inside. It tells how the keeper Godfrey grew obsessed with a chest that washed ashore after a storm, how a ship appears off the coast at 1:30 AM, and how the keeper Frank took the chest back out to sea.",
+      "Now find Frank's boat. Take the boat with scuba gear from the pier, head out off the island's east side and dive. Use the flashlight and the metal detector to find a small sunken wooden boat on the seabed. The Cursed Knife, a unique knife, is in it. It's very dark down there at night, so turn the brightness up.",
+      "Then climb back to the top of the lighthouse around 1:30 AM and look out to sea. A glowing green ghost ship sits on the horizon. It's small, so zoom in with binoculars or your phone's camera. Missed it? Sleep and come back the next night.",
+    ],
+    facts: [
+      { label: "Where", value: "St. Lucia Lighthouse, Little Hardin Island (off Millport)" },
+      { label: "When", value: "At night. The ship shows at 1:30 AM" },
+      { label: "Reward", value: "The Cursed Knife" },
+      { label: "You need", value: "A boat and scuba gear" },
+    ],
+    faqs: [
+      { question: "Where is the ghost ship in GTA 6?", answer: "Out at sea off St. Lucia Lighthouse on Little Hardin Island, across the water from Millport. Climb to the top of the lighthouse around 1:30 AM and look out to sea." },
+      { question: "What time does the ghost ship appear in GTA 6?", answer: "At 1:30 AM. The keeper's logbook in the house next to the lighthouse gives the time. If you miss it, sleep and go back the next night." },
+      { question: "Where is the Cursed Knife in GTA 6?", answer: "In a small sunken boat on the seabed off the east side of Little Hardin Island. Dive with scuba gear and use the metal detector to find it." },
+      { question: "Is there a haunted lighthouse in GTA 6?", answer: "Yes. At night two ghostly keepers fight on the balcony of St. Lucia Lighthouse and one falls over the railing." },
+    ],
+    related: [L.millportMap, L.scuba, L.meleeWeapons, L.uniqueWeapons, L.easterEggs, L.kraken, L.marbelleHotel, L.skipTime, L.swimming],
+    sources: ghostShipSources,
+  },
+  {
+    slug: "1010-murals",
+    title: "GTA 6 1010 Murals: All 5 Locations and the 1010 Cheetah (Code 1010)",
+    heading: "1010 Murals and the 1010 Cheetah",
+    description:
+      "All 5 GTA 6 1010 Mural locations in Vice City and Ocean Beach, and how to unlock the 1010 Cheetah and the Southside Storage garage with code 1010. Unofficial.",
+    keywords: ["GTA 6 1010 murals", "GTA 6 1010 Cheetah", "GTA 6 1010 mural locations", "GTA 6 Southside Storage", "GTA 6 garage code 1010", "GTA 6 unique car", "GTA 6 secret garage", "GTA 6 murals"],
+    kind: "vehicle",
+    answer: [
+      "The 1010 Murals are 5 artworks in Vice City and Ocean Beach. Photograph each one with your phone's camera, the same way you scan WAiNK locations. They're their own list: they don't count toward the 100 WAiNK locations and aren't needed for 100%. After the first, track them under Progress > Collections > 1010 Murals.",
+      "Three are on rooftops. Loophole Architecture is on the Parlor Apartments roof in Rockridge: take the lift up and photograph the round building on the west side. Compliance Theater is on that building's roof in Downtown: take the lift or land a helicopter, mind the security, climb the southern antenna and photograph the roof below. Extraction Service is on that building's roof in Downtown: take the lift and photograph the roof below from the north-west corner.",
+      "Two are at street level. Privatized Pains Socialized Gains is painted under the parking garage south-east of Effluvia Bar in Ocean Beach. You Signed the Terms & Conditions is a painted train at the Crosstown Mule City Line stop: stand on the sidewalk south of the station and wait until the train is stopped there, or the photo won't count.",
+      "Photograph all five and you get a clue to the prize: Southside Storage, a garage at the south tip of Salton just north of Slator Towing Inc. Enter 1010 on the keypad. The garage is yours to use and the 1010 Cheetah is inside. Register the car to keep it, or sell it.",
+    ],
+    facts: [
+      { label: "Murals", value: "5" },
+      { label: "Areas", value: "Rockridge, Downtown, Ocean Beach, Crosstown" },
+      { label: "Reward", value: "The 1010 Cheetah and the Southside Storage garage" },
+      { label: "Garage code", value: "1010" },
+      { label: "Needed for 100%?", value: "No" },
+    ],
+    faqs: [
+      { question: "How many 1010 Murals are in GTA 6?", answer: "5: Loophole Architecture in Rockridge, Compliance Theater and Extraction Service in Downtown, Privatized Pains Socialized Gains in Ocean Beach, and You Signed the Terms & Conditions in Crosstown." },
+      { question: "What do you get for the 1010 Murals in GTA 6?", answer: "The 1010 Cheetah and the Southside Storage garage in Salton. Enter 1010 on the garage keypad. Register the car to keep it." },
+      { question: "What is the Southside Storage code in GTA 6?", answer: "1010. The garage is at the south tip of Salton, just north of Slator Towing Inc." },
+      { question: "Do the 1010 Murals count as WAiNK locations?", answer: "No. You photograph them the same way, but they're a separate list and don't count toward the 100 WAiNK locations or 100%." },
+      { question: "Why won't the train mural count in GTA 6?", answer: "The painted train has to be stopped at the Crosstown Mule City Line station when you take the photo. Wait for it to pull in." },
+    ],
+    related: [L.wainkLocations, L.wainkScans, L.register, L.garages, L.downtownMap, L.oceanBeachMap, L.crosstownMap, L.saltonMap, L.safeCodes, L.vehiclesHub],
+    sources: murals1010Sources,
+  },
+  {
+    slug: "jet-ski-dog",
+    title: "GTA 6 Jet Ski Dog: How to Find Cool Dog and Dog Island ($1,218)",
+    heading: "Jet ski dog and Dog Island",
+    description:
+      "How to find the GTA 6 jet ski dog: swim in open water until Cool Dog picks you up, ride to Dog Island and play with the dogs for a wallet with $1,218. Unofficial.",
+    keywords: ["GTA 6 jet ski dog", "GTA 6 Cool Dog", "GTA 6 Dog Island", "GTA 6 dog easter egg", "GTA 6 dog wallet", "GTA 6 easy money", "GTA 6 Gambit Bay"],
+    kind: "animal",
+    answer: [
+      "Leave your boat and swim out into open water, away from other boats and islands. After a minute or a few, Cool Dog turns up riding a jet ski. Gambit Bay works well, and you can do it early in the game.",
+      "Climb on the back. Cool Dog drives you to a small island where more dogs hang out, with toys like a frisbee and a football lying around.",
+      "Play fetch, then praise and pet the dogs. Before long Cool Dog digs up a wallet with $1,218 in it. If it doesn't turn up, pet the dogs near the holes by the shore, next to the upside-down canoe.",
+    ],
+    facts: [
+      { label: "Trigger", value: "Swim in open water" },
+      { label: "Good spot", value: "Gambit Bay" },
+      { label: "Reward", value: "A wallet with $1,218" },
+      { label: "Takes", value: "A few minutes" },
+    ],
+    faqs: [
+      { question: "How do you find the jet ski dog in GTA 6?", answer: "Swim in open water away from boats and islands. After a minute or a few, Cool Dog rides up on a jet ski. Climb on the back." },
+      { question: "Where is Dog Island in GTA 6?", answer: "It's the small island Cool Dog takes you to on his jet ski after he picks you up at sea. Just stay on and let him drive." },
+      { question: "How much money does the jet ski dog give you in GTA 6?", answer: "$1,218, in a wallet Cool Dog digs up after you play fetch and pet the dogs on the island." },
+      { question: "Where is the best place to find the jet ski dog?", answer: "Gambit Bay. Leave your boat and swim away from other boats and islands, then wait." },
+    ],
+    related: [L.jetSki, L.swimming, L.boat, L.petAnimals, L.easterEggs, L.money, L.mapHub],
+    sources: jetSkiDogSources,
   },
   {
     slug: "weather",
