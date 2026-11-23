@@ -1090,6 +1090,7 @@ export const collectibleGuides: CollectibleGuide[] = [
       { href: "/phone/waink", label: "WAiNK app" },
       { href: "/trophies/you-wainker", label: "You WAiNKer! trophy" },
       { href: "/guides/100-percent-completion", label: "100% checklist" },
+      { href: "/guides/1010-murals", label: "1010 Murals and the 1010 Cheetah" },
       { href: "/guides/ufo", label: "UFO easter egg" },
       { href: "/collectibles/magazines-books-comics", label: "Magazines, books and comics" },
     ],

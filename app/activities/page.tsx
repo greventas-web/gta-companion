@@ -49,7 +49,7 @@ export default function ActivitiesPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="activities" />
-      <QuickGuideGrid guides={quickGuideCards(["workout", "fishing", "hunting", "scuba-gear", "shipwrecks", "kraken", "plane", "parachute", "swimming", "skip-time", "controls", "helicopter", "boat", "jet-ski", "stunt-jumps", "basketball", "mini-golf", "shooting-ranges", "auto-drive", "meditation", "climbing", "crouch", "character-stats", "public-transport"])} />
+      <QuickGuideGrid guides={quickGuideCards(["workout", "fishing", "hunting", "scuba-gear", "shipwrecks", "kraken", "plane", "parachute", "swimming", "skip-time", "controls", "helicopter", "boat", "jet-ski", "jet-ski-dog", "stunt-jumps", "basketball", "mini-golf", "shooting-ranges", "auto-drive", "meditation", "climbing", "crouch", "character-stats", "public-transport"])} />
     </PageShell>
   );
 }
