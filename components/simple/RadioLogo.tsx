@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { RADIO_LOGO_HEIGHT, RADIO_LOGO_WIDTH } from "@/lib/simple/radio";
+import { radioLogoSize } from "@/lib/simple/radio";
 
 type LogoProps = {
   src: string;
@@ -13,9 +13,9 @@ type LogoProps = {
 };
 
 /**
- * In-game station plate. The file is 256×160. Draw it at that size or smaller,
- * centered, so the logo stays sharp. `unoptimized` keeps the browser from
- * treating a same-file srcset as a denser image and shrinking the plate.
+ * Trimmed station badge. Draw it at its native pixel size or smaller so the
+ * mark stays sharp. `unoptimized` keeps the browser from shrinking it.
+ * Rounded corners and the shadow are for the station page only.
  */
 export default function RadioLogo({
   src,
@@ -24,21 +24,21 @@ export default function RadioLogo({
   compact = false,
   shadow = false,
 }: LogoProps) {
-  const maxWidth = compact ? 200 : RADIO_LOGO_WIDTH;
+  const size = radioLogoSize(src);
+  const maxWidth = compact ? Math.min(size.width, 96) : size.width;
   return (
     <Image
       src={src}
       alt={alt}
-      width={RADIO_LOGO_WIDTH}
-      height={RADIO_LOGO_HEIGHT}
+      width={size.width}
+      height={size.height}
       priority={priority}
       unoptimized
       style={{
         width: `min(100%, ${maxWidth}px)`,
         height: "auto",
-        maxHeight: compact ? 128 : RADIO_LOGO_HEIGHT,
       }}
-      className={`object-contain ${shadow ? "drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)]" : ""}`}
+      className={`object-contain ${shadow ? "rounded-[8px] drop-shadow-[0_10px_16px_rgba(0,0,0,0.45)]" : ""}`}
     />
   );
 }
