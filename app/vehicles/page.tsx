@@ -72,10 +72,10 @@ export default function VehiclesPage() {
 
       <QuickFacts
         facts={[
-          { label: "In the game", value: `${vehicleCounts.total}` },
+          { label: "Vehicles in the game", value: `${vehicleCounts.total}` },
           { label: "Base models", value: `${vehicleCounts.baseModels}` },
-          { label: "Standout", value: `${vehicleCounts.standout}` },
-          { label: "For 100%", value: `${vehicleCounts.neededFor100} scans` },
+          { label: "Standout vehicles", value: `${vehicleCounts.standout}` },
+          { label: "Scans for 100%", value: `${vehicleCounts.neededFor100}` },
         ]}
       />
 

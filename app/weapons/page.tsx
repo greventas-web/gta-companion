@@ -83,7 +83,7 @@ export default function WeaponsPage() {
               imageAlt={weapon.imageAlt}
               eyebrow={makerLabel(weapon.manufacturer)}
               price={weapon.price}
-              mark={weaponMark(weapon.category)}
+              mark={weaponMark(weapon.category, weapon.type)}
               markLabel={makerLabel(weapon.manufacturer)}
               frame
               small

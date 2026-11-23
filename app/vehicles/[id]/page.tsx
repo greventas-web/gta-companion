@@ -8,6 +8,7 @@ import { manufacturerByName } from "@/data/manufacturers";
 import { vehicles } from "@/data/vehicles";
 import { vehicleImages } from "@/lib/media/catalog";
 import { makerLabel, vehicleMark } from "@/lib/simple/marks";
+import { vehicleCatalog } from "@/lib/simple/vehicleCopy";
 import { detailMetadata } from "@/lib/pages";
 import { cheatList } from "@/src/data/launch/cheat-list";
 import { cheatSlug, groupForCheat } from "@/src/data/launch/cheats";
@@ -34,7 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const vehicle = vehicles.find((item) => item.slug === id);
   if (!vehicle) return {};
-  return detailMetadata(vehicle.name, vehicle.description);
+  const copy = vehicleCatalog(vehicle);
+  const blurb = vehicle.status === "Confirmed" ? [copy.summary, copy.where].filter(Boolean).join(" ") : "Not seen in GTA 6 yet. This name is from earlier GTA games.";
+  return detailMetadata(vehicle.name, blurb);
 }
 
 export default async function VehicleDetailsPage({ params }: Props) {
@@ -48,6 +51,7 @@ export default async function VehicleDetailsPage({ params }: Props) {
   const related = vehicles.filter((v) => v.category === vehicle.category && v.slug !== vehicle.slug).slice(0, 4);
   const confirmed = vehicle.status === "Confirmed";
   const makerName = makerLabel(vehicle.manufacturer);
+  const copy = vehicleCatalog(vehicle);
 
   return (
     <PageShell>
@@ -58,14 +62,15 @@ export default async function VehicleDetailsPage({ params }: Props) {
         image={photos[0]}
         imageAlt={vehicle.imageAlt}
         mark={vehicleMark(vehicle.category, vehicle.slug)}
-        markLabel={makerName}
+        markLabel={vehicle.name}
         price={vehicle.price}
-        summary={confirmed ? vehicle.description : "Not seen in GTA 6 yet. This name is from earlier GTA games."}
-        where={confirmed ? vehicle.whereToFind : undefined}
+        summary={confirmed ? copy.summary : "Not seen in GTA 6 yet. This name is from earlier GTA games."}
+        where={confirmed ? copy.where : undefined}
         facts={[
           { label: "Maker", value: makerName },
           { label: "Top speed", value: vehicle.topSpeed ?? "" },
           { label: "Seats", value: vehicle.seats ? `${vehicle.seats}` : "" },
+          { label: "Unlock", value: confirmed ? copy.unlock : "" },
           { label: "Cheat code", value: cheat?.code ? cheat.code.join(" ") : "" },
         ]}
         bars={confirmed && vehicle.stats ? statBars(vehicle.stats) : undefined}

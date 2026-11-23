@@ -68,32 +68,25 @@ export function missionArea(mission: Mission) {
   return parts.join(", ");
 }
 
-/** 1–2 spoiler-safe sentences from fields the page already has. */
+/**
+ * What you do, from lines already published on the site.
+ * Chapter, giver and place stay in the fact table.
+ */
+const ACTIONS: Record<string, string> = {
+  "gone-fishing": "You pick up binoculars and a flashlight.",
+  "gear-up": "Jason picks his first long gun at Chuck's Tackle & Shot in Key Lento.",
+  "just-a-scratch": "Drive Jason's Vapid Ganado to Coastal Auto Care in Key Lento and get the truck repaired.",
+  "unwanted-attention": "The red Phoenix is often on a tow truck at the Hamlet impound. Repair and respray it, then take it to Brian.",
+  pipework: "Fix the sink at Mandy's house, a short drive from Jason's place.",
+  "lab-fees": "The gift-shop lab door is 0420, and Brian's lockup is 7700. The pay lands in the mailbox at Jason's house.",
+};
+
+/** 1–2 spoiler-safe sentences. Facts that the table already lists stay out. */
 export function missionLead(mission: Mission) {
+  if (ACTIONS[mission.slug]) return ACTIONS[mission.slug];
   const generic = /^Chapter \d+/i.test(mission.summary) && /mission \d+/i.test(mission.summary);
   if (!generic) return mission.summary;
-
-  const bits: string[] = [];
-  if (mission.giver && mission.place) {
-    const area = mission.startArea ? `, ${mission.startArea}` : "";
-    bits.push(`${mission.giver} gives this one. It starts at ${mission.place}${area}.`);
-  } else if (mission.giver && mission.startArea) {
-    bits.push(`${mission.giver} gives this one, in ${mission.startArea}.`);
-  } else if (mission.giver) {
-    bits.push(`${mission.giver} gives this one.`);
-  } else if (mission.place) {
-    bits.push(`It starts at ${mission.place}.`);
-  } else if (mission.startArea) {
-    bits.push(`It starts in ${mission.startArea}.`);
-  }
-
-  const chapter = mission.chapter
-    ? `Chapter ${mission.chapter}${mission.chapterName ? `, ${mission.chapterName}` : ""}`
-    : "";
-  const number = mission.order ? `mission ${mission.order}` : "";
-  const tail = [chapter, number].filter(Boolean).join(", ");
-  if (tail) bits.push(`${tail}.`);
-  return bits.join(" ") || mission.summary;
+  return "You can play some missions a little out of order.";
 }
 
 export function rewardText(rewards?: string) {

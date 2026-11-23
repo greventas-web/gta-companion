@@ -1,5 +1,7 @@
 "use client";
 
+import { Check } from "lucide-react";
+
 import { useProHint, useTracked } from "@/lib/pro/tracker";
 
 /**
@@ -7,7 +9,7 @@ import { useProHint, useTracked } from "@/lib/pro/tracker";
  * Storage, the mark limit and Pro sync live in lib/pro/tracker.ts.
  */
 
-export function TrackButton({ id, label }: { id: string; label: string }) {
+export function TrackButton({ id, label, labeled = false }: { id: string; label: string; labeled?: boolean }) {
   const { set, toggle } = useTracked();
   const done = set.has(id);
   return (
@@ -16,13 +18,22 @@ export function TrackButton({ id, label }: { id: string; label: string }) {
       aria-pressed={done}
       aria-label={done ? `Mark ${label} as not done` : `Mark ${label} as done`}
       onClick={() => toggle(id)}
-      className={`absolute left-3 top-3 z-[3] flex h-9 w-9 items-center justify-center rounded-full border text-base font-black backdrop-blur transition active:scale-90 ${
-        done
-          ? "border-emerald-300/60 bg-emerald-500 text-black"
-          : "border-white/30 bg-black/50 text-white/70 hover:border-white/60"
-      }`}
+      className={
+        labeled
+          ? `z-[3] inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] backdrop-blur transition active:scale-95 ${
+              done
+                ? "border-emerald-300/60 bg-emerald-500 text-black"
+                : "border-white/25 bg-black/55 text-white hover:border-white/50"
+            }`
+          : `absolute left-3 top-3 z-[3] flex h-9 w-9 items-center justify-center rounded-full border backdrop-blur transition active:scale-90 ${
+              done
+                ? "border-emerald-300/60 bg-emerald-500 text-black"
+                : "border-white/30 bg-black/50 text-white hover:border-white/60"
+            }`
+      }
     >
-      {done ? "✓" : ""}
+      <Check size={labeled ? 12 : 16} strokeWidth={3} aria-hidden />
+      {labeled ? (done ? "Done" : "Mark done") : null}
     </button>
   );
 }

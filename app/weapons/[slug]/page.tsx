@@ -46,10 +46,10 @@ export default async function WeaponPage({ params }: Props) {
         title={weapon.name}
         image={weapon.image}
         imageAlt={weapon.imageAlt}
-        mark={weaponMark(weapon.category)}
-        markLabel={makerLabel(weapon.manufacturer)}
+        mark={weaponMark(weapon.category, weapon.type)}
+        markLabel={weapon.name}
         price={weapon.price}
-        summary={weapon.howToGet ?? weapon.description}
+        summary={weapon.description}
         facts={[
           { label: "Maker", value: makerLabel(weapon.manufacturer) },
           { label: "Ammo", value: weapon.caliber ?? weapon.ammunition },

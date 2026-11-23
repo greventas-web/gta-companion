@@ -57,6 +57,8 @@ export type SimpleDetailProps = {
   };
   /** Non-money reward, shown as a pill beside the price. */
   badge?: string;
+  /** Mission plate: size to its content instead of a 16:10 photo frame. */
+  compactVisual?: boolean;
   children?: React.ReactNode;
 };
 
@@ -91,6 +93,7 @@ export default function SimpleDetail({
   tip,
   nav,
   badge,
+  compactVisual = false,
 }: SimpleDetailProps) {
   const mapHref = mapLink ?? (mapPin ? mapPinHref(mapPin) : null);
   const text = shortText(summary, 3);
@@ -119,10 +122,10 @@ export default function SimpleDetail({
     <section className="mx-auto max-w-[1400px]">
       <Breadcrumb items={crumbs} />
 
-      <div className={hasImage ? "mt-8 grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12" : "mt-6 max-w-3xl"}>
+      <div className={hasImage ? `mt-8 grid gap-8 lg:gap-12 ${compactVisual ? "lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)]" : "lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]"}` : "mt-6 max-w-3xl"}>
         {hasImage ? (
-          <div className="self-start overflow-hidden rounded-[28px] border border-white/10 bg-black">
-            <div className="relative aspect-[16/10]">
+          <div className={`self-start overflow-hidden rounded-[28px] border border-white/10 bg-black ${compactVisual ? "lg:max-w-md" : ""}`}>
+            <div className={compactVisual ? "relative" : "relative aspect-[16/10]"}>
               {visual ? (
                 visual
               ) : showMark && mark ? (
@@ -131,7 +134,7 @@ export default function SimpleDetail({
                 <ItemImage src={image} alt={isArt ? `Artwork: ${title}` : imageAlt || title} name={title} kind={kind} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               )}
               {isArt && resolved.isArtwork ? <ArtworkTag className="absolute right-3 top-3 z-[2]" /> : null}
-              {trackId ? <TrackButton id={trackId} label={title} /> : null}
+              {trackId && !compactVisual ? <TrackButton id={trackId} label={title} /> : null}
             </div>
             {credit ? (
               <p className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-500">{credit}</p>
@@ -143,11 +146,11 @@ export default function SimpleDetail({
           {eyebrow ? (
             <p className="text-xs font-black uppercase tracking-[0.25em] text-pink-300">{eyebrow}</p>
           ) : null}
-          <div className="flex items-start gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <h1 className="mt-3 break-words text-4xl font-black tracking-[-0.03em] sm:text-5xl">{title}</h1>
-            {trackId && !hasImage ? (
-              <div className="relative mt-3 h-9 w-9 shrink-0 [&>button]:left-0 [&>button]:top-0">
-                <TrackButton id={trackId} label={title} />
+            {trackId && (!hasImage || compactVisual) ? (
+              <div className="mt-3">
+                <TrackButton id={trackId} label={title} labeled />
               </div>
             ) : null}
           </div>

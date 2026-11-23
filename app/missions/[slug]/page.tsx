@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const mission = findMission(slug);
   if (!mission) return {};
-  return detailMetadata(`${mission.name} — GTA 6 missions`, mission.summary);
+  return detailMetadata(`${mission.name} — GTA 6 missions`, missionLead(mission));
 }
 
 export default async function MissionPage({ params }: Props) {
@@ -59,6 +59,7 @@ export default async function MissionPage({ params }: Props) {
         eyebrow={chapterEyebrow(mission)}
         title={mission.name}
         visual={<MissionPlate mission={mission} />}
+        compactVisual
         summary={missionLead(mission)}
         price={moneyPill}
         badge={rewardBadge}
