@@ -4,6 +4,7 @@ import SimpleCard, { CardGrid, QuickFacts, SimpleHero } from "@/components/simpl
 import { vehicles } from "@/data/vehicles";
 import { pageMetadata } from "@/lib/launch";
 import { vehicleImages } from "@/lib/media/catalog";
+import { makerLabel, vehicleMark } from "@/lib/simple/marks";
 import { itemListJsonLd } from "@/lib/seo";
 import { vehicleCounts } from "@/src/data/launch/launch-facts";
 import type { Vehicle } from "@/types/vehicle";
@@ -40,8 +41,11 @@ function card(vehicle: Vehicle) {
       title={vehicle.name}
       image={photo}
       imageAlt={vehicle.imageAlt}
-      eyebrow={vehicle.manufacturer}
+      eyebrow={makerLabel(vehicle.manufacturer)}
       price={vehicle.price}
+      mark={vehicleMark(vehicle.category, vehicle.slug)}
+      markLabel={makerLabel(vehicle.manufacturer)}
+      frame
       small
     />
   );
@@ -68,10 +72,10 @@ export default function VehiclesPage() {
 
       <QuickFacts
         facts={[
-          { label: "In the game", value: `${vehicleCounts.total}` },
+          { label: "Vehicles in the game", value: `${vehicleCounts.total}` },
           { label: "Base models", value: `${vehicleCounts.baseModels}` },
-          { label: "Standout", value: `${vehicleCounts.standout}` },
-          { label: "For 100%", value: `${vehicleCounts.neededFor100} scans` },
+          { label: "Standout vehicles", value: `${vehicleCounts.standout}` },
+          { label: "Scans for 100%", value: `${vehicleCounts.neededFor100}` },
         ]}
       />
 

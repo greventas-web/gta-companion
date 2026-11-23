@@ -163,20 +163,64 @@ function weaponNoun(type: string | undefined, category: string) {
   return raw.toLowerCase();
 }
 
+function classLabel(weapon: LaunchWeapon) {
+  if (weapon.type && !/^(thrown|melee)$/i.test(weapon.type)) return weapon.type.toLowerCase();
+  if (weapon.category === "SMG" || weapon.category === "LMG") return weapon.category;
+  return weapon.category.toLowerCase();
+}
+
+/** Where it is sold, from the stored how-to. Cheat unlocks stay off this sentence. */
+function buyLine(weapon: LaunchWeapon) {
+  const price = weapon.price ? ` for ${weapon.price}` : "";
+  switch (weapon.how) {
+    case "gearup":
+      return `In Gear Up, Jason can buy it at Chuck's Tackle & Shot in Key Lento${price}.`;
+    case "expanded":
+    case "expanded+cheat":
+      return weapon.price
+        ? `Only the six Expanded Ammu-Nations sell it, for ${weapon.price}.`
+        : "Only the six Expanded Ammu-Nations sell it.";
+    case "cheat-shotgun":
+      return "It comes from the Explosive Shotgun cheat, after the story.";
+    case "bret":
+      return "Expanded Ammu-Nations sell it after Bret Vogel's hunting jobs, which start in Chapter 2.";
+    case "ue":
+      return "The Ultimate Edition includes a matching pair.";
+    case "jason":
+      return "Jason carries this one, and Ammu-Nation sells decals for it once Coffee Break starts.";
+    case "lucia":
+      return "Lucia carries this one, and Ammu-Nation sells decals for it once Coffee Break starts.";
+    case "ammu-explosive":
+      return "Buy it at Ammu-Nation, or take one when an enemy drops it.";
+    default:
+      return weapon.price ? `It costs ${weapon.price} at Ammu-Nation.` : "Sold at Ammu-Nation.";
+  }
+}
+
 function describe(weapon: LaunchWeapon) {
+  const maker = makerName(weapon.manufacturer);
   if (weapon.category === "Explosives" || weapon.category === "Melee") {
     const noun = weaponNoun(weapon.type, weapon.category);
     const articleWord = /^[aeiou]/i.test(noun) ? "An" : "A";
-    return `${articleWord} ${noun} you can buy at Ammu-Nation or take from enemies.`;
+    const from = maker ? ` from ${maker}` : "";
+    return `${articleWord} ${noun}${from}. ${buyLine(weapon)}`;
   }
-  const kind = (weapon.type ?? weapon.category).toLowerCase();
+  const kind = classLabel(weapon);
   const fire = weapon.fireMode ? `${weapon.fireMode.toLowerCase()} ` : "";
   const cal = weapon.caliber ? `${weapon.caliber} ` : "";
-  const lead = `${article(fire || cal || kind) === "an" ? "An" : "A"} ${fire}${cal}${kind} made by ${weapon.manufacturer}.`;
-  const mag = weapon.magazine ? ` Holds ${weapon.magazine} round${weapon.magazine === 1 ? "" : "s"}.` : "";
-  const stats = "";
-  const price = weapon.price ? ` Costs ${weapon.price} at Ammu-Nation.` : "";
-  return `${lead}${mag}${stats}${price}`;
+  const leadBits = `${fire}${cal}${kind}`.trim();
+  const articleWord = article(leadBits) === "an" ? "An" : "A";
+  const from = maker ? ` from ${maker}` : "";
+  const mag = weapon.magazine
+    ? `, with ${/^(8|11|18)$/.test(String(weapon.magazine)) ? "an" : "a"} ${weapon.magazine}-round magazine`
+    : "";
+  return `${articleWord} ${leadBits}${from}${mag}. ${buyLine(weapon)}`;
+}
+
+function makerName(name: string) {
+  const value = name.trim();
+  if (!value || /^(not named|not shown|unknown)$/i.test(value)) return "";
+  return value;
 }
 
 function toWeapon(weapon: LaunchWeapon, id: number, base?: Weapon): Weapon {

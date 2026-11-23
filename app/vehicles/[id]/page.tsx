@@ -7,6 +7,8 @@ import SimpleDetail from "@/components/simple/SimpleDetail";
 import { manufacturerByName } from "@/data/manufacturers";
 import { vehicles } from "@/data/vehicles";
 import { vehicleImages } from "@/lib/media/catalog";
+import { makerLabel, vehicleMark } from "@/lib/simple/marks";
+import { vehicleCatalog } from "@/lib/simple/vehicleCopy";
 import { detailMetadata } from "@/lib/pages";
 import { cheatList } from "@/src/data/launch/cheat-list";
 import { cheatSlug, groupForCheat } from "@/src/data/launch/cheats";
@@ -33,7 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const vehicle = vehicles.find((item) => item.slug === id);
   if (!vehicle) return {};
-  return detailMetadata(vehicle.name, vehicle.description);
+  const copy = vehicleCatalog(vehicle);
+  const blurb = vehicle.status === "Confirmed" ? [copy.summary, copy.where].filter(Boolean).join(" ") : "Not seen in GTA 6 yet. This name is from earlier GTA games.";
+  return detailMetadata(vehicle.name, blurb);
 }
 
 export default async function VehicleDetailsPage({ params }: Props) {
@@ -46,6 +50,8 @@ export default async function VehicleDetailsPage({ params }: Props) {
   const cheat = cheatList.find((item) => item.link === `/vehicles/${vehicle.slug}`);
   const related = vehicles.filter((v) => v.category === vehicle.category && v.slug !== vehicle.slug).slice(0, 4);
   const confirmed = vehicle.status === "Confirmed";
+  const makerName = makerLabel(vehicle.manufacturer);
+  const copy = vehicleCatalog(vehicle);
 
   return (
     <PageShell>
@@ -55,38 +61,25 @@ export default async function VehicleDetailsPage({ params }: Props) {
         title={vehicle.name}
         image={photos[0]}
         imageAlt={vehicle.imageAlt}
+        mark={vehicleMark(vehicle.category, vehicle.slug)}
+        markLabel={vehicle.name}
         price={vehicle.price}
-        summary={confirmed ? vehicle.description : "Not seen in GTA 6 yet. This name is from earlier GTA games."}
+        summary={confirmed ? copy.summary : "Not seen in GTA 6 yet. This name is from earlier GTA games."}
+        where={confirmed ? copy.where : undefined}
         facts={[
-          { label: "Maker", value: vehicle.manufacturer },
+          { label: "Maker", value: makerName },
           { label: "Top speed", value: vehicle.topSpeed ?? "" },
           { label: "Seats", value: vehicle.seats ? `${vehicle.seats}` : "" },
+          { label: "Unlock", value: confirmed ? copy.unlock : "" },
           { label: "Cheat code", value: cheat?.code ? cheat.code.join(" ") : "" },
         ]}
         bars={confirmed && vehicle.stats ? statBars(vehicle.stats) : undefined}
         links={[
           ...(maker ? [{ href: `/manufacturers/${maker.slug}`, label: maker.name }] : []),
           ...(cheat ? [{ href: `/cheats/${groupForCheat(cheat.category).slug}/${cheatSlug(cheat.name)}`, label: "Cheat" }] : []),
+          ...related.map((item) => ({ href: `/vehicles/${item.slug}`, label: item.name })),
         ]}
-        related={related.map((item) => ({
-          href: `/vehicles/${item.slug}`,
-          title: item.name,
-          image: vehicleImages(item)[0],
-          eyebrow: item.manufacturer,
-          price: item.price,
-          small: true,
-        }))}
-        relatedHeading="Similar"
       >
-        {confirmed && vehicle.whereToFind ? (
-          <p className="mt-6 text-zinc-300">
-            <span className="font-semibold text-white">Where to find it: </span>
-            {vehicle.whereToFind}
-          </p>
-        ) : null}
-        {confirmed && vehicle.stats ? (
-          <p className="mt-3 text-sm text-zinc-500">Bars are the in-game stat panel (out of 10), not measured speeds.</p>
-        ) : null}
         <ViewOnMap entityType="vehicle" entitySlug={vehicle.slug} />
       </SimpleDetail>
     </PageShell>
