@@ -52,7 +52,7 @@ export default function Gta6LaunchPage() {
           <SimpleCard key={item.href} href={item.href} title={item.title} image={item.image} line={item.line} kind={item.kind} />
         ))}
       </CardGrid>
-      <QuickGuideGrid guides={quickGuideCards(["platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "where-is-it-based", "how-many-chapters", "ultimate-edition"])} />
+      <QuickGuideGrid guides={quickGuideCards(["platforms", "file-size", "physical-copy", "performance-mode", "ps5-pro", "where-is-it-based", "how-many-chapters", "ultimate-edition", "patch-notes"])} />
     </PageShell>
   );
 }
