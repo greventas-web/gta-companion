@@ -7,6 +7,9 @@ export const OPEN_CONSENT_EVENT = "gta-open-cookie-settings";
  * EEA + UK + Switzerland. Google requires a certified TCF CMP for
  * personalized ads in these regions, and Consent Mode v2 defaults
  * should be denied here until the visitor chooses.
+ * With NEXT_PUBLIC_USE_GOOGLE_CMP=1, Google's CMP collects consent, and
+ * the defaults script still sets EEA/UK/CH to denied until the CMP
+ * updates them (Consent Mode v2 "advanced").
  * https://support.google.com/adsense/answer/13554116
  * https://developers.google.com/tag-platform/security/guides/consent
  */

@@ -7,7 +7,7 @@ import {
   Section,
 } from "@/components/ui";
 import { pageMetadata } from "@/lib/launch";
-import { SITE } from "@/lib/site";
+import { SITE, SUPPORT_URL } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Privacy Policy",
@@ -89,6 +89,29 @@ export default function PrivacyPage() {
                   </a>{" "}
                   page.
                 </p>
+                <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-8 text-zinc-400">
+                  <li>
+                    Our cookies: gta_consent (your analytics/ads choice, 180
+                    days) and gta_geo (region check so the right consent
+                    message shows).
+                  </li>
+                  <li>
+                    Google Analytics 4: _ga and _ga_GH40PJPZT4 (tell visits
+                    apart, up to 2 years). Set only after consent in the EEA,
+                    UK and Switzerland.
+                  </li>
+                  <li>
+                    Google AdSense: __gads, __gpi, __eoi (ad delivery,
+                    frequency and measurement), and cookies on Google&apos;s
+                    ad domains such as IDE (doubleclick.net). Set only after
+                    consent in the EEA, UK and Switzerland. Elsewhere, ads
+                    may be personalized unless you opt out.
+                  </li>
+                  <li>
+                    Google&apos;s consent message: FCCDCF, FCNCA (store your
+                    consent choice when the Google consent message is shown).
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -111,6 +134,34 @@ export default function PrivacyPage() {
                   . The publisher line for this site is published at{" "}
                   <a href="/ads.txt" className="text-pink-400 hover:text-pink-300">
                     /ads.txt
+                  </a>
+                  . Google explains how it uses data from sites that use its
+                  services at{" "}
+                  <a
+                    href="https://policies.google.com/technologies/partner-sites"
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    https://policies.google.com/technologies/partner-sites
+                  </a>
+                  . You can opt out at{" "}
+                  <a
+                    href="https://adssettings.google.com"
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    https://adssettings.google.com
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://www.aboutads.info/choices"
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    https://www.aboutads.info/choices
                   </a>
                   .
                 </p>
@@ -142,14 +193,11 @@ export default function PrivacyPage() {
                   Cookie choices
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Visitors in the European Economic Area, the United Kingdom,
-                  and Switzerland are asked to accept, reject, or manage
-                  analytics and advertising cookies before those cookies are
-                  used. Your choice is stored in a first-party cookie on this
-                  site so we can remember it. You can open Cookie settings in
-                  the footer at any time, including to change a previous
-                  choice. Essential cookies, such as sign-in and the stored
-                  choice itself, stay on so the site can work.
+                  Visitors in the European Economic Area, the United Kingdom
+                  and Switzerland are asked before analytics or advertising
+                  cookies are used. This is done through Google&apos;s consent
+                  message or our own cookie banner. You can change your choice
+                  at any time from Cookie settings in the footer.
                 </p>
               </div>
 
@@ -209,10 +257,30 @@ export default function PrivacyPage() {
 
               <div>
                 <h2 className="text-3xl font-black">
+                  Support and affiliate links
+                </h2>
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
+                  The Support us links open our Ko-fi page (
+                  <a
+                    href={SUPPORT_URL}
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {SUPPORT_URL}
+                  </a>
+                  ). Ko-fi and its payment providers handle any payment there
+                  under their own privacy policies. We do not receive your
+                  card details.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-black">
                   Updates
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  This policy was updated on November 18, 2026. It will
+                  This policy was updated on November 23, 2026. It will
                   change again if the site starts collecting something new.
                 </p>
               </div>

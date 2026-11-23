@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import MapLoader, { MapLoading } from "@/components/map/community/MapLoader";
 import { getStaticPins } from "@/lib/map/catalog";
+import SupportCta from "@/components/support/SupportCta";
 import WhereToFindLinks from "@/components/where-to-find/WhereToFindLinks";
 import { SITE } from "@/lib/site";
 
@@ -74,6 +75,8 @@ export default function MapPage() {
             <MapLoader curated={curated} />
           </Suspense>
         </div>
+
+        <SupportCta placement="map" className="max-w-none" />
 
         <WhereToFindLinks className="mt-6" title="Where to find" />
       </div>

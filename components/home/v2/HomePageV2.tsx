@@ -1,4 +1,5 @@
 import SimpleCard from "@/components/simple/SimpleCard";
+import SupportCta from "@/components/support/SupportCta";
 import { homeHubs } from "@/lib/simple/hubs";
 
 import FeaturedNewsV2 from "./FeaturedNewsV2";
@@ -17,6 +18,10 @@ export default function HomePageV2() {
           ))}
         </div>
       </section>
+
+      <div className="px-6 sm:px-10 lg:px-14">
+        <SupportCta placement="home" />
+      </div>
 
       <FeaturedNewsV2 />
     </main>
