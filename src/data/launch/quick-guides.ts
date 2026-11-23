@@ -38,6 +38,8 @@ export type QuickGuide = {
   kind: string;
   /** 2 to 4 short plain sentences that answer the question. */
   answer: string[];
+  /** Timing or missable-content warning, shown as a callout under the title. */
+  notice?: string;
   price?: string;
   facts?: { label: string; value: string }[];
   /** Questions for FAQ schema. Answers repeat the page text. */
@@ -3766,7 +3768,7 @@ export const quickGuides: QuickGuide[] = [
     title: "GTA 6 La Perle Garage Code (92665), Laptop Password and Vanessa's Growler",
     heading: "La Perle garage code",
     description:
-      "The GTA 6 La Perle garage code is 92665. The laptop password (Muffins, Queen, 15), where Auntie's Place is and how to get Vanessa's pink Growler. Unofficial.",
+      "The GTA 6 La Perle garage code is 92665. The laptop password (Muffins, Queen, 15), where Auntie's Place is and how to get Vanessa's Pfister Growler. Unofficial.",
     keywords: ["GTA 6 La Perle garage code", "GTA 6 92665", "GTA 6 laptop password", "GTA 6 Muffins Queen 15", "GTA 6 Auntie's Place", "GTA 6 Vanessa's Growler", "GTA 6 Del Rio Boulevard Garage", "GTA 6 secret garage"],
     kind: "vehicle",
     answer: [
@@ -3774,22 +3776,25 @@ export const quickGuides: QuickGuide[] = [
       "The clues are in the apartment. A framed tribute to a dog called Muffins sits on a table near the entrance. On the bedside table is a drawing of a dog wearing a crown (Queen), and the back of it says \"Class of '15\".",
       "Open the messages on the laptop and read the thread from Unknown. It points to a garage next to Auntie's Place in La Perle and gives the code 92665. Read it before you go, because the keypad only takes the code once you've seen it.",
       "Auntie's Place has no map icon, so head for Twa Ponya Tattoo or Aline's Thrift Store on Del Rio Boulevard in southern La Perle. Turn into the small parking lot by the closed Auntie's Place takeout. The grey garage with a pink bow painted beside the door is in the corner. Enter 92665 on the keypad.",
-      "Inside is Vanessa's Growler, a pink Pfister sports car, and the Del Rio Boulevard Garage is yours to keep as extra storage. If the car doesn't show as yours, register it at a Pay 'n' Spray. Do this during Chapter 3, while you still live in the apartment.",
+      "Inside is Vanessa's Pfister Growler, and the Del Rio Boulevard Garage is yours to keep as extra storage. If the car doesn't show as yours, register it at a Pay 'n' Spray. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler.",
     ],
+    notice:
+      "Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler.",
     facts: [
       { label: "Garage code", value: "92665" },
       { label: "Laptop password", value: "Muffins, Queen, 15" },
       { label: "Where", value: "Del Rio Boulevard, southern La Perle" },
       { label: "Landmark", value: "The pink bow by the door" },
-      { label: "Reward", value: "Vanessa's Growler and the garage" },
-      { label: "When", value: "Chapter 3" },
+      { label: "Reward", value: "Vanessa's Pfister Growler and the garage" },
+      { label: "When", value: "Before you finish Chapter 3" },
     ],
     faqs: [
       { question: "What is the La Perle garage code in GTA 6?", answer: "92665. It's in the messages from Unknown on the laptop in your Chapter 3 apartment. Read the message first, then enter the code on the keypad by the pink bow." },
       { question: "What is the laptop password in GTA 6?", answer: "Muffins, Queen, 15. Muffins is the dog in the framed tribute near the entrance, Queen is the crowned dog drawing on the bedside table, and 15 is from \"Class of '15\" on the back of it." },
       { question: "Where is Auntie's Place in GTA 6?", answer: "On Del Rio Boulevard in southern La Perle, Vice City, near Twa Ponya Tattoo and Aline's Thrift Store. It's a closed takeout with no map icon. The garage is in the corner of the parking lot beside it." },
-      { question: "What's in the La Perle garage in GTA 6?", answer: "Vanessa's Growler, a pink Pfister sports car. The Del Rio Boulevard Garage also becomes yours as extra car storage." },
-      { question: "Can you miss the La Perle garage in GTA 6?", answer: "Do it during Chapter 3. The laptop is in the apartment you live in then, so don't leave it until later." },
+      { question: "What's in the La Perle garage in GTA 6?", answer: "Vanessa's Pfister Growler. The Del Rio Boulevard Garage also becomes yours as extra car storage." },
+      { question: "Can you miss the La Perle garage in GTA 6?", answer: "Yes. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
+      { question: "When do you have to get the La Perle garage in GTA 6?", answer: "Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
     ],
     related: [L.laPerleMap, L.garageCodes, L.garages, L.register, L.safeCodes, L.viceCity, L.payNSpray, L.vamos, L.murals1010],
     sources: laPerleGarageSources,
@@ -3834,12 +3839,12 @@ export const quickGuides: QuickGuide[] = [
     kind: "garage",
     answer: [
       "Garage codes are fixed, so they're the same in every game, unlike store and bank safes. You can type a code straight in without finding the clue first.",
-      "92665, La Perle: the garage beside Auntie's Place on Del Rio Boulevard, from the laptop in your Chapter 3 apartment. Inside is Vanessa's pink Growler, and the garage becomes yours.",
+      "92665, La Perle: the garage beside Auntie's Place on Del Rio Boulevard, from the laptop in your Chapter 3 apartment. Inside is Vanessa's Pfister Growler, and the garage becomes yours. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler.",
       "360782, Farmer Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County: look for the giant apple on a truck by the road. The locked farm garage holds the Declasse Applesauce Bobcat, a customised '55 Bobcat pickup in red and white.",
       "2727, Grayson: the garage with the Declasse Vamos that Moses asks for in Chapter 2. 1010, Southside Storage in Salton: the garage with the 1010 Cheetah, after you photograph the five 1010 Murals.",
     ],
     facts: [
-      { label: "La Perle", value: "92665, Vanessa's Growler" },
+      { label: "La Perle", value: "92665. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
       { label: "Red Apple Orchard", value: "360782, Applesauce Bobcat" },
       { label: "Grayson", value: "2727, Declasse Vamos (for Moses)" },
       { label: "Southside Storage", value: "1010, 1010 Cheetah" },
