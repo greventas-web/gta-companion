@@ -186,6 +186,7 @@ export default function SimpleCard({
   const showMark = !real.src && Boolean(mark);
   const resolved = showMark ? { src: undefined, source: "none" as const, isArtwork: false, artKey: undefined } : resolveCardImage({ image: image ?? place?.src, title, kind });
   const isArt = resolved.source === "art";
+  const studioPlate = typeof resolved.src === "string" && resolved.src.endsWith("-designed.webp");
   const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);
@@ -204,18 +205,22 @@ export default function SimpleCard({
       {showMark && mark ? (
         <Silhouette mark={mark} />
       ) : resolved.src ? (
-        <Image
-          src={resolved.src}
-          alt={isArt ? `Artwork: ${title}` : imageAlt || place?.alt || title}
-          fill
-          sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
-          className="object-cover transition duration-500 group-hover:scale-105"
-        />
+        <div className={studioPlate ? "absolute inset-x-0 top-0 h-[74%]" : "absolute inset-0"}>
+          <Image
+            src={resolved.src}
+            alt={isArt ? `Artwork: ${title}` : imageAlt || place?.alt || title}
+            fill
+            sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
+            className={`transition duration-500 ${studioPlate ? "object-contain object-[0%_bottom] sm:object-[22%_bottom]" : "object-cover group-hover:scale-105"}`}
+          />
+        </div>
       ) : (
         <BlankSurface />
       )}
       {showMark ? (
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07070b] via-[#07070b]/80 to-transparent" />
+      ) : studioPlate ? (
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#07070b] via-[#07070b]/75 to-transparent" />
       ) : (
         <>
           <div
