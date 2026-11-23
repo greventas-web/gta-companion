@@ -186,6 +186,7 @@ export default function SimpleCard({
   const showMark = !real.src && Boolean(mark);
   const resolved = showMark ? { src: undefined, source: "none" as const, isArtwork: false, artKey: undefined } : resolveCardImage({ image: image ?? place?.src, title, kind });
   const isArt = resolved.source === "art";
+  const studioPlate = typeof resolved.src === "string" && resolved.src.endsWith("-designed.webp");
   const meta = [eyebrow, shortLine].filter(Boolean).join(" · ");
   const code = (chips ?? []).find((chip) => /^code$/i.test(chip.label ?? ""))?.value;
   const extra = chipLine(chips);
@@ -197,25 +198,29 @@ export default function SimpleCard({
       data-maker={markLabel || undefined}
       data-art-key={isArt ? resolved.artKey : undefined}
       data-artwork={resolved.isArtwork ? "painted" : undefined}
-      className={`relative h-full overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
-        frame ? "aspect-[16/10]" : small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
+      className={`relative h-full w-full min-w-0 overflow-hidden rounded-[24px] border border-white/5 bg-[#08080A] transition duration-300 group-hover:-translate-y-1 group-hover:border-pink-500/40 ${
+        frame ? "aspect-[16/10] min-h-[8.75rem]" : small ? "min-h-[148px]" : "min-h-[184px] sm:min-h-[200px]"
       }`}
     >
       {showMark && mark ? (
         <Silhouette mark={mark} />
       ) : resolved.src ? (
-        <Image
-          src={resolved.src}
-          alt={isArt ? `Artwork: ${title}` : imageAlt || place?.alt || title}
-          fill
-          sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
-          className="object-cover transition duration-500 group-hover:scale-105"
-        />
+        <div className={studioPlate ? "absolute inset-x-0 top-0 h-[74%]" : "absolute inset-0"}>
+          <Image
+            src={resolved.src}
+            alt={isArt ? `Artwork: ${title}` : imageAlt || place?.alt || title}
+            fill
+            sizes={small ? "(max-width: 640px) 50vw, 300px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px"}
+            className={`transition duration-500 ${studioPlate ? "object-contain object-[0%_bottom] sm:object-[22%_bottom]" : "object-cover group-hover:scale-105"}`}
+          />
+        </div>
       ) : (
         <BlankSurface />
       )}
       {showMark ? (
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07070b] via-[#07070b]/80 to-transparent" />
+      ) : studioPlate ? (
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#07070b] via-[#07070b]/75 to-transparent" />
       ) : (
         <>
           <div
@@ -240,17 +245,17 @@ export default function SimpleCard({
       <div className={`absolute inset-0 z-20 flex flex-col justify-end ${frame || small ? "p-4" : "p-5"} ${trackId ? "pt-14" : price || tag ? "pt-12" : ""}`}>
         {frame || showMark ? null : <KindIcon kind={kind} small={small} />}
         <h3
-          className={`break-words font-black leading-none tracking-[-0.03em] text-white ${
-            frame ? "line-clamp-2 text-sm leading-snug sm:text-base" : small ? "text-lg leading-tight sm:text-xl" : "text-2xl"
+          className={`w-full min-w-0 shrink-0 break-words font-black tracking-[-0.03em] text-white ${
+            frame ? "line-clamp-2 min-h-[2.5em] text-[13px] leading-[1.25] sm:text-sm" : small ? "text-lg leading-tight sm:text-xl" : "text-2xl leading-none"
           }`}
         >
           {title}
         </h3>
         {code ? (
-          <p className="mt-2 font-mono text-base font-black tracking-[0.12em] text-white sm:text-lg">{code}</p>
+          <p className="mt-2 shrink-0 font-mono text-base font-black tracking-[0.12em] text-white sm:text-lg">{code}</p>
         ) : null}
         {meta ? (
-          <p className={`line-clamp-2 font-semibold text-pink-300 ${frame ? "mt-1 text-xs" : "mt-2 text-sm"} ${mapHref ? "pr-24" : ""}`}>{meta}</p>
+          <p className={`w-full min-w-0 shrink-0 font-semibold leading-snug text-pink-300 ${frame ? "mt-1 line-clamp-2 text-[11px] sm:text-xs" : "mt-2 line-clamp-2 text-sm"} ${mapHref ? "pr-24" : ""}`}>{meta}</p>
         ) : null}
         {extra ? (
           <p className={`mt-1 line-clamp-2 text-xs font-semibold text-zinc-300 ${mapHref ? "pr-24" : ""}`}>{extra}</p>
@@ -275,18 +280,18 @@ export default function SimpleCard({
     ) : null;
 
   const inner = !href ? (
-    <div className="group h-full">{body}</div>
+    <div className="group h-full min-w-0">{body}</div>
   ) : (
     <Link
       href={href}
-      className="group block h-full rounded-[24px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 active:scale-[0.99]"
+      className="group block h-full min-w-0 rounded-[24px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 active:scale-[0.99]"
     >
       {body}
     </Link>
   );
   if (!extras) return inner;
   return (
-    <div className="relative h-full">
+    <div className="relative h-full min-w-0">
       {inner}
       {extras}
     </div>
