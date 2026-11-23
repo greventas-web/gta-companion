@@ -1,5 +1,6 @@
 import { batch1Sources as src } from "./batch1-sources";
 import type { LaunchEntry } from "./types";
+import { randyWishListSources } from "./batch15-sources";
 
 /**
  * Spoiler-safe money methods from launch-day guides (Nov 18, 2026).
@@ -48,14 +49,15 @@ export const moneyMethods: LaunchEntry[] = [
     title: "Randy's wish list (high-end cars)",
     price: "$30,000+",
     summary:
-      "Mid Chapter 3 you get the key cloner for modern cars. Randy sends a list of 18 high-end cars to find around Vice City.",
+      "Mid Chapter 3 you get the key cloner for modern cars. Randy sends a list of 20 high-end cars to find around Leonida.",
     details: [
       { label: "Unlocks", value: "Mid Chapter 3 (mission Clonin' Keys, Makin' GS)" },
       { label: "Where", value: "Randy, western Vice City" },
       { label: "Pays", value: "Usually $30,000+ in perfect condition" },
       { label: "Tip", value: "Text Randy from the phone's Reminders for hints" },
     ],
-    sources: [src.powerpyxMoney, src.gamespotMoney],
+    sources: [src.powerpyxMoney, src.gamespotMoney, ...randyWishListSources.slice(0, 2)],
+    links: [{ href: "/guides/randys-wish-list", label: "All 20 cars and where to find them" }],
   },
   {
     slug: "jewelry-store-robberies",
