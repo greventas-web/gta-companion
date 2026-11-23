@@ -12,6 +12,7 @@ import { cowboyHatSources, equipmentSources, finalFlushSources, meleeWeaponsSour
 import { backroomsSources, hydeIslandSources, krakenSources, radioListSources } from "@/src/data/launch/batch12-sources";
 import { ghostShipSources, jetSkiDogSources, marbelleHotelSources, murals1010Sources } from "@/src/data/launch/batch13-sources";
 import { blackEagleSources, freddieGibbsSources, garageCodesSources, laPerleGarageSources, patchNotesSources, vamosSources } from "@/src/data/launch/batch14-sources";
+import { halifaxSources, infernusSources, jasonsStashSources, randyWishListSources } from "@/src/data/launch/batch15-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -374,6 +375,20 @@ const L = {
   blackEagle: { href: "/guides/black-eagle-kalinga", title: "Black Eagle safe code", line: "Unique Kalinga .50", kind: "weapon" },
   lakeLeonidaMap: { href: "/map?pin=confirmed%3Alake-leonida", title: "Lake Leonida on the map", kind: "location" },
   fences: { href: "/where-to-find/fences", title: "Fences", kind: "money" },
+  // Batch 15
+  randyList: { href: "/guides/randys-wish-list", title: "Randy's wish list", line: "All 20 cars", kind: "vehicle" },
+  infernus: { href: "/guides/pegassi-infernus", title: "Pegassi Infernus", line: "Police station code 5270", kind: "vehicle" },
+  halifax: { href: "/guides/halifax-statue", title: "Halifax statue choice", line: "Dubious Provenance", kind: "mission" },
+  jasonsStash: { href: "/guides/jasons-stash", title: "Jason's stash", line: "The $5,000 Rainy Day Fund", kind: "money" },
+  dubiousProvenance: { href: "/missions/dubious-provenance", title: "Dubious Provenance", line: "Chapter 3", kind: "mission" },
+  randyMission: { href: "/missions/strangers-randy", title: "Randy's wish list job", kind: "mission" },
+  thraxCar: { href: "/vehicles/truffade-thrax", title: "Truffade Thrax", kind: "vehicle" },
+  hellfireCar: { href: "/vehicles/bravado-gauntlet-hellfire", title: "Bravado Gauntlet Hellfire", kind: "vehicle" },
+  capriMap: { href: "/map?pin=confirmed%3Acapri", title: "Capri on the map", kind: "location" },
+  waningSandsMap: { href: "/map?pin=confirmed%3Awaning-sands", title: "Waning Sands on the map", kind: "location" },
+  peacockBayMap: { href: "/map?pin=confirmed%3Apeacock-bay", title: "Peacock Bay on the map", kind: "location" },
+  hamletMap: { href: "/map?pin=confirmed%3Ahamlet", title: "Hamlet on the map", kind: "location" },
+  rustyAnchorMap: { href: "/map?pin=confirmed%3Athe-rusty-anchor", title: "The Rusty Anchor on the map", kind: "location" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -484,7 +499,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you get the key cloner in GTA 6?", answer: "It's a story unlock in the Chapter 3 mission Steal The Zorrusso For Randy. It installs on your phone and stays for good." },
       { question: "What does the key cloner do in GTA 6?", answer: "It opens and starts keyless cars, which you can't take any other way. The WAiNK app shows which cars need it." },
     ],
-    related: [L.zorrusso, L.randy, L.slimJim, L.waink, L.register, L.fastestCars, L.carTrackers, L.equipment],
+    related: [L.zorrusso, L.randy, L.randyList, L.infernus, L.slimJim, L.waink, L.register, L.fastestCars, L.carTrackers, L.equipment],
   },
   {
     slug: "first-person",
@@ -1348,7 +1363,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you sell cars in GTA 6?", answer: "Moses buys cars with no tracker from Chapter 2, any Pay 'n' Spray buys stolen cars from Chapter 3, and Randy buys high-end cars." },
       { question: "How do you know what a car is worth in GTA 6?", answer: "Scan it with the WAiNK app. It shows the sell value and the tracker." },
     ],
-    related: [L.sellMoses, L.sellPayNSpray, L.randy, L.waink, L.register, L.vamos],
+    related: [L.sellMoses, L.sellPayNSpray, L.randy, L.randyList, L.waink, L.register, L.vamos],
   },
   {
     slug: "money-glitch",
@@ -1501,7 +1516,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "What is the snake's name in GTA 6?", answer: "Jason's pet snake is called Dolores." },
       { question: "Why feed the snake in GTA 6?", answer: "Feeding Dolores once a day gives Jason a 3% Focus boost." },
     ],
-    related: [L.focus, L.jasonsPlace, L.workout, L.tips, L.petAnimals],
+    related: [L.focus, L.jasonsPlace, L.workout, L.tips, L.petAnimals, L.jasonsStash],
   },
   {
     slug: "rob-store",
@@ -2988,7 +3003,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "What does an advanced tracker do in GTA 6?", answer: "It tells the police where you are if you slow down or stop for a few seconds. Keep driving fast and ditch the car far from where you're headed." },
       { question: "Why can't I mod my stolen car in GTA 6?", answer: "It has a tracker. Register it first, which switches the tracker off." },
     ],
-    related: [L.register, L.scanCar, L.keyCloner, L.payNSpray, L.sellCars, L.loseWanted, L.randy],
+    related: [L.register, L.scanCar, L.keyCloner, L.payNSpray, L.sellCars, L.loseWanted, L.randy, L.randyList, L.infernus],
   },
   {
     slug: "jet-ski",
@@ -3920,6 +3935,128 @@ export const quickGuides: QuickGuide[] = [
     sources: blackEagleSources,
   },
   {
+    slug: "randys-wish-list",
+    title: "GTA 6 Randy's Wish List: All 20 Cars and Where to Find Them",
+    heading: "Randy's wish list",
+    description:
+      "Every car on Randy's wish list in GTA 6: all 20 names, the fixed spots for the Vitello, Furia, Gauntlet Hellfire, Infernus, Toros and Growler, plus the Mamba GT and Truffade Thrax jobs. Unofficial.",
+    keywords: ["GTA 6 Randy's wish list", "GTA 6 Randy wish list cars", "GTA 6 Randy list locations", "GTA 6 wish list all cars", "GTA 6 Supply & Demand", "GTA 6 Mamba GT", "GTA 6 Truffade Thrax location", "GTA 6 Pegassi Vitello", "GTA 6 Piccia Furia"],
+    kind: "vehicle",
+    answer: [
+      "Randy's wish list has 20 high-end cars. The first is the Granforma Zorrusso, which you deliver in the Chapter 3 story mission that gives you the key cloner. The other 19 are optional, and you need all of them for the Supply & Demand trophy.",
+      "The 20 cars: Granforma Zorrusso, Pegassi Vitello, Pegassi Infernus, Pegassi Tempesta, Pegassi Toros, Piccia Furia, Bravado Gauntlet Hellfire, Bravado Banshee, Buckingham Windsor Drop, Buckingham Jubilee, Grotti Itali RSX, Grotti Carbonizzare, Pfister Growler, Pfister Neon, Benefactor Dubsta, Gallivanter Baller ST-D, Invetero Coquette D10, Ubermacht Cypher, Ascot Paragon and Ocelot Jugular.",
+      "Randy marks some cars as purple jobs at fixed spots. Pegassi Vitello: in a villa garage on Flamingo Pkwy, Waning Sands, east of Belville. Piccia Furia: in the garage of a mansion on Palladia Ln, Peacock Estates. Bravado Gauntlet Hellfire: at the back of an M7 gang junkyard in Hamlet, east of Boone Speedway. Pegassi Infernus: Level 7 of the Crosstown Police Station car park. Pegassi Toros: outside the Pegassi Residences on Bayside Dr, Tequesta Retreat. Pfister Growler: a multi-storey car park on Fig St, or the roads of Capri.",
+      "The rest spawn at random. The wealthy streets of Capri are the best place to look, as many listed cars sit outside the houses there. If you can't find one, save and reload to reshuffle the parked cars. A listed car counts wherever you steal it.",
+      "Two extra jobs come on top of the 20. After several deliveries Randy asks for a Mamba GT from a guarded mansion in Leaf Links, Vice Beach: get the key from a bowl on the table behind the sofa in the main house (the Snap Gun opens the doors). Once every other car is in, he finds a Truffade Thrax at the Dalton Island Club. Take the ferry over, deal with the guards quietly, bring it back on the ferry and lose the police waiting on the other side.",
+    ],
+    facts: [
+      { label: "Cars", value: "20, plus the Mamba GT and Truffade Thrax jobs" },
+      { label: "Unlocks", value: "Chapter 3, with the key cloner" },
+      { label: "Best area", value: "Capri's wealthy streets" },
+      { label: "Trophy", value: "Supply & Demand" },
+      { label: "Tip", value: "Repair dents before you deliver" },
+    ],
+    faqs: [
+      { question: "How many cars are on Randy's wish list in GTA 6?", answer: "20. The first, the Granforma Zorrusso, comes with a Chapter 3 story mission. The Mamba GT and the Truffade Thrax are two extra jobs on top." },
+      { question: "Where do Randy's wish list cars spawn in GTA 6?", answer: "Some are fixed jobs Randy marks on the map. The rest are random, and Capri's wealthy streets are the best place to look. Save and reload to reshuffle the parked cars." },
+      { question: "Where is the Truffade Thrax for Randy in GTA 6?", answer: "At the Dalton Island Club. Randy finds it once you've delivered every other car. Take the ferry over, steal it quietly and lose the police after the ferry ride back." },
+      { question: "Where is the Mamba GT key in GTA 6?", answer: "In a bowl on the table behind the sofa in the main house of the Leaf Links mansion in Vice Beach. Use the Snap Gun on the doors and keep out of sight of the guards." },
+      { question: "Does damage lower Randy's pay in GTA 6?", answer: "Yes. Repair the car at the gas station across the street from Randy's before you hand it over." },
+    ],
+    related: [L.infernus, L.randy, L.keyCloner, L.carTrackers, L.zorrusso, L.thraxCar, L.hellfireCar, L.capriMap, L.waningSandsMap, L.peacockBayMap, L.hamletMap, L.tequestaMap, L.sellCars, L.repairCar],
+    sources: randyWishListSources,
+  },
+  {
+    slug: "pegassi-infernus",
+    title: "GTA 6 Pegassi Infernus: Police Station Door Code (5270) for Randy",
+    heading: "Pegassi Infernus",
+    description:
+      "How to steal the Pegassi Infernus for Randy in GTA 6: the Crosstown Police Station door code 5270, which level it's on and the stunt jump out of the car park. Unofficial.",
+    keywords: ["GTA 6 Pegassi Infernus", "GTA 6 Infernus location", "GTA 6 police station code", "GTA 6 5270", "GTA 6 Crosstown Police Station", "GTA 6 Randy Infernus", "GTA 6 Infernus door code"],
+    kind: "vehicle",
+    answer: [
+      "The Pegassi Infernus is the first supercar Randy asks for. It's locked in the car park of the Crosstown Police Station on NW 9th St, Crosstown, Vice City.",
+      "Find the side door to the right of the guard booth. It's behind a couple of trees and easy to miss. The door code is 5270. Another way in: wait for a police car to leave and slip in through the gate.",
+      "Sneak up the stairs to Level 7, where the Infernus is parked. If it isn't there, check the levels above. Open it with the key cloner.",
+      "Drive up to the top floor, Level 9, and take the stunt jump off the roof to get out. The car has a tracker, so keep your speed up all the way to Randy. If it's damaged, repair it at the gas station across the street from Randy's first, as dents lower the pay.",
+    ],
+    facts: [
+      { label: "Where", value: "Crosstown Police Station, NW 9th St" },
+      { label: "Door code", value: "5270" },
+      { label: "Level", value: "7" },
+      { label: "Way out", value: "Stunt jump on the top floor" },
+      { label: "Tool", value: "Key cloner" },
+    ],
+    faqs: [
+      { question: "What is the police station code in GTA 6?", answer: "5270. It opens the side door to the right of the guard booth at the Crosstown Police Station, where Randy's Pegassi Infernus is parked." },
+      { question: "Where is the Pegassi Infernus in GTA 6?", answer: "On Level 7 of the Crosstown Police Station car park on NW 9th St, Crosstown, Vice City." },
+      { question: "How do you steal the Infernus without the cops in GTA 6?", answer: "Use the side door code 5270, sneak up the stairs, clone the key, then take the stunt jump off the top floor and keep your speed up so the tracker doesn't give you away." },
+    ],
+    related: [L.crosstownMap, L.randyList, L.randy, L.keyCloner, L.carTrackers, L.stuntJumps, L.stealth, L.loseWanted, L.repairCar],
+    sources: infernusSources,
+  },
+  {
+    slug: "halifax-statue",
+    title: "GTA 6 Halifax: Should You Give Him the Statue? (Dubious Provenance)",
+    heading: "Halifax statue choice",
+    description:
+      "Dubious Provenance in GTA 6: should you give Benedict Halifax the statue, trust him at the motel, and kill or spare him? What each choice changes and the missable rewards. Unofficial.",
+    keywords: ["GTA 6 Halifax", "GTA 6 give statue to Halifax", "GTA 6 Dubious Provenance", "GTA 6 trust Halifax", "GTA 6 kill or spare Halifax", "GTA 6 Benedict Halifax", "GTA 6 Vapid Hustler", "GTA 6 Bobby Ambrose watch"],
+    kind: "mission",
+    answer: [
+      "Dubious Provenance is an early Chapter 3 story mission. After Cal's visit to Boobie's Bayside apartment, pick up the statue from the closet (the statue Jason and Lucia took in Chapter 1). Evelyn Andrews' antiques store in Capri won't touch it, but art dealer Benedict Halifax follows you out and offers to have it appraised.",
+      "Give him the statue. You get his Crowex Octane \"Bobby Ambrose\" watch as collateral, and the job carries on. He then dodges your calls for a few in-game days until Jason and Lucia go looking for him, so just play on.",
+      "If you refuse, the job pauses and you later get an optional objective to call Halifax and hand it over. Do it before the end of Chapter 3, or the rest of the job and its rewards are gone for good. Reports differ on whether you still get the watch that way, so give it straight away to be sure.",
+      "You meet him again at a motel and choose whether to trust him. Reports differ on which answer is quicker, so make a manual save first. At the end you can kill or spare him. Sparing him moves your criminal profile towards Professional, killing him towards Violent. Either way you can loot his storage for cash, jewelry and his Vapid '32 Hustler, which sells for $5,825 or costs $21,900 to register.",
+    ],
+    notice: "Missable: if you refuse the statue at first, call Halifax before the end of Chapter 3.",
+    facts: [
+      { label: "Mission", value: "Dubious Provenance, Chapter 3" },
+      { label: "Best choice", value: "Give him the statue" },
+      { label: "Watch", value: "Crowex Octane \"Bobby Ambrose\"" },
+      { label: "Car", value: "Vapid '32 Hustler" },
+      { label: "Spare him", value: "Criminal profile towards Professional" },
+    ],
+    faqs: [
+      { question: "Should you give the statue to Halifax in GTA 6?", answer: "Yes. You get the Crowex Octane \"Bobby Ambrose\" watch and the job carries on. Refusing only pauses it, and you have to call him before the end of Chapter 3 to finish it." },
+      { question: "Should you kill or spare Halifax in GTA 6?", answer: "Spare him if you want a Professional criminal profile. Killing him moves it towards Violent. You can loot his storage and take the Vapid '32 Hustler either way." },
+      { question: "Is Dubious Provenance missable in GTA 6?", answer: "Yes, if you refuse the statue at first and never call Halifax back. Do it before Chapter 3 ends or you lose the rest of the job and its rewards." },
+      { question: "Why won't Halifax answer in GTA 6?", answer: "He dodges your calls on purpose. Keep playing for a few in-game days and Jason and Lucia will go looking for him." },
+    ],
+    related: [L.dubiousProvenance, L.capriMap, L.criminalProfile, L.register, L.sellCars, L.save, L.missions, L.chapters],
+    sources: halifaxSources,
+  },
+  {
+    slug: "jasons-stash",
+    title: "GTA 6 Jason's Stash: How to Get the $5,000 Rainy Day Fund Back",
+    heading: "Jason's stash",
+    description:
+      "Can you go back to Jason's house in GTA 6? Yes: the $5,000 Rainy Day Fund survives under the bedroom floor in Key Lento. How to sneak in during Chapter 2, or walk in later. Unofficial.",
+    keywords: ["GTA 6 Jason's stash", "GTA 6 Rainy Day Fund", "GTA 6 go back to Jason's house", "GTA 6 Key Lento house", "GTA 6 stash money", "GTA 6 burned house", "GTA 6 Dolores eggs"],
+    kind: "money",
+    answer: [
+      "Yes, you can go back to Jason's burned house in Key Lento. The lockbox under the bedroom floorboards survived the fire, with Jason's $5,000 Rainy Day Fund and some photos inside. Cash you put in the stash yourself in Chapter 1 is gone.",
+      "During Chapter 2 the house is watched by police, at the front and on the dock. Take a RydeMe to Chuck's Tackle and Shot or The Rusty Anchor nearby, put on a hat, sunglasses and a bandana, and sneak through the gardens to the house just north of Jason's.",
+      "Swim across the small canal to the boat ramp by Jason's basketball hoop. Skip the stairs right in front of the ramp, as they're close to the police. Go round the north side and climb the other stairs, then open the floorboards in the bedroom.",
+      "Or just wait. A few story missions into Chapter 3 the police leave, and you can drive up and walk straight in. The money doesn't go anywhere. While you're there, look under the stairs: Dolores the snake made it out and has a nest of eggs.",
+    ],
+    facts: [
+      { label: "Cash", value: "$5,000 Rainy Day Fund" },
+      { label: "Where", value: "Bedroom floorboards, Jason's house" },
+      { label: "Chapter 2", value: "Sneak in past the police" },
+      { label: "Later", value: "Walk in once the police leave in Chapter 3" },
+      { label: "Missable", value: "No" },
+    ],
+    faqs: [
+      { question: "Can you go back to Jason's house in GTA 6?", answer: "Yes. During Chapter 2 it's watched by police, so sneak in from the canal on the north side. A few missions into Chapter 3 the police leave and you can walk in." },
+      { question: "Where is the Rainy Day Fund in GTA 6?", answer: "In the lockbox under the bedroom floorboards of Jason's burned house in Key Lento. It holds $5,000 and some photos." },
+      { question: "Is the money in Jason's stash gone in GTA 6?", answer: "Your own deposits are gone, but Jason's $5,000 Rainy Day Fund survived and is yours to take." },
+      { question: "Did Dolores survive the fire in GTA 6?", answer: "Yes. Look under the stairs of the burned house and you'll find her nest with eggs." },
+    ],
+    related: [L.jasonsPlaceMap, L.rustyAnchorMap, L.jasonsPlace, L.keyLento, L.snake, L.rydeMe, L.mask, L.swimming, L.bank],
+    sources: jasonsStashSources,
+  },
+  {
     slug: "weather",
     title: "GTA 6 Weather: Rain, Storms and the Weather App",
     heading: "Weather",
@@ -4274,7 +4411,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you check your criminal profile in GTA 6?", answer: "Open the Jason & Lucia menu, or hold Right on the D-pad. Jason and Lucia each have their own profile." },
       { question: "Can you change an Irredeemable criminal profile in GTA 6?", answer: "No. You can move between Professional, Hardened, Violent and Psycho, but Irredeemable stays." },
     ],
-    related: [L.relationship, L.wanted, L.loseWanted, L.stealth],
+    related: [L.relationship, L.wanted, L.loseWanted, L.stealth, L.halifax],
   },
   {
     slug: "public-transport",
