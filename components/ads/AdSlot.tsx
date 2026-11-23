@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-import { ADSENSE_CLIENT, AD_SLOTS, type AdSlotName } from "@/lib/ads";
+import { ADSENSE_CLIENT, ADS_ENABLED, AD_SLOTS, type AdSlotName } from "@/lib/ads";
 
 type Props = {
   name: AdSlotName;
@@ -25,7 +25,7 @@ export default function AdSlot({ name, className = "" }: Props) {
   const pushed = useRef(false);
 
   useEffect(() => {
-    if (!slot || pushed.current) return;
+    if (!ADS_ENABLED || !slot || pushed.current) return;
     pushed.current = true;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -34,7 +34,7 @@ export default function AdSlot({ name, className = "" }: Props) {
     }
   }, [slot]);
 
-  if (!slot) return null;
+  if (!ADS_ENABLED || !slot) return null;
 
   return (
     <aside

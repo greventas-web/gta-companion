@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import AdSlot from "@/components/ads/AdSlot";
 import { faqPageJsonLd } from "@/components/intent/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import PageShell from "@/components/PageShell";
 import { SourceList } from "@/components/SourceLink";
 import SimpleCard, { BlankSurface, CardGrid, PriceChip, QuickFacts } from "@/components/simple/SimpleCard";
+import SupportCta from "@/components/support/SupportCta";
 import { SITE } from "@/lib/site";
 import { type QuickGuide, quickGuides } from "@/src/data/launch/quick-guides";
 
@@ -80,11 +82,15 @@ export default function QuickGuidePage({ guide }: { guide: QuickGuide }) {
 
       {guide.sources ? <SourceList sources={guide.sources} className="mt-4 max-w-3xl" /> : null}
 
+      <AdSlot name="guide" />
+
       <CardGrid heading="Related">
         {guide.related.map((link) => (
           <SimpleCard key={link.href} href={link.href} title={link.title} line={link.line} image={link.image} imageAlt={link.imageAlt} kind={link.kind} />
         ))}
       </CardGrid>
+
+      <SupportCta placement="guide" />
 
       <CardGrid heading="More quick answers" dense>
         {moreGuides(guide).map((item) => (

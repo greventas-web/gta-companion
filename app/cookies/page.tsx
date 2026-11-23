@@ -57,6 +57,29 @@ export default function CookiesPage() {
                   cookies; they record page views and performance
                   measurements such as the page, browser, and country.
                 </p>
+                <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-8 text-zinc-400">
+                  <li>
+                    Our cookies: gta_consent (your analytics/ads choice, 180
+                    days) and gta_geo (region check so the right consent
+                    message shows).
+                  </li>
+                  <li>
+                    Google Analytics 4: _ga and _ga_GH40PJPZT4 (tell visits
+                    apart, up to 2 years). Set only after consent in the EEA,
+                    UK and Switzerland.
+                  </li>
+                  <li>
+                    Google AdSense: __gads, __gpi, __eoi (ad delivery,
+                    frequency and measurement), and cookies on Google&apos;s
+                    ad domains such as IDE (doubleclick.net). Set only after
+                    consent in the EEA, UK and Switzerland. Elsewhere, ads
+                    may be personalized unless you opt out.
+                  </li>
+                  <li>
+                    Google&apos;s consent message: FCCDCF, FCNCA (store your
+                    consent choice when the Google consent message is shown).
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -65,10 +88,11 @@ export default function CookiesPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Visitors in the European Economic Area, the United Kingdom,
-                  and Switzerland will see a cookie banner with Accept,
-                  Reject, and Manage. You can reopen those settings at any
-                  time from Cookie settings in the footer. You can also
+                  Visitors in the European Economic Area, the United Kingdom
+                  and Switzerland are asked before analytics or advertising
+                  cookies are used. This is done through Google&apos;s consent
+                  message or our own cookie banner. You can change your choice
+                  at any time from Cookie settings in the footer. You can also
                   control ad personalization in{" "}
                   <a
                     href="https://adssettings.google.com"
@@ -94,8 +118,9 @@ export default function CookiesPage() {
                 </h2>
 
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  This Cookie Policy may be updated as GTA Companion evolves or
-                  when legal requirements change.
+                  This policy was updated on November 23, 2026. It may change
+                  again as GTA Companion evolves or when legal requirements
+                  change.
                 </p>
               </div>
             </div>
