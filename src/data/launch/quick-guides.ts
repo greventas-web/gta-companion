@@ -11,6 +11,7 @@ import { safeCodesSources, shotgunSources, uniqueWeaponsSources } from "@/src/da
 import { cowboyHatSources, equipmentSources, finalFlushSources, meleeWeaponsSources, wymanCarsSources } from "@/src/data/launch/batch11-sources";
 import { backroomsSources, hydeIslandSources, krakenSources, radioListSources } from "@/src/data/launch/batch12-sources";
 import { ghostShipSources, jetSkiDogSources, marbelleHotelSources, murals1010Sources } from "@/src/data/launch/batch13-sources";
+import { blackEagleSources, freddieGibbsSources, garageCodesSources, laPerleGarageSources, patchNotesSources, vamosSources } from "@/src/data/launch/batch14-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -362,6 +363,15 @@ const L = {
   downtownMap: { href: "/map?pin=confirmed%3Adowntown-vice-city", title: "Downtown on the map", kind: "location" },
   oceanBeachMap: { href: "/map?pin=confirmed%3Aocean-beach", title: "Ocean Beach on the map", kind: "location" },
   saltonMap: { href: "/map?pin=confirmed%3Asalton", title: "Salton on the map", kind: "location" },
+  // Batch 14
+  patchNotes: { href: "/guides/patch-notes", title: "Patch notes", line: "Update 01.002.002", kind: "activity" },
+  laPerleGarage: { href: "/guides/la-perle-garage", title: "La Perle garage code", line: "92665, Vanessa's Growler", kind: "vehicle" },
+  vamos: { href: "/guides/declasse-vamos", title: "Declasse Vamos code", line: "2727, for Moses", kind: "vehicle" },
+  garageCodes: { href: "/guides/garage-codes", title: "All garage codes", kind: "garage" },
+  freddieGibbs: { href: "/guides/freddie-gibbs", title: "Freddie Gibbs' bunker", line: "The prepper compound", kind: "character" },
+  blackEagle: { href: "/guides/black-eagle-kalinga", title: "Black Eagle safe code", line: "Unique Kalinga .50", kind: "weapon" },
+  lakeLeonidaMap: { href: "/map?pin=confirmed%3Alake-leonida", title: "Lake Leonida on the map", kind: "location" },
+  fences: { href: "/where-to-find/fences", title: "Fences", kind: "money" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -446,7 +456,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you keep stolen cars in GTA 6?", answer: "Register them. From Chapter 2 Moses registers cars with no tracker, and from Chapter 3 any Pay 'n' Spray registers cars with a standard tracker." },
       { question: "How much does it cost to register a car in GTA 6?", answer: "It depends on the car. Most cost a few thousand dollars and high-end cars can cost over $20,000. The WAiNK app shows the fee before you steal it." },
     ],
-    related: [L.payNSpray, L.waink, L.garages, L.moses, L.callCar, L.buyCar, L.carTrackers, L.fastFurious],
+    related: [L.payNSpray, L.waink, L.garages, L.moses, L.callCar, L.buyCar, L.carTrackers, L.fastFurious, L.garageCodes],
   },
   {
     slug: "key-cloner",
@@ -1336,7 +1346,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you sell cars in GTA 6?", answer: "Moses buys cars with no tracker from Chapter 2, any Pay 'n' Spray buys stolen cars from Chapter 3, and Randy buys high-end cars." },
       { question: "How do you know what a car is worth in GTA 6?", answer: "Scan it with the WAiNK app. It shows the sell value and the tracker." },
     ],
-    related: [L.sellMoses, L.sellPayNSpray, L.randy, L.waink, L.register],
+    related: [L.sellMoses, L.sellPayNSpray, L.randy, L.waink, L.register, L.vamos],
   },
   {
     slug: "money-glitch",
@@ -1389,7 +1399,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How does the workout window work in GTA 6?", answer: "Each exercise in the window adds about 11%, up to 33% a day. Finish the workout before the timer ends or you lose the gains." },
       { question: "How do you increase cardio in GTA 6?", answer: "Run, cycle, swim, kayak or use the treadmill, bike or punching bag at a gym during a cardio workout window." },
     ],
-    related: [L.gyms, L.focus, L.snake, L.jasonsPlace, L.heal],
+    related: [L.gyms, L.focus, L.snake, L.jasonsPlace, L.heal, L.patchNotes],
   },
   {
     slug: "stealth-takedown",
@@ -1541,7 +1551,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you lose the cops in GTA 6?", answer: "Break line of sight, leave the marked heat area, then change whatever the icons under your stars show: outfit, look, car or weapon." },
       { question: "What do red stars mean in GTA 6?", answer: "The chase has stopped, but you are still inside the area the police are searching. Leave that area or change your description before you go back." },
     ],
-    related: [L.wanted, L.clothes, L.mask, L.haircut, L.motorcycle, L.armoredTruck],
+    related: [L.wanted, L.clothes, L.mask, L.haircut, L.motorcycle, L.armoredTruck, L.patchNotes],
   },
   {
     slug: "helicopter",
@@ -2876,6 +2886,7 @@ export const quickGuides: QuickGuide[] = [
       "The UFO house from a photo in GTA: The Trilogy – The Definitive Edition is real: a cream bungalow with two palm trees in Belville. By day, walk into the garage for a wall that reads \"IT'S A SIMULATION\". There's also a crab research outpost with codes to crack and a missing tourists mystery in Port Gellhorn.",
       "Three hidden events: a giant Kraken wrapped around a shipwreck on the seabed south-east of Gloriana Key, a Backrooms-style trip from a container east of Lake Tallaloko, and a Saw-style hunt on Hyde Island that rewards a unique sniper rifle. More are still being found.",
       "Two spooky ones: the Marbelle Hotel in Crosstown turns Vice City into Silent Hill, with fog, red symbols and a safe (code 955214), and at night ghosts haunt St. Lucia Lighthouse off Millport, where a ghost ship shows at 1:30 AM and a wreck hides the Cursed Knife.",
+      "Rapper Freddie Gibbs has a cameo as Freddie, a doomsday prepper whose compound in North Leonard County is guarded by an electric fence, landmines and drones. Break in twice and he lets you into his bunker.",
     ],
     facts: [
       { label: "Monsters", value: "Bigfoot, the UFO" },
@@ -2896,7 +2907,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Is there a Kraken in GTA 6?", answer: "Yes. A giant Kraken is wrapped around a sunken ship on the seabed south-east of Gloriana Key. Dive down with scuba gear to see it." },
       { question: "Where is the UFO house in GTA 6?", answer: "In Belville. It's the cream bungalow with two palm trees from the UFO photo in GTA: The Trilogy – The Definitive Edition. Its garage has a wall that reads \"IT'S A SIMULATION\"." },
     ],
-    related: [L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.marbelleHotel, L.ghostShip, L.jetSkiDog, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
+    related: [L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.marbelleHotel, L.ghostShip, L.jetSkiDog, L.freddieGibbs, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
   },
   {
     slug: "rob-police-car",
@@ -3224,6 +3235,10 @@ export const quickGuides: QuickGuide[] = [
       { label: "Lab Fees", value: "Lab door 0420, Brian's lockup 7700" },
       { label: "Marbelle Hotel", value: "955214 (note on the roof)" },
       { label: "Southside Storage", value: "1010 (garage, after the 1010 Murals)" },
+      { label: "Black Eagle warehouse", value: "Door 789987, safe 031462 (Balsero)" },
+      { label: "La Perle garage", value: "92665 (Vanessa's Growler)" },
+      { label: "Red Apple Orchard", value: "360782 (garage)" },
+      { label: "Vamos garage", value: "2727 (Grayson, for Moses)" },
     ],
     faqs: [
       { question: "What is the Kingpin Bowling safe code in GTA 6?", answer: "0300. The clue is on the wall map in the Brooks Boatworks office, but you can type the code straight away." },
@@ -3232,9 +3247,11 @@ export const quickGuides: QuickGuide[] = [
       { question: "What is the La Cascara Motel safe code in GTA 6?", answer: "6969." },
       { question: "What is the JanJak's Garage safe code in GTA 6?", answer: "4444. It's on a note stuck to the fridge, and the safe holds around $2,200." },
       { question: "What is the Marbelle Hotel safe code in GTA 6?", answer: "955214. The safe is on the ground floor of the hotel in south Crosstown, and the code is on a note on the roof." },
+      { question: "What is the Black Eagle safe code in GTA 6?", answer: "031462, and the office door is 789987. The warehouse is next to the Black Eagle gun store in Balsero, and the safe holds the unique Black Eagle Import Kalinga." },
+      { question: "What are the garage codes in GTA 6?", answer: "92665 in La Perle, 360782 at the Red Apple Orchard, 2727 for the Vamos in Grayson and 1010 at Southside Storage. See the garage codes guide for what's inside each." },
       { question: "Do you need to find the clue to open a safe in GTA 6?", answer: "No. Enter a code you already know and the safe opens. Without a code, sticky bombs work but draw the police." },
     ],
-    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.marbelleHotel, L.murals1010, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons],
+    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.marbelleHotel, L.murals1010, L.garageCodes, L.blackEagle, L.laPerleGarage, L.vamos, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons],
     sources: safeCodesSources,
   },
   {
@@ -3249,7 +3266,7 @@ export const quickGuides: QuickGuide[] = [
       "Unique weapons are one-off versions of normal guns with their own name, look and fixed attachments. You can't modify them, but once you pick one up it's yours: if you lose it, Jason or Lucia can take it back out of a weapon locker at any Ammu-Nation.",
       "Permit Keys: the Smuggler Gorse 425 shotgun lies on the sand by a tilted smuggler boat on the northernmost island, and the Assassin Nipper .38 is in the Derelict Spy Vessel. Off the north coast of the Riquezas Keys, dive under the sunken speedboat marked by floating drug packages for the Drug Mule KZ-59. In north-west Key Lento, the Unpacked Comshot 12 is behind an upstairs bathroom door.",
       "Pelican Valley swamp: one ruined hunter's cabin holds two, the Swamp Bait Akulus revolver on the floor and the Cruel Huntsman's SM-69 sniper on the boardwalk. The Crabshack VF5 is at the crab outpost. In Wetman Bay, the Kingfishers Fishing Shacks hideout has the Kingfishers W-22 with a scope and suppressor, and the Manatee Motel hideout has the Kingfishers Laird 350.",
-      "Elsewhere: the Conspiracist Type 9 is in the trailer bunker in Balsero. The Turnt Nipper .38 is in a crashed paramotor stuck in a tree at Bobcat Bight; shoot it down. Near Hamlet, drive a wounded hunter to the hospital for the Hunter's Laird 350. In Chapter 1's Don Gone, open the trunk of Donnie's car for Donnie's H&L .38 before you get rid of the car, or it's gone.",
+      "Elsewhere: the Conspiracist Type 9 is in the trailer bunker in Balsero, and the Black Eagle Import Kalinga is in the office safe of the Black Eagle warehouse there (door 789987, safe 031462). The Turnt Nipper .38 is in a crashed paramotor stuck in a tree at Bobcat Bight; shoot it down. Near Hamlet, drive a wounded hunter to the hospital for the Hunter's Laird 350. In Chapter 1's Don Gone, open the trunk of Donnie's car for Donnie's H&L .38 before you get rid of the car, or it's gone.",
       "Port Gellhorn (Chapter 2): the Gutterball Moreland 850 is on the pool table at Kingpin Bowling, the Scrapper VF5C on the top floor of La Cascara Motel and the Clunker 556 at Brooks Boatworks. Shoot down the couch hanging from a tree off Tanglewood Lane and sit on it for the Couch Potato Mustang .357.",
     ],
     facts: [
@@ -3264,9 +3281,10 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Swamp Bait Akulus in GTA 6?", answer: "On the floor of a ruined hunter's cabin in the Pelican Valley swamp. The Cruel Huntsman's SM-69 is on the boardwalk of the same cabin." },
       { question: "Where is the Drug Mule KZ-59 in GTA 6?", answer: "Underwater, under a sunken speedboat off the north coast of the Riquezas Keys. Floating drug packages mark the spot." },
       { question: "Where is the Turnt Nipper .38 in GTA 6?", answer: "In a crashed paramotor caught in a tree at Bobcat Bight. Shoot the lines to bring it down, then search the wreck." },
+      { question: "Where is the Black Eagle Import Kalinga in GTA 6?", answer: "In the office safe of the Black Eagle warehouse in Balsero, Vice City. The office door is 789987 and the safe is 031462." },
       { question: "Which unique weapon can you miss in GTA 6?", answer: "Donnie's H&L .38. It's in the trunk of Donnie's car during Don Gone in Chapter 1. Take it before you get rid of the car." },
     ],
-    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.ghostShip, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
+    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.ghostShip, L.blackEagle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
     sources: uniqueWeaponsSources,
   },
   {
@@ -3712,6 +3730,189 @@ export const quickGuides: QuickGuide[] = [
     ],
     related: [L.jetSki, L.swimming, L.boat, L.petAnimals, L.easterEggs, L.money, L.mapHub],
     sources: jetSkiDogSources,
+  },
+  {
+    slug: "patch-notes",
+    title: "GTA 6 Patch Notes: Update 01.002.002 Fixes and Download Size",
+    heading: "Patch notes",
+    description:
+      "GTA 6 update 01.002.002 patch notes: crash, weather, autosave, phone call, wanted level, deadlift and fence bag fixes, plus the PS5 and Xbox download size. Unofficial.",
+    keywords: ["GTA 6 patch notes", "GTA 6 update", "GTA 6 update 01.002.002", "GTA 6 update 1.0.2.2", "GTA 6 new update", "GTA 6 phone call bug", "GTA 6 autosave fix", "GTA 6 weather not changing"],
+    kind: "activity",
+    answer: [
+      "The first update after launch is version 01.002.002 on PS5 and 1.0.2.2 on Xbox Series X|S. It came out on November 23, 2026 and rolled out in stages through the day, so it may take a while to show up.",
+      "Rockstar's notes list seven fixes: crashes, weather that stayed the same for long stretches, autosaves that didn't save properly, phone calls that didn't come through (including calls that move the story on or unlock missions), a wanted level you couldn't lose, the gym deadlift bar you couldn't use, and partners not handing over bags to sell to fences.",
+      "The download is 603.8 MB on PS5 and 1.6 GB on Xbox Series X|S.",
+      "Stuck waiting for a call to start the next mission? Install the update first, then load your save. The notes don't say whether a missed call comes through on its own.",
+    ],
+    facts: [
+      { label: "Version", value: "01.002.002 (Xbox 1.0.2.2)" },
+      { label: "Released", value: "November 23, 2026" },
+      { label: "PS5 size", value: "603.8 MB" },
+      { label: "Xbox size", value: "1.6 GB" },
+      { label: "Fixes", value: "7, all bug fixes" },
+    ],
+    faqs: [
+      { question: "What does the new GTA 6 update fix?", answer: "Update 01.002.002 fixes crashes, weather that didn't change, autosaves, phone calls that didn't trigger, wanted levels you couldn't lose, the gym deadlift bar and partners not handing over bags to sell to fences." },
+      { question: "How big is the GTA 6 update?", answer: "603.8 MB on PS5 and 1.6 GB on Xbox Series X|S." },
+      { question: "Does the GTA 6 update fix the phone call bug?", answer: "Yes. It fixes several phone calls that didn't trigger, including ones that move the story on or unlock missions. Install it before you load your save again." },
+      { question: "Why haven't I got the GTA 6 update yet?", answer: "It rolled out in stages through November 23, 2026, so it can take a while to appear. It downloads automatically once it's there." },
+    ],
+    related: [L.loseWanted, L.workout, L.gyms, L.save, L.fences, L.weather, L.callPartner, L.fileSize, L.platforms],
+    sources: patchNotesSources,
+  },
+  {
+    slug: "la-perle-garage",
+    title: "GTA 6 La Perle Garage Code (92665), Laptop Password and Vanessa's Growler",
+    heading: "La Perle garage code",
+    description:
+      "The GTA 6 La Perle garage code is 92665. The laptop password (Muffins, Queen, 15), where Auntie's Place is and how to get Vanessa's pink Growler. Unofficial.",
+    keywords: ["GTA 6 La Perle garage code", "GTA 6 92665", "GTA 6 laptop password", "GTA 6 Muffins Queen 15", "GTA 6 Auntie's Place", "GTA 6 Vanessa's Growler", "GTA 6 Del Rio Boulevard Garage", "GTA 6 secret garage"],
+    kind: "vehicle",
+    answer: [
+      "The La Perle garage code is 92665. It comes from the locked laptop in the bedroom of your Vice City apartment in Chapter 3. The password is Muffins, Queen, 15: pick the three words in that order.",
+      "The clues are in the apartment. A framed tribute to a dog called Muffins sits on a table near the entrance. On the bedside table is a drawing of a dog wearing a crown (Queen), and the back of it says \"Class of '15\".",
+      "Open the messages on the laptop and read the thread from Unknown. It points to a garage next to Auntie's Place in La Perle and gives the code 92665. Read it before you go, because the keypad only takes the code once you've seen it.",
+      "Auntie's Place has no map icon, so head for Twa Ponya Tattoo or Aline's Thrift Store on Del Rio Boulevard in southern La Perle. Turn into the small parking lot by the closed Auntie's Place takeout. The grey garage with a pink bow painted beside the door is in the corner. Enter 92665 on the keypad.",
+      "Inside is Vanessa's Growler, a pink Pfister sports car, and the Del Rio Boulevard Garage is yours to keep as extra storage. If the car doesn't show as yours, register it at a Pay 'n' Spray. Do this during Chapter 3, while you still live in the apartment.",
+    ],
+    facts: [
+      { label: "Garage code", value: "92665" },
+      { label: "Laptop password", value: "Muffins, Queen, 15" },
+      { label: "Where", value: "Del Rio Boulevard, southern La Perle" },
+      { label: "Landmark", value: "The pink bow by the door" },
+      { label: "Reward", value: "Vanessa's Growler and the garage" },
+      { label: "When", value: "Chapter 3" },
+    ],
+    faqs: [
+      { question: "What is the La Perle garage code in GTA 6?", answer: "92665. It's in the messages from Unknown on the laptop in your Chapter 3 apartment. Read the message first, then enter the code on the keypad by the pink bow." },
+      { question: "What is the laptop password in GTA 6?", answer: "Muffins, Queen, 15. Muffins is the dog in the framed tribute near the entrance, Queen is the crowned dog drawing on the bedside table, and 15 is from \"Class of '15\" on the back of it." },
+      { question: "Where is Auntie's Place in GTA 6?", answer: "On Del Rio Boulevard in southern La Perle, Vice City, near Twa Ponya Tattoo and Aline's Thrift Store. It's a closed takeout with no map icon. The garage is in the corner of the parking lot beside it." },
+      { question: "What's in the La Perle garage in GTA 6?", answer: "Vanessa's Growler, a pink Pfister sports car. The Del Rio Boulevard Garage also becomes yours as extra car storage." },
+      { question: "Can you miss the La Perle garage in GTA 6?", answer: "Do it during Chapter 3. The laptop is in the apartment you live in then, so don't leave it until later." },
+    ],
+    related: [L.laPerleMap, L.garageCodes, L.garages, L.register, L.safeCodes, L.viceCity, L.payNSpray, L.vamos, L.murals1010],
+    sources: laPerleGarageSources,
+  },
+  {
+    slug: "declasse-vamos",
+    title: "GTA 6 Declasse Vamos Garage Code (2727) and Location in Grayson",
+    heading: "Declasse Vamos code",
+    description:
+      "The GTA 6 Declasse Vamos garage code is 2727. Where the Vamos for Moses is in Grayson, where the clue is in the trailer and how to get the car out. Unofficial.",
+    keywords: ["GTA 6 Declasse Vamos code", "GTA 6 Vamos garage code", "GTA 6 2727", "GTA 6 Grayson garage", "GTA 6 Moses Vamos", "GTA 6 Moses car list", "GTA 6 74 Vamos"],
+    kind: "vehicle",
+    answer: [
+      "The Declasse Vamos garage code is 2727, and it's the same in every game. The Vamos is one of the cars Moses asks for in Chapter 2, after you've brought him the first three.",
+      "The car is locked in a standalone garage on the eastern edge of Grayson. A few armed people hang around the property, some asleep inside and some talking out back, so sneak in or clear the area first.",
+      "The clue is a licence plate on the wall inside the trailer beside the garage, next to the window and above a man asleep in a chair. It reads 2727. You don't have to find it: you can type the code straight in.",
+      "Enter 2727 on the keypad by the garage's side door, then press the button inside to raise the main door. Break into the Vamos and drive off fast, because the people on the property shoot at you. Moses pays about $4,100 for it in top condition.",
+    ],
+    facts: [
+      { label: "Garage code", value: "2727" },
+      { label: "Where", value: "Eastern edge of Grayson" },
+      { label: "Clue", value: "Licence plate in the trailer" },
+      { label: "For", value: "Moses, Chapter 2" },
+      { label: "Pays", value: "About $4,100 in top condition" },
+    ],
+    faqs: [
+      { question: "What is the Declasse Vamos code in GTA 6?", answer: "2727. Enter it on the keypad by the side door of the garage in Grayson, then press the button inside to open the main door." },
+      { question: "Where is the Declasse Vamos in GTA 6?", answer: "In a locked standalone garage on the eastern edge of Grayson. It's one of Moses' Chapter 2 car requests." },
+      { question: "Where is the Vamos garage clue in GTA 6?", answer: "On a licence plate on the wall of the trailer next to the garage, by the window above a sleeping man. It reads 2727." },
+      { question: "How much does Moses pay for the Vamos in GTA 6?", answer: "About $4,100 if you bring it back in top condition." },
+    ],
+    related: [L.moses, L.sellMoses, L.garageCodes, L.slimJim, L.hotwire, L.stealth, L.portGellhornMap, L.laPerleGarage, L.mapHub],
+    sources: vamosSources,
+  },
+  {
+    slug: "garage-codes",
+    title: "GTA 6 Garage Codes: Every Hidden Garage Code and the Car Inside",
+    heading: "All garage codes",
+    description:
+      "Every GTA 6 garage code found so far: La Perle 92665 (Vanessa's Growler), Vamos 2727, Red Apple Orchard 360782 (Applesauce Bobcat) and Southside Storage 1010. Unofficial.",
+    keywords: ["GTA 6 garage codes", "GTA 6 garage code", "GTA 6 hidden garage", "GTA 6 secret garage", "GTA 6 360782", "GTA 6 Applesauce Bobcat", "GTA 6 Red Apple Orchard garage", "GTA 6 92665", "GTA 6 2727"],
+    kind: "garage",
+    answer: [
+      "Garage codes are fixed, so they're the same in every game, unlike store and bank safes. You can type a code straight in without finding the clue first.",
+      "92665, La Perle: the garage beside Auntie's Place on Del Rio Boulevard, from the laptop in your Chapter 3 apartment. Inside is Vanessa's pink Growler, and the garage becomes yours.",
+      "360782, Farmer Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County: look for the giant apple on a truck by the road. The locked farm garage holds the Declasse Applesauce Bobcat, a customised '55 Bobcat pickup in red and white.",
+      "2727, Grayson: the garage with the Declasse Vamos that Moses asks for in Chapter 2. 1010, Southside Storage in Salton: the garage with the 1010 Cheetah, after you photograph the five 1010 Murals.",
+    ],
+    facts: [
+      { label: "La Perle", value: "92665, Vanessa's Growler" },
+      { label: "Red Apple Orchard", value: "360782, Applesauce Bobcat" },
+      { label: "Grayson", value: "2727, Declasse Vamos (for Moses)" },
+      { label: "Southside Storage", value: "1010, 1010 Cheetah" },
+      { label: "Same in every game?", value: "Yes" },
+    ],
+    faqs: [
+      { question: "What are the garage codes in GTA 6?", answer: "92665 for the La Perle garage (Vanessa's Growler), 360782 for the Red Apple Orchard garage (Applesauce Bobcat), 2727 for the Vamos garage in Grayson and 1010 for Southside Storage in Salton (1010 Cheetah)." },
+      { question: "What is the Red Apple Orchard garage code in GTA 6?", answer: "360782. The orchard is west of Manifest Canyon in Kelly County, and the garage holds the Declasse Applesauce Bobcat." },
+      { question: "Where is the Applesauce Bobcat in GTA 6?", answer: "In the locked garage at Farmer Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County. The code is 360782." },
+      { question: "Are GTA 6 garage codes the same for everyone?", answer: "Yes. Garage codes are fixed. Only store, bank and jewelry safes change from game to game." },
+    ],
+    related: [L.laPerleGarage, L.vamos, L.murals1010, L.safeCodes, L.garages, L.register, L.laPerleMap, L.saltonMap, L.fastFurious, L.vehiclesHub],
+    sources: garageCodesSources,
+  },
+  {
+    slug: "freddie-gibbs",
+    title: "GTA 6 Freddie Gibbs: Where to Find the Prepper Bunker and Get Inside",
+    heading: "Freddie Gibbs' bunker",
+    description:
+      "Where to find Freddie Gibbs in GTA 6: the prepper compound in North Leonard County, how to get past the fence, mines and drones twice, and what staying gets you. Unofficial.",
+    keywords: ["GTA 6 Freddie Gibbs", "GTA 6 Freddie Gibbs location", "GTA 6 prepper bunker", "GTA 6 doomsday compound", "GTA 6 prepper outpost", "GTA 6 stay or leave Freddie", "GTA 6 bunker"],
+    kind: "character",
+    answer: [
+      "Rapper Freddie Gibbs plays Freddie, a doomsday prepper, in an optional encounter. His compound is in the west of North Leonard County, about halfway up, on the north shore of Lake Leonida. Snapmatic posts about a fortified outpost point you to it, and it's hard to miss once you're nearby.",
+      "First visit: don't touch the electric fence. Climb the tower that stands outside the fence and jump onto the barn roof inside. Watch the ground for landmines, which beep faster as you get close, and shoot down the drones. Focus mode highlights the mines and gives you time to shoot the drones, and the pipes and cables are a safe path. Reach the bunker door and Freddie tells you to come back after he upgrades his defences. He adds you as a contact and turns off the mines so you can walk out of the gate.",
+      "A few in-game days later he calls you back, and the tower trick no longer works. Take the bulldozer on the north side, drive it along the east fence to the gap in the top, climb onto it and jump over. Another way: park the tractor and trailer at the fence and lift the trailer with the bulldozer to make a ramp. Get past the mines and drones to the door again.",
+      "This time Freddie lets you in. His bunker is also where he records his podcast. A hurricane warning comes on the news and you choose to stay or leave. Staying gets you his own car, but several in-game days pass and your relationship with your partner drops a little. You also get cash, though the amount reported differs.",
+    ],
+    facts: [
+      { label: "Where", value: "North Leonard County, Lake Leonida's north shore" },
+      { label: "Visits", value: "Two" },
+      { label: "Defences", value: "Electric fence, landmines, drones" },
+      { label: "Stay reward", value: "Freddie's car, plus cash" },
+      { label: "Downside", value: "Partner relationship drops a little" },
+    ],
+    faqs: [
+      { question: "Where is Freddie Gibbs in GTA 6?", answer: "In a fortified prepper compound in the west of North Leonard County, on the north shore of Lake Leonida. Snapmatic posts about the outpost point you there." },
+      { question: "How do you get into Freddie's compound in GTA 6?", answer: "Climb the tower outside the fence and jump onto the barn roof, then avoid the mines and shoot the drones on the way to the bunker door. On the second visit, use the bulldozer at the east fence to jump over." },
+      { question: "Should you stay with Freddie in GTA 6?", answer: "Staying gets you Freddie's own car and some cash. The catch is that several in-game days pass and your partner relationship drops a little." },
+      { question: "Why won't Freddie let me in GTA 6?", answer: "The first time you reach the door he sends you away. Wait a few in-game days for his call, then break in again with the bulldozer." },
+    ],
+    related: [L.lakeLeonidaMap, L.easterEggs, L.focus, L.relationship, L.register, L.usePhone, L.characters, L.bigfoot, L.ufo],
+    sources: freddieGibbsSources,
+  },
+  {
+    slug: "black-eagle-kalinga",
+    title: "GTA 6 Black Eagle Warehouse Safe Code (031462) and Unique Kalinga",
+    heading: "Black Eagle safe code",
+    description:
+      "The GTA 6 Black Eagle warehouse codes: office door 789987 and safe 031462. Where the warehouse is in Balsero and how to get the unique Black Eagle Import Kalinga. Unofficial.",
+    keywords: ["GTA 6 Black Eagle safe code", "GTA 6 Black Eagle door code", "GTA 6 031462", "GTA 6 789987", "GTA 6 Black Eagle Import Kalinga", "GTA 6 Kalinga", "GTA 6 unique pistol", "GTA 6 Black Eagle warehouse"],
+    kind: "weapon",
+    answer: [
+      "The Black Eagle warehouse is next to the Black Eagle gun store in Balsero, north-west Vice City. The office door code is 789987 and the office safe code is 031462, with the leading zero. Both are fixed, so you can type them straight in.",
+      "Go in through the loading bay, turn right and head for the locked office door. Enter 789987 on the keypad beside it.",
+      "The safe is in the office, and its code is on the office computer if you want to find it yourself. Enter 031462.",
+      "Inside is the Black Eagle Import Kalinga, a unique version of the Kalinga .50 pistol: seven rounds of .50 Magnum, semi-automatic. Like other unique weapons, it stays yours once you pick it up.",
+    ],
+    facts: [
+      { label: "Door code", value: "789987" },
+      { label: "Safe code", value: "031462" },
+      { label: "Where", value: "Black Eagle warehouse, Balsero" },
+      { label: "Reward", value: "Black Eagle Import Kalinga" },
+      { label: "Ammo", value: ".50 Magnum, 7 rounds" },
+    ],
+    faqs: [
+      { question: "What is the Black Eagle safe code in GTA 6?", answer: "031462, with the leading zero. The safe is in the office of the Black Eagle warehouse in Balsero, and the code is on the office computer." },
+      { question: "What is the Black Eagle door code in GTA 6?", answer: "789987. It opens the locked office inside the warehouse, to the right of the loading bay." },
+      { question: "Where is the Black Eagle Import Kalinga in GTA 6?", answer: "In the office safe of the Black Eagle warehouse next to the Black Eagle gun store in Balsero, Vice City." },
+      { question: "Is the Black Eagle Import Kalinga a unique weapon?", answer: "Yes. It's a unique version of the Kalinga .50 pistol, and it stays yours once you pick it up." },
+    ],
+    related: [L.balseroMap, L.uniqueWeapons, L.safeCodes, L.gunStores, L.weapons, L.silencedPistol, L.garageCodes, L.viceCity],
+    sources: blackEagleSources,
   },
   {
     slug: "weather",

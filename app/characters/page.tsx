@@ -49,7 +49,7 @@ export default function CharactersPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="characters" />
-      <QuickGuideGrid guides={quickGuideCards(["switch-characters", "relationship", "call-partner", "partner-drive", "criminal-profile", "character-stats", "final-flush"])} />
+      <QuickGuideGrid guides={quickGuideCards(["switch-characters", "relationship", "call-partner", "partner-drive", "criminal-profile", "character-stats", "final-flush", "freddie-gibbs"])} />
     </PageShell>
   );
 }

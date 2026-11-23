@@ -542,6 +542,13 @@ export const whereToFindTopics: WhereTopic[] = [
         ],
       },
       {
+        heading: "Hidden garages (keypad code)",
+        places: [
+          { name: "Del Rio Boulevard Garage", area: "Southern La Perle, by Auntie’s Place", detail: "Code 92665 from the Chapter 3 laptop; holds Vanessa’s Growler", areaPin: pin("la-perle") },
+          { name: "Southside Storage", area: "South tip of Salton, north of Slator Towing Inc", detail: "Code 1010 after the 1010 Murals; holds the 1010 Cheetah", areaPin: pin("salton") },
+        ],
+      },
+      {
         heading: "Safehouses",
         places: [
           { name: "Jason’s house", area: "Key Lento", detail: "Starting safehouse", pin: pin("jasons-place") },
@@ -576,6 +583,7 @@ export const whereToFindTopics: WhereTopic[] = [
     ],
     sources: [src.gamespotGarages, src.powerpyxGarages, src.gamespotFirst, src.rockstarKeys, src.bigLead, src.gtadb],
     related: [
+      { href: "/guides/garage-codes", label: "Hidden garage codes" },
       { href: "/properties", label: "Properties" },
       { href: "/where-to-find/fences", label: "Fences" },
       { href: "/where-to-find/mod-shops", label: "Mod shops" },
