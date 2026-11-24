@@ -81,7 +81,7 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-[100] overflow-visible px-4 pt-4 sm:px-6 sm:pt-5">
 
         <div
-          className={`mx-auto flex h-20 w-full min-w-0 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
+          className={`mx-auto flex h-20 w-full min-w-0 max-w-[1700px] items-center justify-between gap-2 rounded-[32px] border transition-all duration-500 ${
             scrolled
               ? "border-pink-500/20 bg-black/95 shadow-[0_25px_80px_rgba(0,0,0,.60)] sm:bg-black/80 sm:backdrop-blur-xl"
               : "border-white/10 bg-black/95 shadow-[0_10px_40px_rgba(0,0,0,.35)] sm:bg-black/70 sm:backdrop-blur-xl"
@@ -100,7 +100,7 @@ export default function Navbar() {
 
           </div>
 
-          <nav className="hidden min-w-0 items-center gap-1 xl:flex min-[1440px]:gap-2">
+          <nav className="hidden shrink-0 items-center gap-1 xl:flex min-[1440px]:gap-2">
 
             <NavLink href="/">Home</NavLink>
 
@@ -122,14 +122,11 @@ export default function Navbar() {
 
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2 px-3 sm:px-4">
+          <div className="flex min-w-0 shrink items-center justify-end gap-2 px-3 sm:px-4">
 
             <SupportLink className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap px-1 text-sm font-semibold text-zinc-300 transition hover:text-pink-300 xl:inline-flex" />
 
-            <div
-              className="hidden min-[1440px]:block"
-              onClick={open}
-            >
+            <div className="hidden h-12 w-[320px] min-w-0 max-w-full shrink min-[1440px]:block">
               <SearchBar />
             </div>
 
@@ -137,7 +134,7 @@ export default function Navbar() {
               type="button"
               aria-label="Open search"
               onClick={open}
-              className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white min-[1440px]:hidden"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white min-[1440px]:hidden"
             >
               <Search size={18} />
             </button>
@@ -147,7 +144,7 @@ export default function Navbar() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((value) => !value)}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white xl:hidden"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white xl:hidden"
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -155,14 +152,14 @@ export default function Navbar() {
               <>
                 <Link
                   href="/login"
-                  className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] lg:inline-flex"
+                  className="hidden shrink-0 whitespace-nowrap rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] lg:inline-flex"
                 >
                   Sign In
                 </Link>
 
                 <Link
                   href="/register"
-                  className="hidden rounded-2xl border border-white/10 px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:border-pink-500/40 hover:text-white lg:inline-flex"
+                  className="hidden shrink-0 whitespace-nowrap rounded-2xl border border-white/10 px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:border-pink-500/40 hover:text-white lg:inline-flex"
                 >
                   Join
                 </Link>
@@ -170,7 +167,7 @@ export default function Navbar() {
             ) : (
               <div
                 ref={menuRef}
-                className="relative hidden lg:block"
+                className="relative hidden shrink-0 lg:block"
               >
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
