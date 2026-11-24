@@ -87,8 +87,7 @@ export default function RefundsPage() {
               <div>
                 <h2 className="text-2xl font-black sm:text-3xl">Checkout status</h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Checkout opening soon. Until it opens, {PRO_NAME} cannot be bought on this site and these terms do
-                  not apply to a payment we have not taken. See also the{" "}
+                  Sign in on the Pro page to pay. These terms apply once a payment is taken. See also the{" "}
                   <a href="/terms" className="text-pink-400 hover:text-pink-300">
                     Terms of Use
                   </a>{" "}

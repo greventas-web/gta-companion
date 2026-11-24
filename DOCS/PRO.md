@@ -14,7 +14,7 @@ The brand star other surfaces can reuse is `components/pro/ProBadge.tsx` (`proBr
 
 Prices live in `lib/pro/config.ts` (`PRO_PRICE_CENTS` is 499, the EUR amount). The buyer’s choice is sent to `POST /api/pro/checkout` as `currency` (`eur`, `usd`, or `gbp`). The page defaults to EUR, then picks USD or GBP from the browser locale when the region is one we map (United States and US territories → USD, United Kingdom and Crown Dependencies → GBP, eurozone → EUR). A saved choice on that device wins over the locale.
 
-Checkout is not live. With no Stripe secret key, `/pro` shows an early-access form (“Notify me at launch”) and `/api/pro/checkout` returns 503. Do not tell visitors they can pay.
+Signed-out visitors on `/pro` see “Sign in to get Pro” and return to `/pro` after sign-in. The waitlist form is not shown. `POST /api/pro/waitlist` and `GET /api/pro/waitlist/export` stay in place. Without a Stripe secret key, signed-in checkout still returns 503.
 
 Waitlist emails are stored server-side in the same private Blob store as Pro entitlements (`pro/waitlist.json`, local `.data/pro/waitlist.json` without a token). The form dedupes by email, ignores a filled honeypot field named `company`, and rate-limits each IP. Export the list with `GET /api/pro/waitlist/export` and `Authorization: Bearer` set to the `MAP_ADMIN_SECRET` value (the same env var as the map admin). A signed-in map admin cookie is also accepted. Do not commit or paste that value.
 
@@ -65,7 +65,7 @@ Set the names below. Do not commit the values.
 
 Each price id must be a one-time price in that currency. A EUR price id in the USD variable would charge euros.
 
-Until `STRIPE_SECRET_KEY` and storage are set, `/pro` shows "Checkout opening soon" and nothing can be bought.
+Until `STRIPE_SECRET_KEY` and storage are set, a signed-in checkout request returns 503. Signed-out `/pro` still shows “Sign in to get Pro”.
 
 ## VAT before go-live
 
@@ -92,7 +92,7 @@ Do this in order. The Stripe account must be **GL Transportation, MB** (MB "GL T
    `https://www.gta-companion.com/api/pro/webhook`
    Same three events. Put that endpoint’s signing secret in Production `STRIPE_WEBHOOK_SECRET`.
 8. Production env names to set: `STRIPE_SECRET_KEY` (live secret key), `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRO_PRICE_ID_EUR`, `STRIPE_PRO_PRICE_ID_USD`, `STRIPE_PRO_PRICE_ID_GBP`, `STRIPE_AUTOMATIC_TAX`=`1`, `PRO_READ_WRITE_TOKEN`, `PRO_SITE_URL`=`https://www.gta-companion.com`, `PRO_ALLOW_LIVE_PAYMENTS`=`1`.
-9. Reload `/pro` signed out. The status pill must change only after both the secret key and Blob storage are present. Until then it must keep saying "Checkout opening soon".
+9. Reload `/pro` signed out. The button says “Sign in to get Pro”. After sign-in, checkout appears only when the secret key and Blob storage are both present.
 10. Make one live purchase in EUR for a low-value check if Stripe allows it, confirm the receipt email, then refund it and confirm Pro is removed.
 
 Local webhook test: `stripe listen --forward-to localhost:3000/api/pro/webhook`.

@@ -96,7 +96,7 @@ export default function TermsPage() {
                   </p>
                   <SellerDetails />
                   <p>
-                    Checkout is not open yet. When it opens, you sign in,
+                    You sign in,
                     confirm that you want immediate delivery, and pay once
                     through Stripe Checkout. Stripe processes the payment and
                     emails the receipt. We do not receive or store your card

@@ -265,8 +265,7 @@ export default function PrivacyPage() {
                   Payments and Stripe
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Checkout for GTA Companion Pro is not open yet. When it
-                  opens, payments are taken by Stripe for the seller below.
+                  Payments for GTA Companion Pro are taken by Stripe for the seller below.
                   Stripe receives
                   the email on your account, the amount, the currency, and
                   the card details, and emails the receipt. We store whether

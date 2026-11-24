@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Check, Cloud, EyeOff, Infinity as InfinityIcon, LocateFixed, Lock, Percent } from "lucide-react";
 
 import ProBadge, { proBrandFill } from "@/components/pro/ProBadge";
-import ProWaitlist from "@/components/pro/ProWaitlist";
 import SellerDetails from "@/components/pro/SellerDetails";
 import { authHeader, useProStatus } from "@/lib/pro/client";
 import {
@@ -87,7 +86,7 @@ const FAQ = [
   },
   {
     q: "How does payment work?",
-    a: "Sign in, confirm that you want immediate delivery, then pay once on Stripe Checkout. Stripe emails the receipt, and Pro unlocks when the payment is confirmed. Checkout is not open yet.",
+    a: "Sign in, confirm that you want immediate delivery, then pay once on Stripe Checkout. Stripe emails the receipt, and Pro unlocks when the payment is confirmed.",
   },
   {
     q: "What about the 14-day withdrawal right?",
@@ -95,7 +94,7 @@ const FAQ = [
   },
   {
     q: "When can I pay?",
-    a: "Checkout opening soon. Until payments are switched on, nothing on this page can charge you.",
+    a: "Sign in on this page and pay on Stripe Checkout. The button uses the price in the currency you select.",
   },
   {
     q: "What happens to marks already on this device?",
@@ -295,29 +294,20 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
             >
               {busy ? "Opening checkout…" : `Continue to checkout · ${price.label}`}
             </button>
-          ) : (
-            <ProWaitlist />
-          )}
+          ) : !user ? (
+            <Link
+              href="/login?next=/pro"
+              className={`inline-flex items-center rounded-full px-5 py-2.5 text-sm font-black ${proBrandFill}`}
+            >
+              Sign in to get Pro — {price.label}
+            </Link>
+          ) : null}
           <div className="mt-3 flex flex-wrap items-center gap-3">
-            {!loading && !pro && !user ? (
-              <Link
-                href="/login?next=/pro"
-                className="text-sm font-semibold text-zinc-300 underline-offset-4 hover:text-white hover:underline"
-              >
-                Sign in
-              </Link>
-            ) : null}
             {pro && lastSync ? (
               <span className="text-xs text-zinc-500">Synced {new Date(lastSync).toLocaleString()}</span>
             ) : null}
           </div>
         </div>
-        {!loading && !pro && !ready ? (
-          <p className="mt-3 max-w-xl text-sm text-zinc-500">
-            Payments are not open. Nothing on this page can charge you.
-          </p>
-        ) : null}
-
         {checkout === "success" && !pro && !loading ? (
           <p className="mt-3 text-sm text-zinc-400">Payment received. Unlocking…</p>
         ) : null}
@@ -389,9 +379,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
                 once delivery starts.
               </span>
             </label>
-          ) : (
-            <p className="mt-3 text-sm text-zinc-500">Checkout opening soon. The confirmation box appears when checkout opens.</p>
-          )}
+          ) : null}
         </div>
       </section>
 

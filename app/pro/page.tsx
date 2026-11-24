@@ -12,7 +12,7 @@ import { missions } from "@/src/data/missions";
 import { trophies } from "@/src/data/trophies";
 
 const title = `${PRO_NAME} – No ads, cloud sync, progress`;
-const description = `Unofficial ${PRO_NAME}. No ads, cloud sync, progress %, what's left near me, and unlimited marks. ${PRO_PRICE_LABEL} one-time (USD and GBP on the page). Checkout opening soon. Not affiliated with Rockstar Games or Take-Two.`;
+const description = `Unofficial ${PRO_NAME}. No ads, cloud sync, progress %, what's left near me, and unlimited marks. ${PRO_PRICE_LABEL} one-time (USD and GBP on the page). Not affiliated with Rockstar Games or Take-Two.`;
 
 export const metadata: Metadata = {
   ...pageMetadata(title, description),
