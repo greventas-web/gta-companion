@@ -22,17 +22,11 @@ export async function POST(request: NextRequest) {
   if (!paymentsConfigured() || !proStorageConfigured()) {
     return NextResponse.json({ error: "Checkout is not open yet." }, { status: 503, headers: NO_STORE });
   }
-  const payload = (await request.json().catch(() => null)) as { currency?: unknown; withdrawalWaiver?: unknown } | null;
+  const payload = (await request.json().catch(() => null)) as { currency?: unknown } | null;
   if (payload?.currency !== undefined && !isProCurrency(payload.currency)) {
     return NextResponse.json({ error: "Choose EUR, USD, or GBP." }, { status: 400, headers: NO_STORE });
   }
-  if (payload?.withdrawalWaiver !== true) {
-    return NextResponse.json(
-      { error: "Confirm immediate delivery to continue." },
-      { status: 400, headers: NO_STORE }
-    );
-  }
-  const currency: ProCurrency = isProCurrency(payload.currency) ? payload.currency : PRO_CURRENCY;
+  const currency: ProCurrency = isProCurrency(payload?.currency) ? payload.currency : PRO_CURRENCY;
   try {
     if (await isPro(user.uid)) {
       return NextResponse.json({ pro: true }, { headers: NO_STORE });
@@ -42,7 +36,6 @@ export async function POST(request: NextRequest) {
       email: user.email,
       origin: siteOrigin(request),
       currency,
-      withdrawalWaiver: true,
     });
     if (!session.url) throw new Error("No checkout URL.");
     return NextResponse.json({ url: session.url }, { headers: NO_STORE });

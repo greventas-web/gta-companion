@@ -1,7 +1,6 @@
 import PageTitle from "@/components/PageTitle";
-import SellerDetails from "@/components/pro/SellerDetails";
 import { pageMetadata } from "@/lib/launch";
-import { PRO_SELLER } from "@/lib/pro/config";
+import { SITE } from "@/lib/site";
 import {
   Badge,
   Card,
@@ -89,12 +88,14 @@ export default function TermsPage() {
                     it is not a Rockstar Games or Take-Two product.
                   </p>
                   <p>
-                    The seller is {PRO_SELLER.name} ({PRO_SELLER.quotedName}),
-                    a company in {PRO_SELLER.country}. The price is shown on
-                    the Pro page before you pay: €4.99, $4.99, or £4.49,
-                    depending on the currency you select.
+                    The price is shown on the Pro page before you pay: €4.99,
+                    $4.99, or £4.49, depending on the currency you select.
+                    Seller details are available on request at{" "}
+                    <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
+                      {SITE.email}
+                    </a>
+                    .
                   </p>
-                  <SellerDetails />
                   <p>
                     You sign in,
                     confirm that you want immediate delivery, and pay once

@@ -1,5 +1,4 @@
 import PageTitle from "@/components/PageTitle";
-import SellerDetails from "@/components/pro/SellerDetails";
 
 import {
   Badge,
@@ -265,7 +264,8 @@ export default function PrivacyPage() {
                   Payments and Stripe
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Payments for GTA Companion Pro are taken by Stripe for the seller below.
+                  Payments for GTA Companion Pro are taken by Stripe.
+                  Seller details are available on request at {SITE.email}.
                   Stripe receives
                   the email on your account, the amount, the currency, and
                   the card details, and emails the receipt. We store whether
@@ -283,7 +283,6 @@ export default function PrivacyPage() {
                   . If Pro is active, marks you choose to track can be stored
                   so they sync across devices signed in to that account.
                 </p>
-                <SellerDetails className="mt-6" />
               </div>
 
               <div>

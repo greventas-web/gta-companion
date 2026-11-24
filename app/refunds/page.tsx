@@ -1,12 +1,12 @@
 import PageTitle from "@/components/PageTitle";
-import SellerDetails from "@/components/pro/SellerDetails";
 import { pageMetadata } from "@/lib/launch";
-import { PRO_NAME, PRO_SELLER } from "@/lib/pro/config";
+import { PRO_NAME } from "@/lib/pro/config";
+import { SITE } from "@/lib/site";
 import { Badge, Card, Container, Section } from "@/components/ui";
 
 export const metadata = pageMetadata(
   "Refunds",
-  `Refunds and withdrawal terms for ${PRO_NAME}. Seller: ${PRO_SELLER.name}, ${PRO_SELLER.address}. Orders and refunds: ${PRO_SELLER.ordersEmail}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
+  `Refunds and withdrawal terms for ${PRO_NAME}. Seller details are available on request at ${SITE.email}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
 );
 
 export default function RefundsPage() {
@@ -18,7 +18,7 @@ export default function RefundsPage() {
 
           <PageTitle
             title="Refunds"
-            description="Withdrawal terms for GTA Companion Pro, sold by GL Transportation, MB."
+            description="Withdrawal terms for GTA Companion Pro."
           />
 
           <Card className="mt-16 rounded-[40px] border-zinc-800 bg-zinc-900 p-6 sm:p-12">
@@ -26,11 +26,13 @@ export default function RefundsPage() {
               <div>
                 <h2 className="text-2xl font-black sm:text-3xl">Seller</h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  {PRO_NAME} is sold by {PRO_SELLER.name} ({PRO_SELLER.quotedName}), a company in {PRO_SELLER.country}.
-                  Orders and refunds go to the email below. GTA Companion is an unofficial fan site, not affiliated
-                  with Rockstar Games or Take-Two.
+                  Seller details are available on request at{" "}
+                  <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
+                    {SITE.email}
+                  </a>
+                  . Orders and refunds use that address. GTA Companion is an unofficial fan site, not affiliated with
+                  Rockstar Games or Take-Two.
                 </p>
-                <SellerDetails className="mt-6" />
               </div>
 
               <div>
@@ -48,8 +50,8 @@ export default function RefundsPage() {
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
                   If you are a consumer in the European Union, a distance contract for digital content normally gives
                   you 14 days to withdraw, without giving a reason. To withdraw before delivery has started, email{" "}
-                  <a href={`mailto:${PRO_SELLER.ordersEmail}`} className="text-pink-400 hover:text-pink-300">
-                    {PRO_SELLER.ordersEmail}
+                  <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
+                    {SITE.email}
                   </a>{" "}
                   with the account email and the date of the payment. We will refund the payment through Stripe to the
                   original payment method.
@@ -76,8 +78,8 @@ export default function RefundsPage() {
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
                   The withdrawal waiver does not remove statutory rights where the digital content is faulty or not as
                   described. Email{" "}
-                  <a href={`mailto:${PRO_SELLER.ordersEmail}`} className="text-pink-400 hover:text-pink-300">
-                    {PRO_SELLER.ordersEmail}
+                  <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
+                    {SITE.email}
                   </a>{" "}
                   and we will look at a repair, a replacement of access, or a refund. A full refund through Stripe also
                   removes Pro from the account.

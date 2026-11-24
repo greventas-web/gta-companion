@@ -49,6 +49,7 @@ export async function POST(request: NextRequest) {
             amountTotal: session.amount_total ?? undefined,
             currency: session.currency ?? undefined,
             livemode: session.livemode,
+            termsOfService: "accepted",
           });
         }
         break;

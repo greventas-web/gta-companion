@@ -14,7 +14,7 @@ The brand star other surfaces can reuse is `components/pro/ProBadge.tsx` (`proBr
 
 Prices live in `lib/pro/config.ts` (`PRO_PRICE_CENTS` is 499, the EUR amount). The buyer’s choice is sent to `POST /api/pro/checkout` as `currency` (`eur`, `usd`, or `gbp`). The page defaults to EUR, then picks USD or GBP from the browser locale when the region is one we map (United States and US territories → USD, United Kingdom and Crown Dependencies → GBP, eurozone → EUR). A saved choice on that device wins over the locale.
 
-Signed-out visitors on `/pro` see “Sign in to get Pro” and return to `/pro` after sign-in. The waitlist form is not shown. `POST /api/pro/waitlist` and `GET /api/pro/waitlist/export` stay in place. Without a Stripe secret key, signed-in checkout still returns 503.
+Payments are on hold. `/pro` shows only the supporter waitlist (“Join the supporter list”) for signed-in and signed-out visitors. There is no pay button. `POST /api/pro/waitlist` and `GET /api/pro/waitlist/export` stay in place. Checkout code remains for later: a session, when created, requires Stripe’s terms checkbox and grants Pro only when `consent.terms_of_service` is `accepted`.
 
 Waitlist emails are stored server-side in the same private Blob store as Pro entitlements (`pro/waitlist.json`, local `.data/pro/waitlist.json` without a token). The form dedupes by email, ignores a filled honeypot field named `company`, and rate-limits each IP. Export the list with `GET /api/pro/waitlist/export` and `Authorization: Bearer` set to the `MAP_ADMIN_SECRET` value (the same env var as the map admin). A signed-in map admin cookie is also accepted. Do not commit or paste that value.
 
@@ -33,17 +33,18 @@ Waitlist emails are stored server-side in the same private Blob store as Pro ent
   `checkout.session.async_payment_succeeded` and revokes on a full `charge.refunded`.
   The success page also confirms the session with Stripe directly, so Pro unlocks
   even if the webhook is late.
-- Immediate delivery: checkout refuses to start unless `withdrawalWaiver` is true.
-  That flag is stored on the Checkout Session and PaymentIntent metadata
-  (`withdrawal_waiver=immediate-digital-delivery`). The checkbox is the EU 14-day
-  withdrawal waiver for digital content. Draft wording is on `/refunds`.
+- Terms consent (inactive while payments are on hold): Checkout sets
+  `consent_collection[terms_of_service]=required` and
+  `custom_text[terms_of_service_acceptance][message]` to the 14-day wording with a
+  link to `/terms`. The webhook and the success-page check grant Pro only when
+  `consent.terms_of_service` is `accepted`, and store that on the entitlement.
 - Live keys (`sk_live_` / `rk_live_`) are refused unless `PRO_ALLOW_LIVE_PAYMENTS=1`.
 - Seller: **GL Transportation, MB** (MB "GL Transportation"), Lithuania.
   Company code `307588769`. VAT (PVM) code `LT100021034618`. Registered office
   V. Nagevičiaus g. 3, LT-08237 Vilnius, Lithuania. Director Gabrielius Reventas.
   Orders and refunds: `contact@gta-companion.com`. Do not publish a phone number.
-  The same facts live in `PRO_SELLER` (`lib/pro/config.ts`) and render on
-  `/pro`, `/terms`, `/privacy`, and `/refunds`.
+  Public pages do not show these facts. They say seller details are available
+  on request at `contact@gta-companion.com`.
 
 ## Env var names (Vercel → Project → Settings → Environment Variables)
 
@@ -65,7 +66,7 @@ Set the names below. Do not commit the values.
 
 Each price id must be a one-time price in that currency. A EUR price id in the USD variable would charge euros.
 
-Until `STRIPE_SECRET_KEY` and storage are set, a signed-in checkout request returns 503. Signed-out `/pro` still shows “Sign in to get Pro”.
+Until `STRIPE_SECRET_KEY` and storage are set, a checkout request returns 503. `/pro` stays on the supporter waitlist either way.
 
 ## VAT before go-live
 
@@ -76,7 +77,7 @@ GL Transportation, MB is VAT-registered (PVM `LT100021034618`). The prices on `/
 Do this in order. The Stripe account must be **GL Transportation, MB** (MB "GL Transportation"), not a personal account.
 
 1. Stripe Dashboard → business details match GL Transportation, MB: company code `307588769`, VAT (PVM) `LT100021034618`, registered office V. Nagevičiaus g. 3, LT-08237 Vilnius, Lithuania. Do not add a phone number on the site.
-2. Confirm `/pro`, `/terms`, `/privacy`, and `/refunds` show those details from `PRO_SELLER`. Orders and refunds stay at `contact@gta-companion.com`.
+2. Public pages do not list the company identity. They point people to `contact@gta-companion.com`.
 3. Create one product, "GTA Companion Pro (unofficial fan tool)", with three one-time VAT-inclusive prices: EUR 4.99, USD 4.99, GBP 4.49. Copy each price id into `STRIPE_PRO_PRICE_ID_EUR`, `STRIPE_PRO_PRICE_ID_USD`, and `STRIPE_PRO_PRICE_ID_GBP`.
 4. Enable **Stripe Tax** and register EU VAT **OSS** (One-Stop Shop) before any live charge. Connect the Lithuanian VAT registration in Stripe Tax, then set `STRIPE_AUTOMATIC_TAX` to `1`. This step is required because the MB is VAT-registered and the prices already include VAT.
 5. Stripe → Settings → Customer emails: turn on the receipt for a successful payment. Checkout also sets `receipt_email` to the signed-in account email.
@@ -92,7 +93,7 @@ Do this in order. The Stripe account must be **GL Transportation, MB** (MB "GL T
    `https://www.gta-companion.com/api/pro/webhook`
    Same three events. Put that endpoint’s signing secret in Production `STRIPE_WEBHOOK_SECRET`.
 8. Production env names to set: `STRIPE_SECRET_KEY` (live secret key), `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRO_PRICE_ID_EUR`, `STRIPE_PRO_PRICE_ID_USD`, `STRIPE_PRO_PRICE_ID_GBP`, `STRIPE_AUTOMATIC_TAX`=`1`, `PRO_READ_WRITE_TOKEN`, `PRO_SITE_URL`=`https://www.gta-companion.com`, `PRO_ALLOW_LIVE_PAYMENTS`=`1`.
-9. Reload `/pro` signed out. The button says “Sign in to get Pro”. After sign-in, checkout appears only when the secret key and Blob storage are both present.
+9. Reload `/pro`. Signed-in and signed-out visitors see “Join the supporter list”. There is no pay button while payments are on hold.
 10. Make one live purchase in EUR for a low-value check if Stripe allows it, confirm the receipt email, then refund it and confirm Pro is removed.
 
 Local webhook test: `stripe listen --forward-to localhost:3000/api/pro/webhook`.

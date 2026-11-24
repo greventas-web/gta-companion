@@ -72,7 +72,7 @@ export default function ProWaitlist() {
           disabled={pending}
           className="h-12 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 px-5 text-sm font-black text-white transition hover:brightness-110 disabled:opacity-60"
         >
-          {pending ? "Saving…" : "Notify me at launch"}
+          {pending ? "Saving…" : "Join the supporter list"}
         </button>
       </div>
       <label className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">

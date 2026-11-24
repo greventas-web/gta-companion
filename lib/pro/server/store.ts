@@ -25,6 +25,8 @@ export type Entitlement = {
   amountTotal?: number;
   currency?: string;
   livemode?: boolean;
+  /** Set when Stripe Checkout reports consent.terms_of_service === "accepted". */
+  termsOfService?: "accepted";
   grantedAt: string;
   revokedAt?: string;
 };

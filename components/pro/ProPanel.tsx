@@ -1,13 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import { Check, Cloud, EyeOff, Infinity as InfinityIcon, LocateFixed, Lock, Percent } from "lucide-react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { Check, Sparkles, Star } from "lucide-react";
 
 import ProBadge, { proBrandFill } from "@/components/pro/ProBadge";
-import SellerDetails from "@/components/pro/SellerDetails";
-import { authHeader, useProStatus } from "@/lib/pro/client";
+import ProWaitlist from "@/components/pro/ProWaitlist";
+import { useProStatus } from "@/lib/pro/client";
 import {
   BASIC_MARK_LIMIT,
   currencyFromLocales,
@@ -18,87 +17,52 @@ import {
   PRO_CURRENCY_STORAGE_KEY,
   PRO_NAME,
   PRO_PRICES,
-  PROGRESS_SECTIONS,
   SYNC_EVENT,
   type ProCurrency,
-  type ProgressSection,
 } from "@/lib/pro/config";
-import { useTracked } from "@/lib/pro/tracker";
 import { UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 
-export type SectionTotals = Record<ProgressSection["id"], string[]>;
-
-const FEATURES = [
-  {
-    icon: Cloud,
-    title: "Cloud sync",
-    line: "The same marks on your phone, PC, and tablet.",
-  },
-  {
-    icon: Percent,
-    title: "Progress %",
-    line: "Missions, collectibles, trophies, and shooting ranges.",
-  },
-  {
-    icon: LocateFixed,
-    title: "What's left near me",
-    line: "A map filter for marks still open around the map center.",
-  },
-  {
-    icon: InfinityIcon,
-    title: "Unlimited marks",
-    line: `Past the ${BASIC_MARK_LIMIT} marks kept on a device without Pro.`,
-  },
+const NOW = [
+  { icon: Star, title: "Pro star seal", line: "The badge on your profile and on your forum posts." },
+  { icon: Sparkles, title: "Supporter recognition", line: "Your name carries the seal wherever members appear." },
+  { icon: Check, title: "The site keeps growing", line: "Your support keeps this unofficial fan site independent." },
 ];
 
-const PAYMENT_STEPS = [
-  { title: "Sign in", line: "Use your GTA Companion account. Pro is tied to that account." },
-  {
-    title: "Secure Stripe Checkout",
-    line: "Card details go to Stripe. We never see or store the card number.",
-  },
-  {
-    title: "One-time payment",
-    line: "€4.99, $4.99, or £4.49. Not a subscription. You pick the currency here.",
-  },
-  {
-    title: "Instant unlock",
-    line: "Pro turns on for that account as soon as Stripe confirms the payment.",
-  },
-  {
-    title: "Receipt by email",
-    line: "Stripe emails the receipt to the address on your account.",
-  },
+const COMING = [
+  "Interactive map with saved progress",
+  "100% completion checklists",
+  "Early access to new guides",
+  "More to come",
 ];
 
 const FAQ = [
   {
     q: "What is GTA Companion Pro?",
-    a: "An optional one-time upgrade on this unofficial fan site. It adds no ads, cloud sync, progress percentages, a what's-left-near-me map filter, and unlimited marks. Every guide, pin, and checklist stays open to everyone.",
+    a: "A way to support this unofficial fan site and wear the Pro star seal. Supporters also get first access to Pro features as they arrive. Guides, pins, and checklists stay open to everyone.",
   },
   {
     q: "Is this official?",
-    a: "No. GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two. Pro only covers tools we built.",
+    a: "No. GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two.",
   },
   {
     q: "What does the price cover?",
-    a: "One payment, shown in the currency you select: €4.99, $4.99, or £4.49. The same account keeps Pro on every device you sign in with.",
+    a: "A planned one-time payment, shown in the currency you select: €4.99, $4.99, or £4.49. It is not a subscription. Pro is coming. Join the list to hear first.",
   },
   {
     q: "How does payment work?",
-    a: "Sign in, confirm that you want immediate delivery, then pay once on Stripe Checkout. Stripe emails the receipt, and Pro unlocks when the payment is confirmed.",
+    a: "Pro is coming. Join the list to hear first. When it opens, payment will be a one-time Stripe Checkout on the signed-in account.",
   },
   {
     q: "What about the 14-day withdrawal right?",
-    a: "For digital content bought at a distance in the EU, you have 14 days to withdraw. Pro is delivered immediately, so checkout asks you to request that delivery and acknowledge that the withdrawal right ends once delivery starts. The Refunds page has the draft wording.",
+    a: "For digital content bought at a distance in the EU, you have 14 days to withdraw. When checkout opens, Stripe will ask you to agree that this right ends once Pro unlocks. The Refunds page has the wording.",
   },
   {
     q: "When can I pay?",
-    a: "Sign in on this page and pay on Stripe Checkout. The button uses the price in the currency you select.",
+    a: "Pro is coming. Join the list to hear first.",
   },
   {
     q: "What happens to marks already on this device?",
-    a: `They stay on this device. With Pro they sync to your account. Without Pro a device holds ${BASIC_MARK_LIMIT} marks, and marks already saved above that stay put.`,
+    a: `They stay on this device. Saved progress across devices is planned for Pro and is not here yet. A device holds ${BASIC_MARK_LIMIT} marks today, and marks already saved above that stay put.`,
   },
 ];
 
@@ -160,21 +124,16 @@ function useProCurrency(): ProCurrency {
   return useSyncExternalStore(subscribeCurrency, readChosenCurrency, () => PRO_CURRENCY);
 }
 
-export default function ProPanel({ sections }: { sections: SectionTotals }) {
+export default function ProPanel() {
   const params = useSearchParams();
   const checkout = params.get("checkout");
   const sessionId = params.get("session_id");
   const { user, status, loading, refresh } = useProStatus();
-  const { set } = useTracked();
   const lastSync = useLastSync();
   const currency = useProCurrency();
-  const [waiver, setWaiver] = useState(false);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
   const [confirmed, setConfirmed] = useState(false);
 
   const pro = Boolean(status?.pro);
-  const ready = Boolean(status?.ready);
   const price = PRO_PRICES[currency];
 
   useEffect(() => {
@@ -188,49 +147,6 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
     };
   }, [checkout, confirmed, refresh, sessionId, user]);
 
-  const progress = useMemo(
-    () =>
-      PROGRESS_SECTIONS.map((section) => {
-        const ids = sections[section.id];
-        const done = ids.filter((id) => set.has(id)).length;
-        return { ...section, done, total: ids.length, pct: ids.length ? Math.round((done / ids.length) * 100) : 0 };
-      }),
-    [sections, set]
-  );
-
-  const overall = useMemo(() => {
-    const total = progress.reduce((sum, row) => sum + row.total, 0);
-    const done = progress.reduce((sum, row) => sum + row.done, 0);
-    return total ? Math.round((done / total) * 100) : 0;
-  }, [progress]);
-
-  async function startCheckout() {
-    if (!user || !waiver) return;
-    setBusy(true);
-    setError("");
-    try {
-      const response = await fetch("/api/pro/checkout", {
-        method: "POST",
-        headers: { ...(await authHeader(user)), "Content-Type": "application/json" },
-        body: JSON.stringify({ currency, withdrawalWaiver: true }),
-      });
-      const body = (await response.json().catch(() => null)) as { url?: string; pro?: boolean; error?: string } | null;
-      if (body?.pro) {
-        await refresh({ force: true });
-        return;
-      }
-      if (!response.ok || !body?.url) {
-        setError(body?.error || "Could not start checkout.");
-        return;
-      }
-      window.location.assign(body.url);
-    } catch {
-      setError("Could not start checkout.");
-    } finally {
-      setBusy(false);
-    }
-  }
-
   return (
     <div className="space-y-6">
       <section className="relative overflow-hidden rounded-[28px] border border-pink-500/25 bg-[#100814] p-6 sm:p-8">
@@ -240,15 +156,19 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           <div className="max-w-xl">
             <div className="flex items-center gap-2">
               <ProBadge size="md" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-pink-300">One-time</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-pink-300">Supporter</span>
             </div>
-            <h1 className="mt-3 text-3xl font-black leading-none tracking-[-0.03em] sm:text-5xl">{PRO_NAME}</h1>
+            <h1 className="mt-3 text-3xl font-black leading-[0.95] tracking-[-0.03em] sm:text-5xl">
+              Back the site. Wear the star.
+            </h1>
             <p className="mt-3 max-w-md text-sm leading-6 text-zinc-400 sm:text-base">
-              The completion tracker for this fan site. No ads, cloud sync, progress, and the map filter, on one account.
+              Supporters keep {PRO_NAME.replace(" Pro", "")} independent and growing. You wear the Pro star seal on your
+              profile and forum posts, and you get first access to Pro features as they arrive.
             </p>
+            <p className="mt-3 text-sm font-semibold text-pink-200">Pro is coming. Join the list to hear first.</p>
           </div>
           <div className="w-full sm:w-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-500">Price</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-500">Planned one-time</p>
             <p aria-live="polite" className="mt-1 bg-gradient-to-r from-pink-300 via-fuchsia-300 to-violet-300 bg-clip-text text-5xl font-black tracking-tight text-transparent">
               {price.label}
             </p>
@@ -279,148 +199,54 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
         </div>
 
         <div className="mt-6">
-          {loading ? (
-            <span className="inline-flex h-11 w-52 animate-pulse rounded-full bg-white/5" />
-          ) : pro ? (
-            <span className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-black ${proBrandFill}`}>
+          <p className="text-sm font-semibold text-zinc-300">Get notified when Pro opens.</p>
+          {pro ? (
+            <p className={`mt-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black ${proBrandFill}`}>
               <Check size={16} /> Pro active
-            </span>
-          ) : ready && user ? (
-            <button
-              type="button"
-              onClick={startCheckout}
-              disabled={busy || !waiver}
-              className={`rounded-full px-5 py-2.5 text-sm font-black transition disabled:opacity-50 ${proBrandFill}`}
-            >
-              {busy ? "Opening checkout…" : `Continue to checkout · ${price.label}`}
-            </button>
-          ) : !user ? (
-            <Link
-              href="/login?next=/pro"
-              className={`inline-flex items-center rounded-full px-5 py-2.5 text-sm font-black ${proBrandFill}`}
-            >
-              Sign in to get Pro — {price.label}
-            </Link>
+            </p>
           ) : null}
-          <div className="mt-3 flex flex-wrap items-center gap-3">
-            {pro && lastSync ? (
-              <span className="text-xs text-zinc-500">Synced {new Date(lastSync).toLocaleString()}</span>
-            ) : null}
+          <div className="mt-3">
+            <ProWaitlist />
           </div>
+          {pro && lastSync ? (
+            <p className="mt-3 text-xs text-zinc-500">Synced {new Date(lastSync).toLocaleString()}</p>
+          ) : null}
         </div>
         {checkout === "success" && !pro && !loading ? (
           <p className="mt-3 text-sm text-zinc-400">Payment received. Unlocking…</p>
         ) : null}
         {checkout === "cancel" && !pro ? <p className="mt-3 text-sm text-zinc-500">Checkout canceled.</p> : null}
-        {error ? <p className="mt-3 text-sm text-rose-300">{error}</p> : null}
       </section>
 
-      <section className="relative overflow-hidden rounded-[28px] border border-pink-500/30 bg-[#120816] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-violet-500/15 blur-3xl" />
-        <EyeOff className="text-pink-300" size={22} aria-hidden="true" />
-        <h2 className="mt-4 text-2xl font-black tracking-tight sm:text-3xl">No ads</h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-300 sm:text-base">
-          Pro keeps advertisements off on every page of this site, on each device where that account is signed in.
-        </p>
-      </section>
-
-      <section className="grid gap-3 sm:grid-cols-2">
-        {FEATURES.map(({ icon: Icon, title, line }) => (
-          <article key={title} className="rounded-[22px] border border-white/5 bg-[#08080A] p-5">
-            <Icon size={20} className="text-pink-300" aria-hidden="true" />
-            <h2 className="mt-3 text-base font-black">{title}</h2>
-            <p className="mt-1 text-sm leading-6 text-zinc-400">{line}</p>
-          </article>
-        ))}
-      </section>
-
-      <section id="payment" className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
-        <h2 className="text-xl font-black tracking-tight sm:text-2xl">How payment works</h2>
-        <SellerDetails className="mt-4 max-w-3xl" />
-        <ol className="mt-6 space-y-4">
-          {PAYMENT_STEPS.map((step, index) => (
-            <li key={step.title} className="flex gap-4">
-              <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${proBrandFill}`}
-              >
-                {index + 1}
-              </span>
-              <div>
-                <h3 className="text-sm font-black sm:text-base">{step.title}</h3>
-                <p className="mt-1 text-sm leading-6 text-zinc-400">{step.line}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-6 rounded-[22px] border border-white/10 bg-black/30 p-4 sm:p-5">
-          <h3 className="text-sm font-black">Immediate delivery</h3>
-          <p className="mt-2 text-sm leading-6 text-zinc-400">
-            Pro is digital and is delivered as soon as payment is confirmed. At checkout you will be asked to request
-            that delivery and acknowledge that the 14-day withdrawal right ends once delivery starts.{" "}
-            <Link href="/refunds" className="font-semibold text-pink-300 underline-offset-4 hover:underline">
-              Refunds
-            </Link>
-            {" · "}
-            <Link href="/terms" className="font-semibold text-pink-300 underline-offset-4 hover:underline">
-              Terms
-            </Link>
-          </p>
-          {ready && user && !pro ? (
-            <label className="mt-4 flex items-start gap-3 text-sm leading-6 text-zinc-200">
-              <input
-                type="checkbox"
-                checked={waiver}
-                onChange={(event) => setWaiver(event.target.checked)}
-                className="mt-1 h-4 w-4 accent-pink-500"
-              />
-              <span>
-                I request immediate delivery of {PRO_NAME} and I acknowledge that I lose the 14-day right of withdrawal
-                once delivery starts.
-              </span>
-            </label>
-          ) : null}
-        </div>
-      </section>
-
-      <section className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-xl font-black tracking-tight sm:text-2xl">Your progress</h2>
-          <span className="inline-flex items-center gap-2 rounded-full border border-pink-400/35 bg-pink-500/10 px-3 py-1 text-sm font-semibold text-pink-100">
-            {pro ? (
-              `${overall}% complete`
-            ) : (
-              <>
-                <Lock size={14} /> % with Pro
-              </>
-            )}
-          </span>
-        </div>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {progress.map((row) => (
-            <Link
-              key={row.id}
-              href={row.href}
-              className="group rounded-[22px] border border-white/5 bg-black/30 p-4 transition hover:border-pink-400/40"
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-black">{row.label}</h3>
-                <span className="text-sm font-black text-pink-200">
-                  {pro ? `${row.pct}%` : <Lock size={14} className="text-zinc-600" />}
+      <section className="grid gap-4 lg:grid-cols-2">
+        <article className="rounded-[28px] border border-pink-500/30 bg-[#100814] p-6 sm:p-8">
+          <h2 className="text-xl font-black tracking-tight sm:text-2xl">What you get now</h2>
+          <ul className="mt-5 space-y-4">
+            {NOW.map(({ icon: Icon, title, line }) => (
+              <li key={title} className="flex gap-3">
+                <Icon className="mt-0.5 shrink-0 text-pink-300" size={18} aria-hidden="true" />
+                <div>
+                  <h3 className="text-sm font-black">{title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-zinc-400">{line}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </article>
+        <article className="rounded-[28px] border border-white/10 bg-[#08080A] p-6 sm:p-8">
+          <h2 className="text-xl font-black tracking-tight sm:text-2xl">Coming to Pro</h2>
+          <ul className="mt-5 space-y-3">
+            {COMING.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-0.5 inline-flex shrink-0 rounded-full border border-pink-400/40 bg-pink-500/10 px-2 py-0.5 text-[10px] font-black uppercase tracking-[0.14em] text-pink-200">
+                  Coming
                 </span>
-              </div>
-              <p className="mt-1 text-xs text-zinc-500">
-                {row.done}/{row.total}
-              </p>
-              <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-                <div
-                  className={`h-full transition-all ${pro ? "bg-gradient-to-r from-pink-500 to-violet-500" : "bg-white/20"}`}
-                  style={{ width: `${pro ? row.pct : 0}%` }}
-                />
-              </div>
-            </Link>
-          ))}
-        </div>
+                <span className="text-sm leading-6 text-zinc-300">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs leading-5 text-zinc-500">No dates. These arrive when they are ready.</p>
+        </article>
       </section>
 
       <section id="faq" className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
