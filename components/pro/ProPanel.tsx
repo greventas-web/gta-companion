@@ -6,6 +6,8 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Check, Cloud, EyeOff, Infinity as InfinityIcon, LocateFixed, Lock, Percent } from "lucide-react";
 
 import ProBadge, { proBrandFill } from "@/components/pro/ProBadge";
+import ProWaitlist from "@/components/pro/ProWaitlist";
+import SellerDetails from "@/components/pro/SellerDetails";
 import { authHeader, useProStatus } from "@/lib/pro/client";
 import {
   BASIC_MARK_LIMIT,
@@ -17,7 +19,6 @@ import {
   PRO_CURRENCY_STORAGE_KEY,
   PRO_NAME,
   PRO_PRICES,
-  PRO_SELLER,
   PROGRESS_SECTIONS,
   SYNC_EVENT,
   type ProCurrency,
@@ -249,7 +250,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           </div>
           <div className="w-full sm:w-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-500">Price</p>
-            <p aria-live="polite" className="mt-1 text-5xl font-black tracking-tight text-white">
+            <p aria-live="polite" className="mt-1 bg-gradient-to-r from-pink-300 via-fuchsia-300 to-violet-300 bg-clip-text text-5xl font-black tracking-tight text-transparent">
               {price.label}
             </p>
             <div
@@ -278,9 +279,9 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="mt-6">
           {loading ? (
-            <span className="h-11 w-52 animate-pulse rounded-full bg-white/5" />
+            <span className="inline-flex h-11 w-52 animate-pulse rounded-full bg-white/5" />
           ) : pro ? (
             <span className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-black ${proBrandFill}`}>
               <Check size={16} /> Pro active
@@ -295,25 +296,25 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
               {busy ? "Opening checkout…" : `Continue to checkout · ${price.label}`}
             </button>
           ) : (
-            <span className="inline-flex items-center rounded-2xl border border-pink-400/40 bg-pink-500/10 px-5 py-2.5 text-sm font-semibold tracking-wide text-pink-100">
-              Checkout opening soon
-            </span>
+            <ProWaitlist />
           )}
-          {!loading && !pro && !user ? (
-            <Link
-              href="/login?next=/pro"
-              className="text-sm font-semibold text-zinc-300 underline-offset-4 hover:text-white hover:underline"
-            >
-              Sign in
-            </Link>
-          ) : null}
-          {pro && lastSync ? (
-            <span className="text-xs text-zinc-500">Synced {new Date(lastSync).toLocaleString()}</span>
-          ) : null}
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            {!loading && !pro && !user ? (
+              <Link
+                href="/login?next=/pro"
+                className="text-sm font-semibold text-zinc-300 underline-offset-4 hover:text-white hover:underline"
+              >
+                Sign in
+              </Link>
+            ) : null}
+            {pro && lastSync ? (
+              <span className="text-xs text-zinc-500">Synced {new Date(lastSync).toLocaleString()}</span>
+            ) : null}
+          </div>
         </div>
         {!loading && !pro && !ready ? (
           <p className="mt-3 max-w-xl text-sm text-zinc-500">
-            Payments are not open. This page shows the price and what Pro includes. Nothing here can charge you.
+            Payments are not open. Nothing on this page can charge you.
           </p>
         ) : null}
 
@@ -345,10 +346,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
 
       <section id="payment" className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
         <h2 className="text-xl font-black tracking-tight sm:text-2xl">How payment works</h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-400">
-          Sold by {PRO_SELLER.name} ({PRO_SELLER.country}). Company code {PRO_SELLER.companyCode}. Registered
-          address {PRO_SELLER.address}.
-        </p>
+        <SellerDetails className="mt-4 max-w-3xl" />
         <ol className="mt-6 space-y-4">
           {PAYMENT_STEPS.map((step, index) => (
             <li key={step.title} className="flex gap-4">

@@ -1,5 +1,7 @@
 import PageTitle from "@/components/PageTitle";
+import SellerDetails from "@/components/pro/SellerDetails";
 import { pageMetadata } from "@/lib/launch";
+import { PRO_SELLER } from "@/lib/pro/config";
 import {
   Badge,
   Card,
@@ -87,12 +89,12 @@ export default function TermsPage() {
                     it is not a Rockstar Games or Take-Two product.
                   </p>
                   <p>
-                    The seller is MB GL Transportation, a company in Lithuania.
-                    Company code: [company code]. Registered address:
-                    [registered address]. The price is shown on the Pro page
-                    before you pay: €4.99, $4.99, or £4.49, depending on the
-                    currency you select.
+                    The seller is {PRO_SELLER.name} ({PRO_SELLER.quotedName}),
+                    a company in {PRO_SELLER.country}. The price is shown on
+                    the Pro page before you pay: €4.99, $4.99, or £4.49,
+                    depending on the currency you select.
                   </p>
+                  <SellerDetails />
                   <p>
                     Checkout is not open yet. When it opens, you sign in,
                     confirm that you want immediate delivery, and pay once
@@ -110,8 +112,7 @@ export default function TermsPage() {
                     <a href="/refunds" className="text-pink-400 hover:text-pink-300">
                       Refunds
                     </a>{" "}
-                    page. This section is a draft until the company code and
-                    address above are filled in.
+                    page.
                   </p>
                 </div>
 

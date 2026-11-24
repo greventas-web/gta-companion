@@ -1,6 +1,6 @@
 # GTA Companion Pro (100% completion tracker)
 
-€4.99 one-time in EUR (the default). The Pro page also offers fixed rounded prices in USD ($4.99) and GBP (£4.49). These are not a live exchange rate. Every guide, pin and checklist stays readable for everyone. Pro adds our own tools only:
+€4.99 one-time in EUR (the default). The Pro page also offers fixed rounded prices in USD ($4.99) and GBP (£4.49). These are not a live exchange rate. The prices are **VAT-inclusive**. Every guide, pin and checklist stays readable for everyone. Pro adds our own tools only:
 
 | Feature | Where |
 |---|---|
@@ -14,7 +14,9 @@ The brand star other surfaces can reuse is `components/pro/ProBadge.tsx` (`proBr
 
 Prices live in `lib/pro/config.ts` (`PRO_PRICE_CENTS` is 499, the EUR amount). The buyer’s choice is sent to `POST /api/pro/checkout` as `currency` (`eur`, `usd`, or `gbp`). The page defaults to EUR, then picks USD or GBP from the browser locale when the region is one we map (United States and US territories → USD, United Kingdom and Crown Dependencies → GBP, eurozone → EUR). A saved choice on that device wins over the locale.
 
-Checkout is not live. With no Stripe secret key, `/pro` shows **Checkout opening soon** and `/api/pro/checkout` returns 503. Do not tell visitors they can pay.
+Checkout is not live. With no Stripe secret key, `/pro` shows an early-access form (“Notify me at launch”) and `/api/pro/checkout` returns 503. Do not tell visitors they can pay.
+
+Waitlist emails are stored server-side in the same private Blob store as Pro entitlements (`pro/waitlist.json`, local `.data/pro/waitlist.json` without a token). The form dedupes by email, ignores a filled honeypot field named `company`, and rate-limits each IP. Export the list with `GET /api/pro/waitlist/export` and `Authorization: Bearer` set to the `MAP_ADMIN_SECRET` value (the same env var as the map admin). A signed-in map admin cookie is also accepted. Do not commit or paste that value.
 
 ## How it works
 
@@ -36,9 +38,12 @@ Checkout is not live. With no Stripe secret key, `/pro` shows **Checkout opening
   (`withdrawal_waiver=immediate-digital-delivery`). The checkbox is the EU 14-day
   withdrawal waiver for digital content. Draft wording is on `/refunds`.
 - Live keys (`sk_live_` / `rk_live_`) are refused unless `PRO_ALLOW_LIVE_PAYMENTS=1`.
-- Seller on the draft legal pages: **MB GL Transportation** (Lithuania). Company code
-  and registered address are still the placeholders `[company code]` and
-  `[registered address]` in `PRO_SELLER`.
+- Seller: **GL Transportation, MB** (MB "GL Transportation"), Lithuania.
+  Company code `307588769`. VAT (PVM) code `LT100021034618`. Registered office
+  V. Nagevičiaus g. 3, LT-08237 Vilnius, Lithuania. Director Gabrielius Reventas.
+  Orders and refunds: `contact@gta-companion.com`. Do not publish a phone number.
+  The same facts live in `PRO_SELLER` (`lib/pro/config.ts`) and render on
+  `/pro`, `/terms`, `/privacy`, and `/refunds`.
 
 ## Env var names (Vercel → Project → Settings → Environment Variables)
 
@@ -53,7 +58,7 @@ Set the names below. Do not commit the values.
 | `STRIPE_PRO_PRICE_ID_USD` | optional | Price id for the $4.99 one-time USD price. Without it, $4.99 is sent inline. |
 | `STRIPE_PRO_PRICE_ID_GBP` | optional | Price id for the £4.49 one-time GBP price. Without it, £4.49 is sent inline. |
 | `STRIPE_PRO_PRICE_ID` | optional | Older EUR-only price id. Used only when `STRIPE_PRO_PRICE_ID_EUR` is unset. |
-| `STRIPE_AUTOMATIC_TAX` | at go-live | `1` after Stripe Tax and OSS are enabled. Checkout then collects a billing address. |
+| `STRIPE_AUTOMATIC_TAX` | required before go-live | `1` only after Stripe Tax and OSS are enabled. The MB is VAT-registered and the prices are VAT-inclusive. Checkout then collects a billing address. |
 | `PRO_SITE_URL` | optional | `https://www.gta-companion.com` for Checkout return URLs |
 | `PRO_GRANT_UIDS` | optional | Comma-separated Firebase uids that get Pro without paying (owner, testers) |
 | `PRO_ALLOW_LIVE_PAYMENTS` | at go-live | `1` only in Production, and only when a live secret key should be accepted |
@@ -62,14 +67,18 @@ Each price id must be a one-time price in that currency. A EUR price id in the U
 
 Until `STRIPE_SECRET_KEY` and storage are set, `/pro` shows "Checkout opening soon" and nothing can be bought.
 
+## VAT before go-live
+
+GL Transportation, MB is VAT-registered (PVM `LT100021034618`). The prices on `/pro` (€4.99, $4.99, and £4.49) are **VAT-inclusive**. **Stripe Tax and EU VAT OSS must be enabled before go-live.** Do not set `PRO_ALLOW_LIVE_PAYMENTS` until `STRIPE_AUTOMATIC_TAX` is `1` and Stripe Tax is using this Lithuanian VAT registration and OSS.
+
 ## Go-live checklist
 
-Do this in order. The Stripe account must be **MB GL Transportation** (Lithuania), not a personal account.
+Do this in order. The Stripe account must be **GL Transportation, MB** (MB "GL Transportation"), not a personal account.
 
-1. Stripe Dashboard → account business details match MB GL Transportation, Lithuania. Add the real company code and registered address there.
-2. Replace `[company code]` and `[registered address]` in `lib/pro/config.ts` (`PRO_SELLER`). That updates `/pro`, `/terms`, `/privacy`, and `/refunds`. Read those three legal pages and take them out of draft once a human has checked them.
-3. Create one product, "GTA Companion Pro (unofficial fan tool)", with three one-time prices: EUR 4.99, USD 4.99, GBP 4.49. Copy each price id into `STRIPE_PRO_PRICE_ID_EUR`, `STRIPE_PRO_PRICE_ID_USD`, and `STRIPE_PRO_PRICE_ID_GBP`.
-4. Enable **Stripe Tax**. Register for EU VAT **OSS** (One-Stop Shop) as a Lithuanian seller of digital services to consumers in other EU countries, and connect that registration in Stripe Tax. Then set `STRIPE_AUTOMATIC_TAX` to `1`.
+1. Stripe Dashboard → business details match GL Transportation, MB: company code `307588769`, VAT (PVM) `LT100021034618`, registered office V. Nagevičiaus g. 3, LT-08237 Vilnius, Lithuania. Do not add a phone number on the site.
+2. Confirm `/pro`, `/terms`, `/privacy`, and `/refunds` show those details from `PRO_SELLER`. Orders and refunds stay at `contact@gta-companion.com`.
+3. Create one product, "GTA Companion Pro (unofficial fan tool)", with three one-time VAT-inclusive prices: EUR 4.99, USD 4.99, GBP 4.49. Copy each price id into `STRIPE_PRO_PRICE_ID_EUR`, `STRIPE_PRO_PRICE_ID_USD`, and `STRIPE_PRO_PRICE_ID_GBP`.
+4. Enable **Stripe Tax** and register EU VAT **OSS** (One-Stop Shop) before any live charge. Connect the Lithuanian VAT registration in Stripe Tax, then set `STRIPE_AUTOMATIC_TAX` to `1`. This step is required because the MB is VAT-registered and the prices already include VAT.
 5. Stripe → Settings → Customer emails: turn on the receipt for a successful payment. Checkout also sets `receipt_email` to the signed-in account email.
 6. Still in **test mode**, on the Preview environment:
    - `STRIPE_SECRET_KEY` = the test secret key
@@ -93,6 +102,6 @@ Local webhook test: `stripe listen --forward-to localhost:3000/api/pro/webhook`.
 | Page | Role |
 |---|---|
 | `/pro` | Price, currency, what Pro includes, how payment works, FAQ. Checkout stays closed until the keys above are set. |
-| `/terms` | Pro and payments section. Draft until the company code and address are real. |
-| `/privacy` | Stripe as the payment processor, and synced marks. Draft on the same placeholders. |
-| `/refunds` | EU 14-day withdrawal, and the immediate-delivery waiver the checkout checkbox records. |
+| `/terms` | Pro and payments section, including the seller block. |
+| `/privacy` | Stripe as the payment processor, synced marks, and the seller block. |
+| `/refunds` | EU 14-day withdrawal, the immediate-delivery waiver, and the seller block. |
