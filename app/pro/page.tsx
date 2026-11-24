@@ -11,8 +11,8 @@ import { courseTrackId, shootingRanges } from "@/src/data/launch/shooting-ranges
 import { missions } from "@/src/data/missions";
 import { trophies } from "@/src/data/trophies";
 
-const title = `${PRO_NAME} – 100% Completion Tracker`;
-const description = `Unofficial GTA 6 completion tracker. Cloud sync, progress %, a what's-left-near-me map filter, unlimited marks and no ads for ${PRO_PRICE_LABEL} one-time. Not affiliated with Rockstar Games or Take-Two.`;
+const title = `${PRO_NAME} – No ads, cloud sync, progress`;
+const description = `Unofficial ${PRO_NAME}. No ads, cloud sync, progress %, what's left near me, and unlimited marks. ${PRO_PRICE_LABEL} one-time (USD and GBP on the page). Checkout opening soon. Not affiliated with Rockstar Games or Take-Two.`;
 
 export const metadata: Metadata = {
   ...pageMetadata(title, description),

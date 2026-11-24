@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   ChevronDown,
@@ -22,10 +23,16 @@ import SupportLink from "./SupportLink";
 import MegaMenu, { exploreLinks } from "./MegaMenu";
 
 import { useAuth } from "@/components/auth/AuthProvider";
+import { proGoldFill, proGoldGlow } from "@/components/pro/ProBadge";
 import { useSearch } from "@/components/search/SearchProvider";
+
+const proPillClass = `inline-flex items-center justify-center whitespace-nowrap rounded-full font-black tracking-[0.04em] ring-1 ring-[#fff6d8]/60 transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e7c56a] ${proGoldFill} ${proGoldGlow}`;
+
 export default function Navbar() {
   const { user } = useAuth();
   const { open } = useSearch();
+  const pathname = usePathname();
+  const proActive = pathname === "/pro" || pathname.startsWith("/pro/");
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -81,14 +88,14 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-[100] overflow-visible px-4 pt-4 sm:px-6 sm:pt-5">
 
         <div
-          className={`mx-auto flex h-20 w-full min-w-0 max-w-[1700px] items-center justify-between rounded-[32px] border transition-all duration-500 ${
+          className={`mx-auto flex h-20 w-full min-w-0 max-w-[1700px] items-center justify-between gap-2 rounded-[32px] border transition-all duration-500 ${
             scrolled
               ? "border-pink-500/20 bg-black/95 shadow-[0_25px_80px_rgba(0,0,0,.60)] sm:bg-black/80 sm:backdrop-blur-xl"
               : "border-white/10 bg-black/95 shadow-[0_10px_40px_rgba(0,0,0,.35)] sm:bg-black/70 sm:backdrop-blur-xl"
           }`}
         >
 
-          <div className="flex shrink-0 items-center px-3 sm:px-4">
+          <div className="flex shrink-0 items-center gap-2 px-3 sm:px-4">
 
             <Link
               href="/"
@@ -98,40 +105,56 @@ export default function Navbar() {
               <SiteLogo />
             </Link>
 
+            <Link
+              href="/pro"
+              aria-label="GTA Companion Pro"
+              aria-current={proActive ? "page" : undefined}
+              className={`${proPillClass} h-8 px-2.5 text-[11px] lg:hidden`}
+            >
+              PRO
+            </Link>
+
           </div>
 
-          <nav className="hidden min-w-0 items-center gap-1 xl:flex min-[1440px]:gap-2">
+          <nav className="hidden min-w-0 items-center lg:flex">
 
             <NavLink href="/">Home</NavLink>
 
-            <NavLink href="/gta-6-launch" accent>
-              Launch
+            <NavLink href="/updates" accent>
+              Updates
             </NavLink>
 
-            <NavLink href="/map">Map</NavLink>
+            <div className="hidden min-[1680px]:contents">
+              <NavLink href="/map">Map</NavLink>
+            </div>
 
             <MegaMenu />
 
-            <NavLink href="/news">News</NavLink>
-
-            <NavLink href="/media">Media</NavLink>
-
-            <NavLink href="/timeline">Timeline</NavLink>
+            <div className="hidden min-[1920px]:contents">
+              <NavLink href="/news">News</NavLink>
+              <NavLink href="/media">Media</NavLink>
+              <NavLink href="/timeline">Timeline</NavLink>
+            </div>
 
             <NavLink href="/community">Community</NavLink>
 
-            <NavLink href="/about">About</NavLink>
+            <Link
+              href="/pro"
+              aria-label="GTA Companion Pro"
+              aria-current={proActive ? "page" : undefined}
+              className={`${proPillClass} ml-1 h-9 px-3 text-[12px] tracking-[0.01em] min-[1920px]:px-3.5 min-[1920px]:text-[13px]`}
+            >
+              <span className="hidden min-[1920px]:inline">GTA Companion Pro</span>
+              <span className="min-[1920px]:hidden">PRO</span>
+            </Link>
 
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2 px-3 sm:px-4">
+          <div className="flex min-w-0 shrink items-center justify-end gap-2 px-3 sm:px-4">
 
-            <SupportLink className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap px-1 text-sm font-semibold text-zinc-300 transition hover:text-pink-300 xl:inline-flex" />
+            <SupportLink className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap px-1 text-sm font-semibold text-zinc-300 transition hover:text-pink-300 min-[1680px]:inline-flex" />
 
-            <div
-              className="hidden min-[1440px]:block"
-              onClick={open}
-            >
+            <div className="hidden h-12 w-[320px] min-w-0 max-w-full shrink min-[1440px]:block">
               <SearchBar />
             </div>
 
@@ -139,7 +162,7 @@ export default function Navbar() {
               type="button"
               aria-label="Open search"
               onClick={open}
-              className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white min-[1440px]:hidden"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white min-[1440px]:hidden"
             >
               <Search size={18} />
             </button>
@@ -149,7 +172,7 @@ export default function Navbar() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((value) => !value)}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white xl:hidden"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white lg:hidden"
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -157,14 +180,14 @@ export default function Navbar() {
               <>
                 <Link
                   href="/login"
-                  className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] lg:inline-flex"
+                  className="hidden shrink-0 whitespace-nowrap rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:border-pink-500/40 hover:bg-white/[0.08] lg:inline-flex"
                 >
                   Sign In
                 </Link>
 
                 <Link
                   href="/register"
-                  className="hidden rounded-2xl border border-white/10 px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:border-pink-500/40 hover:text-white lg:inline-flex"
+                  className="hidden shrink-0 whitespace-nowrap rounded-2xl border border-white/10 px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:border-pink-500/40 hover:text-white lg:inline-flex"
                 >
                   Join
                 </Link>
@@ -172,7 +195,7 @@ export default function Navbar() {
             ) : (
               <div
                 ref={menuRef}
-                className="relative hidden lg:block"
+                className="relative hidden shrink-0 lg:block"
               >
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
@@ -278,7 +301,15 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl xl:hidden">
+          <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl lg:hidden">
+            <Link
+              href="/pro"
+              aria-current={proActive ? "page" : undefined}
+              onClick={() => setMobileOpen(false)}
+              className={`${proPillClass} mb-3 h-12 w-full px-4 text-sm`}
+            >
+              GTA Companion Pro
+            </Link>
             <SupportLink
               onClick={() => setMobileOpen(false)}
               className="mb-2 flex items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-[15px] font-semibold text-pink-300 transition hover:bg-white/[0.06] hover:text-pink-200"
@@ -286,7 +317,7 @@ export default function Navbar() {
             <div className="grid gap-1 sm:grid-cols-2">
               {[
                 { title: "Home", href: "/" },
-                { title: "Launch", href: "/gta-6-launch" },
+                { title: "Updates", href: "/updates" },
                 { title: "Community", href: "/community" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
