@@ -104,8 +104,8 @@ export default function Navbar() {
 
             <NavLink href="/">Home</NavLink>
 
-            <NavLink href="/gta-6-launch" accent>
-              Launch
+            <NavLink href="/updates" accent>
+              Updates
             </NavLink>
 
             <NavLink href="/map">Map</NavLink>
@@ -284,7 +284,7 @@ export default function Navbar() {
             <div className="grid gap-1 sm:grid-cols-2">
               {[
                 { title: "Home", href: "/" },
-                { title: "Launch", href: "/gta-6-launch" },
+                { title: "Updates", href: "/updates" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
               ]

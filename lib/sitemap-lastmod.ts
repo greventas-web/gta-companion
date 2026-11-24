@@ -41,6 +41,7 @@ const SECTION_FILES: Record<string, string[]> = {
   radio: ["lib/simple/radio.ts", "app/radio/page.tsx", "app/radio/[slug]/page.tsx"],
   map: ["app/map/page.tsx", "src/data/map/locations.json", "src/data/map/from-seed.ts", "src/data/map/placements.ts"],
   "gta-6-launch": ["app/gta-6-launch/page.tsx", "src/data/launch/gta6-launch.ts"],
+  updates: ["app/updates/page.tsx", "lib/updates.ts"],
   launch: ["app/launch/page.tsx"],
   timeline: ["app/timeline/page.tsx", "src/data/timeline/timeline.ts"],
 };

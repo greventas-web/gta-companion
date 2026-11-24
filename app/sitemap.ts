@@ -79,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/app",
     "/gta-6-launch",
+    "/updates",
     "/about",
     "/news",
     "/vehicles",
@@ -129,6 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const highPriority = new Set([
     "/gta-6-launch",
+    "/updates",
     "/map",
     "/missions",
     "/trophies",
