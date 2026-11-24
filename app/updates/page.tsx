@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import PageShell from "@/components/PageShell";
+import ProBadge from "@/components/pro/ProBadge";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SOCIAL_PROFILES, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
 import {
@@ -76,15 +77,6 @@ function LinkedText({
 
   if (cursor < text.length) nodes.push(text.slice(cursor));
   return nodes;
-}
-
-function ProBadge() {
-  return (
-    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-100/80 bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 px-3.5 py-1.5 text-[11px] font-black tracking-[0.22em] text-amber-950 shadow-[0_10px_28px_rgba(251,191,36,0.28)]">
-      <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-amber-900" />
-      PRO
-    </span>
-  );
 }
 
 export default function UpdatesPage() {

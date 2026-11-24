@@ -10,7 +10,7 @@
 | "What's left near me" map filter | `/map` sidebar (`CommunityMap.tsx`) |
 | Unlimited marks (others: 50 per device) | `lib/pro/tracker.ts` (`BASIC_MARK_LIMIT`) |
 
-The gold `PRO` mark other surfaces can reuse is `components/pro/ProBadge.tsx`.
+The brand star other surfaces can reuse is `components/pro/ProBadge.tsx` (`proBrandFill` and `proBrandEdge`).
 
 Prices live in `lib/pro/config.ts` (`PRO_PRICE_CENTS` is 499, the EUR amount). The buyer’s choice is sent to `POST /api/pro/checkout` as `currency` (`eur`, `usd`, or `gbp`). The page defaults to EUR, then picks USD or GBP from the browser locale when the region is one we map (United States and US territories → USD, United Kingdom and Crown Dependencies → GBP, eurozone → EUR). A saved choice on that device wins over the locale.
 

@@ -1,30 +1,77 @@
+"use client";
+
+import Link from "next/link";
+import { useId, type ReactNode } from "react";
+
 /**
- * Gold PRO mark. Self-contained so a name row (for example on a community
- * board) can drop it in beside a Pro member without pulling in checkout.
+ * Brand mark for GTA Companion Pro.
  *
- * `proGoldFill` and `proGoldGlow` are the same gold as the header pill.
+ * `proBrandFill` is the pink-to-violet accent with white text. The stops are
+ * dark enough for that white text on the site's black background.
+ * `proBrandEdge` is the same family as a border, for the header pill.
  */
 
-export const proGoldFill =
-  "bg-[linear-gradient(135deg,#fff8e4_0%,#f4e0a4_34%,#e4c15f_70%,#c9962e_100%)] text-[#241c0c]";
+export const proBrandFill =
+  "bg-gradient-to-r from-pink-700 via-fuchsia-700 to-violet-600 text-white";
 
-export const proGoldGlow = "shadow-[0_0_18px_rgba(214,168,64,0.45)]";
+export function ProPill({
+  href,
+  className = "",
+  children,
+  current = false,
+  onClick,
+}: {
+  href: string;
+  className?: string;
+  children: ReactNode;
+  current?: boolean;
+  onClick?: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-label="GTA Companion Pro"
+      aria-current={current ? "page" : undefined}
+      onClick={onClick}
+      className={`inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-500 p-0.5 font-semibold tracking-[-0.01em] text-white transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-300 ${className}`}
+    >
+      <span className="flex h-full w-full items-center justify-center whitespace-nowrap rounded-[14px] bg-[#120810] px-3">
+        {children}
+      </span>
+    </Link>
+  );
+}
 
 type Props = {
   className?: string;
-  /** sm sits on a name. md is a slightly larger mark. */
+  /** sm is 14px beside a name. md is 16px. */
   size?: "sm" | "md";
 };
 
+const STAR =
+  "M12 1.7l2.55 5.55 6.05.7-4.5 4.15 1.25 6.05L12 15.35 6.65 18.15l1.25-6.05L3.4 7.95l6.05-.7L12 1.7z";
+
 export default function ProBadge({ className = "", size = "sm" }: Props) {
-  const sizing = size === "md" ? "h-7 px-2.5 text-[11px]" : "h-[1.15rem] px-1.5 text-[9px]";
+  const px = size === "md" ? 16 : 14;
+  const gradientId = useId().replace(/:/g, "");
 
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full font-black tracking-[0.16em] ring-1 ring-[#fff6d8]/70 ${proGoldFill} ${proGoldGlow} ${sizing} ${className}`}
+      role="img"
+      aria-label="GTA Companion Pro member"
+      title="GTA Companion Pro member"
+      className={`inline-flex shrink-0 items-center justify-center ${className}`}
     >
-      <span className="sr-only">GTA Companion Pro. </span>
-      PRO
+      <svg width={px} height={px} viewBox="0 0 24 24" aria-hidden="true" className="block">
+        <defs>
+          <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#f472b6" />
+            <stop offset="48%" stopColor="#e879f9" />
+            <stop offset="100%" stopColor="#8b5cf6" />
+          </linearGradient>
+        </defs>
+        <path d={STAR} fill={`url(#${gradientId})`} />
+      </svg>
     </span>
   );
 }
@@ -39,7 +86,7 @@ export function ProName({
   className?: string;
 }) {
   return (
-    <span className={`inline-flex min-w-0 items-center gap-2 ${className}`}>
+    <span className={`inline-flex min-w-0 items-center gap-1.5 ${className}`}>
       <span className="truncate">{name}</span>
       {pro ? <ProBadge /> : null}
     </span>

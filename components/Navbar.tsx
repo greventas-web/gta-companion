@@ -23,10 +23,8 @@ import SupportLink from "./SupportLink";
 import MegaMenu, { exploreLinks } from "./MegaMenu";
 
 import { useAuth } from "@/components/auth/AuthProvider";
-import { proGoldFill, proGoldGlow } from "@/components/pro/ProBadge";
+import { ProPill } from "@/components/pro/ProBadge";
 import { useSearch } from "@/components/search/SearchProvider";
-
-const proPillClass = `inline-flex items-center justify-center whitespace-nowrap rounded-full font-black tracking-[0.04em] ring-1 ring-[#fff6d8]/60 transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e7c56a] ${proGoldFill} ${proGoldGlow}`;
 
 export default function Navbar() {
   const { user } = useAuth();
@@ -105,14 +103,9 @@ export default function Navbar() {
               <SiteLogo />
             </Link>
 
-            <Link
-              href="/pro"
-              aria-label="GTA Companion Pro"
-              aria-current={proActive ? "page" : undefined}
-              className={`${proPillClass} h-8 px-2.5 text-[11px] lg:hidden`}
-            >
+            <ProPill href="/pro" current={proActive} className="h-8 text-[11px] lg:hidden">
               PRO
-            </Link>
+            </ProPill>
 
           </div>
 
@@ -138,15 +131,10 @@ export default function Navbar() {
 
             <NavLink href="/community">Community</NavLink>
 
-            <Link
-              href="/pro"
-              aria-label="GTA Companion Pro"
-              aria-current={proActive ? "page" : undefined}
-              className={`${proPillClass} ml-1 h-9 px-3 text-[12px] tracking-[0.01em] min-[1920px]:px-3.5 min-[1920px]:text-[13px]`}
-            >
+            <ProPill href="/pro" current={proActive} className="ml-1 h-9 text-[12px] min-[1920px]:text-[13px]">
               <span className="hidden min-[1920px]:inline">GTA Companion Pro</span>
               <span className="min-[1920px]:hidden">PRO</span>
-            </Link>
+            </ProPill>
 
           </nav>
 
@@ -302,14 +290,14 @@ export default function Navbar() {
 
         {mobileOpen && (
           <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl lg:hidden">
-            <Link
+            <ProPill
               href="/pro"
-              aria-current={proActive ? "page" : undefined}
+              current={proActive}
               onClick={() => setMobileOpen(false)}
-              className={`${proPillClass} mb-3 h-12 w-full px-4 text-sm`}
+              className="mb-3 h-12 w-full text-sm"
             >
               GTA Companion Pro
-            </Link>
+            </ProPill>
             <SupportLink
               onClick={() => setMobileOpen(false)}
               className="mb-2 flex items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-[15px] font-semibold text-pink-300 transition hover:bg-white/[0.06] hover:text-pink-200"
