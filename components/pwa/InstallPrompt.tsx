@@ -16,7 +16,7 @@ export default function InstallPrompt() {
     useInstallPrompt();
 
   if (!ready || installed || dismissed) return null;
-  if (pathname === "/app" || pathname.startsWith("/map")) return null;
+  if (pathname === "/app" || pathname.startsWith("/map") || pathname.startsWith("/community/admin")) return null;
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[130] flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))] print:hidden">

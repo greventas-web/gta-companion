@@ -20,7 +20,7 @@ export default function ServiceWorkerRegister() {
       const worker = navigator.serviceWorker.controller;
       if (!worker) return;
       const url = pagePath();
-      if (url.startsWith("/map/admin")) return;
+      if (url.startsWith("/map/admin") || url.startsWith("/community/admin")) return;
       worker.postMessage({ type: "cache-page", url });
     };
 
