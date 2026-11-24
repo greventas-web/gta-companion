@@ -1,11 +1,22 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { ProName } from "@/components/pro/ProBadge";
-import type { AdminPost } from "@/lib/community/types";
-import { fieldClass, formatWhen, primaryButtonClass, quietButtonClass, typePillClass } from "./ui";
+import { fieldClass, primaryButtonClass, quietButtonClass } from "./ui";
 
-type Action = "approve" | "reject" | "delete";
+type Item = {
+  kind: "post" | "comment";
+  id: string;
+  postId: string;
+  title: string;
+  body: string;
+  authorUid: string;
+  authorName: string;
+  locked: boolean;
+  reports: { reason: string; createdAt: string }[];
+};
+
+type Recent = { id: string; title: string; authorUid: string; authorName: string; locked: boolean; score: number };
+type Ban = { uid: string; name: string };
 
 export default function AdminQueue() {
   const [ready, setReady] = useState(false);
@@ -13,17 +24,21 @@ export default function AdminQueue() {
   const [configured, setConfigured] = useState(true);
   const [secret, setSecret] = useState("");
   const [error, setError] = useState("");
-  const [posts, setPosts] = useState<AdminPost[]>([]);
-  const [busyId, setBusyId] = useState("");
+  const [reported, setReported] = useState<Item[]>([]);
+  const [recent, setRecent] = useState<Recent[]>([]);
+  const [bans, setBans] = useState<Ban[]>([]);
 
-  async function loadQueue() {
-    const response = await fetch("/api/community/admin/posts", { cache: "no-store" });
+  async function load() {
+    const response = await fetch("/api/community/admin", { cache: "no-store" });
     if (!response.ok) {
       setAuthed(false);
       return;
     }
-    const body = (await response.json()) as { posts?: AdminPost[] };
-    setPosts(body.posts ?? []);
+    const body = (await response.json()) as { reported?: Item[]; recent?: Recent[]; bans?: Ban[] };
+    setReported(body.reported ?? []);
+    setRecent(body.recent ?? []);
+    setBans(body.bans ?? []);
+    setAuthed(true);
   }
 
   useEffect(() => {
@@ -36,14 +51,8 @@ export default function AdminQueue() {
           setReady(true);
           return;
         }
-        const signedIn = response.ok;
-        setAuthed(signedIn);
         setReady(true);
-        if (!signedIn) return;
-        const queue = await fetch("/api/community/admin/posts", { cache: "no-store" });
-        if (!queue.ok || cancel) return;
-        const body = (await queue.json()) as { posts?: AdminPost[] };
-        setPosts(body.posts ?? []);
+        if (response.ok) await load();
       })
       .catch(() => {
         if (!cancel) setReady(true);
@@ -62,193 +71,102 @@ export default function AdminQueue() {
       body: JSON.stringify({ secret }),
     });
     if (!response.ok) {
-      const body = (await response.json().catch(() => null)) as { error?: string } | null;
-      setError(body?.error || "Could not sign in.");
+      setError("Could not sign in.");
       return;
     }
     setSecret("");
-    setAuthed(true);
-    await loadQueue();
+    await load();
   }
 
-  async function review(id: string, action: Action) {
-    if (action === "delete" && !window.confirm("Delete this post and its image?")) return;
-    setBusyId(id);
+  async function act(action: string, extra: { id?: string; uid?: string }) {
     setError("");
-    const response = await fetch("/api/community/admin/posts", {
+    const response = await fetch("/api/community/admin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, action }),
+      body: JSON.stringify({ action, ...extra }),
     });
-    setBusyId("");
     if (!response.ok) {
-      const body = (await response.json().catch(() => null)) as { error?: string } | null;
-      setError(body?.error || "Could not update that post.");
+      setError("Could not update that.");
       return;
     }
-    await loadQueue();
+    await load();
   }
 
   async function signOut() {
     await fetch("/api/map/admin/session", { method: "DELETE" });
     setAuthed(false);
-    setPosts([]);
   }
 
   if (!ready) return <p className="text-sm text-zinc-400">Loading moderation…</p>;
-
-  if (!configured) {
-    return (
-      <p className="max-w-xl text-sm leading-6 text-zinc-300">
-        Set the MAP_ADMIN_SECRET environment variable, then reload this page.
-      </p>
-    );
-  }
-
+  if (!configured) return <p className="text-sm text-zinc-300">Set the MAP_ADMIN_SECRET environment variable, then reload this page.</p>;
   if (!authed) {
     return (
       <form onSubmit={signIn} className="max-w-md space-y-3">
         <label className="block text-sm text-zinc-300">
           Moderator secret
-          <input
-            type="password"
-            value={secret}
-            onChange={(event) => setSecret(event.target.value)}
-            autoComplete="current-password"
-            className={`${fieldClass} mt-2`}
-          />
+          <input type="password" value={secret} onChange={(event) => setSecret(event.target.value)} autoComplete="current-password" className={`${fieldClass} mt-2`} />
         </label>
-        <p className="text-xs leading-5 text-zinc-500">Uses the same moderator sign-in as the map queue.</p>
         {error ? <p className="text-sm text-rose-300">{error}</p> : null}
-        <button type="submit" className={primaryButtonClass}>
-          Open queue
-        </button>
+        <button type="submit" className={primaryButtonClass}>Open tools</button>
       </form>
     );
   }
 
-  const pending = posts.filter((post) => post.status === "pending");
-  const reported = posts.filter((post) => post.status === "approved" && post.reports.length > 0);
-  const reviewed = posts.filter(
-    (post) => post.status !== "pending" && !(post.status === "approved" && post.reports.length > 0)
-  );
-
   return (
     <div className="space-y-10">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-zinc-400">
-          {pending.length} waiting. Pending posts and images stay hidden until you approve them.
-        </p>
-        <button type="button" onClick={signOut} className="min-h-11 text-sm font-semibold text-violet-200 underline">
-          Sign out
-        </button>
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-zinc-400">{reported.length} reported.</p>
+        <button type="button" onClick={() => void signOut()} className="text-sm text-violet-200 underline">Sign out</button>
       </div>
       {error ? <p className="text-sm text-rose-300">{error}</p> : null}
-      <QueueSection title="Pending" empty="Nothing waiting. New posts show up here before anyone else can see them." posts={pending} busyId={busyId} onReview={review} />
-      <QueueSection title="Reported" empty="No reports on live posts." posts={reported} busyId={busyId} onReview={review} />
-      <QueueSection title="Reviewed" empty="No reviewed posts yet." posts={reviewed} busyId={busyId} onReview={review} />
-    </div>
-  );
-}
-
-function QueueSection({
-  title,
-  empty,
-  posts,
-  busyId,
-  onReview,
-}: {
-  title: string;
-  empty: string;
-  posts: AdminPost[];
-  busyId: string;
-  onReview: (id: string, action: Action) => void;
-}) {
-  return (
-    <section className="space-y-3">
-      <h2 className="text-xl font-semibold">
-        {title}
-        <span className="ml-2 text-sm font-medium text-zinc-500">{posts.length}</span>
-      </h2>
-      {posts.length === 0 ? (
-        <p className="rounded-3xl border border-dashed border-white/15 px-4 py-8 text-sm text-zinc-400">{empty}</p>
-      ) : null}
-      {posts.map((post) => (
-        <ReviewCard key={post.id} post={post} busy={busyId === post.id} onReview={onReview} />
-      ))}
-    </section>
-  );
-}
-
-function ReviewCard({
-  post,
-  busy,
-  onReview,
-}: {
-  post: AdminPost;
-  busy: boolean;
-  onReview: (id: string, action: Action) => void;
-}) {
-  const [imageFailed, setImageFailed] = useState(false);
-  return (
-    <article className="rounded-[28px] border border-white/10 bg-[#120c18] p-4 sm:p-5">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] ${typePillClass(post.type)}`}>
-          {post.typeLabel}
-        </span>
-        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">{post.status}</span>
-        <time dateTime={post.createdAt} className="text-xs text-zinc-500">
-          {formatWhen(post.createdAt)}
-        </time>
-      </div>
-      <h3 className="mt-3 text-lg font-bold [overflow-wrap:anywhere]">{post.title}</h3>
-      <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-zinc-300 [overflow-wrap:anywhere]">{post.body}</p>
-      {post.imageUrl && !imageFailed ? (
-        <figure className="mt-3">
-          {/* The admin cookie has to reach this route, so the optimizer must not fetch it. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={post.imageUrl}
-            alt={post.title}
-            className="max-h-80 w-full rounded-2xl border border-white/10 bg-black object-contain"
-            onError={() => setImageFailed(true)}
-          />
-        </figure>
-      ) : null}
-      {post.credit ? <p className="mt-2 text-sm text-zinc-300">{post.credit}</p> : null}
-      <div className="mt-3">
-        <ProName name={post.authorName} pro={post.pro} className="text-sm font-semibold" />
-      </div>
-      {post.reports.length > 0 ? (
-        <ul className="mt-3 space-y-1 rounded-2xl border border-rose-400/20 bg-rose-500/5 p-3 text-sm text-rose-100">
-          {post.reports.map((report) => (
-            <li key={report.id}>
-              {report.reason}
-              <span className="ml-2 text-xs text-rose-200/70">{formatWhen(report.createdAt)}</span>
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Reported</h2>
+        {reported.length === 0 ? <p className="text-sm text-zinc-500">Nothing reported.</p> : null}
+        {reported.map((item) => (
+          <article key={`${item.kind}-${item.id}`} className="rounded-[24px] border border-white/10 bg-[#120c18] p-4">
+            <p className="text-xs uppercase tracking-[0.14em] text-violet-200">{item.kind}</p>
+            <h3 className="mt-1 font-bold">{item.title}</h3>
+            <p className="mt-2 whitespace-pre-wrap text-sm text-zinc-300">{item.body}</p>
+            <p className="mt-2 text-xs text-zinc-500">{item.authorName}</p>
+            <ul className="mt-2 text-sm text-rose-100">
+              {item.reports.map((report) => <li key={report.createdAt + report.reason}>{report.reason}</li>)}
+            </ul>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <button type="button" className={quietButtonClass} onClick={() => void act(item.kind === "post" ? "remove-post" : "remove-comment", { id: item.id })}>Remove</button>
+              {item.kind === "post" ? (
+                <button type="button" className={quietButtonClass} onClick={() => void act(item.locked ? "unlock" : "lock", { id: item.id })}>{item.locked ? "Unlock" : "Lock"}</button>
+              ) : null}
+              <button type="button" className={quietButtonClass} onClick={() => void act("ban", { uid: item.authorUid })}>Ban</button>
+            </div>
+          </article>
+        ))}
+      </section>
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Recent posts</h2>
+        {recent.map((item) => (
+          <article key={item.id} className="rounded-[24px] border border-white/10 p-4">
+            <h3 className="font-semibold">{item.title}</h3>
+            <p className="text-xs text-zinc-500">{item.authorName} · {item.score}</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <button type="button" className={quietButtonClass} onClick={() => void act("remove-post", { id: item.id })}>Remove</button>
+              <button type="button" className={quietButtonClass} onClick={() => void act(item.locked ? "unlock" : "lock", { id: item.id })}>{item.locked ? "Unlock" : "Lock"}</button>
+              <button type="button" className={quietButtonClass} onClick={() => void act("ban", { uid: item.authorUid })}>Ban</button>
+            </div>
+          </article>
+        ))}
+      </section>
+      <section>
+        <h2 className="text-xl font-semibold">Bans</h2>
+        {bans.length === 0 ? <p className="mt-2 text-sm text-zinc-500">No bans.</p> : null}
+        <ul className="mt-3 space-y-2">
+          {bans.map((ban) => (
+            <li key={ban.uid} className="flex items-center justify-between gap-3 text-sm">
+              <span>{ban.name}</span>
+              <button type="button" className="text-pink-300" onClick={() => void act("unban", { uid: ban.uid })}>Unban</button>
             </li>
           ))}
         </ul>
-      ) : null}
-      <div className="mt-4 flex flex-wrap gap-2">
-        {post.status !== "approved" ? (
-          <button type="button" disabled={busy} onClick={() => onReview(post.id, "approve")} className={primaryButtonClass}>
-            Approve
-          </button>
-        ) : null}
-        {post.status !== "rejected" ? (
-          <button type="button" disabled={busy} onClick={() => onReview(post.id, "reject")} className={quietButtonClass}>
-            Reject
-          </button>
-        ) : null}
-        <button
-          type="button"
-          disabled={busy}
-          onClick={() => onReview(post.id, "delete")}
-          className="inline-flex min-h-11 items-center justify-center rounded-full border border-rose-400/30 px-4 py-2 text-sm font-semibold text-rose-200 disabled:opacity-50"
-        >
-          Delete
-        </button>
-      </div>
-    </article>
+      </section>
+    </div>
   );
 }

@@ -1,17 +1,17 @@
 import {
   BODY_MAX,
-  BODY_MIN,
-  IMAGE_TYPES,
-  MAX_IMAGE_BYTES,
+  COMMENT_MAX,
   NAME_MAX,
   REASON_MAX,
   REASON_MIN,
   TITLE_MAX,
   TITLE_MIN,
-  type ImageContentType,
-  type PostType,
-  isPostType,
+  type FlairId,
+  type PostKind,
+  isFlair,
+  isPostKind,
 } from "@/lib/community/types";
+import { countUrls, moderateText } from "@/lib/community/moderate";
 
 const CONTROL = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g;
 
@@ -31,7 +31,6 @@ export function cleanBody(value: unknown, max: number): string {
     .slice(0, max);
 }
 
-/** Public name. Drops anything that looks like an email address. */
 export function publicName(value: unknown): string {
   const cleaned = cleanLine(value, NAME_MAX);
   if (!cleaned) return "Player";
@@ -40,60 +39,77 @@ export function publicName(value: unknown): string {
   return local || "Player";
 }
 
+export function parseLink(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  if (!trimmed || trimmed.length > 400) return null;
+  try {
+    const url = new URL(trimmed);
+    if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+    return url.toString();
+  } catch {
+    return null;
+  }
+}
+
 export type PostDraft = {
-  type: PostType;
+  kind: PostKind;
+  flair: FlairId;
   title: string;
   body: string;
+  linkUrl: string | null;
 };
 
-export function parsePostFields(input: {
-  type: unknown;
+export function parsePostDraft(input: {
+  kind: unknown;
+  flair: unknown;
   title: unknown;
   body: unknown;
+  linkUrl: unknown;
+  hasImage: boolean;
 }): { ok: true; value: PostDraft } | { ok: false; error: string } {
-  const type = typeof input.type === "string" ? input.type : "";
-  if (!isPostType(type)) return { ok: false, error: "Choose Tip / Update, Screenshot, or Site feedback." };
+  const kind = typeof input.kind === "string" ? input.kind : "";
+  const flair = typeof input.flair === "string" ? input.flair : "";
+  if (!isPostKind(kind)) return { ok: false, error: "Choose Text, Image, or Link." };
+  if (!isFlair(flair)) return { ok: false, error: "Choose a flair." };
 
   const title = cleanLine(input.title, TITLE_MAX);
   if (title.length < TITLE_MIN) {
     return { ok: false, error: `Give the post a title (${TITLE_MIN}-${TITLE_MAX} characters).` };
   }
-
   const body = cleanBody(input.body, BODY_MAX);
-  if (body.length < BODY_MIN) {
-    return { ok: false, error: `Write a little more (at least ${BODY_MIN} characters).` };
+  if (kind === "text" && body.length < 1) return { ok: false, error: "Write something in the post." };
+  if (kind === "image" && !input.hasImage) return { ok: false, error: "Add an image." };
+
+  let linkUrl: string | null = null;
+  if (kind === "link") {
+    linkUrl = parseLink(input.linkUrl);
+    if (!linkUrl) return { ok: false, error: "Add a valid http or https link." };
   }
 
-  return { ok: true, value: { type, title, body } };
+  const titleCheck = moderateText(title);
+  if (!titleCheck.ok) return titleCheck;
+  const bodyCheck = moderateText(body);
+  if (!bodyCheck.ok) return bodyCheck;
+
+  return { ok: true, value: { kind, flair, title: titleCheck.text, body: bodyCheck.text, linkUrl } };
+}
+
+export function parseCommentBody(value: unknown): { ok: true; text: string } | { ok: false; error: string } {
+  const body = cleanBody(value, COMMENT_MAX);
+  if (body.length < 1) return { ok: false, error: "Write a comment." };
+  return moderateText(body);
 }
 
 export function parseReportReason(value: unknown): string | null {
   const reason = cleanBody(value, REASON_MAX);
   if (reason.length < REASON_MIN) return null;
-  return reason;
+  const checked = moderateText(reason);
+  if (!checked.ok) return null;
+  return checked.text;
 }
 
-export function detectImageType(bytes: Uint8Array): ImageContentType | null {
-  if (bytes.length < 12 || bytes.length > MAX_IMAGE_BYTES) return null;
-  if (bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff) return "image/jpeg";
-  if (bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47 && bytes[4] === 0x0d && bytes[5] === 0x0a && bytes[6] === 0x1a && bytes[7] === 0x0a) {
-    return "image/png";
-  }
-  if (
-    bytes[0] === 0x52 &&
-    bytes[1] === 0x49 &&
-    bytes[2] === 0x46 &&
-    bytes[3] === 0x46 &&
-    bytes[8] === 0x57 &&
-    bytes[9] === 0x45 &&
-    bytes[10] === 0x42 &&
-    bytes[11] === 0x50
-  ) {
-    return "image/webp";
-  }
-  return null;
-}
-
-export function imageTypeLabel(): string {
-  return IMAGE_TYPES.join(", ");
+export function tooManyLinks(body: string, linkUrl: string | null, isNew: boolean): boolean {
+  if (!isNew) return false;
+  return countUrls(body) + (linkUrl ? 1 : 0) > 1;
 }
