@@ -7,7 +7,6 @@ import { Check, Cloud, EyeOff, Infinity as InfinityIcon, LocateFixed, Lock, Perc
 
 import ProBadge, { proBrandFill } from "@/components/pro/ProBadge";
 import ProWaitlist from "@/components/pro/ProWaitlist";
-import SellerDetails from "@/components/pro/SellerDetails";
 import { authHeader, useProStatus } from "@/lib/pro/client";
 import {
   BASIC_MARK_LIMIT,
@@ -346,7 +345,13 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
 
       <section id="payment" className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
         <h2 className="text-xl font-black tracking-tight sm:text-2xl">How payment works</h2>
-        <SellerDetails className="mt-4 max-w-3xl" />
+        <p className="mt-3 text-sm leading-6 text-zinc-500">
+          Seller details are available on request at{" "}
+          <a href="mailto:contact@gta-companion.com" className="underline-offset-4 hover:text-pink-300 hover:underline">
+            contact@gta-companion.com
+          </a>
+          .
+        </p>
         <ol className="mt-6 space-y-4">
           {PAYMENT_STEPS.map((step, index) => (
             <li key={step.title} className="flex gap-4">

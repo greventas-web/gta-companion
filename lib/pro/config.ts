@@ -30,21 +30,6 @@ export const PRO_PRICE_LABEL = PRO_PRICES.eur.label;
 /** Last currency the buyer picked on this device. */
 export const PRO_CURRENCY_STORAGE_KEY = "gta-companion-pro-currency";
 
-/**
- * Seller of GTA Companion Pro: MB "GL Transportation" (GL Transportation, MB).
- * VAT-registered in Lithuania. No phone number is published.
- */
-export const PRO_SELLER = {
-  name: "GL Transportation, MB",
-  quotedName: 'MB "GL Transportation"',
-  country: "Lithuania",
-  companyCode: "307588769",
-  vatCode: "LT100021034618",
-  address: "V. Nagevičiaus g. 3, LT-08237 Vilnius, Lithuania",
-  director: "Gabrielius Reventas",
-  ordersEmail: "contact@gta-companion.com",
-} as const;
-
 const USD_REGIONS = new Set(["US", "PR", "GU", "AS", "VI", "MP"]);
 const GBP_REGIONS = new Set(["GB", "GG", "IM", "JE"]);
 const EUR_REGIONS = new Set([
