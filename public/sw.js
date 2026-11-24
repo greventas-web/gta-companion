@@ -95,7 +95,12 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (request.mode === "navigate") {
-    if (path === "/map/admin" || path.startsWith("/map/admin/")) {
+    if (
+      path === "/map/admin" ||
+      path.startsWith("/map/admin/") ||
+      path === "/community/admin" ||
+      path.startsWith("/community/admin/")
+    ) {
       event.respondWith(networkOrOffline(request, false));
       return;
     }
@@ -144,6 +149,8 @@ function normalizePath(input) {
     path.startsWith("/_vercel/") ||
     path === "/map/admin" ||
     path.startsWith("/map/admin/") ||
+    path === "/community/admin" ||
+    path.startsWith("/community/admin/") ||
     path === "/sw.js"
   ) {
     return null;

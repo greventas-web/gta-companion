@@ -103,13 +103,13 @@ export default function Navbar() {
               <SiteLogo />
             </Link>
 
-            <ProPill href="/pro" current={proActive} className="h-8 text-[11px] xl:hidden">
+            <ProPill href="/pro" current={proActive} className="h-8 text-[11px] lg:hidden">
               PRO
             </ProPill>
 
           </div>
 
-          <nav className="hidden shrink-0 items-center gap-1 xl:flex min-[1440px]:gap-2">
+          <nav className="hidden min-w-0 items-center lg:flex">
 
             <NavLink href="/">Home</NavLink>
 
@@ -117,32 +117,30 @@ export default function Navbar() {
               Updates
             </NavLink>
 
-            <NavLink href="/map">Map</NavLink>
+            <div className="hidden min-[1680px]:contents">
+              <NavLink href="/map">Map</NavLink>
+            </div>
 
             <MegaMenu />
 
-            <NavLink href="/news">News</NavLink>
+            <div className="hidden min-[1920px]:contents">
+              <NavLink href="/news">News</NavLink>
+              <NavLink href="/media">Media</NavLink>
+              <NavLink href="/timeline">Timeline</NavLink>
+            </div>
 
-            <NavLink href="/media">Media</NavLink>
+            <NavLink href="/community">Community</NavLink>
 
-            <NavLink href="/timeline">Timeline</NavLink>
-
-            <NavLink href="/about">About</NavLink>
-
-            <ProPill
-              href="/pro"
-              current={proActive}
-              className="ml-1 h-9 text-[12px] min-[1680px]:text-[13px]"
-            >
-              <span className="hidden min-[1680px]:inline">GTA Companion Pro</span>
-              <span className="min-[1680px]:hidden">PRO</span>
+            <ProPill href="/pro" current={proActive} className="ml-1 h-9 text-[12px] min-[1920px]:text-[13px]">
+              <span className="hidden min-[1920px]:inline">GTA Companion Pro</span>
+              <span className="min-[1920px]:hidden">PRO</span>
             </ProPill>
 
           </nav>
 
           <div className="flex min-w-0 shrink items-center justify-end gap-2 px-3 sm:px-4">
 
-            <SupportLink className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap px-1 text-sm font-semibold text-zinc-300 transition hover:text-pink-300 xl:inline-flex" />
+            <SupportLink className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap px-1 text-sm font-semibold text-zinc-300 transition hover:text-pink-300 min-[1680px]:inline-flex" />
 
             <div className="hidden h-12 w-[320px] min-w-0 max-w-full shrink min-[1440px]:block">
               <SearchBar />
@@ -162,7 +160,7 @@ export default function Navbar() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((value) => !value)}
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white xl:hidden"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white lg:hidden"
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -291,7 +289,7 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl xl:hidden">
+          <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl lg:hidden">
             <ProPill
               href="/pro"
               current={proActive}
@@ -308,6 +306,7 @@ export default function Navbar() {
               {[
                 { title: "Home", href: "/" },
                 { title: "Updates", href: "/updates" },
+                { title: "Community", href: "/community" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
               ]

@@ -29,11 +29,13 @@ export const milestones: readonly Milestone[] = [];
 export type ComingSoonItem = {
   id: string;
   title: string;
-  /** Short status. These features are not available yet. */
+  /** Short status, such as Live or Planned. */
   status: string;
   body: string;
   /** Optional price line, already formatted. */
   price?: string;
+  /** Set when the card should open a page. */
+  href?: string;
 };
 
 export type WhatsNextItem = {
@@ -42,15 +44,17 @@ export type WhatsNextItem = {
 };
 
 /**
- * Upcoming platform features. Planned only: do not describe these as available.
+ * Platform features. Community is live for signed-in members.
+ * Pro and the star seal are still planned.
  * Price is the announced one-time amount in the site's euro pricing.
  */
 export const comingSoon: readonly ComingSoonItem[] = [
   {
     id: "community",
     title: "Community",
-    status: "Planned",
-    body: "Signed-in members will post tips, screenshots, and updates, then comment and interact. Posts go through moderation.",
+    status: "Live",
+    href: "/community",
+    body: "Signed-in members only. Post tips, screenshots, and updates. Posts go through moderation.",
   },
   {
     id: "pro",

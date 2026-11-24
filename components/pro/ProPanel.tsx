@@ -233,14 +233,14 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
 
   return (
     <div className="space-y-6">
-      <section className="relative overflow-hidden rounded-[28px] border border-[#e7c56a]/25 bg-[#0c0b09] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#e7c56a]/15 blur-3xl" />
+      <section className="relative overflow-hidden rounded-[28px] border border-pink-500/25 bg-[#100814] p-6 sm:p-8">
+        <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-pink-500/15 blur-3xl" />
         <p className="text-[11px] font-black uppercase tracking-[0.3em] text-zinc-500">Unofficial</p>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <div className="flex items-center gap-2">
               <ProBadge size="md" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#e7c56a]">One-time</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-pink-300">One-time</span>
             </div>
             <h1 className="mt-3 text-3xl font-black leading-none tracking-[-0.03em] sm:text-5xl">{PRO_NAME}</h1>
             <p className="mt-3 max-w-md text-sm leading-6 text-zinc-400 sm:text-base">
@@ -249,7 +249,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           </div>
           <div className="w-full sm:w-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-500">Price</p>
-            <p aria-live="polite" className="mt-1 text-5xl font-black tracking-tight text-[#f6e2a8]">
+            <p aria-live="polite" className="mt-1 text-5xl font-black tracking-tight text-white">
               {price.label}
             </p>
             <div
@@ -295,7 +295,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
               {busy ? "Opening checkout…" : `Continue to checkout · ${price.label}`}
             </button>
           ) : (
-            <span className="inline-flex items-center rounded-full border border-[#f0d78c]/80 bg-[#3a2e12] px-5 py-2.5 text-sm font-black tracking-wide text-[#ffe7a8]">
+            <span className="inline-flex items-center rounded-2xl border border-pink-400/40 bg-pink-500/10 px-5 py-2.5 text-sm font-semibold tracking-wide text-pink-100">
               Checkout opening soon
             </span>
           )}
@@ -324,9 +324,9 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
         {error ? <p className="mt-3 text-sm text-rose-300">{error}</p> : null}
       </section>
 
-      <section className="relative overflow-hidden rounded-[28px] border border-[#e7c56a]/40 bg-[#120f09] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-[#e7c56a]/15 blur-3xl" />
-        <EyeOff className="text-[#f6e2a8]" size={22} aria-hidden="true" />
+      <section className="relative overflow-hidden rounded-[28px] border border-pink-500/30 bg-[#120816] p-6 sm:p-8">
+        <div className="pointer-events-none absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-violet-500/15 blur-3xl" />
+        <EyeOff className="text-pink-300" size={22} aria-hidden="true" />
         <h2 className="mt-4 text-2xl font-black tracking-tight sm:text-3xl">No ads</h2>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-300 sm:text-base">
           Pro keeps advertisements off on every page of this site, on each device where that account is signed in.
@@ -336,7 +336,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
       <section className="grid gap-3 sm:grid-cols-2">
         {FEATURES.map(({ icon: Icon, title, line }) => (
           <article key={title} className="rounded-[22px] border border-white/5 bg-[#08080A] p-5">
-            <Icon size={20} className="text-[#e7c56a]" aria-hidden="true" />
+            <Icon size={20} className="text-pink-300" aria-hidden="true" />
             <h2 className="mt-3 text-base font-black">{title}</h2>
             <p className="mt-1 text-sm leading-6 text-zinc-400">{line}</p>
           </article>
@@ -370,11 +370,11 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           <p className="mt-2 text-sm leading-6 text-zinc-400">
             Pro is digital and is delivered as soon as payment is confirmed. At checkout you will be asked to request
             that delivery and acknowledge that the 14-day withdrawal right ends once delivery starts.{" "}
-            <Link href="/refunds" className="font-semibold text-[#f6e2a8] underline-offset-4 hover:underline">
+            <Link href="/refunds" className="font-semibold text-pink-300 underline-offset-4 hover:underline">
               Refunds
             </Link>
             {" · "}
-            <Link href="/terms" className="font-semibold text-[#f6e2a8] underline-offset-4 hover:underline">
+            <Link href="/terms" className="font-semibold text-pink-300 underline-offset-4 hover:underline">
               Terms
             </Link>
           </p>
@@ -384,7 +384,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
                 type="checkbox"
                 checked={waiver}
                 onChange={(event) => setWaiver(event.target.checked)}
-                className="mt-1 h-4 w-4 accent-[#c9962e]"
+                className="mt-1 h-4 w-4 accent-pink-500"
               />
               <span>
                 I request immediate delivery of {PRO_NAME} and I acknowledge that I lose the 14-day right of withdrawal
@@ -400,7 +400,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
       <section className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <h2 className="text-xl font-black tracking-tight sm:text-2xl">Your progress</h2>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#e7c56a]/30 bg-[#e7c56a]/10 px-3 py-1 text-sm font-black text-[#f6e2a8]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-pink-400/35 bg-pink-500/10 px-3 py-1 text-sm font-semibold text-pink-100">
             {pro ? (
               `${overall}% complete`
             ) : (
@@ -415,11 +415,11 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
             <Link
               key={row.id}
               href={row.href}
-              className="group rounded-[22px] border border-white/5 bg-black/30 p-4 transition hover:border-[#e7c56a]/40"
+              className="group rounded-[22px] border border-white/5 bg-black/30 p-4 transition hover:border-pink-400/40"
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-black">{row.label}</h3>
-                <span className="text-sm font-black text-[#f6e2a8]">
+                <span className="text-sm font-black text-pink-200">
                   {pro ? `${row.pct}%` : <Lock size={14} className="text-zinc-600" />}
                 </span>
               </div>
@@ -428,7 +428,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
               </p>
               <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
                 <div
-                  className={`h-full transition-all ${pro ? "bg-[#e7c56a]" : "bg-white/20"}`}
+                  className={`h-full transition-all ${pro ? "bg-gradient-to-r from-pink-500 to-violet-500" : "bg-white/20"}`}
                   style={{ width: `${pro ? row.pct : 0}%` }}
                 />
               </div>
@@ -445,7 +445,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
               <summary className="cursor-pointer list-none text-sm font-black text-white sm:text-base [&::-webkit-details-marker]:hidden">
                 <span className="flex items-start justify-between gap-4">
                   {item.q}
-                  <span aria-hidden="true" className="text-[#e7c56a] group-open:rotate-45">
+                  <span aria-hidden="true" className="text-pink-300 group-open:rotate-45">
                     +
                   </span>
                 </span>

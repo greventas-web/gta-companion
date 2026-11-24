@@ -82,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/updates",
     "/about",
     "/news",
+    "/community",
     "/vehicles",
     "/characters",
     "/locations",

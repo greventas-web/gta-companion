@@ -80,24 +80,40 @@ export default function UpdatesPage() {
         </p>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
-          {comingSoon.map((item) => (
-            <article
-              key={item.id}
-              className="flex flex-col rounded-[28px] border border-pink-500/20 bg-gradient-to-br from-[#1a1020] via-[#100c14] to-black p-6 sm:p-8"
-            >
-              <span className="w-fit rounded-full border border-pink-400/40 bg-pink-500/10 px-3 py-1 text-[11px] font-black uppercase tracking-[0.16em] text-pink-200">
-                {item.status}
-              </span>
-              {item.id === "badge" ? (
-                <div className="mt-6">
-                  <ProBadge size="md" />
-                </div>
-              ) : null}
-              <h3 className="mt-5 text-2xl font-black tracking-[-0.03em]">{item.title}</h3>
-              {item.price ? <p className="mt-3 text-lg font-bold text-pink-200">{item.price}</p> : null}
-              <p className="mt-4 leading-7 text-zinc-300">{item.body}</p>
-            </article>
-          ))}
+          {comingSoon.map((item) => {
+            const card = (
+              <>
+                <span
+                  className={`w-fit rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-[0.16em] ${
+                    item.href
+                      ? "border border-pink-300/50 bg-gradient-to-r from-pink-500 to-violet-600 text-white"
+                      : "border border-pink-400/40 bg-pink-500/10 text-pink-200"
+                  }`}
+                >
+                  {item.status}
+                </span>
+                {item.id === "badge" ? (
+                  <div className="mt-6">
+                    <ProBadge size="md" />
+                  </div>
+                ) : null}
+                <h3 className="mt-5 text-2xl font-black tracking-[-0.03em]">{item.title}</h3>
+                {item.price ? <p className="mt-3 text-lg font-bold text-pink-200">{item.price}</p> : null}
+                <p className="mt-4 leading-7 text-zinc-300">{item.body}</p>
+              </>
+            );
+            const className =
+              "flex flex-col rounded-[28px] border border-pink-500/20 bg-gradient-to-br from-[#1a1020] via-[#100c14] to-black p-6 transition sm:p-8";
+            return item.href ? (
+              <Link key={item.id} href={item.href} className={`${className} hover:border-pink-400/50`}>
+                {card}
+              </Link>
+            ) : (
+              <article key={item.id} className={className}>
+                {card}
+              </article>
+            );
+          })}
         </div>
       </section>
 

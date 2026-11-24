@@ -49,6 +49,10 @@ export default function Footer() {
                 News
               </Link>
 
+              <Link href="/community" className="block text-zinc-400 transition hover:text-pink-400">
+                Community
+              </Link>
+
               <Link href="/media" className="block text-zinc-400 transition hover:text-pink-400">
                 Media
               </Link>
