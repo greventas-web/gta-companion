@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
 
 import PageShell from "@/components/PageShell";
+import MilestoneList from "@/components/updates/MilestoneList";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SOCIAL_PROFILES, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
-import {
-  comingSoon,
-  formatUpdateDate,
-  updateDays,
-  whatsNext,
-  type UpdateLink,
-} from "@/lib/updates";
+import { comingSoon, milestones, whatsNext } from "@/lib/updates";
 
 const description =
   "GTA Companion is updated daily with new guides, map pins, real in-game stills, and fixes. Unofficial fan site for Grand Theft Auto VI. Not affiliated with Rockstar Games or Take-Two.";
@@ -29,54 +23,6 @@ export const metadata: Metadata = {
 };
 
 const discord = SOCIAL_PROFILES.find((profile) => profile.id === "discord");
-
-const linkClass =
-  "font-semibold text-pink-300 underline decoration-pink-400/40 underline-offset-4 transition hover:text-pink-200";
-
-function escapeRegExp(value: string) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function LinkedText({
-  text,
-  links,
-}: {
-  text: string;
-  links?: readonly UpdateLink[];
-}) {
-  if (!links?.length) return text;
-
-  const sorted = [...links].sort((a, b) => b.label.length - a.label.length);
-  const pattern = new RegExp(sorted.map((link) => escapeRegExp(link.label)).join("|"), "g");
-  const hrefFor = new Map(links.map((link) => [link.label, link.href]));
-  const nodes: ReactNode[] = [];
-  let cursor = 0;
-  let index = 0;
-
-  for (const match of text.matchAll(pattern)) {
-    const start = match.index ?? 0;
-    if (start > cursor) nodes.push(text.slice(cursor, start));
-    const label = match[0];
-    const href = hrefFor.get(label) ?? "/updates";
-    const external = href.startsWith("http");
-    nodes.push(
-      external ? (
-        <a key={`${href}-${index}`} href={href} className={linkClass} rel="noopener noreferrer" target="_blank">
-          {label}
-        </a>
-      ) : (
-        <Link key={`${href}-${index}`} href={href} className={linkClass}>
-          {label}
-        </Link>
-      ),
-    );
-    index += 1;
-    cursor = start + label.length;
-  }
-
-  if (cursor < text.length) nodes.push(text.slice(cursor));
-  return nodes;
-}
 
 function ProBadge() {
   return (
@@ -117,39 +63,21 @@ export default function UpdatesPage() {
         </div>
       </header>
 
-      <section id="changelog" className="mt-14 scroll-mt-36 sm:mt-16">
-        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Changelog</p>
-        <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] sm:text-4xl">What shipped</h2>
-        <p className="mt-4 max-w-2xl leading-7 text-zinc-400">
-          Newest first, grouped by day. Each note is a change that shipped, with a link to the page it touched.
-        </p>
-
-        <ol className="mt-8 space-y-5">
-          {updateDays.map((day) => (
-            <li
-              key={day.date}
-              className="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#141418] via-[#0c0c10] to-black p-5 sm:p-8"
-            >
-              <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
-                <div>
-                  <time dateTime={day.date} className="block text-lg font-black text-white sm:text-xl">
-                    {formatUpdateDate(day.date)}
-                  </time>
-                  <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-pink-300">
-                    {day.entries.length} {day.entries.length === 1 ? "note" : "notes"}
-                  </p>
-                </div>
-                <ul className="space-y-4">
-                  {day.entries.map((entry) => (
-                    <li key={entry.text} className="border-l-2 border-pink-500/60 pl-4 text-[15px] leading-7 text-zinc-200">
-                      <LinkedText text={entry.text} links={entry.links} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ol>
+      <section id="milestones" className="mt-14 scroll-mt-36 sm:mt-16">
+        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Milestones</p>
+        <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] sm:text-4xl">Sections at 100%</h2>
+        {milestones.length === 0 ? (
+          <div className="mt-6 max-w-xl rounded-[28px] border border-pink-500/20 bg-gradient-to-br from-[#1a1020] via-[#100c14] to-black px-6 py-8 sm:px-8">
+            <p className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">First milestone coming soon</p>
+            <p className="mt-3 max-w-md leading-7 text-zinc-400">
+              Posted when a whole section is finished.
+            </p>
+          </div>
+        ) : (
+          <div className="mt-6">
+            <MilestoneList milestones={milestones} />
+          </div>
+        )}
       </section>
 
       <section id="coming-soon" className="mt-20 scroll-mt-36">
