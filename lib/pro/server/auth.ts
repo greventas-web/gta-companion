@@ -7,7 +7,7 @@ import { firebasePublicConfig } from "@/lib/firebase-public";
  * API key, so no service-account key is needed. The endpoint rejects
  * expired, revoked, or other-project tokens.
  */
-export type ProUser = { uid: string; email: string | null };
+export type ProUser = { uid: string; email: string | null; displayName: string | null };
 
 const cache = new Map<string, { user: ProUser; until: number }>();
 const CACHE_MS = 5 * 60 * 1000;
@@ -40,11 +40,15 @@ export async function userFromRequest(request: Request): Promise<ProUser | null>
     );
     if (!response.ok) return null;
     const body = (await response.json()) as {
-      users?: { localId?: string; email?: string; disabled?: boolean }[];
+      users?: { localId?: string; email?: string; displayName?: string; disabled?: boolean }[];
     };
     const account = body.users?.[0];
     if (!account?.localId || account.disabled) return null;
-    const user: ProUser = { uid: account.localId, email: account.email ?? null };
+    const user: ProUser = {
+      uid: account.localId,
+      email: account.email ?? null,
+      displayName: account.displayName?.trim() || null,
+    };
     if (cache.size > 500) cache.clear();
     cache.set(token, { user, until: Date.now() + CACHE_MS });
     return user;
