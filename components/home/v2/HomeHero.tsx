@@ -1,10 +1,10 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const HERO_IMAGE = "/images/official/media/artwork-jason-and-lucia-beach-jason-and-lucia-beach-landscape.webp";
 
-/** Homepage hero: Jason and Lucia sunset key art, big glowing title, map button. */
+/** Homepage hero: Jason and Lucia sunset key art, big glowing title, map and updates buttons. */
 export default function HomeHero() {
   return (
     <section className="mx-auto max-w-[1600px] px-6 pt-24 sm:px-10 sm:pt-28 lg:px-14">
@@ -52,13 +52,20 @@ export default function HomeHero() {
               GTA Companion is the unofficial GTA 6 companion, with a live, community-edited map.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="/map"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-4 py-3 text-[15px] sm:px-7 sm:py-3.5 sm:text-base font-black text-white shadow-[0_12px_40px_rgba(236,72,153,.55)] transition hover:brightness-110 active:scale-[0.97]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-transparent bg-gradient-to-r from-pink-500 to-violet-600 px-4 py-3 text-[15px] font-black text-white shadow-[0_12px_40px_rgba(236,72,153,.55)] transition hover:brightness-110 active:scale-[0.97] sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
               >
                 <MapPin size={18} aria-hidden />
                 Open the map
+              </Link>
+              <Link
+                href="/updates"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-3 text-[15px] font-black text-white shadow-[inset_0_1px_0_rgba(255,255,255,.28)] backdrop-blur-md transition hover:border-pink-300/60 hover:bg-white/15 active:scale-[0.97] sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
+              >
+                <Sparkles size={18} className="text-pink-200" aria-hidden />
+                What&apos;s new
               </Link>
             </div>
           </div>
