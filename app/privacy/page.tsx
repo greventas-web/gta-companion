@@ -60,7 +60,11 @@ export default function PrivacyPage() {
                   If you create an account, we store the name, email, and
                   saved items needed for favorites and settings. If you join
                   the newsletter, we store that email so we can send GTA
-                  Companion updates. We do not sell personal information.
+                  Companion updates. If you ask to be notified when Pro opens,
+                  we store that email on a private server list and use it
+                  only to email you about the Pro launch. You can unsubscribe
+                  any time by writing to {SITE.email}. We do not sell personal
+                  information.
                 </p>
               </div>
 

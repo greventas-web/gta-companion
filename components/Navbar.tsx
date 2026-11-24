@@ -23,10 +23,10 @@ import SupportLink from "./SupportLink";
 import MegaMenu, { exploreLinks } from "./MegaMenu";
 
 import { useAuth } from "@/components/auth/AuthProvider";
-import { proGoldFill, proGoldGlow } from "@/components/pro/ProBadge";
 import { useSearch } from "@/components/search/SearchProvider";
 
-const proPillClass = `inline-flex items-center justify-center whitespace-nowrap rounded-full font-black tracking-[0.04em] ring-1 ring-[#fff6d8]/60 transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e7c56a] ${proGoldFill} ${proGoldGlow}`;
+const proPillClass =
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[linear-gradient(135deg,#fff8e4_0%,#f4e0a4_34%,#e4c15f_70%,#c9962e_100%)] font-black tracking-[0.04em] text-[#241c0c] shadow-[0_0_18px_rgba(214,168,64,0.45)] ring-1 ring-[#fff6d8]/60 transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e7c56a]";
 
 export default function Navbar() {
   const { user } = useAuth();

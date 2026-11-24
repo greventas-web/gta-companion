@@ -14,7 +14,9 @@ The gold `PRO` mark other surfaces can reuse is `components/pro/ProBadge.tsx`.
 
 Prices live in `lib/pro/config.ts` (`PRO_PRICE_CENTS` is 499, the EUR amount). The buyer’s choice is sent to `POST /api/pro/checkout` as `currency` (`eur`, `usd`, or `gbp`). The page defaults to EUR, then picks USD or GBP from the browser locale when the region is one we map (United States and US territories → USD, United Kingdom and Crown Dependencies → GBP, eurozone → EUR). A saved choice on that device wins over the locale.
 
-Checkout is not live. With no Stripe secret key, `/pro` shows **Checkout opening soon** and `/api/pro/checkout` returns 503. Do not tell visitors they can pay.
+Checkout is not live. With no Stripe secret key, `/pro` shows an early-access form (“Notify me at launch”) and `/api/pro/checkout` returns 503. Do not tell visitors they can pay.
+
+Waitlist emails are stored server-side in the same private Blob store as Pro entitlements (`pro/waitlist.json`, local `.data/pro/waitlist.json` without a token). The form dedupes by email, ignores a filled honeypot field named `company`, and rate-limits each IP. Export the list with `GET /api/pro/waitlist/export` and `Authorization: Bearer` set to the `MAP_ADMIN_SECRET` value (the same env var as the map admin). A signed-in map admin cookie is also accepted. Do not commit or paste that value.
 
 ## How it works
 
