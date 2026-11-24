@@ -1,6 +1,5 @@
 import PageTitle from "@/components/PageTitle";
 import { pageMetadata } from "@/lib/launch";
-import { SITE } from "@/lib/site";
 import {
   Badge,
   Card,
@@ -91,8 +90,8 @@ export default function TermsPage() {
                     The price is shown on the Pro page before you pay: €4.99,
                     $4.99, or £4.49, depending on the currency you select.
                     Seller details are available on request at{" "}
-                    <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
-                      {SITE.email}
+                    <a href="mailto:contact@gta-companion.com" className="text-pink-400 hover:text-pink-300">
+                      contact@gta-companion.com
                     </a>
                     .
                   </p>

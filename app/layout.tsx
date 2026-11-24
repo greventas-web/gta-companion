@@ -71,14 +71,6 @@ export const metadata: Metadata = {
     "GTA VI News",
   ],
 
-  authors: [
-    {
-      name: "Gabrielius Reventas",
-    },
-  ],
-
-  creator: "Gabrielius Reventas",
-
   publisher: "GTA Companion",
 
   applicationName: "GTA Companion",
