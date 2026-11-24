@@ -207,6 +207,10 @@ export default function Footer() {
             <Link href="/terms" className="transition hover:text-white">
               Terms of Use
             </Link>
+
+            <Link href="/refunds" className="transition hover:text-white">
+              Refunds
+            </Link>
           </div>
         </div>
       </div>
