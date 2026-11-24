@@ -100,7 +100,7 @@ export default function Navbar() {
 
           </div>
 
-          <nav className="hidden min-w-0 items-center gap-1 xl:flex min-[1440px]:gap-2">
+          <nav className="hidden min-w-0 items-center gap-1 xl:flex">
 
             <NavLink href="/">Home</NavLink>
 
@@ -109,6 +109,8 @@ export default function Navbar() {
             </NavLink>
 
             <NavLink href="/map">Map</NavLink>
+
+            <NavLink href="/community">Community</NavLink>
 
             <MegaMenu />
 
@@ -285,6 +287,7 @@ export default function Navbar() {
               {[
                 { title: "Home", href: "/" },
                 { title: "Launch", href: "/gta-6-launch" },
+                { title: "Community", href: "/community" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
               ]

@@ -80,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/app",
     "/gta-6-launch",
     "/about",
+    "/community",
     "/news",
     "/vehicles",
     "/characters",
