@@ -1,16 +1,34 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
-import { PRO_CURRENCY, PRO_NAME, PRO_PRICE_CENTS } from "@/lib/pro/config";
+import { PRO_NAME, PRO_PRICES, type ProCurrency } from "@/lib/pro/config";
 
 /**
  * Stripe Checkout over Stripe's REST API (no SDK dependency).
  *
  * Env vars (set in Vercel, never commit them):
- *   STRIPE_SECRET_KEY       sk_test_... (test mode). Live keys are refused
- *                           unless PRO_ALLOW_LIVE_PAYMENTS=1.
- *   STRIPE_WEBHOOK_SECRET   whsec_... for /api/pro/webhook.
- *   STRIPE_PRO_PRICE_ID     optional price_...; otherwise €3.99 is sent inline.
- *   STRIPE_AUTOMATIC_TAX    optional "1" to turn on Stripe Tax (needs Stripe Tax set up).
+ *   STRIPE_SECRET_KEY         sk_test_... (test mode). Live keys are refused
+ *                             unless PRO_ALLOW_LIVE_PAYMENTS=1.
+ *   STRIPE_WEBHOOK_SECRET     whsec_... for /api/pro/webhook.
+ *   STRIPE_PRO_PRICE_ID_EUR   optional price_... for €4.99. STRIPE_PRO_PRICE_ID
+ *                             is still accepted as the EUR price.
+ *   STRIPE_PRO_PRICE_ID_USD   optional price_... for $4.99.
+ *   STRIPE_PRO_PRICE_ID_GBP   optional price_... for £4.49.
+ *   STRIPE_AUTOMATIC_TAX      optional "1" to turn on Stripe Tax (needs Stripe Tax set up).
+ *
+ * With no price id for the chosen currency, Checkout gets price_data in that
+ * currency at the fixed amount in PRO_PRICES. A price id must itself be in
+ * that currency.
  */
+
+function priceIdFor(currency: ProCurrency): string | null {
+  const fromEnv =
+    currency === "eur"
+      ? process.env.STRIPE_PRO_PRICE_ID_EUR || process.env.STRIPE_PRO_PRICE_ID
+      : currency === "usd"
+        ? process.env.STRIPE_PRO_PRICE_ID_USD
+        : process.env.STRIPE_PRO_PRICE_ID_GBP;
+  const value = fromEnv?.trim();
+  return value || null;
+}
 
 const API = "https://api.stripe.com/v1";
 export const PRO_PRODUCT_TAG = "gta6-pro";
@@ -66,31 +84,48 @@ export async function createCheckoutSession(input: {
   uid: string;
   email: string | null;
   origin: string;
+  currency: ProCurrency;
+  /** Buyer asked for immediate delivery and accepted the withdrawal waiver. */
+  withdrawalWaiver: boolean;
 }): Promise<CheckoutSession> {
+  if (!input.withdrawalWaiver) {
+    throw new Error("Immediate-delivery consent is required.");
+  }
+  const price = PRO_PRICES[input.currency];
   const params = new URLSearchParams();
   params.set("mode", "payment");
-  const priceId = process.env.STRIPE_PRO_PRICE_ID?.trim();
+  const priceId = priceIdFor(input.currency);
   if (priceId) {
     params.set("line_items[0][price]", priceId);
   } else {
-    params.set("line_items[0][price_data][currency]", PRO_CURRENCY);
-    params.set("line_items[0][price_data][unit_amount]", String(PRO_PRICE_CENTS));
+    params.set("line_items[0][price_data][currency]", price.code);
+    params.set("line_items[0][price_data][unit_amount]", String(price.cents));
     params.set("line_items[0][price_data][product_data][name]", `${PRO_NAME} (unofficial fan tool)`);
     params.set(
       "line_items[0][price_data][product_data][description]",
-      "Cloud sync, progress %, near-me map filter, unlimited marks, no ads. One-time."
+      "No ads, cloud sync, progress %, near-me map filter, unlimited marks. One-time."
     );
   }
   params.set("line_items[0][quantity]", "1");
   params.set("client_reference_id", input.uid);
   params.set("metadata[uid]", input.uid);
   params.set("metadata[product]", PRO_PRODUCT_TAG);
+  params.set("metadata[currency]", price.code);
+  params.set("metadata[withdrawal_waiver]", "immediate-digital-delivery");
   params.set("payment_intent_data[metadata][uid]", input.uid);
   params.set("payment_intent_data[metadata][product]", PRO_PRODUCT_TAG);
-  if (input.email) params.set("customer_email", input.email);
+  params.set("payment_intent_data[metadata][currency]", price.code);
+  params.set("payment_intent_data[metadata][withdrawal_waiver]", "immediate-digital-delivery");
+  if (input.email) {
+    params.set("customer_email", input.email);
+    params.set("payment_intent_data[receipt_email]", input.email);
+  }
   params.set("success_url", `${input.origin}/pro?checkout=success&session_id={CHECKOUT_SESSION_ID}`);
   params.set("cancel_url", `${input.origin}/pro?checkout=cancel`);
-  if (process.env.STRIPE_AUTOMATIC_TAX === "1") params.set("automatic_tax[enabled]", "true");
+  if (process.env.STRIPE_AUTOMATIC_TAX === "1") {
+    params.set("automatic_tax[enabled]", "true");
+    params.set("billing_address_collection", "required");
+  }
   return stripe<CheckoutSession>("POST", "/checkout/sessions", params);
 }
 

@@ -87,11 +87,18 @@ export function useProStatus() {
     if (authLoading) return;
     let cancelled = false;
     if (!user) {
-      Promise.resolve().then(() => {
-        if (cancelled) return;
-        setStatus({ signedIn: false, pro: false, ready: false });
-        setLoading(false);
-      });
+      fetch("/api/pro/status", { cache: "no-store" })
+        .then((response) => response.json())
+        .then((body: { ready?: boolean } | null) => {
+          if (cancelled) return;
+          setStatus({ signedIn: false, pro: false, ready: Boolean(body?.ready) });
+        })
+        .catch(() => {
+          if (!cancelled) setStatus({ signedIn: false, pro: false, ready: false });
+        })
+        .finally(() => {
+          if (!cancelled) setLoading(false);
+        });
       return () => {
         cancelled = true;
       };

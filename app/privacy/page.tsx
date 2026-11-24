@@ -11,7 +11,7 @@ import { SITE, SUPPORT_URL } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "Privacy Policy",
-  `Privacy policy for GTA Companion, covering cookies, Google AdSense, and Vercel Analytics. ${SITE.slogan}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
+  `Privacy policy for GTA Companion, covering cookies, Google AdSense, Vercel Analytics, and Stripe when Pro checkout opens. ${SITE.slogan}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
 );
 
 export default function PrivacyPage() {
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             description="Your privacy is important to us. This page will continue to evolve as GTA Companion grows."
           />
 
-          <Card className="mt-16 rounded-[40px] border-zinc-800 bg-zinc-900 p-12">
+          <Card className="mt-16 rounded-[40px] border-zinc-800 bg-zinc-900 p-6 sm:p-12">
 
             <div className="space-y-10">
 
@@ -257,6 +257,33 @@ export default function PrivacyPage() {
 
               <div>
                 <h2 className="text-3xl font-black">
+                  Payments and Stripe
+                </h2>
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
+                  Checkout for GTA Companion Pro is not open yet. When it
+                  opens, payments are taken by Stripe for the seller, MB GL
+                  Transportation (Lithuania). Company code: [company code].
+                  Registered address: [registered address]. Stripe receives
+                  the email on your account, the amount, the currency, and
+                  the card details, and emails the receipt. We store whether
+                  Pro is active on the account, the amount, and the currency.
+                  We do not receive or store your card number. Stripe
+                  describes its handling of payment data in the{" "}
+                  <a
+                    href="https://stripe.com/privacy"
+                    className="text-pink-400 hover:text-pink-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Stripe privacy policy
+                  </a>
+                  . If Pro is active, marks you choose to track can be stored
+                  so they sync across devices signed in to that account.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-black">
                   Support and affiliate links
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
@@ -280,8 +307,10 @@ export default function PrivacyPage() {
                   Updates
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  This policy was updated on November 23, 2026. It will
+                  This policy was updated on November 24, 2026. It will
                   change again if the site starts collecting something new.
+                  The payments section is a draft until the company code and
+                  address are filled in.
                 </p>
               </div>
 
