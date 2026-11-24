@@ -13,6 +13,7 @@ import { backroomsSources, hydeIslandSources, krakenSources, radioListSources } 
 import { ghostShipSources, jetSkiDogSources, marbelleHotelSources, murals1010Sources } from "@/src/data/launch/batch13-sources";
 import { blackEagleSources, freddieGibbsSources, garageCodesSources, laPerleGarageSources, patchNotesSources, vamosSources } from "@/src/data/launch/batch14-sources";
 import { halifaxSources, infernusSources, jasonsStashSources, randyWishListSources } from "@/src/data/launch/batch15-sources";
+import { alienBaseSources, hellspawnSources, vercettiSources } from "@/src/data/launch/batch16-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -389,6 +390,11 @@ const L = {
   peacockBayMap: { href: "/map?pin=confirmed%3Apeacock-bay", title: "Peacock Bay on the map", kind: "location" },
   hamletMap: { href: "/map?pin=confirmed%3Ahamlet", title: "Hamlet on the map", kind: "location" },
   rustyAnchorMap: { href: "/map?pin=confirmed%3Athe-rusty-anchor", title: "The Rusty Anchor on the map", kind: "location" },
+  // Batch 16
+  vercetti: { href: "/guides/tommy-vercetti-shirt", title: "Tommy Vercetti's shirt", line: "The Malibu Club portal", kind: "clothing" },
+  hellspawn: { href: "/guides/hellspawn-shotgun", title: "Hellspawn Comshot 12", line: "Beat Satan in Port Gellhorn", kind: "weapon" },
+  alienBase: { href: "/guides/alien-base", title: "Alien base", line: "UFO part 2: South Point Airfield", kind: "activity" },
+  grassriversMap: { href: "/map?pin=confirmed%3Agrassrivers", title: "Grassrivers on the map", kind: "location" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
 } satisfies Record<string, QuickGuideLink>;
 
@@ -780,7 +786,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you change clothes in GTA 6?", answer: "Use the wardrobe at your safehouse. You can also save outfits to your car's trunk and change there." },
       { question: "Does changing clothes lower your wanted level in GTA 6?", answer: "Yes. Changing your outfit is one of the quickest ways to lower Heat after the police have seen you." },
     ],
-    related: [L.wanted, L.clothing, L.mask, L.jasonsPlace],
+    related: [L.wanted, L.clothing, L.mask, L.jasonsPlace, L.vercetti],
   },
   {
     slug: "slim-jim",
@@ -2373,7 +2379,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "How do you get a tattoo in GTA 6?", answer: "Find a shop on the map under Style, then Tattoos, walk in and talk to the staff. Shops open after the Prologue. Some designs need a bank account." },
       { question: "Where is the first tattoo shop in GTA 6?", answer: "Inked Mermaid is just east of Jason's house in Key Lento, on the same street as his gym." },
     ],
-    related: [L.clothes, L.haircut, L.bank, L.clothing],
+    related: [L.clothes, L.haircut, L.bank, L.clothing, L.hellspawn],
   },
   {
     slug: "basketball",
@@ -2678,6 +2684,7 @@ export const quickGuides: QuickGuide[] = [
       "Once Chapter 1 is done, go to the road northwest of the Starlet Motel in Kelly County after 2:00 AM. Go alone.",
       "Look for a stranded car with flashing lights by the road. If it isn't there, drive away and come back later. It doesn't show up every time.",
       "Follow the trail next to the car into the woods toward a blue light. The UFO drops a woman it was abducting. Offer to help and go back to her car, and the aliens take you instead.",
+      "The stranded car can also turn up on other dark, quiet roads at night, such as those east of Port Gellhorn. After the abduction, keep sleeping as the same character: a dream starts the second part, which ends at an alien base south of Hamlet.",
     ],
     facts: [
       { label: "Where", value: "Road northwest of the Starlet Motel, Kelly County" },
@@ -2689,8 +2696,9 @@ export const quickGuides: QuickGuide[] = [
       { question: "Are there UFOs in GTA 6?", answer: "Yes. There is a UFO encounter on the road northwest of the Starlet Motel in Kelly County, at night after 2:00 AM." },
       { question: "How do you find the UFO in GTA 6?", answer: "Go alone after 2:00 AM and look for a stranded car with flashing lights. Follow the trail into the woods toward the blue light, help the woman, then go back to her car." },
       { question: "Why can't I find the UFO in GTA 6?", answer: "It doesn't spawn every time. If the car with flashing lights isn't there, drive away and come back later. Make sure it's after 2:00 AM and you're alone." },
+      { question: "What happens after the UFO abduction in GTA 6?", answer: "Keep sleeping as the character who was taken. A dream on the ship shows a place in Leonida and a keypad code, which lead to an alien base at the South Point Airfield south of Hamlet." },
     ],
-    related: [L.bigfoot, L.wainkLocations, L.grassrivers, L.hundred, L.easterEggs, L.missingTourists],
+    related: [L.alienBase, L.bigfoot, L.wainkLocations, L.grassrivers, L.hundred, L.easterEggs, L.missingTourists],
   },
   {
     slug: "shipwrecks",
@@ -2904,6 +2912,7 @@ export const quickGuides: QuickGuide[] = [
       "Three hidden events: a giant Kraken wrapped around a shipwreck on the seabed south-east of Gloriana Key, a Backrooms-style trip from a container east of Lake Tallaloko, and a Saw-style hunt on Hyde Island that rewards a unique sniper rifle. More are still being found.",
       "Two spooky ones: the Marbelle Hotel in Crosstown turns Vice City into Silent Hill, with fog, red symbols and a safe (code 955214), and at night ghosts haunt St. Lucia Lighthouse off Millport, where a ghost ship shows at 1:30 AM and a wreck hides the Cursed Knife.",
       "Rapper Freddie Gibbs has a cameo as Freddie, a doomsday prepper whose compound in North Leonard County is guarded by an electric fence, landmines and drones. Break in twice and he lets you into his bunker.",
+      "The biggest so far: a 12-substation puzzle built on Vice City's LIFE IS PASSING ME BY cheat opens a portal to a PS2-style Malibu Club, with Kent Paul upstairs, and rewards Tommy Vercetti's shirt and motorcycle. In Port Gellhorn, two metalheads take you to Hell for a fight with Satan and the Hellspawn Comshot 12. The UFO story also goes further, to an alien base south of Hamlet.",
     ],
     facts: [
       { label: "Monsters", value: "Bigfoot, the UFO" },
@@ -2913,6 +2922,8 @@ export const quickGuides: QuickGuide[] = [
       { label: "Mysteries", value: "Crab outpost, missing tourists" },
       { label: "Hidden events", value: "The Kraken, the Backrooms, the Hyde Island hunt" },
       { label: "Spooky", value: "Silent Hill hotel, ghost ship" },
+      { label: "Vice City", value: "The Malibu Club portal, Tommy's shirt" },
+      { label: "Boss fights", value: "Satan in Hell" },
     ],
     faqs: [
       { question: "What Easter eggs are in GTA 6?", answer: "So far: Bigfoot, a UFO, Paul Walker's Fast and Furious car on Vespucci Island, Dexter's apartment on Washington Island, a dog on a jet ski out at sea, an egg on top of Vice City's tallest tower, and books that nod to Red Dead Redemption and Liberty City." },
@@ -2922,9 +2933,11 @@ export const quickGuides: QuickGuide[] = [
       { question: "Is there a Silent Hill Easter egg in GTA 6?", answer: "Yes. Climb the stairs of the Marbelle Hotel in south Crosstown and fog and red symbols take over. The note on the roof gives the safe code, 955214." },
       { question: "Is there a ghost ship in GTA 6?", answer: "Yes. Climb St. Lucia Lighthouse off Millport around 1:30 AM and a glowing ghost ship appears out at sea." },
       { question: "Is there a Kraken in GTA 6?", answer: "Yes. A giant Kraken is wrapped around a sunken ship on the seabed south-east of Gloriana Key. Dive down with scuba gear to see it." },
+      { question: "Is there a Tommy Vercetti Easter egg in GTA 6?", answer: "Yes. Start at the Badger R&D radio tower in Key Lento, use the marked switches at 12 LPL substations in order, then take the portal at Reactor 2 to a PS2-style Malibu Club. You come back with Tommy's shirt and his motorcycle." },
+      { question: "Can you fight Satan in GTA 6?", answer: "Yes. Meet Beelzebub and Dave at the Hellhole garage in north Port Gellhorn between midnight and 4:00 AM, ride to their campfire and stare into the fire. Beat Satan for the Hellspawn Comshot 12 and a max health upgrade." },
       { question: "Where is the UFO house in GTA 6?", answer: "In Belville. It's the cream bungalow with two palm trees from the UFO photo in GTA: The Trilogy – The Definitive Edition. Its garage has a wall that reads \"IT'S A SIMULATION\"." },
     ],
-    related: [L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.marbelleHotel, L.ghostShip, L.jetSkiDog, L.freddieGibbs, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
+    related: [L.vercetti, L.hellspawn, L.alienBase, L.bigfoot, L.ufo, L.kraken, L.backrooms, L.hydeIsland, L.marbelleHotel, L.ghostShip, L.jetSkiDog, L.freddieGibbs, L.fastFurious, L.dexter, L.jetSki, L.crabLab, L.missingTourists, L.magazines, L.millportMap, L.belvilleMap, L.jasonsPlace, L.cowboyHat],
   },
   {
     slug: "rob-police-car",
@@ -3168,7 +3181,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where do you rent a dirt bike in GTA 6?", answer: "At Rooster's Rentals in the Thrillbilly Mud Club, during the Chapter 2 job Thrillbillies. Pick the Manchez or the faster Sanchez." },
       { question: "What is the best getaway vehicle in GTA 6?", answer: "A street bike. It slips through traffic and corners hard, though it has no trunk for loot bags or clothes." },
     ],
-    related: [L.thrillbillies, L.twistWrist, L.register, L.modShops, L.garages, L.moses, L.loseWanted, L.stuntJumps],
+    related: [L.thrillbillies, L.twistWrist, L.register, L.modShops, L.garages, L.moses, L.loseWanted, L.stuntJumps, L.vercetti],
   },
   {
     slug: "rob-atm",
@@ -3284,6 +3297,7 @@ export const quickGuides: QuickGuide[] = [
       "Permit Keys: the Smuggler Gorse 425 shotgun lies on the sand by a tilted smuggler boat on the northernmost island, and the Assassin Nipper .38 is in the Derelict Spy Vessel. Off the north coast of the Riquezas Keys, dive under the sunken speedboat marked by floating drug packages for the Drug Mule KZ-59. In north-west Key Lento, the Unpacked Comshot 12 is behind an upstairs bathroom door.",
       "Pelican Valley swamp: one ruined hunter's cabin holds two, the Swamp Bait Akulus revolver on the floor and the Cruel Huntsman's SM-69 sniper on the boardwalk. The Crabshack VF5 is at the crab outpost. In Wetman Bay, the Kingfishers Fishing Shacks hideout has the Kingfishers W-22 with a scope and suppressor, and the Manatee Motel hideout has the Kingfishers Laird 350.",
       "Elsewhere: the Conspiracist Type 9 is in the trailer bunker in Balsero, and the Black Eagle Import Kalinga is in the office safe of the Black Eagle warehouse there (door 789987, safe 031462). The Turnt Nipper .38 is in a crashed paramotor stuck in a tree at Bobcat Bight; shoot it down. Near Hamlet, drive a wounded hunter to the hospital for the Hunter's Laird 350. In Chapter 1's Don Gone, open the trunk of Donnie's car for Donnie's H&L .38 before you get rid of the car, or it's gone.",
+      "Beat Satan in the late-night Hell event in north Port Gellhorn and the Hellspawn Comshot 12 shotgun waits at the ritual throne where you wake up.",
       "Port Gellhorn (Chapter 2): the Gutterball Moreland 850 is on the pool table at Kingpin Bowling, the Scrapper VF5C on the top floor of La Cascara Motel and the Clunker 556 at Brooks Boatworks. Shoot down the couch hanging from a tree off Tanglewood Lane and sit on it for the Couch Potato Mustang .357.",
     ],
     facts: [
@@ -3299,9 +3313,10 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Drug Mule KZ-59 in GTA 6?", answer: "Underwater, under a sunken speedboat off the north coast of the Riquezas Keys. Floating drug packages mark the spot." },
       { question: "Where is the Turnt Nipper .38 in GTA 6?", answer: "In a crashed paramotor caught in a tree at Bobcat Bight. Shoot the lines to bring it down, then search the wreck." },
       { question: "Where is the Black Eagle Import Kalinga in GTA 6?", answer: "In the office safe of the Black Eagle warehouse in Balsero, Vice City. The office door is 789987 and the safe is 031462." },
+      { question: "Where is the Hellspawn Comshot 12 in GTA 6?", answer: "It's the reward for beating Satan. Meet Beelzebub and Dave at the Hellhole garage in north Port Gellhorn between midnight and 4:00 AM; after the fight the shotgun is at the throne you wake up on." },
       { question: "Which unique weapon can you miss in GTA 6?", answer: "Donnie's H&L .38. It's in the trunk of Donnie's car during Don Gone in Chapter 1. Take it before you get rid of the car." },
     ],
-    related: [L.silencedPistol, L.crabLab, L.shotgun, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.ghostShip, L.blackEagle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
+    related: [L.silencedPistol, L.crabLab, L.shotgun, L.hellspawn, L.rocketLauncher, L.sniperRifle, L.hydeIsland, L.ghostShip, L.blackEagle, L.safeCodes, L.gunStores, L.southwindMap, L.balseroMap, L.portGellhornMap, L.meleeWeapons],
     sources: uniqueWeaponsSources,
   },
   {
@@ -3315,20 +3330,21 @@ export const quickGuides: QuickGuide[] = [
     answer: [
       "Take a boat from Southwind to the northernmost island of the Permit Keys, east of Mile Zero Air Station. The Smuggler Gorse 425, a unique stubby shotgun, lies on the sand next to a tilted, abandoned smuggler boat. It saves the $850 a Gorse 425 costs at Ammu-Nation.",
       "For a semi-auto, go to a house on the north-west coast of Key Lento. The Unpacked Comshot 12 is behind the door of the upstairs en-suite bathroom; a note on the kitchen counter hints at it. The store Comshot 12 costs $3,825.",
-      "In Chapter 2, the Kingpin Bowling hideout in Port Gellhorn has the Gutterball Moreland 850 pump shotgun on its pool table.",
+      "In Chapter 2, the Kingpin Bowling hideout in Port Gellhorn has the Gutterball Moreland 850 pump shotgun on its pool table. Also in Port Gellhorn, beat Satan in the late-night Hell event for the Hellspawn Comshot 12.",
       "All three are unique weapons, so you keep them. If you lose one, take it back out of a weapon locker at any Ammu-Nation.",
     ],
     facts: [
       { label: "Smuggler Gorse 425", value: "Northernmost Permit Keys island" },
       { label: "Unpacked Comshot 12", value: "North-west Key Lento house" },
       { label: "Gutterball Moreland 850", value: "Kingpin Bowling, Chapter 2" },
+      { label: "Hellspawn Comshot 12", value: "Beat Satan, north Port Gellhorn" },
     ],
     faqs: [
       { question: "Where can you get a shotgun early in GTA 6?", answer: "The Smuggler Gorse 425 is on the sand by an abandoned smuggler boat on the northernmost Permit Keys island, east of Mile Zero Air Station." },
       { question: "Where is the Unpacked Comshot 12 in GTA 6?", answer: "Behind the upstairs en-suite bathroom door of a house on the north-west coast of Key Lento." },
       { question: "Where is the Gutterball shotgun in GTA 6?", answer: "On the pool table at the Kingpin Bowling hideout in Port Gellhorn, from Chapter 2. The safe there is 0300." },
     ],
-    related: [L.uniqueWeapons, L.gorse425, L.comshot12, L.moreland850, L.southwindMap, L.boat, L.safeCodes, L.silencedPistol],
+    related: [L.uniqueWeapons, L.hellspawn, L.gorse425, L.comshot12, L.moreland850, L.southwindMap, L.boat, L.safeCodes, L.silencedPistol],
     sources: shotgunSources,
   },
   {
@@ -4057,6 +4073,106 @@ export const quickGuides: QuickGuide[] = [
     sources: jasonsStashSources,
   },
   {
+    slug: "tommy-vercetti-shirt",
+    title: "GTA 6 Tommy Vercetti Easter Egg: All 12 Substations, Shirt and Motorcycle",
+    heading: "Tommy Vercetti's shirt",
+    description:
+      "How to get Tommy Vercetti's shirt and motorcycle in GTA 6: start at the Badger R&D radio tower, hit all 12 LPL substations in order, then take the Reactor 2 portal to the Malibu Club. Unofficial.",
+    keywords: ["GTA 6 Tommy Vercetti shirt", "GTA 6 Tommy Vercetti easter egg", "GTA 6 Malibu Club", "GTA 6 Vice City easter egg", "GTA 6 LPL substations order", "GTA 6 Reactor 2 portal", "GTA 6 American Glory", "GTA 6 Angel motorcycle", "GTA 6 life is passing me by", "GTA 6 Kent Paul"],
+    kind: "clothing",
+    answer: [
+      "The biggest Easter egg found so far sends you back to 2002's Vice City. Climb to the control room at the top of the Badger R&D radio tower in Key Lento, pull the lever, then press the button on the machine across the room. The TV flashes the old Malibu Club logo with a Vice City sound: the puzzle is now running.",
+      "Next, visit 12 Leonida Power & Light (LPL) substations in a fixed order. The blue letters painted on them spell LIFE IS PASSING ME BY, Vice City's clock cheat. Each has three or four buttons or levers; use only the one with purple tape marked D, A, W or a dot (the PS2 Circle, Square, Triangle and L1 inputs of that cheat). Nothing confirms a correct switch until the very end.",
+      "The order: 1. Downtown Vice City, under the highway just north of Tequesta (D). 2. Balsero (D). 3. North Key Lento, along the road (dot; opening the door sets off an alarm, so be quick). 4. Penmarch Isle at the north end of Vice Beach, on the coast north of the hospital (A). 5. North-west edge of Bayside by a construction site: the levers outside, don't go in (dot). 6. Central Port Gellhorn (lever A). 7. East Hamlet by the river (A). 8. The east side of the big Gloriana Key plant (A). 9. West Hamlet, behind the station by the picnic tables (dot lever). 10. The southern tip of Port Gellhorn, on a hill: lever W under \"ME\". 11. South Hamlet: lever D under \"B\", right next to another lever. 12. Near Breakwater Quarry: lever W under the blue \"Y\".",
+      "After the 12th switch a text arrives from an unknown number: \"U-235 REACTOR2 19-06\". Go to Reactor 2 in the middle of the LPL Turtle Head (T.H.) Power Station east of Hamlet between 7 PM and 6 AM, and pull the lever beside the purple portal. The plant is guarded and an alarm or a police chase stops the portal, so parachuting in from a helicopter is the cleanest way in.",
+      "The portal drops you into a Malibu Club in blocky PS2-era graphics. Head upstairs to meet Kent Paul, then step through the portal he opens to get back to Leonida. Tommy's palm-print Hawaiian shirt is now in your wardrobe, and his chopper, the American Glory (fans call it the Angel, after the Vice City bike), is yours.",
+    ],
+    notice: "Don't fast travel or switch characters between substations: either one resets the puzzle back to the radio tower.",
+    facts: [
+      { label: "Start", value: "Badger R&D radio tower, Key Lento" },
+      { label: "Steps", value: "12 LPL substations in order" },
+      { label: "Switches", value: "D, D, dot, A, dot, A, A, A, dot, W, D, W" },
+      { label: "Portal", value: "Reactor 2, T.H. Power Station, 7 PM to 6 AM" },
+      { label: "Rewards", value: "Tommy's shirt and the American Glory motorcycle" },
+      { label: "Best ride", value: "A helicopter or a fast motorbike" },
+      { label: "When", value: "Plan on Chapter 3, when the whole map is open" },
+    ],
+    faqs: [
+      { question: "How do you get Tommy Vercetti's shirt in GTA 6?", answer: "Turn on the TV at the top of the Badger R&D radio tower in Key Lento, use the marked switch at all 12 LPL substations in order, then go through the portal at Reactor 2 of the T.H. Power Station between 7 PM and 6 AM. Meet Kent Paul in the Malibu Club and come back to unlock the shirt and the motorcycle." },
+      { question: "What is the LPL substation order in GTA 6?", answer: "Downtown Vice City, Balsero, north Key Lento, Penmarch Isle, Bayside, central Port Gellhorn, east Hamlet, Gloriana Key, west Hamlet, south Port Gellhorn, south Hamlet, then near Breakwater Quarry. The switches go D, D, dot, A, dot, A, A, A, dot, W, D, W." },
+      { question: "What does U-235 REACTOR2 19-06 mean in GTA 6?", answer: "It's the text you get after the 12th substation. Go to Reactor 2 at the LPL Turtle Head Power Station east of Hamlet between 19:00 and 06:00, and the portal to the Malibu Club opens there." },
+      { question: "What motorcycle do you get from the Tommy Vercetti Easter egg?", answer: "Tommy's chopper with star decals, the American Glory. Fans call it the Angel, the name of the bike in Vice City." },
+      { question: "Why didn't the Tommy Vercetti Easter egg work?", answer: "Fast travel or a character switch resets it, and so does using the wrong switch. Start again at the radio tower. At the reactor, don't trip the alarm or bring the police, or the portal won't open." },
+    ],
+    related: [L.keyLento, L.downtownMap, L.balseroMap, L.portGellhornMap, L.hamletMap, L.helicopter, L.parachute, L.motorcycle, L.clothes, L.easterEggs],
+    sources: vercettiSources,
+  },
+  {
+    slug: "hellspawn-shotgun",
+    title: "GTA 6 Satan Easter Egg: How to Get the Hellspawn Comshot 12 Shotgun",
+    heading: "Satan and the Hellspawn shotgun",
+    description:
+      "Where to find Satan in GTA 6: the Hellhole garage in north Port Gellhorn between midnight and 4 AM, how to beat him, and the Hellspawn Comshot 12, max health and tattoo rewards. Unofficial.",
+    keywords: ["GTA 6 Satan", "GTA 6 Hellspawn shotgun", "GTA 6 Hellspawn Comshot 12", "GTA 6 Satan easter egg", "GTA 6 hell event", "GTA 6 Beelzebub and Dave", "GTA 6 Welcome to the Hellhole", "GTA 6 Circles of Hell", "GTA 6 max health upgrade"],
+    kind: "weapon",
+    answer: [
+      "From Chapter 2, go to the north side of Port Gellhorn between midnight and 4:00 AM. Look for a corner house with \"Welcome to the Hellhole\" sprayed on the wall. When the event is on, the garage door is open and two metalheads, Beelzebub and Dave, are drinking beer to loud metal. If it's shut, leave the area and come back another night.",
+      "Walk in, talk to them and hang out; take the beer if you like. They're waiting for their friend Steve the Serpent, and when his van pulls up, follow them outside and climb into the back. You end up at a campfire in the woods with the group chanting around it.",
+      "Walk up to the fire and hold L2/LT to stare into the flames. You wake up in Hell with a shotgun. Blast through the demons and portals to Satan's throne. To hurt him, kill the exploding demons that spawn in the arena: his health bar turns red for a short time, so unload on him then. Black goats charge in from the sides of the throne; dodge them or shoot them. Repeat until he falls.",
+      "You come round on the ritual throne in the real world. The Hellspawn Comshot 12, a unique shotgun, is right at the throne, so pick it up before you leave. Beating Satan also gives you a permanent max health upgrade, a new tattoo design at the tattoo parlours and the Circles of Hell top.",
+    ],
+    facts: [
+      { label: "Where", value: "\"Welcome to the Hellhole\" garage, north Port Gellhorn" },
+      { label: "When", value: "Midnight to 4:00 AM, from Chapter 2" },
+      { label: "Weak spot", value: "Kill the exploding demons, then shoot him while his bar is red" },
+      { label: "Weapon", value: "Hellspawn Comshot 12 (unique)" },
+      { label: "Also", value: "Max health upgrade, a tattoo design, the Circles of Hell top" },
+    ],
+    faqs: [
+      { question: "Where is Satan in GTA 6?", answer: "Meet Beelzebub and Dave in the open garage of the \"Welcome to the Hellhole\" house in north Port Gellhorn between midnight and 4:00 AM. Ride in Steve's van to the campfire and hold L2/LT to stare into the fire to reach Hell." },
+      { question: "How do you get the Hellspawn shotgun in GTA 6?", answer: "Beat Satan in the Hell event. When you wake up on the ritual throne, the Hellspawn Comshot 12 is right there. Pick it up before you leave." },
+      { question: "How do you beat Satan in GTA 6?", answer: "Kill the exploding demons that appear in the arena. That turns his health bar red for a short time, so shoot him then. Dodge the black goats and repeat until he dies." },
+      { question: "Why is the Hellhole garage closed in GTA 6?", answer: "The event only runs late at night, between midnight and 4:00 AM. If the door is shut, leave the area and come back. You also need to be in Chapter 2 or later." },
+      { question: "What do you get for beating Satan in GTA 6?", answer: "The Hellspawn Comshot 12 shotgun, a permanent max health upgrade, a new tattoo design and the Circles of Hell top." },
+    ],
+    related: [L.portGellhornMap, L.comshot12, L.uniqueWeapons, L.shotgun, L.tattoos, L.characterStats, L.skipTime, L.easterEggs, L.marbelleHotel, L.backrooms],
+    sources: hellspawnSources,
+  },
+  {
+    slug: "alien-base",
+    title: "GTA 6 Alien Base: UFO Dream House Location, Keypad Code and Rewards",
+    heading: "The alien base",
+    description:
+      "GTA 6 UFO part 2: where the dream house is (South Point Airfield, south of Hamlet), how to get in, the keypad code, the light and door puzzle, and the permanent Health, Stamina and Focus boosts. Unofficial.",
+    keywords: ["GTA 6 alien base", "GTA 6 UFO dream house", "GTA 6 UFO dream location", "GTA 6 South Point Airfield", "GTA 6 alien keypad code", "GTA 6 UFO part 2", "GTA 6 alien rescue", "GTA 6 milk puzzle", "GTA 6 UFO rewards"],
+    kind: "activity",
+    answer: [
+      "This is the second half of the UFO story. Once you've been abducted, keep going to bed as the character the aliens took. After a few nights they dream of the ship: spin the planet Earth in the orb room to see a place in Leonida (a fenced, angular building by a tall radio tower), count the lines above the keypad for its code, then solve the light puzzle and the three doors.",
+      "The code differs between games, so write yours down. In the light room, press the four buttons until every light shows the same colour, then pull the lever. Of the three doors, the middle one is full of radiation; take the bottle of milk from the left room and put it in the machine behind the right door. Then you wake up in bed.",
+      "The place from the dream is the South Point Airfield in the Pelican Valley swamp, south of Hamlet and north of Gambit Bay, just off the main road north from Key Lento. Turn at the brown Grassrivers Pelican Valley sign. The gate stays locked: go round to the left and climb the fence where there's no barbed wire (or park a truck at the back and climb over). Your character says it's the place from the orb.",
+      "Climb the ladder to the roof and drop through the open hatch. Enter your dream code on the keypad and take the elevator down. In the control room, play the tape if you like, set the lights again, pull the lever, then do the doors exactly as in the dream: skip the radiation room, fetch the milk from the left and load it into the capsule on the right. An alien is inside.",
+      "Pick it up and move fast, as gas starts to fill the lab. Ride the elevator up and carry it outside. A UFO beams it home and deals with the agents who arrive to arrest you. As thanks, the aliens give you permanent boosts to Health, Stamina and Focus.",
+    ],
+    notice: "You need the first UFO abduction before the dream comes. Sleep as the character who was taken.",
+    facts: [
+      { label: "Where", value: "South Point Airfield, Pelican Valley, south of Hamlet" },
+      { label: "Code", value: "The lines above the keypad in your dream (differs per game)" },
+      { label: "Don't", value: "Go through the middle door: radiation" },
+      { label: "Puzzle", value: "Milk from the left room into the machine on the right" },
+      { label: "Way in", value: "Fence on the left, then the roof hatch" },
+      { label: "Rewards", value: "Permanent Health, Stamina and Focus boosts" },
+    ],
+    faqs: [
+      { question: "Where is the UFO dream house in GTA 6?", answer: "At the South Point Airfield in the Pelican Valley swamp, south of Hamlet and north of Gambit Bay. Turn at the brown Grassrivers Pelican Valley sign. Climb the fence on the left where there's no barbed wire, then use the roof hatch." },
+      { question: "What is the alien keypad code in GTA 6?", answer: "It's the number of lines above the keypad in your UFO dream, and it differs between games. Players have reported 2431, 2134, 2341 and 2314, so use the one from your own dream." },
+      { question: "How do you do the light puzzle in the GTA 6 alien base?", answer: "Press the four buttons until every light shows the same colour, then pull the lever. Some buttons change two lights at once. A reliable route is to turn all four lights to the first colour, then press the second and fourth buttons." },
+      { question: "Which door do you take in the GTA 6 alien base?", answer: "Not the middle one, which is full of radiation. Take the bottle of milk from the left room and put it in the machine behind the right door." },
+      { question: "What do you get for saving the alien in GTA 6?", answer: "Permanent boosts to Health, Stamina and Focus. The UFO also deals with the agents who turn up when you bring the alien outside." },
+    ],
+    related: [L.ufo, L.hamletMap, L.grassriversMap, L.grassrivers, L.characterStats, L.focus, L.bigfoot, L.easterEggs, L.climbing, L.skipTime],
+    sources: alienBaseSources,
+  },
+  {
     slug: "weather",
     title: "GTA 6 Weather: Rain, Storms and the Weather App",
     heading: "Weather",
@@ -4206,7 +4322,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "What stats are in GTA 6?", answer: "Health, stamina and Focus. Check them in the Fitness app. Jason and Lucia each have their own levels." },
       { question: "How do you increase health and stamina in GTA 6?", answer: "Train. Strength work raises health, and cardio raises stamina. Food and drinks only help for a short time. The Fitness app and the workout guide cover the windows." },
     ],
-    related: [L.workout, L.focus, L.heal, L.basketball, L.finalFlush],
+    related: [L.workout, L.focus, L.heal, L.basketball, L.finalFlush, L.alienBase, L.hellspawn],
   },
 
   {
