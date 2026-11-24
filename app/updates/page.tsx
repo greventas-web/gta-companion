@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PageShell from "@/components/PageShell";
+import ProBadge from "@/components/pro/ProBadge";
 import MilestoneList from "@/components/updates/MilestoneList";
 import { pageMetadata } from "@/lib/launch";
 import { IMAGE_CREDIT, SOCIAL_PROFILES, UNOFFICIAL_DISCLAIMER } from "@/lib/site";
@@ -23,15 +24,6 @@ export const metadata: Metadata = {
 };
 
 const discord = SOCIAL_PROFILES.find((profile) => profile.id === "discord");
-
-function ProBadge() {
-  return (
-    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-100/80 bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 px-3.5 py-1.5 text-[11px] font-black tracking-[0.22em] text-amber-950 shadow-[0_10px_28px_rgba(251,191,36,0.28)]">
-      <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-amber-900" />
-      PRO
-    </span>
-  );
-}
 
 export default function UpdatesPage() {
   return (
@@ -98,7 +90,7 @@ export default function UpdatesPage() {
               </span>
               {item.id === "badge" ? (
                 <div className="mt-6">
-                  <ProBadge />
+                  <ProBadge size="md" />
                 </div>
               ) : null}
               <h3 className="mt-5 text-2xl font-black tracking-[-0.03em]">{item.title}</h3>

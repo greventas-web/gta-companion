@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Check, Cloud, EyeOff, Infinity as InfinityIcon, LocateFixed, Lock, Percent } from "lucide-react";
 
-import ProBadge, { proGoldFill } from "@/components/pro/ProBadge";
+import ProBadge, { proBrandFill } from "@/components/pro/ProBadge";
 import { authHeader, useProStatus } from "@/lib/pro/client";
 import {
   BASIC_MARK_LIMIT,
@@ -267,7 +267,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
                     aria-checked={selected}
                     onClick={() => chooseCurrency(code)}
                     className={`rounded-full px-3.5 py-1.5 text-xs font-black tracking-wide transition ${
-                      selected ? proGoldFill : "text-zinc-400 hover:text-white"
+                      selected ? proBrandFill : "text-zinc-400 hover:text-white"
                     }`}
                   >
                     {PRO_PRICES[code].name}
@@ -282,7 +282,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           {loading ? (
             <span className="h-11 w-52 animate-pulse rounded-full bg-white/5" />
           ) : pro ? (
-            <span className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-black ${proGoldFill}`}>
+            <span className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-black ${proBrandFill}`}>
               <Check size={16} /> Pro active
             </span>
           ) : ready && user ? (
@@ -290,7 +290,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
               type="button"
               onClick={startCheckout}
               disabled={busy || !waiver}
-              className={`rounded-full px-5 py-2.5 text-sm font-black transition disabled:opacity-50 ${proGoldFill}`}
+              className={`rounded-full px-5 py-2.5 text-sm font-black transition disabled:opacity-50 ${proBrandFill}`}
             >
               {busy ? "Opening checkout…" : `Continue to checkout · ${price.label}`}
             </button>
@@ -353,7 +353,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
           {PAYMENT_STEPS.map((step, index) => (
             <li key={step.title} className="flex gap-4">
               <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${proGoldFill}`}
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${proBrandFill}`}
               >
                 {index + 1}
               </span>

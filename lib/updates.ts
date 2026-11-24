@@ -61,9 +61,9 @@ export const comingSoon: readonly ComingSoonItem[] = [
   },
   {
     id: "badge",
-    title: "Gold PRO badge",
+    title: "Pro star seal",
     status: "Planned",
-    body: "Pro members will wear a gold PRO badge beside their name.",
+    body: "Pro members get a star seal beside their name.",
   },
 ];
 
