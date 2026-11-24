@@ -219,7 +219,7 @@ const brands: ExtraEntry[] = [
   chain("Alpha Sports", "Sportswear", "Downtown, Ocean Beach and Waning Sands"),
   chain("Endzone", "Sportswear", "Downtown, Ocean Beach and Washington Beach"),
   { ...chain("Eris", "Sportswear", "Vice-Dale County"), image: "/images/footage/brands/eris.webp" },
-  { ...chain("Nola", "Formal", "Capri, Peacock Bay, Ocean Beach and Decor District"), image: "/images/footage/brands/nola.webp", imageAlt: "The Nola shopfront in Bounty Plaza Mall, Peacock Bay, with NOLA over the door and a mannequin in a tiger-print dress in the window" },
+  chain("Nola", "Formal", "Capri, Peacock Bay, Ocean Beach and Decor District"),
   chain("Ferruccio Tucci", "Formal", "Capri, Ocean Beach, Decor District and Waning Sands"),
   { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", image: "/images/footage/brands/ammu-nation.webp", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
   { slug: "pay-n-spray", name: "Pay 'n' Spray", group: "Store chains", meta: "19 shops", summary: "The repaint chain. Lose the cops or sell older cars.", links: [{ href: "/where-to-find/pay-n-spray", label: "All 19 shops" }] },
