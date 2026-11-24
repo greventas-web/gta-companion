@@ -49,7 +49,13 @@ const delights: PlaceImage = {
   alt: "The Delights Cabaret sign at night, with neon Girls signs and a marquee",
 };
 
+const uncleJacksBayside: PlaceImage = {
+  src: `${F}/places/uncle-jacks-liquor-bayside.webp`,
+  alt: "Uncle Jack's Liquor in Bayside, with LIQUOR STORE over the windows and a Jack's Got Your Back poster by the door",
+};
+
 const PLACE_IMAGES: Record<string, PlaceImage> = {
+  "/where-to-find/liquor-stores/uncle-jacks-liquor-bayside": uncleJacksBayside,
   "/where-to-find/gun-stores": bigShots,
   "/where-to-find/gun-stores/chucks-tackle-and-shot": chucks,
   "/where-to-find/gun-stores/big-shots": bigShots,
