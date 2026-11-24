@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Check, Cloud, EyeOff, Infinity as InfinityIcon, LocateFixed, Lock, Percent } from "lucide-react";
 
 import ProBadge, { proGoldFill } from "@/components/pro/ProBadge";
+import SellerDetails from "@/components/pro/SellerDetails";
 import { authHeader, useProStatus } from "@/lib/pro/client";
 import {
   BASIC_MARK_LIMIT,
@@ -17,7 +18,6 @@ import {
   PRO_CURRENCY_STORAGE_KEY,
   PRO_NAME,
   PRO_PRICES,
-  PRO_SELLER,
   PROGRESS_SECTIONS,
   SYNC_EVENT,
   type ProCurrency,
@@ -345,10 +345,7 @@ export default function ProPanel({ sections }: { sections: SectionTotals }) {
 
       <section id="payment" className="rounded-[28px] border border-white/5 bg-[#08080A] p-6 sm:p-8">
         <h2 className="text-xl font-black tracking-tight sm:text-2xl">How payment works</h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-400">
-          Sold by {PRO_SELLER.name} ({PRO_SELLER.country}). Company code {PRO_SELLER.companyCode}. Registered
-          address {PRO_SELLER.address}.
-        </p>
+        <SellerDetails className="mt-4 max-w-3xl" />
         <ol className="mt-6 space-y-4">
           {PAYMENT_STEPS.map((step, index) => (
             <li key={step.title} className="flex gap-4">
