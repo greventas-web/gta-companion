@@ -118,6 +118,8 @@ export default function Navbar() {
 
             <NavLink href="/timeline">Timeline</NavLink>
 
+            <NavLink href="/community">Community</NavLink>
+
             <NavLink href="/about">About</NavLink>
 
           </nav>
@@ -285,6 +287,7 @@ export default function Navbar() {
               {[
                 { title: "Home", href: "/" },
                 { title: "Launch", href: "/gta-6-launch" },
+                { title: "Community", href: "/community" },
                 { title: "About", href: "/about" },
                 ...exploreLinks,
               ]
