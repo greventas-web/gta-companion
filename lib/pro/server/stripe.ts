@@ -1,4 +1,5 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { TERMS_ACCEPTANCE_MESSAGE, termsOfServiceAccepted } from "@/lib/pro/consent";
 import { PRO_NAME, PRO_PRICES, type ProCurrency } from "@/lib/pro/config";
 
 /**
@@ -65,6 +66,8 @@ async function stripe<T>(method: "GET" | "POST", pathName: string, params?: URLS
   return body;
 }
 
+export { TERMS_ACCEPTANCE_MESSAGE, termsOfServiceAccepted };
+
 export type CheckoutSession = {
   id: string;
   url: string | null;
@@ -78,6 +81,7 @@ export type CheckoutSession = {
   currency: string | null;
   livemode: boolean;
   metadata?: Record<string, string> | null;
+  consent?: { terms_of_service?: "accepted" | null } | null;
 };
 
 export async function createCheckoutSession(input: {
@@ -85,12 +89,7 @@ export async function createCheckoutSession(input: {
   email: string | null;
   origin: string;
   currency: ProCurrency;
-  /** Buyer asked for immediate delivery and accepted the withdrawal waiver. */
-  withdrawalWaiver: boolean;
 }): Promise<CheckoutSession> {
-  if (!input.withdrawalWaiver) {
-    throw new Error("Immediate-delivery consent is required.");
-  }
   const price = PRO_PRICES[input.currency];
   const params = new URLSearchParams();
   params.set("mode", "payment");
@@ -111,11 +110,11 @@ export async function createCheckoutSession(input: {
   params.set("metadata[uid]", input.uid);
   params.set("metadata[product]", PRO_PRODUCT_TAG);
   params.set("metadata[currency]", price.code);
-  params.set("metadata[withdrawal_waiver]", "immediate-digital-delivery");
   params.set("payment_intent_data[metadata][uid]", input.uid);
   params.set("payment_intent_data[metadata][product]", PRO_PRODUCT_TAG);
   params.set("payment_intent_data[metadata][currency]", price.code);
-  params.set("payment_intent_data[metadata][withdrawal_waiver]", "immediate-digital-delivery");
+  params.set("consent_collection[terms_of_service]", "required");
+  params.set("custom_text[terms_of_service_acceptance][message]", TERMS_ACCEPTANCE_MESSAGE);
   if (input.email) {
     params.set("customer_email", input.email);
     params.set("payment_intent_data[receipt_email]", input.email);
@@ -140,9 +139,10 @@ export async function retrievePaymentIntentUid(id: string): Promise<string | nul
   return intent.metadata?.product === PRO_PRODUCT_TAG ? intent.metadata.uid ?? null : null;
 }
 
-/** True when this paid session is for Pro and belongs to uid. */
+/** True when this paid session accepted the terms checkbox, is for Pro, and belongs to uid. */
 export function sessionGrantsPro(session: CheckoutSession, uid?: string): boolean {
   if (session.payment_status !== "paid") return false;
+  if (!termsOfServiceAccepted(session)) return false;
   if (session.metadata?.product !== PRO_PRODUCT_TAG) return false;
   const owner = session.client_reference_id || session.metadata?.uid;
   if (!owner) return false;
