@@ -8,7 +8,7 @@ import { useId, type ReactNode } from "react";
  *
  * `proBrandFill` is the pink-to-violet accent with white text. The stops are
  * dark enough for that white text on the site's black background.
- * `proBrandEdge` is the same family as a border, for the header pill.
+ * The member seal is a scalloped badge in that same gradient.
  */
 
 export const proBrandFill =
@@ -44,15 +44,39 @@ export function ProPill({
 
 type Props = {
   className?: string;
-  /** sm is 14px beside a name. md is 16px. */
+  /** sm is 18px beside a name. md is the larger seal on the Pro page. */
   size?: "sm" | "md";
 };
 
+const CORE = 6.9;
+const ORBIT = 6.7;
+const BUMP = 3.85;
+const LOBES = 8;
+
+const SCALLOPS = Array.from({ length: LOBES }, (_, index) => {
+  const angle = -Math.PI / 2 + (index * 2 * Math.PI) / LOBES;
+  return {
+    cx: 12 + Math.cos(angle) * ORBIT,
+    cy: 12 + Math.sin(angle) * ORBIT,
+  };
+});
+
 const STAR =
-  "M12 1.7l2.55 5.55 6.05.7-4.5 4.15 1.25 6.05L12 15.35 6.65 18.15l1.25-6.05L3.4 7.95l6.05-.7L12 1.7z";
+  "M12 8.35l1.05 2.15 2.36.28-1.75 1.6.48 2.32L12 13.6l-2.14 1.1.48-2.32-1.75-1.6 2.36-.28L12 8.35z";
+
+function Seal({ fill }: { fill: string }) {
+  return (
+    <g fill={fill}>
+      <circle cx="12" cy="12" r={CORE} />
+      {SCALLOPS.map((bump) => (
+        <circle key={`${bump.cx}-${bump.cy}`} cx={bump.cx} cy={bump.cy} r={BUMP} />
+      ))}
+    </g>
+  );
+}
 
 export default function ProBadge({ className = "", size = "sm" }: Props) {
-  const px = size === "md" ? 16 : 14;
+  const px = size === "md" ? 28 : 18;
   const gradientId = useId().replace(/:/g, "");
 
   return (
@@ -62,15 +86,25 @@ export default function ProBadge({ className = "", size = "sm" }: Props) {
       title="GTA Companion Pro member"
       className={`inline-flex shrink-0 items-center justify-center ${className}`}
     >
-      <svg width={px} height={px} viewBox="0 0 24 24" aria-hidden="true" className="block">
+      <svg
+        width={px}
+        height={px}
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className="block drop-shadow-[0_0_2px_rgba(244,114,182,0.9)]"
+      >
         <defs>
-          <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id={gradientId} gradientUnits="userSpaceOnUse" x1="1" y1="1" x2="23" y2="23">
             <stop offset="0%" stopColor="#f472b6" />
-            <stop offset="48%" stopColor="#e879f9" />
-            <stop offset="100%" stopColor="#8b5cf6" />
+            <stop offset="46%" stopColor="#e879f9" />
+            <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
         </defs>
-        <path d={STAR} fill={`url(#${gradientId})`} />
+        <g transform="translate(12 12) scale(1.08) translate(-12 -12)">
+          <Seal fill="rgba(255,255,255,0.82)" />
+        </g>
+        <Seal fill={`url(#${gradientId})`} />
+        <path d={STAR} fill="#fff" />
       </svg>
     </span>
   );
@@ -86,7 +120,7 @@ export function ProName({
   className?: string;
 }) {
   return (
-    <span className={`inline-flex min-w-0 items-center gap-1.5 ${className}`}>
+    <span className={`inline-flex min-w-0 items-center gap-1 ${className}`}>
       <span className="truncate">{name}</span>
       {pro ? <ProBadge /> : null}
     </span>
