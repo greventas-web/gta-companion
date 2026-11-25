@@ -61,6 +61,14 @@ export const partners: readonly Partner[] = [
     category: "Creator",
     rel: ["noopener", "noreferrer"],
   },
+  {
+    name: "Juniorsky",
+    url: "https://www.youtube.com/@Juniorsky2",
+    description: "Polish GTA 6 gameplay videos from Juniorsky on YouTube.",
+    category: "Creator",
+    rel: ["noopener", "noreferrer"],
+    links: [{ label: "Website", url: "https://www.juniorsky.pl" }],
+  },
 ];
 
 export function partnerHref(url: string): string | null {
