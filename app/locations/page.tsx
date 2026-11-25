@@ -49,7 +49,7 @@ export default function LocationsPage() {
         </CardGrid>
       ))}
       <ExtraGrids category="locations" />
-      <QuickGuideGrid guides={quickGuideCards(["where-is-it-based", "unlock-map", "minimap", "weather", "bigfoot", "ufo", "easter-eggs", "kraken", "backrooms", "hyde-island", "marbelle-hotel", "ghost-ship", "jet-ski-dog", "freddie-gibbs", "dexter-apartment", "crab-lab", "missing-tourists", "military-base", "public-transport", "meditation"])} />
+      <QuickGuideGrid guides={quickGuideCards(["where-is-it-based", "unlock-map", "minimap", "weather", "bigfoot", "ufo", "alien-base", "tommy-vercetti-shirt", "hellspawn-shotgun", "easter-eggs", "kraken", "backrooms", "hyde-island", "marbelle-hotel", "ghost-ship", "jet-ski-dog", "freddie-gibbs", "dexter-apartment", "crab-lab", "missing-tourists", "military-base", "public-transport", "meditation"])} />
     </PageShell>
   );
 }
