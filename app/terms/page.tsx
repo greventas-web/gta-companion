@@ -87,14 +87,16 @@ export default function TermsPage() {
                     it is not a Rockstar Games or Take-Two product.
                   </p>
                   <p>
-                    The seller is MB GL Transportation, a company in Lithuania.
-                    Company code: [company code]. Registered address:
-                    [registered address]. The price is shown on the Pro page
-                    before you pay: €4.99, $4.99, or £4.49, depending on the
-                    currency you select.
+                    The price is shown on the Pro page before you pay: €4.99,
+                    $4.99, or £4.49, depending on the currency you select.
+                    Seller details are available on request at{" "}
+                    <a href="mailto:contact@gta-companion.com" className="text-pink-400 hover:text-pink-300">
+                      contact@gta-companion.com
+                    </a>
+                    .
                   </p>
                   <p>
-                    Checkout is not open yet. When it opens, you sign in,
+                    You sign in,
                     confirm that you want immediate delivery, and pay once
                     through Stripe Checkout. Stripe processes the payment and
                     emails the receipt. We do not receive or store your card
@@ -110,8 +112,7 @@ export default function TermsPage() {
                     <a href="/refunds" className="text-pink-400 hover:text-pink-300">
                       Refunds
                     </a>{" "}
-                    page. This section is a draft until the company code and
-                    address above are filled in.
+                    page.
                   </p>
                 </div>
 

@@ -1,12 +1,11 @@
 import PageTitle from "@/components/PageTitle";
 import { pageMetadata } from "@/lib/launch";
-import { PRO_NAME, PRO_SELLER } from "@/lib/pro/config";
-import { SITE } from "@/lib/site";
+import { PRO_NAME } from "@/lib/pro/config";
 import { Badge, Card, Container, Section } from "@/components/ui";
 
 export const metadata = pageMetadata(
   "Refunds",
-  `Draft refunds and withdrawal terms for ${PRO_NAME}. Seller: ${PRO_SELLER.name}, ${PRO_SELLER.country}. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
+  `Refunds and withdrawal terms for ${PRO_NAME}. Seller details are available on request at contact@gta-companion.com. Unofficial fan site, not affiliated with Rockstar Games or Take-Two.`
 );
 
 export default function RefundsPage() {
@@ -14,33 +13,24 @@ export default function RefundsPage() {
     <main className="min-h-screen bg-background text-white">
       <Section>
         <Container>
-          <Badge>Legal · Draft</Badge>
+          <Badge>Legal</Badge>
 
           <PageTitle
             title="Refunds"
-            description="Draft withdrawal terms for GTA Companion Pro. Company code and address are still placeholders."
+            description="Withdrawal terms for GTA Companion Pro."
           />
 
           <Card className="mt-16 rounded-[40px] border-zinc-800 bg-zinc-900 p-6 sm:p-12">
             <div className="space-y-10">
-              <div className="rounded-3xl border border-amber-400/30 bg-amber-500/10 p-5 text-amber-100">
-                <p className="text-sm font-bold uppercase tracking-[0.18em]">Draft</p>
-                <p className="mt-2 text-base leading-7 text-amber-50/90">
-                  This page is not the final legal text. Checkout is not open. Replace the company code and registered
-                  address before any payment is taken.
-                </p>
-              </div>
-
               <div>
                 <h2 className="text-2xl font-black sm:text-3xl">Seller</h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  {PRO_NAME} is sold by {PRO_SELLER.name}, a company in {PRO_SELLER.country}. Company code:{" "}
-                  {PRO_SELLER.companyCode}. Registered address: {PRO_SELLER.address}. Questions about a purchase can be
-                  sent to{" "}
-                  <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
-                    {SITE.email}
+                  Seller details are available on request at{" "}
+                  <a href="mailto:contact@gta-companion.com" className="text-pink-400 hover:text-pink-300">
+                    contact@gta-companion.com
                   </a>
-                  . GTA Companion is an unofficial fan site, not affiliated with Rockstar Games or Take-Two.
+                  . Orders and refunds use that address. GTA Companion is an unofficial fan site, not affiliated with
+                  Rockstar Games or Take-Two.
                 </p>
               </div>
 
@@ -59,8 +49,8 @@ export default function RefundsPage() {
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
                   If you are a consumer in the European Union, a distance contract for digital content normally gives
                   you 14 days to withdraw, without giving a reason. To withdraw before delivery has started, email{" "}
-                  <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
-                    {SITE.email}
+                  <a href="mailto:contact@gta-companion.com" className="text-pink-400 hover:text-pink-300">
+                    contact@gta-companion.com
                   </a>{" "}
                   with the account email and the date of the payment. We will refund the payment through Stripe to the
                   original payment method.
@@ -87,8 +77,8 @@ export default function RefundsPage() {
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
                   The withdrawal waiver does not remove statutory rights where the digital content is faulty or not as
                   described. Email{" "}
-                  <a href={`mailto:${SITE.email}`} className="text-pink-400 hover:text-pink-300">
-                    {SITE.email}
+                  <a href="mailto:contact@gta-companion.com" className="text-pink-400 hover:text-pink-300">
+                    contact@gta-companion.com
                   </a>{" "}
                   and we will look at a repair, a replacement of access, or a refund. A full refund through Stripe also
                   removes Pro from the account.
@@ -98,8 +88,7 @@ export default function RefundsPage() {
               <div>
                 <h2 className="text-2xl font-black sm:text-3xl">Checkout status</h2>
                 <p className="mt-4 text-lg leading-8 text-zinc-400">
-                  Checkout opening soon. Until it opens, {PRO_NAME} cannot be bought on this site and these terms do
-                  not apply to a payment we have not taken. See also the{" "}
+                  Sign in on the Pro page to pay. These terms apply once a payment is taken. See also the{" "}
                   <a href="/terms" className="text-pink-400 hover:text-pink-300">
                     Terms of Use
                   </a>{" "}

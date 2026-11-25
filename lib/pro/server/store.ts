@@ -25,6 +25,8 @@ export type Entitlement = {
   amountTotal?: number;
   currency?: string;
   livemode?: boolean;
+  /** Set when Stripe Checkout reports consent.terms_of_service === "accepted". */
+  termsOfService?: "accepted";
   grantedAt: string;
   revokedAt?: string;
 };
@@ -144,6 +146,27 @@ export async function revokePro(uid: string, paymentIntent?: string): Promise<vo
 export async function readProgress(uid: string): Promise<Marks> {
   const file = await readJson<ProgressFile>(`progress/${safeUid(uid)}.json`);
   return file?.marks && typeof file.marks === "object" ? file.marks : {};
+}
+
+export type WaitlistSignup = { email: string; createdAt: string };
+
+type WaitlistFile = { signups: WaitlistSignup[] };
+
+const WAITLIST_KEY = "waitlist.json";
+
+export async function addWaitlistSignup(email: string): Promise<"added" | "exists"> {
+  const file = (await readJson<WaitlistFile>(WAITLIST_KEY)) ?? { signups: [] };
+  const signups = Array.isArray(file.signups) ? file.signups : [];
+  if (signups.some((row) => row.email === email)) return "exists";
+  signups.push({ email, createdAt: new Date().toISOString() });
+  await writeJson(WAITLIST_KEY, { signups });
+  return "added";
+}
+
+export async function listWaitlist(): Promise<WaitlistSignup[]> {
+  const file = await readJson<WaitlistFile>(WAITLIST_KEY);
+  const signups = Array.isArray(file?.signups) ? file.signups : [];
+  return signups.filter((row) => typeof row?.email === "string" && typeof row.createdAt === "string");
 }
 
 /** Merge a device's marks into the cloud copy and return the result. */

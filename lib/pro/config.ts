@@ -30,14 +30,6 @@ export const PRO_PRICE_LABEL = PRO_PRICES.eur.label;
 /** Last currency the buyer picked on this device. */
 export const PRO_CURRENCY_STORAGE_KEY = "gta-companion-pro-currency";
 
-/** Seller on the draft legal pages. Company code and address are placeholders. */
-export const PRO_SELLER = {
-  name: "MB GL Transportation",
-  country: "Lithuania",
-  companyCode: "[company code]",
-  address: "[registered address]",
-} as const;
-
 const USD_REGIONS = new Set(["US", "PR", "GU", "AS", "VI", "MP"]);
 const GBP_REGIONS = new Set(["GB", "GG", "IM", "JE"]);
 const EUR_REGIONS = new Set([
