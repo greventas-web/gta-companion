@@ -14,6 +14,7 @@ import { ghostShipSources, jetSkiDogSources, marbelleHotelSources, murals1010Sou
 import { blackEagleSources, freddieGibbsSources, garageCodesSources, laPerleGarageSources, patchNotesSources, vamosSources } from "@/src/data/launch/batch14-sources";
 import { halifaxSources, infernusSources, jasonsStashSources, randyWishListSources } from "@/src/data/launch/batch15-sources";
 import { alienBaseSources, hellspawnSources, vercettiSources } from "@/src/data/launch/batch16-sources";
+import { discoveredStylesSources, droneSources, partyHouseSources, redAppleOrchardSources, safeCodesExtraSources } from "@/src/data/launch/batch17-sources";
 
 export type QuickGuideLink = {
   href: string;
@@ -396,6 +397,12 @@ const L = {
   alienBase: { href: "/guides/alien-base", title: "Alien base", line: "UFO part 2: South Point Airfield", kind: "activity" },
   grassriversMap: { href: "/map?pin=confirmed%3Agrassrivers", title: "Grassrivers on the map", kind: "location" },
   charactersHub: { href: "/characters", title: "Characters", image: JASON_AND_LUCIA, imageAlt: "Jason and Lucia, official Rockstar artwork", kind: "character" },
+  // Batch 17
+  partyHouseGarage: { href: "/guides/party-house-garage", title: "Party house garage code", line: "092319, Spiderweb Coquette", kind: "vehicle" },
+  redAppleOrchard: { href: "/guides/red-apple-orchard", title: "Red Apple Orchard garage", line: "360782, Applesauce Bobcat", kind: "vehicle" },
+  discoveredStyles: { href: "/guides/discovered-styles", title: "Discovered styles", line: "Scan magazines with WAiNK", kind: "clothing" },
+  drone: { href: "/guides/drone", title: "How to get a drone", line: "Top Fun time trials", kind: "activity" },
+  topFunHub: { href: "/collectibles/top-fun-drone-races", title: "Top Fun drone races", line: "All 14 locations", kind: "activity" },
 } satisfies Record<string, QuickGuideLink>;
 
 export const quickGuides: QuickGuide[] = [
@@ -1760,7 +1767,7 @@ export const quickGuides: QuickGuide[] = [
     heading: "Haircut and appearance",
     description:
       "How to get a haircut in GTA 6: visit a hair and beauty salon on the map. You can change hair, Jason's facial hair and Lucia's makeup. Unofficial.",
-    keywords: ["GTA 6 how to get a haircut", "GTA 6 how to change appearance", "GTA 6 barber", "GTA 6 hair salon", "GTA 6 facial hair", "GTA 6 tattoos"],
+    keywords: ["GTA 6 how to get a haircut", "GTA 6 how to change appearance", "GTA 6 barber", "GTA 6 hair salon", "GTA 6 facial hair", "GTA 6 tattoos", "GTA 6 unlock hairstyles", "GTA 6 magazine styles"],
     image: SARAS_SALON,
     imageAlt: "Jason with a new mullet at Sara's Unisex Salon (official Rockstar image)",
     kind: "clothing",
@@ -1768,6 +1775,7 @@ export const quickGuides: QuickGuide[] = [
       "Open the map, go to the Style legend and pick Hair and Beauty. Salons use an orange scissors icon. There are 18, including 4 barber shops.",
       "Any of those shops can change your hairstyle. Jason can change facial hair, and Lucia can change makeup.",
       "A new haircut can help clear a police description, but a hat, glasses or a mask is faster mid-chase. Tattoo shops are listed under Style too.",
+      "You can also unlock extra hairstyles and, for Lucia, makeup by scanning special magazines with WAiNK; those looks then appear at salons. See the discovered styles guide.",
     ],
     facts: [
       { label: "Salons", value: "18, including 4 barbers" },
@@ -1777,8 +1785,9 @@ export const quickGuides: QuickGuide[] = [
     faqs: [
       { question: "Where do you get a haircut in GTA 6?", answer: "At any of the 18 hair and beauty salons, marked with a scissors icon. Open the map, go to Style, and pick Hair and Beauty." },
       { question: "Does a haircut help you lose the cops in GTA 6?", answer: "Yes, a new hairstyle can clear a physical description, but changing a hat, glasses or outfit is faster if you are still in a chase." },
+      { question: "How do you unlock more hairstyles in GTA 6?", answer: "Scan style magazines with WAiNK. The new looks then appear at hair and beauty salons. These magazines are separate from the ones you pick up and read." },
     ],
-    related: [L.hairSalons, L.clothes, L.mask, L.loseWanted],
+    related: [L.hairSalons, L.clothes, L.mask, L.loseWanted, L.discoveredStyles, L.wainkScans, L.tattoos],
   },
   {
     slug: "skip-time",
@@ -2533,11 +2542,12 @@ export const quickGuides: QuickGuide[] = [
     heading: "WAiNK scans",
     description:
       "How to scan with WAiNK in GTA 6: hold Up on the D-pad to open the camera, then scan the animal, plant or object. 100 scans unlock a trophy. Unofficial.",
-    keywords: ["GTA 6 WAiNK", "GTA 6 how to scan", "GTA 6 WAiNK scans", "GTA 6 scan animals", "GTA 6 wildlife camera"],
+    keywords: ["GTA 6 WAiNK", "GTA 6 how to scan", "GTA 6 WAiNK scans", "GTA 6 scan animals", "GTA 6 wildlife camera", "GTA 6 WAiNK magazine", "GTA 6 discovered styles"],
     kind: "phone",
     answer: [
       "Hold Up on the D-pad to open the WAiNK camera, then scan the animal, plant or object in front of you.",
       "You need 100 WAiNK locations for a trophy: landmarks, sculptures, curiosities and No Flusher tags. Track them under Progress > Collections > WAiNK Locations.",
+      "Some WAiNK prompts are style magazines. Scanning those unlocks hairstyles and makeup under Discovered Styles; that is a separate collection from the 100 WAiNK locations.",
     ],
     facts: [
       { label: "Open camera", value: "Hold D-pad Up" },
@@ -2546,8 +2556,9 @@ export const quickGuides: QuickGuide[] = [
     faqs: [
       { question: "How do you scan with WAiNK in GTA 6?", answer: "Hold Up on the D-pad to open the camera, then scan the animal, plant or object in front of you." },
       { question: "How many WAiNK scans do you need in GTA 6?", answer: "100 WAiNK locations unlock a trophy. Track them under Progress > Collections > WAiNK Locations." },
+      { question: "Can WAiNK unlock hairstyles in GTA 6?", answer: "Yes. Scan style magazines with the WAiNK camera to unlock looks under Discovered Styles. That is separate from the 100 WAiNK locations trophy." },
     ],
-    related: [L.wainkLocations, L.waink, L.murals1010, L.usePhone, L.collectiblesHub, L.trophiesGuide, L.wymanCars, L.finalFlush],
+    related: [L.wainkLocations, L.waink, L.murals1010, L.usePhone, L.collectiblesHub, L.trophiesGuide, L.wymanCars, L.finalFlush, L.discoveredStyles, L.haircut],
   },
   {
     slug: "horn",
@@ -3248,6 +3259,7 @@ export const quickGuides: QuickGuide[] = [
       "All three codes are on one map of Port Gellhorn in the Brooks Boatworks office. Slip in through the hole in the fence, climb the outside stairs of the small grey building on the east side and inspect the wall map with L2 or LT. The note by the bowling alley safe points you there.",
       "You don't have to find a clue first. Type a code you already know and the safe opens. Once you've read a clue, the game shows the code when you're at the safe.",
       "No code? Sticky bombs open most safes, but they bring the police. Bank vault codes are different in every game, so those come from the staff instead.",
+      "A few open-world safes also use fixed codes: 44017 in an abandoned trailer by Cottonmouth Lake (a Los Santos Pounders trading card), 62412 in the abandoned laundry in Belville, Ambrosia, and 9256 in the Leonida Carrier Warehouse in Balsero.",
     ],
     facts: [
       { label: "Kingpin Bowling", value: "0300 (Port Gellhorn)" },
@@ -3269,6 +3281,9 @@ export const quickGuides: QuickGuide[] = [
       { label: "La Perle garage", value: "92665 (Vanessa's Growler)" },
       { label: "Red Apple Orchard", value: "360782 (garage)" },
       { label: "Vamos garage", value: "2727 (Grayson, for Moses)" },
+      { label: "Cottonmouth Lake trailer", value: "44017 (Pounders card)" },
+      { label: "Belville laundry", value: "62412" },
+      { label: "Leonida Carrier Warehouse", value: "9256 (Balsero)" },
     ],
     faqs: [
       { question: "What is the Kingpin Bowling safe code in GTA 6?", answer: "0300. The clue is on the wall map in the Brooks Boatworks office, but you can type the code straight away." },
@@ -3278,11 +3293,12 @@ export const quickGuides: QuickGuide[] = [
       { question: "What is the JanJak's Garage safe code in GTA 6?", answer: "4444. It's on a note stuck to the fridge, and the safe holds around $2,200." },
       { question: "What is the Marbelle Hotel safe code in GTA 6?", answer: "955214. The safe is on the ground floor of the hotel in south Crosstown, and the code is on a note on the roof." },
       { question: "What is the Black Eagle safe code in GTA 6?", answer: "031462, and the office door is 789987. The warehouse is next to the Black Eagle gun store in Balsero, and the safe holds the unique Black Eagle Import Kalinga." },
-      { question: "What are the garage codes in GTA 6?", answer: "92665 in La Perle, 360782 at the Red Apple Orchard, 2727 for the Vamos in Grayson and 1010 at Southside Storage. See the garage codes guide for what's inside each." },
+      { question: "What are the garage codes in GTA 6?", answer: "92665 in La Perle, 360782 at the Red Apple Orchard, 092319 for the Key Lento party house (Spiderweb Coquette), 2727 for the Vamos in Grayson and 1010 at Southside Storage. See the garage codes guide for what's inside each." },
       { question: "Do you need to find the clue to open a safe in GTA 6?", answer: "No. Enter a code you already know and the safe opens. Without a code, sticky bombs work but draw the police." },
+      { question: "What is the Cottonmouth Lake trailer safe code in GTA 6?", answer: "44017. The abandoned trailer is by Cottonmouth Lake, and the safe holds a Los Santos Pounders trading card." },
     ],
-    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.marbelleHotel, L.murals1010, L.garageCodes, L.blackEagle, L.laPerleGarage, L.vamos, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons],
-    sources: safeCodesSources,
+    related: [L.gangHideouts, L.gangOps, L.portGellhornMap, L.laPerleMap, L.crabLab, L.marbelleHotel, L.murals1010, L.garageCodes, L.blackEagle, L.laPerleGarage, L.vamos, L.labFees, L.robStore, L.bankJobs, L.uniqueWeapons, L.partyHouseGarage, L.redAppleOrchard, L.collectibleCards],
+    sources: [...safeCodesSources, ...safeCodesExtraSources],
   },
   {
     slug: "unique-weapons",
@@ -3865,30 +3881,33 @@ export const quickGuides: QuickGuide[] = [
     title: "GTA 6 Garage Codes: Every Hidden Garage Code and the Car Inside",
     heading: "All garage codes",
     description:
-      "Every GTA 6 garage code found so far: La Perle 92665 (Vanessa's Growler), Vamos 2727, Red Apple Orchard 360782 (Applesauce Bobcat) and Southside Storage 1010. Unofficial.",
-    keywords: ["GTA 6 garage codes", "GTA 6 garage code", "GTA 6 hidden garage", "GTA 6 secret garage", "GTA 6 360782", "GTA 6 Applesauce Bobcat", "GTA 6 Red Apple Orchard garage", "GTA 6 92665", "GTA 6 2727"],
+      "Every GTA 6 garage code found so far: La Perle 92665 (Vanessa's Growler), Vamos 2727, Red Apple Orchard 360782 (Applesauce Bobcat), the Key Lento party house 092319 (Spiderweb Coquette) and Southside Storage 1010. Unofficial.",
+    keywords: ["GTA 6 garage codes", "GTA 6 garage code", "GTA 6 hidden garage", "GTA 6 secret garage", "GTA 6 360782", "GTA 6 Applesauce Bobcat", "GTA 6 Red Apple Orchard garage", "GTA 6 92665", "GTA 6 2727", "GTA 6 092319", "GTA 6 party house garage", "GTA 6 Spiderweb Coquette", "GTA 6 Father Scrumpy"],
     kind: "garage",
     answer: [
       "Garage codes are fixed, so they're the same in every game, unlike store and bank safes. You can type a code straight in without finding the clue first.",
       "92665, La Perle: the garage beside Auntie's Place on Del Rio Boulevard, from the laptop in your Chapter 3 apartment. Inside is Vanessa's Pfister Growler, and the garage becomes yours. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler.",
-      "360782, Farmer Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County: look for the giant apple on a truck by the road. The locked farm garage holds the Declasse Applesauce Bobcat, a customised '55 Bobcat pickup in red and white.",
+      "360782, Father Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County: look for the giant apple on a truck by the road. The locked farm garage holds the Declasse Applesauce Bobcat, a customised '55 Bobcat pickup in red and white. The clue is a ManlyGaze magazine in the loft of the big red barn: climb the blue tractor onto the roof and drop through the opening. Issue 36, dated July 1982, gives 360782.",
+      "092319, south-east Key Lento: the party house garage holds the Invetero Spiderweb Coquette, a unique classic Invetero with a spiderweb finish. You can reach it in Chapter 1.",
       "2727, Grayson: the garage with the Declasse Vamos that Moses asks for in Chapter 2. 1010, Southside Storage in Salton: the garage with the 1010 Cheetah, after you photograph the five 1010 Murals.",
     ],
     facts: [
       { label: "La Perle", value: "92665. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
-      { label: "Red Apple Orchard", value: "360782, Applesauce Bobcat" },
+      { label: "Red Apple Orchard", value: "360782, Applesauce Bobcat (ManlyGaze issue 36, July 1982)" },
+      { label: "Party house", value: "092319, Invetero Spiderweb Coquette (south-east Key Lento)" },
       { label: "Grayson", value: "2727, Declasse Vamos (for Moses)" },
       { label: "Southside Storage", value: "1010, 1010 Cheetah" },
       { label: "Same in every game?", value: "Yes" },
     ],
     faqs: [
-      { question: "What are the garage codes in GTA 6?", answer: "92665 for the La Perle garage (Vanessa's Growler), 360782 for the Red Apple Orchard garage (Applesauce Bobcat), 2727 for the Vamos garage in Grayson and 1010 for Southside Storage in Salton (1010 Cheetah)." },
+      { question: "What are the garage codes in GTA 6?", answer: "92665 for the La Perle garage (Vanessa's Growler), 360782 for the Red Apple Orchard garage (Applesauce Bobcat), 092319 for the Key Lento party house (Invetero Spiderweb Coquette), 2727 for the Vamos garage in Grayson and 1010 for Southside Storage in Salton (1010 Cheetah)." },
       { question: "What is the Red Apple Orchard garage code in GTA 6?", answer: "360782. The orchard is west of Manifest Canyon in Kelly County, and the garage holds the Declasse Applesauce Bobcat." },
-      { question: "Where is the Applesauce Bobcat in GTA 6?", answer: "In the locked garage at Farmer Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County. The code is 360782." },
+      { question: "Where is the Applesauce Bobcat in GTA 6?", answer: "In the locked garage at Father Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County. The code is 360782." },
       { question: "Are GTA 6 garage codes the same for everyone?", answer: "Yes. Garage codes are fixed. Only store, bank and jewelry safes change from game to game." },
+      { question: "What is the party house garage code in GTA 6?", answer: "092319. The house is in the south-east corner of Key Lento, and the garage holds the Invetero Spiderweb Coquette." },
     ],
-    related: [L.laPerleGarage, L.vamos, L.murals1010, L.safeCodes, L.garages, L.register, L.laPerleMap, L.saltonMap, L.fastFurious, L.vehiclesHub],
-    sources: garageCodesSources,
+    related: [L.laPerleGarage, L.vamos, L.murals1010, L.safeCodes, L.garages, L.register, L.laPerleMap, L.saltonMap, L.fastFurious, L.vehiclesHub, L.partyHouseGarage, L.redAppleOrchard],
+    sources: [...garageCodesSources, ...partyHouseSources, ...redAppleOrchardSources],
   },
   {
     slug: "freddie-gibbs",
@@ -4638,7 +4657,7 @@ export const quickGuides: QuickGuide[] = [
       { label: "Meditations", value: "15 of 18" },
       { label: "Cocaine Flamingos", value: "100" },
       { label: "Unique playlists", value: "2 of 2" },
-      { label: "Styles", value: "70" },
+      { label: "Discovered styles", value: "70 of 79" },
       { label: "Unique races won", value: "30" },
       { label: "Race challenge golds", value: "10 of 13" },
       { label: "Shooting range golds", value: "42 of 42" },
@@ -4671,6 +4690,10 @@ export const quickGuides: QuickGuide[] = [
         question: "How many Smash 'n' Grabs do you need for 100% in GTA 6?",
         answer: "34 of the 35 jewelry stores and pawn shops. Rob the back-room safe too or it may not count.",
       },
+      {
+        question: "How many discovered styles do you need for 100% in GTA 6?",
+        answer: "Any 70 of the 79. They include magazine styles you scan with WAiNK, magazine tattoos and luxury watches.",
+      },
     ],
     related: [
       { href: "/where-to-find/jewelry-stores-and-pawn-shops", title: "Jewelry stores and pawn shops", line: "34 of 35", kind: "money" },
@@ -4685,7 +4708,192 @@ export const quickGuides: QuickGuide[] = [
       { href: "/challenges", title: "Challenges", line: "70 of 80", kind: "challenge" },
       { href: "/collectibles", title: "Collectibles", kind: "collectible" },
       { href: "/pro", title: "Completion tracker", kind: "trophy" },
+      { href: "/guides/discovered-styles", title: "Discovered styles", line: "70 of 79", kind: "clothing" },
+      { href: "/guides/drone", title: "How to get a drone", line: "All 42 Top Fun trials", kind: "activity" },
+      { href: "/collectibles/top-fun-drone-races", title: "Top Fun drone races", line: "14 locations", kind: "activity" },
     ],
+  },
+  {
+    slug: "party-house-garage",
+    title: "GTA 6 Party House Garage Code (092319) and the Invetero Spiderweb Coquette",
+    heading: "Party house garage code",
+    description:
+      "The GTA 6 party house garage code in south-east Key Lento is 092319. Inside is the Invetero Spiderweb Coquette, a unique classic sports car. Unofficial.",
+    keywords: [
+      "GTA 6 party house garage",
+      "GTA 6 092319",
+      "GTA 6 Spiderweb Coquette",
+      "GTA 6 Key Lento garage code",
+      "GTA 6 Invetero Spiderweb Coquette",
+      "GTA 6 unique Coquette",
+    ],
+    kind: "vehicle",
+    answer: [
+      "The party house garage code is 092319. The house is in the south-east corner of Key Lento, in the Leonida Keys, and you can get there in Chapter 1.",
+      "Inside the house, a Los Santos Pounders Lionel Taber collectible card and a Pêche magazine confirm you're in the right place.",
+      "Enter 092319 on the keypad by the garage door. Inside is the Invetero Spiderweb Coquette, a unique classic Invetero with a spiderweb finish. Register it if you want to keep it as yours.",
+      "Garage codes are fixed, so 092319 is the same in every game. You can type it without finding a clue first.",
+    ],
+    facts: [
+      { label: "Garage code", value: "092319" },
+      { label: "Where", value: "South-east Key Lento" },
+      { label: "Reward", value: "Invetero Spiderweb Coquette" },
+      { label: "When", value: "Chapter 1" },
+      { label: "Same in every game?", value: "Yes" },
+    ],
+    faqs: [
+      {
+        question: "What is the party house garage code in GTA 6?",
+        answer: "092319. Enter it on the keypad by the garage of the party house in the south-east corner of Key Lento.",
+      },
+      {
+        question: "Where is the Invetero Spiderweb Coquette in GTA 6?",
+        answer: "In the locked garage of the party house in the south-east corner of Key Lento. The code is 092319.",
+      },
+      {
+        question: "Can you get the Spiderweb Coquette in Chapter 1 of GTA 6?",
+        answer: "Yes. The party house is in Key Lento, so you can reach it in Chapter 1.",
+      },
+    ],
+    related: [L.keyLento, L.garageCodes, L.redAppleOrchard, L.laPerleGarage, L.vamos, L.register, L.collectibleCards, L.vehiclesHub],
+    sources: partyHouseSources,
+  },
+  {
+    slug: "red-apple-orchard",
+    title: "GTA 6 Red Apple Orchard Garage Code (360782) and the Applesauce Bobcat",
+    heading: "Red Apple Orchard garage",
+    description:
+      "The GTA 6 Red Apple Orchard garage code is 360782. The ManlyGaze magazine clue in the barn loft and how to get the Declasse Applesauce Bobcat. Unofficial.",
+    keywords: [
+      "GTA 6 Red Apple Orchard garage",
+      "GTA 6 360782",
+      "GTA 6 Applesauce Bobcat",
+      "GTA 6 Father Scrumpy",
+      "GTA 6 ManlyGaze",
+      "GTA 6 orchard garage code",
+    ],
+    kind: "vehicle",
+    answer: [
+      "The Red Apple Orchard garage code is 360782. Father Scrumpy's Red Apple Orchard is west of Manifest Canyon in Kelly County; look for the giant apple on a truck by the road.",
+      "The clue is a ManlyGaze magazine in the loft of the big red barn. Climb the blue tractor onto the roof and drop through the opening. The cover is issue 36, dated July 1982: 36, 07 and 82 make 360782.",
+      "You can type the code without finding the magazine. The locked farm garage holds the Declasse Applesauce Bobcat, a customised '55 Bobcat pickup in red and white. Register it if you want to keep it.",
+    ],
+    facts: [
+      { label: "Garage code", value: "360782" },
+      { label: "Where", value: "West of Manifest Canyon, Kelly County" },
+      { label: "Landmark", value: "The giant apple on a truck" },
+      { label: "Clue", value: "ManlyGaze issue 36, July 1982, in the barn loft" },
+      { label: "Reward", value: "Declasse Applesauce Bobcat" },
+    ],
+    faqs: [
+      {
+        question: "What is the Red Apple Orchard garage code in GTA 6?",
+        answer: "360782. Father Scrumpy's orchard is west of Manifest Canyon in Kelly County, marked by a giant apple on a truck.",
+      },
+      {
+        question: "Where is the Applesauce Bobcat in GTA 6?",
+        answer: "In the locked farm garage at Father Scrumpy's Red Apple Orchard. The code is 360782.",
+      },
+      {
+        question: "Where is the Red Apple Orchard garage clue in GTA 6?",
+        answer: "A ManlyGaze magazine in the loft of the big red barn. Climb the blue tractor onto the roof and drop through the opening. Issue 36, dated July 1982, gives 360782.",
+      },
+    ],
+    related: [L.garageCodes, L.partyHouseGarage, L.laPerleGarage, L.vamos, L.register, L.portGellhornMap, L.vehiclesHub, L.wainkLocations],
+    sources: redAppleOrchardSources,
+  },
+  {
+    slug: "discovered-styles",
+    title: "GTA 6 Discovered Styles: Scan Magazines with WAiNK for Hair and Makeup",
+    heading: "Discovered styles",
+    description:
+      "How Discovered Styles work in GTA 6: scan special magazines with WAiNK to unlock hairstyles and makeup, pick up luxury watches, and get 70 of 79 for 100%. Unofficial.",
+    keywords: [
+      "GTA 6 discovered styles",
+      "GTA 6 magazine styles",
+      "GTA 6 WAiNK hairstyles",
+      "GTA 6 unlock makeup",
+      "GTA 6 luxury watches",
+      "GTA 6 scan magazine",
+      "GTA 6 new hairstyles",
+    ],
+    kind: "clothing",
+    answer: [
+      "Discovered Styles are extra looks for Jason and Lucia. The magazines that unlock them are not the readable magazines, books and comics on the collectibles list: you scan the cover with WAiNK instead of picking it up.",
+      "When you're close, WAiNK often prompts you. Hold Up on the D-pad to open the camera, then scan the cover with R1 or RB. That unlocks new hairstyles and, for Lucia, makeup, which then appear at salons. There are 13 magazine styles for Jason, 15 for Lucia, and 17 magazine tattoos.",
+      "Luxury watches also count. Pick them up when you see a gold icon; many are in gang hideouts. There are 34 watches.",
+      "There are 79 discovered styles in all. You need any 70 for 100%. Track them under Progress > Collections > Discovered Styles.",
+    ],
+    facts: [
+      { label: "Jason magazine styles", value: "13" },
+      { label: "Lucia magazine styles", value: "15" },
+      { label: "Magazine tattoos", value: "17" },
+      { label: "Luxury watches", value: "34" },
+      { label: "Total / for 100%", value: "79 / any 70" },
+      { label: "Track them", value: "Progress > Collections > Discovered Styles" },
+    ],
+    faqs: [
+      {
+        question: "How do you unlock new hairstyles in GTA 6?",
+        answer: "Scan style magazines with WAiNK (hold Up on the D-pad, then R1 or RB). The new looks then appear at hair and beauty salons. These magazines are separate from the ones you pick up and read.",
+      },
+      {
+        question: "How many discovered styles are in GTA 6?",
+        answer: "79: 13 magazine styles for Jason, 15 for Lucia, 17 magazine tattoos and 34 luxury watches. You need any 70 for 100%.",
+      },
+      {
+        question: "Do luxury watches count as discovered styles in GTA 6?",
+        answer: "Yes. Pick them up when you see a gold icon. Many are in gang hideouts.",
+      },
+    ],
+    related: [L.wainkScans, L.haircut, L.tattoos, L.hairSalons, L.magazines, L.waink, L.hundred, L.collectiblesHub, L.gangHideouts],
+    sources: discoveredStylesSources,
+  },
+  {
+    slug: "drone",
+    title: "GTA 6 How to Get a Drone and Complete Top Fun Time Trials",
+    heading: "How to get a drone",
+    description:
+      "How to get a drone in GTA 6: accept the Top Fun Drones post, pay $250 at the Watson Bay van, finish the three trials, then complete all 42 for 100%. Unofficial.",
+    keywords: [
+      "GTA 6 how to get a drone",
+      "GTA 6 unlock drone",
+      "GTA 6 Top Fun",
+      "GTA 6 drone races",
+      "GTA 6 drone time trials",
+      "GTA 6 Watson Bay drone",
+    ],
+    kind: "activity",
+    answer: [
+      "Open your phone and scroll the feed until you see a sponsored post from Top Fun Drones. Open it and accept the challenge. A marker appears in Watson Bay, next to Hamlet.",
+      "Go to the Top Fun Drones van and pay the $250 entry fee. These are time trials, not races against other drones. Finish all three Watson Bay courses to unlock the drone for open flying.",
+      "Once unlocked, the drone can fly up to 2,500 metres from a Top Fun van. It has no weapons.",
+      "There are 14 Top Fun spots and 42 time trials in all, and you need every one for 100%. At each spot, beat the par time in the first two trials to unlock the third; the third only needs a finish. Track them under Progress > Activities > Top Fun Drones, or open Map > Activities > Top Fun Drones.",
+    ],
+    facts: [
+      { label: "Starts", value: "Top Fun Drones post on your phone" },
+      { label: "First van", value: "Watson Bay, $250" },
+      { label: "Unlock flying", value: "Finish the three Watson Bay trials" },
+      { label: "Range", value: "2,500 metres from a Top Fun van" },
+      { label: "Locations / trials", value: "14 / 42" },
+      { label: "For 100%", value: "All 42" },
+    ],
+    faqs: [
+      {
+        question: "How do you get a drone in GTA 6?",
+        answer: "Open the sponsored Top Fun Drones post on your phone, go to the van in Watson Bay, pay $250, and finish all three time trials there. You can then fly the drone around, up to 2,500 metres from a Top Fun van.",
+      },
+      {
+        question: "How many Top Fun drone trials are in GTA 6?",
+        answer: "42 trials across 14 locations. You need all 42 for 100%. Beat the par time in the first two at each spot to unlock the third.",
+      },
+      {
+        question: "Does the GTA 6 drone have weapons?",
+        answer: "No. It has no weapons.",
+      },
+    ],
+    related: [L.topFunHub, L.usePhone, L.hundred, L.collectiblesHub, L.trophiesGuide, L.streetRaces, L.uniqueRaces],
+    sources: droneSources,
   },
 ];
 
