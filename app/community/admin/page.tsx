@@ -13,7 +13,7 @@ export default function CommunityAdminPage() {
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-violet-300">Unofficial</p>
         <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">Community review</h1>
         <p className="mt-3 max-w-xl text-sm leading-6 text-zinc-400">
-          Approve a post to show it on the community page. Pending posts and images stay hidden.
+          Remove a post, lock a thread, or ban an account. Reported items are listed first.
         </p>
         <div className="mt-8">
           <AdminQueue />

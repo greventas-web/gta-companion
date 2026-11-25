@@ -1,20 +1,29 @@
-import CommunityBoard from "@/components/community/CommunityBoard";
+import Feed from "@/components/community/Feed";
 import PageShell from "@/components/PageShell";
-import { loadFeedForUser } from "@/lib/community/feed";
+import { loadFeed } from "@/lib/community/present";
+import { communityStorageConfigured } from "@/lib/community/store";
 import { pageMetadata } from "@/lib/launch";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = pageMetadata(
   "Community",
-  "Unofficial GTA Companion community for tips, screenshots, and site feedback. Posts and images stay hidden until a moderator approves them. Not affiliated with Rockstar Games."
+  "Unofficial GTA Companion community. Read in public. Sign in to post. Not affiliated with Rockstar Games."
 );
 
 export default async function CommunityPage() {
-  const feed = await loadFeedForUser(null);
+  let posts: Awaited<ReturnType<typeof loadFeed>> = [];
+  let storageReady = communityStorageConfigured();
+  if (storageReady) {
+    try {
+      posts = await loadFeed({ sort: "hot", range: "day", flair: null, uid: null });
+    } catch {
+      storageReady = false;
+    }
+  }
   return (
     <PageShell>
-      <CommunityBoard initialPosts={feed.posts} storageReady={feed.storageReady} />
+      <Feed initialPosts={posts} storageReady={storageReady} />
     </PageShell>
   );
 }

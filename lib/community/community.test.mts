@@ -1,141 +1,123 @@
 import assert from "node:assert/strict";
+import { crc32 } from "node:zlib";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { after, test } from "node:test";
-import { imageIsPublic, toPublicPost } from "./feed";
-import {
-  addPost,
-  addReport,
-  communityRateKey,
-  deletePost,
-  listPosts,
-  readImageBytes,
-  setPostStatus,
-  type CommunityPost,
-} from "./store";
-import { detectImageType, parsePostFields, parseReportReason, publicName } from "./validate";
+import sharp from "sharp";
+import { ImageRejected, detectImageType, prepareCommunityImage } from "./images";
+import { moderateText } from "./moderate";
+import { hotRank } from "./rank";
+import { COMMUNITY_RULES } from "./types";
+import { createPost, readImageBytes, voteOnPost, type CommunityPost } from "./store";
 
 process.env.COMMUNITY_LOCAL_DIR = await mkdtemp(path.join(tmpdir(), "gta-community-"));
 delete process.env.MAP_READ_WRITE_TOKEN;
 delete process.env.VERCEL;
-
-const jpeg = Buffer.alloc(32, 0);
-jpeg[0] = 0xff;
-jpeg[1] = 0xd8;
-jpeg[2] = 0xff;
-
-const png = Buffer.from([
-  0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x00,
-]);
-
-function post(overrides: Partial<CommunityPost> = {}): CommunityPost {
-  return {
-    id: crypto.randomUUID(),
-    type: "screenshot",
-    status: "pending",
-    title: "Night drive",
-    body: "The shoreline looks different after the storm.",
-    authorUid: "seed-pro-mira",
-    authorName: "Mira",
-    image: null,
-    reports: [],
-    createdAt: new Date().toISOString(),
-    ...overrides,
-  };
-}
 
 after(async () => {
   const dir = process.env.COMMUNITY_LOCAL_DIR;
   if (dir) await rm(dir, { recursive: true, force: true });
 });
 
-test("titles, bodies, names, and reasons are bounded", () => {
-  assert.equal(parsePostFields({ type: "nope", title: "Hello there", body: "long enough body" }).ok, false);
-  const short = parsePostFields({ type: "tip", title: "Hi", body: "long enough body" });
-  assert.equal(short.ok, false);
-  const ok = parsePostFields({
-    type: "feedback",
-    title: "  Map pin feels off  ",
-    body: "The pin for the marina sits a block north.\n\n\nThanks.",
-  });
-  assert.equal(ok.ok, true);
-  if (ok.ok) {
-    assert.equal(ok.value.title, "Map pin feels off");
-    assert.equal(ok.value.body.includes("\n\n\n"), false);
-  }
-  assert.equal(publicName("  Mira Voss  "), "Mira Voss");
-  assert.equal(publicName("mira@example.com"), "mira");
-  assert.equal(publicName("   "), "Player");
-  assert.equal(parseReportReason("ok"), null);
-  assert.equal(parseReportReason("Spam post"), "Spam post");
+function pngChunk(type: string, data: Buffer): Buffer {
+  const length = Buffer.alloc(4);
+  length.writeUInt32BE(data.length);
+  const body = Buffer.concat([Buffer.from(type), data]);
+  const crc = Buffer.alloc(4);
+  crc.writeUInt32BE(crc32(body) >>> 0);
+  return Buffer.concat([length, body, crc]);
+}
+
+function pngWithSize(width: number, height: number): Buffer {
+  const ihdr = Buffer.alloc(13);
+  ihdr.writeUInt32BE(width, 0);
+  ihdr.writeUInt32BE(height, 4);
+  ihdr[8] = 8;
+  ihdr[9] = 2;
+  return Buffer.concat([
+    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+    pngChunk("IHDR", ihdr),
+    pngChunk("IEND", Buffer.alloc(0)),
+  ]);
+}
+
+test("community rules do not mention cheats or spoilers", () => {
+  const text = COMMUNITY_RULES.join(" ").toLowerCase();
+  assert.equal(text.includes("cheat"), false);
+  assert.equal(text.includes("spoiler"), false);
+  assert.equal(text.includes("piracy"), false);
+  assert.match(text, /respectful/);
+  assert.match(text, /gta/);
 });
 
-test("images are accepted only for jpeg, png, and webp within the size cap", () => {
-  assert.equal(detectImageType(jpeg), "image/jpeg");
-  assert.equal(detectImageType(png), "image/png");
-  const webp = Buffer.alloc(16, 0);
-  webp.set(Buffer.from("RIFF"), 0);
-  webp.set(Buffer.from("WEBP"), 8);
-  assert.equal(detectImageType(webp), "image/webp");
-  assert.equal(detectImageType(Buffer.from("<svg></svg><pad>")), null);
-  assert.equal(detectImageType(Buffer.alloc(3, 0xff)), null);
-  const huge = Buffer.alloc(4 * 1024 * 1024 + 1, 0);
-  huge[0] = 0xff;
-  huge[1] = 0xd8;
-  huge[2] = 0xff;
-  assert.equal(detectImageType(huge), null);
+test("language filter masks swears and blocks slurs", () => {
+  const masked = moderateText("this is shit");
+  assert.equal(masked.ok, true);
+  if (masked.ok) assert.equal(masked.text.includes("shit"), false);
+  const blocked = moderateText("you nigger");
+  assert.equal(blocked.ok, false);
 });
 
-test("pending posts and images stay hidden until approval", async () => {
-  assert.equal(imageIsPublic("pending"), false);
-  assert.equal(imageIsPublic("rejected"), false);
-  assert.equal(imageIsPublic("approved"), true);
+test("spoofed uploads are rejected from their bytes, not a filename", () => {
+  assert.equal(detectImageType(Buffer.from("<svg xmlns='http://www.w3.org/2000/svg'></svg>")), null);
+  assert.equal(detectImageType(Buffer.from("<!doctype html><html></html>")), null);
+  assert.equal(detectImageType(Buffer.from("MZ\x90\x00 executable")), null);
+  assert.equal(detectImageType(Buffer.concat([Buffer.from("GIF89a"), Buffer.alloc(10)])), null);
+  assert.equal(detectImageType(Buffer.concat([Buffer.from("ftypheic"), Buffer.alloc(16)])), null);
+});
 
-  const imageId = crypto.randomUUID();
-  const hidden = post({
-    image: { id: imageId, contentType: "image/jpeg", bytes: jpeg.length },
-  });
-  assert.equal(toPublicPost(hidden, true), null);
-  assert.equal(await addPost(hidden, communityRateKey("post", hidden.authorUid), jpeg), "ok");
-  assert.equal((await listPosts()).some((item) => item.id === hidden.id && item.status === "pending"), true);
-  assert.ok(await readImageBytes(imageId));
+test("re-encode strips trailing metadata and caps wide images", async () => {
+  const png = await sharp({ create: { width: 32, height: 16, channels: 3, background: { r: 200, g: 20, b: 80 } } }).png().toBuffer();
+  const tagged = Buffer.concat([png, Buffer.from("GPSLatitudeSECRET")]);
+  const prepared = await prepareCommunityImage(tagged);
+  assert.equal(prepared.contentType, "image/webp");
+  assert.equal(prepared.data.includes(Buffer.from("GPSLatitudeSECRET")), false);
+  assert.equal(detectImageType(prepared.data), "image/webp");
 
-  assert.equal(await addReport(hidden.id, {
+  const wide = await sharp({ create: { width: 2600, height: 8, channels: 3, background: "navy" } }).png().toBuffer();
+  const resized = await prepareCommunityImage(wide);
+  const meta = await sharp(resized.data).metadata();
+  assert.ok((meta.width ?? 0) <= 2560);
+  assert.ok((meta.height ?? 0) <= 2560);
+});
+
+test("pixel bombs are rejected", async () => {
+  const bomb = pngWithSize(20000, 20000);
+  await assert.rejects(() => prepareCommunityImage(bomb), ImageRejected);
+  const real = await sharp({ create: { width: 80, height: 80, channels: 3, background: "blue" } }).png().toBuffer();
+  await assert.rejects(() => prepareCommunityImage(real, { maxPixels: 100 }), ImageRejected);
+});
+
+test("hot ranking prefers a fresh high score", () => {
+  const now = Date.parse("2026-11-24T12:00:00.000Z");
+  const fresh = hotRank(5, "2026-11-24T11:00:00.000Z", now);
+  const old = hotRank(5, "2026-11-01T11:00:00.000Z", now);
+  assert.ok(fresh > old);
+});
+
+test("a stored image is the re-encoded file, not the upload", async () => {
+  const original = await sharp({ create: { width: 12, height: 12, channels: 3, background: "red" } }).png().toBuffer();
+  const prepared = await prepareCommunityImage(Buffer.concat([original, Buffer.from("ORIGINAL-BYTES")]));
+  const post: CommunityPost = {
     id: crypto.randomUUID(),
-    reason: "Spam post",
+    kind: "image",
+    flair: "screenshots",
+    title: "Night drive",
+    body: "From the balcony.",
+    linkUrl: null,
+    authorUid: "seed-user",
+    authorName: "Mira",
     createdAt: new Date().toISOString(),
-    reporterKey: "reporter",
-  }, communityRateKey("report", "203.0.113.5")), "missing");
-
-  const approved = await setPostStatus(hidden.id, "approved");
-  assert.equal(approved?.status, "approved");
-  const visible = toPublicPost(approved!, true);
-  assert.ok(visible);
-  assert.equal(visible?.credit, "Screenshot by Mira");
-  assert.equal(visible?.pro, true);
-  assert.equal(visible?.imageUrl, `/api/community/images/${imageId}`);
-  assert.equal(toPublicPost({ ...approved!, type: "tip" }, false)?.credit, null);
-
-  assert.equal(await deletePost(hidden.id), true);
-  assert.equal(await readImageBytes(imageId), null);
-  assert.equal((await listPosts()).some((item) => item.id === hidden.id), false);
-});
-
-test("the same network cannot report one post twice", async () => {
-  const live = post({ type: "tip", image: null, authorName: "Jason" });
-  assert.equal(await addPost(live, communityRateKey("post", "jason"), null), "ok");
-  await setPostStatus(live.id, "approved");
-  const report = {
-    id: crypto.randomUUID(),
-    reason: "Spoiler past Chapter 3",
-    createdAt: new Date().toISOString(),
-    reporterKey: communityRateKey("report", "198.51.100.8"),
+    score: 1,
+    votes: { "seed-user": 1 },
+    image: { id: crypto.randomUUID(), contentType: prepared.contentType, bytes: prepared.data.length },
+    reports: [],
   };
-  const key = communityRateKey("report", "198.51.100.8");
-  assert.equal(await addReport(live.id, report, key), "ok");
-  assert.equal(
-    await addReport(live.id, { ...report, id: crypto.randomUUID() }, key),
-    "duplicate"
-  );
+  assert.equal(await createPost(post, [], prepared.data), "ok");
+  const stored = await readImageBytes(post.image!.id);
+  assert.ok(stored);
+  assert.equal(stored!.equals(prepared.data), true);
+  assert.equal(stored!.includes(Buffer.from("ORIGINAL-BYTES")), false);
+  assert.equal(await voteOnPost(post.id, "other-user", 1), "ok");
 });
