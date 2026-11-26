@@ -66,6 +66,8 @@ const nextConfig: NextConfig = {
       { source: "/weapons/pump-shotgun", destination: "/weapons/fortune-son-moreland-850", permanent: true },
       { source: "/weapons/sniper-rifle", destination: "/weapons", permanent: true },
       { source: "/weapons/rocket-launcher", destination: "/weapons/hauners-h-at", permanent: true },
+      // In-game shop name is AdB PD-90 (our Iron & Oak footage, 4:46).
+      { source: "/weapons/adb-pd-80", destination: "/weapons/adb-pd-90", permanent: true },
       // Batch 3: garage name spelling fix (Mitchel -> Mitchell).
       { source: "/where-to-find/garages/mitchel-auto-center", destination: "/where-to-find/garages/mitchell-auto-center", permanent: true },
       {

@@ -80,7 +80,7 @@ export const ammuNationStores: AmmuNationStore[] = [
   { name: "Quickscope", county: "Vice-Dale County", area: "Central Vice City", inventory: "Standard" },
   { name: "Black Eagle", county: "Vice-Dale County", area: "Northwest Vice City", inventory: "Expanded" },
   { name: "Zenon’s Pawn Shop", county: "Vice-Dale County", area: "North Vice City", inventory: "Standard" },
-  { name: "Iron & Oak", county: "Vice-Dale County", area: "North Vice City", inventory: "Expanded" },
+  { name: "Iron & Oak", county: "Vice-Dale County", area: "Stockyard, Vice City", inventory: "Expanded" },
   { name: "Prestige Firearms", county: "Vice-Dale County", area: "Ocean Beach, Vice City", inventory: "Expanded" },
   { name: "Tactical Outlet Guns", county: "Leonard County", area: "Belville", inventory: "Standard" },
   { name: "Pawn & Gun – Port Gellhorn", county: "Kelly County", area: "Port Gellhorn", inventory: "Standard" },

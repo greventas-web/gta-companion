@@ -279,7 +279,7 @@ export const whereToFindTopics: WhereTopic[] = [
           { name: "Woodhatch", area: "Capri", detail: "Expanded", areaPin: pin("capri") },
           { name: "Prestige Firearms", area: "Ocean Beach, Vice City", detail: "Expanded", areaPin: pin("ocean-beach") },
           { name: "Black Eagle", area: "Northwest Vice City", detail: "Expanded" },
-          { name: "Iron & Oak", area: "North Vice City", detail: "Expanded" },
+          { name: "Iron & Oak", area: "Stockyard", detail: "Expanded", areaPin: pin("stockyard") },
         ],
       },
       {
@@ -750,7 +750,7 @@ export const whereToFindTopics: WhereTopic[] = [
     label: "Melee and explosives",
     metaTitle: "Where to Get Melee Weapons and Explosives in GTA 6",
     metaDescription:
-      "Where to get melee weapons and explosives in GTA 6: Ammu-Nation sells them, how they count on the weapons list, and the named Molotov and Grenade. Unofficial.",
+      "Where to get melee weapons and explosives in GTA 6: Ammu-Nation sells them, how they count on the weapons list, and the named Molotov and Frag Grenade. Unofficial.",
     keywords: [
       "GTA 6 melee weapons",
       "GTA 6 explosives",
@@ -759,7 +759,7 @@ export const whereToFindTopics: WhereTopic[] = [
       "where to get melee GTA 6",
     ],
     answer:
-      "Buy melee weapons and explosives at any Ammu-Nation, or grab one when an enemy drops it. There are 9 melee weapons and 4 explosives, including the Molotov and the Grenade.",
+      "Buy melee weapons and explosives at any Ammu-Nation, or grab one when an enemy drops it. There are 9 melee weapons and 4 explosives, including the Molotov and the Frag Grenade.",
     facts: [
       "The game lists 196 weapon entries: 53 guns, 9 melee, 4 explosives, and 130 variants.",
       "For 100% you need 50 of the 66 standard weapons. Buying one or picking one up both count.",
@@ -772,6 +772,7 @@ export const whereToFindTopics: WhereTopic[] = [
         places: [
           { name: "Phil’s Ammu-Nation", area: "South Vice City", detail: "Expanded", pin: pin("phils-ammu-nation") },
           { name: "Pawn & Gun – Port Gellhorn", area: "Port Gellhorn", detail: "Standard", pin: pin("pawn-and-gun-port-gellhorn") },
+          { name: "Iron & Oak", area: "Stockyard", detail: "Expanded; all 9 melee weapons", areaPin: pin("stockyard") },
           { name: "Chuck’s Tackle & Shot", area: "Key Lento", detail: "Limited; first gun store", areaPin: pin("leonida-keys") },
         ],
       },
@@ -788,7 +789,7 @@ export const whereToFindTopics: WhereTopic[] = [
         answer: "At Ammu-Nation, which also sells packs of explosives. You can also pick one up when an enemy drops it.",
       },
       {
-        question: "Are the Molotov and the Grenade in GTA 6?",
+        question: "Are the Molotov and the Frag Grenade in GTA 6?",
         answer: "Yes. Throwing 100 of either one unlocks a cheat that works after the story.",
       },
     ],
@@ -818,7 +819,7 @@ export const whereToFindTopics: WhereTopic[] = [
     related: [
       { href: "/weapons", label: "Weapons database" },
       { href: "/weapons/molotov", label: "Molotov" },
-      { href: "/weapons/grenade", label: "Grenade" },
+      { href: "/weapons/grenade", label: "Frag Grenade" },
       { href: "/where-to-find/gun-stores", label: "Gun stores" },
       { href: "/ammu-nation-locations", label: "All 24 Ammu-Nation locations" },
       { href: "/cheats/combat-cheats", label: "Combat cheats" },

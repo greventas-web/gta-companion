@@ -1,4 +1,5 @@
 import {
+  INGAME_SOURCE_FALLBACK,
   ingameSourceHref,
   ingameWeapons,
   INGAME_SOURCE_LABEL,
@@ -74,6 +75,10 @@ const EXPANDED_PIN = {
   label: "Phil's Ammu-Nation (Expanded) on the map",
 };
 const CHEATS = { href: "/cheats/combat-cheats", label: "GTA 6 combat cheats" };
+const IRON_AND_OAK = { href: "/ammu-nation-locations/iron-and-oak", label: "Iron & Oak (Expanded) in Stockyard" };
+const MELEE_GUIDE = { href: "/guides/melee-weapons", label: "GTA 6 melee weapons" };
+/** Our own Iron & Oak shop footage (see LaunchWeapon.footage). */
+const FOOTAGE_SOURCE = { label: INGAME_SOURCE_LABEL, href: INGAME_SOURCE_FALLBACK };
 
 function article(word: string) {
   return /^[aeiou]/i.test(word) ? "an" : "a";
@@ -111,6 +116,24 @@ function howToGet(weapon: LaunchWeapon): {
         text: "Comes from the Explosive Shotgun cheat, which fires explosive shells. Hit 100 enemies with explosive damage to unlock it. Cheats only work after the story.",
         links: [CHEATS, GUN_STORES],
         sources: [src.powerpyxCheats, src.gamesradarCheats],
+      };
+    case "ammu-cheat-shotgun":
+      return {
+        text: `Sold at Ammu-Nation: Iron & Oak, an Expanded store, lists it for ${weapon.price}. The Explosive Shotgun cheat also gives you one that fires explosive shells. Hit 100 enemies with explosive damage to unlock it.`,
+        links: [IRON_AND_OAK, GUN_STORES, CHEATS],
+        sources: [FOOTAGE_SOURCE, src.powerpyxCheats, src.gamesradarCheats],
+      };
+    case "ammu-melee":
+      return {
+        text: `Sold at Ammu-Nation for ${weapon.price}. Iron & Oak stocks all nine standard melee weapons.`,
+        links: [IRON_AND_OAK, MELEE_GUIDE, GUN_STORES],
+        sources: [FOOTAGE_SOURCE, src.powerpyxAmmuNation],
+      };
+    case "ammu-sticky":
+      return {
+        text: `Sold at Ammu-Nation for ${weapon.price}. Iron & Oak lists it under Ammo & Equipment, Explosives.`,
+        links: [IRON_AND_OAK, GUN_STORES, { href: "/where-to-find/melee-and-explosives", label: "Melee and explosives" }],
+        sources: [FOOTAGE_SOURCE, src.powerpyxAmmuNation],
       };
     case "bret":
       return {
@@ -182,6 +205,11 @@ function buyLine(weapon: LaunchWeapon) {
         : "Only the six Expanded Ammu-Nations sell it.";
     case "cheat-shotgun":
       return "It comes from the Explosive Shotgun cheat, after the story.";
+    case "ammu-cheat-shotgun":
+      return `Iron & Oak sells it for ${weapon.price}, and the Explosive Shotgun cheat also gives you one.`;
+    case "ammu-melee":
+    case "ammu-sticky":
+      return `It costs ${weapon.price} at Ammu-Nation.`;
     case "bret":
       return "Expanded Ammu-Nations sell it after Bret Vogel's hunting jobs, which start in Chapter 2.";
     case "ue":
@@ -226,7 +254,8 @@ function makerName(name: string) {
 function toWeapon(weapon: LaunchWeapon, id: number, base?: Weapon): Weapon {
   const get = howToGet(weapon);
   const sources = [
-    ...(weapon.stats ? [src.dayOneWeapons] : []),
+    ...(weapon.footage ? [FOOTAGE_SOURCE] : []),
+    ...(weapon.stats && !weapon.footage ? [src.dayOneWeapons] : []),
     ...get.sources,
     ...(PRICE_CHECKED.has(weapon.slug) ? PRICE_SOURCES : []),
   ].filter((source, index, all) => all.findIndex((item) => item.href === source.href) === index);
