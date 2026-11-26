@@ -21,6 +21,8 @@ const areaPins: Record<string, string> = {
   Ambrosia: "confirmed:ambrosia",
   "Mount Kalaga National Park": "confirmed:mount-kalaga-national-park",
   "Ocean Beach, Vice City": "confirmed:ocean-beach",
+  // Iron & Oak: the area name on screen outside the store is "Stockyard" (our footage, 3:55).
+  "Stockyard, Vice City": "confirmed:stockyard",
 };
 
 export function ammuSlug(name: string) {
