@@ -16,7 +16,7 @@ export const metadata = pageMetadata(
   `Unofficial GTA 6 cars list: ${vehicleCounts.total} vehicles in the game (${vehicleCounts.baseModels} base models and ${vehicleCounts.standout} Standout vehicles), with pictures and where to get them.`
 );
 
-const ORDER = ["Super", "Sports", "Muscle", "Sedan", "SUV", "Off-Road", "Bike", "Boat", "Aircraft", "Emergency", "Service", "Industrial", "Military", "Other"];
+const ORDER = ["Super", "Sports", "Muscle", "Sedan", "SUV", "Truck", "Off-Road", "Bike", "Boat", "Aircraft", "Emergency", "Service", "Industrial", "Military", "Other"];
 
 function plural(category: string) {
   if (category === "Other") return "More vehicles";

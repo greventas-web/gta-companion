@@ -60,6 +60,14 @@ const locations: ExtraEntry[] = [
   { slug: "vice-city-international-airport", name: "Vice City International Airport", group: "Vice-Dale County", meta: "Vice City", pin: p("vice-city-international-airport"), summary: "Vice City's airport in south Vice-Dale County. The 7th Avenue Garage is just east of it." },
   { slug: "y-hotel", name: "Y Hotel", group: "Vice-Dale County", meta: "Washington Beach", pin: p("y-hotel"), summary: "A hotel in Washington Beach, just north of Ocean Beach." },
   { slug: "ocean-view-hotel", name: "Ocean View Hotel", group: "Vice-Dale County", meta: "Ocean Beach", image: "/images/official/editions/vintage_vice_city_pack_01.webp", pin: p("ocean-view-hotel"), summary: "An art deco hotel on Shore Drive in Ocean Beach." },
+  // Vice City islands, named on the in-game map and by the minimap in our footage
+  { slug: "penmarch-isle", name: "Penmarch Isle", group: "Vice City islands", meta: "Island", image: "/images/footage/locations/penmarch-isle.webp", imageAlt: "A bridge road on Penmarch Isle, with palm trees and the Vice City skyline across the water", summary: "An island in the Vice City area. The minimap shows its name when you drive onto it, and the map labels it close to Washington Island and Oldby Island.", links: [{ href: "/locations/oldby-island", label: "Oldby Island" }, { href: "/locations/washington-island", label: "Washington Island" }] },
+  { slug: "oldby-island", name: "Oldby Island", group: "Vice City islands", meta: "Island", image: "/images/footage/locations/oldby-island.webp", imageAlt: "A palm-lined street on Oldby Island, with art deco buildings, shops and traffic lights", summary: "An island in the Vice City area with palm-lined streets, art deco blocks and shops. The minimap shows its name as you drive in, and the map labels it just below Washington Island.", links: [{ href: "/locations/penmarch-isle", label: "Penmarch Isle" }, { href: "/locations/washington-island", label: "Washington Island" }] },
+  { slug: "washington-island", name: "Washington Island", group: "Vice City islands", meta: "Island", summary: "An island in the Vice City area. The map labels it above Oldby Island and near Penmarch Isle.", links: [{ href: "/locations/oldby-island", label: "Oldby Island" }, { href: "/locations/penmarch-isle", label: "Penmarch Isle" }, { href: "/locations/washington-beach", label: "Washington Beach" }] },
+  { slug: "catalan-island", name: "Catalan Island", group: "Vice City islands", meta: "Island", summary: "An island on the Vice City map, south-east of Bayside and next to Vespucci Island and the Rialto Islands. The map also names Catalan Bay nearby." },
+  // San4San hideouts, read from the map cards and the minimap in our footage
+  { slug: "la-perle-trap-house", name: "La Perle Trap House", group: "Gang hideouts", meta: "La Perle", pin: p("la-perle"), summary: "A San4San trap house in La Perle. The map card says San4San hang out in this La Perle house and move cocaine through it.", facts: [{ label: "Where", value: "La Perle, Vice City" }, { label: "Gang", value: "San4San" }, { label: "Security", value: "High" }, { label: "Take value", value: "$2,900 - $7,500 on the map card in our run" }, { label: "Map card", value: "It read All key valuables found, and Lucia's card offered Invite Jason" }], links: [{ href: "/locations/san4san-stash-house", label: "San4San Stash House" }, { href: "/locations/la-perle", label: "La Perle" }, { href: "/guides/gang-hideouts", label: "Raid gang hideouts" }] },
+  { slug: "san4san-stash-house", name: "San4San Stash House", group: "Gang hideouts", meta: "La Perle", pin: p("la-perle"), summary: "A San4San hideout in La Perle. The minimap names it San4San Stash House as you reach the yard, and gang members fight you in the yard and inside.", facts: [{ label: "Where", value: "La Perle, Vice City" }, { label: "Gang", value: "San4San" }, { label: "Look for", value: "A Haitian flag over the front door" }, { label: "Picked up inside", value: "Weed, Cocaine, Zombix, Purple Drank, a Macizo Cigar and Adrenaline" }, { label: "Weapons we picked up", value: "W-10 SMG, KZ-59 Assault Rifle and Nipper .38 Pistol" }], links: [{ href: "/locations/la-perle-trap-house", label: "La Perle Trap House" }, { href: "/businesses/janjaks-garage", label: "Janjak's Garage" }, { href: "/weapons/wortham-w-10", label: "Wortham W-10" }, { href: "/weapons/kozlov-kz-59", label: "Kozlov KZ-59" }, { href: "/weapons/scorpio-nipper-38", label: "Scorpio Nipper .38" }] },
   // Mariana County
   { slug: "capri", name: "Capri", group: "Mariana County", meta: "Mariana County", pin: p("capri"), summary: "A rich town with Nola and Ferruccio Tucci formal wear and the Vela Rota Drive Garage." },
   { slug: "key-lento", name: "Key Lento", group: "Mariana County", meta: "Leonida Keys", image: "/images/footage/locations/key-lento.webp", pin: p("jasons-place"), summary: "The Leonida Keys town where Jason lives. It has The Rusty Anchor bar and Kenton's dive business." },
@@ -97,16 +105,17 @@ const businesses: ExtraEntry[] = [
   { slug: "boone-speedway", name: "Boone Speedway", group: "Race venues", meta: "Racing", summary: "A speedway. Its wins count toward the Repair Vehicle cheat.", links: [{ href: "/cheats/player-cheats/repair-vehicle", label: "Repair Vehicle cheat" }] },
   { slug: "fleeca", name: "Fleeca", group: "Chains", meta: "Bank", image: "/images/footage/brands/fleeca.webp", imageAlt: "A Fleeca Bank teller counter, with FLEECA BANK lettering on the green wall", summary: "A bank chain. Its branches pay far more than small stores when robbed." },
   { slug: "pay-n-spray", name: "Pay 'n' Spray", group: "Chains", meta: "19 shops", summary: "Repaint your car to lose the cops, or sell older cars here.", links: [{ href: "/where-to-find/pay-n-spray", label: "All 19 Pay 'n' Spray shops" }] },
+  { slug: "janjaks-garage", name: "Janjak's Garage", group: "Garages and workshops", meta: "La Perle", image: "/images/footage/businesses/janjaks-garage.webp", imageAlt: "The front office wall at Janjak's Garage, with Engine, Automobile Parts and Service and Break signs, a window, notices and a Haitian flag over the door", pin: p("la-perle"), summary: "A San4San garage in La Perle. Its signs read Engine Repair and Build and Automobile Parts and Service, and a Haitian flag hangs over the office door.", facts: [{ label: "Where", value: "La Perle, Vice City" }, { label: "Gang", value: "San4San, named on screen while you are inside" }, { label: "Notices", value: "Full payment must be made, no excuses, no exceptions. All used tire sales are final." }, { label: "Tire room", value: "Terada Tires and T-East signs, with stacks of tires" }, { label: "Safe", value: "A keypad safe in the back office. In our run it gave $3,882 and $1,517 in cash. Code in the safe codes guide." }, { label: "In the yard", value: "A Vapid Stanier G2 taxi was parked in the lot in our run" }], links: [{ href: "/brands/terada-tires", label: "Terada Tires" }, { href: "/guides/safe-codes", label: "Safe codes" }, { href: "/vehicles/vapid-stanier-g2-taxi", label: "Vapid Stanier G2" }, { href: "/locations/la-perle", label: "La Perle" }, { href: "/locations/san4san-stash-house", label: "San4San Stash House" }] },
   { slug: "watkins-auto-parts", name: "Watkins Auto Parts", group: "Chains", meta: "Port Gellhorn", image: "/images/footage/businesses/watkins-auto-parts.webp", imageAlt: "The Watkins Auto Parts building, with a van parked at the open garage door", pin: p("pay-n-spray-port-gellhorn"), summary: "A Port Gellhorn auto parts shop with a Pay 'n' Spray." },
 ];
 
 /** Tattoo studios: 10 plus Electric Fang (already on /stores). */
-const tattoo: [string, string, string, string][] = [
+const tattoo: [string, string, string, string, string?][] = [
   ["The Inked Mermaid", "Key Lento", "Mariana County", "American Traditional"],
   ["Layin' Ink", "Hamlet", "Vice-Dale County", "Black & Gray"],
   ["Dominion Ink", "Vice City", "Vice-Dale County", "Anime"],
   ["Hyper Ink", "Vice City", "Vice-Dale County", "Illustrative"],
-  ["Cross My Heart", "Vice City", "Vice-Dale County", "New School"],
+  ["Cross My Heart Tattoos", "Vice City", "Vice-Dale County", "New School", "cross-my-heart"],
   ["Inkomplete Tattoo Co.", "Vice City", "Vice-Dale County", "Old School"],
   ["Twa Ponya Tattoo", "Vice City", "Vice-Dale County", "Neo-Traditional"],
   ["Black Spot Tattoo", "Vice Beach", "Vice-Dale County", "Geometric & Blackwork"],
@@ -153,8 +162,8 @@ function whereStores(topicSlug: string, group: string, meta: string): ExtraEntry
 }
 
 const stores: ExtraEntry[] = [
-  ...tattoo.map(([name, area, county, style]) => ({
-    slug: extraSlug(name),
+  ...tattoo.map(([name, area, county, style, slug]) => ({
+    slug: slug ?? extraSlug(name),
     name,
     group: "Tattoo studios",
     meta: `${style} · ${area}`,
@@ -221,6 +230,7 @@ const brands: ExtraEntry[] = [
   { ...chain("Eris", "Sportswear", "Vice-Dale County"), image: "/images/footage/brands/eris.webp" },
   chain("Nola", "Formal", "Capri, Peacock Bay, Ocean Beach and Decor District"),
   chain("Ferruccio Tucci", "Formal", "Capri, Ocean Beach, Decor District and Waning Sands"),
+  { slug: "terada-tires", name: "Terada Tires", group: "Tire brands", meta: "Tires", image: "/images/footage/brands/terada-tires.webp", imageAlt: "A red and white Terada Tires sign and a T-East sign above stacks of tires in the tire room at Janjak's Garage", summary: "A tire brand. Its red and white sign hangs in the tire room at Janjak's Garage in La Perle, beside a T-East sign.", links: [{ href: "/businesses/janjaks-garage", label: "Janjak's Garage" }] },
   { slug: "ammu-nation", name: "Ammu-Nation", group: "Store chains", meta: "24 gun stores", image: "/images/footage/brands/ammu-nation.webp", summary: "Leonida's gun store chain, with 24 branches across five counties.", links: [{ href: "/ammu-nation-locations", label: "All 24 stores" }] },
   { slug: "pay-n-spray", name: "Pay 'n' Spray", group: "Store chains", meta: "19 shops", summary: "The repaint chain. Lose the cops or sell older cars.", links: [{ href: "/where-to-find/pay-n-spray", label: "All 19 shops" }] },
   { slug: "fleeca", name: "Fleeca", group: "Store chains", meta: "Bank", image: "/images/footage/brands/fleeca.webp", imageAlt: "A Fleeca Bank teller counter, with FLEECA BANK lettering on the green wall", summary: "Leonida's bank chain." },

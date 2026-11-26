@@ -321,6 +321,19 @@ export const launchVehicles: Vehicle[] = [
     status: "Confirmed",
     gallery: [],
   },
+  {
+    id: 603,
+    slug: "vapid-reclaimer",
+    name: "Vapid Reclaimer",
+    manufacturer: "Vapid",
+    category: "Truck",
+    image: "/images/footage/vehicles/vapid-reclaimer.webp",
+    imageAlt: "A Vapid Reclaimer crew-cab pickup with a red bed, white cab and blue stripes, stopped on a Vice City bridge with the driver door open",
+    description: "A Vapid crew-cab pickup truck. We jacked one in traffic on a Vice City bridge, with a red bed and a white cab with blue stripes.",
+    firstAppearance: "Grand Theft Auto VI gameplay",
+    status: "Confirmed",
+    gallery: [],
+  },
 ];
 
 /** Existing pre-launch entries now confirmed by the launch-day cheat list. */
