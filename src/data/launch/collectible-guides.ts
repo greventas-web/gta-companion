@@ -1025,7 +1025,7 @@ export const collectibleGuides: CollectibleGuide[] = [
           { slug: "riquezas-key-radome", name: "Riquezas Key Radome", value: "Riquezas Keys", line: "Head south-southwest past Mile Zero Air Station. The radome is at the south tip of Riquezas Keys.", facts: [{ label: "Where", value: "Riquezas Keys, Mariana County" }], pin: "confirmed:leonida-keys" },
           { slug: "belpoint-lighthouse", name: "Belpoint Lighthouse", value: "Belpoint", line: "The lighthouse at Belpoint, Mariana County.", facts: [{ label: "Where", value: "Belpoint, Mariana County" }] },
           { slug: "gellhorn-fun-fair", name: "Gellhorn Fun Fair", value: "Port Gellhorn", line: "The fun fair in Port Gellhorn, Kelly County.", facts: [{ label: "Where", value: "Port Gellhorn, Kelly County" }], pin: "confirmed:port-gellhorn" },
-          { slug: "farmer-scrumpys-apple-orchard", name: "Farmer Scrumpy's Apple Orchard", value: "Manifest Canyon", line: "An apple orchard in Manifest Canyon, Kelly County.", facts: [{ label: "Where", value: "Manifest Canyon, Kelly County" }] },
+          { slug: "farmer-scrumpys-apple-orchard", name: "Father Scrumpy's Apple Orchard", value: "Manifest Canyon", line: "An apple orchard in Manifest Canyon, Kelly County.", facts: [{ label: "Where", value: "Manifest Canyon, Kelly County" }] },
           { slug: "lawton-co-paper-mill", name: "Lawton Co. Paper Mill", value: "Moreau", line: "The paper mill in Moreau, Lummox County.", facts: [{ label: "Where", value: "Moreau, Lummox County" }] },
           { slug: "grayson-assembly", name: "Grayson Assembly", value: "Grayson", line: "In Grayson, Lummox County.", facts: [{ label: "Where", value: "Grayson, Lummox County" }] },
           { slug: "kalaga-lookout", name: "Kalaga Lookout", value: "Mount Kalaga", line: "A lookout in Mount Kalaga National Park, Lummox County.", facts: [{ label: "Where", value: "Mount Kalaga National Park" }], pin: "confirmed:mount-kalaga-national-park" },
@@ -1137,6 +1137,7 @@ export const collectibleGuides: CollectibleGuide[] = [
     tips: [
       { label: "Missable spots", value: "Jason's house (Chapter 1), Starlet Motel (Chapter 2), Bayside apartment (Chapter 3)" },
       { label: "Heads up", value: "The game doesn't show which ones you've read, so note them as you go" },
+      { label: "Not these", value: "Style magazines you scan with WAiNK are a different collection: Discovered Styles" },
     ],
     groups: [
       {
