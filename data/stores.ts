@@ -195,6 +195,11 @@ export const stores: Store[] = [
         sources: [fill.pushSquareUltimate],
       },
       {
+        label: "In-game map card",
+        value: "Pop-up tattoo parlor at the Hub Gallery with designs by FAILE. Style: New School. Part of the Ultimate Edition.",
+        sources: UE,
+      },
+      {
         label: "When it opens",
         value: "From Chapter 1, for Ultimate Edition owners. Exclusive designs carry a blue tag.",
         sources: UE,
