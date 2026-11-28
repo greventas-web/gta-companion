@@ -84,6 +84,7 @@ const nextConfig: NextConfig = {
       { source: "/guides/map", destination: "/map", permanent: true },
       { source: "/guides/locations", destination: "/locations", permanent: true },
       { source: "/guides/characters", destination: "/characters", permanent: true },
+      { source: "/guides/snap-gun", destination: "/guides/equipment", permanent: true },
       // Batch 3: garage name spelling fix (Mitchel -> Mitchell).
       { source: "/where-to-find/garages/mitchel-auto-center", destination: "/where-to-find/garages/mitchell-auto-center", permanent: true },
       {

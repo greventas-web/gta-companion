@@ -78,6 +78,19 @@ export default function QuickGuidePage({ guide }: { guide: QuickGuide }) {
         ))}
       </section>
 
+      {guide.youtubeId ? (
+        <figure className="mt-8 max-w-sm overflow-hidden rounded-[28px] border border-white/10 bg-black">
+          <iframe
+            className="aspect-[9/16] w-full"
+            src={`https://www.youtube-nocookie.com/embed/${guide.youtubeId}`}
+            title={guide.heading}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          <figcaption className="px-4 py-3 text-sm font-semibold text-zinc-400">Our short of this find.</figcaption>
+        </figure>
+      ) : null}
+
       {guide.facts ? <QuickFacts wide facts={guide.facts} /> : null}
 
       {guide.sources ? <SourceList sources={guide.sources} className="mt-4 max-w-3xl" /> : null}

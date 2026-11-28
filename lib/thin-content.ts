@@ -11,6 +11,11 @@
  */
 import type { Metadata } from "next";
 
+import { fenceGuidePaths } from "@/src/data/launch/fence-guide";
+
+/** Fence place pages that now have their own guide text. */
+const INDEXED_PATHS: ReadonlySet<string> = new Set(fenceGuidePaths);
+
 /** First path segment of detail pages that are too thin to index today. */
 export const THIN_SECTIONS: ReadonlySet<string> = new Set([
   "manufacturers",
@@ -30,6 +35,7 @@ export const THIN_PAGES: ReadonlySet<string> = new Set(["/roadmap", "/changelog"
 export const THIN_ROBOTS: NonNullable<Metadata["robots"]> = { index: false, follow: true };
 
 export function isThinPath(path: string): boolean {
+  if (INDEXED_PATHS.has(path)) return false;
   if (THIN_PAGES.has(path)) return true;
   const parts = path.split("/").filter(Boolean);
   // where-to-find/<topic>/<place> leaf pages (not the topic hubs).
