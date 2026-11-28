@@ -54,14 +54,14 @@ export default function AboutPage() {
         <section className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
             icon={<ShieldCheck size={36} />}
-            title="Official images"
-            description="Screenshots, artwork, and trailers are official Rockstar Games material, used for commentary and credited 'Images: Rockstar Games'."
+            title="Spoiler-safe"
+            description="Story guides stop at the early chapters, so you can look up a code or a place without reading ahead."
           />
 
           <FeatureCard
             icon={<Users size={36} />}
             title="Built For Players"
-            description="Every page is designed to help players find accurate GTA VI information quickly through a premium experience."
+            description="Each page answers one question players ask while they play, in plain words, with the details that matter on screen."
           />
 
           <FeatureCard

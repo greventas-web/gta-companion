@@ -72,10 +72,6 @@ export default function Footer() {
               <Link href="/app" className="block text-zinc-400 transition hover:text-pink-400">
                 Install the app
               </Link>
-
-              <Link href="/pro" className="block text-zinc-400 transition hover:text-pink-400">
-                Pro tracker
-              </Link>
             </div>
           </div>
 
@@ -159,10 +155,6 @@ export default function Footer() {
 
               <Link href="/where-to-find" className="block text-zinc-400 transition hover:text-pink-400">
                 Where to find
-              </Link>
-
-              <Link href="/phone" className="block text-zinc-400 transition hover:text-pink-400">
-                Phone
               </Link>
 
               <Link href="/faq" className="block text-zinc-400 transition hover:text-pink-400">

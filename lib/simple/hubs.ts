@@ -62,11 +62,15 @@ export const hubs = {
 
 export type HubKey = keyof typeof hubs;
 
-/** Homepage order: each destination exactly once. */
+/**
+ * Homepage order: each destination exactly once. Hubs whose detail pages are
+ * still thin (manufacturers, brands, animals, activities, businesses,
+ * characters, clothing) are left off the homepage until they get real text.
+ */
 export const homeHubs: Hub[] = (
   [
-    "map", "missions", "weapons", "vehicles", "cheats", "collectibles", "money", "whereToFind", "stores", "shootingRanges",
-    "trophies", "locations", "characters", "businesses", "manufacturers", "ammuNation", "clothing", "animals", "activities", "brands",
+    "map", "cheats", "fences", "ammuNation", "whereToFind", "collectibles", "missions", "money", "vehicles", "weapons",
+    "shootingRanges", "trophies", "radio", "stores",
   ] as HubKey[]
 ).map((key) => hubs[key]);
 

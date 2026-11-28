@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { CONSENT_GEO_COOKIE, CONSENT_REGIONS } from "@/lib/consent";
+import { isThinPath, THIN_ROBOTS_HEADER } from "@/lib/thin-content";
 
 const RESTRICTED = new Set<string>(CONSENT_REGIONS);
 
@@ -12,11 +13,18 @@ export function proxy(request: NextRequest) {
       ? "OTHER"
       : "UNKNOWN";
 
-  if (request.cookies.get(CONSENT_GEO_COOKIE)?.value === value) {
-    return NextResponse.next();
+  const response = NextResponse.next();
+
+  // Thin pages: noindex by header too, so every thin path is covered even
+  // where the page itself does not set the robots meta tag.
+  if (isThinPath(request.nextUrl.pathname)) {
+    response.headers.set("X-Robots-Tag", THIN_ROBOTS_HEADER);
   }
 
-  const response = NextResponse.next();
+  if (request.cookies.get(CONSENT_GEO_COOKIE)?.value === value) {
+    return response;
+  }
+
   response.cookies.set({
     name: CONSENT_GEO_COOKIE,
     value,
