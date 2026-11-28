@@ -40,7 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const blurb = vehicle.status === "Confirmed" ? [copy.summary, copy.where].filter(Boolean).join(" ") : "Not seen in GTA 6 yet. This name is from earlier GTA games.";
   const meta = detailMetadata(vehicle.name, blurb);
   // Names from earlier GTA games that are not in GTA 6 have no page of their own to index.
-  return vehicle.status === "Confirmed" ? meta : { ...meta, robots: THIN_ROBOTS };
+  // Every vehicle page is under 100 words today (Nov 28 crawl), so none is indexed yet.
+  return { ...meta, robots: THIN_ROBOTS };
 }
 
 export default async function VehicleDetailsPage({ params }: Props) {

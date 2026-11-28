@@ -32,8 +32,14 @@ export default function CheatCode({ code, unlock }: { code?: string[]; unlock: s
         </li>
         <li>2. Press D-pad Up to open the phone.</li>
         <li>3. Hold L1 and press R1 (Xbox: hold LB, press RB).</li>
-        <li>4. {code ? "Press the D-pad buttons below in order." : "Its button code will show here once it is out."}</li>
+        {code ? <li>4. Press the D-pad buttons below in order.</li> : null}
       </ol>
+      {!code ? (
+        <p className="mt-3 text-sm leading-6 text-zinc-400">
+          We print a button code only when two separate guides list the same sequence. No code for this cheat has passed
+          that check, so this page covers the unlock only.
+        </p>
+      ) : null}
       {code ? (
         <>
           <div className="mt-5 flex flex-wrap gap-2" aria-label={text}>

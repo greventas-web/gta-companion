@@ -52,7 +52,6 @@ function card(vehicle: Vehicle) {
 }
 
 const confirmed = vehicles.filter((vehicle) => vehicle.status === "Confirmed");
-const expected = vehicles.filter((vehicle) => vehicle.status !== "Confirmed");
 const categories = [...ORDER, ...new Set(confirmed.map((v) => v.category).filter((c) => !ORDER.includes(c)))];
 const groups = categories
   .map((category) => ({ category, items: confirmed.filter((vehicle) => vehicle.category === category) }))
@@ -65,7 +64,7 @@ export default function VehiclesPage() {
         data={itemListJsonLd(
           "GTA 6 vehicles",
           "/vehicles",
-          vehicles.map((vehicle) => ({ name: vehicle.name, url: `/vehicles/${vehicle.slug}` }))
+          confirmed.map((vehicle) => ({ name: vehicle.name, url: `/vehicles/${vehicle.slug}` }))
         )}
       />
       <SimpleHero title="Vehicles" image="/images/official/categories/vehicles.webp" />
@@ -97,11 +96,6 @@ export default function VehiclesPage() {
         </CardGrid>
       ))}
 
-      {expected.length > 0 ? (
-        <CardGrid id="not-seen-yet" heading="Not seen in the game yet" count={expected.length} dense>
-          {expected.map(card)}
-        </CardGrid>
-      ) : null}
       <QuickGuideGrid guides={quickGuideCards(["red-queen-dubsta", "hidden-cars", "garage-codes", "register-car", "buy-a-car", "impounded-car", "call-your-car", "slim-jim", "key-cloner", "randys-wish-list", "pegassi-infernus", "car-trackers", "fast-and-furious-car", "1010-murals", "la-perle-garage", "declasse-vamos", "wyman-cars", "motorcycle", "refuel", "repair-car", "customize-car", "plane", "sell-cars", "helicopter", "fighter-jet", "tank", "military-base", "boat", "turn-signals", "headlights", "auto-drive", "street-races", "horn", "partner-drive", "scan-car", "hotwire", "carjack", "handbrake"])} />
     </PageShell>
   );

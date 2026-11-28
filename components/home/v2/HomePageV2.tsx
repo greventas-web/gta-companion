@@ -4,11 +4,14 @@ import { homeHubs } from "@/lib/simple/hubs";
 
 import FeaturedNewsV2 from "./FeaturedNewsV2";
 import HomeHero from "./HomeHero";
+import StartHere from "./StartHere";
 
 export default function HomePageV2() {
   return (
     <main className="overflow-x-hidden bg-[#040404] text-white">
       <HomeHero />
+
+      <StartHere />
 
       <section className="mx-auto max-w-[1600px] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
         <h2 className="mb-8 text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">Browse</h2>

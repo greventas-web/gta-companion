@@ -40,7 +40,7 @@ export default function CheatTable() {
                 <td className="px-4 py-3 text-zinc-300">{cheat.effect}</td>
                 <td className="px-4 py-3 text-zinc-300">{cheat.unlock}</td>
                 <td className="px-4 py-3 font-semibold text-zinc-100">
-                  {cheat.code ? arrowCode(cheat.code) : "Not confirmed yet"}
+                  {cheat.code ? arrowCode(cheat.code) : "Not listed"}
                   {note ? <span className="mt-1 block text-xs font-medium text-amber-200">{note}</span> : null}
                 </td>
               </tr>

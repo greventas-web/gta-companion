@@ -9,10 +9,8 @@ const groups = [
     title: "Database",
     links: [
       { title: "Vehicles", href: "/vehicles" },
-      { title: "Manufacturers", href: "/manufacturers" },
       { title: "Characters", href: "/characters" },
       { title: "Locations", href: "/locations" },
-      { title: "Businesses", href: "/businesses" },
       { title: "Stores", href: "/stores" },
       { title: "Properties", href: "/properties" },
     ],
@@ -22,13 +20,9 @@ const groups = [
     links: [
       { title: "Map", href: "/map" },
       { title: "Weapons", href: "/weapons" },
-      { title: "Animals", href: "/animals" },
-      { title: "Activities", href: "/activities" },
       { title: "Clothing", href: "/clothing" },
-      { title: "Brands", href: "/brands" },
       { title: "Collectibles", href: "/collectibles" },
       { title: "Shooting ranges", href: "/shooting-ranges" },
-      { title: "Phone", href: "/phone" },
     ],
   },
   {

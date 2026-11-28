@@ -26,6 +26,13 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { ProPill } from "@/components/pro/ProBadge";
 import { useSearch } from "@/components/search/SearchProvider";
 
+/**
+ * Pro is a waitlist until checkout opens, so it stays out of the menus for now
+ * (a "coming" page in the main menu reads as unfinished to visitors and to the
+ * AdSense review). The /pro page itself still works. Set to true at launch.
+ */
+const SHOW_PRO_LINKS = false;
+
 export default function Navbar() {
   const { user } = useAuth();
   const { open } = useSearch();
@@ -103,9 +110,11 @@ export default function Navbar() {
               <SiteLogo />
             </Link>
 
+{SHOW_PRO_LINKS ? (
             <ProPill href="/pro" current={proActive} className="h-8 text-[11px] lg:hidden">
               PRO
             </ProPill>
+            ) : null}
 
           </div>
 
@@ -113,9 +122,15 @@ export default function Navbar() {
 
             <NavLink href="/">Home</NavLink>
 
-            <NavLink href="/updates" accent>
-              Updates
+            <NavLink href="/guides" accent>
+              Guides
             </NavLink>
+
+            <NavLink href="/cheats">Cheats</NavLink>
+
+            <div className="hidden min-[1440px]:contents">
+              <NavLink href="/updates">Updates</NavLink>
+            </div>
 
             <div className="hidden min-[1680px]:contents">
               <NavLink href="/map">Map</NavLink>
@@ -131,10 +146,12 @@ export default function Navbar() {
 
             <NavLink href="/community">Community</NavLink>
 
+{SHOW_PRO_LINKS ? (
             <ProPill href="/pro" current={proActive} className="ml-1 h-9 text-[12px] min-[1920px]:text-[13px]">
               <span className="hidden min-[1920px]:inline">GTA Companion Pro</span>
               <span className="min-[1920px]:hidden">PRO</span>
             </ProPill>
+            ) : null}
 
           </nav>
 
@@ -290,6 +307,7 @@ export default function Navbar() {
 
         {mobileOpen && (
           <nav className="mx-auto mt-3 max-h-[calc(100vh-120px)] max-w-[1700px] overflow-y-auto rounded-[28px] border border-white/10 bg-[#09090B]/98 p-4 shadow-[0_30px_80px_rgba(0,0,0,.6)] backdrop-blur-xl lg:hidden">
+{SHOW_PRO_LINKS ? (
             <ProPill
               href="/pro"
               current={proActive}
@@ -298,6 +316,7 @@ export default function Navbar() {
             >
               GTA Companion Pro
             </ProPill>
+            ) : null}
             <SupportLink
               onClick={() => setMobileOpen(false)}
               className="mb-2 flex items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-[15px] font-semibold text-pink-300 transition hover:bg-white/[0.06] hover:text-pink-200"
@@ -305,6 +324,8 @@ export default function Navbar() {
             <div className="grid gap-1 sm:grid-cols-2">
               {[
                 { title: "Home", href: "/" },
+                { title: "Guides", href: "/guides" },
+                { title: "Cheats", href: "/cheats" },
                 { title: "Updates", href: "/updates" },
                 { title: "Community", href: "/community" },
                 { title: "About", href: "/about" },
