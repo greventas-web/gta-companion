@@ -30,6 +30,7 @@ import { ammuStores } from "@/lib/simple/ammu";
 import { quickGuides } from "@/src/data/launch/quick-guides";
 import { stationPages } from "@/lib/simple/radio";
 import { lastModifiedFor } from "@/lib/sitemap-lastmod";
+import { isThinPath } from "@/lib/thin-content";
 
 const baseUrl = SITE.url;
 
@@ -75,7 +76,7 @@ const detailPaths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  const allRoutes = [
     "",
     "/app",
     "/gta-6-launch",
@@ -130,6 +131,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...launchPaths,
     ...detailPaths,
   ];
+
+  // Keep thin database pages and status pages out of the sitemap (lib/thin-content.ts),
+  // plus vehicle names that are not in GTA 6.
+  const notInGame = new Set(
+    vehicles.filter((entry) => entry.status !== "Confirmed").map((entry) => `/vehicles/${entry.slug}`)
+  );
+  const routes = allRoutes.filter((route) => !isThinPath(route) && !notInGame.has(route));
 
   const highPriority = new Set([
     "/gta-6-launch",

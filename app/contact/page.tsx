@@ -46,7 +46,7 @@ export default function ContactPage() {
               </a>
 
               <p className="mt-8 text-zinc-500">
-                We aim to respond as quickly as possible.
+                We read every message and usually reply within a few days.
               </p>
             </Card>
 
@@ -79,8 +79,9 @@ export default function ContactPage() {
                 </h2>
 
                 <p className="mt-4 leading-8 text-zinc-400">
-                  GTA Companion will continue to grow with new official content,
-                  guides and tools as Rockstar reveals more about GTA VI.
+                  Questions about a guide, a map pin or a price? Tell us the page
+                  and what you saw in the game. Confirmed fixes are added to the
+                  site and listed on the Updates page.
                 </p>
               </Card>
             </div>

@@ -1,5 +1,6 @@
 import PageTitle from "@/components/PageTitle";
 import { pageMetadata } from "@/lib/launch";
+import { withThinRobots } from "@/lib/thin-content";
 import {
   Badge,
   Card,
@@ -7,10 +8,10 @@ import {
   Section,
 } from "@/components/ui";
 
-export const metadata = pageMetadata(
+export const metadata = withThinRobots(pageMetadata(
   "Changelog",
   "What has changed on GTA Companion. Unofficial fan site for Grand Theft Auto VI."
-);
+));
 
 
 const updates = [

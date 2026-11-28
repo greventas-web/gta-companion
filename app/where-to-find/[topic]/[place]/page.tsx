@@ -7,6 +7,7 @@ import { pageMetadata } from "@/lib/launch";
 import { imageForPin } from "@/lib/simple/pinImage";
 import { imageForPath } from "@/lib/simple/placeImages";
 import { findWherePlace, whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
+import { THIN_ROBOTS } from "@/lib/thin-content";
 
 type Props = { params: Promise<{ topic: string; place: string }> };
 
@@ -18,7 +19,7 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+async function baseMetadata({ params }: Props): Promise<Metadata> {
   const { topic, place } = await params;
   const entry = findWherePlace(topic, place);
   if (!entry) return {};
@@ -26,6 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `${entry.place.name} – GTA 6 ${entry.topic.label}`,
     `${entry.place.name} in GTA 6${entry.place.area ? `, ${entry.place.area}` : ""}. Where it is and what it costs. Unofficial.`
   );
+}
+
+/** Thin database page: kept out of search results until it has its own commentary (lib/thin-content.ts). */
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  return { ...(await baseMetadata(props)), robots: THIN_ROBOTS };
 }
 
 export default async function WherePlacePage({ params }: Props) {

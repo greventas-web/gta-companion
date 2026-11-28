@@ -10,6 +10,7 @@ import { vehicleImages } from "@/lib/media/catalog";
 import { makerLabel, vehicleMark } from "@/lib/simple/marks";
 import { vehicleCatalog } from "@/lib/simple/vehicleCopy";
 import { detailMetadata } from "@/lib/pages";
+import { THIN_ROBOTS } from "@/lib/thin-content";
 import { cheatList } from "@/src/data/launch/cheat-list";
 import { cheatSlug, groupForCheat } from "@/src/data/launch/cheats";
 
@@ -37,7 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!vehicle) return {};
   const copy = vehicleCatalog(vehicle);
   const blurb = vehicle.status === "Confirmed" ? [copy.summary, copy.where].filter(Boolean).join(" ") : "Not seen in GTA 6 yet. This name is from earlier GTA games.";
-  return detailMetadata(vehicle.name, blurb);
+  const meta = detailMetadata(vehicle.name, blurb);
+  // Names from earlier GTA games that are not in GTA 6 have no page of their own to index.
+  return vehicle.status === "Confirmed" ? meta : { ...meta, robots: THIN_ROBOTS };
 }
 
 export default async function VehicleDetailsPage({ params }: Props) {

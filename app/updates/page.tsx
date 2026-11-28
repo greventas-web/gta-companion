@@ -55,28 +55,21 @@ export default function UpdatesPage() {
         </div>
       </header>
 
-      <section id="milestones" className="mt-14 scroll-mt-36 sm:mt-16">
-        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Milestones</p>
-        <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] sm:text-4xl">Sections at 100%</h2>
-        {milestones.length === 0 ? (
-          <div className="mt-6 max-w-xl rounded-[28px] border border-pink-500/20 bg-gradient-to-br from-[#1a1020] via-[#100c14] to-black px-6 py-8 sm:px-8">
-            <p className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">First milestone coming soon</p>
-            <p className="mt-3 max-w-md leading-7 text-zinc-400">
-              Posted when a whole section is finished.
-            </p>
-          </div>
-        ) : (
+      {milestones.length > 0 ? (
+        <section id="milestones" className="mt-14 scroll-mt-36 sm:mt-16">
+          <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Milestones</p>
+          <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] sm:text-4xl">Sections at 100%</h2>
           <div className="mt-6">
             <MilestoneList milestones={milestones} />
           </div>
-        )}
-      </section>
+        </section>
+      ) : null}
 
       <section id="coming-soon" className="mt-20 scroll-mt-36">
-        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Coming soon</p>
+        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Site features</p>
         <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] sm:text-4xl">The platform</h2>
         <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-300">
-          Planned for a later release. These are not available yet.
+          What is open to members today, and optional extras that are on the way.
         </p>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
@@ -118,7 +111,7 @@ export default function UpdatesPage() {
       </section>
 
       <section id="whats-next" className="mt-20">
-        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">What&apos;s coming</p>
+        <p className="text-[11px] font-black uppercase tracking-[0.28em] text-pink-400">Ongoing work</p>
         <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] sm:text-4xl">More of the guide</h2>
         <p className="mt-4 max-w-2xl leading-7 text-zinc-400">
           The same daily work, with no date attached and no story details.

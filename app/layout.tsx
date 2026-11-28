@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
-import AdsLoader from "@/components/pro/AdsLoader";
 import ProRuntime from "@/components/pro/ProRuntime";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -20,6 +19,7 @@ import { PWA_THEME_COLOR } from "@/lib/pwa";
 import { websiteJsonLd } from "@/lib/seo";
 import { SITE, SOCIAL_PROFILES } from "@/lib/site";
 import { CONSENT_DEFAULTS_SCRIPT } from "@/lib/consent";
+import { ADSENSE_CLIENT, ADS_ENABLED } from "@/lib/ads";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -175,6 +175,17 @@ export default function RootLayout({
         <Script id="gta-consent-defaults" strategy="beforeInteractive">
           {CONSENT_DEFAULTS_SCRIPT}
         </Script>
+        {ADS_ENABLED ? (
+          // Google's AdSense code snippet, rendered into the server HTML <head> so the
+          // AdSense crawler finds it on every page. It runs after the consent defaults above.
+          <Script
+            id="adsense-snippet"
+            async
+            strategy="beforeInteractive"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+          />
+        ) : null}
         <Script id="pwa-install-capture" strategy="beforeInteractive">
           {`window.addEventListener("beforeinstallprompt",function(event){event.preventDefault();window.__gtaInstallPrompt=event;window.dispatchEvent(new Event("gta-install-prompt"));});`}
         </Script>
@@ -211,7 +222,6 @@ export default function RootLayout({
         {googleAnalyticsId ? (
           <GoogleAnalytics gaId={googleAnalyticsId} />
         ) : null}
-        <AdsLoader />
       </body>
     </html>
   );

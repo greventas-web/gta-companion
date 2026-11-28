@@ -4,7 +4,7 @@
 
 | Feature | Where |
 |---|---|
-| No ads | `components/pro/AdsLoader.tsx`, `html[data-pro="1"]` CSS in `app/globals.css` |
+| No ads | AdSense snippet in `app/layout.tsx` (server-rendered in head), `html[data-pro="1"]` CSS in `app/globals.css` hides ad units and auto ads |
 | Cloud sync of tracked marks across devices | `components/pro/ProRuntime.tsx`, `/api/pro/sync` |
 | Progress % (per section and overall) | `/pro`, `TrackProgress` badges |
 | "What's left near me" map filter | `/map` sidebar (`CommunityMap.tsx`) |
