@@ -7,6 +7,7 @@ import SpoilerReveal from "@/components/SpoilerReveal";
 import { detailMetadata } from "@/lib/pages";
 import { shortText } from "@/lib/simple/text";
 import { findTrophy, trophies, trophyPlatformLabel } from "@/src/data/trophies";
+import { THIN_ROBOTS } from "@/lib/thin-content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -33,11 +34,16 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+async function baseMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const trophy = findTrophy(slug);
   if (!trophy) return {};
   return detailMetadata(`${trophy.name} trophy`, trophy.description);
+}
+
+/** Thin database page: kept out of search results until it has its own commentary (lib/thin-content.ts). */
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  return { ...(await baseMetadata(props)), robots: THIN_ROBOTS };
 }
 
 export default async function TrophyPage({ params }: Props) {

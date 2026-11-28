@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
           <PageTitle
             title="Privacy Policy"
-            description="Your privacy is important to us. This page will continue to evolve as GTA Companion grows."
+            description="How GTA Companion handles cookies, analytics, advertising, accounts and payments."
           />
 
           <Card className="mt-16 rounded-[40px] border-zinc-800 bg-zinc-900 p-6 sm:p-12">

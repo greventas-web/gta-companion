@@ -10,6 +10,7 @@ import { animals } from "@/data/animals";
 import { staticMapHref } from "@/lib/map/catalog";
 import { detailMetadata } from "@/lib/pages";
 import { shortText } from "@/lib/simple/text";
+import { THIN_ROBOTS } from "@/lib/thin-content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,7 +22,7 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+async function baseMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = items.find((entry) => entry.slug === slug);
   if (!item) {
@@ -29,6 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return extra ? detailMetadata(extra.name, extra.summary || extra.name) : {};
   }
   return detailMetadata(item.name, shortText(item.description, 2) || item.name);
+}
+
+/** Thin database page: kept out of search results until it has its own commentary (lib/thin-content.ts). */
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  return { ...(await baseMetadata(props)), robots: THIN_ROBOTS };
 }
 
 export default async function AnimalsDetailPage({ params }: Props) {

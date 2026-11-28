@@ -1,17 +1,16 @@
+/**
+ * Route fallback. It is a plain status spinner with no text and no <main>:
+ * the streamed HTML otherwise carries a second <main> and a "Loading" message
+ * ahead of the real page, which crawlers that read the raw HTML would see first.
+ */
 export default function Loading() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#040404]">
-
-      <div className="flex flex-col items-center">
-
-        <div className="h-20 w-20 animate-spin rounded-full border-4 border-pink-500 border-t-transparent" />
-
-        <div className="mt-8 text-2xl font-black text-white">
-          Loading GTA Companion...
-        </div>
-
-      </div>
-
-    </main>
+    <div
+      role="status"
+      aria-label="Loading"
+      className="flex min-h-[60vh] items-center justify-center bg-[#040404]"
+    >
+      <div className="h-16 w-16 animate-spin rounded-full border-4 border-pink-500 border-t-transparent" />
+    </div>
   );
 }

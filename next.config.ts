@@ -68,6 +68,22 @@ const nextConfig: NextConfig = {
       { source: "/weapons/rocket-launcher", destination: "/weapons/hauners-h-at", permanent: true },
       // In-game shop name is AdB PD-90 (our Iron & Oak footage, 4:46).
       { source: "/weapons/adb-pd-80", destination: "/weapons/adb-pd-90", permanent: true },
+      // Guessed or retired guide URLs that Search Console reported as 404.
+      { source: "/guides/robberies", destination: "/money-methods/store-robberies", permanent: true },
+      { source: "/guides/robbery", destination: "/money-methods/store-robberies", permanent: true },
+      { source: "/guides/store-robberies", destination: "/money-methods/store-robberies", permanent: true },
+      { source: "/guides/jewelry-store-robberies", destination: "/money-methods/jewelry-store-robberies", permanent: true },
+      { source: "/guides/money", destination: "/money-methods", permanent: true },
+      { source: "/guides/make-money", destination: "/money-methods", permanent: true },
+      { source: "/guides/cheats", destination: "/cheats", permanent: true },
+      { source: "/guides/weapons", destination: "/weapons", permanent: true },
+      { source: "/guides/vehicles", destination: "/vehicles", permanent: true },
+      { source: "/guides/cars", destination: "/vehicles", permanent: true },
+      { source: "/guides/missions", destination: "/missions", permanent: true },
+      { source: "/guides/collectibles", destination: "/collectibles", permanent: true },
+      { source: "/guides/map", destination: "/map", permanent: true },
+      { source: "/guides/locations", destination: "/locations", permanent: true },
+      { source: "/guides/characters", destination: "/characters", permanent: true },
       // Batch 3: garage name spelling fix (Mitchel -> Mitchell).
       { source: "/where-to-find/garages/mitchel-auto-center", destination: "/where-to-find/garages/mitchell-auto-center", permanent: true },
       {
