@@ -12,6 +12,7 @@ import { getStaticPins } from "@/lib/map/catalog";
 import { itemListJsonLd } from "@/lib/seo";
 import { imageForPin } from "@/lib/simple/pinImage";
 import { imageForPath } from "@/lib/simple/placeImages";
+import FenceGuide from "@/components/guides/FenceGuide";
 import { findWhereTopic, whereToFindTopics, wherePlaces, type WhereTopic } from "@/src/data/launch/where-to-find";
 
 type Props = {
@@ -72,6 +73,7 @@ export default async function WhereToFindTopicPage({ params }: Props) {
       <div className="mt-6">
         <SimpleHero title={topic.label} />
       </div>
+      {topic.slug === "fences" ? <FenceGuide /> : null}
 
       {groups.map((group, index) => (
         <div key={group}>

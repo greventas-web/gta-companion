@@ -7,7 +7,8 @@ import { pageMetadata } from "@/lib/launch";
 import { imageForPin } from "@/lib/simple/pinImage";
 import { imageForPath } from "@/lib/simple/placeImages";
 import { findWherePlace, whereToFindTopics, wherePlaces } from "@/src/data/launch/where-to-find";
-import { THIN_ROBOTS } from "@/lib/thin-content";
+import { fenceSection } from "@/src/data/launch/fence-guide";
+import { isThinPath, THIN_ROBOTS } from "@/lib/thin-content";
 
 type Props = { params: Promise<{ topic: string; place: string }> };
 
@@ -23,15 +24,18 @@ async function baseMetadata({ params }: Props): Promise<Metadata> {
   const { topic, place } = await params;
   const entry = findWherePlace(topic, place);
   if (!entry) return {};
-  return pageMetadata(
-    `${entry.place.name} – GTA 6 ${entry.topic.label}`,
-    `${entry.place.name} in GTA 6${entry.place.area ? `, ${entry.place.area}` : ""}. Where it is and what it costs. Unofficial.`
-  );
+  const guide = topic === "fences" ? fenceSection(place) : undefined;
+  const description = guide
+    ? `${guide.paragraphs[0]} Unofficial.`
+    : `${entry.place.name} in GTA 6${entry.place.area ? `, ${entry.place.area}` : ""}. Where it is and what it costs. Unofficial.`;
+  return pageMetadata(`${entry.place.name} – GTA 6 ${entry.topic.label}`, description);
 }
 
 /** Thin database page: kept out of search results until it has its own commentary (lib/thin-content.ts). */
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  return { ...(await baseMetadata(props)), robots: THIN_ROBOTS };
+  const meta = await baseMetadata(props);
+  const { topic, place } = await props.params;
+  return isThinPath(`/where-to-find/${topic}/${place}`) ? { ...meta, robots: THIN_ROBOTS } : meta;
 }
 
 export default async function WherePlacePage({ params }: Props) {
@@ -40,6 +44,7 @@ export default async function WherePlacePage({ params }: Props) {
   if (!entry) notFound();
   const { topic, place } = entry;
   const image = imageForPath(`/where-to-find/${topic.slug}/${place.slug}`) ?? imageForPin(place.pin);
+  const guide = topic.slug === "fences" ? fenceSection(place.slug) : undefined;
 
   const others = wherePlaces(topic)
     .filter((other) => other.slug !== place.slug)
@@ -73,9 +78,20 @@ export default async function WherePlacePage({ params }: Props) {
         facts={[{ label: topic.slug === "fences" ? "Opens" : "Type", value: place.tag ?? "" }]}
         mapPin={place.pin ?? place.areaPin}
         mapLabel={place.pin ? "Find on map" : "Find the area on map"}
+        links={guide?.links}
         related={others}
         relatedHeading={`More ${topic.label.toLowerCase()}`}
-      />
+      >
+        {guide ? (
+          <div className="mt-8 max-w-3xl space-y-4">
+            {guide.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-base leading-7 text-zinc-200">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        ) : null}
+      </SimpleDetail>
     </PageShell>
   );
 }

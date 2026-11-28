@@ -15,6 +15,7 @@ import { blackEagleSources, freddieGibbsSources, garageCodesSources, laPerleGara
 import { halifaxSources, infernusSources, jasonsStashSources, randyWishListSources } from "@/src/data/launch/batch15-sources";
 import { alienBaseSources, hellspawnSources, vercettiSources } from "@/src/data/launch/batch16-sources";
 import { discoveredStylesSources, droneSources, partyHouseSources, redAppleOrchardSources, safeCodesExtraSources } from "@/src/data/launch/batch17-sources";
+import { searchGapGuides } from "./search-gap-guides";
 
 export type QuickGuideLink = {
   href: string;
@@ -37,6 +38,8 @@ export type QuickGuide = {
   /** Existing confirmed site image or official Rockstar image. Blank card when missing. */
   image?: string;
   imageAlt?: string;
+  /** YouTube video id for a short filmed for this guide. */
+  youtubeId?: string;
   /** Icon kind for cards. */
   kind: string;
   /** 2 to 4 short plain sentences that answer the question. */
@@ -400,6 +403,8 @@ const L = {
   // Batch 17
   partyHouseGarage: { href: "/guides/party-house-garage", title: "Party house garage code", line: "092319, Spiderweb Coquette", kind: "vehicle" },
   redAppleOrchard: { href: "/guides/red-apple-orchard", title: "Red Apple Orchard garage", line: "360782, Applesauce Bobcat", kind: "vehicle" },
+  hiddenCars: { href: "/guides/hidden-cars", title: "Hidden cars", line: "Standout finds and garage cars", kind: "vehicle" },
+  redQueenDubsta: { href: "/guides/red-queen-dubsta", title: "Red Queen Dubsta", line: "Leaf Links, the ruby gold G Wagon", kind: "vehicle" },
   discoveredStyles: { href: "/guides/discovered-styles", title: "Discovered styles", line: "Scan magazines with WAiNK", kind: "clothing" },
   drone: { href: "/guides/drone", title: "How to get a drone", line: "Top Fun time trials", kind: "activity" },
   topFunHub: { href: "/collectibles/top-fun-drone-races", title: "Top Fun drone races", line: "All 14 locations", kind: "activity" },
@@ -3749,7 +3754,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Do the 1010 Murals count as WAiNK locations?", answer: "No. You photograph them the same way, but they're a separate list and don't count toward the 100 WAiNK locations or 100%." },
       { question: "Why won't the train mural count in GTA 6?", answer: "The painted train has to be stopped at the Crosstown Mule City Line station when you take the photo. Wait for it to pull in." },
     ],
-    related: [L.wainkLocations, L.wainkScans, L.register, L.garages, L.downtownMap, L.oceanBeachMap, L.crosstownMap, L.saltonMap, L.safeCodes, L.vehiclesHub],
+    related: [L.redQueenDubsta, L.hiddenCars, L.wainkLocations, L.wainkScans, L.register, L.garages, L.downtownMap, L.oceanBeachMap, L.crosstownMap, L.saltonMap, L.safeCodes, L.vehiclesHub],
     sources: murals1010Sources,
   },
   {
@@ -3843,7 +3848,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Can you miss the La Perle garage in GTA 6?", answer: "Yes. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
       { question: "When do you have to get the La Perle garage in GTA 6?", answer: "Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
     ],
-    related: [L.laPerleMap, L.garageCodes, L.garages, L.register, L.safeCodes, L.viceCity, L.payNSpray, L.vamos, L.murals1010],
+    related: [L.redQueenDubsta, L.hiddenCars, L.laPerleMap, L.garageCodes, L.garages, L.register, L.safeCodes, L.viceCity, L.payNSpray, L.vamos, L.murals1010],
     sources: laPerleGarageSources,
   },
   {
@@ -3873,7 +3878,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Where is the Vamos garage clue in GTA 6?", answer: "On a licence plate on the wall of the trailer next to the garage, by the window above a sleeping man. It reads 2727." },
       { question: "How much does Moses pay for the Vamos in GTA 6?", answer: "About $4,100 if you bring it back in top condition." },
     ],
-    related: [L.moses, L.sellMoses, L.garageCodes, L.slimJim, L.hotwire, L.stealth, L.portGellhornMap, L.laPerleGarage, L.mapHub],
+    related: [L.redQueenDubsta, L.hiddenCars, L.moses, L.sellMoses, L.garageCodes, L.slimJim, L.hotwire, L.stealth, L.portGellhornMap, L.laPerleGarage, L.mapHub],
     sources: vamosSources,
   },
   {
@@ -3890,6 +3895,7 @@ export const quickGuides: QuickGuide[] = [
       "360782, Father Scrumpy's Red Apple Orchard, west of Manifest Canyon in Kelly County: look for the giant apple on a truck by the road. The locked farm garage holds the Declasse Applesauce Bobcat, a customised '55 Bobcat pickup in red and white. The clue is a ManlyGaze magazine in the loft of the big red barn: climb the blue tractor onto the roof and drop through the opening. Issue 36, dated July 1982, gives 360782.",
       "092319, south-east Key Lento: the party house garage holds the Invetero Spiderweb Coquette, a unique classic Invetero with a spiderweb finish. You can reach it in Chapter 1.",
       "2727, Grayson: the garage with the Declasse Vamos that Moses asks for in Chapter 2. 1010, Southside Storage in Salton: the garage with the 1010 Cheetah, after you photograph the five 1010 Murals.",
+      "The Red Queen Dubsta is the hidden car with no keypad. It is the ruby gold Benefactor Dubsta in a locked garage at the south-shore mansion in Leaf Links. Climb the gate wall, finish the garage-door minigame, then lockpick it or clone the key and drive it out.",
     ],
     facts: [
       { label: "La Perle", value: "92665. Do this before finishing Chapter 3, otherwise you won't be able to get the garage or Vanessa's Pfister Growler." },
@@ -3906,7 +3912,7 @@ export const quickGuides: QuickGuide[] = [
       { question: "Are GTA 6 garage codes the same for everyone?", answer: "Yes. Garage codes are fixed. Only store, bank and jewelry safes change from game to game." },
       { question: "What is the party house garage code in GTA 6?", answer: "092319. The house is in the south-east corner of Key Lento, and the garage holds the Invetero Spiderweb Coquette." },
     ],
-    related: [L.laPerleGarage, L.vamos, L.murals1010, L.safeCodes, L.garages, L.register, L.laPerleMap, L.saltonMap, L.fastFurious, L.vehiclesHub, L.partyHouseGarage, L.redAppleOrchard],
+    related: [L.redQueenDubsta, L.hiddenCars, L.laPerleGarage, L.vamos, L.murals1010, L.safeCodes, L.garages, L.register, L.laPerleMap, L.saltonMap, L.fastFurious, L.vehiclesHub, L.partyHouseGarage, L.redAppleOrchard],
     sources: [...garageCodesSources, ...partyHouseSources, ...redAppleOrchardSources],
   },
   {
@@ -4755,7 +4761,7 @@ export const quickGuides: QuickGuide[] = [
         answer: "Yes. The party house is in Key Lento, so you can reach it in Chapter 1.",
       },
     ],
-    related: [L.keyLento, L.garageCodes, L.redAppleOrchard, L.laPerleGarage, L.vamos, L.register, L.collectibleCards, L.vehiclesHub],
+    related: [L.redQueenDubsta, L.hiddenCars, L.keyLento, L.garageCodes, L.redAppleOrchard, L.laPerleGarage, L.vamos, L.register, L.collectibleCards, L.vehiclesHub],
     sources: partyHouseSources,
   },
   {
@@ -4799,7 +4805,7 @@ export const quickGuides: QuickGuide[] = [
         answer: "A ManlyGaze magazine in the loft of the big red barn. Climb the blue tractor onto the roof and drop through the opening. Issue 36, dated July 1982, gives 360782.",
       },
     ],
-    related: [L.garageCodes, L.partyHouseGarage, L.laPerleGarage, L.vamos, L.register, L.portGellhornMap, L.vehiclesHub, L.wainkLocations],
+    related: [L.redQueenDubsta, L.hiddenCars, L.garageCodes, L.partyHouseGarage, L.laPerleGarage, L.vamos, L.register, L.portGellhornMap, L.vehiclesHub, L.wainkLocations],
     sources: redAppleOrchardSources,
   },
   {
@@ -4895,6 +4901,7 @@ export const quickGuides: QuickGuide[] = [
     related: [L.topFunHub, L.usePhone, L.hundred, L.collectiblesHub, L.trophiesGuide, L.streetRaces, L.uniqueRaces],
     sources: droneSources,
   },
+  ...searchGapGuides,
 ];
 
 /** Story missions that have a quick guide (Chapters 1 to 3 only). */
